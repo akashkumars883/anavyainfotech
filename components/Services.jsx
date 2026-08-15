@@ -34,7 +34,7 @@ export default function Services() {
       title: "Growth",
       description: "Accelerating market visibility with local & technical SEO audits, search strategies, and optimized ranking performance.",
       icon: TrendingUp,
-      image: "/service-3.jpg",
+      image: "/growth-illustration.jpg",
       items: [
         { name: "SEO", href: "/services/seo" },
         { name: "Local SEO", href: "/services/local-seo" },
