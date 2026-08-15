@@ -1,37 +1,37 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Code2, Cpu, TrendingUp, Palette } from "lucide-react";
 
 export default function Services() {
   const categories = [
     {
       title: "Development",
-      description: "Building scalable digital architecture, bespoke web apps, and modern e-commerce storefronts engineered for performance.",
+      description: "Building scalable digital architecture, bespoke web apps, mobile apps, and modern e-commerce storefronts engineered for speed.",
+      icon: Code2,
       items: [
         { name: "Business Website", href: "/services/business-website" },
+        { name: "App Development", href: "/services/app-development" },
         { name: "Web Applications", href: "/services/web-applications" },
         { name: "Landing Pages", href: "/services/landing-pages" },
         { name: "E-Commerce", href: "/services/ecommerce" },
       ],
-      image: "/service-1.jpg",
-      imageAlt: "Anavya Infotech custom web application and software development services mockup",
       href: "/services/web-applications",
     },
     {
       title: "Technology",
       description: "Deploying custom AI integrations, smart chatbots, CRM systems, and robust API workflows to automate your operations.",
+      icon: Cpu,
       items: [
         { name: "AI Chatbot", href: "/services/ai-chatbot" },
         { name: "Business Automation", href: "/services/business-automation" },
         { name: "CRM / Custom Software", href: "/services/crm-custom-software" },
         { name: "API Integration", href: "/services/api-integration" },
       ],
-      image: "/service-2.jpg",
-      imageAlt: "Anavya Infotech artificial intelligence, business automation and custom CRM systems mockup",
       href: "/services/ai-chatbot",
     },
     {
       title: "Growth",
       description: "Accelerating market visibility with local & technical SEO audits, search strategies, and optimized ranking performance.",
+      icon: TrendingUp,
       items: [
         { name: "SEO", href: "/services/seo" },
         { name: "Local SEO", href: "/services/local-seo" },
@@ -39,21 +39,18 @@ export default function Services() {
         { name: "Technical SEO", href: "/services/technical-seo" },
         { name: "Content Strategy", href: "/services/content-strategist" },
       ],
-      image: "/service-3.jpg",
-      imageAlt: "Anavya Infotech search engine optimization SEO and business growth analytics mockup",
       href: "/services/seo",
     },
     {
       title: "Branding",
       description: "Crafting distinct visual identities, corporate guidelines, logo architectures, and strategic design assets to define your presence.",
+      icon: Palette,
       items: [
         { name: "Brand Identity", href: "/services/branding" },
         { name: "Logo Design", href: "/services/branding" },
         { name: "Corporate Guidelines", href: "/services/branding" },
         { name: "Visual Strategy", href: "/services/branding" },
       ],
-      image: "/service-4.jpg",
-      imageAlt: "Anavya Infotech corporate branding logo architecture and visual design assets mockup",
       href: "/services/branding",
     },
   ];
@@ -87,7 +84,7 @@ export default function Services() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="py-10 bg-white border-b border-stone-100 relative z-10"
+      className="py-12 md:py-16 bg-white border-b border-stone-100 relative z-10"
     >
       {/* Schema Markup for Crawlers */}
       <script
@@ -97,13 +94,13 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Block */}
-        <div className="max-w-3xl text-left mb-6 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-100 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+        <div className="max-w-3xl text-left mb-10 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600 shadow-sm">
             What We Do
           </div>
           <h2
             id="services-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-stone-900 leading-tight"
           >
             Capabilities designed to scale <br />
             <span className="text-blue-700">your business operations.</span>
@@ -112,62 +109,62 @@ export default function Services() {
 
         {/* Services 4 in a Row Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category, index) => (
-            <div
-              key={index}
-              className="group relative h-[430px] w-full overflow-hidden rounded-md border border-stone-100 hover:shadow-2xl transition-all duration-300 flex flex-col justify-end"
-            >
-              {/* Background Image */}
-              <img
-                src={category.image}
-                alt={category.imageAlt}
-                width={300}
-                height={430}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
+          {categories.map((category, index) => {
+            const Icon = category.icon;
+            return (
+              <div
+                key={index}
+                className="group relative w-full rounded-md border border-stone-200/80 bg-stone-50/60 p-6 flex flex-col justify-between hover:bg-white hover:border-blue-700/40 hover:shadow-xl transition-all duration-300 text-left"
+              >
+                <div className="space-y-4">
+                  {/* Icon & Title Header */}
+                  <div className="flex items-center justify-between">
+                    <div className="h-10 w-10 rounded-md bg-white border border-stone-200 shadow-sm flex items-center justify-center text-blue-700 group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <Link
+                      href={category.href}
+                      className="h-8 w-8 rounded-md bg-white border border-stone-200 flex items-center justify-center text-stone-700 hover:text-blue-700 hover:border-blue-300 transition-all shadow-sm"
+                      aria-label={`View ${category.title} service page`}
+                    >
+                      <ArrowUpRight className="h-4 w-4" />
+                    </Link>
+                  </div>
 
-              {/* Initial Gradient Overlay (Bottom dark fade to read title) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-all duration-500 md:group-hover:opacity-0" />
+                  {/* Title */}
+                  <Link href={category.href} className="block group/link">
+                    <h3 className="text-xl font-bold text-stone-900 group-hover/link:text-blue-700 transition-colors">
+                      {category.title}
+                    </h3>
+                  </Link>
 
-              {/* Initial Title Display (Visible by default, fades on hover on desktop) */}
-              <Link href={category.href} className="absolute bottom-6 left-6 right-6 z-10 text-white flex items-center justify-between transition-all duration-500 md:group-hover:opacity-0 md:group-hover:translate-y-4 text-left">
-                <h3 className="text-xl font-bold tracking-tight">{category.title}</h3>
-                <span className="h-8 w-8 rounded-md bg-white/20 backdrop-blur-sm border border-white/25 flex items-center justify-center shrink-0">
-                  <ArrowUpRight className="h-4 w-4" />
-                </span>
-              </Link>
+                  {/* Description */}
+                  <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+                    {category.description}
+                  </p>
+                </div>
 
-              {/* Hover Overlay Content (Slides up/fades in on hover on desktop) */}
-              <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px] opacity-0 md:group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 space-y-4 translate-y-8 md:group-hover:translate-y-0 z-20 text-left">
-                {/* Header inside Hover State */}
-                <Link href={category.href} className="flex items-center justify-between text-white border-b border-white/10 pb-2 group/title">
-                  <h3 className="text-xl font-bold tracking-tight group-hover/title:text-blue-400 transition-colors">{category.title}</h3>
-                  <span className="h-8 w-8 rounded-md bg-white text-black flex items-center justify-center shrink-0">
-                    <ArrowUpRight className="h-4 w-4" />
-                  </span>
-                </Link>
-
-                {/* Description */}
-                <p className="text-xs text-zinc-300 font-light leading-relaxed">
-                  {category.description}
-                </p>
-
-                {/* Sub-services Pills as Direct Clickable Links */}
-                <ul className="flex flex-wrap gap-1.5 pt-1">
-                  {category.items.map((item, i) => (
-                    <li key={i}>
-                      <Link
-                        href={item.href}
-                        className="inline-flex px-2.5 py-1 rounded-md text-[11px] font-semibold bg-white/15 hover:bg-blue-600 border border-white/15 hover:border-blue-500 text-white transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                {/* Sub-services Pills as Direct Touch/Clickable Links */}
+                <div className="pt-6 border-t border-stone-200/60 mt-6 space-y-3">
+                  <div className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">
+                    Core Offerings
+                  </div>
+                  <ul className="flex flex-wrap gap-2">
+                    {category.items.map((item, i) => (
+                      <li key={i}>
+                        <Link
+                          href={item.href}
+                          className="inline-block px-3 py-1.5 rounded-md text-xs font-medium bg-white border border-stone-200/90 text-stone-700 hover:bg-blue-700 hover:text-white hover:border-blue-700 transition-all duration-200 shadow-2xs cursor-pointer active:scale-95"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
