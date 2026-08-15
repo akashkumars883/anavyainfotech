@@ -90,7 +90,7 @@ export default function AdminDashboardPage() {
         <div className="p-6 rounded-md bg-white border border-stone-200 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Draft Articles</span>
-            <div className="h-9 w-9 rounded-md bg-orange-50 text-blue-700 flex items-center justify-center">
+            <div className="h-9 w-9 rounded-md bg-blue-50 text-blue-700 flex items-center justify-center">
               <Clock className="h-5 w-5" />
             </div>
           </div>

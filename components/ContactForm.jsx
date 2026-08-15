@@ -63,7 +63,7 @@ export default function ContactForm() {
           <div className="lg:col-span-7 bg-stone-50 border border-stone-100 rounded-md p-6 sm:p-8 shadow-sm relative">
             {isSubmitted ? (
               <div className="h-full min-h-[220px] flex flex-col items-center justify-center text-center space-y-4 animate-fade-in">
-                <div className="h-12 w-12 rounded-md bg-orange-100 border border-orange-200 flex items-center justify-center text-blue-700">
+                <div className="h-12 w-12 rounded-md bg-blue-100 border border-blue-200 flex items-center justify-center text-blue-700">
                   <Send className="h-5 w-5 animate-pulse" />
                 </div>
                 <h3 className="text-lg font-bold text-stone-900">Request Received &amp; Saved!</h3>
