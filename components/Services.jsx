@@ -21,7 +21,7 @@ export default function Services() {
       title: "Technology",
       description: "Deploying custom AI integrations, smart chatbots, CRM systems, and robust API workflows to automate your operations.",
       icon: Cpu,
-      image: "/service-2.jpg",
+      image: "/technology-illustration.jpg",
       items: [
         { name: "AI Chatbot", href: "/services/ai-chatbot" },
         { name: "Business Automation", href: "/services/business-automation" },
