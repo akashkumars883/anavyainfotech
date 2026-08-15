@@ -51,18 +51,27 @@ export default function AppDevelopmentServicePage() {
 
       {/* Header Area */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "App Development", href: "/services/app-development" }]} />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            Services Catalog
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "App Development", href: "/services/app-development" }]} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+              Services Catalog
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
+              Mobile App <br />
+              <span className="text-blue-700">Development Services</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-2xl leading-relaxed">
+              High-performance iOS, Android, and cross-platform mobile apps engineered for speed, engagement, and enterprise scale.
+            </p>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Mobile App <br />
-            <span className="text-blue-700">Development Services</span>
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            High-performance iOS, Android, and cross-platform mobile apps engineered for speed, engagement, and enterprise scale.
-          </p>
+          <div className="lg:col-span-5 flex items-center justify-center p-6 bg-white border border-stone-200/80 rounded-md shadow-sm">
+            <img
+              src="/development-illustration.jpg"
+              alt="App and Web Development Services Illustration"
+              className="max-h-[300px] w-auto object-contain mix-blend-multiply"
+            />
+          </div>
         </div>
       </section>
 

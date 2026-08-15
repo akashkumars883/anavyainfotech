@@ -7,6 +7,7 @@ export default function Services() {
       title: "Development",
       description: "Building scalable digital architecture, bespoke web apps, mobile apps, and modern e-commerce storefronts engineered for speed.",
       icon: Code2,
+      image: "/development-illustration.jpg",
       items: [
         { name: "Business Website", href: "/services/business-website" },
         { name: "App Development", href: "/services/app-development" },
@@ -137,6 +138,16 @@ export default function Services() {
                       {category.title}
                     </h3>
                   </Link>
+
+                  {category.image && (
+                    <div className="w-full h-36 bg-white rounded-md border border-stone-200/80 p-2 flex items-center justify-center overflow-hidden shadow-2xs my-2">
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        className="h-full w-auto object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
 
                   {/* Description */}
                   <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
