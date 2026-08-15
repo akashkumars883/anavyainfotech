@@ -23,7 +23,8 @@
   // Styles inside Shadow DOM
   var style = document.createElement('style');
   style.textContent = `
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Space Grotesk', Inter, system-ui, -apple-system, sans-serif; }
     .widget-bubble {
       position: fixed;
       bottom: 24px;
