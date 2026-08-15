@@ -3,27 +3,34 @@ import { supabaseAdmin } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
-// In-memory leads cache array
+// In-memory leads cache array fallback
 const globalLeadsStore = globalThis._chatbotLeadsStore || [];
 if (!globalThis._chatbotLeadsStore) {
   globalThis._chatbotLeadsStore = globalLeadsStore;
 }
 
-// GET API to fetch all chatbot leads for Admin Dashboard
+// GET API to fetch all chatbot leads from Supabase 'leads' table
 export async function GET() {
   try {
     let leads = [...globalLeadsStore];
 
-    // Try fetching from Supabase if available
+    // Fetch from Supabase 'leads' table
     try {
       if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
         const { data, error } = await supabaseAdmin
-          .from("chatbot_leads")
+          .from("leads")
           .select("*")
           .order("created_at", { ascending: false });
 
         if (data && data.length > 0) {
-          leads = data;
+          leads = data.map((item) => ({
+            id: item.id,
+            site_id: item.service || item.site_id || "anavyainfotech-com",
+            name: item.name || "Website Visitor",
+            phone_email: item.phone_email || item.email || item.message || "N/A",
+            message: item.message || "",
+            created_at: item.created_at,
+          }));
         }
       }
     } catch (e) {
@@ -36,7 +43,7 @@ export async function GET() {
   }
 }
 
-// POST API to capture & store a new chatbot lead
+// POST API to capture & store a new chatbot lead into Supabase 'leads' table
 export async function POST(req) {
   try {
     const body = await req.json();
@@ -54,18 +61,19 @@ export async function POST(req) {
       created_at: new Date().toISOString(),
     };
 
-    // Store in-memory
+    // Store in-memory fallback
     globalLeadsStore.unshift(leadRecord);
 
-    // Store in Supabase table
+    // Store directly into Supabase 'leads' table
     try {
       if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
-        await supabaseAdmin.from("chatbot_leads").insert([
+        await supabaseAdmin.from("leads").insert([
           {
-            site_id: siteId || "anavyainfotech-com",
             name: name.trim(),
-            phone_email: phoneEmail.trim(),
-            created_at: new Date().toISOString(),
+            email: phoneEmail.includes("@") ? phoneEmail.trim() : "phone-contact@anavyainfotech.com",
+            service: siteId || "AI Chatbot Lead",
+            message: `Phone / Contact: ${phoneEmail.trim()} | Site ID: ${siteId || 'anavyainfotech-com'}`,
+            status: "new",
           },
         ]);
       }
@@ -73,7 +81,7 @@ export async function POST(req) {
       console.warn("Supabase lead save notice:", e.message);
     }
 
-    console.log("New Chatbot Lead Captured:", leadRecord);
+    console.log("New Chatbot Lead Captured & Pushed to Supabase:", leadRecord);
 
     return NextResponse.json({ success: true, leadRecord });
   } catch (err) {
