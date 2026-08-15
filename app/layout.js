@@ -163,7 +163,7 @@ const orgSchema = {
   "description":
     "Anavya Infotech is a premier digital marketing agency and website development company in India and USA providing SEO services, local SEO, ecommerce SEO, performance marketing, social media marketing, and white label SEO reseller services.",
   "telephone": "+91-6201231875",
-  "email": "anavyainfotech@gmail.com",
+  "email": "info@anavyainfotech.com",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "IN",

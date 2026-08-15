@@ -69,8 +69,8 @@ export default function Footer() {
             <div className="pt-2 space-y-2 text-xs text-zinc-300">
               <div className="flex items-center gap-2">
                 <Mail className="h-3.5 w-3.5 text-blue-600 shrink-0" />
-                <a href="mailto:anavyainfotech@gmail.com" className="hover:text-white transition-colors">
-                  anavyainfotech@gmail.com
+                <a href="mailto:info@anavyainfotech.com" className="hover:text-white transition-colors">
+                  info@anavyainfotech.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -224,7 +224,7 @@ export default function Footer() {
 
                 {/* Email */}
                 <a
-                  href="mailto:anavyainfotech@gmail.com"
+                  href="mailto:info@anavyainfotech.com"
                   aria-label="Email"
                   className="h-8.5 w-8.5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/10 transition-all"
                 >

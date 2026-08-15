@@ -30,7 +30,7 @@ const PRIVACY_FAQS = [
   {
     question: "How can I request deletion or correction of my personal data?",
     answer:
-      "Simply email anavyainfotech@gmail.com with your data request. Our compliance team will process and confirm your data deletion within 5 business days.",
+      "Simply email info@anavyainfotech.com with your data request. Our compliance team will process and confirm your data deletion within 5 business days.",
   },
   {
     question: "Do you use cookies on Anavya Infotech website?",
@@ -167,7 +167,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="p-6 rounded-md bg-stone-50 border border-stone-100 space-y-2">
               <p className="text-stone-900 font-bold">Anavya Infotech</p>
-              <p className="text-stone-600 text-sm">Email: anavyainfotech@gmail.com</p>
+              <p className="text-stone-600 text-sm">Email: info@anavyainfotech.com</p>
               <p className="text-stone-600 text-sm">Website: https://anavyainfotech.com/contact</p>
             </div>
           </section>

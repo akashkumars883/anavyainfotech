@@ -35,7 +35,7 @@ const REFUND_FAQS = [
   {
     question: "Who should I reach out to for billing or refund inquiries?",
     answer:
-      "You can contact our accounts team directly at anavyainfotech@gmail.com or through your assigned project manager.",
+      "You can contact our accounts team directly at info@anavyainfotech.com or through your assigned project manager.",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function RefundPolicyPage() {
             </p>
             <div className="p-6 rounded-md bg-stone-50 border border-stone-100 space-y-2">
               <p className="text-stone-900 font-bold">Anavya Infotech Support</p>
-              <p className="text-stone-600 text-sm">Email: anavyainfotech@gmail.com</p>
+              <p className="text-stone-600 text-sm">Email: info@anavyainfotech.com</p>
               <p className="text-stone-600 text-sm">Response Time: Within 24-48 business hours</p>
             </div>
           </section>

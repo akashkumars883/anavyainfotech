@@ -29,7 +29,7 @@ const contactSchema = {
     "@type": "Organization",
     "name": "Anavya Infotech",
     "telephone": "+91-6201231875",
-    "email": "anavyainfotech@gmail.com",
+    "email": "info@anavyainfotech.com",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IN",
@@ -83,8 +83,8 @@ const contactDetails = [
   {
     icon: <Mail className="h-5 w-5 text-blue-700" />,
     label: "Email",
-    value: "anavyainfotech@gmail.com",
-    href: "mailto:anavyainfotech@gmail.com",
+    value: "info@anavyainfotech.com",
+    href: "mailto:info@anavyainfotech.com",
   },
   {
     icon: <Phone className="h-5 w-5 text-blue-700" />,
