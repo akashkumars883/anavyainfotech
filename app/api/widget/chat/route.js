@@ -43,36 +43,79 @@ RULES TO FOLLOW:
 "I can only assist with questions regarding ${siteName} services and offerings. Please let me know how I can help you with our website services!"
 3. Keep your answers concise, helpful, and professional.`;
 
-    // 4. Call OpenAI API if API key exists, or use smart fallback
-    const apiKey = process.env.OPENAI_API_KEY;
+    // 4. Call GROQ API (Primary fast AI provider from .env.local)
+    const groqApiKey = process.env.GROQ_API_KEY;
+    if (groqApiKey) {
+      try {
+        const groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${groqApiKey}`,
+          },
+          body: JSON.stringify({
+            model: "llama-3.3-70b-versatile",
+            messages: [
+              { role: "system", content: systemPrompt },
+              { role: "user", content: message },
+            ],
+            temperature: 0.2,
+            max_tokens: 500,
+          }),
+        });
 
-    if (apiKey) {
-      const openAiRes = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({
-          model: "gpt-4o-mini",
-          messages: [
-            { role: "system", content: systemPrompt },
-            { role: "user", content: message },
-          ],
-          temperature: 0.3,
-          max_tokens: 450,
-        }),
-      });
-
-      if (openAiRes.ok) {
-        const data = await openAiRes.json();
-        const aiMessage = data.choices?.[0]?.message?.content;
-        if (aiMessage) {
-          return NextResponse.json({
-            response: aiMessage,
-            siteUrl: knowledge.siteUrl,
-          });
+        if (groqRes.ok) {
+          const data = await groqRes.json();
+          const aiMessage = data.choices?.[0]?.message?.content;
+          if (aiMessage) {
+            return NextResponse.json({
+              response: aiMessage,
+              siteUrl: knowledge.siteUrl,
+              provider: "Groq (Llama-3.3-70B)",
+            });
+          }
+        } else {
+          console.warn("Groq API warning:", await groqRes.text());
         }
+      } catch (e) {
+        console.warn("Groq fetch error:", e.message);
+      }
+    }
+
+    // 5. Fallback to Gemini API if available
+    const geminiApiKey = process.env.GEMINI_API_KEY;
+    if (geminiApiKey) {
+      try {
+        const geminiRes = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiApiKey}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              contents: [
+                {
+                  parts: [
+                    { text: systemPrompt + "\n\nUser Question: " + message },
+                  ],
+                },
+              ],
+            }),
+          }
+        );
+
+        if (geminiRes.ok) {
+          const data = await geminiRes.json();
+          const aiMessage = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (aiMessage) {
+            return NextResponse.json({
+              response: aiMessage,
+              siteUrl: knowledge.siteUrl,
+              provider: "Google Gemini 1.5",
+            });
+          }
+        }
+      } catch (e) {
+        console.warn("Gemini fetch error:", e.message);
       }
     }
 
