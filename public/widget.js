@@ -311,6 +311,26 @@
     appendMessage(query, 'user');
     inputField.value = '';
 
+    // Phone / Email Regex Auto-Detection
+    var emailMatch = query.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+    var phoneMatch = query.match(/(\+?\d{1,4}[\s-]?)?\(?\d{3,5}\)?[\s-]?\d{3,5}[\s-]?\d{3,5}/);
+    var detectedContact = (emailMatch ? emailMatch[0] : (phoneMatch && phoneMatch[0].length >= 8 ? phoneMatch[0] : ""));
+
+    if (detectedContact && detectedContact !== savedLeadContact) {
+      savedLeadContact = detectedContact;
+      var leadName = tempLeadName || savedLeadName || "Website Visitor";
+      try {
+        localStorage.setItem('__anavya_lead_contact_' + siteId, detectedContact);
+        if (tempLeadName) localStorage.setItem('__anavya_lead_name_' + siteId, tempLeadName);
+      } catch (e) {}
+
+      fetch(apiBase + '/api/widget/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: leadName, phoneEmail: detectedContact, siteId: siteId }),
+      }).catch(function() {});
+    }
+
     // CONVERSATIONAL LEAD STEP 1: Ask for Name
     if (leadState === 'ASK_NAME') {
       tempLeadName = query;
