@@ -120,8 +120,15 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="group relative h-[440px] w-full rounded-md border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between text-left"
+                className="group relative h-[380px] sm:h-[400px] w-full rounded-md border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between text-left cursor-pointer"
               >
+                {/* Full Card Link: Tapping anywhere on mobile or desktop opens the service page */}
+                <Link
+                  href={category.href}
+                  className="absolute inset-0 z-30"
+                  aria-label={`View ${category.title} services`}
+                />
+
                 {/* Full Card Image Background */}
                 <div className="absolute inset-0 w-full h-full bg-white flex items-center justify-center overflow-hidden">
                   <img
@@ -135,63 +142,32 @@ export default function Services() {
                   />
                 </div>
 
-                {/* Minimal Light Bottom Gradient Overlay Only (Just enough so text is readable) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-stone-950/25 to-transparent pointer-events-none" />
+                {/* Subtle Light Bottom Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent pointer-events-none transition-opacity duration-300" />
 
-                {/* Top Header Bar (Category Icon & Direct Arrow Link) - Always Top Z-Index & Mobile Clickable */}
-                <div className="relative z-30 p-5 flex items-center justify-between pointer-events-auto">
+                {/* Top Header Bar (Category Icon & Direct Arrow Button) */}
+                <div className="relative z-10 p-5 flex items-center justify-between pointer-events-none">
                   <div className="h-10 w-10 rounded-md bg-white border border-stone-200 shadow-sm flex items-center justify-center text-blue-700">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <Link
-                    href={category.href}
-                    className="h-9 w-9 rounded-md bg-white border border-stone-200 flex items-center justify-center text-stone-900 hover:text-white hover:bg-blue-700 transition-all shadow-sm cursor-pointer active:scale-95"
-                    aria-label={`View ${category.title} service page`}
-                  >
+                  <div className="h-9 w-9 rounded-md bg-white border border-stone-200 flex items-center justify-center text-stone-900 group-hover:bg-blue-700 group-hover:text-white transition-all shadow-sm">
                     <ArrowUpRight className="h-4 w-4" />
-                  </Link>
+                  </div>
                 </div>
 
-                {/* Bottom Card Interactive Area: 100% Tapable on Mobile & Hover Interactive on Desktop */}
-                <div className="relative z-30 p-5 space-y-3 pointer-events-auto">
-                  {/* Category Title & Explore Button */}
+                {/* Bottom Card Title & Desktop Hover Description */}
+                <div className="relative z-10 p-5 space-y-2 pointer-events-none">
                   <div className="flex items-center justify-between border-b border-white/20 pb-2">
-                    <Link href={category.href} className="hover:text-blue-300 transition-colors">
-                      <h3 className="text-xl font-bold text-white tracking-tight drop-shadow-sm">
-                        {category.title}
-                      </h3>
-                    </Link>
-                    <Link
-                      href={category.href}
-                      className="text-white bg-blue-700 hover:bg-blue-800 text-[11px] font-bold px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition-colors active:scale-95"
-                    >
-                      Explore <ArrowUpRight className="h-3 w-3" />
-                    </Link>
+                    <h3 className="text-2xl font-bold text-white tracking-tight drop-shadow-sm">
+                      {category.title}
+                    </h3>
+                    <ArrowUpRight className="h-5 w-5 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
-                  {/* Description */}
-                  <p className="text-xs text-stone-200 font-light leading-relaxed drop-shadow-sm">
+                  {/* Description: Reveals ONLY on Hover on Desktop */}
+                  <p className="text-xs sm:text-sm text-stone-200 font-light leading-relaxed drop-shadow-sm opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform md:translate-y-2 md:group-hover:translate-y-0">
                     {category.description}
                   </p>
-
-                  {/* Core Offerings Pill Links: High contrast, 100% Clickable on Mobile & Desktop */}
-                  <div className="pt-1 space-y-1.5">
-                    <div className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">
-                      Core Offerings
-                    </div>
-                    <ul className="flex flex-wrap gap-1.5">
-                      {category.items.map((item, i) => (
-                        <li key={i}>
-                          <Link
-                            href={item.href}
-                            className="inline-block px-2.5 py-1.5 rounded-md text-[11px] font-semibold bg-stone-900/90 text-white border border-stone-700/80 hover:bg-blue-700 hover:border-blue-600 transition-all duration-200 cursor-pointer active:scale-95 shadow-sm"
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               </div>
             );
