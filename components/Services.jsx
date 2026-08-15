@@ -136,51 +136,51 @@ export default function Services() {
                 </div>
 
                 {/* Initial Bottom Gradient Overlay to make title readable */}
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent transition-opacity duration-500 group-hover:opacity-0 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-500 md:group-hover:opacity-0 pointer-events-none" />
 
                 {/* Top Header (Category Icon & Quick Direct Link) */}
-                <div className="relative z-10 p-6 flex items-center justify-between pointer-events-auto">
-                  <div className="h-10 w-10 rounded-md bg-white/90 backdrop-blur-md border border-stone-200 shadow-sm flex items-center justify-center text-blue-700">
+                <div className="relative z-10 p-5 flex items-center justify-between pointer-events-auto">
+                  <div className="h-10 w-10 rounded-md bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-sm flex items-center justify-center text-blue-700">
                     <Icon className="h-5 w-5" />
                   </div>
                   <Link
                     href={category.href}
-                    className="h-9 w-9 rounded-md bg-white/90 backdrop-blur-md border border-stone-200 flex items-center justify-center text-stone-900 hover:text-white hover:bg-blue-700 transition-all shadow-sm"
+                    className="h-9 w-9 rounded-md bg-white/90 backdrop-blur-md border border-stone-200/80 flex items-center justify-center text-stone-900 hover:text-white hover:bg-blue-700 transition-all shadow-sm"
                     aria-label={`View ${category.title} service page`}
                   >
                     <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </div>
 
-                {/* Default Card Bottom Title */}
-                <div className="relative z-10 p-6 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-4">
-                  <h3 className="text-2xl font-bold text-white tracking-tight">
+                {/* Default Card Bottom Title (Visible on Desktop when not hovered) */}
+                <div className="relative z-10 p-5 hidden md:block transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-4">
+                  <h3 className="text-2xl font-bold text-white tracking-tight drop-shadow-sm">
                     {category.title}
                   </h3>
                 </div>
 
-                {/* Hover Details Overlay (Slides Up & Reveals on Hover / Touch) */}
-                <div className="absolute inset-0 z-20 bg-stone-950/90 backdrop-blur-sm p-6 flex flex-col justify-end text-left opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-6 group-hover:translate-y-0">
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-center justify-between border-b border-white/15 pb-2">
-                      <h3 className="text-xl font-bold text-white tracking-tight">
+                {/* Details Overlay Panel: Subtle light dark gradient, 100% visible & clickable on mobile, hover-revealed on desktop */}
+                <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/85 via-black/55 to-black/15 p-5 flex flex-col justify-end text-left transition-all duration-500 opacity-100 translate-y-0 md:opacity-0 md:group-hover:opacity-100 md:translate-y-4 md:group-hover:translate-y-0">
+                  <div className="space-y-2 mb-3">
+                    <div className="flex items-center justify-between border-b border-white/20 pb-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
                         {category.title}
                       </h3>
                       <Link
                         href={category.href}
-                        className="text-blue-400 hover:text-white text-xs font-bold flex items-center gap-1"
+                        className="text-blue-400 hover:text-white text-xs font-bold flex items-center gap-1 bg-white/10 px-2 py-0.5 rounded"
                       >
                         Explore <ArrowUpRight className="h-3.5 w-3.5" />
                       </Link>
                     </div>
-                    <p className="text-xs text-stone-300 font-light leading-relaxed">
+                    <p className="text-xs text-stone-200 font-light leading-relaxed line-clamp-2 sm:line-clamp-none">
                       {category.description}
                     </p>
                   </div>
 
-                  {/* Core Offerings Pill Links */}
-                  <div className="space-y-2">
-                    <div className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">
+                  {/* Core Offerings Pill Links: Directly clickable on mobile & desktop */}
+                  <div className="space-y-1.5">
+                    <div className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">
                       Core Offerings
                     </div>
                     <ul className="flex flex-wrap gap-1.5">
@@ -188,7 +188,7 @@ export default function Services() {
                         <li key={i}>
                           <Link
                             href={item.href}
-                            className="inline-block px-2.5 py-1 rounded-md text-[11px] font-medium bg-white/15 hover:bg-blue-600 border border-white/20 hover:border-blue-500 text-white transition-all duration-200 cursor-pointer active:scale-95"
+                            className="inline-block px-2.5 py-1 rounded-md text-[11px] font-medium bg-black/40 hover:bg-blue-600 border border-white/25 text-white transition-all duration-200 cursor-pointer active:scale-95 shadow-sm"
                           >
                             {item.name}
                           </Link>
