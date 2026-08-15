@@ -2,7 +2,6 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import SelectedWork from "@/components/SelectedWork";
 import Process from "@/components/Process";
-import SeoPricing from "@/components/SeoPricing";
 import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
 import FaqSection from "@/components/FaqSection";
@@ -51,9 +50,6 @@ export default function Home() {
       </FadeIn>
       <FadeIn direction="up">
         <Process />
-      </FadeIn>
-      <FadeIn direction="up">
-        <SeoPricing />
       </FadeIn>
       <FadeIn direction="up">
         <Testimonials />
