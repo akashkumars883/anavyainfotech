@@ -28,6 +28,7 @@ export default function Navbar() {
       title: "Development",
       items: [
         { name: "Business Website", href: "/services/business-website" },
+        { name: "App Development", href: "/services/app-development" },
         { name: "Web Applications", href: "/services/web-applications" },
         { name: "Landing Pages", href: "/services/landing-pages" },
         { name: "E-Commerce", href: "/services/ecommerce" },
