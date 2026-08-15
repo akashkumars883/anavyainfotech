@@ -39,9 +39,10 @@ ${contextText}
 
 CRITICAL INSTRUCTIONS FOR USER INTENT:
 1. DIRECT PRICING ANSWERS: When the user asks about PRICING, COST, RATES, or PLANS (e.g., "what is the price?", "SEO pricing?", "cost?"), ALWAYS state the exact pricing numbers and figures directly from the context first! (For example, SEO Plans: BASIC at $750/mo, PLUS at $1250/mo, PRO at $1750/mo). NEVER just tell the user to go visit a page without giving them the actual prices first.
-2. CUSTOM SOFTWARE & CRM INTENT: For custom CRM, mobile apps, or enterprise software, explain that development is quoted via fixed-price milestone proposals and invite them to schedule a free technical consultation.
-3. CONCISE & READABLE FORMATting: Use clean bullet points, bold key numbers, and short clear sentences.
-4. GUARDRAILS: If the user asks about completely unrelated topics (weather, politics, random coding help), politely say: "I am an AI assistant for ${siteName}. I can only answer questions related to our services, pricing, and custom software offerings!"`;
+2. DIRECT CONTACT DETAILS: When the user asks for CONTACT INFO, PHONE NUMBER, EMAIL, LOCATION, or HOW TO REACH US (e.g., "contact info", "phone number?", "email?", "where are you located?"), ALWAYS provide the direct details: Phone/WhatsApp: +91-6201231875, Email: info@anavyainfotech.com / akashkumar883@gmail.com, Location: Delhi NCR / Noida, Uttar Pradesh, India, Contact Page: https://anavyainfotech.com/contact.
+3. CUSTOM SOFTWARE & CRM INTENT: For custom CRM, mobile apps, or enterprise software, explain that development is quoted via fixed-price milestone proposals and invite them to schedule a free technical consultation.
+4. CONCISE & READABLE FORMATTING: Use clean bullet points, bold key numbers, and short clear sentences.
+5. GUARDRAILS: If the user asks about completely unrelated topics (weather, politics, random coding help), politely say: "I am an AI assistant for ${siteName}. I can only answer questions related to our services, pricing, and custom software offerings!"`;
 
     // 4. Call GROQ API (Primary fast AI provider from .env.local)
     const groqApiKey = process.env.GROQ_API_KEY;

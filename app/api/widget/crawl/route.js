@@ -53,7 +53,7 @@ export async function POST(req) {
       }
     }
 
-    // Crawl target homepage
+    // 1. Crawl Target Homepage
     const response = await fetch(siteUrl, {
       headers: {
         "User-Agent": "AnavyaAiBot/1.0 (+https://anavyainfotech.com)",
@@ -69,10 +69,63 @@ export async function POST(req) {
     }
 
     const html = await response.text();
-    const pageData = parseHtmlContent(html, siteUrl);
+    const homepageData = parseHtmlContent(html, siteUrl);
+    const pages = [homepageData];
 
-    // Save Knowledge Base
-    const pages = [pageData];
+    // 2. Discover Sub-pages (e.g., /contact, /pricing, /about, /services)
+    try {
+      const parsedBase = new URL(siteUrl);
+      const linkRegex = /href=["']([^"']+)["']/gi;
+      const discoveredUrls = new Set();
+      let match;
+
+      while ((match = linkRegex.exec(html)) !== null) {
+        const href = match[1];
+        if (!href || href.startsWith("#") || href.startsWith("javascript:") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+          continue;
+        }
+
+        try {
+          const resolvedUrl = new URL(href, siteUrl);
+          if (
+            resolvedUrl.hostname === parsedBase.hostname &&
+            resolvedUrl.pathname !== "/" &&
+            resolvedUrl.pathname !== parsedBase.pathname &&
+            !resolvedUrl.pathname.match(/\.(jpg|jpeg|png|gif|svg|css|js|pdf|zip)$/i)
+          ) {
+            discoveredUrls.add(resolvedUrl.href);
+          }
+        } catch {}
+      }
+
+      // Crawl top 5 discovered sub-pages in parallel
+      const subPageUrls = Array.from(discoveredUrls).slice(0, 5);
+      const subPagePromises = subPageUrls.map(async (url) => {
+        try {
+          const subRes = await fetch(url, {
+            headers: { "User-Agent": "AnavyaAiBot/1.0 (+https://anavyainfotech.com)" },
+            next: { revalidate: 0 },
+          });
+          if (subRes.ok) {
+            const subHtml = await subRes.text();
+            return parseHtmlContent(subHtml, url);
+          }
+        } catch {
+          return null;
+        }
+      });
+
+      const subPagesData = await Promise.all(subPagePromises);
+      subPagesData.forEach((p) => {
+        if (p && p.text && p.text.length > 50) {
+          pages.push(p);
+        }
+      });
+    } catch (e) {
+      console.warn("Subpage discovery notice:", e.message);
+    }
+
+    // 3. Save All Pages into Knowledge Base
     await saveSiteKnowledge(siteId, siteUrl, pages);
 
     const scriptTag = `<script src="https://anavyainfotech.com/widget.js" data-site-id="${siteId}" async></script>`;
@@ -82,7 +135,8 @@ export async function POST(req) {
       siteId,
       siteUrl,
       pagesCrawled: pages.length,
-      pageTitle: pageData.title,
+      pageTitle: homepageData.title,
+      crawledPages: pages.map((p) => ({ title: p.title, url: p.url })),
       scriptTag,
     });
   } catch (err) {
