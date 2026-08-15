@@ -8,13 +8,9 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-white flex items-center justify-center px-6 pt-28 pb-16 md:pt-24 md:pb-16 text-left">
-      {/* Light Clean Subtle Grid Background */}
-      <div className="absolute inset-0 bg-white pointer-events-none">
-        {/* Crisp Linear Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_40%,#000_70%,transparent_100%)]" />
-        
-        {/* Soft Radial Ambient Blue Glow */}
-        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-600/10 blur-[140px] rounded-full pointer-events-none" />
+      {/* Soft Pure Ambient Deep Blue Radial Blur Background (NO GRID) */}
+      <div className="absolute inset-0 bg-white pointer-events-none overflow-hidden">
+        <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-700/10 blur-[150px] rounded-full pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -59,7 +55,7 @@ export default function Hero() {
           >
             <Link
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-zinc-800 transition-all shadow-md hover:scale-105"
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-all shadow-md hover:scale-105"
             >
               Start a Project
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
