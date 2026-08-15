@@ -131,7 +131,7 @@ export const metadata = {
 
   // Verification tags
   verification: {
-    google: "YOUR_GOOGLE_SEARCH_CONSOLE_CODE",
+    google: "qICJDXJHHW1y9Ln_Czyr1Ae-POIJehDgiRm-0k81gW8",
   },
 
   // Icons
@@ -225,6 +225,7 @@ export default function RootLayout({ children }) {
       className={`${spaceGrotesk.variable} h-full antialiased bg-white`}
     >
       <head>
+        <meta name="google-site-verification" content="qICJDXJHHW1y9Ln_Czyr1Ae-POIJehDgiRm-0k81gW8" />
         <link rel="icon" href="/logo.png" sizes="any" type="image/png" />
         <link rel="shortcut icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
