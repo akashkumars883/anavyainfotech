@@ -130,6 +130,10 @@ export default async function BlogListingPage() {
                   src={featuredPost.image}
                   alt={featuredPost.imageAlt || featuredPost.title}
                   className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500 ease-out"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "/development-illustration.jpg";
+                  }}
                 />
               </div>
             </div>

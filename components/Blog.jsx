@@ -74,6 +74,10 @@ export default async function Blog() {
                   src={post.image}
                   alt={post.title}
                   className="h-full w-full object-cover rounded-md opacity-95 transition-transform duration-700 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "/development-illustration.jpg";
+                  }}
                 />
               </div>
 
