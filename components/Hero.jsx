@@ -30,14 +30,14 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
+
         {/* Left Column: Headline, Subtitle, Badges & CTAs */}
         <div className="lg:col-span-7 space-y-6">
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-stone-50 border border-stone-200 text-xs font-bold text-stone-700 uppercase tracking-wider shadow-sm"
+            className="inline-flex items-center gap-2 text-xs font-bold text-stone-700 uppercase tracking-wider"
           >
             <Sparkles className="h-3.5 w-3.5 text-blue-700 animate-pulse" />
             <span>Premier Custom Software &amp; AI Agency</span>

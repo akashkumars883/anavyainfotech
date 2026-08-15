@@ -76,12 +76,19 @@ export default async function BlogListingPage() {
         </div>
       </section>
 
-      {/* Featured Article Section (Original Height Layout + rounded-md image) */}
+      {/* Featured Article Section */}
       {featuredPost && (
         <section className="py-8 bg-white border-b border-stone-100 px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="bg-stone-50 border border-stone-200/80 rounded-md p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-stone-300 transition-all shadow-sm">
-              <div className="lg:col-span-7 space-y-4 text-left">
+            <div className="group relative bg-stone-50 border border-stone-200/80 rounded-md p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-stone-300 transition-all cursor-pointer">
+              {/* Full Card Link */}
+              <Link
+                href={`/blog/${featuredPost.slug}`}
+                className="absolute inset-0 z-30"
+                aria-label={`Read featured article: ${featuredPost.title}`}
+              />
+
+              <div className="lg:col-span-7 space-y-4 text-left pointer-events-none">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-blue-700/10 border border-blue-700/20 text-[10px] font-bold uppercase tracking-wider text-blue-700">
                     <Sparkles className="h-3 w-3" /> Featured Article
@@ -91,10 +98,8 @@ export default async function BlogListingPage() {
                   </span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-stone-900 leading-tight">
-                  <Link href={`/blog/${featuredPost.slug}`} className="hover:text-blue-700 transition-colors">
-                    {featuredPost.title}
-                  </Link>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-stone-900 leading-tight group-hover:text-blue-700 transition-colors">
+                  {featuredPost.title}
                 </h2>
 
                 <p className="text-sm text-stone-600 font-light leading-relaxed line-clamp-3">
@@ -110,18 +115,17 @@ export default async function BlogListingPage() {
                     <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {featuredPost.readTime}</span>
                   </div>
 
-                  <Link
-                    href={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-zinc-800 transition-all shadow-md shrink-0"
+                  <div
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-bold uppercase tracking-wider bg-black text-white group-hover:bg-blue-700 transition-all shrink-0"
                   >
                     Read Full Article
                     <ArrowUpRight className="h-4 w-4" />
-                  </Link>
+                  </div>
                 </div>
               </div>
 
-              {/* Featured Image Container with rounded-md */}
-              <div className="lg:col-span-5 h-64 sm:h-72 w-full rounded-md overflow-hidden bg-stone-100 border border-stone-200/80 shadow-sm relative group">
+              {/* Featured Image Container */}
+              <div className="lg:col-span-5 h-64 sm:h-72 w-full rounded-md overflow-hidden bg-stone-100 border border-stone-200/80 relative pointer-events-none">
                 <img
                   src={featuredPost.image}
                   alt={featuredPost.imageAlt || featuredPost.title}
