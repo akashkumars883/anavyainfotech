@@ -156,18 +156,23 @@ export default function Services() {
                 </div>
 
                 {/* Bottom Card Title & Desktop Hover Description */}
-                <div className="relative z-10 p-5 space-y-2 pointer-events-none">
-                  <div className="flex items-center justify-between border-b border-white/20 pb-2">
-                    <h3 className="text-2xl font-bold text-white tracking-tight drop-shadow-sm">
+                <div className="relative z-10 p-6 flex flex-col justify-end text-left pointer-events-none">
+                  {/* Heading - Always pinned at bottom */}
+                  <div className="flex items-center justify-between border-b border-white/0 group-hover:border-white/20 pb-1 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white tracking-tight drop-shadow-md">
                       {category.title}
                     </h3>
-                    <ArrowUpRight className="h-5 w-5 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <ArrowUpRight className="h-5 w-5 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
                   </div>
 
-                  {/* Description: Reveals ONLY on Hover on Desktop */}
-                  <p className="text-xs sm:text-sm text-stone-200 font-light leading-relaxed drop-shadow-sm opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform md:translate-y-2 md:group-hover:translate-y-0">
-                    {category.description}
-                  </p>
+                  {/* Description: Zero height by default so heading stays at bottom, expands smoothly on hover */}
+                  <div className="grid grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+                    <div className="overflow-hidden">
+                      <p className="pt-2.5 text-xs sm:text-sm text-stone-200 font-light leading-relaxed drop-shadow-md opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                        {category.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             );
