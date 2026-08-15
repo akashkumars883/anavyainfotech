@@ -48,7 +48,7 @@ export default function Services() {
       title: "Branding",
       description: "Crafting distinct visual identities, corporate guidelines, logo architectures, and strategic design assets to define your presence.",
       icon: Palette,
-      image: "/service-4.jpg",
+      image: "/branding-illustration.jpg",
       items: [
         { name: "Brand Identity", href: "/services/branding" },
         { name: "Logo Design", href: "/services/branding" },
