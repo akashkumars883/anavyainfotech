@@ -1,4 +1,3 @@
-import Pricing from "@/components/Pricing";
 import SeoPricing from "@/components/SeoPricing";
 import FaqSection from "@/components/FaqSection";
 import ContactForm from "@/components/ContactForm";
@@ -67,8 +66,6 @@ export default function PricingPage() {
           </p>
         </div>
       </section>
-
-      <Pricing />
 
       <SeoPricing />
 
