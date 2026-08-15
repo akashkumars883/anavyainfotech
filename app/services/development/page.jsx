@@ -4,13 +4,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Palette, Compass, Layers, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Code2, Globe, Smartphone, Layout, ShoppingCart, CheckCircle2 } from "lucide-react";
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Corporate Branding & Visual Identity Design Services",
-  "description": "Corporate branding, visual identity systems, brand positioning, UI/UX design systems, and digital asset engineering by Anavya Infotech.",
+  "name": "Custom Development & Software Engineering Services",
+  "description": "Full-stack web applications, mobile app development, business websites, landing pages, and e-commerce platforms engineered by Anavya Infotech.",
   "provider": {
     "@type": "ProfessionalService",
     "name": "Anavya Infotech",
@@ -18,57 +18,64 @@ const serviceSchema = {
   }
 };
 
-const BRANDING_FAQS = [
+const DEVELOPMENT_FAQS = [
   {
-    question: "What is included in your corporate branding packages?",
-    answer: "Our packages include logo design, brand positioning guidelines, typography systems, color palettes, social media kits, and UI design tokens."
+    question: "What core development services do you provide?",
+    answer: "We specialize in custom web applications (React, Next.js, Node.js), mobile app development (iOS & Android via React Native/Flutter), business websites, high-converting landing pages, and scalable e-commerce storefronts."
   },
   {
-    question: "How long does a complete brand identity redesign take?",
-    answer: "Corporate branding projects typically take 2 to 4 weeks from discovery moodboards to final asset handoff."
+    question: "How long does a typical software development project take?",
+    answer: "Landing pages take 1-2 weeks, business websites take 2-4 weeks, mobile apps take 4-8 weeks, and enterprise web applications take 6-12 weeks depending on features."
   },
   {
-    question: "Do you deliver vector source files and brand guidelines books?",
-    answer: "Yes, you receive all original vector source files (SVG, EPS, AI), high-res PNGs, and a comprehensive PDF brand guideline manual."
+    question: "Do you offer full code ownership and documentation?",
+    answer: "Yes, 100% code ownership with zero recurring seat fees, clean developer documentation, and zero-downtime production deployment pipelines."
   },
   {
-    question: "Can you align our brand identity with our website UI/UX?",
-    answer: "Yes! We specialize in cohesive digital brand systems that translate seamlessly into modern, responsive web application interfaces."
+    question: "How do you ensure application performance and SEO?",
+    answer: "We build with Next.js App Router, serverless edge compute layers, optimized image pipelines, and clean CSS styling to guarantee sub-second load times and perfect Core Web Vitals scores."
   }
 ];
 
 const subServices = [
   {
-    title: "Brand Identity",
-    description: "Strategic market positioning, core narrative architecture, and value proposition blueprints.",
-    href: "/services/branding",
-    icon: Compass,
-    features: ["Brand Voice & Narrative", "Market Gap Analysis", "Audience Personas", "Strategic Taglines"]
+    title: "Business Website",
+    description: "High-converting corporate websites tailored to represent your brand and generate qualified inbound leads.",
+    href: "/services/business-website",
+    icon: Globe,
+    features: ["Custom Next.js & React", "SEO & Speed Optimized", "Responsive Mobile Layouts", "Lead Generation Forms"]
   },
   {
-    title: "Logo Design",
-    description: "Iconic vector logo mark design, typography hierarchies, and curated color palettes.",
-    href: "/services/branding",
-    icon: Palette,
-    features: ["Vector Logo Marks (SVG/AI)", "HSL Color Specifications", "WebFont Licensing Guides", "Dark & Light Mode Variants"]
+    title: "App Development",
+    description: "High-performance iOS, Android, and cross-platform mobile apps engineered for speed, engagement, and scale.",
+    href: "/services/app-development",
+    icon: Smartphone,
+    features: ["React Native & Flutter", "Real-time Push Notifications", "App Store & Play Store Publishing", "Secure Cloud Backends"]
   },
   {
-    title: "Corporate Guidelines",
-    description: "Comprehensive brand book manuals detailing asset usage rules, spacing grid specs, and stationery templates.",
-    href: "/services/branding",
-    icon: ShieldCheck,
-    features: ["Brand Manual PDF", "Social Media Asset Kits", "Email & Document Templates", "Stationery Print Layouts"]
+    title: "Web Applications",
+    description: "Scalable, secure cloud software, client portals, and multi-role web apps built on modern JavaScript frameworks.",
+    href: "/services/web-applications",
+    icon: Code2,
+    features: ["PostgreSQL & Supabase DB", "Role-based Authentication", "Third-party API Integration", "Real-time Telemetry"]
   },
   {
-    title: "Visual Strategy",
-    description: "Standardized Figma design systems, accessible color specifications, and product UI kit component libraries.",
-    href: "/services/branding",
-    icon: Layers,
-    features: ["Figma Component Kits", "WCAG 2.1 Color Specs", "Micro-interaction Tokens", "Responsive Breakpoints"]
+    title: "Landing Pages",
+    description: "Laser-focused, high-converting landing pages engineered to boost ad campaign ROI and capture leads.",
+    href: "/services/landing-pages",
+    icon: Layout,
+    features: ["Sub-second Page Speeds", "A/B Testing Frameworks", "CRM & Analytics Sync", "Ultra Crisp UX Design"]
+  },
+  {
+    title: "E-Commerce",
+    description: "Bespoke digital storefronts, custom checkout flows, inventory sync, and secure payment gateway integrations.",
+    href: "/services/ecommerce",
+    icon: ShoppingCart,
+    features: ["Stripe & Razorpay Integration", "Real-time Inventory Sync", "Headless Commerce Architecture", "Conversion Optimized"]
   }
 ];
 
-export default function CorporateBrandingPage() {
+export default function DevelopmentCategoryPage() {
   return (
     <main className="min-h-screen bg-white pt-24 md:pt-20 text-left">
       <script
@@ -76,26 +83,26 @@ export default function CorporateBrandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      {/* Hero Header Section */}
+      {/* Hero Header Area */}
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Branding", href: "/services/branding" }]} />
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Development", href: "/services/development" }]} />
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-700 shadow-xs">
-              <Palette className="h-3.5 w-3.5 text-blue-700" /> Branding Hub
+              <Code2 className="h-3.5 w-3.5 text-blue-700" /> Development Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.1]">
-              Corporate Branding &amp; <br />
-              <span className="text-blue-700">Visual Identity Design</span>
+              Custom Software &amp; <br />
+              <span className="text-blue-700">App Development Services</span>
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Craft a commanding corporate presence. We design high-impact visual identities, brand strategy blueprints, digital UI systems, and design guidelines that position your business for market leadership.
+              We design and code scalable web applications, mobile apps, business websites, landing pages, and e-commerce platforms engineered for speed, conversion, and global scale.
             </p>
           </div>
           <div className="lg:col-span-5 flex items-center justify-center p-6 bg-white border border-stone-200/80 rounded-md shadow-xs">
             <SafeImage
-              src="/branding-illustration.jpg"
-              alt="Corporate Branding Services Illustration"
+              src="/development-illustration.jpg"
+              alt="Development Services Illustration"
               className="max-h-[300px] w-auto object-contain mix-blend-multiply"
             />
           </div>
@@ -110,14 +117,14 @@ export default function CorporateBrandingPage() {
               Core Offerings
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Branding &amp; Visual Identity Capabilities
+              Development Capabilities &amp; Services
             </h2>
             <p className="text-sm text-stone-600 font-light">
-              Build an unforgettable brand identity across print, web, and product touchpoints.
+              Explore our specialized software engineering offerings built for modern businesses.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {subServices.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -149,7 +156,7 @@ export default function CorporateBrandingPage() {
 
                     <div className="pt-4 border-t border-stone-200/60 space-y-2.5">
                       <div className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">
-                        Key Deliverables
+                        Key Features
                       </div>
                       <ul className="space-y-2">
                         {service.features.map((feature, i) => (
@@ -178,57 +185,31 @@ export default function CorporateBrandingPage() {
         </div>
       </section>
 
-      {/* Deliverable Kit Showcase */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <div className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">What You Receive</h2>
-            <p className="text-xs sm:text-sm text-stone-600 font-light">Complete brand ownership documentation and production-ready design asset kits.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              "Complete Brand Style Guide PDF",
-              "Vector Logos & Social Avatars",
-              "Figma UI Component Kit & Tokens",
-              "Custom Email & Document Templates",
-              "Typography & WebFont Bundles",
-              "Color System Swatches (HEX/RGB/HSL)",
-              "Iconography & Pattern Assets",
-              "100% Full IP Transfer Rights",
-            ].map((item, i) => (
-              <div key={i} className="p-4 rounded-md bg-white border border-stone-200 text-xs font-semibold text-stone-800 flex items-center gap-3">
-                <ShieldCheck className="h-4 w-4 text-blue-700 shrink-0" />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <FaqSection
-        title="Corporate Branding Services FAQs"
-        subtitle="Questions about brand strategy, visual identities, and UI design kits."
-        faqs={BRANDING_FAQS}
+        title="Development Engineering FAQs"
+        subtitle="Common questions about custom web app development, mobile apps, and business websites."
+        faqs={DEVELOPMENT_FAQS}
       />
 
       {/* CTA Trigger */}
       <section className="py-12 bg-stone-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-md blur-3xl pointer-events-none" />
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to elevate your corporate brand identity?
+                Ready to build your next custom software system?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Schedule a consultation with our lead brand designers to discuss your market positioning and visual design goals.
+                Connect with our lead architects to discuss tech stacks, database schemas, and fixed-price timelines.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Request Branding Consultation
+              Start Development Project
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

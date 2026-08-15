@@ -4,13 +4,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Palette, Compass, Layers, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, TrendingUp, Search, MapPin, ShoppingCart, Code, FileText, CheckCircle2 } from "lucide-react";
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Corporate Branding & Visual Identity Design Services",
-  "description": "Corporate branding, visual identity systems, brand positioning, UI/UX design systems, and digital asset engineering by Anavya Infotech.",
+  "name": "Digital Growth, Search Engine Optimization & Content Strategy Services",
+  "description": "SEO services, local SEO, e-commerce SEO, technical audits, and content strategies by Anavya Infotech.",
   "provider": {
     "@type": "ProfessionalService",
     "name": "Anavya Infotech",
@@ -18,57 +18,64 @@ const serviceSchema = {
   }
 };
 
-const BRANDING_FAQS = [
+const GROWTH_FAQS = [
   {
-    question: "What is included in your corporate branding packages?",
-    answer: "Our packages include logo design, brand positioning guidelines, typography systems, color palettes, social media kits, and UI design tokens."
+    question: "What search growth & SEO services do you offer?",
+    answer: "We offer comprehensive Organic SEO, Local SEO for Google Business Profile rankings, E-Commerce SEO for online stores, Technical SEO code audits, and Content Marketing Strategy."
   },
   {
-    question: "How long does a complete brand identity redesign take?",
-    answer: "Corporate branding projects typically take 2 to 4 weeks from discovery moodboards to final asset handoff."
+    question: "How long does it take to see top keyword rankings and organic traffic growth?",
+    answer: "Initial technical fixes and indexation improvements happen within 14-30 days. Measurable keyword rank increases and inbound lead growth occur within 30 to 90 days."
   },
   {
-    question: "Do you deliver vector source files and brand guidelines books?",
-    answer: "Yes, you receive all original vector source files (SVG, EPS, AI), high-res PNGs, and a comprehensive PDF brand guideline manual."
+    question: "Do you offer White Label SEO Reseller programs for digital agencies?",
+    answer: "Yes, we provide confidential White Label SEO reseller solutions with white-label monthly rank tracking, link audits, and content creation under your agency brand."
   },
   {
-    question: "Can you align our brand identity with our website UI/UX?",
-    answer: "Yes! We specialize in cohesive digital brand systems that translate seamlessly into modern, responsive web application interfaces."
+    question: "What is Technical SEO and why is it essential for Next.js and custom websites?",
+    answer: "Technical SEO optimizes page speed, schema markups, canonical tags, sitemaps, rendering pipelines, and Core Web Vitals to guarantee search engines index every page seamlessly."
   }
 ];
 
 const subServices = [
   {
-    title: "Brand Identity",
-    description: "Strategic market positioning, core narrative architecture, and value proposition blueprints.",
-    href: "/services/branding",
-    icon: Compass,
-    features: ["Brand Voice & Narrative", "Market Gap Analysis", "Audience Personas", "Strategic Taglines"]
+    title: "SEO Services",
+    description: "Data-driven organic search engine optimization to rank for competitive commercial keywords and drive qualified organic leads.",
+    href: "/services/seo",
+    icon: Search,
+    features: ["Keyword Research & Audits", "On-Page SEO Optimization", "High Domain Link Building", "Monthly Ranking Reports"]
   },
   {
-    title: "Logo Design",
-    description: "Iconic vector logo mark design, typography hierarchies, and curated color palettes.",
-    href: "/services/branding",
-    icon: Palette,
-    features: ["Vector Logo Marks (SVG/AI)", "HSL Color Specifications", "WebFont Licensing Guides", "Dark & Light Mode Variants"]
+    title: "Local SEO",
+    description: "Geo-targeted search optimization to dominate local Google Maps pack rankings in your city or region.",
+    href: "/services/local-seo",
+    icon: MapPin,
+    features: ["Google Business Profile Optimization", "Local Citation Building", "Geo-targeted Keyword Pages", "Review & Trust Growth"]
   },
   {
-    title: "Corporate Guidelines",
-    description: "Comprehensive brand book manuals detailing asset usage rules, spacing grid specs, and stationery templates.",
-    href: "/services/branding",
-    icon: ShieldCheck,
-    features: ["Brand Manual PDF", "Social Media Asset Kits", "Email & Document Templates", "Stationery Print Layouts"]
+    title: "Ecommerce SEO",
+    description: "Specialized product catalog SEO for Shopify, WooCommerce, and custom Next.js storefronts.",
+    href: "/services/ecommerce-seo",
+    icon: ShoppingCart,
+    features: ["Product Schema Markup", "Faceted Navigation SEO", "Category Page Ranking", "Conversion Rate Optimization"]
   },
   {
-    title: "Visual Strategy",
-    description: "Standardized Figma design systems, accessible color specifications, and product UI kit component libraries.",
-    href: "/services/branding",
-    icon: Layers,
-    features: ["Figma Component Kits", "WCAG 2.1 Color Specs", "Micro-interaction Tokens", "Responsive Breakpoints"]
+    title: "Technical SEO",
+    description: "Deep code-level audits, Lighthouse Core Web Vitals tuning, canonical fixes, and indexation optimization.",
+    href: "/services/technical-seo",
+    icon: Code,
+    features: ["Core Web Vitals Tuning", "Structured JSON-LD Schema", "Crawl Budget Optimization", "Serverless Speed Fixes"]
+  },
+  {
+    title: "Content Strategy",
+    description: "High-intent content blueprints, editorial calendars, and SEO-optimized engineering articles that convert readers.",
+    href: "/services/content-strategist",
+    icon: FileText,
+    features: ["Topic Cluster Blueprints", "SEO Copywriting", "Keyword Intent Mapping", "Lead Magnet Content"]
   }
 ];
 
-export default function CorporateBrandingPage() {
+export default function GrowthCategoryPage() {
   return (
     <main className="min-h-screen bg-white pt-24 md:pt-20 text-left">
       <script
@@ -76,26 +83,26 @@ export default function CorporateBrandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      {/* Hero Header Section */}
+      {/* Hero Header Area */}
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Branding", href: "/services/branding" }]} />
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Growth", href: "/services/growth" }]} />
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-700 shadow-xs">
-              <Palette className="h-3.5 w-3.5 text-blue-700" /> Branding Hub
+              <TrendingUp className="h-3.5 w-3.5 text-blue-700" /> Growth &amp; SEO Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.1]">
-              Corporate Branding &amp; <br />
-              <span className="text-blue-700">Visual Identity Design</span>
+              Digital Growth, SEO &amp; <br />
+              <span className="text-blue-700">Search Marketing Services</span>
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Craft a commanding corporate presence. We design high-impact visual identities, brand strategy blueprints, digital UI systems, and design guidelines that position your business for market leadership.
+              Accelerate your market visibility with data-driven SEO audits, local Google Maps optimization, technical speed tuning, and high-intent content strategies.
             </p>
           </div>
           <div className="lg:col-span-5 flex items-center justify-center p-6 bg-white border border-stone-200/80 rounded-md shadow-xs">
             <SafeImage
-              src="/branding-illustration.jpg"
-              alt="Corporate Branding Services Illustration"
+              src="/growth-illustration.jpg"
+              alt="Digital Growth and SEO Services Illustration"
               className="max-h-[300px] w-auto object-contain mix-blend-multiply"
             />
           </div>
@@ -110,14 +117,14 @@ export default function CorporateBrandingPage() {
               Core Offerings
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Branding &amp; Visual Identity Capabilities
+              Growth &amp; Search Capabilities
             </h2>
             <p className="text-sm text-stone-600 font-light">
-              Build an unforgettable brand identity across print, web, and product touchpoints.
+              Dominate organic search rankings and turn search traffic into loyal paying customers.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {subServices.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -149,7 +156,7 @@ export default function CorporateBrandingPage() {
 
                     <div className="pt-4 border-t border-stone-200/60 space-y-2.5">
                       <div className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">
-                        Key Deliverables
+                        Key Features
                       </div>
                       <ul className="space-y-2">
                         {service.features.map((feature, i) => (
@@ -178,57 +185,31 @@ export default function CorporateBrandingPage() {
         </div>
       </section>
 
-      {/* Deliverable Kit Showcase */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <div className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">What You Receive</h2>
-            <p className="text-xs sm:text-sm text-stone-600 font-light">Complete brand ownership documentation and production-ready design asset kits.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              "Complete Brand Style Guide PDF",
-              "Vector Logos & Social Avatars",
-              "Figma UI Component Kit & Tokens",
-              "Custom Email & Document Templates",
-              "Typography & WebFont Bundles",
-              "Color System Swatches (HEX/RGB/HSL)",
-              "Iconography & Pattern Assets",
-              "100% Full IP Transfer Rights",
-            ].map((item, i) => (
-              <div key={i} className="p-4 rounded-md bg-white border border-stone-200 text-xs font-semibold text-stone-800 flex items-center gap-3">
-                <ShieldCheck className="h-4 w-4 text-blue-700 shrink-0" />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <FaqSection
-        title="Corporate Branding Services FAQs"
-        subtitle="Questions about brand strategy, visual identities, and UI design kits."
-        faqs={BRANDING_FAQS}
+        title="SEO & Search Growth FAQs"
+        subtitle="Common questions about search rankings, local SEO, technical audits, and content strategy."
+        faqs={GROWTH_FAQS}
       />
 
       {/* CTA Trigger */}
       <section className="py-12 bg-stone-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-md blur-3xl pointer-events-none" />
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to elevate your corporate brand identity?
+                Want to double your organic search traffic?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Schedule a consultation with our lead brand designers to discuss your market positioning and visual design goals.
+                Get a free technical SEO audit and custom ranking strategy for your platform.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Request Branding Consultation
+              Get Free SEO Audit
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

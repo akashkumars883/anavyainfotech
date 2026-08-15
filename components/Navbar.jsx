@@ -26,6 +26,7 @@ export default function Navbar() {
   const servicesMenu = [
     {
       title: "Development",
+      href: "/services/development",
       items: [
         { name: "Business Website", href: "/services/business-website" },
         { name: "App Development", href: "/services/app-development" },
@@ -35,22 +36,34 @@ export default function Navbar() {
       ],
     },
     {
-      title: "Growth",
-      items: [
-        { name: "SEO", href: "/services/seo" },
-        { name: "Local SEO", href: "/services/local-seo" },
-        { name: "Ecommerce SEO Service", href: "/services/ecommerce-seo" },
-        { name: "Technical SEO Services", href: "/services/technical-seo" },
-        { name: "Content Strategist", href: "/services/content-strategist" },
-      ],
-    },
-    {
       title: "Technology",
+      href: "/services/technology",
       items: [
         { name: "AI Chatbot", href: "/services/ai-chatbot" },
         { name: "Business Automation", href: "/services/business-automation" },
         { name: "CRM / Custom Software", href: "/services/crm-custom-software" },
         { name: "API Integration", href: "/services/api-integration" },
+      ],
+    },
+    {
+      title: "Growth",
+      href: "/services/growth",
+      items: [
+        { name: "SEO", href: "/services/seo" },
+        { name: "Local SEO", href: "/services/local-seo" },
+        { name: "Ecommerce SEO", href: "/services/ecommerce-seo" },
+        { name: "Technical SEO", href: "/services/technical-seo" },
+        { name: "Content Strategy", href: "/services/content-strategist" },
+      ],
+    },
+    {
+      title: "Branding",
+      href: "/services/branding",
+      items: [
+        { name: "Brand Identity", href: "/services/branding" },
+        { name: "Logo Design", href: "/services/branding" },
+        { name: "Corporate Guidelines", href: "/services/branding" },
+        { name: "Visual Strategy", href: "/services/branding" },
       ],
     },
   ];
@@ -190,12 +203,17 @@ export default function Navbar() {
               className="absolute top-full left-0 w-full bg-white border border-stone-200/80 rounded-md text-stone-800 py-10 px-12 shadow-2xl transition-all duration-350 transform opacity-100 translate-y-3"
               onMouseEnter={() => setActiveDropdown("services")}
             >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {servicesMenu.map((column, idx) => (
                   <div key={idx} className="flex flex-col gap-4 text-left">
-                    <h4 className="text-xs font-bold text-blue-700 uppercase tracking-widest border-b border-stone-100 pb-2">
-                      {column.title}
-                    </h4>
+                    <Link
+                      href={column.href}
+                      onClick={() => setActiveDropdown(null)}
+                      className="text-xs font-bold text-blue-700 hover:text-blue-900 uppercase tracking-widest border-b border-stone-100 pb-2 flex items-center justify-between group cursor-pointer"
+                    >
+                      <span>{column.title}</span>
+                      <span className="text-[10px] text-stone-400 group-hover:text-blue-700 transition-colors">Hub &rarr;</span>
+                    </Link>
                     <div className="flex flex-col gap-3">
                       {column.items.map((item, i) => (
                         <Link

@@ -4,13 +4,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Palette, Compass, Layers, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Cpu, Bot, Workflow, Database, Network, CheckCircle2 } from "lucide-react";
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Corporate Branding & Visual Identity Design Services",
-  "description": "Corporate branding, visual identity systems, brand positioning, UI/UX design systems, and digital asset engineering by Anavya Infotech.",
+  "name": "AI, Automation & Custom Enterprise Technology Services",
+  "description": "AI chatbots, business process automation workflows, custom CRM software, and API integration services by Anavya Infotech.",
   "provider": {
     "@type": "ProfessionalService",
     "name": "Anavya Infotech",
@@ -18,57 +18,57 @@ const serviceSchema = {
   }
 };
 
-const BRANDING_FAQS = [
+const TECHNOLOGY_FAQS = [
   {
-    question: "What is included in your corporate branding packages?",
-    answer: "Our packages include logo design, brand positioning guidelines, typography systems, color palettes, social media kits, and UI design tokens."
+    question: "What technology & AI services does Anavya Infotech provide?",
+    answer: "We deploy custom AI chatbots (LLM & OpenAI API integrations), business process automation workflows, bespoke CRM & ERP software, and high-speed REST/GraphQL API integrations."
   },
   {
-    question: "How long does a complete brand identity redesign take?",
-    answer: "Corporate branding projects typically take 2 to 4 weeks from discovery moodboards to final asset handoff."
+    question: "Can AI chatbots integrate directly into our CRM and messaging channels?",
+    answer: "Yes, our AI chatbots integrate seamlessly into WhatsApp Business, Meta Instagram/Facebook APIs, custom web portals, and CRM backends."
   },
   {
-    question: "Do you deliver vector source files and brand guidelines books?",
-    answer: "Yes, you receive all original vector source files (SVG, EPS, AI), high-res PNGs, and a comprehensive PDF brand guideline manual."
+    question: "How does custom business automation help cut operational costs?",
+    answer: "By automating manual data entry, lead assignment, invoicing, and cross-platform sync, businesses eliminate human error and save hundreds of employee hours each month."
   },
   {
-    question: "Can you align our brand identity with our website UI/UX?",
-    answer: "Yes! We specialize in cohesive digital brand systems that translate seamlessly into modern, responsive web application interfaces."
+    question: "Do you build custom CRMs tailored to our specific business workflow?",
+    answer: "Yes, we engineer 100% custom CRM and software management portals with custom pipeline stages, automated reminders, role permissions, and executive analytics dashboards."
   }
 ];
 
 const subServices = [
   {
-    title: "Brand Identity",
-    description: "Strategic market positioning, core narrative architecture, and value proposition blueprints.",
-    href: "/services/branding",
-    icon: Compass,
-    features: ["Brand Voice & Narrative", "Market Gap Analysis", "Audience Personas", "Strategic Taglines"]
+    title: "AI Chatbot",
+    description: "Smart Conversational AI, Meta API automation, and custom LLM chatbots trained on your business data to capture leads 24/7.",
+    href: "/services/ai-chatbot",
+    icon: Bot,
+    features: ["OpenAI & LLM Fine-Tuning", "WhatsApp & Meta API Sync", "Automated Lead Capture", "Multi-Language Support"]
   },
   {
-    title: "Logo Design",
-    description: "Iconic vector logo mark design, typography hierarchies, and curated color palettes.",
-    href: "/services/branding",
-    icon: Palette,
-    features: ["Vector Logo Marks (SVG/AI)", "HSL Color Specifications", "WebFont Licensing Guides", "Dark & Light Mode Variants"]
+    title: "Business Automation",
+    description: "End-to-end workflow automation engines, Zapier/Make custom webhooks, and process automation to scale operations effortlessly.",
+    href: "/services/business-automation",
+    icon: Workflow,
+    features: ["Custom Webhook Pipelines", "Automated Invoicing & Sync", "Lead Nurturing Sequences", "Zero Human Error"]
   },
   {
-    title: "Corporate Guidelines",
-    description: "Comprehensive brand book manuals detailing asset usage rules, spacing grid specs, and stationery templates.",
-    href: "/services/branding",
-    icon: ShieldCheck,
-    features: ["Brand Manual PDF", "Social Media Asset Kits", "Email & Document Templates", "Stationery Print Layouts"]
+    title: "CRM / Custom Software",
+    description: "Bespoke CRM portals, ERP management software, and custom internal tools engineered for your exact business requirements.",
+    href: "/services/crm-custom-software",
+    icon: Database,
+    features: ["Pipeline Management", "Role-Based Access Control", "Automated Reminders", "Executive BI Dashboards"]
   },
   {
-    title: "Visual Strategy",
-    description: "Standardized Figma design systems, accessible color specifications, and product UI kit component libraries.",
-    href: "/services/branding",
-    icon: Layers,
-    features: ["Figma Component Kits", "WCAG 2.1 Color Specs", "Micro-interaction Tokens", "Responsive Breakpoints"]
+    title: "API Integration",
+    description: "Robust REST & GraphQL API integrations, payment gateway connections, and microservice middleware layers.",
+    href: "/services/api-integration",
+    icon: Network,
+    features: ["High-speed API Endpoints", "Stripe, Razorpay, Bank APIs", "Real-time Telemetry & Logs", "Enterprise SLA Security"]
   }
 ];
 
-export default function CorporateBrandingPage() {
+export default function TechnologyCategoryPage() {
   return (
     <main className="min-h-screen bg-white pt-24 md:pt-20 text-left">
       <script
@@ -76,26 +76,26 @@ export default function CorporateBrandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      {/* Hero Header Section */}
+      {/* Hero Header Area */}
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Branding", href: "/services/branding" }]} />
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Technology", href: "/services/technology" }]} />
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-700 shadow-xs">
-              <Palette className="h-3.5 w-3.5 text-blue-700" /> Branding Hub
+              <Cpu className="h-3.5 w-3.5 text-blue-700" /> Technology Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.1]">
-              Corporate Branding &amp; <br />
-              <span className="text-blue-700">Visual Identity Design</span>
+              AI, Automation &amp; <br />
+              <span className="text-blue-700">Enterprise Technology Services</span>
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Craft a commanding corporate presence. We design high-impact visual identities, brand strategy blueprints, digital UI systems, and design guidelines that position your business for market leadership.
+              We engineer custom AI chatbot integrations, automated workflow engines, bespoke CRM software, and high-speed API connections to automate your business operations.
             </p>
           </div>
           <div className="lg:col-span-5 flex items-center justify-center p-6 bg-white border border-stone-200/80 rounded-md shadow-xs">
             <SafeImage
-              src="/branding-illustration.jpg"
-              alt="Corporate Branding Services Illustration"
+              src="/technology-illustration.jpg"
+              alt="Technology & AI Services Illustration"
               className="max-h-[300px] w-auto object-contain mix-blend-multiply"
             />
           </div>
@@ -110,10 +110,10 @@ export default function CorporateBrandingPage() {
               Core Offerings
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Branding &amp; Visual Identity Capabilities
+              Technology &amp; AI Capabilities
             </h2>
             <p className="text-sm text-stone-600 font-light">
-              Build an unforgettable brand identity across print, web, and product touchpoints.
+              Automate tasks, scale customer support, and organize business data with custom technology solutions.
             </p>
           </div>
 
@@ -149,7 +149,7 @@ export default function CorporateBrandingPage() {
 
                     <div className="pt-4 border-t border-stone-200/60 space-y-2.5">
                       <div className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">
-                        Key Deliverables
+                        Key Features
                       </div>
                       <ul className="space-y-2">
                         {service.features.map((feature, i) => (
@@ -178,57 +178,31 @@ export default function CorporateBrandingPage() {
         </div>
       </section>
 
-      {/* Deliverable Kit Showcase */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <div className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">What You Receive</h2>
-            <p className="text-xs sm:text-sm text-stone-600 font-light">Complete brand ownership documentation and production-ready design asset kits.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              "Complete Brand Style Guide PDF",
-              "Vector Logos & Social Avatars",
-              "Figma UI Component Kit & Tokens",
-              "Custom Email & Document Templates",
-              "Typography & WebFont Bundles",
-              "Color System Swatches (HEX/RGB/HSL)",
-              "Iconography & Pattern Assets",
-              "100% Full IP Transfer Rights",
-            ].map((item, i) => (
-              <div key={i} className="p-4 rounded-md bg-white border border-stone-200 text-xs font-semibold text-stone-800 flex items-center gap-3">
-                <ShieldCheck className="h-4 w-4 text-blue-700 shrink-0" />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <FaqSection
-        title="Corporate Branding Services FAQs"
-        subtitle="Questions about brand strategy, visual identities, and UI design kits."
-        faqs={BRANDING_FAQS}
+        title="Technology & AI Integration FAQs"
+        subtitle="Common questions about AI chatbots, business automation, custom CRMs, and APIs."
+        faqs={TECHNOLOGY_FAQS}
       />
 
       {/* CTA Trigger */}
       <section className="py-12 bg-stone-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-md blur-3xl pointer-events-none" />
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to elevate your corporate brand identity?
+                Want to integrate AI or automate your workflows?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Schedule a consultation with our lead brand designers to discuss your market positioning and visual design goals.
+                Talk to our AI &amp; systems engineers to audit your process and deploy custom automated solutions.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Request Branding Consultation
+              Consult an AI Engineer
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
