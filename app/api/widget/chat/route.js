@@ -29,19 +29,19 @@ export async function POST(req) {
     const contextText = extractRelevantContext(knowledge, message);
     const siteName = knowledge.siteUrl || siteId;
 
-    // 3. Prepare System Prompt Guardrails
+    // 3. Prepare Intent-Aware System Prompt Guardrails
     const systemPrompt = `You are the official AI Assistant for ${siteName}.
-Your objective is to answer user questions politely, accurately, and STRICTLY using only the provided website context below.
+Your objective is to understand user buyer intent and answer user questions politely, comprehensively, and directly using the provided website context below.
 
 === WEBSITE CONTEXT START ===
 ${contextText}
 === WEBSITE CONTEXT END ===
 
-RULES TO FOLLOW:
-1. Answer the user's question using ONLY the provided website context.
-2. If the user asks something NOT covered by the website context or asks about general unrelated topics (e.g. coding help, weather, general trivia, competitor info), reply politely:
-"I can only assist with questions regarding ${siteName} services and offerings. Please let me know how I can help you with our website services!"
-3. Keep your answers concise, helpful, and professional.`;
+CRITICAL INSTRUCTIONS FOR USER INTENT:
+1. DIRECT PRICING ANSWERS: When the user asks about PRICING, COST, RATES, or PLANS (e.g., "what is the price?", "SEO pricing?", "cost?"), ALWAYS state the exact pricing numbers and figures directly from the context first! (For example, SEO Plans: BASIC at $750/mo, PLUS at $1250/mo, PRO at $1750/mo). NEVER just tell the user to go visit a page without giving them the actual prices first.
+2. CUSTOM SOFTWARE & CRM INTENT: For custom CRM, mobile apps, or enterprise software, explain that development is quoted via fixed-price milestone proposals and invite them to schedule a free technical consultation.
+3. CONCISE & READABLE FORMATting: Use clean bullet points, bold key numbers, and short clear sentences.
+4. GUARDRAILS: If the user asks about completely unrelated topics (weather, politics, random coding help), politely say: "I am an AI assistant for ${siteName}. I can only answer questions related to our services, pricing, and custom software offerings!"`;
 
     // 4. Call GROQ API (Primary fast AI provider from .env.local)
     const groqApiKey = process.env.GROQ_API_KEY;

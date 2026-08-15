@@ -23,7 +23,7 @@
   // Styles inside Shadow DOM
   var style = document.createElement('style');
   style.textContent = `
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     .widget-bubble {
       position: fixed;
       bottom: 24px;
@@ -53,7 +53,7 @@
       height: 540px;
       max-height: calc(100vh - 120px);
       background: #ffffff;
-      border-radius: 16px;
+      border-radius: 12px;
       box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
       border: 1px solid #e4e4e7;
       display: flex;
@@ -95,11 +95,11 @@
       background: #fafafa;
     }
     .message {
-      max-width: 85%;
-      padding: 10px 14px;
-      border-radius: 12px;
+      max-width: 90%;
+      padding: 12px 14px;
+      border-radius: 8px;
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.6;
       word-break: break-word;
     }
     .message.bot {
@@ -107,14 +107,14 @@
       background: #ffffff;
       color: #18181b;
       border: 1px solid #e4e4e7;
-      border-bottom-left-radius: 2px;
     }
     .message.user {
       align-self: flex-end;
       background: #1d4ed8;
       color: #ffffff;
-      border-bottom-right-radius: 2px;
     }
+    .message strong { font-weight: 700; color: inherit; }
+    .message br { display: block; content: ""; margin-top: 4px; }
 
     .widget-footer {
       padding: 12px 16px;
@@ -127,7 +127,7 @@
     .widget-input {
       flex: 1;
       border: 1px solid #e4e4e7;
-      border-radius: 8px;
+      border-radius: 6px;
       padding: 10px 12px;
       font-size: 13px;
       outline: none;
@@ -139,7 +139,7 @@
       background: #1d4ed8;
       color: #ffffff;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       width: 36px;
       height: 36px;
       display: flex;
@@ -174,16 +174,16 @@
   windowEl.innerHTML = `
     <div class="widget-header">
       <div class="widget-header-title">
-        <span>AI Assistant</span>
+        <span>Anavya AI Assistant</span>
         <span class="widget-header-badge">Online</span>
       </div>
       <button class="widget-close">&times;</button>
     </div>
     <div class="widget-messages" id="widget-messages-list">
-      <div class="message bot">Hello! I am your AI assistant trained on this website. How can I help you today?</div>
+      <div class="message bot">Hello! I am your AI assistant. Ask me anything about our services, SEO pricing, or software development offerings!</div>
     </div>
     <div class="widget-footer">
-      <input type="text" class="widget-input" id="widget-input-field" placeholder="Ask a question..." />
+      <input type="text" class="widget-input" id="widget-input-field" placeholder="Ask about pricing, services..." />
       <button class="widget-send" id="widget-send-btn">
         <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
       </button>
@@ -215,10 +215,19 @@
   var inputField = shadow.getElementById('widget-input-field');
   var sendBtn = shadow.getElementById('widget-send-btn');
 
+  function formatTextToHtml(text) {
+    if (!text) return "";
+    var formatted = text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n\n/g, '<br/><br/>')
+      .replace(/\n/g, '<br/>');
+    return formatted;
+  }
+
   function appendMessage(text, sender) {
     var msg = document.createElement('div');
     msg.className = 'message ' + sender;
-    msg.textContent = text;
+    msg.innerHTML = formatTextToHtml(text);
     messagesList.appendChild(msg);
     messagesList.scrollTop = messagesList.scrollHeight;
   }
@@ -233,7 +242,7 @@
     // Typing indicator placeholder
     var botMsg = document.createElement('div');
     botMsg.className = 'message bot';
-    botMsg.textContent = 'Thinking...';
+    botMsg.innerHTML = 'Thinking...';
     messagesList.appendChild(botMsg);
     messagesList.scrollTop = messagesList.scrollHeight;
 
@@ -245,11 +254,11 @@
     })
     .then(function(res) { return res.json(); })
     .then(function(data) {
-      botMsg.textContent = data.response || 'Thank you for your inquiry!';
+      botMsg.innerHTML = formatTextToHtml(data.response || 'Thank you for your inquiry!');
       messagesList.scrollTop = messagesList.scrollHeight;
     })
     .catch(function(err) {
-      botMsg.textContent = 'Sorry, I am having trouble connecting right now.';
+      botMsg.innerHTML = 'Sorry, I am having trouble connecting right now.';
       messagesList.scrollTop = messagesList.scrollHeight;
     });
   }
