@@ -3,16 +3,20 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import SilkBackground from "@/components/SilkBackground";
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-white flex items-center justify-center text-center px-6 pt-28 pb-16 md:pt-24 md:pb-16">
-      {/* Light Clean Grid Lining Pattern Background */}
-      <div className="absolute inset-0 bg-white">
-        {/* Crisp Dark Linear Grid Pattern */}
+      {/* Light Clean Grid & React Bits Silk Flowing Shader Background */}
+      <div className="absolute inset-0 bg-white overflow-hidden pointer-events-none">
+        {/* React Bits Silk Shader Layer */}
+        <SilkBackground color="#1d4ed8" speed={0.7} scale={1.3} className="opacity-75" />
+
+        {/* Crisp Dark Linear Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000f_1px,transparent_1px),linear-gradient(to_bottom,#0000000f_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_75%_75%_at_50%_50%,#000_70%,transparent_100%)]" />
         
-        {/* Subtle Ambient Radial Highlight */}
+        {/* Ambient Radial Highlight */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 blur-[140px] rounded-full pointer-events-none" />
       </div>
 
