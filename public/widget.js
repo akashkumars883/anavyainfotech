@@ -45,6 +45,25 @@
     .widget-bubble:hover { transform: scale(1.08); background: #1e40af; }
     .widget-bubble svg { width: 26px; height: 26px; fill: currentColor; }
 
+    .widget-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(9, 9, 11, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 999998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .widget-backdrop.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
     .widget-window {
       position: fixed;
       bottom: 92px;
@@ -54,8 +73,8 @@
       height: 540px;
       max-height: calc(100vh - 120px);
       background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+      border-radius: 14px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
       border: 1px solid #e4e4e7;
       display: flex;
       flex-direction: column;
@@ -70,6 +89,23 @@
       opacity: 1;
       transform: translateY(0) scale(1);
       pointer-events: all;
+    }
+
+    @media (max-width: 640px) {
+      .widget-window {
+        bottom: auto;
+        right: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -45%) scale(0.95);
+        width: calc(100vw - 28px);
+        height: calc(100vh - 80px);
+        max-height: 580px;
+        border-radius: 16px;
+      }
+      .widget-window.open {
+        transform: translate(-50%, -50%) scale(1);
+      }
     }
 
     .widget-header {
@@ -190,6 +226,11 @@
     <div class="widget-branding">Powered by <a href="https://anavyainfotech.com" target="_blank">Anavya AI</a></div>
   `;
 
+  // Backdrop Overlay Element
+  var backdropEl = document.createElement('div');
+  backdropEl.className = 'widget-backdrop';
+
+  shadow.appendChild(backdropEl);
   shadow.appendChild(bubble);
   shadow.appendChild(windowEl);
 
@@ -239,19 +280,28 @@
 
   // Interactivity Logic
   var isOpen = false;
-  bubble.addEventListener('click', function() {
-    isOpen = !isOpen;
+  function toggleWidget(show) {
+    isOpen = (typeof show === 'boolean') ? show : !isOpen;
     if (isOpen) {
       windowEl.classList.add('open');
+      backdropEl.classList.add('open');
       shadow.getElementById('widget-input-field').focus();
     } else {
       windowEl.classList.remove('open');
+      backdropEl.classList.remove('open');
     }
+  }
+
+  bubble.addEventListener('click', function() {
+    toggleWidget();
+  });
+
+  backdropEl.addEventListener('click', function() {
+    toggleWidget(false);
   });
 
   shadow.querySelector('.widget-close').addEventListener('click', function() {
-    isOpen = false;
-    windowEl.classList.remove('open');
+    toggleWidget(false);
   });
 
   function handleSend() {
