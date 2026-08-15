@@ -92,11 +92,11 @@ export default function CorporateBrandingPage() {
               Craft a commanding corporate presence. We design high-impact visual identities, brand strategy blueprints, digital UI systems, and design guidelines that position your business for market leadership.
             </p>
           </div>
-          <div className="lg:col-span-5 flex items-center justify-center p-6 bg-white border border-stone-200/80 rounded-md shadow-xs">
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
             <SafeImage
               src="/branding-illustration.jpg"
               alt="Corporate Branding Services Illustration"
-              className="max-h-[300px] w-auto object-contain mix-blend-multiply"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply"
             />
           </div>
         </div>

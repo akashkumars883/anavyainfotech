@@ -99,11 +99,11 @@ export default function GrowthCategoryPage() {
               Accelerate your market visibility with data-driven SEO audits, local Google Maps optimization, technical speed tuning, and high-intent content strategies.
             </p>
           </div>
-          <div className="lg:col-span-5 flex items-center justify-center p-6 bg-white border border-stone-200/80 rounded-md shadow-xs">
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
             <SafeImage
               src="/growth-illustration.jpg"
               alt="Digital Growth and SEO Services Illustration"
-              className="max-h-[300px] w-auto object-contain mix-blend-multiply"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply"
             />
           </div>
         </div>

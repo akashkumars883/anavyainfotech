@@ -99,11 +99,11 @@ export default function DevelopmentCategoryPage() {
               We design and code scalable web applications, mobile apps, business websites, landing pages, and e-commerce platforms engineered for speed, conversion, and global scale.
             </p>
           </div>
-          <div className="lg:col-span-5 flex items-center justify-center p-6 bg-white border border-stone-200/80 rounded-md shadow-xs">
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
             <SafeImage
               src="/development-illustration.jpg"
               alt="Development Services Illustration"
-              className="max-h-[300px] w-auto object-contain mix-blend-multiply"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply"
             />
           </div>
         </div>
