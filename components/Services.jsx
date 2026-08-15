@@ -15,7 +15,7 @@ export default function Services() {
         { name: "Landing Pages", href: "/services/landing-pages" },
         { name: "E-Commerce", href: "/services/ecommerce" },
       ],
-      href: "/services/web-applications",
+      href: "/services/development",
     },
     {
       title: "Technology",
@@ -28,7 +28,7 @@ export default function Services() {
         { name: "CRM / Custom Software", href: "/services/crm-custom-software" },
         { name: "API Integration", href: "/services/api-integration" },
       ],
-      href: "/services/ai-chatbot",
+      href: "/services/technology",
     },
     {
       title: "Growth",
@@ -42,7 +42,7 @@ export default function Services() {
         { name: "Technical SEO", href: "/services/technical-seo" },
         { name: "Content Strategy", href: "/services/content-strategist" },
       ],
-      href: "/services/seo",
+      href: "/services/growth",
     },
     {
       title: "Branding",
@@ -162,12 +162,24 @@ export default function Services() {
                     <ArrowUpRight className="h-5 w-5 text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
                   </div>
 
-                  {/* Description: Expands smoothly on hover in clean dark text */}
+                  {/* Description & Sub-services: Expands smoothly on hover in clean dark text */}
                   <div className="grid grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
-                    <div className="overflow-hidden">
+                    <div className="overflow-hidden space-y-2.5">
                       <p className="pt-2 text-xs sm:text-sm text-stone-600 font-light leading-relaxed opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
                         {category.description}
                       </p>
+
+                      {/* Sub-services Pills List */}
+                      <div className="flex flex-wrap gap-1.5 pt-1 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-150">
+                        {category.items.map((item, i) => (
+                          <span
+                            key={i}
+                            className="inline-flex px-2 py-0.5 rounded-md text-[10px] font-semibold bg-stone-100 border border-stone-200/80 text-stone-700"
+                          >
+                            {item.name}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
