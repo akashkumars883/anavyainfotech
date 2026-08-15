@@ -9,6 +9,16 @@ if (!globalThis._chatbotLeadsStore) {
   globalThis._chatbotLeadsStore = globalLeadsStore;
 }
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
+
+export async function OPTIONS() {
+  return NextResponse.json({}, { headers: CORS_HEADERS });
+}
+
 // GET API to fetch all chatbot leads from Supabase 'leads' table
 export async function GET() {
   try {
@@ -37,9 +47,9 @@ export async function GET() {
       console.warn("Supabase GET leads notice:", e.message);
     }
 
-    return NextResponse.json({ success: true, count: leads.length, leads });
+    return NextResponse.json({ success: true, count: leads.length, leads }, { headers: CORS_HEADERS });
   } catch (err) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({ error: err.message }, { status: 500, headers: CORS_HEADERS });
   }
 }
 
@@ -50,7 +60,7 @@ export async function POST(req) {
     const { name, phoneEmail, siteId } = body;
 
     if (!name || !phoneEmail) {
-      return NextResponse.json({ error: "Name and Phone/Email are required" }, { status: 400 });
+      return NextResponse.json({ error: "Name and Phone/Email are required" }, { status: 400, headers: CORS_HEADERS });
     }
 
     const leadRecord = {
@@ -83,9 +93,9 @@ export async function POST(req) {
 
     console.log("New Chatbot Lead Captured & Pushed to Supabase:", leadRecord);
 
-    return NextResponse.json({ success: true, leadRecord });
+    return NextResponse.json({ success: true, leadRecord }, { headers: CORS_HEADERS });
   } catch (err) {
     console.error("Lead Capture API Error:", err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({ error: err.message }, { status: 500, headers: CORS_HEADERS });
   }
 }

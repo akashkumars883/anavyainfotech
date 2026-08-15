@@ -3,6 +3,16 @@ import { getSiteKnowledge, extractRelevantContext } from "@/lib/aiVectorStore";
 
 export const dynamic = "force-dynamic";
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
+
+export async function OPTIONS() {
+  return NextResponse.json({}, { headers: CORS_HEADERS });
+}
+
 export async function POST(req) {
   try {
     const body = await req.json();
@@ -11,7 +21,7 @@ export async function POST(req) {
     if (!siteId || !message) {
       return NextResponse.json(
         { error: "siteId and message are required" },
-        { status: 400 }
+        { status: 400, headers: CORS_HEADERS }
       );
     }
 
@@ -102,11 +112,14 @@ SALES REPRESENTATIVE INSTRUCTIONS:
           const data = await groqRes.json();
           const aiMessage = data.choices?.[0]?.message?.content;
           if (aiMessage) {
-            return NextResponse.json({
-              response: aiMessage,
-              siteUrl: knowledge.siteUrl,
-              provider: "Groq (Llama-3.3-70B)",
-            });
+            return NextResponse.json(
+              {
+                response: aiMessage,
+                siteUrl: knowledge.siteUrl,
+                provider: "Groq (Llama-3.3-70B)",
+              },
+              { headers: CORS_HEADERS }
+            );
           }
         } else {
           console.warn("Groq API warning:", await groqRes.text());
@@ -141,11 +154,14 @@ SALES REPRESENTATIVE INSTRUCTIONS:
           const data = await geminiRes.json();
           const aiMessage = data.candidates?.[0]?.content?.parts?.[0]?.text;
           if (aiMessage) {
-            return NextResponse.json({
-              response: aiMessage,
-              siteUrl: knowledge.siteUrl,
-              provider: "Google Gemini 1.5",
-            });
+            return NextResponse.json(
+              {
+                response: aiMessage,
+                siteUrl: knowledge.siteUrl,
+                provider: "Google Gemini 1.5",
+              },
+              { headers: CORS_HEADERS }
+            );
           }
         }
       } catch (e) {
@@ -161,15 +177,18 @@ SALES REPRESENTATIVE INSTRUCTIONS:
       fallbackAnswer += `I am trained strictly on ${siteName} services. Please ask any question about our offerings!`;
     }
 
-    return NextResponse.json({
-      response: fallbackAnswer,
-      siteUrl: knowledge.siteUrl,
-    });
+    return NextResponse.json(
+      {
+        response: fallbackAnswer,
+        siteUrl: knowledge.siteUrl,
+      },
+      { headers: CORS_HEADERS }
+    );
   } catch (err) {
     console.error("Widget Chat API Error:", err);
     return NextResponse.json(
       { error: err.message || "Failed to process chat query" },
-      { status: 500 }
+      { status: 500, headers: CORS_HEADERS }
     );
   }
 }

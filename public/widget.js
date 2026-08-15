@@ -9,7 +9,7 @@
   })();
   var siteId = scriptTag ? (scriptTag.getAttribute('data-site-id') || 'demo') : 'demo';
   var apiBase = scriptTag ? (scriptTag.src ? new URL(scriptTag.src).origin : '') : '';
-  if (!apiBase || apiBase.includes('file://')) {
+  if (!apiBase || apiBase.includes('file://') || (window.location.hostname === 'localhost' && apiBase.includes('anavyainfotech.com'))) {
     apiBase = window.location.origin;
   }
 
