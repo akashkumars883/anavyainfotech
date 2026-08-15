@@ -252,6 +252,13 @@ export default function RootLayout({ children }) {
             </>
           );
         })()}
+
+        {/* Anavya AI Embeddable Chatbot Widget */}
+        <Script
+          src="/widget.js"
+          data-site-id="anavya-infotech"
+          strategy="lazyOnload"
+        />
         {/* Organization Schema */}
         <script
           type="application/ld+json"
