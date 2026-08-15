@@ -1,4 +1,5 @@
 import Pricing from "@/components/Pricing";
+import SeoPricing from "@/components/SeoPricing";
 import FaqSection from "@/components/FaqSection";
 import ContactForm from "@/components/ContactForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -68,6 +69,8 @@ export default function PricingPage() {
       </section>
 
       <Pricing />
+
+      <SeoPricing />
 
       <FaqSection
         title="Frequently Asked Pricing Questions"

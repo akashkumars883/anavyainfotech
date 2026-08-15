@@ -1,5 +1,6 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
+import SeoPricing from "@/components/SeoPricing";
 import Link from "next/link";
 import { Zap, ArrowRight, LineChart, ShieldCheck, Globe, CheckCircle2 } from "lucide-react";
 
@@ -169,6 +170,9 @@ export default function SeoServicePage() {
         </div>
       </section>
 
+      
+      {/* SEO Retainer Pricing Plans */}
+      <SeoPricing />
       
       {/* FAQ Section */}
       <FaqSection
