@@ -135,51 +135,47 @@ export default function Services() {
                   />
                 </div>
 
-                {/* Initial Bottom Gradient Overlay to make title readable */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-500 md:group-hover:opacity-0 pointer-events-none" />
+                {/* Minimal Light Bottom Gradient Overlay Only (Just enough so text is readable) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-stone-950/25 to-transparent pointer-events-none" />
 
-                {/* Top Header (Category Icon & Quick Direct Link) */}
-                <div className="relative z-10 p-5 flex items-center justify-between pointer-events-auto">
-                  <div className="h-10 w-10 rounded-md bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-sm flex items-center justify-center text-blue-700">
+                {/* Top Header Bar (Category Icon & Direct Arrow Link) - Always Top Z-Index & Mobile Clickable */}
+                <div className="relative z-30 p-5 flex items-center justify-between pointer-events-auto">
+                  <div className="h-10 w-10 rounded-md bg-white border border-stone-200 shadow-sm flex items-center justify-center text-blue-700">
                     <Icon className="h-5 w-5" />
                   </div>
                   <Link
                     href={category.href}
-                    className="h-9 w-9 rounded-md bg-white/90 backdrop-blur-md border border-stone-200/80 flex items-center justify-center text-stone-900 hover:text-white hover:bg-blue-700 transition-all shadow-sm"
+                    className="h-9 w-9 rounded-md bg-white border border-stone-200 flex items-center justify-center text-stone-900 hover:text-white hover:bg-blue-700 transition-all shadow-sm cursor-pointer active:scale-95"
                     aria-label={`View ${category.title} service page`}
                   >
                     <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </div>
 
-                {/* Default Card Bottom Title (Visible on Desktop when not hovered) */}
-                <div className="relative z-10 p-5 hidden md:block transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-4">
-                  <h3 className="text-2xl font-bold text-white tracking-tight drop-shadow-sm">
-                    {category.title}
-                  </h3>
-                </div>
-
-                {/* Details Overlay Panel: Subtle light dark gradient, 100% visible & clickable on mobile, hover-revealed on desktop */}
-                <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/85 via-black/55 to-black/15 p-5 flex flex-col justify-end text-left transition-all duration-500 opacity-100 translate-y-0 md:opacity-0 md:group-hover:opacity-100 md:translate-y-4 md:group-hover:translate-y-0">
-                  <div className="space-y-2 mb-3">
-                    <div className="flex items-center justify-between border-b border-white/20 pb-2">
-                      <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                {/* Bottom Card Interactive Area: 100% Tapable on Mobile & Hover Interactive on Desktop */}
+                <div className="relative z-30 p-5 space-y-3 pointer-events-auto">
+                  {/* Category Title & Explore Button */}
+                  <div className="flex items-center justify-between border-b border-white/20 pb-2">
+                    <Link href={category.href} className="hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl font-bold text-white tracking-tight drop-shadow-sm">
                         {category.title}
                       </h3>
-                      <Link
-                        href={category.href}
-                        className="text-blue-400 hover:text-white text-xs font-bold flex items-center gap-1 bg-white/10 px-2 py-0.5 rounded"
-                      >
-                        Explore <ArrowUpRight className="h-3.5 w-3.5" />
-                      </Link>
-                    </div>
-                    <p className="text-xs text-stone-200 font-light leading-relaxed line-clamp-2 sm:line-clamp-none">
-                      {category.description}
-                    </p>
+                    </Link>
+                    <Link
+                      href={category.href}
+                      className="text-white bg-blue-700 hover:bg-blue-800 text-[11px] font-bold px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition-colors active:scale-95"
+                    >
+                      Explore <ArrowUpRight className="h-3 w-3" />
+                    </Link>
                   </div>
 
-                  {/* Core Offerings Pill Links: Directly clickable on mobile & desktop */}
-                  <div className="space-y-1.5">
+                  {/* Description */}
+                  <p className="text-xs text-stone-200 font-light leading-relaxed drop-shadow-sm">
+                    {category.description}
+                  </p>
+
+                  {/* Core Offerings Pill Links: High contrast, 100% Clickable on Mobile & Desktop */}
+                  <div className="pt-1 space-y-1.5">
                     <div className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">
                       Core Offerings
                     </div>
@@ -188,7 +184,7 @@ export default function Services() {
                         <li key={i}>
                           <Link
                             href={item.href}
-                            className="inline-block px-2.5 py-1 rounded-md text-[11px] font-medium bg-black/40 hover:bg-blue-600 border border-white/25 text-white transition-all duration-200 cursor-pointer active:scale-95 shadow-sm"
+                            className="inline-block px-2.5 py-1.5 rounded-md text-[11px] font-semibold bg-stone-900/90 text-white border border-stone-700/80 hover:bg-blue-700 hover:border-blue-600 transition-all duration-200 cursor-pointer active:scale-95 shadow-sm"
                           >
                             {item.name}
                           </Link>
