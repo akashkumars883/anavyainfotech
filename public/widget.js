@@ -157,46 +157,10 @@
       font-size: 10px;
       color: #a1a1aa;
       padding: 6px;
-    .lead-form-overlay {
-      position: absolute;
-      inset: 0;
       background: #ffffff;
-      z-index: 10;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 16px;
+      border-top: 1px solid #f4f4f5;
     }
-    .lead-form-overlay.hidden { display: none; }
-    .lead-title { font-size: 16px; font-weight: 700; color: #09090b; }
-    .lead-desc { font-size: 12px; color: #71717a; line-height: 1.5; }
-    .lead-input-group { display: flex; flex-direction: column; gap: 6px; text-align: left; }
-    .lead-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #3f3f46; letter-spacing: 0.05em; }
-    .lead-input {
-      width: 100%;
-      border: 1px solid #e4e4e7;
-      border-radius: 6px;
-      padding: 10px 12px;
-      font-size: 13px;
-      outline: none;
-      background: #f4f4f5;
-      color: #18181b;
-    }
-    .lead-input:focus { border-color: #1d4ed8; background: #ffffff; }
-    .lead-submit-btn {
-      background: #1d4ed8;
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      padding: 12px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 8px;
-      transition: background-color 0.2s;
-    }
-    .lead-submit-btn:hover { background: #1e40af; }
+    .widget-branding a { color: #1d4ed8; text-decoration: none; font-weight: 600; }
   `;
   shadow.appendChild(style);
 
@@ -205,7 +169,7 @@
   bubble.className = 'widget-bubble';
   bubble.innerHTML = `<svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>`;
 
-  // Chat Window HTML with Lead Form Overlay
+  // Chat Window HTML
   var windowEl = document.createElement('div');
   windowEl.className = 'widget-window';
   windowEl.innerHTML = `
@@ -216,27 +180,9 @@
       </div>
       <button class="widget-close">&times;</button>
     </div>
-
-    <!-- Pre-Chat Lead Capture Overlay Form -->
-    <div class="lead-form-overlay" id="widget-lead-overlay">
-      <div class="lead-title">Welcome to Anavya AI</div>
-      <div class="lead-desc">Please enter your name and phone number to start chatting with our AI assistant.</div>
-      <div class="lead-input-group">
-        <label class="lead-label">Your Name *</label>
-        <input type="text" id="lead-name-input" class="lead-input" placeholder="e.g. Rahul Sharma" required />
-      </div>
-      <div class="lead-input-group">
-        <label class="lead-label">Phone / Email *</label>
-        <input type="text" id="lead-contact-input" class="lead-input" placeholder="e.g. +91 9876543210" required />
-      </div>
-      <button type="button" class="lead-submit-btn" id="lead-submit-btn">Start Conversation &rarr;</button>
-    </div>
-
-    <div class="widget-messages" id="widget-messages-list">
-      <div class="message bot">Hello! Ask me anything about our services, SEO pricing, or custom software offerings!</div>
-    </div>
+    <div class="widget-messages" id="widget-messages-list"></div>
     <div class="widget-footer">
-      <input type="text" class="widget-input" id="widget-input-field" placeholder="Ask about pricing, services..." />
+      <input type="text" class="widget-input" id="widget-input-field" placeholder="Type your message..." />
       <button class="widget-send" id="widget-send-btn">
         <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
       </button>
@@ -247,63 +193,17 @@
   shadow.appendChild(bubble);
   shadow.appendChild(windowEl);
 
-  // Check if visitor has already submitted lead
-  var savedLead = null;
+  // Lead Conversational State Management
+  var savedLeadName = "";
+  var savedLeadContact = "";
   try {
-    savedLead = localStorage.getItem('__anavya_ai_lead_' + siteId);
+    savedLeadName = localStorage.getItem('__anavya_lead_name_' + siteId) || "";
+    savedLeadContact = localStorage.getItem('__anavya_lead_contact_' + siteId) || "";
   } catch (e) {}
 
-  var leadOverlay = shadow.getElementById('widget-lead-overlay');
-  var nameInput = shadow.getElementById('lead-name-input');
-  var contactInput = shadow.getElementById('lead-contact-input');
-  var leadBtn = shadow.getElementById('lead-submit-btn');
-
-  if (savedLead) {
-    leadOverlay.classList.add('hidden');
-  }
-
-  leadBtn.addEventListener('click', function() {
-    var nameVal = nameInput.value.trim();
-    var contactVal = contactInput.value.trim();
-
-    if (!nameVal || !contactVal) {
-      alert('Please enter your Name and Phone/Email to continue.');
-      return;
-    }
-
-    // Save lead in localStorage
-    try {
-      localStorage.setItem('__anavya_ai_lead_' + siteId, JSON.stringify({ name: nameVal, contact: contactVal }));
-    } catch (e) {}
-
-    // Hide overlay
-    leadOverlay.classList.add('hidden');
-    shadow.getElementById('widget-input-field').focus();
-
-    // Send Lead to API
-    fetch(apiBase + '/api/widget/lead', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: nameVal, phoneEmail: contactVal, siteId: siteId }),
-    }).catch(function() {});
-  });
-
-  // Interactivity Logic
-  var isOpen = false;
-  bubble.addEventListener('click', function() {
-    isOpen = !isOpen;
-    if (isOpen) {
-      windowEl.classList.add('open');
-      shadow.getElementById('widget-input-field').focus();
-    } else {
-      windowEl.classList.remove('open');
-    }
-  });
-
-  shadow.querySelector('.widget-close').addEventListener('click', function() {
-    isOpen = false;
-    windowEl.classList.remove('open');
-  });
+  // Lead State: 'ASK_NAME', 'ASK_CONTACT', 'COMPLETED'
+  var leadState = (savedLeadName && savedLeadContact) ? 'COMPLETED' : 'ASK_NAME';
+  var tempLeadName = savedLeadName;
 
   var messagesList = shadow.getElementById('widget-messages-list');
   var inputField = shadow.getElementById('widget-input-field');
@@ -326,6 +226,34 @@
     messagesList.scrollTop = messagesList.scrollHeight;
   }
 
+  // Initial Bot Welcome Message based on lead state
+  function initGreeting() {
+    messagesList.innerHTML = '';
+    if (leadState === 'ASK_NAME') {
+      appendMessage('Hello! Welcome to Anavya AI. May I please know your name before we get started?', 'bot');
+    } else {
+      appendMessage('Hello ' + (savedLeadName ? savedLeadName : '') + '! How can I assist you regarding our services, SEO pricing, or software development today?', 'bot');
+    }
+  }
+  initGreeting();
+
+  // Interactivity Logic
+  var isOpen = false;
+  bubble.addEventListener('click', function() {
+    isOpen = !isOpen;
+    if (isOpen) {
+      windowEl.classList.add('open');
+      shadow.getElementById('widget-input-field').focus();
+    } else {
+      windowEl.classList.remove('open');
+    }
+  });
+
+  shadow.querySelector('.widget-close').addEventListener('click', function() {
+    isOpen = false;
+    windowEl.classList.remove('open');
+  });
+
   function handleSend() {
     var query = inputField.value.trim();
     if (!query) return;
@@ -333,7 +261,42 @@
     appendMessage(query, 'user');
     inputField.value = '';
 
-    // Typing indicator placeholder
+    // CONVERSATIONAL LEAD STEP 1: Ask for Name
+    if (leadState === 'ASK_NAME') {
+      tempLeadName = query;
+      try {
+        localStorage.setItem('__anavya_lead_name_' + siteId, tempLeadName);
+      } catch (e) {}
+      leadState = 'ASK_CONTACT';
+
+      setTimeout(function() {
+        appendMessage('Nice to meet you, ' + tempLeadName + '! What is your phone number or email address so we can connect with you?', 'bot');
+      }, 400);
+      return;
+    }
+
+    // CONVERSATIONAL LEAD STEP 2: Ask for Contact (Phone/Email)
+    if (leadState === 'ASK_CONTACT') {
+      var contactVal = query;
+      try {
+        localStorage.setItem('__anavya_lead_contact_' + siteId, contactVal);
+      } catch (e) {}
+      leadState = 'COMPLETED';
+
+      // Save lead to backend API
+      fetch(apiBase + '/api/widget/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: tempLeadName, phoneEmail: contactVal, siteId: siteId }),
+      }).catch(function() {});
+
+      setTimeout(function() {
+        appendMessage('Thank you, ' + tempLeadName + '! I have noted your contact details. How can I help you today with our services, SEO pricing, or custom software?', 'bot');
+      }, 400);
+      return;
+    }
+
+    // CONVERSATIONAL LEAD COMPLETED: Perform Normal AI Chat Query
     var botMsg = document.createElement('div');
     botMsg.className = 'message bot';
     botMsg.innerHTML = 'Thinking...';
