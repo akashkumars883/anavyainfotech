@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, Calendar, User, ArrowUpRight, Tag } from "lucide-react";
 import { getBlogPosts, getBlogPostBySlug } from "@/lib/blogData";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SafeImage from "@/components/SafeImage";
 
 export const dynamicParams = true;
 export const revalidate = 60;
@@ -179,7 +180,7 @@ export default async function BlogPostPage({ params }) {
         {/* Article Cover Image Banner */}
         {post.image && (
           <div className="relative w-full h-[320px] sm:h-[420px] rounded-md overflow-hidden bg-stone-100 border border-stone-200 shadow-sm">
-            <img
+            <SafeImage
               src={post.image}
               alt={post.imageAlt || post.title}
               className="w-full h-full object-cover rounded-md"

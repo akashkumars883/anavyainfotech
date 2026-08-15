@@ -4,6 +4,7 @@ import { getBlogPosts } from "@/lib/blogData";
 import BlogFilterClient from "@/components/BlogFilterClient";
 import FaqSection from "@/components/FaqSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SafeImage from "@/components/SafeImage";
 
 export const revalidate = 60;
 
@@ -126,14 +127,10 @@ export default async function BlogListingPage() {
 
               {/* Featured Image Container */}
               <div className="lg:col-span-5 h-64 sm:h-72 w-full rounded-md overflow-hidden bg-stone-100 border border-stone-200/80 relative pointer-events-none">
-                <img
+                <SafeImage
                   src={featuredPost.image}
                   alt={featuredPost.imageAlt || featuredPost.title}
                   className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500 ease-out"
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = "/development-illustration.jpg";
-                  }}
                 />
               </div>
             </div>

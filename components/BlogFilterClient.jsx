@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Search, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import { BLOG_POSTS as FALLBACK_POSTS } from "@/lib/blogData";
+import SafeImage from "@/components/SafeImage";
 
 const POSTS_PER_PAGE = 6;
 
@@ -92,14 +93,10 @@ export default function BlogFilterClient({ initialPosts }) {
 
                 {/* Full Card Image Container */}
                 <div className="absolute inset-0 w-full h-full bg-white flex items-center justify-center overflow-hidden p-4 pb-20">
-                  <img
+                  <SafeImage
                     src={post.image}
                     alt={post.title}
                     className="h-full w-full object-cover rounded-md opacity-95 transition-transform duration-700 group-hover:scale-105"
-                    onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = "/development-illustration.jpg";
-                    }}
                   />
                 </div>
 

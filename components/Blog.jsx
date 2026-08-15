@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getBlogPosts } from "@/lib/blogData";
+import SafeImage from "@/components/SafeImage";
 
 export default async function Blog() {
   const allPosts = await getBlogPosts();
@@ -68,16 +69,12 @@ export default async function Blog() {
                 aria-label={`Read article: ${post.title}`}
               />
 
-              {/* Full Card Image Container (Preserving original post image) */}
+              {/* Full Card Image Container */}
               <div className="absolute inset-0 w-full h-full bg-white flex items-center justify-center overflow-hidden p-4 pb-20">
-                <img
+                <SafeImage
                   src={post.image}
                   alt={post.title}
                   className="h-full w-full object-cover rounded-md opacity-95 transition-transform duration-700 group-hover:scale-105"
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = "/development-illustration.jpg";
-                  }}
                 />
               </div>
 
