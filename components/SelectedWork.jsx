@@ -83,92 +83,59 @@ export default function SelectedWork() {
           </h2>
         </div>
 
-        {/* 3 Equal Cards Row Grid Layout matching What We Do card style */}
+        {/* 3 Equal Cards Row Grid Layout matching Services card style */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <Link
+            <div
               key={index}
-              href={project.href}
-              className="group relative h-[440px] w-full overflow-hidden rounded-md border border-stone-100 hover:shadow-2xl transition-all duration-300 flex flex-col justify-end cursor-pointer block"
+              className="group relative h-[380px] sm:h-[400px] w-full rounded-md border border-stone-200 bg-white overflow-hidden text-left cursor-pointer transition-all duration-300 hover:border-blue-700/60 flex flex-col justify-between"
             >
-              {/* Background Image */}
-              <img
-                src={project.image}
-                alt={project.imageAlt}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              {/* Full Card Link: Tapping anywhere on mobile or desktop opens the case study */}
+              <Link
+                href={project.href}
+                className="absolute inset-0 z-30"
+                aria-label={`View ${project.title} case study`}
               />
 
-              {/* Initial Gradient Overlay (Bottom dark fade to read title) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-all duration-500 md:group-hover:opacity-0" />
+              {/* Full Card Image Container (Preserving original project images) */}
+              <div className="absolute inset-0 w-full h-full bg-white flex items-center justify-center overflow-hidden p-4 pb-20">
+                <img
+                  src={project.image}
+                  alt={project.imageAlt}
+                  className="h-full w-full object-cover rounded-md opacity-95 transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
 
-              {/* Initial Title Display (Visible by default on mobile, fades on hover on desktop) */}
-              <div className="absolute bottom-6 left-6 right-6 z-10 text-white flex items-end justify-between transition-all duration-500 md:group-hover:opacity-0 md:group-hover:translate-y-4">
-                <div className="space-y-1 max-w-[85%] text-left">
-                  <span className="text-[10px] font-bold text-blue-500 uppercase tracking-widest block">
-                    {project.category}
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight">{project.title}</h3>
-                </div>
-                <span className="h-9 w-9 rounded-md bg-white/20 backdrop-blur-sm border border-white/25 flex items-center justify-center shrink-0">
-                  <ArrowUpRight className="h-4.5 w-4.5" />
+              {/* Top Header Bar (Category Badge & Direct Arrow Button) */}
+              <div className="relative z-10 p-5 flex items-center justify-between pointer-events-none">
+                <span className="px-2.5 py-1 rounded-md bg-stone-50 border border-stone-200 text-[10px] font-bold text-blue-700 uppercase tracking-wider shadow-2xs">
+                  {project.category}
                 </span>
+                <div className="h-9 w-9 rounded-md bg-stone-50 border border-stone-200 flex items-center justify-center text-stone-700 group-hover:bg-blue-700 group-hover:text-white transition-all">
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
               </div>
 
-              {/* Hover Overlay Content (Slides up/fades in on hover on desktop, or active on touch) */}
-              <div className="absolute inset-0 bg-black/75 backdrop-blur-[3px] opacity-0 md:group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 space-y-4 translate-y-8 md:group-hover:translate-y-0 z-20 text-left">
-                {/* Header inside Hover State */}
-                <div className="flex items-center justify-between text-white border-b border-white/10 pb-2">
-                  <div>
-                    <span className="text-[10px] font-bold text-blue-500 uppercase tracking-widest block">
-                      {project.category}
-                    </span>
-                    <h3 className="text-xl font-bold tracking-tight">{project.title}</h3>
+              {/* Bottom Card Title & Desktop Hover Description (Black Text) */}
+              <div className="relative z-10 p-5 bg-white/95 backdrop-blur-sm border-t border-stone-100 flex flex-col justify-end text-left pointer-events-none transition-all duration-300">
+                {/* Heading - Always pinned at bottom in black text */}
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight group-hover:text-blue-700 transition-colors">
+                    {project.title}
+                  </h3>
+                  <ArrowUpRight className="h-5 w-5 text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
+                </div>
+
+                {/* Description: Expands smoothly on hover in clean dark text */}
+                <div className="grid grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+                  <div className="overflow-hidden">
+                    <p className="pt-2 text-xs sm:text-sm text-stone-600 font-light leading-relaxed opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {project.description}
+                    </p>
                   </div>
-                  <span className="h-8 w-8 rounded-md bg-white text-black flex items-center justify-center shrink-0">
-                    <ArrowUpRight className="h-4 w-4" />
-                  </span>
-                </div>
-
-                {/* Description */}
-                <p className="text-xs text-zinc-300 font-light leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack Pills */}
-                <ul className="flex flex-wrap gap-1.5 pt-1">
-                  {project.tags.map((tag, i) => (
-                    <li key={i}>
-                      <span className="inline-flex px-2.5 py-0.5 rounded-md text-[10px] font-semibold bg-white/10 border border-white/10 text-zinc-200">
-                        {tag}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Action Links */}
-                <div className="flex items-center gap-2 pt-1 z-30">
-                  <span className="flex-1 inline-flex items-center justify-center gap-1 px-4 py-2.5 rounded-md bg-white text-black hover:bg-zinc-200 transition-colors text-xs font-bold">
-                    <span>Case Study</span>
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
-
-                  {project.websiteUrl && (
-                    <object className="inline-block">
-                      <a
-                        href={project.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center justify-center gap-1 px-4 py-2.5 rounded-md bg-blue-700 text-white hover:bg-blue-600 transition-colors text-xs font-bold shrink-0"
-                      >
-                        <span>Visit Site</span>
-                        <ArrowUpRight className="h-3.5 w-3.5" />
-                      </a>
-                    </object>
-                  )}
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
