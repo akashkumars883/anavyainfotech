@@ -3,14 +3,30 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import dynamic from "next/dynamic";
+
+const DotLottieReact = dynamic(
+  () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
+  { ssr: false }
+);
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-white flex items-center justify-center px-6 pt-28 pb-16 md:pt-24 md:pb-16 text-left">
       {/* Soft Pure Ambient Deep Blue Radial Blur Background (NO GRID) */}
       <div className="absolute inset-0 bg-white pointer-events-none overflow-hidden">
-        <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-700/10 blur-[150px] rounded-full pointer-events-none" />
+        <motion.div
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-700/10 blur-[150px] rounded-full pointer-events-none"
+        />
       </div>
 
       <div className="relative z-10 max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -23,7 +39,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-stone-50 border border-stone-200 text-xs font-bold text-stone-700 uppercase tracking-wider shadow-sm"
           >
-            <Sparkles className="h-3.5 w-3.5 text-blue-700" />
+            <Sparkles className="h-3.5 w-3.5 text-blue-700 animate-pulse" />
             <span>Premier Custom Software &amp; AI Agency</span>
           </motion.div>
 
@@ -70,8 +86,8 @@ export default function Hero() {
 
           {/* Trust Badges */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-wrap items-center gap-6 pt-4 text-xs font-medium text-stone-500 border-t border-stone-100"
           >
@@ -87,14 +103,26 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Column: Lottie Animation Showcase Card */}
+        {/* Right Column: Floating Lottie Animation Showcase */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: [0, -12, 0],
+          }}
+          transition={{
+            opacity: { duration: 0.8, delay: 0.3 },
+            scale: { duration: 0.8, delay: 0.3 },
+            y: {
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
           className="lg:col-span-5 relative"
         >
-          <div className="relative w-full h-[380px] sm:h-[460px] rounded-md bg-stone-50/80 border border-stone-200/80 p-4 sm:p-6 shadow-sm overflow-hidden flex items-center justify-center group hover:border-stone-300 transition-all">
+          <div className="relative w-full h-[380px] sm:h-[460px] p-4 sm:p-6 flex items-center justify-center overflow-hidden">
             <div className="w-full h-full flex items-center justify-center">
               <DotLottieReact
                 src="https://lottie.host/2d4d4b91-732d-4e9a-9c8e-4f9aee2707ab/dfLNNvenUq.lottie"
