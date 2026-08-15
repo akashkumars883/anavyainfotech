@@ -1,152 +1,187 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Inbox, Mail, Calendar, Search, DollarSign, Tag } from "lucide-react";
+import { Users, Phone, Mail, Search, RefreshCw, Calendar, Globe, Download, ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
-export default function AdminLeadsPage() {
-  const [inquiries, setInquiries] = useState([]);
+export default function AdminLeadsDashboardPage() {
+  const [leads, setLeads] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [search, setSearch] = useState("");
+
+  const fetchLeads = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/widget/lead");
+      const data = await res.json();
+      if (data.leads) {
+        setLeads(data.leads);
+      }
+    } catch (err) {
+      console.error("Failed to fetch leads:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    async function loadInquiries() {
-      try {
-        const res = await fetch("/api/contact");
-        const data = await res.json();
-        setInquiries(data.inquiries || []);
-      } catch (err) {
-        console.error("Error fetching admin leads:", err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadInquiries();
+    fetchLeads();
   }, []);
 
-  const filteredInquiries = inquiries.filter((item) =>
-    (item.name + " " + item.email + " " + item.service + " " + item.message)
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase())
+  const filteredLeads = leads.filter(
+    (l) =>
+      l.name?.toLowerCase().includes(search.toLowerCase()) ||
+      l.phone_email?.toLowerCase().includes(search.toLowerCase()) ||
+      l.site_id?.toLowerCase().includes(search.toLowerCase())
   );
 
+  const exportCSV = () => {
+    if (leads.length === 0) return;
+    const headers = "Name,Contact (Phone/Email),Site ID,Date\n";
+    const rows = leads
+      .map((l) => `"${l.name}","${l.phone_email}","${l.site_id}","${l.created_at}"`)
+      .join("\n");
+    const blob = new Blob([headers + rows], { type: "text/csv" });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `anavya-chatbot-leads-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+  };
+
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-            Client Inquiries &amp; Leads
-          </h1>
-          <p className="text-xs sm:text-sm text-stone-500 font-light">
-            Review incoming project proposals and messages submitted through your website contact forms.
-          </p>
-        </div>
-      </div>
+    <main className="min-h-screen bg-stone-50 pt-24 md:pt-20 pb-16 text-left selection:bg-blue-600/20 selection:text-blue-950">
+      {/* Header Banner */}
+      <section className="py-10 bg-white border-b border-stone-200 px-6">
+        <div className="max-w-7xl mx-auto space-y-4">
+          <Breadcrumbs items={[{ label: "Widget Builder", href: "/widget-builder" }, { label: "Admin Leads", href: "/admin/leads" }]} />
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 border border-blue-200 text-[11px] font-bold uppercase tracking-wider text-blue-700">
+                <Users className="h-3.5 w-3.5" /> AI Chatbot Lead Management
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
+                Captured Customer Leads ({leads.length})
+              </h1>
+            </div>
 
-      {/* Search Bar */}
-      <div className="flex items-center gap-4 bg-white p-4 rounded-md border border-stone-200">
-        <div className="relative flex-1">
-          <Search className="h-4 w-4 text-stone-400 absolute left-3.5 top-3" />
-          <input
-            type="text"
-            placeholder="Search inquiries by client name, email, or service..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-stone-50 border border-stone-200 rounded-md pl-10 pr-4 py-2 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-black transition-colors"
-          />
-        </div>
-        <div className="text-xs font-semibold text-stone-500 shrink-0">
-          Total Leads: <span className="text-stone-900 font-bold">{filteredInquiries.length}</span>
-        </div>
-      </div>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={fetchLeads}
+                disabled={loading}
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-white border border-stone-200 text-stone-700 hover:bg-stone-50 text-xs font-bold transition-all shadow-xs cursor-pointer"
+              >
+                <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+                <span>Refresh Leads</span>
+              </button>
 
-      {/* Inquiries Table / Grid */}
-      <div className="bg-white border border-stone-200 rounded-md overflow-hidden">
-        {loading ? (
-          <div className="text-center py-10 text-xs text-stone-500">Loading incoming inquiries...</div>
-        ) : filteredInquiries.length === 0 ? (
-          <div className="text-center py-10 space-y-3">
-            <Inbox className="h-8 w-8 text-stone-300 mx-auto" />
-            <p className="text-sm text-stone-600 font-light">No client inquiries found yet.</p>
+              <button
+                onClick={exportCSV}
+                disabled={leads.length === 0}
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-stone-900 text-white hover:bg-black text-xs font-bold transition-all shadow-xs cursor-pointer"
+              >
+                <Download className="h-4 w-4" />
+                <span>Export CSV</span>
+              </button>
+            </div>
           </div>
-        ) : (
-          <div className="divide-y divide-stone-100">
-            {filteredInquiries.map((item, idx) => {
-              const formattedDate = item.created_at
-                ? new Date(item.created_at).toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })
-                : "Recent";
+        </div>
+      </section>
 
-              return (
-                <div key={item.id || idx} className="p-6 hover:bg-stone-50/60 transition-colors space-y-4">
-                  {/* Row Top */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-100 pb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="h-9 w-9 rounded-md bg-blue-700/10 border border-blue-700/20 flex items-center justify-center text-blue-700 font-bold text-sm">
-                        {item.name ? item.name.charAt(0).toUpperCase() : "U"}
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-bold text-stone-900">{item.name || "Anonymous Client"}</h3>
-                        <a
-                          href={`mailto:${item.email}`}
-                          className="text-xs font-medium text-stone-500 hover:text-blue-700 transition-colors flex items-center gap-1"
-                        >
-                          <Mail className="h-3 w-3" /> {item.email}
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3 text-xs text-stone-400 shrink-0">
-                      <span className="inline-flex items-center gap-1 font-light">
-                        <Calendar className="h-3 w-3" /> {formattedDate}
-                      </span>
-                      <span className="px-2.5 py-0.5 rounded-md bg-green-100 text-green-800 font-bold text-[10px]">
-                        {item.status || "New Lead"}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Metadata Chips */}
-                  <div className="flex flex-wrap items-center gap-2">
-                    {item.service && (
-                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-stone-100 text-stone-700 font-semibold text-[11px]">
-                        <Tag className="h-3 w-3 text-stone-400" /> {item.service}
-                      </span>
-                    )}
-                    {item.budget && (
-                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-stone-100 text-stone-700 font-semibold text-[11px]">
-                        <DollarSign className="h-3 w-3 text-stone-400" /> Budget: {item.budget}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Message Body */}
-                  {item.message && (
-                    <div className="p-4 rounded-md bg-stone-50 border border-stone-100 text-xs text-stone-700 font-light leading-relaxed">
-                      "{item.message}"
-                    </div>
-                  )}
-
-                  {/* Quick Action */}
-                  <div className="flex justify-end pt-1">
-                    <a
-                      href={`mailto:${item.email}?subject=Regarding Your Project Inquiry - Anavya Infotech`}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-black text-white text-xs font-semibold hover:bg-zinc-800 transition-colors"
-                    >
-                      <Mail className="h-3.5 w-3.5" /> Reply to Client Email
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
+      {/* Main Content Area */}
+      <section className="max-w-7xl mx-auto px-6 pt-8 space-y-6">
+        
+        {/* Search Bar & Stats */}
+        <div className="bg-white border border-stone-200 rounded-md p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
+          <div className="relative w-full sm:w-80">
+            <Search className="h-4 w-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              placeholder="Search leads by name, phone, or site..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-9 pr-4 py-2 rounded-md bg-stone-50 border border-stone-200 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-blue-700 focus:bg-white"
+            />
           </div>
-        )}
-      </div>
-    </div>
+
+          <div className="text-xs font-medium text-stone-500">
+            Showing <strong className="text-stone-900 font-bold">{filteredLeads.length}</strong> of <strong className="text-stone-900 font-bold">{leads.length}</strong> total leads
+          </div>
+        </div>
+
+        {/* Leads Table */}
+        <div className="bg-white border border-stone-200 rounded-md overflow-hidden shadow-xs">
+          {loading ? (
+            <div className="p-12 text-center text-xs text-stone-500 flex items-center justify-center gap-2">
+              <RefreshCw className="h-4 w-4 animate-spin text-blue-700" />
+              <span>Loading captured leads...</span>
+            </div>
+          ) : filteredLeads.length === 0 ? (
+            <div className="p-12 text-center space-y-3">
+              <Users className="h-10 w-10 text-stone-300 mx-auto" />
+              <div className="text-sm font-bold text-stone-700">No Chatbot Leads Found</div>
+              <p className="text-xs text-stone-500 font-light max-w-sm mx-auto">
+                When visitors interact with the AI chatbot and share their contact details, their leads will automatically appear here.
+              </p>
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-stone-50 border-b border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+                    <th className="py-3.5 px-6">Customer Name</th>
+                    <th className="py-3.5 px-6">Contact (Phone / Email)</th>
+                    <th className="py-3.5 px-6">Site ID</th>
+                    <th className="py-3.5 px-6">Date &amp; Time</th>
+                    <th className="py-3.5 px-6 text-right">Quick Action</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-stone-100 text-xs">
+                  {filteredLeads.map((lead, idx) => (
+                    <tr key={lead.id || idx} className="hover:bg-stone-50/80 transition-colors">
+                      <td className="py-4 px-6 font-bold text-stone-900">
+                        {lead.name}
+                      </td>
+                      <td className="py-4 px-6 text-blue-700 font-semibold">
+                        {lead.phone_email}
+                      </td>
+                      <td className="py-4 px-6">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-stone-100 border border-stone-200 font-mono text-[11px] text-stone-700">
+                          <Globe className="h-3 w-3 text-stone-400" /> {lead.site_id}
+                        </span>
+                      </td>
+                      <td className="py-4 px-6 text-stone-500 font-light">
+                        <div className="flex items-center gap-1.5">
+                          <Calendar className="h-3.5 w-3.5 text-stone-400" />
+                          <span>{new Date(lead.created_at).toLocaleString("en-IN")}</span>
+                        </div>
+                      </td>
+                      <td className="py-4 px-6 text-right">
+                        {lead.phone_email?.includes("@") ? (
+                          <a
+                            href={`mailto:${lead.phone_email}`}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded bg-blue-50 text-blue-700 hover:bg-blue-100 text-[11px] font-bold transition-colors"
+                          >
+                            <Mail className="h-3 w-3" /> Email Customer
+                          </a>
+                        ) : (
+                          <a
+                            href={`tel:${lead.phone_email}`}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded bg-green-50 text-green-700 hover:bg-green-100 text-[11px] font-bold transition-colors"
+                          >
+                            <Phone className="h-3 w-3" /> Call Customer
+                          </a>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
   );
 }

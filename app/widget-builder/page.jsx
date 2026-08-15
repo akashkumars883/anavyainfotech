@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Bot, Globe, Copy, Check, Sparkles, Code2, ArrowRight, RefreshCw, AlertCircle } from "lucide-react";
+import { Bot, Globe, Copy, Check, Sparkles, Code2, ArrowRight, RefreshCw, AlertCircle, Users } from "lucide-react";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function StandaloneWidgetBuilderPage() {
@@ -69,12 +70,23 @@ export default function StandaloneWidgetBuilderPage() {
       <section className="py-10 bg-white border-b border-stone-200 px-6">
         <div className="max-w-7xl mx-auto space-y-4">
           <Breadcrumbs items={[{ label: "Widget Builder", href: "/widget-builder" }]} />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-blue-700">
-            <Bot className="h-3.5 w-3.5" /> Anavya AI Widget Engine
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-blue-700">
+                <Bot className="h-3.5 w-3.5" /> Anavya AI Widget Engine
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 tracking-tight">
+                Generate 1-Line AI Chatbot for Any Website
+              </h1>
+            </div>
+            <Link
+              href="/admin/leads"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-stone-900 text-white hover:bg-black text-xs font-bold transition-all shadow-md shrink-0"
+            >
+              <Users className="h-4 w-4 text-blue-400" />
+              <span>View Captured Leads</span>
+            </Link>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 tracking-tight">
-            Generate 1-Line AI Chatbot for Any Website
-          </h1>
           <p className="text-sm sm:text-base text-stone-600 font-light max-w-2xl">
             Enter your client&apos;s website URL below to crawl site data, train a context-restricted AI assistant, and copy the 1-line script tag.
           </p>
