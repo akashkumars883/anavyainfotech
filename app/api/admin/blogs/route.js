@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { supabaseAdmin } from "@/lib/supabase";
 
 // Helper function to notify all subscribers about a newly published blog
@@ -95,8 +95,9 @@ export async function POST(request) {
       notifiedCount = await notifySubscribers(newBlog.title, newBlog.slug, newBlog.excerpt);
     }
 
-    // Revalidate Next.js cache so the live site updates immediately
+    // Revalidate Next.js cache so the live site updates immediately in real-time
     try {
+      revalidateTag("blogs");
       revalidatePath("/blog");
       if (newBlog.slug) revalidatePath(`/blog/${newBlog.slug}`);
       revalidatePath("/");
@@ -149,8 +150,9 @@ export async function PUT(request) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    // Revalidate Next.js cache so the live site updates immediately
+    // Revalidate Next.js cache so the live site updates immediately in real-time
     try {
+      revalidateTag("blogs");
       revalidatePath("/blog");
       if (slug) revalidatePath(`/blog/${slug}`);
       if (data?.[0]?.slug) revalidatePath(`/blog/${data[0].slug}`);
@@ -192,8 +194,9 @@ export async function DELETE(request) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    // Revalidate Next.js cache so the live site updates immediately
+    // Revalidate Next.js cache so the live site updates immediately in real-time
     try {
+      revalidateTag("blogs");
       revalidatePath("/blog");
       revalidatePath("/");
       revalidatePath("/sitemap.js");

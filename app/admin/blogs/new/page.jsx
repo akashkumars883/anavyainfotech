@@ -3,12 +3,15 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Save, Image as ImageIcon, Upload, X, Check } from "lucide-react";
+import { ArrowLeft, Save, Image as ImageIcon, Upload, X, Check, Zap } from "lucide-react";
 import RichTextEditor from "@/components/RichTextEditor";
+import { compressImageToWebP, compressHtmlContentImages } from "@/lib/imageOptimizer";
 
 export default function NewBlogPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [compressing, setCompressing] = useState(false);
+  const [compressionStats, setCompressionStats] = useState(null);
   const [uploadType, setUploadType] = useState("file"); // "file" or "url"
 
   const [formData, setFormData] = useState({
@@ -36,21 +39,31 @@ export default function NewBlogPage() {
     }));
   };
 
-  // Convert computer file upload to Data URL / Base64
-  const handleFileUpload = (e) => {
+  // Convert computer file upload to compressed WebP format
+  const handleFileUpload = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    if (file.size > 5 * 1024 * 1024) {
-      alert("Image size should be less than 5MB.");
+    if (file.size > 15 * 1024 * 1024) {
+      alert("Image file size should be less than 15MB.");
       return;
     }
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setFormData((prev) => ({ ...prev, image_url: event.target.result }));
-    };
-    reader.readAsDataURL(file);
+    setCompressing(true);
+    try {
+      const result = await compressImageToWebP(file, { maxWidth: 1200, quality: 0.8 });
+      setFormData((prev) => ({ ...prev, image_url: result.dataUrl }));
+      setCompressionStats({
+        originalKb: result.originalSizeKb,
+        compressedKb: result.compressedSizeKb,
+        savings: result.savingsPercent,
+      });
+    } catch (err) {
+      console.error("Error compressing image to WebP:", err);
+      alert("Failed to compress image file.");
+    } finally {
+      setCompressing(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -62,10 +75,31 @@ export default function NewBlogPage() {
 
     setLoading(true);
     try {
+      // 1. Automatically compress any embedded Base64 images inside the article content body to WebP
+      let sanitizedContent = formData.content || "";
+      if (sanitizedContent.includes("data:image/")) {
+        sanitizedContent = await compressHtmlContentImages(sanitizedContent);
+      }
+
+      const payload = {
+        ...formData,
+        content: sanitizedContent,
+      };
+
+      // 2. Pre-flight payload size check (< 3.5MB to stay safely under Vercel 4.5MB serverless limit)
+      const payloadString = JSON.stringify(payload);
+      const payloadMb = (payloadString.length * 0.75) / (1024 * 1024);
+
+      if (payloadMb > 3.5) {
+        alert(`Article payload is too large (${payloadMb.toFixed(1)}MB). Vercel limits requests to 4.5MB. Please remove large inline image attachments from the body.`);
+        setLoading(false);
+        return;
+      }
+
       const res = await fetch("/api/admin/blogs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: payloadString,
       });
 
       const result = await res.json();
@@ -209,16 +243,17 @@ export default function NewBlogPage() {
                 type="file"
                 accept="image/*"
                 onChange={handleFileUpload}
-                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                disabled={compressing}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer disabled:cursor-not-allowed"
               />
               <div className="space-y-2 pointer-events-none">
                 <div className="h-10 w-10 rounded-md bg-white border border-stone-200 flex items-center justify-center mx-auto text-stone-600">
-                  <Upload className="h-5 w-5 text-blue-700" />
+                  {compressing ? <Zap className="h-5 w-5 text-blue-700 animate-pulse" /> : <Upload className="h-5 w-5 text-blue-700" />}
                 </div>
                 <div className="text-xs font-semibold text-stone-800">
-                  Click to select image file from computer or drag &amp; drop
+                  {compressing ? "Compressing & converting to WebP..." : "Click to select image file from computer or drag & drop"}
                 </div>
-                <p className="text-[10px] text-stone-400">PNG, JPG, WEBP or GIF up to 5MB</p>
+                <p className="text-[10px] text-stone-400">Auto-converts PNG, JPG, GIF to compressed WebP (Max 15MB)</p>
               </div>
             </div>
           ) : (
@@ -234,13 +269,23 @@ export default function NewBlogPage() {
           {/* Image Preview Window */}
           {formData.image_url && (
             <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs font-semibold text-stone-600">
-                <span className="flex items-center gap-1 text-green-600">
-                  <Check className="h-3.5 w-3.5" /> Cover Image Ready
-                </span>
+              <div className="flex flex-wrap items-center justify-between text-xs font-semibold text-stone-600 gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="flex items-center gap-1 text-green-600">
+                    <Check className="h-3.5 w-3.5" /> Cover Image Ready
+                  </span>
+                  {compressionStats && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-blue-50 border border-blue-200 text-blue-700 font-bold text-[10px] uppercase tracking-wider">
+                      <Zap className="h-3 w-3 text-blue-600" /> WebP Compressed ({compressionStats.compressedKb}KB, Saved {compressionStats.savings}%)
+                    </span>
+                  )}
+                </div>
                 <button
                   type="button"
-                  onClick={() => setFormData({ ...formData, image_url: "" })}
+                  onClick={() => {
+                    setFormData({ ...formData, image_url: "" });
+                    setCompressionStats(null);
+                  }}
                   className="text-red-500 hover:text-red-700 text-[11px] font-bold flex items-center gap-1"
                 >
                   <X className="h-3.5 w-3.5" /> Remove Image
