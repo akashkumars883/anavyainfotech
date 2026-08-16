@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Shield, ArrowRight } from "lucide-react";
+import { Shield, ArrowRight, Mail, Phone, Globe } from "lucide-react";
 import FaqSection from "@/components/FaqSection";
 
 export const metadata = {
   title: "Privacy Policy – Anavya Infotech",
   description:
-    "Privacy Policy for Anavya Infotech. Learn how we collect, protect, and handle your data when using our software development services and website.",
+    "Privacy Policy for Anavya Infotech. Learn how we collect, protect, and handle your data when using our website and services.",
   alternates: {
     canonical: "https://anavyainfotech.com/privacy-policy",
   },
@@ -15,32 +15,32 @@ const PRIVACY_FAQS = [
   {
     question: "What personal data does Anavya Infotech collect?",
     answer:
-      "We collect basic contact information (name, business email, phone, company name) provided voluntarily via contact forms, as well as technical device logs (IP address, browser type) to optimize performance.",
+      "We collect contact details (name, email, phone, company name), project requirements, communication records, technical usage data, and marketing preferences.",
   },
   {
-    question: "Do you sell or share client data with third-party advertisers?",
+    question: "Do you sell personal information to third parties?",
     answer:
-      "No. We never sell, trade, or rent client data to third parties. Data is shared exclusively with necessary infrastructure partners (AWS, Vercel, payment gateways) under strict confidentiality agreements.",
+      "No. We do not sell your personal information. We only share it with essential operational service providers under strict confidentiality obligations.",
   },
   {
-    question: "How do you protect proprietary source code and client NDAs?",
+    question: "How do you protect client data and project details?",
     answer:
-      "We enforce mutual Non-Disclosure Agreements (NDAs), encrypted git repository permissions, two-factor authentication, and strict access controls to ensure your project IP remains confidential.",
+      "We implement technical and organizational security measures to protect your information against unauthorized access, alteration, or disclosure.",
   },
   {
-    question: "How can I request deletion or correction of my personal data?",
+    question: "How can I request access or deletion of my data?",
     answer:
-      "Simply email info@anavyainfotech.com with your data request. Our compliance team will process and confirm your data deletion within 5 business days.",
+      "You can contact us via our contact information to access, correct, or request deletion of your personal data subject to legal requirements.",
   },
   {
-    question: "Do you use cookies on Anavya Infotech website?",
+    question: "Can I opt out of marketing communications?",
     answer:
-      "We use essential and basic performance analytics cookies to understand page load speeds and visitor flow. You can disable non-essential cookies via your browser settings at any time.",
+      "Yes, you can opt out at any time by using the unsubscribe link in our communications or by contacting us directly.",
   },
 ];
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = "August 13, 2026";
+  const lastUpdated = "August 15, 2026";
 
   return (
     <main className="min-h-screen bg-white pt-24 md:pt-20 text-left">
@@ -62,15 +62,16 @@ export default function PrivacyPolicyPage() {
       {/* Content Body */}
       <section className="py-10 bg-white px-6">
         <div className="max-w-4xl mx-auto space-y-10 text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+
           <section className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              1. Introduction & Overview
+              1. Introduction
             </h2>
             <p>
-              Anavya Infotech (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal and technical information when you visit our website (anavyainfotech.com), use our software applications, or engage our custom software engineering, digital automation, and SEO services.
+              Anavya Infotech (&quot;Anavya Infotech,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is a digital marketing agency and website development company based in India, serving clients across India, Delhi NCR, Noida, the USA, and globally. We are committed to protecting the privacy of visitors to our website, <a href="https://www.anavyainfotech.com" className="text-blue-700 hover:underline">www.anavyainfotech.com</a> (the &quot;Website&quot;), and of our clients and prospective clients.
             </p>
             <p>
-              By accessing or using our services, you signify your agreement to the terms described in this policy. If you disagree with any portion of this Privacy Policy, please discontinue use of our site and services.
+              This Privacy Policy explains what information we collect, how we use and protect it, and what choices you have regarding your information. By using our Website or submitting information to us, you agree to the practices described in this Privacy Policy.
             </p>
           </section>
 
@@ -78,98 +79,155 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
               2. Information We Collect
             </h2>
-            <p>We may collect information about you in several ways depending on how you interact with our website and services:</p>
-            
-            <div className="space-y-3 pl-4 border-l-2 border-blue-700/30">
-              <h3 className="text-base font-semibold text-stone-800">A. Personal Information You Provide</h3>
-              <p className="text-stone-600 text-sm">
-                When you fill out contact forms, request a consultation, subscribe to our newsletter, or contract our custom software services, we may collect:
-              </p>
-              <ul className="list-disc list-inside text-sm text-stone-600 space-y-1">
-                <li>Full name and business title</li>
-                <li>Email address and telephone number</li>
-                <li>Company name, website URL, and office address</li>
-                <li>Project requirements, scope notes, and technical documentation</li>
-                <li>Billing address and payment details</li>
-              </ul>
-            </div>
-
-            <div className="space-y-3 pl-4 border-l-2 border-blue-700/30">
-              <h3 className="text-base font-semibold text-stone-800">B. Automatically Collected Technical Data</h3>
-              <p className="text-stone-600 text-sm">
-                When you navigate our website, our servers automatically log technical metadata, including:
-              </p>
-              <ul className="list-disc list-inside text-sm text-stone-600 space-y-1">
-                <li>IP address and approximate geographic location</li>
-                <li>Browser type, operating system, and device details</li>
-                <li>Referral sources, pages viewed, time spent, and clickstream data</li>
-                <li>Performance metrics and error diagnostic telemetry</li>
-              </ul>
-            </div>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              3. How We Use Your Information
-            </h2>
-            <p>We utilize the collected information strictly for legitimate business purposes, including:</p>
-            <ul className="list-disc list-inside space-y-2 text-stone-600">
-              <li>Providing, operating, and maintaining our software development & consulting services.</li>
-              <li>Processing contact inquiries, providing project quotes, and onboarding new clients.</li>
-              <li>Communicating project updates, technical reports, and invoice notifications.</li>
-              <li>Improving website speed, security posture, and user experience.</li>
-              <li>Complying with legal obligations, fraud prevention, and enforcing terms.</li>
+            <p>We may collect the following categories of information:</p>
+            <ul className="list-disc list-inside space-y-2 text-stone-600 pl-2">
+              <li>
+                <strong className="font-semibold text-stone-800">Contact and Identification Information:</strong> such as your full name, email address, phone number, and company name, when you fill out our project request form or contact us.
+              </li>
+              <li>
+                <strong className="font-semibold text-stone-800">Project and Business Information:</strong> details you voluntarily share about your business, project requirements, service area of interest (e.g., Web Apps &amp; Development, AI Integrations &amp; Automation, Growth &amp; Technical SEO, Corporate Design &amp; Branding), and project descriptions.
+              </li>
+              <li>
+                <strong className="font-semibold text-stone-800">Communication Data:</strong> records of correspondence when you email, call, or message us, including the content of those communications.
+              </li>
+              <li>
+                <strong className="font-semibold text-stone-800">Technical and Usage Data:</strong> such as your IP address, browser type, device information, pages visited, referring URLs, and browsing behavior on our Website, typically collected automatically through cookies and similar technologies.
+              </li>
+              <li>
+                <strong className="font-semibold text-stone-800">Marketing Preferences:</strong> information related to your subscription to our newsletter or updates, if you opt in.
+              </li>
             </ul>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              4. Cookies and Tracking Technologies
+              3. How We Collect Information
+            </h2>
+            <ul className="list-disc list-inside space-y-1 text-stone-600 pl-2">
+              <li>Directly from you, when you complete our &quot;Start a Project&quot; or contact forms, subscribe to updates, or communicate with us via email or phone.</li>
+              <li>Automatically, through cookies, analytics tools, and similar tracking technologies when you browse our Website.</li>
+              <li>From third parties, such as analytics or advertising partners, where applicable and permitted by law.</li>
+            </ul>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+              4. How We Use Your Information
+            </h2>
+            <p>We use the information we collect for purposes including:</p>
+            <ul className="list-disc list-inside space-y-1 text-stone-600 pl-2">
+              <li>Responding to your inquiries and project requests.</li>
+              <li>Preparing proposals, quotes, and providing our services (web development, AI integrations, SEO, branding, and related services).</li>
+              <li>Communicating with you about your project, our services, and updates.</li>
+              <li>Improving our Website, services, and user experience.</li>
+              <li>Sending marketing communications, where you have opted in, and which you may unsubscribe from at any time.</li>
+              <li>Complying with legal obligations and protecting our legal rights.</li>
+              <li>Analyzing Website traffic and performance for internal business purposes.</li>
+            </ul>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+              5. Cookies and Tracking Technologies
             </h2>
             <p>
-              We use essential and analytical cookies to analyze site traffic, optimize performance, and personalize experience. You can choose to disable cookies through your web browser settings, though doing so may affect certain website functionalities.
+              Our Website may use cookies and similar tracking technologies (such as web beacons and analytics scripts) to enhance your browsing experience, understand how visitors use our Website, and support our marketing efforts. You can control or disable cookies through your browser settings; however, doing so may affect certain features of the Website.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              5. Data Protection and Confidentiality
+              6. Sharing of Information
+            </h2>
+            <p>We do not sell your personal information. We may share your information with:</p>
+            <ul className="list-disc list-inside space-y-1 text-stone-600 pl-2">
+              <li>Service providers who assist us with hosting, analytics, email delivery, CRM management, and similar operational functions, under confidentiality obligations.</li>
+              <li>Professional advisors, such as legal or accounting consultants, where necessary.</li>
+              <li>Authorities, where required by law, regulation, legal process, or governmental request.</li>
+              <li>Business transfers, in connection with a merger, acquisition, or sale of assets, where your information may be transferred as part of that transaction.</li>
+            </ul>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+              7. Data Retention
             </h2>
             <p>
-              We enforce strict Non-Disclosure Agreements (NDAs) across our engineering team and implement industry-standard encryption (SSL/TLS), secure cloud architecture, and access controls to guard your confidential code and business information against unauthorized access, loss, or disclosure.
+              We retain personal information for as long as necessary to fulfill the purposes described in this Privacy Policy, including to provide our services, maintain business records, and comply with legal, accounting, or reporting obligations. When information is no longer needed, we take reasonable steps to delete or anonymize it.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              6. Third-Party Service Providers
+              8. Data Security
             </h2>
             <p>
-              We do not sell, trade, or rent your personal data to third parties. We may share necessary data with trusted infrastructure providers (e.g., Vercel, AWS, analytics tools, payment processors) solely for delivering our services under strict confidentiality agreements.
+              We implement reasonable technical and organizational measures designed to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is completely secure, and we cannot guarantee absolute security.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              7. Your Rights & Data Requests
+              9. Your Rights and Choices
+            </h2>
+            <p>Depending on your location, you may have rights regarding your personal information, including the right to:</p>
+            <ul className="list-disc list-inside space-y-1 text-stone-600 pl-2">
+              <li>Access the personal information we hold about you.</li>
+              <li>Request correction of inaccurate or incomplete information.</li>
+              <li>Request deletion of your personal information, subject to legal or contractual retention requirements.</li>
+              <li>Opt out of marketing communications at any time by using the unsubscribe link or contacting us directly.</li>
+              <li>Object to or restrict certain processing of your information, where applicable law permits.</li>
+            </ul>
+            <p>
+              To exercise any of these rights, please contact us using the details provided in Section 12 below.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+              10. Third-Party Links
             </h2>
             <p>
-              Depending on your location, you have the right to access, rectify, delete, or restrict the processing of your personal data. To exercise any of these rights, please submit a request to our compliance team.
+              Our Website may contain links to third-party websites or services, including social media platforms and partner sites. We are not responsible for the privacy practices or content of those third-party sites. We encourage you to review their privacy policies before providing any personal information.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+              11. International Data Transfers
+            </h2>
+            <p>
+              As we serve clients in India, the USA, and other regions, your information may be transferred to, stored, and processed in countries other than your own, which may have different data protection laws. Where such transfers occur, we take reasonable steps to ensure your information is treated securely and in accordance with this Privacy Policy.
             </p>
           </section>
 
           <section className="space-y-4 border-t border-stone-100 pt-8">
             <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              8. Contacting Us Regarding Privacy
+              12. Contact Us
             </h2>
             <p>
-              If you have questions or concerns about this Privacy Policy, please reach out to us at:
+              If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:
             </p>
-            <div className="p-6 rounded-md bg-stone-50 border border-stone-100 space-y-2">
-              <p className="text-stone-900 font-bold">Anavya Infotech</p>
-              <p className="text-stone-600 text-sm">Email: info@anavyainfotech.com</p>
-              <p className="text-stone-600 text-sm">Website: https://anavyainfotech.com/contact</p>
+            <div className="p-6 rounded-md bg-stone-50 border border-stone-100 space-y-3 text-stone-700 text-sm">
+              <p className="font-bold text-stone-900 text-base">Anavya Infotech</p>
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-blue-700" />
+                <span>Phone: <a href="tel:+916201231875" className="font-medium text-stone-900 hover:underline">+91 6201231875</a> | <a href="tel:+917508657479" className="font-medium text-stone-900 hover:underline">+91 7508657479</a></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="h-4 w-4 text-blue-700" />
+                <span>Website: <a href="https://www.anavyainfotech.com" target="_blank" rel="noopener noreferrer" className="font-medium text-stone-900 hover:underline">www.anavyainfotech.com</a></span>
+              </div>
             </div>
+          </section>
+
+          <section className="space-y-4 border-t border-stone-100 pt-8">
+            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+              13. Changes to This Privacy Policy
+            </h2>
+            <p>
+              We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or other factors. The updated version will be posted on this page with a revised &quot;Effective Date.&quot; We encourage you to review this Privacy Policy periodically.
+            </p>
           </section>
 
           {/* FAQ Section */}
@@ -181,14 +239,14 @@ export default function PrivacyPolicyPage() {
 
           {/* Bottom Navigation Links */}
           <div className="pt-8 border-t border-stone-100 flex items-center justify-between">
-            <Link 
-              href="/terms-of-service" 
+            <Link
+              href="/terms-of-service"
               className="text-xs font-semibold text-stone-700 hover:text-black flex items-center gap-1.5 transition-colors"
             >
               Read Terms of Service <ArrowRight className="h-3.5 w-3.5 text-blue-700" />
             </Link>
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-xs text-stone-500 hover:text-stone-900 transition-colors"
             >
               Back to Home
@@ -199,3 +257,4 @@ export default function PrivacyPolicyPage() {
     </main>
   );
 }
+

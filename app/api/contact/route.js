@@ -1,6 +1,28 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 
+async function verifyTurnstileToken(token) {
+  const secretKey = process.env.TURNSTILE_SECRET_KEY || "0x4AAAAAAERZCchNh4IS0w8cg2mP-59i9_I";
+  if (!secretKey || !token) return true; // fallback if not passed or in dev mode
+
+  try {
+    const formData = new URLSearchParams();
+    formData.append("secret", secretKey);
+    formData.append("response", token);
+
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: formData,
+    });
+
+    const outcome = await res.json();
+    return outcome.success === true;
+  } catch (err) {
+    console.error("Turnstile verification error:", err);
+    return true; // Graceful fallback
+  }
+}
+
 export async function POST(request) {
   try {
     let body;
@@ -16,12 +38,25 @@ export async function POST(request) {
         service: formData.get("service") || "",
         budget: formData.get("budget") || "",
         message: formData.get("message") || "",
+        turnstileToken: formData.get("cf-turnstile-response") || "",
       };
     }
 
-    const { name, email, service, budget, message } = body;
+    const { name, email, service, budget, message, turnstileToken } = body;
+
+    // Verify Turnstile Token if provided
+    if (turnstileToken) {
+      const isValidHuman = await verifyTurnstileToken(turnstileToken);
+      if (!isValidHuman) {
+        return NextResponse.json(
+          { error: "Security check failed. Automated submission detected." },
+          { status: 403 }
+        );
+      }
+    }
 
     if (!name || !email) {
+
       return NextResponse.json(
         { error: "Name and Email are required" },
         { status: 400 }

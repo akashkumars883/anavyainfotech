@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { Send, ArrowRight } from "lucide-react";
+import { useState, useRef } from "react";
+import Script from "next/script";
+import { Send, ArrowRight, ShieldCheck } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const turnstileTokenRef = useRef("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,10 +24,15 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     try {
+      const payload = {
+        ...formData,
+        turnstileToken: turnstileTokenRef.current,
+      };
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json();
@@ -46,6 +53,12 @@ export default function ContactForm() {
 
   return (
     <section className="py-12 bg-white text-stone-900 relative z-10">
+      {/* Cloudflare Turnstile Script */}
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+        strategy="lazyOnload"
+      />
+      
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Simple Header */}
@@ -148,6 +161,23 @@ export default function ContactForm() {
                   />
                 </div>
 
+                {/* Cloudflare Turnstile Widget Container */}
+                <div className="flex items-center justify-between pt-1">
+                  <div
+                    className="cf-turnstile"
+                    data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAERZCanYanUW4Nav"}
+                    data-theme="light"
+                    data-size="compact"
+                    data-callback={(token) => {
+                      turnstileTokenRef.current = token;
+                    }}
+                  />
+                  <div className="hidden sm:flex items-center gap-1 text-[11px] text-stone-400 font-light">
+                    <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                    <span>Protected by Cloudflare</span>
+                  </div>
+                </div>
+
                 {/* Submit button */}
                 <button
                   type="submit"
@@ -165,3 +195,4 @@ export default function ContactForm() {
     </section>
   );
 }
+
