@@ -162,7 +162,7 @@ export default function ContactForm() {
                 </div>
 
                 {/* Cloudflare Turnstile Widget Container */}
-                <div className="pt-2">
+                <div className="flex items-center justify-between pt-2">
                   <div
                     className="cf-turnstile"
                     data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAERZCanYanUW4Nav"}
@@ -172,11 +172,12 @@ export default function ContactForm() {
                       turnstileTokenRef.current = token;
                     }}
                   />
-                  <div className="flex items-center gap-1.5 text-[11px] text-stone-500 font-light pt-1.5">
+                  <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-stone-500 font-light">
                     <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-                    <span>Protected by Cloudflare Turnstile</span>
+                    <span>Protected by Cloudflare</span>
                   </div>
                 </div>
+
 
 
                 {/* Submit button */}
