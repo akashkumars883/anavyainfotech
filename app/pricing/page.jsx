@@ -10,12 +10,12 @@ export const metadata = {
   keywords:
     "website development cost India, SEO package pricing, web design pricing Delhi NCR, custom software development cost, SEO reseller pricing",
   alternates: {
-    canonical: "https://anavyainfotech.com/pricing",
+    canonical: "https://www.anavyainfotech.com/pricing",
   },
   openGraph: {
     title: "Transparent Pricing & Investment Packages | Anavya Infotech",
     description: "Transparent fixed-price software development and SEO growth packages.",
-    url: "https://anavyainfotech.com/pricing",
+    url: "https://www.anavyainfotech.com/pricing",
     type: "website",
   },
 };

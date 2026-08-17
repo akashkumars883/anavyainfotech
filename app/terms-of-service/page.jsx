@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Terms and Conditions governing access to and use of Anavya Infotech website and custom software, web development, AI, CRM, SEO, and design services.",
   alternates: {
-    canonical: "https://anavyainfotech.com/terms-of-service",
+    canonical: "https://www.anavyainfotech.com/terms-of-service",
   },
 };
 

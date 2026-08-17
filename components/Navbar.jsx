@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -117,10 +118,15 @@ export default function Navbar() {
           {/* Left Brand Logo & Menu Items */}
           <div className="flex items-center gap-10">
             {/* Logo */}
-            <Link href="/" className="flex items-center group">
-              <span className="font-bold text-xl text-stone-900 tracking-tight">
-                Anavya <span className="text-blue-700">Infotech</span>
-              </span>
+            <Link href="/" className="flex items-center group" aria-label="Anavya Infotech Home">
+              <Image
+                src="/logo.png"
+                alt="Anavya Infotech Logo"
+                width={54}
+                height={54}
+                className="h-11 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
             </Link>
 
             {/* Desktop Menu Items */}
@@ -278,10 +284,14 @@ export default function Navbar() {
           {/* Header inside open menu (with logo and close button) */}
           <div className="flex items-center justify-between py-5 px-6 border-b border-stone-100">
             {/* Logo */}
-            <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center">
-              <span className="font-bold text-xl text-stone-900 tracking-tight">
-                Anavya <span className="text-blue-700">Infotech</span>
-              </span>
+            <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center" aria-label="Anavya Infotech Home">
+              <Image
+                src="/logo.png"
+                alt="Anavya Infotech Logo"
+                width={48}
+                height={48}
+                className="h-10 w-auto object-contain"
+              />
             </Link>
             
             {/* Close button */}

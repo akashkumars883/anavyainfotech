@@ -51,7 +51,7 @@ export default function SelectedWork() {
         "name": proj.title,
         "genre": proj.category,
         "description": proj.description,
-        "image": `https://anavyainfotech.com${proj.image}`
+        "image": `https://www.anavyainfotech.com${proj.image}`
       }
     }))
   };

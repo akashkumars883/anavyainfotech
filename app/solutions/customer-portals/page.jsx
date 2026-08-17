@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "customer portal development, client self-service dashboard, custom account portal, branded customer web portal, support ticket system",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Custom Customer Portal Development","description":"Secure customer-facing portals with account dashboards, support ticket management, document access, subscription controls, and real-time notification systems.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Custom Customer Portal Development","description":"Secure customer-facing portals with account dashboards, support ticket management, document access, subscription controls, and real-time notification systems.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const CUSTOMER_PORTALS_FAQS = [

@@ -18,7 +18,7 @@ export default async function Blog() {
       "headline": post.title,
       "datePublished": post.date,
       "description": post.description,
-      "image": `https://anavyainfotech.com${post.image}`,
+      "image": `https://www.anavyainfotech.com${post.image}`,
       "author": {
         "@type": "Organization",
         "name": "Anavya Infotech"

@@ -10,13 +10,13 @@ export const metadata = {
   keywords:
     "ecommerce development company, ecommerce development services, ecommerce development company in India, headless ecommerce development, website development company in India, ecommerce SEO agency",
   alternates: {
-    canonical: "https://anavyainfotech.com/services/ecommerce",
+    canonical: "https://www.anavyainfotech.com/services/ecommerce",
   },
   openGraph: {
     title: "E-Commerce Development Company in India | Headless E-Commerce Services",
     description:
       "Build high-speed, sub-second headless e-commerce storefronts with an elite ecommerce development company in India.",
-    url: "https://anavyainfotech.com/services/ecommerce",
+    url: "https://www.anavyainfotech.com/services/ecommerce",
     type: "website",
   },
 };
@@ -54,7 +54,7 @@ export default function EcommerceServicePage() {
     "provider": {
       "@type": "ProfessionalService",
       "name": "Anavya Infotech",
-      "url": "https://anavyainfotech.com"
+      "url": "https://www.anavyainfotech.com"
     },
     "areaServed": ["India", "United States", "Global"]
   };

@@ -8,7 +8,7 @@
 
 - **Legal Entity**: Anavya Infotech
 - **Headquarters**: India (Serving clients in North America, Europe, Asia-Pacific, and Australia)
-- **Primary Domain**: https://anavyainfotech.com
+- **Primary Domain**: https://www.anavyainfotech.com
 - **Contact Email**: info@anavyainfotech.com
 - **Mobile / WhatsApp**: +91 6201231875 / +91 7508657479
 
@@ -37,30 +37,30 @@
 ## 3. Service Matrices & Deliverables
 
 ### A. Business Website Development
-- **URL**: https://anavyainfotech.com/services/business-website
+- **URL**: https://www.anavyainfotech.com/services/business-website
 - **Scopes**:
   1. *Local Presence & Local SEO*: Google Business Profile sync, neighborhood schema markup, review widgets.
   2. *India-Wide Scale*: UPI gateway integrations (Razorpay, Paytm), multi-city edge caches, regional language UI.
   3. *Global Enterprise Architecture*: Global CDN edge distribution, hreflang tag setups, multi-currency calculators.
 
 ### B. Web Application Development
-- **URL**: https://anavyainfotech.com/services/web-applications
+- **URL**: https://www.anavyainfotech.com/services/web-applications
 - **Deliverables**: Multi-role user authentication, real-time WebSocket telemetry, serverless API routers, automated CI/CD deployment pipelines.
 
 ### C. AI Chatbots & Autonomous Automation
-- **URL**: https://anavyainfotech.com/services/ai-chatbot
+- **URL**: https://www.anavyainfotech.com/services/ai-chatbot
 - **Deliverables**: Semantic documentation RAG indexing, scoped REST API function execution, human agent escalation handoffs, 24/7 ticket deflection.
 
 ### D. Custom CRM Software
-- **URL**: https://anavyainfotech.com/services/crm-custom-software
+- **URL**: https://www.anavyainfotech.com/services/crm-custom-software
 - **Deliverables**: Multi-stage lead scoring, custom WhatsApp/Email webhooks, director analytics dashboards, zero per-seat subscription overheads.
 
 ### E. Headless E-Commerce
-- **URL**: https://anavyainfotech.com/services/ecommerce
+- **URL**: https://www.anavyainfotech.com/services/ecommerce
 - **Deliverables**: Sub-second page navigations, Shopify Storefront API GraphQL integrations, customized checkout steps, dynamic product schema.
 
 ### F. Corporate Branding & Visual Identity
-- **URL**: https://anavyainfotech.com/services/branding
+- **URL**: https://www.anavyainfotech.com/services/branding
 - **Deliverables**: Figma design token libraries, vector logo variants (SVG/PNG), brand guidelines PDF, typography pairings, color specifications.
 
 ---
@@ -88,12 +88,12 @@
 
 - Email: info@anavyainfotech.com
 - Mobile / WhatsApp: +91 6201231875 / +91 7508657479
-- Website Inquiry: https://anavyainfotech.com/contact
-- Case Studies Showcase: https://anavyainfotech.com/case-studies
-- Engineering Blog: https://anavyainfotech.com/blog
-- Pricing & Estimates: https://anavyainfotech.com/pricing
-- Contact Consultation: https://anavyainfotech.com/contact
-- HTML Sitemap: https://anavyainfotech.com/sitemap
-- XML Sitemap Index: https://anavyainfotech.com/sitemap.xml
-- llms.txt Summary: https://anavyainfotech.com/llms.txt
-- llms-full.txt: https://anavyainfotech.com/llms-full.txt
+- Website Inquiry: https://www.anavyainfotech.com/contact
+- Case Studies Showcase: https://www.anavyainfotech.com/case-studies
+- Engineering Blog: https://www.anavyainfotech.com/blog
+- Pricing & Estimates: https://www.anavyainfotech.com/pricing
+- Contact Consultation: https://www.anavyainfotech.com/contact
+- HTML Sitemap: https://www.anavyainfotech.com/sitemap
+- XML Sitemap Index: https://www.anavyainfotech.com/sitemap.xml
+- llms.txt Summary: https://www.anavyainfotech.com/llms.txt
+- llms-full.txt: https://www.anavyainfotech.com/llms-full.txt

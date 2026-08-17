@@ -23,7 +23,7 @@ async function notifySubscribers(blogTitle, blogSlug, blogExcerpt) {
     }
 
     const uniqueEmails = Array.from(new Set(emails.filter(Boolean)));
-    const blogUrl = `https://anavyainfotech.com/blog/${blogSlug}`;
+    const blogUrl = `https://www.anavyainfotech.com/blog/${blogSlug}`;
 
     console.log(`[NEWSLETTER BROADCAST] Publishing '${blogTitle}' to ${uniqueEmails.length} subscribers:`, uniqueEmails);
     console.log(`[EMAIL NOTIFICATION BODY] Link: ${blogUrl} | Excerpt: ${blogExcerpt}`);

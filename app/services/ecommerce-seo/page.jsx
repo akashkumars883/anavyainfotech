@@ -10,13 +10,13 @@ export const metadata = {
   keywords:
     "ecommerce SEO agency, ecommerce SEO services, ecommerce SEO company, ecommerce SEO agency in India, best ecommerce SEO agency, ecommerce development company in India",
   alternates: {
-    canonical: "https://anavyainfotech.com/services/ecommerce-seo",
+    canonical: "https://www.anavyainfotech.com/services/ecommerce-seo",
   },
   openGraph: {
     title: "E-Commerce SEO Agency in India | Best E-Commerce SEO Services",
     description:
       "Drive organic sales, rank product category pages, and scale organic revenue with ecommerce SEO services from Anavya Infotech.",
-    url: "https://anavyainfotech.com/services/ecommerce-seo",
+    url: "https://www.anavyainfotech.com/services/ecommerce-seo",
     type: "website",
   },
 };
@@ -54,7 +54,7 @@ export default function EcommerceSeoPage() {
     "provider": {
       "@type": "ProfessionalService",
       "name": "Anavya Infotech",
-      "url": "https://anavyainfotech.com"
+      "url": "https://www.anavyainfotech.com"
     },
     "areaServed": ["India", "United States", "Global"]
   };

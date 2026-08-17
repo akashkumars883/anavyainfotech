@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Privacy Policy for Anavya Infotech. Learn how we collect, protect, and handle your data when using our website and services.",
   alternates: {
-    canonical: "https://anavyainfotech.com/privacy-policy",
+    canonical: "https://www.anavyainfotech.com/privacy-policy",
   },
 };
 

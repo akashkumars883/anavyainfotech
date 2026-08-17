@@ -223,7 +223,7 @@
         <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
       </button>
     </div>
-    <div class="widget-branding">Powered by <a href="https://anavyainfotech.com" target="_blank">Anavya AI</a></div>
+    <div class="widget-branding">Powered by <a href="https://www.anavyainfotech.com" target="_blank">Anavya AI</a></div>
   `;
 
   // Backdrop Overlay Element

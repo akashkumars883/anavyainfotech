@@ -56,7 +56,7 @@ export async function POST(req) {
     // 1. Crawl Target Homepage
     const response = await fetch(siteUrl, {
       headers: {
-        "User-Agent": "AnavyaAiBot/1.0 (+https://anavyainfotech.com)",
+        "User-Agent": "AnavyaAiBot/1.0 (+https://www.anavyainfotech.com)",
       },
       next: { revalidate: 0 },
     });
@@ -103,7 +103,7 @@ export async function POST(req) {
       const subPagePromises = subPageUrls.map(async (url) => {
         try {
           const subRes = await fetch(url, {
-            headers: { "User-Agent": "AnavyaAiBot/1.0 (+https://anavyainfotech.com)" },
+            headers: { "User-Agent": "AnavyaAiBot/1.0 (+https://www.anavyainfotech.com)" },
             next: { revalidate: 0 },
           });
           if (subRes.ok) {
@@ -128,7 +128,7 @@ export async function POST(req) {
     // 3. Save All Pages into Knowledge Base
     await saveSiteKnowledge(siteId, siteUrl, pages);
 
-    const scriptTag = `<script src="https://anavyainfotech.com/widget.js" data-site-id="${siteId}" async></script>`;
+    const scriptTag = `<script src="https://www.anavyainfotech.com/widget.js" data-site-id="${siteId}" async></script>`;
 
     return NextResponse.json({
       success: true,

@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "cloud SaaS development, multi-tenant SaaS platform, subscription billing integration, SaaS MVP engineer, white-label SaaS product development",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Cloud SaaS Platform Development","description":"Full-cycle SaaS product engineering — from multi-tenant database architecture and subscription billing to usage analytics, role-based admin dashboards, and white-labeling systems.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Cloud SaaS Platform Development","description":"Full-cycle SaaS product engineering — from multi-tenant database architecture and subscription billing to usage analytics, role-based admin dashboards, and white-labeling systems.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const CLOUD_SAAS_FAQS = [

@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "custom inventory management system, warehouse software development, stock tracking dashboard, barcode scanner integration, purchase order system",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Custom Inventory Management System Development","description":"Bespoke inventory tracking dashboards, barcode scanning integrations, automated low-stock alert systems, purchase order management modules, and warehouse logistics APIs.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Custom Inventory Management System Development","description":"Bespoke inventory tracking dashboards, barcode scanning integrations, automated low-stock alert systems, purchase order management modules, and warehouse logistics APIs.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const INVENTORY_SYSTEMS_FAQS = [

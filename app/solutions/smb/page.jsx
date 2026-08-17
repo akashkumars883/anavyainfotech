@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "SMB web development, small business website design India, medium business CRM, local business SEO, affordable web solutions",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Small & Medium Business Web Solutions","description":"Affordable, scalable, and search-optimized digital systems for small and medium businesses — including websites, CRM connections, local SEO, and automated lead capture flows.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Small & Medium Business Web Solutions","description":"Affordable, scalable, and search-optimized digital systems for small and medium businesses — including websites, CRM connections, local SEO, and automated lead capture flows.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const SMB_FAQS = [

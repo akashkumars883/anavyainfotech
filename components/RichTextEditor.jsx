@@ -50,7 +50,7 @@ export default function RichTextEditor({ value, onChange, placeholder = "Write y
     { type: "divider" },
     { label: "Quote", icon: Quote, action: () => insertFormat("\n> ", "\n", "Important Quote or Key Insight"), title: "Blockquote" },
     { label: "Code", icon: Code, action: () => insertFormat("\n```javascript\n", "\n```", "// Code snippet here"), title: "Code Block" },
-    { label: "Link", icon: LinkIcon, action: () => insertFormat("[", "](https://anavyainfotech.com)", "Clickable Link Text"), title: "Hyperlink" },
+    { label: "Link", icon: LinkIcon, action: () => insertFormat("[", "](https://www.anavyainfotech.com)", "Clickable Link Text"), title: "Hyperlink" },
     { label: "Image", icon: ImageIcon, action: () => insertFormat("![", "](https://images.unsplash.com/photo-1498050108023-c5249f4df085)", "Image Description"), title: "Embed Image" },
   ];
 

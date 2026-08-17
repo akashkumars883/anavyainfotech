@@ -11,13 +11,13 @@ export const metadata = {
   keywords:
     "SEO company, SEO agency, SEO company in India, SEO agency in India, best SEO company in India, SEO services, SEO services in India, SEO company in Delhi NCR, SEO agency in Noida, SEO reseller services, SEO reseller company, SEO reseller program, SEO reseller services in India, white label SEO services, white label SEO company",
   alternates: {
-    canonical: "https://anavyainfotech.com/services/seo",
+    canonical: "https://www.anavyainfotech.com/services/seo",
   },
   openGraph: {
     title: "Best SEO Company in India | SEO Agency & White Label SEO Reseller Services",
     description:
       "Premier SEO agency in India & Delhi NCR providing SEO services, link authority building, e-commerce SEO, and white label SEO reseller programs.",
-    url: "https://anavyainfotech.com/services/seo",
+    url: "https://www.anavyainfotech.com/services/seo",
     type: "website",
   },
 };
@@ -55,7 +55,7 @@ export default function SeoServicePage() {
     "provider": {
       "@type": "ProfessionalService",
       "name": "Anavya Infotech",
-      "url": "https://anavyainfotech.com"
+      "url": "https://www.anavyainfotech.com"
     },
     "areaServed": ["India", "Delhi NCR", "Noida", "Global"]
   };

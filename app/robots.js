@@ -13,7 +13,7 @@ export default function robots() {
         crawlDelay: 2,
       },
     ],
-    sitemap: "https://anavyainfotech.com/sitemap.xml",
-    host: "https://anavyainfotech.com",
+    sitemap: "https://www.anavyainfotech.com/sitemap.xml",
+    host: "https://www.anavyainfotech.com",
   };
 }

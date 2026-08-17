@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "real estate web development, property listing portal, MLS database integration, real estate SEO, neighborhood landing pages",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Real Estate & Property Web Solutions","description":"Custom property listing portals, geo-targeted neighborhood landing pages, dynamic MLS/property database integrations, and location SEO campaigns built for real estate agencies.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Real Estate & Property Web Solutions","description":"Custom property listing portals, geo-targeted neighborhood landing pages, dynamic MLS/property database integrations, and location SEO campaigns built for real estate agencies.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const REAL_ESTATE_FAQS = [

@@ -9,12 +9,12 @@ export const metadata = {
   keywords:
     "Anavya Infotech sitemap, site directory, custom software pages, web development services list, legal policies index, blog articles sitemap",
   alternates: {
-    canonical: "https://anavyainfotech.com/sitemap",
+    canonical: "https://www.anavyainfotech.com/sitemap",
   },
   openGraph: {
     title: "HTML Sitemap – Anavya Infotech Navigation Directory",
     description: "Complete directory of software services, industry solutions, portfolio work, blog articles, and legal pages.",
-    url: "https://anavyainfotech.com/sitemap",
+    url: "https://www.anavyainfotech.com/sitemap",
     type: "website",
   },
 };

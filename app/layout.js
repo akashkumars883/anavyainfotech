@@ -9,7 +9,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const BASE_URL = "https://anavyainfotech.com";
+const BASE_URL = "https://www.anavyainfotech.com";
 
 export const metadata = {
   metadataBase: new URL(BASE_URL),

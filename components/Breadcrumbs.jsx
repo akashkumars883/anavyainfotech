@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 
-export default function Breadcrumbs({ items = [], baseUrl = "https://anavyainfotech.com" }) {
+export default function Breadcrumbs({ items = [], baseUrl = "https://www.anavyainfotech.com" }) {
   if (!items || items.length === 0) return null;
 
   const allItems = [{ label: "Home", href: "/" }, ...items];

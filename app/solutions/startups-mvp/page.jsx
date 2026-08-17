@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "MVP development startup, rapid product development, startup SaaS web app, Next.js MVP engineer, product launch services",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Startup MVP & Product Development","description":"Rapid MVP product engineering for early-stage startups — from validated feature scopes and database blueprints to production-ready deployments with investor-grade documentation.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Startup MVP & Product Development","description":"Rapid MVP product engineering for early-stage startups — from validated feature scopes and database blueprints to production-ready deployments with investor-grade documentation.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const STARTUPS_MVP_FAQS = [

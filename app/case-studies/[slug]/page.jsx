@@ -22,12 +22,12 @@ export async function generateMetadata({ params }) {
     title: `${project.title} – Case Study`,
     description: project.summary,
     alternates: {
-      canonical: `https://anavyainfotech.com/case-studies/${project.slug}`,
+      canonical: `https://www.anavyainfotech.com/case-studies/${project.slug}`,
     },
     openGraph: {
       title: project.title,
       description: project.summary,
-      url: `https://anavyainfotech.com/case-studies/${project.slug}`,
+      url: `https://www.anavyainfotech.com/case-studies/${project.slug}`,
       type: "article",
     },
   };

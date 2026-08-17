@@ -10,13 +10,13 @@ export const metadata = {
   keywords:
     "software engineering case studies, custom CRM case study, AI chatbot case study, Next.js e-commerce case study, web application metrics",
   alternates: {
-    canonical: "https://anavyainfotech.com/case-studies",
+    canonical: "https://www.anavyainfotech.com/case-studies",
   },
   openGraph: {
     title: "Featured Software Engineering Case Studies | Anavya Infotech",
     description:
       "Featured case studies detailing challenges, engineering architectures, and ROI metrics for custom software projects.",
-    url: "https://anavyainfotech.com/case-studies",
+    url: "https://www.anavyainfotech.com/case-studies",
     type: "website",
   },
 };

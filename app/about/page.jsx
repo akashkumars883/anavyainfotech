@@ -10,13 +10,13 @@ export const metadata = {
   keywords:
     "about Anavya Infotech, custom software company India, web development agency, AI development company, SEO agency India, software engineering team",
   alternates: {
-    canonical: "https://anavyainfotech.com/about",
+    canonical: "https://www.anavyainfotech.com/about",
   },
   openGraph: {
     title: "About Anavya Infotech – Custom Software Development Company India",
     description:
       "We build scalable web apps, AI tools, custom CRM systems, and high-performance SEO strategies for businesses across India and globally.",
-    url: "https://anavyainfotech.com/about",
+    url: "https://www.anavyainfotech.com/about",
     type: "website",
   },
 };
@@ -25,7 +25,7 @@ const aboutSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "name": "About Anavya Infotech",
-  "url": "https://anavyainfotech.com/about",
+  "url": "https://www.anavyainfotech.com/about",
   "description":
     "Anavya Infotech is a custom software development and digital technology agency based in India, serving businesses globally with next-generation web apps, AI automation, and technical SEO.",
   "mainEntity": {

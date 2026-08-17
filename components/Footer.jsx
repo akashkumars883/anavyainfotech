@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, ArrowRight, Check, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -56,7 +57,14 @@ export default function Footer() {
 
           {/* Brand Info Column */}
           <div className="lg:col-span-2 space-y-5 text-left">
-            <Link href="/" className="inline-flex items-center group">
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <Image
+                src="/logo.png"
+                alt="Anavya Infotech Logo"
+                width={56}
+                height={56}
+                className="h-11 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
               <span className="font-bold text-2xl text-white tracking-tight">
                 Anavya <span className="text-blue-600">Infotech</span>
               </span>

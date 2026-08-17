@@ -10,13 +10,13 @@ export const metadata = {
   keywords:
     "digital marketing agency, digital marketing company, digital marketing agency in India, digital marketing company in India, best digital marketing agency in India, digital marketing company in Delhi NCR, digital marketing agency in Noida, performance marketing agency, performance marketing company, performance marketing agency in India, performance marketing company in Delhi NCR, social media marketing agency, social media marketing company, social media marketing services, social media marketing agency in India",
   alternates: {
-    canonical: "https://anavyainfotech.com/services/content-strategist",
+    canonical: "https://www.anavyainfotech.com/services/content-strategist",
   },
   openGraph: {
     title: "Digital Marketing Agency in India & Delhi NCR | Performance Marketing Services",
     description:
       "Full-funnel performance marketing company, social media marketing agency, and digital marketing services in India & Delhi NCR.",
-    url: "https://anavyainfotech.com/services/content-strategist",
+    url: "https://www.anavyainfotech.com/services/content-strategist",
     type: "website",
   },
 };
@@ -54,7 +54,7 @@ export default function PerformanceMarketingPage() {
     "provider": {
       "@type": "ProfessionalService",
       "name": "Anavya Infotech",
-      "url": "https://anavyainfotech.com"
+      "url": "https://www.anavyainfotech.com"
     },
     "areaServed": ["India", "Delhi NCR", "Noida", "Global"]
   };

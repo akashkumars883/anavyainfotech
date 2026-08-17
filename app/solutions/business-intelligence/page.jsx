@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "business intelligence dashboard development, custom BI tool, KPI dashboard design, data visualization web app, analytics reporting automation",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Business Intelligence & Analytics Dashboard Development","description":"Custom BI dashboards, data pipeline architectures, KPI visualization tools, and automated reporting systems that connect databases, CRMs, and third-party analytics sources.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Business Intelligence & Analytics Dashboard Development","description":"Custom BI dashboards, data pipeline architectures, KPI visualization tools, and automated reporting systems that connect databases, CRMs, and third-party analytics sources.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const BUSINESS_INTELLIGENCE_FAQS = [

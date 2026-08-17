@@ -67,8 +67,8 @@ export default function Services() {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Anavya Infotech",
-      "image": "https://anavyainfotech.com/logo.png",
-      "url": "https://anavyainfotech.com"
+      "image": "https://www.anavyainfotech.com/logo.png",
+      "url": "https://www.anavyainfotech.com"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

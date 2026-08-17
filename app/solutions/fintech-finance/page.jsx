@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "fintech web development, finance dashboard development, secure banking portal, financial compliance web platform, investment website SEO",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"FinTech & Finance Web Platform Development","description":"Enterprise-grade financial dashboards, secure transaction pipelines, compliant data visualization systems, and SEO authority content strategies for banking and finance brands.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"FinTech & Finance Web Platform Development","description":"Enterprise-grade financial dashboards, secure transaction pipelines, compliant data visualization systems, and SEO authority content strategies for banking and finance brands.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const FINTECH_FINANCE_FAQS = [

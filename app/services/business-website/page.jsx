@@ -10,13 +10,13 @@ export const metadata = {
   keywords:
     "website design company, website development company, website design company in India, website development company in India, web design services, web development services, website development company in USA, digital marketing agency in India",
   alternates: {
-    canonical: "https://anavyainfotech.com/services/business-website",
+    canonical: "https://www.anavyainfotech.com/services/business-website",
   },
   openGraph: {
     title: "Website Development Company in India & USA | Website Design Services",
     description:
       "Get SEO-optimized custom web development services from a leading website design company in India & USA.",
-    url: "https://anavyainfotech.com/services/business-website",
+    url: "https://www.anavyainfotech.com/services/business-website",
     type: "website",
   },
 };
@@ -93,7 +93,7 @@ export default function BusinessWebsitePage() {
     "provider": {
       "@type": "ProfessionalService",
       "name": "Anavya Infotech",
-      "url": "https://anavyainfotech.com"
+      "url": "https://www.anavyainfotech.com"
     },
     "areaServed": [
       "India",

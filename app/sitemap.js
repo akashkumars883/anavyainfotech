@@ -2,7 +2,7 @@ import { getBlogPosts } from "@/lib/blogData";
 import { PORTFOLIO_PROJECTS } from "@/lib/portfolioData";
 
 export default async function sitemap() {
-  const BASE_URL = "https://anavyainfotech.com";
+  const BASE_URL = "https://www.anavyainfotech.com";
   const currentDate = new Date();
 
   // Static core pages

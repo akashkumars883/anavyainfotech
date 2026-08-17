@@ -16,7 +16,7 @@ const serviceSchema = {
   "provider": {
     "@type": "ProfessionalService",
     "name": "Anavya Infotech",
-    "url": "https://anavyainfotech.com"
+    "url": "https://www.anavyainfotech.com"
   }
 };
 

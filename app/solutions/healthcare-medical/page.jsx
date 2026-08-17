@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "healthcare web development, medical website design, HIPAA compliant patient portal, doctor appointment booking system, medical SEO",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Healthcare & Medical Web Solutions","description":"Secure patient portals, appointment booking systems, telehealth integrations, and SEO-optimized medical service landing pages compliant with healthcare data privacy standards.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Healthcare & Medical Web Solutions","description":"Secure patient portals, appointment booking systems, telehealth integrations, and SEO-optimized medical service landing pages compliant with healthcare data privacy standards.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const HEALTHCARE_MEDICAL_FAQS = [

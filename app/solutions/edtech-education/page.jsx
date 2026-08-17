@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "edtech platform development, LMS portal development, online course website, student dashboard portal, education SEO strategy",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"EdTech & Education Platform Development","description":"Custom LMS portals, interactive course delivery systems, student dashboards, and SEO-optimized content marketing frameworks for education technology companies.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"EdTech & Education Platform Development","description":"Custom LMS portals, interactive course delivery systems, student dashboards, and SEO-optimized content marketing frameworks for education technology companies.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const EDTECH_EDUCATION_FAQS = [

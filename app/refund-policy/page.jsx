@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Cancellation and Refund Policy for software development projects, monthly digital service retainers, and consulting engagements with Anavya Infotech.",
   alternates: {
-    canonical: "https://anavyainfotech.com/refund-policy",
+    canonical: "https://www.anavyainfotech.com/refund-policy",
   },
 };
 

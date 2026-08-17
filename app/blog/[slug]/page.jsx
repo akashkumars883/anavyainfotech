@@ -27,12 +27,12 @@ export async function generateMetadata({ params }) {
     title: `${post.title} – Anavya Infotech Engineering Blog`,
     description: post.description,
     alternates: {
-      canonical: `https://anavyainfotech.com/blog/${post.slug}`,
+      canonical: `https://www.anavyainfotech.com/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://anavyainfotech.com/blog/${post.slug}`,
+      url: `https://www.anavyainfotech.com/blog/${post.slug}`,
       images: [post.image],
       type: "article",
     },
@@ -109,11 +109,11 @@ export default async function BlogPostPage({ params }) {
     "publisher": {
       "@type": "Organization",
       "name": "Anavya Infotech",
-      "url": "https://anavyainfotech.com",
+      "url": "https://www.anavyainfotech.com",
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://anavyainfotech.com/blog/${post.slug}`,
+      "@id": `https://www.anavyainfotech.com/blog/${post.slug}`,
     },
   };
 

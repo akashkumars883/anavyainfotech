@@ -10,13 +10,13 @@ export const metadata = {
   keywords:
     "local SEO agency, local SEO company, local SEO services, local SEO agency in India, best local SEO agency in India, SEO agency in Noida, SEO company in Delhi NCR, digital marketing agency in Noida",
   alternates: {
-    canonical: "https://anavyainfotech.com/services/local-seo",
+    canonical: "https://www.anavyainfotech.com/services/local-seo",
   },
   openGraph: {
     title: "Local SEO Agency in India | Best Local SEO Services & Company",
     description:
       "Dominate Google Maps local pack and high-intent regional searches with local SEO services from Anavya Infotech.",
-    url: "https://anavyainfotech.com/services/local-seo",
+    url: "https://www.anavyainfotech.com/services/local-seo",
     type: "website",
   },
 };
@@ -54,7 +54,7 @@ export default function LocalSeoServicePage() {
     "provider": {
       "@type": "ProfessionalService",
       "name": "Anavya Infotech",
-      "url": "https://anavyainfotech.com"
+      "url": "https://www.anavyainfotech.com"
     },
     "areaServed": ["India", "Delhi NCR", "Noida", "Global"]
   };

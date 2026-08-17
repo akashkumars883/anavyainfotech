@@ -12,12 +12,12 @@ export const metadata = {
   keywords:
     "contact software development company, hire web developer India, get SEO quote India, custom software consultation, project inquiry Anavya Infotech",
   alternates: {
-    canonical: "https://anavyainfotech.com/contact",
+    canonical: "https://www.anavyainfotech.com/contact",
   },
   openGraph: {
     title: "Contact Anavya Infotech – Free Project Consultation",
     description: "Get a free consultation for your web app, AI, or SEO project. We respond within 24 hours.",
-    url: "https://anavyainfotech.com/contact",
+    url: "https://www.anavyainfotech.com/contact",
     type: "website",
   },
 };
@@ -26,7 +26,7 @@ const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contact Anavya Infotech",
-  "url": "https://anavyainfotech.com/contact",
+  "url": "https://www.anavyainfotech.com/contact",
   "mainEntity": {
     "@type": "Organization",
     "name": "Anavya Infotech",

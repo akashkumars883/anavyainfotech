@@ -14,46 +14,46 @@ Anavya Infotech is an IT consulting and software engineering firm based in India
 
 ## Primary Services
 
-- [Business Website Development](https://anavyainfotech.com/services/business-website): Local SEO, India national scale, and global enterprise setups.
-- [Web Application Engineering](https://anavyainfotech.com/services/web-applications): Custom React and Next.js cloud platforms.
-- [AI Chatbots & Automation](https://anavyainfotech.com/services/ai-chatbot): Autonomous support agents and workflow deflection.
-- [Custom CRM Software](https://anavyainfotech.com/services/crm-custom-software): Tailored business CRM & internal tool suites.
-- [Headless E-Commerce](https://anavyainfotech.com/services/ecommerce): Decoupled storefronts for speed and conversions.
-- [Corporate Branding](https://anavyainfotech.com/services/branding): Visual identity systems, Figma design tokens, and UI kits.
-- [Technical SEO Services](https://anavyainfotech.com/services/technical-seo): Speed audits, schema markup, and search rankings.
+- [Business Website Development](https://www.anavyainfotech.com/services/business-website): Local SEO, India national scale, and global enterprise setups.
+- [Web Application Engineering](https://www.anavyainfotech.com/services/web-applications): Custom React and Next.js cloud platforms.
+- [AI Chatbots & Automation](https://www.anavyainfotech.com/services/ai-chatbot): Autonomous support agents and workflow deflection.
+- [Custom CRM Software](https://www.anavyainfotech.com/services/crm-custom-software): Tailored business CRM & internal tool suites.
+- [Headless E-Commerce](https://www.anavyainfotech.com/services/ecommerce): Decoupled storefronts for speed and conversions.
+- [Corporate Branding](https://www.anavyainfotech.com/services/branding): Visual identity systems, Figma design tokens, and UI kits.
+- [Technical SEO Services](https://www.anavyainfotech.com/services/technical-seo): Speed audits, schema markup, and search rankings.
 
 ## Industry Solutions
 
-- [E-Commerce & Retail](https://anavyainfotech.com/solutions/ecommerce-retail)
-- [Healthcare & Medical](https://anavyainfotech.com/solutions/healthcare-medical)
-- [Real Estate Tech](https://anavyainfotech.com/solutions/real-estate)
-- [FinTech & Finance](https://anavyainfotech.com/solutions/fintech-finance)
-- [Startups & MVPs](https://anavyainfotech.com/solutions/startups-mvp)
-- [Cloud & SaaS Platforms](https://anavyainfotech.com/solutions/cloud-saas)
+- [E-Commerce & Retail](https://www.anavyainfotech.com/solutions/ecommerce-retail)
+- [Healthcare & Medical](https://www.anavyainfotech.com/solutions/healthcare-medical)
+- [Real Estate Tech](https://www.anavyainfotech.com/solutions/real-estate)
+- [FinTech & Finance](https://www.anavyainfotech.com/solutions/fintech-finance)
+- [Startups & MVPs](https://www.anavyainfotech.com/solutions/startups-mvp)
+- [Cloud & SaaS Platforms](https://www.anavyainfotech.com/solutions/cloud-saas)
 
 ## Featured Case Studies
 
-- [Vesper CRM](https://anavyainfotech.com/case-studies/vesper-crm): Real estate broker automation system.
-- [Aether AI](https://anavyainfotech.com/case-studies/aether-ai): Autonomous customer support agent platform.
-- [Apex Commerce](https://anavyainfotech.com/case-studies/apex-commerce): High-speed headless storefront.
+- [Vesper CRM](https://www.anavyainfotech.com/case-studies/vesper-crm): Real estate broker automation system.
+- [Aether AI](https://www.anavyainfotech.com/case-studies/aether-ai): Autonomous customer support agent platform.
+- [Apex Commerce](https://www.anavyainfotech.com/case-studies/apex-commerce): High-speed headless storefront.
 
 ## Technical Resources & Navigation
 
-- [Case Studies Showcase](https://anavyainfotech.com/case-studies): Featured case studies and metric outcomes.
-- [Engineering Blog](https://anavyainfotech.com/blog): Software blueprints, AI guides, and technical SEO tutorials.
-- [Pricing & Estimates](https://anavyainfotech.com/pricing): Transparent estimation tiers.
-- [HTML Sitemap](https://anavyainfotech.com/sitemap): Full site directory.
-- [XML Sitemap Index](https://anavyainfotech.com/sitemap.xml): Search engine crawler index.
+- [Case Studies Showcase](https://www.anavyainfotech.com/case-studies): Featured case studies and metric outcomes.
+- [Engineering Blog](https://www.anavyainfotech.com/blog): Software blueprints, AI guides, and technical SEO tutorials.
+- [Pricing & Estimates](https://www.anavyainfotech.com/pricing): Transparent estimation tiers.
+- [HTML Sitemap](https://www.anavyainfotech.com/sitemap): Full site directory.
+- [XML Sitemap Index](https://www.anavyainfotech.com/sitemap.xml): Search engine crawler index.
 
 ## Legal & Compliance
 
-- [Privacy Policy](https://anavyainfotech.com/privacy-policy)
-- [Terms of Service](https://anavyainfotech.com/terms-of-service)
-- [Cancellation & Refund Policy](https://anavyainfotech.com/refund-policy)
+- [Privacy Policy](https://www.anavyainfotech.com/privacy-policy)
+- [Terms of Service](https://www.anavyainfotech.com/terms-of-service)
+- [Cancellation & Refund Policy](https://www.anavyainfotech.com/refund-policy)
 
 ## Contact & Project Consultations
 
 - Email: info@anavyainfotech.com
 - Mobile / WhatsApp: +91 6201231875 / +91 7508657479
-- Website Inquiry: https://anavyainfotech.com/contact
+- Website Inquiry: https://www.anavyainfotech.com/contact
 - Response Time: Within 24 hours guaranteed

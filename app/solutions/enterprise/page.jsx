@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "enterprise web application development, large scale SaaS platform, ERP system development, custom enterprise CRM, multi-tenant web architecture",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Enterprise Software & Web Solutions","description":"Large-scale enterprise web platforms, internal workflow management tools, role-based access systems, custom CRM, ERP databases, and multi-tenant SaaS architectures.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Enterprise Software & Web Solutions","description":"Large-scale enterprise web platforms, internal workflow management tools, role-based access systems, custom CRM, ERP databases, and multi-tenant SaaS architectures.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const ENTERPRISE_FAQS = [

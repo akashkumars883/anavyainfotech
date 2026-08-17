@@ -15,13 +15,13 @@ export const metadata = {
   keywords:
     "software engineering blog, AI chatbot development guide, Next.js performance tutorial, technical SEO blueprints, custom CRM development",
   alternates: {
-    canonical: "https://anavyainfotech.com/blog",
+    canonical: "https://www.anavyainfotech.com/blog",
   },
   openGraph: {
     title: "Engineering Blog & Digital Growth Insights | Anavya Infotech",
     description:
       "Technical software architecture guides, AI integration patterns, and SEO strategies for modern businesses.",
-    url: "https://anavyainfotech.com/blog",
+    url: "https://www.anavyainfotech.com/blog",
     type: "website",
   },
 };

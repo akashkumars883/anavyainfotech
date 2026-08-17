@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "ecommerce technology solutions, retail web development, headless Shopify, online store performance optimization, product catalog SEO",
 };
 
-const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"E-Commerce & Retail Technology Solutions","description":"End-to-end e-commerce architectures for retail brands — from headless storefronts and product catalog optimization to logistics API integrations and multi-channel inventory management.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://anavyainfotech.com"}};
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"E-Commerce & Retail Technology Solutions","description":"End-to-end e-commerce architectures for retail brands — from headless storefronts and product catalog optimization to logistics API integrations and multi-channel inventory management.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
 
 
 const ECOMMERCE_RETAIL_FAQS = [
