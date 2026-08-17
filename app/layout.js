@@ -15,12 +15,12 @@ export const metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Digital Marketing Agency & Website Development Company in India | Anavya Infotech",
+    default: "IT Solutions, AI & Digital Marketing Company in India | Anavya Infotech",
     template: "%s | Anavya Infotech",
   },
 
   description:
-    "Anavya Infotech is a premier digital marketing agency and website development company in India & USA. We deliver SEO services, local SEO, ecommerce SEO, performance marketing, social media marketing, and white label SEO reseller programs.",
+    "Anavya Infotech is a full-spectrum technology and growth partner in India, Delhi NCR & USA — website development, SEO, AI automation, data analytics, and cloud solutions under one roof.",
 
   keywords: [
     "digital marketing agency",
@@ -90,15 +90,15 @@ export const metadata = {
     locale: "en_IN",
     url: BASE_URL,
     siteName: "Anavya Infotech",
-    title: "Digital Marketing Agency & Website Development Company in India | Anavya Infotech",
+    title: "IT Solutions, AI & Digital Marketing Company in India | Anavya Infotech",
     description:
-      "Leading digital marketing agency & website development company in India & USA offering SEO services, local SEO, performance marketing, social media marketing, and white label SEO reseller programs.",
+      "Anavya Infotech is a full-spectrum technology and growth partner in India, Delhi NCR & USA — website development, SEO, AI automation, data analytics, and cloud solutions under one roof.",
     images: [
       {
         url: `${BASE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Anavya Infotech – Best Digital Marketing Agency & Website Development Company in India",
+        alt: "Anavya Infotech – IT Solutions, AI & Digital Marketing Company in India",
       },
     ],
   },
@@ -108,9 +108,9 @@ export const metadata = {
     card: "summary_large_image",
     site: "@anavyainfotech",
     creator: "@anavyainfotech",
-    title: "Digital Marketing Agency & Website Development Company in India | Anavya Infotech",
+    title: "IT Solutions, AI & Digital Marketing Company in India | Anavya Infotech",
     description:
-      "Custom website development, SEO services, local SEO, ecommerce SEO, performance marketing, and white label SEO reseller programs.",
+      "Anavya Infotech is a full-spectrum technology and growth partner in India, Delhi NCR & USA — website development, SEO, AI automation, data analytics, and cloud solutions under one roof.",
     images: [`${BASE_URL}/og-image.jpg`],
   },
 
@@ -161,7 +161,7 @@ const orgSchema = {
   "logo": `${BASE_URL}/logo.png`,
   "image": `${BASE_URL}/og-image.jpg`,
   "description":
-    "Anavya Infotech is a premier digital marketing agency and website development company in India and USA providing SEO services, local SEO, ecommerce SEO, performance marketing, social media marketing, and white label SEO reseller services.",
+    "Anavya Infotech is a full-spectrum technology and growth partner in India, Delhi NCR & USA — website development, SEO, AI automation, data analytics, and cloud solutions under one roof.",
   "telephone": "+91-6201231875",
   "email": "info@anavyainfotech.com",
   "address": {
