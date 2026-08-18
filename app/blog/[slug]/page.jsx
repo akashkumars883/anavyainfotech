@@ -39,30 +39,46 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// Convert markdown syntax or format HTML content for headings, bullets & lists
+// Convert markdown syntax or format HTML content for headings, bullets, images & formatting
 function formatArticleContent(content = "") {
   if (!content) return "";
 
-  // If already full HTML with tags, return as is
-  if (content.includes("<p>") || content.includes("<h2>") || content.includes("<h3>") || content.includes("<div") || content.includes("<ul")) {
-    return content;
-  }
+  let formatted = content;
 
-  // Parse markdown headings & lists
-  let formatted = content
+  // 1. Code blocks ```
+  formatted = formatted.replace(/```([a-z]*)\n([\s\S]*?)```/g, (match, lang, code) => {
+    return `<pre><code class="language-${lang || 'text'}">${code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
+  });
+
+  // 2. Headings (# H1, ## H2, ### H3, #### H4)
+  formatted = formatted
     .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
     .replace(/^### (.*$)/gim, '<h3>$1</h3>')
     .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+    .replace(/^# (.*$)/gim, '<h1>$1</h1>');
+
+  // 3. Bold & Italic
+  formatted = formatted
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/__(.*?)__/g, '<strong>$1</strong>')
     .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/^\s*[\-\*] (.*$)/gim, '<li>$1</li>')
-    .replace(/^\s*\d+\. (.*$)/gim, '<li>$1</li>');
+    .replace(/_(.*?)_/g, '<em>$1</em>');
 
-  // Wrap contiguous <li> tags into <ul>
-  formatted = formatted.replace(/(<li>.*?<\/li>\s*)+/gs, (match) => `<ul>${match}</ul>`);
+  // 4. Blockquotes (> text)
+  formatted = formatted.replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>');
 
-  // Wrap remaining text blocks into <p>
+  // 5. Images ![alt](url)
+  formatted = formatted.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-md my-6 max-w-full h-auto shadow-md border border-stone-200" />');
+
+  // 6. Links [text](url)
+  formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+
+  // 7. Bullet lists (- item or * item)
+  formatted = formatted.replace(/^\s*[\-\*] (.*$)/gim, '<li>$1</li>');
+  formatted = formatted.replace(/^\s*\d+\. (.*$)/gim, '<li>$1</li>');
+  formatted = formatted.replace(/(<li>.*?<\/li>\s*)+/gs, (match) => `<ul class="my-4 space-y-1">${match}</ul>`);
+
+  // 8. Paragraph wrapping for orphan text lines
   const blocks = formatted.split(/\n\n+/);
   return blocks
     .map((block) => {
@@ -73,7 +89,9 @@ function formatArticleContent(content = "") {
         trimmed.startsWith("<ul") ||
         trimmed.startsWith("<ol") ||
         trimmed.startsWith("<blockquote") ||
-        trimmed.startsWith("<pre")
+        trimmed.startsWith("<pre") ||
+        trimmed.startsWith("<img") ||
+        trimmed.startsWith("<p>")
       ) {
         return trimmed;
       }

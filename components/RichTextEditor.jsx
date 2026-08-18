@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { 
   Heading1, 
   Heading2, 
@@ -12,11 +12,18 @@ import {
   Quote, 
   Code, 
   Link as LinkIcon, 
-  Image as ImageIcon 
+  Image as ImageIcon,
+  Upload,
+  Zap,
+  Check
 } from "lucide-react";
+import { compressImageToWebP } from "@/lib/imageOptimizer";
 
 export default function RichTextEditor({ value, onChange, placeholder = "Write your content here...", rows = 14 }) {
   const textareaRef = useRef(null);
+  const fileInputRef = useRef(null);
+  const [uploading, setUploading] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState("");
 
   const insertFormat = (prefix, suffix = "", defaultText = "Text Here") => {
     const textarea = textareaRef.current;
@@ -37,6 +44,44 @@ export default function RichTextEditor({ value, onChange, placeholder = "Write y
     }, 0);
   };
 
+  const handleComputerImageUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 15 * 1024 * 1024) {
+      alert("Image size should be less than 15MB.");
+      return;
+    }
+
+    setUploading(true);
+    setUploadStatus("Compressing image...");
+
+    try {
+      const result = await compressImageToWebP(file, { maxWidth: 1000, quality: 0.8 });
+      const markdownImg = `\n![${file.name.split('.')[0]}](${result.dataUrl})\n`;
+
+      const textarea = textareaRef.current;
+      if (textarea) {
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const newValue = textarea.value.substring(0, start) + markdownImg + textarea.value.substring(end);
+        onChange(newValue);
+      } else {
+        onChange((value || "") + markdownImg);
+      }
+
+      setUploadStatus(`Uploaded & Compressed WebP (${result.compressedSizeKb}KB, Saved ${result.savingsPercent}%)`);
+      setTimeout(() => setUploadStatus(""), 4000);
+    } catch (err) {
+      console.error("Error uploading image into content:", err);
+      alert("Failed to process image file.");
+      setUploadStatus("");
+    } finally {
+      setUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  };
+
   const toolbarButtons = [
     { label: "H1", icon: Heading1, action: () => insertFormat("\n# ", "\n", "Heading 1"), title: "Main Heading (H1)" },
     { label: "H2", icon: Heading2, action: () => insertFormat("\n## ", "\n", "Section Heading"), title: "Subheading (H2)" },
@@ -51,11 +96,28 @@ export default function RichTextEditor({ value, onChange, placeholder = "Write y
     { label: "Quote", icon: Quote, action: () => insertFormat("\n> ", "\n", "Important Quote or Key Insight"), title: "Blockquote" },
     { label: "Code", icon: Code, action: () => insertFormat("\n```javascript\n", "\n```", "// Code snippet here"), title: "Code Block" },
     { label: "Link", icon: LinkIcon, action: () => insertFormat("[", "](https://www.anavyainfotech.com)", "Clickable Link Text"), title: "Hyperlink" },
-    { label: "Image", icon: ImageIcon, action: () => insertFormat("![", "](https://images.unsplash.com/photo-1498050108023-c5249f4df085)", "Image Description"), title: "Embed Image" },
+    { type: "divider" },
+    { 
+      label: "Upload Image", 
+      icon: Upload, 
+      action: () => fileInputRef.current?.click(), 
+      title: "Upload image file from computer",
+      highlight: true
+    },
+    { label: "Image URL", icon: ImageIcon, action: () => insertFormat("![", "](https://images.unsplash.com/photo-1498050108023-c5249f4df085)", "Image Description"), title: "Paste Image URL" },
   ];
 
   return (
     <div className="w-full border border-stone-200 rounded-md overflow-hidden bg-stone-50">
+      {/* Hidden File Input for Local Computer Image Selection */}
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        onChange={handleComputerImageUpload}
+        className="hidden"
+      />
+
       {/* Editor Formatting Toolbar */}
       <div className="p-2.5 bg-stone-100/90 border-b border-stone-200 flex flex-wrap items-center gap-1.5 selection:bg-none">
         {toolbarButtons.map((btn, index) => {
@@ -69,14 +131,29 @@ export default function RichTextEditor({ value, onChange, placeholder = "Write y
               key={btn.label}
               type="button"
               onClick={btn.action}
+              disabled={uploading}
               title={btn.title}
-              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-white border border-stone-200 text-xs font-semibold text-stone-700 hover:text-black hover:border-stone-400 hover:bg-stone-50 transition-all cursor-pointer shadow-xs active:scale-95"
+              className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-md border text-xs font-semibold transition-all cursor-pointer shadow-xs active:scale-95 disabled:opacity-50 ${
+                btn.highlight 
+                  ? "bg-blue-700 text-white border-blue-700 hover:bg-blue-800" 
+                  : "bg-white border-stone-200 text-stone-700 hover:text-black hover:border-stone-400 hover:bg-stone-50"
+              }`}
             >
-              <Icon className="h-3.5 w-3.5 text-stone-600" />
+              {uploading && btn.highlight ? (
+                <Zap className="h-3.5 w-3.5 text-white animate-pulse" />
+              ) : (
+                <Icon className={`h-3.5 w-3.5 ${btn.highlight ? "text-white" : "text-stone-600"}`} />
+              )}
               <span className="text-[11px]">{btn.label}</span>
             </button>
           );
         })}
+
+        {uploadStatus && (
+          <span className="ml-auto inline-flex items-center gap-1 px-2.5 py-1 rounded bg-green-50 border border-green-200 text-green-700 font-semibold text-[11px]">
+            <Check className="h-3.5 w-3.5 text-green-600" /> {uploadStatus}
+          </span>
+        )}
       </div>
 
       {/* Textarea Input */}
