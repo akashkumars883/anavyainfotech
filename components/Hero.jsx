@@ -44,7 +44,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.15]"
+            className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-stone-900 leading-[1.15]"
           >
             We build software, AI &amp; automation solutions <br />
             <span className="text-blue-700">that move businesses forward.</span>
@@ -54,9 +54,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="text-base sm:text-lg text-stone-600 font-light leading-relaxed max-w-2xl"
+            className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed max-w-2xl"
           >
-            Anavya Infotech is a premier <strong className="text-stone-900 font-bold">digital marketing agency</strong> and <strong className="text-stone-900 font-bold">website development company in India &amp; USA</strong>. We build custom web applications, AI chatbots, CRM systems, <strong className="text-stone-900 font-bold">SEO services</strong>, local SEO, and performance marketing solutions designed to scale your business globally.
+            Anavya Infotech is a premier digital marketing agency and website development company in India &amp; USA. We build custom web applications, AI chatbots, CRM systems, SEO services, local SEO, and performance marketing solutions designed to scale your business globally.
           </motion.p>
 
           {/* Action CTAs */}
