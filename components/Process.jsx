@@ -27,10 +27,10 @@ export default function Process() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Block */}
         <div className="max-w-3xl text-left mb-8 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] font-bold uppercase tracking-wider text-blue-600">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] font-semibold uppercase tracking-wider text-blue-600">
             Our Process
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
             How we work: From vision <br />
             <span className="text-zinc-500">to production deployment.</span>
           </h2>
@@ -45,7 +45,7 @@ export default function Process() {
             >
               {/* Number and Hover Indicator */}
               <div className="flex items-center justify-between">
-                <span className="text-4xl font-extrabold text-white/10 group-hover:text-blue-600 transition-colors duration-300">
+                <span className="text-4xl font-semibold text-white/10 group-hover:text-blue-600 transition-colors duration-300">
                   {step.num}
                 </span>
                 <span className="h-1.5 w-1.5 rounded-md bg-white/10 group-hover:bg-blue-600 transition-colors duration-300" />
@@ -53,7 +53,7 @@ export default function Process() {
 
               {/* Title & Desc */}
               <div className="space-y-2 mt-auto">
-                <h3 className="text-lg font-bold text-white tracking-tight">
+                <h3 className="text-lg font-semibold text-white tracking-tight">
                   {step.title}
                 </h3>
                 <p className="text-xs text-zinc-400 font-light leading-relaxed">

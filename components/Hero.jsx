@@ -34,7 +34,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 text-xs font-bold text-stone-700 uppercase tracking-wider"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-stone-700 uppercase tracking-wider"
           >
             <Sparkles className="h-3.5 w-3.5 text-blue-700 animate-pulse" />
             <span>Premier Custom Software &amp; AI Agency</span>
@@ -46,8 +46,8 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-stone-900 leading-[1.15]"
           >
-            We build software, AI &amp; automation solutions <br />
-            <span className="text-blue-700">that move businesses forward.</span>
+            Software Development &amp; <br />
+            <span className="text-blue-700">Digital Solutions Company</span>
           </motion.h1>
 
           <motion.p
@@ -68,14 +68,14 @@ export default function Hero() {
           >
             <Link
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-all shadow-md hover:scale-105"
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-all shadow-md hover:scale-105"
             >
               Start a Project
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/case-studies"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider border border-stone-200 bg-white text-stone-900 hover:bg-stone-50 transition-all hover:scale-105 shadow-sm"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-md text-xs font-semibold uppercase tracking-wider border border-stone-200 bg-white text-stone-900 hover:bg-stone-50 transition-all hover:scale-105 shadow-sm"
             >
               View Work
             </Link>

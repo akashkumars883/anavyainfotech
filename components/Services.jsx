@@ -99,12 +99,12 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Block */}
         <div className="max-w-3xl text-left mb-10 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-semibold uppercase tracking-wider text-stone-600 shadow-sm">
             What We Do
           </div>
           <h2
             id="services-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-stone-900 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight"
           >
             Capabilities designed to scale <br />
             <span className="text-blue-700">your business operations.</span>
@@ -156,7 +156,7 @@ export default function Services() {
                 <div className="relative z-10 p-5 bg-white/95 backdrop-blur-sm border-t border-stone-100 flex flex-col justify-end text-left pointer-events-none transition-all duration-300">
                   {/* Heading - Always pinned at bottom in black text */}
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight group-hover:text-blue-700 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-stone-900 tracking-tight group-hover:text-blue-700 transition-colors">
                       {category.title}
                     </h3>
                     <ArrowUpRight className="h-5 w-5 text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />

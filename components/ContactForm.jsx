@@ -63,10 +63,10 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Simple Header */}
           <div className="lg:col-span-5 text-left space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-100 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-100 text-[11px] font-semibold uppercase tracking-wider text-stone-600">
               Let's Partner
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight">
               Ready to build <br />
               <span className="text-blue-700">something exceptional?</span>
             </h2>
@@ -79,14 +79,14 @@ export default function ContactForm() {
                 <div className="h-12 w-12 rounded-md bg-blue-100 border border-blue-200 flex items-center justify-center text-blue-700">
                   <Send className="h-5 w-5 animate-pulse" />
                 </div>
-                <h3 className="text-lg font-bold text-stone-900">Request Received &amp; Saved!</h3>
+                <h3 className="text-lg font-semibold text-stone-900">Request Received &amp; Saved!</h3>
                 <p className="text-xs text-stone-600 max-w-xs font-light">
                   Thank you. Your inquiry has been sent to our admin team. A project manager will contact you shortly.
                 </p>
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="text-[11px] font-bold uppercase tracking-wider text-stone-500 hover:text-black underline pt-2 cursor-pointer"
+                  className="text-[11px] font-semibold uppercase tracking-wider text-stone-500 hover:text-black underline pt-2 cursor-pointer"
                 >
                   Send another request
                 </button>
@@ -96,7 +96,7 @@ export default function ContactForm() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name field */}
                   <div className="space-y-1">
-                    <label htmlFor="form-name" className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+                    <label htmlFor="form-name" className="text-[10px] font-semibold uppercase tracking-wider text-stone-500">
                       Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -112,7 +112,7 @@ export default function ContactForm() {
 
                   {/* Email field */}
                   <div className="space-y-1">
-                    <label htmlFor="form-email" className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+                    <label htmlFor="form-email" className="text-[10px] font-semibold uppercase tracking-wider text-stone-500">
                       Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -129,7 +129,7 @@ export default function ContactForm() {
 
                 {/* Service scope selector */}
                 <div className="space-y-1">
-                  <label htmlFor="form-service" className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+                  <label htmlFor="form-service" className="text-[10px] font-semibold uppercase tracking-wider text-stone-500">
                     Project Service Area
                   </label>
                   <select
@@ -147,7 +147,7 @@ export default function ContactForm() {
 
                 {/* Message details */}
                 <div className="space-y-1">
-                  <label htmlFor="form-message" className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+                  <label htmlFor="form-message" className="text-[10px] font-semibold uppercase tracking-wider text-stone-500">
                     Tell us about your project
                   </label>
                   <textarea
@@ -184,7 +184,7 @@ export default function ContactForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-md text-[11px] font-bold uppercase tracking-wider bg-black text-white hover:bg-zinc-800 transition-colors shadow-sm cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-md text-[11px] font-semibold uppercase tracking-wider bg-black text-white hover:bg-zinc-800 transition-colors shadow-sm cursor-pointer"
                 >
                   <span>{isSubmitting ? "Sending to Admin..." : "Send Project Request"}</span>
                   <ArrowRight className="h-3.5 w-3.5" />

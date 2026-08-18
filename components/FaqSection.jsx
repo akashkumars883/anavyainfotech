@@ -41,10 +41,10 @@ export default function FaqSection({
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header Block */}
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-semibold uppercase tracking-wider text-stone-600">
             <HelpCircle className="h-3.5 w-3.5 text-blue-700" /> FAQ
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight">
             {title}
           </h2>
           <p className="text-base sm:text-lg text-stone-600 font-light leading-relaxed">
@@ -70,7 +70,7 @@ export default function FaqSection({
                   className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-bold text-stone-900 pr-4 leading-snug">
+                  <span className="text-base sm:text-lg font-semibold text-stone-900 pr-4 leading-snug">
                     {faq.question}
                   </span>
                   <div

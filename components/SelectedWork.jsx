@@ -71,12 +71,12 @@ export default function SelectedWork() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-3xl text-left mb-8 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-100 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-100 text-[11px] font-semibold uppercase tracking-wider text-stone-600">
             Featured Live Projects
           </div>
           <h2 
             id="portfolio-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight"
           >
             Real products built for real businesses. <br />
             <span className="text-blue-700">High impact &amp; verified performance.</span>
@@ -110,7 +110,7 @@ export default function SelectedWork() {
 
               {/* Top Header Bar (Category Badge & Direct Arrow Button) */}
               <div className="relative z-10 p-5 flex items-center justify-between pointer-events-none">
-                <span className="px-2.5 py-1 rounded-md bg-stone-50 border border-stone-200 text-[10px] font-bold text-blue-700 uppercase tracking-wider shadow-2xs">
+                <span className="px-2.5 py-1 rounded-md bg-stone-50 border border-stone-200 text-[10px] font-semibold text-blue-700 uppercase tracking-wider shadow-2xs">
                   {project.category}
                 </span>
                 <div className="h-9 w-9 rounded-md bg-stone-50 border border-stone-200 flex items-center justify-center text-stone-700 group-hover:bg-blue-700 group-hover:text-white transition-all">
@@ -122,7 +122,7 @@ export default function SelectedWork() {
               <div className="relative z-10 p-5 bg-white/95 backdrop-blur-sm border-t border-stone-100 flex flex-col justify-end text-left pointer-events-none transition-all duration-300">
                 {/* Heading - Always pinned at bottom in black text */}
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight group-hover:text-blue-700 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-stone-900 tracking-tight group-hover:text-blue-700 transition-colors">
                     {project.title}
                   </h3>
                   <ArrowUpRight className="h-5 w-5 text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />

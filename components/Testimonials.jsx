@@ -61,10 +61,10 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Block */}
         <div className="max-w-3xl text-left mb-8 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-100 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-100 text-[11px] font-semibold uppercase tracking-wider text-stone-600">
             Testimonials
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight">
             Client success stories that <br />
             <span className="text-blue-700">validate our dedication.</span>
           </h2>
@@ -96,11 +96,11 @@ export default function Testimonials() {
                     {/* Author metadata */}
                     <div className="flex items-center gap-4 pt-2">
                       {/* Avatar Initials */}
-                      <div className="h-10 w-10 rounded-md bg-stone-100 border border-stone-200/80 flex items-center justify-center font-bold text-xs text-stone-700 uppercase">
+                      <div className="h-10 w-10 rounded-md bg-stone-100 border border-stone-200/80 flex items-center justify-center font-semibold text-xs text-stone-700 uppercase">
                         {item.author.split(" ").map(n => n[0]).join("")}
                       </div>
                       <div className="space-y-0.5">
-                        <cite className="not-italic text-sm font-bold text-stone-900 block">
+                        <cite className="not-italic text-sm font-semibold text-stone-900 block">
                           {item.author}
                         </cite>
                         <span className="text-xs font-light text-stone-500 block">

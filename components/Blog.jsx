@@ -43,12 +43,12 @@ export default async function Blog() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Block */}
         <div className="max-w-3xl text-left mb-8 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-semibold uppercase tracking-wider text-stone-600">
             Our Blog
           </div>
           <h2 
             id="blog-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight"
           >
             Insights and blueprints from <br />
             <span className="text-blue-700">our engineering team.</span>
@@ -80,7 +80,7 @@ export default async function Blog() {
 
               {/* Top Header Bar (Category Badge & Direct Arrow Button) */}
               <div className="relative z-10 p-5 flex items-center justify-between pointer-events-none">
-                <span className="px-2.5 py-1 rounded-md bg-stone-50 border border-stone-200 text-[10px] font-bold text-blue-700 uppercase tracking-wider shadow-2xs">
+                <span className="px-2.5 py-1 rounded-md bg-stone-50 border border-stone-200 text-[10px] font-semibold text-blue-700 uppercase tracking-wider shadow-2xs">
                   {post.category || "Article"}
                 </span>
                 <div className="h-9 w-9 rounded-md bg-stone-50 border border-stone-200 flex items-center justify-center text-stone-700 group-hover:bg-blue-700 group-hover:text-white transition-all">
@@ -92,7 +92,7 @@ export default async function Blog() {
               <div className="relative z-10 p-5 bg-white/95 backdrop-blur-sm border-t border-stone-100 flex flex-col justify-end text-left pointer-events-none transition-all duration-300">
                 {/* Heading - Always pinned at bottom in black text */}
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-stone-900 tracking-tight group-hover:text-blue-700 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-semibold text-stone-900 tracking-tight group-hover:text-blue-700 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   <ArrowUpRight className="h-5 w-5 text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
