@@ -11,6 +11,8 @@ export default async function sitemap() {
     { url: `${BASE_URL}/about`, lastModified: currentDate, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE_URL}/case-studies`, lastModified: currentDate, priority: 0.85, changeFrequency: "weekly" },
     { url: `${BASE_URL}/pricing`, lastModified: currentDate, priority: 0.7, changeFrequency: "monthly" },
+    { url: `${BASE_URL}/hire-nextjs-developers-india`, lastModified: currentDate, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/offshore-software-development-company`, lastModified: currentDate, priority: 0.9, changeFrequency: "weekly" },
     { url: `${BASE_URL}/contact`, lastModified: currentDate, priority: 0.9, changeFrequency: "monthly" },
     { url: `${BASE_URL}/blog`, lastModified: currentDate, priority: 0.8, changeFrequency: "daily" },
     { url: `${BASE_URL}/privacy-policy`, lastModified: currentDate, priority: 0.5, changeFrequency: "yearly" },

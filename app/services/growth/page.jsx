@@ -1,10 +1,32 @@
-"use client";
-
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, TrendingUp, Search, MapPin, ShoppingCart, Code, FileText, CheckCircle2 } from "lucide-react";
+
+export const metadata = {
+  title: "Growth Marketing & Conversion Rate Optimization (CRO) Agency",
+  description:
+    "Accelerate customer acquisition with full-funnel CRO, performance marketing telemetry, A/B testing, and paid growth strategies from Anavya Infotech.",
+  keywords: [
+    "growth marketing agency",
+    "conversion rate optimization",
+    "CRO services",
+    "performance growth agency",
+    "sales funnel optimization",
+    "A/B testing services",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/growth",
+  },
+  openGraph: {
+    title: "Growth Marketing & Conversion Rate Optimization (CRO) Agency",
+    description:
+      "Accelerate customer acquisition with full-funnel CRO, performance marketing telemetry, A/B testing, and paid growth strategies from Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/growth",
+    type: "website",
+  },
+};
 
 const serviceSchema = {
   "@context": "https://schema.org",

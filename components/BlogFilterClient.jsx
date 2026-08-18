@@ -3,13 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Search, Tag, ChevronLeft, ChevronRight } from "lucide-react";
-import { BLOG_POSTS as FALLBACK_POSTS } from "@/lib/blogData";
+import { STATIC_BLOG_POSTS } from "@/lib/blogData";
 import SafeImage from "@/components/SafeImage";
 
 const POSTS_PER_PAGE = 6;
 
 export default function BlogFilterClient({ initialPosts }) {
-  const postsList = initialPosts && initialPosts.length > 0 ? initialPosts : FALLBACK_POSTS;
+  const postsList = Array.isArray(initialPosts) && initialPosts.length > 0 ? initialPosts : (STATIC_BLOG_POSTS || []);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);

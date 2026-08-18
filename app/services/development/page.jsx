@@ -1,10 +1,31 @@
-"use client";
-
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Code2, Globe, Smartphone, Layout, ShoppingCart, CheckCircle2 } from "lucide-react";
+
+export const metadata = {
+  title: "Full-Stack Web & Custom Software Development Company",
+  description:
+    "Full-stack custom web software engineering, modern JS frameworks, cloud microservices backends, and robust API development from Anavya Infotech.",
+  keywords: [
+    "full stack development company",
+    "custom software development",
+    "web application engineering",
+    "scalable cloud backend development",
+    "software engineering services",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/development",
+  },
+  openGraph: {
+    title: "Full-Stack Web & Custom Software Development Company",
+    description:
+      "Full-stack custom web software engineering, modern JS frameworks, cloud microservices backends, and robust API development from Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/development",
+    type: "website",
+  },
+};
 
 const serviceSchema = {
   "@context": "https://schema.org",

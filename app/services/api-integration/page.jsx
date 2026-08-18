@@ -1,11 +1,31 @@
-"use client";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
 import FaqSection from "@/components/FaqSection";
-
-
 import Link from "next/link";
 import { Zap, ArrowRight, Terminal } from "lucide-react";
+
+export const metadata = {
+  title: "Custom API Integration & Microservices Engineering Services",
+  description:
+    "Connect legacy software, SaaS APIs, payment portals, and microservices with secure REST and GraphQL API integration services from Anavya Infotech.",
+  keywords: [
+    "API integration services",
+    "custom REST API development",
+    "GraphQL API development",
+    "microservices architecture",
+    "API middleware integration",
+    "payment gateway integration",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/api-integration",
+  },
+  openGraph: {
+    title: "Custom API Integration & Microservices Engineering Services",
+    description:
+      "Connect legacy software, SaaS APIs, payment portals, and microservices with secure REST and GraphQL API integration services from Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/api-integration",
+    type: "website",
+  },
+};
 
 // Inline service schema for search engine crawlers
 const serviceSchema = {

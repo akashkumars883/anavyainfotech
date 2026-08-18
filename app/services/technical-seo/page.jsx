@@ -1,11 +1,31 @@
-"use client";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
 import FaqSection from "@/components/FaqSection";
-
-
 import Link from "next/link";
 import { Zap, ArrowRight, Terminal } from "lucide-react";
+
+export const metadata = {
+  title: "Technical SEO & Core Web Vitals Speed Optimization Services",
+  description:
+    "Resolve search console indexing errors, crawl budget bottlenecks, Core Web Vitals, dynamic JSON-LD schemas, and server response times with technical SEO services from Anavya Infotech.",
+  keywords: [
+    "technical SEO services",
+    "Core Web Vitals optimization",
+    "site speed optimization",
+    "schema markup audit",
+    "search console indexing fix",
+    "crawl budget optimization",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/technical-seo",
+  },
+  openGraph: {
+    title: "Technical SEO & Core Web Vitals Speed Optimization Services",
+    description:
+      "Resolve search console indexing errors, crawl budget bottlenecks, Core Web Vitals, dynamic JSON-LD schemas, and server response times with technical SEO services from Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/technical-seo",
+    type: "website",
+  },
+};
 
 // Inline service schema for search engine crawlers
 const serviceSchema = {

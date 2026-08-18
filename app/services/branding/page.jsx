@@ -1,10 +1,32 @@
-"use client";
-
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Palette, Compass, Layers, ShieldCheck, CheckCircle2 } from "lucide-react";
+
+export const metadata = {
+  title: "Corporate Branding Services & Digital Brand Identity Agency",
+  description:
+    "Elevate your corporate presence with bespoke digital branding services, visual design systems, logo assets, and UI/UX guidelines from Anavya Infotech.",
+  keywords: [
+    "branding agency",
+    "corporate branding services",
+    "digital brand identity",
+    "logo design services",
+    "UI UX design agency",
+    "brand strategy company",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/branding",
+  },
+  openGraph: {
+    title: "Corporate Branding Services & Digital Brand Identity Agency",
+    description:
+      "Elevate your corporate presence with bespoke digital branding services, visual design systems, logo assets, and UI/UX guidelines from Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/branding",
+    type: "website",
+  },
+};
 
 const serviceSchema = {
   "@context": "https://schema.org",

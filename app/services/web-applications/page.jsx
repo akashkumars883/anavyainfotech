@@ -1,11 +1,31 @@
-"use client";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
 import FaqSection from "@/components/FaqSection";
-
-
 import Link from "next/link";
 import { Zap, ArrowRight, Code } from "lucide-react";
+
+export const metadata = {
+  title: "Custom Web Application Development Services | Next.js & React",
+  description:
+    "Develop custom web applications, SaaS platforms, and customer portals built with Next.js, React, Node.js, and edge databases by Anavya Infotech.",
+  keywords: [
+    "web application development company",
+    "Next.js app development",
+    "SaaS platform development",
+    "enterprise web application agency",
+    "custom React web apps",
+    "cloud web app developers",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/web-applications",
+  },
+  openGraph: {
+    title: "Custom Web Application Development Services | Next.js & React",
+    description:
+      "Develop custom web applications, SaaS platforms, and customer portals built with Next.js, React, Node.js, and edge databases by Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/web-applications",
+    type: "website",
+  },
+};
 
 // Inline service schema for search engine crawlers
 const serviceSchema = {

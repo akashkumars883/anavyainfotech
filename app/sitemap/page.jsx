@@ -28,6 +28,8 @@ export default async function HtmlSitemapPage() {
     { title: "Our Blog", href: "/blog", desc: "Software engineering blueprints and digital growth guides." },
     { title: "Case Studies", href: "/case-studies", desc: "Showcase of our featured web apps, AI tools, and enterprise platforms." },
     { title: "Pricing & Plans", href: "/pricing", desc: "Transparent pricing tiers and project estimation models." },
+    { title: "Hire Next.js Developers India", href: "/hire-nextjs-developers-india", desc: "Hire dedicated senior Next.js & React engineers in India at $25-$45/hr." },
+    { title: "Offshore Software Development", href: "/offshore-software-development-company", desc: "Enterprise offshore IT outsourcing & custom AI software development partner in India." },
     { title: "Contact Us", href: "/contact", desc: "Get a technical consultation and instant project estimate." },
   ];
 

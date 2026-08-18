@@ -1,11 +1,31 @@
-"use client";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
 import FaqSection from "@/components/FaqSection";
-
-
 import Link from "next/link";
 import { Zap, ArrowRight, Cpu } from "lucide-react";
+
+export const metadata = {
+  title: "Custom AI Chatbot Development & LLM Integration Services",
+  description:
+    "Deploy secure enterprise AI chatbots, LLM integrations, OpenAI/Anthropic models, and corporate RAG vector search pipelines with Anavya Infotech.",
+  keywords: [
+    "AI chatbot development",
+    "LLM integration services",
+    "enterprise AI assistant",
+    "RAG architecture",
+    "custom AI chatbot agency",
+    "OpenAI GPT-4 integration",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/ai-chatbot",
+  },
+  openGraph: {
+    title: "Custom AI Chatbot Development & LLM Integration Services",
+    description:
+      "Deploy secure enterprise AI chatbots, LLM integrations, OpenAI/Anthropic models, and corporate RAG vector search pipelines with Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/ai-chatbot",
+    type: "website",
+  },
+};
 
 // Inline service schema for search engine crawlers
 const serviceSchema = {

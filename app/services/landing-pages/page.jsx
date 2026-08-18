@@ -1,11 +1,31 @@
-"use client";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
 import FaqSection from "@/components/FaqSection";
-
-
 import Link from "next/link";
 import { Zap, ArrowRight, Layout } from "lucide-react";
+
+export const metadata = {
+  title: "High-Converting Landing Page Design & CRO Engineering",
+  description:
+    "Boost paid campaign ROI with ultra-fast Next.js landing pages built for max conversion rates, dynamic lead capture, and A/B test optimization by Anavya Infotech.",
+  keywords: [
+    "landing page design services",
+    "high converting landing pages",
+    "Next.js landing page development",
+    "CRO landing page agency",
+    "lead generation landing page",
+    "PPC landing page design",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/landing-pages",
+  },
+  openGraph: {
+    title: "High-Converting Landing Page Design & CRO Engineering",
+    description:
+      "Boost paid campaign ROI with ultra-fast Next.js landing pages built for max conversion rates, dynamic lead capture, and A/B test optimization by Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/landing-pages",
+    type: "website",
+  },
+};
 
 // Inline service schema for search engine crawlers
 const serviceSchema = {

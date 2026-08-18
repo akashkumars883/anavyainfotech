@@ -1,11 +1,31 @@
-"use client";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
 import FaqSection from "@/components/FaqSection";
-
-
 import Link from "next/link";
 import { Zap, ArrowRight, Shield } from "lucide-react";
+
+export const metadata = {
+  title: "Enterprise Business Process Automation & Workflow Engineering",
+  description:
+    "Eliminate manual operational bottlenecks with custom workflow automation, RPA pipelines, CRM integrations, and data sync from Anavya Infotech.",
+  keywords: [
+    "business process automation",
+    "workflow automation services",
+    "enterprise RPA development",
+    "workflow optimization",
+    "automated data sync",
+    "custom integration scripts",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/business-automation",
+  },
+  openGraph: {
+    title: "Enterprise Business Process Automation & Workflow Engineering",
+    description:
+      "Eliminate manual operational bottlenecks with custom workflow automation, RPA pipelines, CRM integrations, and data sync from Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/business-automation",
+    type: "website",
+  },
+};
 
 // Inline service schema for search engine crawlers
 const serviceSchema = {

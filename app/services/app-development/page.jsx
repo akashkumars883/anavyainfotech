@@ -1,8 +1,31 @@
-"use client";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import { Zap, ArrowRight, Smartphone } from "lucide-react";
+
+export const metadata = {
+  title: "Mobile App Development Services | iOS, Android & Cross-Platform Agency",
+  description:
+    "Custom iOS, Android, and cross-platform React Native/Flutter mobile app development services in India & USA from Anavya Infotech.",
+  keywords: [
+    "mobile app development company",
+    "iOS app development",
+    "Android app development",
+    "React Native development",
+    "Flutter app development",
+    "mobile app development in India",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/app-development",
+  },
+  openGraph: {
+    title: "Mobile App Development Services | iOS, Android & Cross-Platform Agency",
+    description:
+      "Custom iOS, Android, and cross-platform React Native/Flutter mobile app development services in India & USA from Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/app-development",
+    type: "website",
+  },
+};
 
 // Inline service schema for search engine crawlers
 const serviceSchema = {

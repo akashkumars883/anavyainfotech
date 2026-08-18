@@ -6,15 +6,20 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata = {
   title: "Transparent Pricing & Investment Packages",
   description:
-    "Explore transparent fixed pricing packages for custom website development, SEO services, local SEO, e-commerce, and white label SEO reseller programs.",
-  keywords:
-    "website development cost India, SEO package pricing, web design pricing Delhi NCR, custom software development cost, SEO reseller pricing",
+    "Explore transparent fixed pricing packages for SEO services, local SEO, e-commerce, and white label SEO reseller programs.",
+  keywords: [
+    "SEO package pricing",
+    "SEO services pricing India",
+    "local SEO package pricing",
+    "SEO reseller pricing",
+    "white label SEO costs",
+  ],
   alternates: {
     canonical: "https://www.anavyainfotech.com/pricing",
   },
   openGraph: {
     title: "Transparent Pricing & Investment Packages | Anavya Infotech",
-    description: "Transparent fixed-price software development and SEO growth packages.",
+    description: "Transparent fixed-price SEO growth and retainer packages.",
     url: "https://www.anavyainfotech.com/pricing",
     type: "website",
   },

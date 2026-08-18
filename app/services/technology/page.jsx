@@ -1,10 +1,32 @@
-"use client";
-
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Cpu, Bot, Workflow, Database, Network, CheckCircle2 } from "lucide-react";
+
+export const metadata = {
+  title: "Cloud Architecture, DevOps & Technology Consulting Services",
+  description:
+    "Modernize enterprise infrastructure with cloud architecture consulting, Serverless microservices, CI/CD automation, and tech stack audits from Anavya Infotech.",
+  keywords: [
+    "technology consulting services",
+    "cloud architecture consulting",
+    "DevOps automation company",
+    "serverless architecture",
+    "modern tech stack consulting",
+    "enterprise software architecture",
+  ],
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/services/technology",
+  },
+  openGraph: {
+    title: "Cloud Architecture, DevOps & Technology Consulting Services",
+    description:
+      "Modernize enterprise infrastructure with cloud architecture consulting, Serverless microservices, CI/CD automation, and tech stack audits from Anavya Infotech.",
+    url: "https://www.anavyainfotech.com/services/technology",
+    type: "website",
+  },
+};
 
 const serviceSchema = {
   "@context": "https://schema.org",
