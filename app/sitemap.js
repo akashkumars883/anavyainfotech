@@ -7,7 +7,7 @@ export default async function sitemap() {
 
   // Static core pages
   const staticPages = [
-    { url: `${BASE_URL}/`, lastModified: currentDate, priority: 1.0, changeFrequency: "weekly" },
+    { url: BASE_URL, lastModified: currentDate, priority: 1.0, changeFrequency: "weekly" },
     { url: `${BASE_URL}/about`, lastModified: currentDate, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE_URL}/case-studies`, lastModified: currentDate, priority: 0.85, changeFrequency: "weekly" },
     { url: `${BASE_URL}/pricing`, lastModified: currentDate, priority: 0.7, changeFrequency: "monthly" },
