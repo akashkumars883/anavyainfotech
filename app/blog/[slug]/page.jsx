@@ -43,29 +43,30 @@ export async function generateMetadata({ params }) {
 function formatArticleContent(content = "") {
   if (!content) return "";
 
-  let formatted = content;
+  // Normalize Windows CRLF line endings (\r\n -> \n)
+  let formatted = String(content).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 
   // 1. Code blocks ```
   formatted = formatted.replace(/```([a-z]*)\n([\s\S]*?)```/g, (match, lang, code) => {
     return `<pre><code class="language-${lang || 'text'}">${code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
   });
 
-  // 2. Headings (# H1, ## H2, ### H3, #### H4)
+  // 2. Headings (# H1, ## H2, ### H3, #### H4) with optional leading spaces
   formatted = formatted
-    .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1>$1</h1>');
+    .replace(/^\s*####\s+(.*$)/gm, '<h4>$1</h4>')
+    .replace(/^\s*###\s+(.*$)/gm, '<h3>$1</h3>')
+    .replace(/^\s*##\s+(.*$)/gm, '<h2>$1</h2>')
+    .replace(/^\s*#\s+(.*$)/gm, '<h1>$1</h1>');
 
-  // 3. Bold & Italic
+  // 3. Bold & Italic (using non-greedy multiline matching)
   formatted = formatted
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/__(.*?)__/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/_(.*?)_/g, '<em>$1</em>');
+    .replace(/\*([^\*]+)\*/g, '<em>$1</em>')
+    .replace(/_([^_]+)_/g, '<em>$1</em>');
 
   // 4. Blockquotes (> text)
-  formatted = formatted.replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>');
+  formatted = formatted.replace(/^\s*>\s*(.*$)/gm, '<blockquote>$1</blockquote>');
 
   // 5. Images ![alt](url)
   formatted = formatted.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-md my-6 max-w-full h-auto shadow-md border border-stone-200" />');
@@ -74,8 +75,8 @@ function formatArticleContent(content = "") {
   formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
 
   // 7. Bullet lists (- item or * item)
-  formatted = formatted.replace(/^\s*[\-\*] (.*$)/gim, '<li>$1</li>');
-  formatted = formatted.replace(/^\s*\d+\. (.*$)/gim, '<li>$1</li>');
+  formatted = formatted.replace(/^\s*[\-\*]\s+(.*$)/gm, '<li>$1</li>');
+  formatted = formatted.replace(/^\s*\d+\.\s+(.*$)/gm, '<li>$1</li>');
   formatted = formatted.replace(/(<li>.*?<\/li>\s*)+/gs, (match) => `<ul class="my-4 space-y-1">${match}</ul>`);
 
   // 8. Paragraph wrapping for orphan text lines
