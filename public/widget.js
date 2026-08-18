@@ -13,18 +13,20 @@
     apiBase = window.location.origin;
   }
 
-  // Create Container & Attach Shadow DOM to prevent host site CSS collision
-  var container = document.createElement('div');
-  container.id = 'anavya-ai-widget-root';
-  document.body.appendChild(container);
+  function initWidget() {
+    if (document.getElementById('anavya-ai-widget-root')) return;
+
+    // Create Container & Attach Shadow DOM to prevent host site CSS collision
+    var container = document.createElement('div');
+    container.id = 'anavya-ai-widget-root';
+    document.body.appendChild(container);
 
   var shadow = container.attachShadow({ mode: 'open' });
 
   // Styles inside Shadow DOM
   var style = document.createElement('style');
   style.textContent = `
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Space Grotesk', Inter, system-ui, -apple-system, sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-poppins), 'Poppins', system-ui, -apple-system, sans-serif; }
     .widget-bubble {
       position: fixed;
       bottom: 24px;
@@ -394,4 +396,13 @@
   inputField.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') handleSend();
   });
+  }
+
+  if (typeof window !== 'undefined') {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(function() { setTimeout(initWidget, 1000); });
+    } else {
+      setTimeout(initWidget, 2000);
+    }
+  }
 })();

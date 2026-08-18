@@ -102,6 +102,8 @@ export default function SelectedWork() {
                 <img
                   src={project.image}
                   alt={project.imageAlt}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover rounded-md opacity-95 transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -11,22 +12,18 @@ const DotLottieReact = dynamic(
 );
 
 export default function Hero() {
+  const [showLottie, setShowLottie] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowLottie(true), 400);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-white flex items-center justify-center px-6 pt-28 pb-16 md:pt-24 md:pb-16 text-left">
       {/* Soft Pure Ambient Deep Blue Radial Blur Background (NO GRID) */}
       <div className="absolute inset-0 bg-white pointer-events-none overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-700/10 blur-[150px] rounded-full pointer-events-none"
-        />
+        <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-700/10 blur-[150px] rounded-full pointer-events-none animate-pulse-slow" />
       </div>
 
       <div className="relative z-10 max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -106,29 +103,21 @@ export default function Hero() {
         {/* Right Column: Floating Lottie Animation Showcase */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            y: [0, -12, 0],
-          }}
-          transition={{
-            opacity: { duration: 0.8, delay: 0.3 },
-            scale: { duration: 0.8, delay: 0.3 },
-            y: {
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }}
-          className="lg:col-span-5 relative"
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="lg:col-span-5 relative animate-float"
         >
           <div className="relative w-full h-[380px] sm:h-[460px] p-4 sm:p-6 flex items-center justify-center overflow-hidden">
             <div className="w-full h-full flex items-center justify-center">
-              <DotLottieReact
-                src="https://lottie.host/2d4d4b91-732d-4e9a-9c8e-4f9aee2707ab/dfLNNvenUq.lottie"
-                loop
-                autoplay
-              />
+              {showLottie ? (
+                <DotLottieReact
+                  src="https://lottie.host/2d4d4b91-732d-4e9a-9c8e-4f9aee2707ab/dfLNNvenUq.lottie"
+                  loop
+                  autoplay
+                />
+              ) : (
+                <div className="w-full h-full rounded-2xl bg-blue-50/50 animate-pulse border border-blue-100/50" />
+              )}
             </div>
           </div>
         </motion.div>

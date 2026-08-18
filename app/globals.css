@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-poppins), var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -18,7 +18,7 @@
 }
 
 html, body, button, input, select, textarea {
-  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif !important;
+  font-family: var(--font-poppins), var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif !important;
 }
 
 html, body {
