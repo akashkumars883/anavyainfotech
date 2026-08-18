@@ -43,43 +43,50 @@ export async function generateMetadata({ params }) {
 function formatArticleContent(content = "") {
   if (!content) return "";
 
-  // Normalize Windows CRLF line endings (\r\n -> \n)
+  // 1. Normalize line endings (\r\n -> \n)
   let formatted = String(content).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 
-  // 1. Code blocks ```
-  formatted = formatted.replace(/```([a-z]*)\n([\s\S]*?)```/g, (match, lang, code) => {
+  // 2. Strip any accidental <p> or <div> tags wrapping markdown syntax like <p>### Heading</p>
+  formatted = formatted
+    .replace(/<p>\s*(####?\s+.*?)\s*<\/p>/gi, "$1")
+    .replace(/<p>\s*(###?\s+.*?)\s*<\/p>/gi, "$1")
+    .replace(/<p>\s*(##?\s+.*?)\s*<\/p>/gi, "$1")
+    .replace(/<p>\s*(#?\s+.*?)\s*<\/p>/gi, "$1");
+
+  // 3. Code blocks ```
+  formatted = formatted.replace(/```([a-z]*)\n([\s\S]*?)```/gi, (match, lang, code) => {
     return `<pre><code class="language-${lang || 'text'}">${code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
   });
 
-  // 2. Headings (# H1, ## H2, ### H3, #### H4) with optional leading spaces
+  // 4. Headings (# H1, ## H2, ### H3, #### H4) with explicit heading classes
   formatted = formatted
-    .replace(/^\s*####\s+(.*$)/gm, '<h4>$1</h4>')
-    .replace(/^\s*###\s+(.*$)/gm, '<h3>$1</h3>')
-    .replace(/^\s*##\s+(.*$)/gm, '<h2>$1</h2>')
-    .replace(/^\s*#\s+(.*$)/gm, '<h1>$1</h1>');
+    .replace(/^\s*####\s+(.*$)/gm, '<h4 class="text-lg font-bold text-stone-900 mt-6 mb-2">$1</h4>')
+    .replace(/^\s*###\s+(.*$)/gm, '<h3 class="text-xl font-bold text-stone-900 mt-6 mb-2">$1</h3>')
+    .replace(/^\s*##\s+(.*$)/gm, '<h2 class="text-2xl font-bold text-stone-900 mt-8 mb-3 pb-2 border-b border-stone-200">$1</h2>')
+    .replace(/^\s*#\s+(.*$)/gm, '<h1 class="text-3xl font-bold text-stone-900 mt-8 mb-4">$1</h1>');
 
-  // 3. Bold & Italic (using non-greedy multiline matching)
+  // 5. Bold & Italic (using explicit font-bold styling)
   formatted = formatted
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/__(.*?)__/g, '<strong>$1</strong>')
-    .replace(/\*([^\*]+)\*/g, '<em>$1</em>')
-    .replace(/_([^_]+)_/g, '<em>$1</em>');
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-stone-900">$1</strong>')
+    .replace(/__(.*?)__/g, '<strong class="font-bold text-stone-900">$1</strong>')
+    .replace(/\*([^\*]+)\*/g, '<em class="italic">$1</em>')
+    .replace(/_([^_]+)_/g, '<em class="italic">$1</em>');
 
-  // 4. Blockquotes (> text)
-  formatted = formatted.replace(/^\s*>\s*(.*$)/gm, '<blockquote>$1</blockquote>');
+  // 6. Blockquotes (> text)
+  formatted = formatted.replace(/^\s*>\s*(.*$)/gm, '<blockquote class="border-l-4 border-blue-700 pl-4 py-2 my-4 italic bg-blue-50/50 rounded-r-md text-stone-700">$1</blockquote>');
 
-  // 5. Images ![alt](url)
+  // 7. Images ![alt](url)
   formatted = formatted.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-md my-6 max-w-full h-auto shadow-md border border-stone-200" />');
 
-  // 6. Links [text](url)
-  formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+  // 8. Links [text](url)
+  formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline font-semibold hover:text-blue-900">$1</a>');
 
-  // 7. Bullet lists (- item or * item)
-  formatted = formatted.replace(/^\s*[\-\*]\s+(.*$)/gm, '<li>$1</li>');
-  formatted = formatted.replace(/^\s*\d+\.\s+(.*$)/gm, '<li>$1</li>');
-  formatted = formatted.replace(/(<li>.*?<\/li>\s*)+/gs, (match) => `<ul class="my-4 space-y-1">${match}</ul>`);
+  // 9. Bullet lists (- item or * item)
+  formatted = formatted.replace(/^\s*[\-\*]\s+(.*$)/gm, '<li class="ml-4 list-disc">$1</li>');
+  formatted = formatted.replace(/^\s*\d+\.\s+(.*$)/gm, '<li class="ml-4 list-decimal">$1</li>');
+  formatted = formatted.replace(/(<li.*?<\/li>\s*)+/gs, (match) => `<ul class="my-4 space-y-1.5">${match}</ul>`);
 
-  // 8. Paragraph wrapping for orphan text lines
+  // 10. Paragraph wrapping for orphan text lines
   const blocks = formatted.split(/\n\n+/);
   return blocks
     .map((block) => {
@@ -96,7 +103,7 @@ function formatArticleContent(content = "") {
       ) {
         return trimmed;
       }
-      return `<p>${trimmed}</p>`;
+      return `<p class="my-4 text-stone-700 font-normal leading-relaxed">${trimmed}</p>`;
     })
     .join("\n");
 }

@@ -218,8 +218,8 @@ html.lenis, html.lenis body {
 }
 
 .prose strong, .prose b {
-  font-weight: 600;
-  color: #111827;
+  font-weight: 700 !important;
+  color: #09090b !important;
 }
 
 .prose a {
