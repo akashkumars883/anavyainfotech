@@ -7,18 +7,18 @@ export default async function sitemap() {
 
   // Static core pages
   const staticPages = [
-    { url: BASE_URL, lastModified: currentDate, priority: 1.0, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/about`, lastModified: currentDate, priority: 0.8, changeFrequency: "monthly" },
+    { url: BASE_URL, lastModified: currentDate, priority: 1.0, changeFrequency: "daily" },
+    { url: `${BASE_URL}/about`, lastModified: currentDate, priority: 0.8, changeFrequency: "weekly" },
     { url: `${BASE_URL}/case-studies`, lastModified: currentDate, priority: 0.85, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/pricing`, lastModified: currentDate, priority: 0.7, changeFrequency: "monthly" },
-    { url: `${BASE_URL}/hire-nextjs-developers-india`, lastModified: currentDate, priority: 0.9, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/offshore-software-development-company`, lastModified: currentDate, priority: 0.9, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/contact`, lastModified: currentDate, priority: 0.9, changeFrequency: "monthly" },
-    { url: `${BASE_URL}/blog`, lastModified: currentDate, priority: 0.8, changeFrequency: "daily" },
+    { url: `${BASE_URL}/pricing`, lastModified: currentDate, priority: 0.7, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/hire-nextjs-developers-india`, lastModified: currentDate, priority: 0.9, changeFrequency: "daily" },
+    { url: `${BASE_URL}/offshore-software-development-company`, lastModified: currentDate, priority: 0.9, changeFrequency: "daily" },
+    { url: `${BASE_URL}/contact`, lastModified: currentDate, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/blog`, lastModified: currentDate, priority: 0.9, changeFrequency: "daily" },
     { url: `${BASE_URL}/privacy-policy`, lastModified: currentDate, priority: 0.5, changeFrequency: "yearly" },
     { url: `${BASE_URL}/terms-of-service`, lastModified: currentDate, priority: 0.5, changeFrequency: "yearly" },
     { url: `${BASE_URL}/refund-policy`, lastModified: currentDate, priority: 0.5, changeFrequency: "yearly" },
-    { url: `${BASE_URL}/sitemap`, lastModified: currentDate, priority: 0.6, changeFrequency: "monthly" },
+    { url: `${BASE_URL}/sitemap`, lastModified: currentDate, priority: 0.6, changeFrequency: "weekly" },
   ];
 
   // Case Study pages
@@ -26,7 +26,7 @@ export default async function sitemap() {
     url: `${BASE_URL}/case-studies/${project.slug}`,
     lastModified: currentDate,
     priority: 0.8,
-    changeFrequency: "monthly",
+    changeFrequency: "weekly",
   }));
 
   // Fetch ALL blog posts directly from Supabase (Includes current & all future published blogs)
@@ -40,33 +40,37 @@ export default async function sitemap() {
   const blogPages = blogPosts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: post.date ? new Date(post.date) : currentDate,
-    priority: 0.8,
-    changeFrequency: "weekly",
+    priority: 0.85,
+    changeFrequency: "daily",
   }));
 
   // Services pages
   const servicesSlugs = [
+    "development",
     "business-website",
+    "app-development",
     "web-applications",
     "landing-pages",
     "ecommerce",
-    "branding",
+    "technology",
+    "ai-chatbot",
+    "business-automation",
+    "crm-custom-software",
+    "api-integration",
+    "growth",
     "seo",
     "local-seo",
     "ecommerce-seo",
     "technical-seo",
     "content-strategist",
-    "ai-chatbot",
-    "business-automation",
-    "crm-custom-software",
-    "api-integration",
+    "branding",
   ];
 
   const servicePages = servicesSlugs.map((slug) => ({
     url: `${BASE_URL}/services/${slug}`,
     lastModified: currentDate,
     priority: 0.9,
-    changeFrequency: "monthly",
+    changeFrequency: "weekly",
   }));
 
   // Solutions pages
@@ -89,7 +93,7 @@ export default async function sitemap() {
     url: `${BASE_URL}/solutions/${slug}`,
     lastModified: currentDate,
     priority: 0.85,
-    changeFrequency: "monthly",
+    changeFrequency: "weekly",
   }));
 
   return [
