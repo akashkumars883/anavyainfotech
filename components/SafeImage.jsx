@@ -5,6 +5,7 @@ export default function SafeImage({
   alt = "Illustration",
   fallbackSrc = "/development-illustration.jpg",
   className = "",
+  priority = false,
   ...props
 }) {
   return (
@@ -12,6 +13,8 @@ export default function SafeImage({
       src={src && src.trim() !== "" ? src : fallbackSrc}
       alt={alt}
       className={className}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
       onError={(e) => {
         e.currentTarget.onerror = null;
         e.currentTarget.src = fallbackSrc;
