@@ -56,7 +56,7 @@ export default async function CaseStudyDetailPage({ params }) {
   };
 
   return (
-    <main className="min-h-screen bg-white pt-32 sm:pt-32 md:pt-28 pb-20 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white pt-8 md:pt-10 pb-20 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}

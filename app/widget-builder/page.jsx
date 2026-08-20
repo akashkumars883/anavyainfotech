@@ -65,7 +65,7 @@ export default function StandaloneWidgetBuilderPage() {
   }, [result]);
 
   return (
-    <main className="min-h-screen bg-stone-50 pt-24 md:pt-20 pb-16 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-stone-50 pt-6 md:pt-8 pb-16 text-left selection:bg-blue-600/20 selection:text-blue-950">
       {/* Header Banner */}
       <section className="py-10 bg-white border-b border-stone-200 px-6">
         <div className="max-w-7xl mx-auto space-y-4">

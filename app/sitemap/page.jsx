@@ -73,7 +73,7 @@ export default async function HtmlSitemapPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white pt-24 md:pt-20 text-left">
+    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       {/* Page Header */}
       <section className="py-10 bg-white px-6">
         <div className="max-w-7xl mx-auto space-y-6">

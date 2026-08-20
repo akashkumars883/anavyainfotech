@@ -43,7 +43,7 @@ export default function RefundPolicyPage() {
   const lastUpdated = "August 13, 2026";
 
   return (
-    <main className="min-h-screen bg-white pt-24 md:pt-20 text-left">
+    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       {/* Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-4xl mx-auto space-y-6">

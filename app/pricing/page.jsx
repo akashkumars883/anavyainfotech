@@ -55,7 +55,7 @@ const PRICING_FAQS = [
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen bg-white pt-24 md:pt-20 text-left">
+    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs items={[{ label: "Pricing", href: "/pricing" }]} />

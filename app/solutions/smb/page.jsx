@@ -37,7 +37,7 @@ const SMB_FAQS = [
 
 export default function SolutionPage() {
   return (
-    <main className="min-h-screen bg-white pt-24 md:pt-20 text-left">
+    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

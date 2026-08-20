@@ -61,7 +61,7 @@ export default function SeoServicePage() {
   };
 
   return (
-    <main className="min-h-screen bg-white pt-24 md:pt-20 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
