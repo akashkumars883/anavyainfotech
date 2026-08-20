@@ -93,15 +93,15 @@ export async function POST(request) {
       console.error("Supabase leads insert error:", error.message);
     }
 
-    // Dispatch emails via Resend (Customer Confirmation + Admin Alert)
+    // Dispatch emails via SMTP (Customer Confirmation + Admin Alert)
     try {
-      sendLeadNotificationEmails({
+      await sendLeadNotificationEmails({
         name,
         email,
         service: service || "General Consultation",
         message: message || (budget ? `Budget: ${budget}` : ""),
         source: "Contact Form Submission",
-      }).catch((e) => console.error("Background email dispatch error:", e));
+      });
     } catch (e) {
       console.error("Email send trigger error:", e);
     }
