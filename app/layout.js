@@ -203,6 +203,12 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
 
+        {/* DNS Prefetch & Preconnect for external asset domains */}
+        <link rel="dns-prefetch" href="https://juvkrpmrmjhhbnhxuwmd.supabase.co" />
+        <link rel="preconnect" href="https://juvkrpmrmjhhbnhxuwmd.supabase.co" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://challenges.cloudflare.com" />
+
         {/* Google Analytics GA4 */}
         {(() => {
           const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-TMQCHD2H4H";
