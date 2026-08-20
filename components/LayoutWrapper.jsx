@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
@@ -16,6 +17,7 @@ export default function LayoutWrapper({ children }) {
 
   return (
     <SmoothScrollProvider>
+      <AnnouncementBanner />
       <Navbar />
       <div className="flex-1 flex flex-col">{children}</div>
       <Footer />
