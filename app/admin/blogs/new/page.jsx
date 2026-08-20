@@ -51,8 +51,28 @@ export default function NewBlogPage() {
 
     setCompressing(true);
     try {
-      const result = await compressImageToWebP(file, { maxWidth: 1200, quality: 0.8 });
-      setFormData((prev) => ({ ...prev, image_url: result.dataUrl }));
+      const result = await compressImageToWebP(file, { maxWidth: 1000, quality: 0.75 });
+
+      // Convert compressed Base64 to Blob & upload to Supabase Storage Bucket
+      const blobRes = await fetch(result.dataUrl);
+      const blob = await blobRes.blob();
+      const compressedFile = new File([blob], file.name.replace(/\.[^/.]+$/, "") + ".webp", { type: "image/webp" });
+
+      const uploadFormData = new FormData();
+      uploadFormData.append("file", compressedFile);
+
+      const uploadRes = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: uploadFormData,
+      });
+
+      const uploadJson = await uploadRes.json();
+      if (uploadRes.ok && uploadJson.url) {
+        setFormData((prev) => ({ ...prev, image_url: uploadJson.url }));
+      } else {
+        setFormData((prev) => ({ ...prev, image_url: result.dataUrl }));
+      }
+
       setCompressionStats({
         originalKb: result.originalSizeKb,
         compressedKb: result.compressedSizeKb,
@@ -60,7 +80,7 @@ export default function NewBlogPage() {
       });
     } catch (err) {
       console.error("Error compressing image to WebP:", err);
-      alert("Failed to compress image file.");
+      alert("Failed to compress and upload image file.");
     } finally {
       setCompressing(false);
     }
