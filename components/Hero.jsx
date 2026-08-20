@@ -20,7 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-white flex items-center justify-center px-6 pt-28 pb-16 md:pt-24 md:pb-16 text-left">
+    <section className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-white flex items-center justify-center px-6 pt-8 pb-12 md:pt-10 md:pb-12 text-left">
       {/* Soft Pure Ambient Deep Blue Radial Blur Background (NO GRID) */}
       <div className="absolute inset-0 bg-white pointer-events-none overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-700/10 blur-[150px] rounded-full pointer-events-none animate-pulse-slow" />
