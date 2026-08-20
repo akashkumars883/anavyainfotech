@@ -269,14 +269,31 @@
     messagesList.scrollTop = messagesList.scrollHeight;
   }
 
-  // Initial Bot Welcome Message based on lead state
+  // Initial Bot Welcome Message based on lead state & Admin settings
   function initGreeting() {
     messagesList.innerHTML = '';
-    if (leadState === 'ASK_NAME') {
-      appendMessage('Hello! Welcome to Anavya AI. May I please know your name before we get started?', 'bot');
-    } else {
-      appendMessage('Hello ' + (savedLeadName ? savedLeadName : '') + '! How can I assist you regarding our services, SEO pricing, or software development today?', 'bot');
-    }
+    
+    // Fetch custom settings from Admin API
+    fetch(apiBase + '/api/admin/settings')
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        var welcomeMsg = (data.settings && data.settings.chatbot && data.settings.chatbot.welcomeMessage) 
+          ? data.settings.chatbot.welcomeMessage 
+          : 'Hello! Welcome to Anavya AI.';
+
+        if (leadState === 'ASK_NAME') {
+          appendMessage(welcomeMsg + ' May I please know your name before we get started?', 'bot');
+        } else {
+          appendMessage('Hello ' + (savedLeadName ? savedLeadName : '') + '! ' + welcomeMsg, 'bot');
+        }
+      })
+      .catch(function() {
+        if (leadState === 'ASK_NAME') {
+          appendMessage('Hello! Welcome to Anavya AI. May I please know your name before we get started?', 'bot');
+        } else {
+          appendMessage('Hello ' + (savedLeadName ? savedLeadName : '') + '! How can I assist you regarding our services today?', 'bot');
+        }
+      });
   }
   initGreeting();
 
