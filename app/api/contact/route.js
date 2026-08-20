@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
+import { checkRateLimit } from "@/lib/redis";
 
 async function verifyTurnstileToken(token) {
   const secretKey = process.env.TURNSTILE_SECRET_KEY || "0x4AAAAAAERZCchNh4IS0w8cg2mP-59i9_I";
@@ -25,6 +26,15 @@ async function verifyTurnstileToken(token) {
 
 export async function POST(request) {
   try {
+    // 1. IP Rate Limiting via Upstash Redis (Max 5 submissions per 60s per IP)
+    const clientIp = request.headers.get("x-forwarded-for")?.split(",")[0] || request.headers.get("x-real-ip") || "anon";
+    const rateCheck = await checkRateLimit(clientIp, "contact_submit", 5, 60);
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: "Too many submission attempts. Please wait 60 seconds before trying again." },
+        { status: 429 }
+      );
+    }
     let body;
     const contentType = request.headers.get("content-type") || "";
 

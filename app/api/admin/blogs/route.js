@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { supabaseAdmin } from "@/lib/supabase";
+import { delCache } from "@/lib/redis";
 
 // Helper function to notify all subscribers about a newly published blog
 async function notifySubscribers(blogTitle, blogSlug, blogExcerpt) {
@@ -127,6 +128,8 @@ export async function POST(request) {
 
     // Revalidate Next.js cache so the live site updates immediately in real-time
     try {
+      await delCache("blog:all_posts");
+      if (newBlog.slug) await delCache(`blog:slug:${newBlog.slug}`);
       revalidateTag("blogs");
       revalidatePath("/blog");
       if (newBlog.slug) revalidatePath(`/blog/${newBlog.slug}`);
