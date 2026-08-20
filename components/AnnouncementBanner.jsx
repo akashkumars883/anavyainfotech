@@ -26,16 +26,16 @@ export default function AnnouncementBanner() {
   if (!banner || !banner.enabled || dismissed) return null;
 
   return (
-    <div className="bg-gradient-to-r from-blue-900 via-stone-900 to-black text-white px-4 py-2.5 text-xs text-center relative z-50 flex items-center justify-center gap-2 border-b border-blue-900/50 selection:bg-blue-500 selection:text-white">
-      <div className="flex items-center gap-2 max-w-5xl truncate">
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-blue-600/30 border border-blue-400/30 text-[10px] font-bold uppercase tracking-wider text-blue-300 shrink-0">
-          <Sparkles className="h-3 w-3" /> Announcement
+    <div className="bg-black text-white px-6 py-2.5 text-xs relative z-50 flex items-center justify-between border-b border-stone-800">
+      <div className="flex items-center gap-3 text-left max-w-7xl">
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-blue-700 text-[10px] font-extrabold uppercase tracking-wider text-white shrink-0">
+          <Sparkles className="h-3 w-3 text-yellow-400" /> Announcement
         </span>
         <span className="font-medium text-stone-200 truncate">{banner.text}</span>
         {banner.link && (
           <Link
             href={banner.link}
-            className="inline-flex items-center gap-1 font-bold text-white hover:text-blue-300 underline underline-offset-4 shrink-0 transition-colors"
+            className="inline-flex items-center gap-1 font-bold text-blue-400 hover:text-blue-300 underline underline-offset-4 shrink-0 transition-colors"
           >
             <span>Learn More</span>
             <ArrowRight className="h-3 w-3" />
@@ -45,7 +45,7 @@ export default function AnnouncementBanner() {
 
       <button
         onClick={() => setDismissed(true)}
-        className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-stone-400 hover:text-white transition-colors cursor-pointer"
+        className="p-1 text-stone-400 hover:text-white transition-colors cursor-pointer shrink-0 ml-4"
         title="Close banner"
       >
         <X className="h-3.5 w-3.5" />
