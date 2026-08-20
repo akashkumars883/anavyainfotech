@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 import { checkRateLimit } from "@/lib/redis";
+import { sendLeadNotificationEmails } from "@/lib/email";
 
 async function verifyTurnstileToken(token) {
   const secretKey = process.env.TURNSTILE_SECRET_KEY || "0x4AAAAAAERZCchNh4IS0w8cg2mP-59i9_I";
@@ -90,6 +91,19 @@ export async function POST(request) {
 
     if (error) {
       console.error("Supabase leads insert error:", error.message);
+    }
+
+    // Dispatch emails via Resend (Customer Confirmation + Admin Alert)
+    try {
+      sendLeadNotificationEmails({
+        name,
+        email,
+        service: service || "General Consultation",
+        message: message || (budget ? `Budget: ${budget}` : ""),
+        source: "Contact Form Submission",
+      }).catch((e) => console.error("Background email dispatch error:", e));
+    } catch (e) {
+      console.error("Email send trigger error:", e);
     }
 
     // Redirect if form submit

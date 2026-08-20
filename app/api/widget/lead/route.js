@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
+import { sendLeadNotificationEmails } from "@/lib/email";
 
 export const dynamic = "force-dynamic";
 
@@ -91,6 +92,20 @@ export async function POST(req) {
       console.warn("Supabase lead save notice:", e.message);
     }
 
+    // Trigger Dual Resend Emails (Admin Alert + Customer Confirmation)
+    try {
+      sendLeadNotificationEmails({
+        name: name.trim(),
+        email: phoneEmail.includes("@") ? phoneEmail.trim() : null,
+        phone: !phoneEmail.includes("@") ? phoneEmail.trim() : null,
+        service: siteId || "AI Chatbot Lead",
+        message: `Lead captured via AI Chatbot widget. Phone/Contact: ${phoneEmail.trim()}`,
+        source: "AI Chatbot Widget",
+      }).catch((e) => console.error("Chatbot email dispatch error:", e));
+    } catch (e) {
+      console.error("Chatbot email trigger error:", e);
+    }
+
     console.log("New Chatbot Lead Captured & Pushed to Supabase:", leadRecord);
 
     return NextResponse.json({ success: true, leadRecord }, { headers: CORS_HEADERS });
@@ -99,3 +114,4 @@ export async function POST(req) {
     return NextResponse.json({ error: err.message }, { status: 500, headers: CORS_HEADERS });
   }
 }
+
