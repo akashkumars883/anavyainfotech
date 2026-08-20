@@ -6,6 +6,11 @@ export default function robots() {
         allow: "/",
         disallow: ["/api/", "/admin/"],
       },
+      {
+        userAgent: ["GPTBot", "ChatGPT-User", "PerplexityBot", "ClaudeBot", "Google-Extended"],
+        allow: "/",
+        disallow: ["/api/", "/admin/"],
+      },
     ],
     sitemap: "https://www.anavyainfotech.com/sitemap.xml",
   };
