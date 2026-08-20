@@ -64,6 +64,36 @@ export async function POST(request) {
       return NextResponse.json({ error: "Title is required" }, { status: 400 });
     }
 
+    // 1. Cover Image Size Validation (Reject base64 images > 300KB)
+    if (image_url && typeof image_url === "string" && image_url.startsWith("data:") && image_url.length > 300000) {
+      return NextResponse.json(
+        { error: "Cover Image is too large (exceeds 300KB limit). Please upload a compressed image or use an image URL." },
+        { status: 400 }
+      );
+    }
+
+    // 2. Article Body Inline Base64 Image Size Validation
+    if (content && typeof content === "string" && content.includes("data:image/")) {
+      const base64Matches = content.match(/data:image\/[^;]+;base64,[^"'\s)]+/gi) || [];
+      for (const b64 of base64Matches) {
+        if (b64.length > 300000) {
+          return NextResponse.json(
+            { error: "Article body contains an uncompressed image (exceeds 300KB limit). Please compress inline images before uploading." },
+            { status: 400 }
+          );
+        }
+      }
+    }
+
+    // 3. Total Payload Size Check (< 1.5MB limit)
+    const payloadSize = JSON.stringify(body).length;
+    if (payloadSize > 1500000) {
+      return NextResponse.json(
+        { error: `Article size is too large (${(payloadSize / 1000000).toFixed(1)}MB). Maximum allowed limit is 1.5MB to prevent Vercel crashes.` },
+        { status: 400 }
+      );
+    }
+
     // Auto-generate slug if not provided
     const blogSlug = slug || title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
@@ -126,6 +156,36 @@ export async function PUT(request) {
 
     if (!id) {
       return NextResponse.json({ error: "Blog ID is required" }, { status: 400 });
+    }
+
+    // 1. Cover Image Size Validation (Reject base64 images > 300KB)
+    if (image_url && typeof image_url === "string" && image_url.startsWith("data:") && image_url.length > 300000) {
+      return NextResponse.json(
+        { error: "Cover Image is too large (exceeds 300KB limit). Please upload a compressed image or use an image URL." },
+        { status: 400 }
+      );
+    }
+
+    // 2. Article Body Inline Base64 Image Size Validation
+    if (content && typeof content === "string" && content.includes("data:image/")) {
+      const base64Matches = content.match(/data:image\/[^;]+;base64,[^"'\s)]+/gi) || [];
+      for (const b64 of base64Matches) {
+        if (b64.length > 300000) {
+          return NextResponse.json(
+            { error: "Article body contains an uncompressed image (exceeds 300KB limit). Please compress inline images before uploading." },
+            { status: 400 }
+          );
+        }
+      }
+    }
+
+    // 3. Total Payload Size Check (< 1.5MB limit)
+    const payloadSize = JSON.stringify(body).length;
+    if (payloadSize > 1500000) {
+      return NextResponse.json(
+        { error: `Article size is too large (${(payloadSize / 1000000).toFixed(1)}MB). Maximum allowed limit is 1.5MB to prevent Vercel crashes.` },
+        { status: 400 }
+      );
     }
 
     const updatedFields = {
