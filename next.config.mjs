@@ -4,7 +4,14 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion", "@lottiefiles/dotlottie-react"],
+    optimizePackageImports: [
+      "lucide-react",
+      "framer-motion",
+      "@lottiefiles/dotlottie-react",
+      "three",
+      "lenis",
+      "@supabase/supabase-js",
+    ],
   },
   images: {
     formats: ["image/avif", "image/webp"],
