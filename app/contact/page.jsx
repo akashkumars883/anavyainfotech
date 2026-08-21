@@ -209,7 +209,7 @@ export default function ContactPage() {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/company/anavyainfotech/"
+                href="https://www.linkedin.com/company/anavya-infotech/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

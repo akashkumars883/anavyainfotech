@@ -156,7 +156,7 @@ const orgSchema = {
     "https://www.facebook.com/anavyainfotech/",
     "https://www.instagram.com/anavyainfotech/",
     "https://www.pinterest.com/anavyainfotech/",
-    "https://www.linkedin.com/company/anavyainfotech/",
+    "https://www.linkedin.com/company/anavya-infotech/",
     "https://x.com/anavyainfotech",
   ],
   "hasOfferCatalog": {
