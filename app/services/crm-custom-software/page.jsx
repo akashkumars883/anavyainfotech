@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
@@ -27,18 +28,6 @@ export const metadata = {
   },
 };
 
-// Inline service schema for search engine crawlers
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Custom CRM & Custom Enterprise Software",
-  "description": "Replacing restrictive off-the-shelf SaaS with custom dashboards, secure internal CRM systems, customer panels, and database storage modules without monthly licenses.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
 
 
 const CRM_CUSTOM_SOFTWARE_FAQS = [
@@ -64,13 +53,21 @@ const CRM_CUSTOM_SOFTWARE_FAQS = [
   }
 ];
 
+
+const serviceSchemas = createServiceSchema({
+  name: "Custom CRM & Custom Enterprise Software",
+  description: "Replacing restrictive off-the-shelf SaaS with custom dashboards, secure internal CRM systems, customer panels, and database storage modules without monthly licenses.",
+  slug: "crm-custom-software",
+  faqs: CRM_CUSTOM_SOFTWARE_FAQS,
+});
+
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       {/* Search Engine Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}

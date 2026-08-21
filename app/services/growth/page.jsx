@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
@@ -28,17 +29,6 @@ export const metadata = {
   },
 };
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Digital Growth, Search Engine Optimization & Content Strategy Services",
-  "description": "SEO services, local SEO, e-commerce SEO, technical audits, and content strategies by Anavya Infotech.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
 
 const GROWTH_FAQS = [
   {
@@ -97,12 +87,20 @@ const subServices = [
   }
 ];
 
+
+const serviceSchemas = createServiceSchema({
+  name: "Digital Growth, Search Engine Optimization & Content Strategy Services",
+  description: "SEO services, local SEO, e-commerce SEO, technical audits, and content strategies by Anavya Infotech.",
+  slug: "growth",
+  faqs: GROWTH_FAQS,
+});
+
 export default function GrowthCategoryPage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Hero Header Area */}

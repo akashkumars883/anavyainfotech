@@ -2,6 +2,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import { Globe, MapPin, Compass, ArrowRight, ShieldCheck, Zap, Code } from "lucide-react";
+import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
   title: "Website Development Company in India & USA | Website Design Services",
@@ -20,7 +21,6 @@ export const metadata = {
     type: "website",
   },
 };
-
 
 const BUSINESS_WEBSITE_FAQS = [
   {
@@ -44,6 +44,15 @@ const BUSINESS_WEBSITE_FAQS = [
     "answer": "Yes, we deploy on global high-speed edge networks (Vercel, AWS Cloudflare) and offer ongoing technical maintenance plans."
   }
 ];
+
+const serviceSchemas = createServiceSchema({
+  name: "Website Development & Web Design Services in India and USA",
+  description: "Anavya Infotech is a top website development company in India & USA providing custom web design services, Next.js web applications, and SEO-optimized business websites.",
+  slug: "business-website",
+  serviceType: "Website Development & Design",
+  faqs: BUSINESS_WEBSITE_FAQS,
+  breadcrumbLabel: "Business Website",
+});
 
 export default function BusinessWebsitePage() {
   const scopes = [
@@ -85,28 +94,11 @@ export default function BusinessWebsitePage() {
     },
   ];
 
-  const pageSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Website Development & Web Design Services in India and USA",
-    "description": "Anavya Infotech is a top website development company in India & USA providing custom web design services, Next.js web applications, and SEO-optimized business websites.",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Anavya Infotech",
-      "url": "https://www.anavyainfotech.com"
-    },
-    "areaServed": [
-      "India",
-      "United States",
-      "Global"
-    ]
-  };
-
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Hero Header Section */}

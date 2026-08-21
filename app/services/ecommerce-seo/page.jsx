@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
@@ -45,25 +46,21 @@ const ECOMMERCE_SEO_FAQS = [
   }
 ];
 
-export default function EcommerceSeoPage() {
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "E-Commerce SEO Services & Category Optimization",
-    "description": "Premier ecommerce SEO agency in India providing product schema markup, facet navigation SEO, technical crawl optimization, and organic sales scaling.",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Anavya Infotech",
-      "url": "https://www.anavyainfotech.com"
-    },
-    "areaServed": ["India", "United States", "Global"]
-  };
 
+const serviceSchemas = createServiceSchema({
+  name: "E-Commerce SEO Services & Category Optimization",
+  description: "Premier ecommerce SEO agency in India providing product schema markup, facet navigation SEO, technical crawl optimization, and organic sales scaling.",
+  slug: "ecommerce-seo",
+  faqs: ECOMMERCE_SEO_FAQS,
+});
+
+export default function EcommerceSeoPage() {
+  
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}

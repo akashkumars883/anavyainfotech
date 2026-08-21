@@ -3,6 +3,7 @@ import FaqSection from "@/components/FaqSection";
 import SeoPricing from "@/components/SeoPricing";
 import Link from "next/link";
 import { Zap, ArrowRight, LineChart, ShieldCheck, Globe, CheckCircle2 } from "lucide-react";
+import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
   title: "Best SEO Company in India | SEO Agency & White Label SEO Reseller Services",
@@ -21,7 +22,6 @@ export const metadata = {
     type: "website",
   },
 };
-
 
 const SEO_FAQS = [
   {
@@ -46,25 +46,21 @@ const SEO_FAQS = [
   }
 ];
 
-export default function SeoServicePage() {
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Search Engine Optimization & White Label SEO Reseller Services",
-    "description": "Anavya Infotech is a top-rated SEO company in India offering enterprise SEO services, local SEO, white label SEO reseller programs, and technical search auditing.",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Anavya Infotech",
-      "url": "https://www.anavyainfotech.com"
-    },
-    "areaServed": ["India", "Delhi NCR", "Noida", "Global"]
-  };
+const serviceSchemas = createServiceSchema({
+  name: "Search Engine Optimization & White Label SEO Reseller Services",
+  description: "Anavya Infotech is a top-rated SEO company in India offering enterprise SEO services, local SEO, white label SEO reseller programs, and technical search auditing.",
+  slug: "seo",
+  serviceType: "Search Engine Optimization & Growth Services",
+  faqs: SEO_FAQS,
+  breadcrumbLabel: "SEO",
+});
 
+export default function SeoServicePage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}

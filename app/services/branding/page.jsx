@@ -3,6 +3,7 @@ import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Palette, Compass, Layers, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
   title: "Corporate Branding Services & Digital Brand Identity Agency",
@@ -28,18 +29,6 @@ export const metadata = {
   },
 };
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Corporate Branding & Visual Identity Design Services",
-  "description": "Corporate branding, visual identity systems, brand positioning, UI/UX design systems, and digital asset engineering by Anavya Infotech.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
-
 const BRANDING_FAQS = [
   {
     question: "What is included in your corporate branding packages?",
@@ -58,6 +47,15 @@ const BRANDING_FAQS = [
     answer: "Yes! We specialize in cohesive digital brand systems that translate seamlessly into modern, responsive web application interfaces."
   }
 ];
+
+const serviceSchemas = createServiceSchema({
+  name: "Corporate Branding & Visual Identity Design Services",
+  description: "Corporate branding, visual identity systems, brand positioning, UI/UX design systems, and digital asset engineering by Anavya Infotech.",
+  slug: "branding",
+  serviceType: "Corporate Branding & Design Services",
+  faqs: BRANDING_FAQS,
+  breadcrumbLabel: "Branding",
+});
 
 const subServices = [
   {
@@ -95,7 +93,7 @@ export default function CorporateBrandingPage() {
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Hero Header Section */}

@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
@@ -28,17 +29,6 @@ export const metadata = {
   },
 };
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "AI, Automation & Custom Enterprise Technology Services",
-  "description": "AI chatbots, business process automation workflows, custom CRM software, and API integration services by Anavya Infotech.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
 
 const TECHNOLOGY_FAQS = [
   {
@@ -90,12 +80,20 @@ const subServices = [
   }
 ];
 
+
+const serviceSchemas = createServiceSchema({
+  name: "AI, Automation & Custom Enterprise Technology Services",
+  description: "AI chatbots, business process automation workflows, custom CRM software, and API integration services by Anavya Infotech.",
+  slug: "technology",
+  faqs: TECHNOLOGY_FAQS,
+});
+
 export default function TechnologyCategoryPage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Hero Header Area */}

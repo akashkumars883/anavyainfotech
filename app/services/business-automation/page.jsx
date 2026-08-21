@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
@@ -27,18 +28,6 @@ export const metadata = {
   },
 };
 
-// Inline service schema for search engine crawlers
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Business Workflow Automation Services",
-  "description": "Engineering automatic data pipelines, scheduling script triggers, connecting SaaS tools APIs, and centralizing data workflows to reduce operation latencies.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
 
 
 const BUSINESS_AUTOMATION_FAQS = [
@@ -64,13 +53,21 @@ const BUSINESS_AUTOMATION_FAQS = [
   }
 ];
 
+
+const serviceSchemas = createServiceSchema({
+  name: "Business Workflow Automation Services",
+  description: "Engineering automatic data pipelines, scheduling script triggers, connecting SaaS tools APIs, and centralizing data workflows to reduce operation latencies.",
+  slug: "business-automation",
+  faqs: BUSINESS_AUTOMATION_FAQS,
+});
+
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       {/* Search Engine Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}

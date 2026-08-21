@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
@@ -45,25 +46,21 @@ const CONTENT_STRATEGIST_FAQS = [
   }
 ];
 
-export default function PerformanceMarketingPage() {
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Digital Marketing, Performance Marketing & Social Media Marketing Services",
-    "description": "Premier digital marketing agency in India & Delhi NCR offering performance marketing company services, social media marketing services, paid search campaigns, and content growth strategies.",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Anavya Infotech",
-      "url": "https://www.anavyainfotech.com"
-    },
-    "areaServed": ["India", "Delhi NCR", "Noida", "Global"]
-  };
 
+const serviceSchemas = createServiceSchema({
+  name: "Digital Marketing, Performance Marketing & Social Media Marketing Services",
+  description: "Premier digital marketing agency in India & Delhi NCR offering performance marketing company services, social media marketing services, paid search campaigns, and content growth strategies.",
+  slug: "content-strategist",
+  faqs: CONTENT_STRATEGIST_FAQS,
+});
+
+export default function PerformanceMarketingPage() {
+  
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">

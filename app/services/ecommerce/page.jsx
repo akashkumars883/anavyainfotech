@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
@@ -45,25 +46,21 @@ const ECOMMERCE_FAQS = [
   }
 ];
 
-export default function EcommerceServicePage() {
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "E-Commerce Development Services",
-    "description": "Leading ecommerce development company in India providing headless Next.js storefronts, custom checkout pipelines, Shopify Storefront API integrations, and mobile conversion optimization.",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Anavya Infotech",
-      "url": "https://www.anavyainfotech.com"
-    },
-    "areaServed": ["India", "United States", "Global"]
-  };
 
+const serviceSchemas = createServiceSchema({
+  name: "E-Commerce Development Services",
+  description: "Leading ecommerce development company in India providing headless Next.js storefronts, custom checkout pipelines, Shopify Storefront API integrations, and mobile conversion optimization.",
+  slug: "ecommerce",
+  faqs: ECOMMERCE_FAQS,
+});
+
+export default function EcommerceServicePage() {
+  
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">

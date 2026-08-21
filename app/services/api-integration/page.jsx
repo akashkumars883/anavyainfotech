@@ -2,6 +2,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import { Zap, ArrowRight, Terminal } from "lucide-react";
+import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
   title: "Custom API Integration & Microservices Engineering Services",
@@ -27,20 +28,6 @@ export const metadata = {
   },
 };
 
-// Inline service schema for search engine crawlers
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Custom API Development & Integration",
-  "description": "Designing REST and GraphQL interfaces to securely synchronize databases, third-party applications, payment gateways, and custom script endpoints.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
-
-
 const API_INTEGRATION_FAQS = [
   {
     "question": "What API architectures do you specialize in?",
@@ -64,19 +51,28 @@ const API_INTEGRATION_FAQS = [
   }
 ];
 
+const serviceSchemas = createServiceSchema({
+  name: "Custom API Development & Integration",
+  description: "Designing REST and GraphQL interfaces to securely synchronize databases, third-party applications, payment gateways, and custom script endpoints.",
+  slug: "api-integration",
+  serviceType: "API Development & System Integration",
+  faqs: API_INTEGRATION_FAQS,
+  breadcrumbLabel: "API Integration",
+});
+
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
-      {/* Search Engine Schema */}
+      {/* Search Engine Schema Graph */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Api Integration", href: "/services/api-integration" }]} />
+          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "API Integration", href: "/services/api-integration" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Services Catalog
           </div>

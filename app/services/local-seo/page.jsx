@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
@@ -45,25 +46,21 @@ const LOCAL_SEO_FAQS = [
   }
 ];
 
-export default function LocalSeoServicePage() {
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Local SEO Agency & Local Search Optimization Services",
-    "description": "Premier local SEO agency in India providing Google Business Profile optimization, localized schema markup, review management, and local citation building in Delhi NCR, Noida, and across India.",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Anavya Infotech",
-      "url": "https://www.anavyainfotech.com"
-    },
-    "areaServed": ["India", "Delhi NCR", "Noida", "Global"]
-  };
 
+const serviceSchemas = createServiceSchema({
+  name: "Local SEO Agency & Local Search Optimization Services",
+  description: "Premier local SEO agency in India providing Google Business Profile optimization, localized schema markup, review management, and local citation building in Delhi NCR, Noida, and across India.",
+  slug: "local-seo",
+  faqs: LOCAL_SEO_FAQS,
+});
+
+export default function LocalSeoServicePage() {
+  
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}

@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import SafeImage from "@/components/SafeImage";
@@ -27,17 +28,6 @@ export const metadata = {
   },
 };
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Custom Development & Software Engineering Services",
-  "description": "Full-stack web applications, mobile app development, business websites, landing pages, and e-commerce platforms engineered by Anavya Infotech.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
 
 const DEVELOPMENT_FAQS = [
   {
@@ -96,12 +86,20 @@ const subServices = [
   }
 ];
 
+
+const serviceSchemas = createServiceSchema({
+  name: "Custom Development & Software Engineering Services",
+  description: "Full-stack web applications, mobile app development, business websites, landing pages, and e-commerce platforms engineered by Anavya Infotech.",
+  slug: "development",
+  faqs: DEVELOPMENT_FAQS,
+});
+
 export default function DevelopmentCategoryPage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Hero Header Area */}

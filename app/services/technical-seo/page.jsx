@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
@@ -27,18 +28,6 @@ export const metadata = {
   },
 };
 
-// Inline service schema for search engine crawlers
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Technical SEO & Speed Optimization",
-  "description": "Resolving server headers, client-script rendering errors, sitemap bugs, duplicate content issues, and Core Web Vitals to maximize search console crawler indexing budget.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
 
 
 const TECHNICAL_SEO_FAQS = [
@@ -64,13 +53,21 @@ const TECHNICAL_SEO_FAQS = [
   }
 ];
 
+
+const serviceSchemas = createServiceSchema({
+  name: "Technical SEO & Speed Optimization",
+  description: "Resolving server headers, client-script rendering errors, sitemap bugs, duplicate content issues, and Core Web Vitals to maximize search console crawler indexing budget.",
+  slug: "technical-seo",
+  faqs: TECHNICAL_SEO_FAQS,
+});
+
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       {/* Search Engine Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}

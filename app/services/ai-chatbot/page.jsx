@@ -2,6 +2,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import { Zap, ArrowRight, Cpu } from "lucide-react";
+import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
   title: "Custom AI Chatbot Development & LLM Integration Services",
@@ -27,20 +28,6 @@ export const metadata = {
   },
 };
 
-// Inline service schema for search engine crawlers
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Custom AI Chatbots & LLM Integrations",
-  "description": "Building intelligent client-facing chat modules and support agents powered by secure OpenAI / Anthropic models, customized semantic database storage, and corporate RAG search pipelines.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
-
-
 const AI_CHATBOT_FAQS = [
   {
     "question": "What LLMs and models do you use for AI chatbot development?",
@@ -64,19 +51,28 @@ const AI_CHATBOT_FAQS = [
   }
 ];
 
+const serviceSchemas = createServiceSchema({
+  name: "Custom AI Chatbots & LLM Integrations",
+  description: "Building intelligent client-facing chat modules and support agents powered by secure OpenAI / Anthropic models, customized semantic database storage, and corporate RAG search pipelines.",
+  slug: "ai-chatbot",
+  serviceType: "Artificial Intelligence Development",
+  faqs: AI_CHATBOT_FAQS,
+  breadcrumbLabel: "AI Chatbot",
+});
+
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
-      {/* Search Engine Schema */}
+      {/* Search Engine Schema Graph */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Ai Chatbot", href: "/services/ai-chatbot" }]} />
+          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "AI Chatbot", href: "/services/ai-chatbot" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Services Catalog
           </div>

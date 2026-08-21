@@ -2,6 +2,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import { Zap, ArrowRight, Code } from "lucide-react";
+import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
   title: "Custom Web Application Development Services | Next.js & React",
@@ -27,20 +28,6 @@ export const metadata = {
   },
 };
 
-// Inline service schema for search engine crawlers
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Web Application Development Services",
-  "description": "Custom React and Next.js business web applications integrated with secure databases, multi-role user authentications, serverless compute layers, and real-time telemetry.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
-
-
 const WEB_APPLICATIONS_FAQS = [
   {
     "question": "What tech stack do you use for web application development?",
@@ -64,13 +51,22 @@ const WEB_APPLICATIONS_FAQS = [
   }
 ];
 
+const serviceSchemas = createServiceSchema({
+  name: "Web Application Development Services",
+  description: "Custom React and Next.js business web applications integrated with secure databases, multi-role user authentications, serverless compute layers, and real-time telemetry.",
+  slug: "web-applications",
+  serviceType: "Web Application Development",
+  faqs: WEB_APPLICATIONS_FAQS,
+  breadcrumbLabel: "Web Applications",
+});
+
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
-      {/* Search Engine Schema */}
+      {/* Search Engine Schema Graph */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}

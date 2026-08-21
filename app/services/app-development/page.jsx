@@ -2,6 +2,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import { Zap, ArrowRight, Smartphone } from "lucide-react";
+import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
   title: "Mobile App Development Services | iOS, Android & Cross-Platform Agency",
@@ -27,19 +28,6 @@ export const metadata = {
   },
 };
 
-// Inline service schema for search engine crawlers
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Mobile & Cross-Platform App Development Services",
-  "description": "Custom iOS, Android, and cross-platform mobile application development company in India & USA delivering native performance, real-time sync, and scalable cloud APIs.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
-
 const APP_DEVELOPMENT_FAQS = [
   {
     "question": "What technologies do you use for mobile app development?",
@@ -63,13 +51,22 @@ const APP_DEVELOPMENT_FAQS = [
   }
 ];
 
+const serviceSchemas = createServiceSchema({
+  name: "Mobile & Cross-Platform App Development Services",
+  description: "Custom iOS, Android, and cross-platform mobile application development company in India & USA delivering native performance, real-time sync, and scalable cloud APIs.",
+  slug: "app-development",
+  serviceType: "Mobile Application Development",
+  faqs: APP_DEVELOPMENT_FAQS,
+  breadcrumbLabel: "App Development",
+});
+
 export default function AppDevelopmentServicePage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
-      {/* Search Engine Schema */}
+      {/* Search Engine Schema Graph */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}

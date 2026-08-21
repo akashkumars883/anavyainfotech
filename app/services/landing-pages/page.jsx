@@ -1,3 +1,4 @@
+import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
@@ -27,18 +28,6 @@ export const metadata = {
   },
 };
 
-// Inline service schema for search engine crawlers
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "High-Converting Landing Page Design",
-  "description": "Conversion-rate optimized single-page web structures featuring instantaneous Core Web Vitals loading metrics, semantic text layout hierarchies, and direct CTA actions.",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "Anavya Infotech",
-    "url": "https://www.anavyainfotech.com"
-  }
-};
 
 
 const LANDING_PAGES_FAQS = [
@@ -64,13 +53,21 @@ const LANDING_PAGES_FAQS = [
   }
 ];
 
+
+const serviceSchemas = createServiceSchema({
+  name: "High-Converting Landing Page Design",
+  description: "Conversion-rate optimized single-page web structures featuring instantaneous Core Web Vitals loading metrics, semantic text layout hierarchies, and direct CTA actions.",
+  slug: "landing-pages",
+  faqs: LANDING_PAGES_FAQS,
+});
+
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
       {/* Search Engine Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
       />
 
       {/* Header Area */}
