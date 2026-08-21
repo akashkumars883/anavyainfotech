@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { 
   Heading1, 
   Heading2, 
   Heading3, 
   Bold, 
   Italic, 
+  Underline,
   List, 
   ListOrdered, 
   Quote, 
@@ -16,91 +17,179 @@ import {
   Upload,
   Zap,
   Check,
+  Code2,
   Eye,
-  Edit3
+  RemoveFormatting
 } from "lucide-react";
 import { compressImageToWebP } from "@/lib/imageOptimizer";
 
-function renderPreviewHtml(content = "") {
-  if (!content) return "<p class='text-stone-400 italic'>Nothing to preview yet...</p>";
+function convertMarkdownToHtml(content = "") {
+  if (!content) return "<p><br></p>";
+  
+  let formatted = String(content);
 
-  let formatted = String(content).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  // 1. Convert any Markdown image syntax ![alt](url) to an actual <img> tag immediately
+  formatted = formatted.replace(
+    /!\[([^\]]*)\]\(([^)]+)\)/g,
+    '<img src="$2" alt="$1" class="rounded-md my-6 max-w-full h-auto shadow-md border border-stone-200" />'
+  );
 
-  formatted = formatted
-    .replace(/<p>\s*(####?\s+.*?)\s*<\/p>/gi, "$1")
-    .replace(/<p>\s*(###?\s+.*?)\s*<\/p>/gi, "$1")
-    .replace(/<p>\s*(##?\s+.*?)\s*<\/p>/gi, "$1")
-    .replace(/<p>\s*(#?\s+.*?)\s*<\/p>/gi, "$1");
+  // 2. Convert Markdown link syntax [text](url) to an actual <a> tag
+  formatted = formatted.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline font-semibold">$1</a>'
+  );
 
-  formatted = formatted.replace(/```([a-z]*)\n([\s\S]*?)```/gi, (match, lang, code) => {
-    return `<pre class="bg-stone-900 text-stone-100 p-4 rounded-md my-4 overflow-x-auto"><code class="text-xs font-mono">${code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
-  });
+  // 3. If content does not contain HTML block elements, convert markdown headings, bold, lists
+  if (!/<(p|h[1-6]|ul|ol|blockquote|div|pre|table)/i.test(formatted)) {
+    formatted = formatted
+      .replace(/^\s*####\s+(.*$)/gm, '<h4>$1</h4>')
+      .replace(/^\s*###\s+(.*$)/gm, '<h3>$1</h3>')
+      .replace(/^\s*##\s+(.*$)/gm, '<h2>$2</h2>')
+      .replace(/^\s*#\s+(.*$)/gm, '<h1>$1</h1>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/__(.*?)__/g, '<strong>$1</strong>')
+      .replace(/\*([^\*]+)\*/g, '<em>$1</em>')
+      .replace(/_([^_]+)_/g, '<em>$1</em>')
+      .replace(/^\s*>\s*(.*$)/gm, '<blockquote>$1</blockquote>')
+      .replace(/^\s*[\-\*]\s+(.*$)/gm, '<li>$1</li>')
+      .replace(/(<li>.*?<\/li>\s*)+/gs, (match) => `<ul>${match}</ul>`);
 
-  formatted = formatted
-    .replace(/^\s*####\s+(.*$)/gm, '<h4 class="text-lg font-bold text-stone-900 mt-6 mb-2">$1</h4>')
-    .replace(/^\s*###\s+(.*$)/gm, '<h3 class="text-xl font-bold text-stone-900 mt-6 mb-2">$1</h3>')
-    .replace(/^\s*##\s+(.*$)/gm, '<h2 class="text-2xl font-bold text-stone-900 mt-8 mb-3 pb-2 border-b border-stone-200">$1</h2>')
-    .replace(/^\s*#\s+(.*$)/gm, '<h1 class="text-3xl font-bold text-stone-900 mt-8 mb-4">$1</h1>');
+    const blocks = formatted.split(/\n\n+/);
+    formatted = blocks
+      .map((b) => {
+        const trimmed = b.trim();
+        if (!trimmed) return "";
+        if (
+          trimmed.startsWith("<h") || 
+          trimmed.startsWith("<ul") || 
+          trimmed.startsWith("<ol") || 
+          trimmed.startsWith("<blockquote") || 
+          trimmed.startsWith("<pre") || 
+          trimmed.startsWith("<img") || 
+          trimmed.startsWith("<p")
+        ) {
+          return trimmed;
+        }
+        return `<p>${trimmed}</p>`;
+      })
+      .join("\n");
+  }
 
-  formatted = formatted
-    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-stone-900">$1</strong>')
-    .replace(/__(.*?)__/g, '<strong class="font-bold text-stone-900">$1</strong>')
-    .replace(/\*([^\*]+)\*/g, '<em class="italic">$1</em>')
-    .replace(/_([^_]+)_/g, '<em class="italic">$1</em>');
-
-  formatted = formatted.replace(/^\s*>\s*(.*$)/gm, '<blockquote class="border-l-4 border-blue-700 pl-4 py-2 my-4 italic bg-blue-50/50 rounded-r-md text-stone-700">$1</blockquote>');
-  formatted = formatted.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-md my-6 max-w-full h-auto shadow-md border border-stone-200" />');
-  formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline font-semibold">$1</a>');
-
-  formatted = formatted.replace(/^\s*[\-\*]\s+(.*$)/gm, '<li class="ml-4 list-disc">$1</li>');
-  formatted = formatted.replace(/^\s*\d+\.\s+(.*$)/gm, '<li class="ml-4 list-decimal">$1</li>');
-  formatted = formatted.replace(/(<li.*?<\/li>\s*)+/gs, (match) => `<ul class="my-4 space-y-1.5">${match}</ul>`);
-
-  const blocks = formatted.split(/\n\n+/);
-  return blocks
-    .map((block) => {
-      const trimmed = block.trim();
-      if (!trimmed) return "";
-      if (
-        trimmed.startsWith("<h") ||
-        trimmed.startsWith("<ul") ||
-        trimmed.startsWith("<ol") ||
-        trimmed.startsWith("<blockquote") ||
-        trimmed.startsWith("<pre") ||
-        trimmed.startsWith("<img") ||
-        trimmed.startsWith("<p>")
-      ) {
-        return trimmed;
-      }
-      return `<p class="my-4 text-stone-700 leading-relaxed">${trimmed}</p>`;
-    })
-    .join("\n");
+  return formatted || "<p><br></p>";
 }
 
-export default function RichTextEditor({ value, onChange, placeholder = "Write your content here...", rows = 14 }) {
-  const textareaRef = useRef(null);
+export default function RichTextEditor({ value, onChange, placeholder = "Start writing your article here..." }) {
+  const editorRef = useRef(null);
   const fileInputRef = useRef(null);
+  const savedRangeRef = useRef(null);
+
   const [uploading, setUploading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState("");
-  const [mode, setMode] = useState("edit"); // "edit" or "preview"
+  const [viewMode, setViewMode] = useState("visual"); // "visual" (WYSIWYG) or "source" (Raw HTML)
+  const isInternalChange = useRef(false);
 
-  const insertFormat = (prefix, suffix = "", defaultText = "Text Here") => {
-    const textarea = textareaRef.current;
-    if (!textarea) return;
+  // Save current selection before opening prompts or file picker
+  const saveSelection = () => {
+    if (typeof window === "undefined") return;
+    const sel = window.getSelection();
+    if (sel && sel.rangeCount > 0) {
+      savedRangeRef.current = sel.getRangeAt(0);
+    }
+  };
 
-    const start = textarea.selectionStart;
-    const end = textarea.selectionEnd;
-    const selectedText = textarea.value.substring(start, end) || defaultText;
+  // Restore cursor selection range
+  const restoreSelection = () => {
+    if (!savedRangeRef.current || typeof window === "undefined") return;
+    const sel = window.getSelection();
+    if (sel) {
+      sel.removeAllRanges();
+      sel.addRange(savedRangeRef.current);
+    }
+  };
 
-    const replacement = `${prefix}${selectedText}${suffix}`;
-    const newValue = textarea.value.substring(0, start) + replacement + textarea.value.substring(end);
+  // Sync value from props to editor contentEditable element when changed externally
+  useEffect(() => {
+    if (isInternalChange.current) {
+      isInternalChange.current = false;
+      return;
+    }
+    if (editorRef.current && viewMode === "visual") {
+      const currentHtml = editorRef.current.innerHTML;
+      const newHtml = convertMarkdownToHtml(value || "");
+      if (currentHtml !== newHtml) {
+        editorRef.current.innerHTML = newHtml;
+      }
+    }
+  }, [value, viewMode]);
 
-    onChange(newValue);
+  const emitChange = () => {
+    if (!editorRef.current) return;
+    isInternalChange.current = true;
+    const html = editorRef.current.innerHTML;
+    onChange(html);
+  };
 
-    setTimeout(() => {
-      textarea.focus();
-      textarea.setSelectionRange(start + prefix.length, start + prefix.length + selectedText.length);
-    }, 0);
+  const execCmd = (command, value = null) => {
+    if (viewMode !== "visual") return;
+    editorRef.current?.focus();
+    document.execCommand(command, false, value);
+    emitChange();
+  };
+
+  const formatBlock = (tag) => {
+    if (viewMode !== "visual") return;
+    editorRef.current?.focus();
+    document.execCommand("formatBlock", false, `<${tag}>`);
+    emitChange();
+  };
+
+  const insertLink = () => {
+    if (viewMode !== "visual") return;
+    saveSelection();
+    const url = prompt("Enter hyperlink URL:", "https://www.anavyainfotech.com");
+    if (!url) return;
+    
+    editorRef.current?.focus();
+    restoreSelection();
+
+    const selection = window.getSelection();
+    if (selection && selection.toString().trim().length > 0) {
+      document.execCommand("createLink", false, url);
+    } else {
+      const linkHtml = `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline font-semibold">${url}</a>`;
+      document.execCommand("insertHTML", false, linkHtml);
+    }
+    emitChange();
+  };
+
+  const insertCodeBlock = () => {
+    if (viewMode !== "visual") return;
+    editorRef.current?.focus();
+    const codeHtml = `<pre class="bg-stone-900 text-stone-100 p-4 rounded-md my-4 font-mono text-xs overflow-x-auto"><code>// Write code snippet here</code></pre><p><br></p>`;
+    document.execCommand("insertHTML", false, codeHtml);
+    emitChange();
+  };
+
+  const insertImageUrl = () => {
+    if (viewMode !== "visual") return;
+    saveSelection();
+    const url = prompt("Enter Image URL:", "https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+    if (!url) return;
+    
+    editorRef.current?.focus();
+    restoreSelection();
+
+    const imgHtml = `<p><img src="${url}" alt="Article Image" class="rounded-md my-6 max-w-full h-auto shadow-md border border-stone-200" /></p><p><br></p>`;
+    
+    try {
+      document.execCommand("insertHTML", false, imgHtml);
+    } catch (e) {
+      if (editorRef.current) {
+        editorRef.current.innerHTML += imgHtml;
+      }
+    }
+    emitChange();
   };
 
   const handleComputerImageUpload = async (e) => {
@@ -113,27 +202,55 @@ export default function RichTextEditor({ value, onChange, placeholder = "Write y
     }
 
     setUploading(true);
-    setUploadStatus("Compressing image...");
+    setUploadStatus("Compressing WebP...");
 
     try {
       const result = await compressImageToWebP(file, { maxWidth: 1000, quality: 0.8 });
-      const markdownImg = `\n![${file.name.split('.')[0]}](${result.dataUrl})\n`;
+      
+      // Try uploading to Supabase storage bucket
+      let imageUrl = result.dataUrl;
+      try {
+        const blobRes = await fetch(result.dataUrl);
+        const blob = await blobRes.blob();
+        const compressedFile = new File([blob], file.name.replace(/\.[^/.]+$/, "") + ".webp", { type: "image/webp" });
 
-      const textarea = textareaRef.current;
-      if (textarea) {
-        const start = textarea.selectionStart;
-        const end = textarea.selectionEnd;
-        const newValue = textarea.value.substring(0, start) + markdownImg + textarea.value.substring(end);
-        onChange(newValue);
-      } else {
-        onChange((value || "") + markdownImg);
+        const uploadFormData = new FormData();
+        uploadFormData.append("file", compressedFile);
+
+        const uploadRes = await fetch("/api/admin/upload", {
+          method: "POST",
+          body: uploadFormData,
+        });
+
+        const uploadJson = await uploadRes.json();
+        if (uploadRes.ok && uploadJson.url) {
+          imageUrl = uploadJson.url;
+        }
+      } catch (uploadErr) {
+        console.warn("Storage upload fallback to base64:", uploadErr);
       }
 
-      setUploadStatus(`Uploaded WebP (${result.compressedSizeKb}KB, Saved ${result.savingsPercent}%)`);
+      editorRef.current?.focus();
+      restoreSelection();
+
+      const imgHtml = `<p><img src="${imageUrl}" alt="${file.name}" class="rounded-md my-6 max-w-full h-auto shadow-md border border-stone-200" /></p><p><br></p>`;
+      
+      if (viewMode === "visual" && editorRef.current) {
+        try {
+          document.execCommand("insertHTML", false, imgHtml);
+        } catch (e) {
+          editorRef.current.innerHTML += imgHtml;
+        }
+        emitChange();
+      } else {
+        onChange((value || "") + imgHtml);
+      }
+
+      setUploadStatus(`WebP Uploaded (${result.compressedSizeKb}KB, -${result.savingsPercent}%)`);
       setTimeout(() => setUploadStatus(""), 4000);
     } catch (err) {
-      console.error("Error uploading image into content:", err);
-      alert("Failed to process image file.");
+      console.error("Error uploading image:", err);
+      alert("Failed to compress and upload image.");
       setUploadStatus("");
     } finally {
       setUploading(false);
@@ -142,33 +259,38 @@ export default function RichTextEditor({ value, onChange, placeholder = "Write y
   };
 
   const toolbarButtons = [
-    { label: "H1", icon: Heading1, action: () => insertFormat("\n# ", "\n", "Heading 1"), title: "Main Heading (H1)" },
-    { label: "H2", icon: Heading2, action: () => insertFormat("\n## ", "\n", "Section Heading"), title: "Subheading (H2)" },
-    { label: "H3", icon: Heading3, action: () => insertFormat("\n### ", "\n", "Subsection Title"), title: "Minor Heading (H3)" },
+    { label: "H1", icon: Heading1, action: () => formatBlock("h1"), title: "Heading 1 (Main Title)" },
+    { label: "H2", icon: Heading2, action: () => formatBlock("h2"), title: "Heading 2 (Section Title)" },
+    { label: "H3", icon: Heading3, action: () => formatBlock("h3"), title: "Heading 3 (Subheading)" },
+    { label: "Paragraph", action: () => formatBlock("p"), title: "Normal Paragraph Text", isText: true },
     { type: "divider" },
-    { label: "Bold", icon: Bold, action: () => insertFormat("**", "**", "Bold Text"), title: "Bold" },
-    { label: "Italic", icon: Italic, action: () => insertFormat("*", "*", "Italic Text"), title: "Italic" },
+    { label: "B", icon: Bold, action: () => execCmd("bold"), title: "Bold (Ctrl+B)", style: "font-bold" },
+    { label: "I", icon: Italic, action: () => execCmd("italic"), title: "Italic (Ctrl+I)", style: "italic" },
+    { label: "U", icon: Underline, action: () => execCmd("underline"), title: "Underline (Ctrl+U)", style: "underline" },
     { type: "divider" },
-    { label: "Bullet List", icon: List, action: () => insertFormat("\n- ", "\n- Item 2\n- Item 3", "List Item 1"), title: "Bullet List" },
-    { label: "Numbered List", icon: ListOrdered, action: () => insertFormat("\n1. ", "\n2. Item 2\n3. Item 3", "First Item"), title: "Numbered List" },
-    { type: "divider" },
-    { label: "Quote", icon: Quote, action: () => insertFormat("\n> ", "\n", "Important Quote or Key Insight"), title: "Blockquote" },
-    { label: "Code", icon: Code, action: () => insertFormat("\n```javascript\n", "\n```", "// Code snippet here"), title: "Code Block" },
-    { label: "Link", icon: LinkIcon, action: () => insertFormat("[", "](https://www.anavyainfotech.com)", "Clickable Link Text"), title: "Hyperlink" },
+    { label: "Bullets", icon: List, action: () => execCmd("insertUnorderedList"), title: "Bullet List" },
+    { label: "Numbers", icon: ListOrdered, action: () => execCmd("insertOrderedList"), title: "Numbered List" },
+    { label: "Quote", icon: Quote, action: () => formatBlock("blockquote"), title: "Blockquote" },
+    { label: "Code", icon: Code, action: insertCodeBlock, title: "Code Block" },
+    { label: "Link", icon: LinkIcon, action: insertLink, title: "Insert Clickable Link" },
+    { label: "Clear", icon: RemoveFormatting, action: () => execCmd("removeFormat"), title: "Clear Formatting" },
     { type: "divider" },
     { 
       label: "Upload Image", 
       icon: Upload, 
-      action: () => fileInputRef.current?.click(), 
-      title: "Upload image file from computer",
+      action: () => {
+        saveSelection();
+        fileInputRef.current?.click();
+      }, 
+      title: "Upload & Compress Image from Computer",
       highlight: true
     },
-    { label: "Image URL", icon: ImageIcon, action: () => insertFormat("![", "](https://images.unsplash.com/photo-1498050108023-c5249f4df085)", "Image Description"), title: "Paste Image URL" },
+    { label: "Image URL", icon: ImageIcon, action: insertImageUrl, title: "Insert Image from URL" },
   ];
 
   return (
-    <div className="w-full border border-stone-200 rounded-md overflow-hidden bg-stone-50">
-      {/* Hidden File Input for Local Computer Image Selection */}
+    <div className="w-full border border-stone-200 rounded-md overflow-hidden bg-white shadow-xs">
+      {/* Hidden File Input for Computer File Upload */}
       <input
         ref={fileInputRef}
         type="file"
@@ -177,9 +299,9 @@ export default function RichTextEditor({ value, onChange, placeholder = "Write y
         className="hidden"
       />
 
-      {/* Editor Formatting Toolbar & Mode Switcher */}
-      <div className="p-2.5 bg-stone-100/90 border-b border-stone-200 flex flex-wrap items-center justify-between gap-2 selection:bg-none">
-        <div className="flex flex-wrap items-center gap-1.5">
+      {/* Editor Formatting Toolbar */}
+      <div className="p-2.5 bg-stone-100 border-b border-stone-200 flex flex-wrap items-center justify-between gap-2 select-none sticky top-0 z-20">
+        <div className="flex flex-wrap items-center gap-1">
           {toolbarButtons.map((btn, index) => {
             if (btn.type === "divider") {
               return <div key={index} className="h-4 w-px bg-stone-300 mx-1" />;
@@ -188,29 +310,29 @@ export default function RichTextEditor({ value, onChange, placeholder = "Write y
             const Icon = btn.icon;
             return (
               <button
-                key={btn.label}
+                key={btn.label + index}
                 type="button"
                 onClick={btn.action}
-                disabled={uploading || mode === "preview"}
+                disabled={uploading || viewMode === "source"}
                 title={btn.title}
-                className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-md border text-xs font-semibold transition-all cursor-pointer shadow-xs active:scale-95 disabled:opacity-40 ${
+                className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded text-xs font-semibold transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 ${
                   btn.highlight 
-                    ? "bg-blue-700 text-white border-blue-700 hover:bg-blue-800" 
-                    : "bg-white border-stone-200 text-stone-700 hover:text-black hover:border-stone-400 hover:bg-stone-50"
+                    ? "bg-blue-700 text-white border border-blue-700 hover:bg-blue-800" 
+                    : "bg-white border border-stone-200 text-stone-700 hover:text-black hover:border-stone-400 hover:bg-stone-50"
                 }`}
               >
                 {uploading && btn.highlight ? (
                   <Zap className="h-3.5 w-3.5 text-white animate-pulse" />
-                ) : (
+                ) : Icon ? (
                   <Icon className={`h-3.5 w-3.5 ${btn.highlight ? "text-white" : "text-stone-600"}`} />
-                )}
-                <span className="text-[11px]">{btn.label}</span>
+                ) : null}
+                <span className={`text-[11px] ${btn.style || ""}`}>{btn.label}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Right Controls: Upload Status & Mode Switch (Edit vs Live Preview) */}
+        {/* View Mode Toggle Switch (Live Visual Editor vs Raw HTML Source Code) */}
         <div className="flex items-center gap-2">
           {uploadStatus && (
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-green-50 border border-green-200 text-green-700 font-semibold text-[11px]">
@@ -218,44 +340,62 @@ export default function RichTextEditor({ value, onChange, placeholder = "Write y
             </span>
           )}
 
-          <div className="inline-flex rounded-md bg-stone-200/70 p-0.5 text-xs font-semibold">
+          <div className="inline-flex rounded bg-stone-200/80 p-0.5 text-xs font-semibold">
             <button
               type="button"
-              onClick={() => setMode("edit")}
-              className={`inline-flex items-center gap-1 px-3 py-1 rounded-md transition-all ${
-                mode === "edit" ? "bg-white text-stone-900 shadow-xs" : "text-stone-600 hover:text-stone-900"
+              onClick={() => {
+                if (viewMode === "source" && editorRef.current) {
+                  editorRef.current.innerHTML = convertMarkdownToHtml(value || "");
+                }
+                setViewMode("visual");
+              }}
+              className={`inline-flex items-center gap-1 px-3 py-1 rounded transition-all ${
+                viewMode === "visual" ? "bg-blue-700 text-white shadow-2xs" : "text-stone-600 hover:text-stone-900"
               }`}
             >
-              <Edit3 className="h-3 w-3" /> Edit
+              <Eye className="h-3 w-3" /> Live Visual Editor
             </button>
             <button
               type="button"
-              onClick={() => setMode("preview")}
-              className={`inline-flex items-center gap-1 px-3 py-1 rounded-md transition-all ${
-                mode === "preview" ? "bg-blue-700 text-white shadow-xs" : "text-stone-600 hover:text-stone-900"
+              onClick={() => setViewMode("source")}
+              className={`inline-flex items-center gap-1 px-3 py-1 rounded transition-all ${
+                viewMode === "source" ? "bg-stone-900 text-white shadow-2xs" : "text-stone-600 hover:text-stone-900"
               }`}
             >
-              <Eye className="h-3 w-3" /> Live Preview
+              <Code2 className="h-3 w-3" /> HTML Source Code
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mode View: Textarea Input OR Live HTML Rendered Preview */}
-      {mode === "edit" ? (
-        <textarea
-          ref={textareaRef}
-          required
-          rows={rows}
-          placeholder={placeholder}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-white p-4 text-xs font-mono text-stone-900 focus:outline-none transition-colors resize-y leading-relaxed"
+      {/* Editor Body */}
+      {viewMode === "visual" ? (
+        <div
+          ref={editorRef}
+          contentEditable
+          suppressContentEditableWarning
+          onInput={emitChange}
+          onBlur={emitChange}
+          onKeyUp={saveSelection}
+          onMouseUp={saveSelection}
+          className="w-full min-h-[420px] p-6 bg-white focus:outline-none text-stone-800 text-sm leading-relaxed prose max-w-none 
+            [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-stone-900 [&_h1]:mt-6 [&_h1]:mb-3
+            [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-stone-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h2]:pb-1 [&_h2]:border-b [&_h2]:border-stone-200
+            [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-stone-900 [&_h3]:mt-4 [&_h3]:mb-2
+            [&_p]:my-3 [&_p]:leading-relaxed
+            [&_ul]:my-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul>li]:my-1
+            [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol>li]:my-1
+            [&_blockquote]:border-l-4 [&_blockquote]:border-blue-700 [&_blockquote]:pl-4 [&_blockquote]:py-2 [&_blockquote]:my-4 [&_blockquote]:italic [&_blockquote]:bg-blue-50/50 [&_blockquote]:text-stone-700 [&_blockquote]:rounded-r
+            [&_img]:rounded-md [&_img]:my-6 [&_img]:max-w-full [&_img]:h-auto [&_img]:shadow-md [&_img]:border [&_img]:border-stone-200 [&_img]:block
+            [&_a]:text-blue-700 [&_a]:underline [&_a]:font-semibold"
         />
       ) : (
-        <div 
-          className="w-full min-h-[350px] p-6 bg-white border-t border-stone-200 prose max-w-none text-stone-800 text-sm overflow-y-auto"
-          dangerouslySetInnerHTML={{ __html: renderPreviewHtml(value) }}
+        <textarea
+          rows={18}
+          placeholder="<html>Raw HTML code source</html>"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full bg-stone-900 p-6 text-xs font-mono text-stone-100 focus:outline-none transition-colors resize-y leading-relaxed"
         />
       )}
     </div>

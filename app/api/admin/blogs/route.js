@@ -215,6 +215,9 @@ export async function PUT(request) {
 
     // Revalidate Next.js cache so the live site updates immediately in real-time
     try {
+      await delCache("blog:all_posts");
+      if (slug) await delCache(`blog:slug:${slug}`);
+      if (data?.[0]?.slug) await delCache(`blog:slug:${data[0].slug}`);
       revalidateTag("blogs");
       revalidatePath("/blog");
       if (slug) revalidatePath(`/blog/${slug}`);
@@ -259,6 +262,7 @@ export async function DELETE(request) {
 
     // Revalidate Next.js cache so the live site updates immediately in real-time
     try {
+      await delCache("blog:all_posts");
       revalidateTag("blogs");
       revalidatePath("/blog");
       revalidatePath("/");
