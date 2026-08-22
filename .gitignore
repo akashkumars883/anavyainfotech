@@ -40,6 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# scratch scripts
+# scratch scripts & backups
 /scratch/
+/db_backup/
 

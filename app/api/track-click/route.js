@@ -1,0 +1,82 @@
+import { NextResponse } from "next/server";
+import { tursoClient } from "@/lib/turso";
+
+export async function POST(req) {
+  try {
+    let body = {};
+    const contentType = req.headers.get("content-type") || "";
+
+    if (contentType.includes("application/json")) {
+      body = await req.json();
+    } else {
+      const rawText = await req.text();
+      if (rawText) {
+        body = JSON.parse(rawText);
+      }
+    }
+
+    const {
+      visitor_id,
+      page_path,
+      element_tag,
+      element_text,
+      element_id,
+      element_class,
+      data_track,
+      click_x,
+      click_y,
+      screen_width,
+      screen_height,
+      timestamp,
+    } = body;
+
+    if (!visitor_id || !page_path) {
+      return NextResponse.json(
+        { error: "visitor_id and page_path are required" },
+        { status: 400 }
+      );
+    }
+
+    const user_ip =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "127.0.0.1";
+    const user_agent = req.headers.get("user-agent") || "";
+
+    const createdAt = timestamp || new Date().toISOString();
+
+    try {
+      await tursoClient.execute({
+        sql: `INSERT INTO click_events 
+          (visitor_id, page_path, element_tag, element_text, element_id, element_class, data_track, click_x, click_y, screen_width, screen_height, user_ip, user_agent, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        args: [
+          visitor_id,
+          page_path,
+          element_tag || null,
+          element_text || null,
+          element_id || null,
+          element_class || null,
+          data_track || null,
+          typeof click_x === "number" ? click_x : null,
+          typeof click_y === "number" ? click_y : null,
+          typeof screen_width === "number" ? screen_width : null,
+          typeof screen_height === "number" ? screen_height : null,
+          user_ip,
+          user_agent,
+          createdAt,
+        ],
+      });
+    } catch (dbErr) {
+      console.warn("[ClickTracker] Turso insert error:", dbErr.message);
+    }
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("[ClickTracker API Error]:", error);
+    return NextResponse.json(
+      { error: "Internal Server Error", message: error.message },
+      { status: 500 }
+    );
+  }
+}
