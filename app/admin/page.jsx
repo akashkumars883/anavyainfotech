@@ -36,9 +36,9 @@ export default function AdminDashboardPage() {
   const draftCount = blogs.length - publishedCount;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-4">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-8 rounded-md border border-stone-200">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 sm:p-5 rounded-md border border-stone-200">
         <div className="space-y-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-blue-700/10 text-blue-700 font-bold text-[10px] uppercase tracking-wider">
             <Sparkles className="h-3 w-3" /> Dashboard Overview

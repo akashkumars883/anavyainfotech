@@ -81,9 +81,9 @@ export default function AdminAnalyticsPage() {
   }, [autoRefresh, loadData]);
 
   return (
-    <div className="space-y-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <div className="space-y-4 text-left selection:bg-blue-600/20 selection:text-blue-950">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-stone-200">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white p-4 sm:p-5 rounded-md border border-stone-200">
         <div className="space-y-2">
           <Breadcrumbs items={[{ label: "Admin Dashboard", href: "/admin" }, { label: "Live Tracking Analytics", href: "/admin/analytics" }]} />
           <div className="space-y-1">

@@ -38,7 +38,7 @@ export default function AdminSettingsPage() {
     },
   });
 
-  const fetchSettings = async () => {
+  const fetchSettings = useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch("/api/admin/settings");
@@ -51,10 +51,27 @@ export default function AdminSettingsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    fetchSettings();
+    let isMounted = true;
+    async function init() {
+      try {
+        const res = await fetch("/api/admin/settings");
+        const data = await res.json();
+        if (isMounted && data.settings) {
+          setSettings(data.settings);
+        }
+      } catch (err) {
+        console.error("Failed to load settings:", err);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+    init();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const handleSave = async (e) => {
@@ -85,9 +102,9 @@ export default function AdminSettingsPage() {
   };
 
   return (
-    <div className="space-y-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <div className="space-y-4 text-left selection:bg-blue-600/20 selection:text-blue-950">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-stone-200">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white p-4 sm:p-5 rounded-md border border-stone-200">
         <div className="space-y-2">
           <Breadcrumbs items={[{ label: "Admin Dashboard", href: "/admin" }, { label: "Chatbot & Site Config", href: "/admin/settings" }]} />
           <div className="space-y-1">

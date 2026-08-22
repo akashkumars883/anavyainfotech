@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { PlusCircle, Search, Trash2, Edit3, Eye, CheckCircle2, Clock } from "lucide-react";
 
@@ -10,12 +10,7 @@ export default function AdminBlogsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [deletingId, setDeletingId] = useState(null);
 
-  useEffect(() => {
-    fetchBlogs();
-  }, []);
-
-  async function fetchBlogs() {
-    setLoading(true);
+  const fetchBlogs = useCallback(async () => {
     try {
       const res = await fetch("/api/admin/blogs");
       const data = await res.json();
@@ -25,7 +20,26 @@ export default function AdminBlogsPage() {
     } finally {
       setLoading(false);
     }
-  }
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+    async function load() {
+      try {
+        const res = await fetch("/api/admin/blogs");
+        const data = await res.json();
+        if (isMounted) setBlogs(data.blogs || []);
+      } catch (err) {
+        console.error("Error fetching admin blogs:", err);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+    load();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // Toggle Published/Draft status
   async function togglePublishStatus(blog) {
@@ -73,9 +87,9 @@ export default function AdminBlogsPage() {
   );
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-4">
       {/* Top Action Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 sm:p-5 rounded-md border border-stone-200">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
             Blog Posts Management

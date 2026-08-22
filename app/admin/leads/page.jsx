@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Users, Phone, Mail, Search, RefreshCw, Calendar, Globe, Download, X, MessageSquare } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -10,7 +10,7 @@ export default function AdminLeadsDashboardPage() {
   const [search, setSearch] = useState("");
   const [selectedLead, setSelectedLead] = useState(null);
 
-  const fetchLeads = async () => {
+  const fetchLeads = useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch("/api/widget/lead");
@@ -23,10 +23,27 @@ export default function AdminLeadsDashboardPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    fetchLeads();
+    let isMounted = true;
+    async function init() {
+      try {
+        const res = await fetch("/api/widget/lead");
+        const data = await res.json();
+        if (isMounted && data.leads) {
+          setLeads(data.leads);
+        }
+      } catch (err) {
+        console.error("Failed to fetch leads:", err);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+    init();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const filteredLeads = leads.filter(
@@ -51,9 +68,9 @@ export default function AdminLeadsDashboardPage() {
   };
 
   return (
-    <div className="space-y-6 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <div className="space-y-4 text-left selection:bg-blue-600/20 selection:text-blue-950">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-stone-200">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white p-4 sm:p-5 rounded-md border border-stone-200">
         <div className="space-y-2">
           <Breadcrumbs items={[{ label: "Admin Dashboard", href: "/admin" }, { label: "Captured Customer Leads", href: "/admin/leads" }]} />
           <div className="space-y-1">
