@@ -18,6 +18,7 @@ export default function AdminLayout({ children }) {
 
   const navItems = [
     { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
+    { name: "Live Click Tracking", href: "/admin/analytics", icon: Globe },
     { name: "Leads & Pipeline", href: "/admin/leads", icon: Inbox },
     { name: "All Blogs", href: "/admin/blogs", icon: FileText },
     { name: "Create New Blog", href: "/admin/blogs/new", icon: PlusCircle },
