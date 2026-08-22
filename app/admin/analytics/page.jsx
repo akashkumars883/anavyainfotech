@@ -8,13 +8,16 @@ import {
   Globe, 
   RefreshCw, 
   Layers, 
-  ArrowUpRight
+  ArrowUpRight,
+  Trash2,
+  ShieldCheck
 } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function AdminAnalyticsPage() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [purging, setPurging] = useState(false);
   const [autoRefresh, setAutoRefresh] = useState(true);
   const [data, setData] = useState({
     stats: {
@@ -80,6 +83,27 @@ export default function AdminAnalyticsPage() {
     return () => clearInterval(interval);
   }, [autoRefresh, loadData]);
 
+  const handlePurgeOldLogs = async () => {
+    if (!window.confirm("Purge click tracking logs older than 30 days from Turso database?")) {
+      return;
+    }
+    setPurging(true);
+    try {
+      const res = await fetch("/api/admin/analytics", { method: "DELETE" });
+      const result = await res.json();
+      if (res.ok && result.success) {
+        alert("30-day retention cleanup complete! Old logs purged successfully.");
+        loadData(true);
+      } else {
+        alert(result.error || "Failed to purge old logs.");
+      }
+    } catch (err) {
+      console.error("Purge error:", err);
+    } finally {
+      setPurging(false);
+    }
+  };
+
   return (
     <div className="space-y-4 text-left selection:bg-blue-600/20 selection:text-blue-950">
       {/* Header Banner */}
@@ -92,7 +116,7 @@ export default function AdminAnalyticsPage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              Real-Time Event Stream
+              Real-Time Event Stream (30-Day Auto Retention)
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">
               Live Click &amp; Visitor Tracking
@@ -100,7 +124,7 @@ export default function AdminAnalyticsPage() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-3 shrink-0 flex-wrap">
           <button
             onClick={() => setAutoRefresh(!autoRefresh)}
             className={`px-3 py-2 text-xs font-bold rounded-md border transition-all cursor-pointer ${
@@ -113,9 +137,19 @@ export default function AdminAnalyticsPage() {
           </button>
 
           <button
+            onClick={handlePurgeOldLogs}
+            disabled={purging}
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-md bg-amber-50 border border-amber-200 text-amber-800 hover:bg-amber-100 text-xs font-bold transition-all cursor-pointer"
+            title="Clean logs older than 30 days"
+          >
+            <Trash2 className="h-3.5 w-3.5 text-amber-700" />
+            <span>{purging ? "Purging..." : "Clean 30+ Day Logs"}</span>
+          </button>
+
+          <button
             onClick={() => loadData(true)}
             disabled={refreshing}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-stone-900 text-white hover:bg-black text-xs font-bold transition-all cursor-pointer shadow-xs"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-stone-900 text-white hover:bg-black text-xs font-bold transition-all cursor-pointer shadow-xs"
           >
             <RefreshCw className={`h-3.5 w-3.5 ${refreshing ? "animate-spin text-blue-400" : ""}`} />
             <span>Refresh Now</span>
@@ -246,14 +280,19 @@ export default function AdminAnalyticsPage() {
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-stone-900 flex items-center gap-2">
                   <Layers className="h-4 w-4 text-purple-600" />
-                  <span>Real-Time Click Activity Stream</span>
+                  <span>Real-Time Click Activity Stream (Auto-Purged &gt; 30 Days)</span>
                 </h3>
                 <p className="text-xs text-stone-500 font-light">Showing recent 50 captured click events with screen coordinates and visitor IP.</p>
               </div>
 
-              <span className="text-xs text-stone-500 font-mono">
-                Total Events: {data.events.length}
-              </span>
+              <div className="flex items-center gap-3">
+                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+                  <ShieldCheck className="h-3.5 w-3.5" /> 30-Day Retention Policy
+                </span>
+                <span className="text-xs text-stone-500 font-mono">
+                  Total Events: {data.events.length}
+                </span>
+              </div>
             </div>
 
             {data.events.length === 0 ? (

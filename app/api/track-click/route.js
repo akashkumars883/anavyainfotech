@@ -72,6 +72,13 @@ export async function POST(req) {
           createdAt,
         ],
       });
+
+      // 🛡️ 30-Day Auto Retention Cleanup (runs background purge ~10% of requests)
+      if (Math.random() < 0.1) {
+        tursoClient
+          .execute("DELETE FROM click_events WHERE created_at < datetime('now', '-30 days')")
+          .catch((err) => console.warn("[ClickTracker Purge Notice]:", err.message));
+      }
     } catch (dbErr) {
       console.warn("[ClickTracker] Turso insert error:", dbErr.message);
     }

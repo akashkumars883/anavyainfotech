@@ -55,3 +55,18 @@ export async function GET() {
     );
   }
 }
+
+export async function DELETE() {
+  try {
+    // Purge click logs older than 30 days
+    const res = await tursoClient.execute("DELETE FROM click_events WHERE created_at < datetime('now', '-30 days')");
+    return NextResponse.json({
+      success: true,
+      message: "Successfully purged click events older than 30 days!",
+      rowsAffected: res.rowsAffected || 0,
+    });
+  } catch (err) {
+    console.error("Analytics Purge Error:", err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}
