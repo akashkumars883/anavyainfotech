@@ -7,6 +7,12 @@ export default function ClickTracker() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Strictly ignore tracking inside admin panel routes (/admin, /admin/*)
+    const currentPath = pathname || window.location.pathname;
+    if (currentPath && currentPath.startsWith("/admin")) {
+      return;
+    }
+
     // Generate or fetch persistent visitor session ID
     let visitorId = "";
     try {
@@ -20,6 +26,11 @@ export default function ClickTracker() {
     }
 
     const handleClick = (event) => {
+      const activePath = pathname || window.location.pathname;
+      if (activePath && activePath.startsWith("/admin")) {
+        return; // Ignore admin clicks
+      }
+
       // Find closest interactive or tracked target element
       const target = event.target.closest(
         "button, a, input, select, textarea, [role='button'], [data-track], .cursor-pointer"
@@ -42,7 +53,7 @@ export default function ClickTracker() {
 
       const payload = {
         visitor_id: visitorId,
-        page_path: pathname || window.location.pathname,
+        page_path: activePath,
         element_tag: target.tagName ? target.tagName.toLowerCase() : "unknown",
         element_text: elementText || null,
         element_id: target.id || null,

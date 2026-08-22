@@ -37,6 +37,11 @@ export async function POST(req) {
       );
     }
 
+    // Ignore tracking for admin panel routes
+    if (page_path.startsWith("/admin")) {
+      return NextResponse.json({ success: true, ignored: true });
+    }
+
     const user_ip =
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
       req.headers.get("x-real-ip") ||
