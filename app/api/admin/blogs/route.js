@@ -1,54 +1,31 @@
 import { NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
-import { supabaseAdmin } from "@/lib/supabase";
-import { delCache } from "@/lib/redis";
+import { tursoClient } from "@/lib/turso";
+import { getCache, setCache, delCache } from "@/lib/redis";
 
-// Helper function to notify all subscribers about a newly published blog
-async function notifySubscribers(blogTitle, blogSlug, blogExcerpt) {
-  try {
-    let emails = [];
-
-    // 1. Fetch from subscribers table
-    const { data: subData } = await supabaseAdmin.from("subscribers").select("email");
-    if (subData) {
-      emails.push(...subData.map((s) => s.email));
-    }
-
-    // 2. Fetch from leads table (Newsletter Subscribers)
-    const { data: leadData } = await supabaseAdmin
-      .from("leads")
-      .select("email")
-      .ilike("service", "%Newsletter%");
-    if (leadData) {
-      emails.push(...leadData.map((l) => l.email));
-    }
-
-    const uniqueEmails = Array.from(new Set(emails.filter(Boolean)));
-    const blogUrl = `https://www.anavyainfotech.com/blog/${blogSlug}`;
-
-    console.log(`[NEWSLETTER BROADCAST] Publishing '${blogTitle}' to ${uniqueEmails.length} subscribers:`, uniqueEmails);
-    console.log(`[EMAIL NOTIFICATION BODY] Link: ${blogUrl} | Excerpt: ${blogExcerpt}`);
-
-    return uniqueEmails.length;
-  } catch (err) {
-    console.error("Error broadcasting blog update to subscribers:", err);
-    return 0;
-  }
-}
-
-// GET all blogs (including unpublished drafts for Admin)
+// GET all blogs (Summary listing for Admin Blog Dashboard with Redis caching)
 export async function GET() {
   try {
-    const { data: dbPosts, error } = await supabaseAdmin
-      .from("blogs")
-      .select("*")
-      .order("created_at", { ascending: false });
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    const cacheKey = "admin:blogs:list";
+    const cached = await getCache(cacheKey);
+    if (cached && Array.isArray(cached)) {
+      return NextResponse.json({ blogs: cached });
     }
 
-    return NextResponse.json({ blogs: dbPosts || [] });
+    // Select lightweight list columns (excluding massive content HTML for lightning fast loading)
+    const res = await tursoClient.execute(
+      "SELECT id, slug, title, category, author, excerpt, image_url, is_published, created_at, tags FROM blogs ORDER BY created_at DESC"
+    );
+
+    const formattedBlogs = (res.rows || []).map((row) => ({
+      ...row,
+      is_published: row.is_published === 1 || row.is_published === true,
+      tags: typeof row.tags === "string" ? JSON.parse(row.tags || "[]") : row.tags || [],
+    }));
+
+    await setCache(cacheKey, formattedBlogs, 300); // 5 minutes TTL
+
+    return NextResponse.json({ blogs: formattedBlogs });
   } catch (err) {
     console.error("API admin blogs GET error:", err);
     return NextResponse.json({ error: "Failed to fetch blogs" }, { status: 500 });
@@ -65,7 +42,7 @@ export async function POST(request) {
       return NextResponse.json({ error: "Title is required" }, { status: 400 });
     }
 
-    // 1. Cover Image Size Validation (Reject base64 images > 300KB)
+    // Cover Image Size Validation (Reject base64 images > 300KB)
     if (image_url && typeof image_url === "string" && image_url.startsWith("data:") && image_url.length > 300000) {
       return NextResponse.json(
         { error: "Cover Image is too large (exceeds 300KB limit). Please upload a compressed image or use an image URL." },
@@ -73,66 +50,38 @@ export async function POST(request) {
       );
     }
 
-    // 2. Article Body Inline Base64 Image Size Validation
-    if (content && typeof content === "string" && content.includes("data:image/")) {
-      const base64Matches = content.match(/data:image\/[^;]+;base64,[^"'\s)]+/gi) || [];
-      for (const b64 of base64Matches) {
-        if (b64.length > 300000) {
-          return NextResponse.json(
-            { error: "Article body contains an uncompressed image (exceeds 300KB limit). Please compress inline images before uploading." },
-            { status: 400 }
-          );
-        }
-      }
-    }
-
-    // 3. Total Payload Size Check (< 1.5MB limit)
-    const payloadSize = JSON.stringify(body).length;
-    if (payloadSize > 1500000) {
-      return NextResponse.json(
-        { error: `Article size is too large (${(payloadSize / 1000000).toFixed(1)}MB). Maximum allowed limit is 1.5MB to prevent Vercel crashes.` },
-        { status: 400 }
-      );
-    }
-
-    // Auto-generate slug if not provided
+    const blogId = `blog_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
     const blogSlug = slug || title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    const createdAt = new Date().toISOString();
+    const isPublishedVal = is_published !== undefined ? (is_published ? 1 : 0) : 1;
+    const tagsJson = JSON.stringify(tags || []);
 
-    const newBlog = {
-      title,
-      slug: blogSlug,
-      category: category || "Engineering",
-      author: author || "Team Anavya Infotech",
-      excerpt: excerpt || title,
-      image_url: image_url || "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
-      content: content || "",
-      is_published: is_published !== undefined ? is_published : true,
-      tags: tags || [],
-      created_at: new Date().toISOString(),
-    };
+    await tursoClient.execute({
+      sql: `INSERT INTO blogs (id, title, slug, category, author, excerpt, image_url, content, is_published, created_at, tags)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      args: [
+        blogId,
+        title,
+        blogSlug,
+        category || "Engineering",
+        author || "Team Anavya Infotech",
+        excerpt || title,
+        image_url || "/development-illustration.jpg",
+        content || "",
+        isPublishedVal,
+        createdAt,
+        tagsJson,
+      ],
+    });
 
-    const { data, error } = await supabaseAdmin
-      .from("blogs")
-      .insert([newBlog])
-      .select();
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-
-    // Trigger email notification broadcast if published
-    let notifiedCount = 0;
-    if (newBlog.is_published) {
-      notifiedCount = await notifySubscribers(newBlog.title, newBlog.slug, newBlog.excerpt);
-    }
-
-    // Revalidate Next.js cache so the live site updates immediately in real-time
+    // Invalidate Redis cache & revalidate Next.js cache so the live site & admin dashboard update immediately
     try {
+      await delCache("admin:blogs:list");
       await delCache("blog:all_posts");
-      if (newBlog.slug) await delCache(`blog:slug:${newBlog.slug}`);
+      if (blogSlug) await delCache(`blog:slug:${blogSlug}`);
       revalidateTag("blogs");
       revalidatePath("/blog");
-      if (newBlog.slug) revalidatePath(`/blog/${newBlog.slug}`);
+      if (blogSlug) revalidatePath(`/blog/${blogSlug}`);
       revalidatePath("/");
       revalidatePath("/sitemap.js");
       revalidatePath("/sitemap");
@@ -142,8 +91,7 @@ export async function POST(request) {
 
     return NextResponse.json({ 
       success: true, 
-      blog: data?.[0] || newBlog,
-      notifiedSubscribers: notifiedCount,
+      blog: { id: blogId, title, slug: blogSlug, category, author, excerpt, image_url, is_published: Boolean(isPublishedVal), created_at: createdAt },
     });
   } catch (err) {
     console.error("API admin blogs POST error:", err);
@@ -161,7 +109,7 @@ export async function PUT(request) {
       return NextResponse.json({ error: "Blog ID is required" }, { status: 400 });
     }
 
-    // 1. Cover Image Size Validation (Reject base64 images > 300KB)
+    // Cover Image Size Validation
     if (image_url && typeof image_url === "string" && image_url.startsWith("data:") && image_url.length > 300000) {
       return NextResponse.json(
         { error: "Cover Image is too large (exceeds 300KB limit). Please upload a compressed image or use an image URL." },
@@ -169,59 +117,42 @@ export async function PUT(request) {
       );
     }
 
-    // 2. Article Body Inline Base64 Image Size Validation
-    if (content && typeof content === "string" && content.includes("data:image/")) {
-      const base64Matches = content.match(/data:image\/[^;]+;base64,[^"'\s)]+/gi) || [];
-      for (const b64 of base64Matches) {
-        if (b64.length > 300000) {
-          return NextResponse.json(
-            { error: "Article body contains an uncompressed image (exceeds 300KB limit). Please compress inline images before uploading." },
-            { status: 400 }
-          );
-        }
-      }
+    // If updating only is_published status
+    if (is_published !== undefined && Object.keys(body).length <= 3) {
+      const statusVal = is_published ? 1 : 0;
+      await tursoClient.execute({
+        sql: "UPDATE blogs SET is_published = ? WHERE id = ?",
+        args: [statusVal, id],
+      });
+    } else {
+      const statusVal = is_published !== undefined ? (is_published ? 1 : 0) : 1;
+      const tagsJson = JSON.stringify(tags || []);
+      const blogSlug = slug || title?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+      await tursoClient.execute({
+        sql: `UPDATE blogs SET 
+              title = COALESCE(?, title),
+              slug = COALESCE(?, slug),
+              category = COALESCE(?, category),
+              author = COALESCE(?, author),
+              excerpt = COALESCE(?, excerpt),
+              image_url = COALESCE(?, image_url),
+              content = COALESCE(?, content),
+              is_published = ?,
+              tags = ?
+              WHERE id = ?`,
+        args: [title || null, blogSlug || null, category || null, author || null, excerpt || null, image_url || null, content || null, statusVal, tagsJson, id],
+      });
     }
 
-    // 3. Total Payload Size Check (< 1.5MB limit)
-    const payloadSize = JSON.stringify(body).length;
-    if (payloadSize > 1500000) {
-      return NextResponse.json(
-        { error: `Article size is too large (${(payloadSize / 1000000).toFixed(1)}MB). Maximum allowed limit is 1.5MB to prevent Vercel crashes.` },
-        { status: 400 }
-      );
-    }
-
-    const updatedFields = {
-      ...(title && { title }),
-      ...(slug && { slug }),
-      ...(category && { category }),
-      ...(author && { author }),
-      ...(excerpt && { excerpt }),
-      ...(image_url !== undefined && { image_url }),
-      ...(content !== undefined && { content }),
-      ...(is_published !== undefined && { is_published }),
-      ...(tags && { tags }),
-    };
-
-    const { data, error } = await supabaseAdmin
-      .from("blogs")
-      .update(updatedFields)
-      .eq("id", id)
-      .select();
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-
-    // Revalidate Next.js cache so the live site updates immediately in real-time
+    // Invalidate Redis cache
     try {
+      await delCache("admin:blogs:list");
       await delCache("blog:all_posts");
       if (slug) await delCache(`blog:slug:${slug}`);
-      if (data?.[0]?.slug) await delCache(`blog:slug:${data[0].slug}`);
       revalidateTag("blogs");
       revalidatePath("/blog");
       if (slug) revalidatePath(`/blog/${slug}`);
-      if (data?.[0]?.slug) revalidatePath(`/blog/${data[0].slug}`);
       revalidatePath("/");
       revalidatePath("/sitemap.js");
       revalidatePath("/sitemap");
@@ -229,12 +160,7 @@ export async function PUT(request) {
       console.warn("Revalidation warning:", e?.message);
     }
 
-    // Notify subscribers if article changed to published
-    if (is_published) {
-      await notifySubscribers(title || "Updated Blog Article", slug || "article", excerpt || "");
-    }
-
-    return NextResponse.json({ success: true, blog: data?.[0] });
+    return NextResponse.json({ success: true });
   } catch (err) {
     console.error("API admin blogs PUT error:", err);
     return NextResponse.json({ error: "Failed to update blog" }, { status: 500 });
@@ -251,17 +177,13 @@ export async function DELETE(request) {
       return NextResponse.json({ error: "Blog ID is required" }, { status: 400 });
     }
 
-    const { error } = await supabaseAdmin
-      .from("blogs")
-      .delete()
-      .eq("id", id);
+    await tursoClient.execute({
+      sql: "DELETE FROM blogs WHERE id = ?",
+      args: [id],
+    });
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-
-    // Revalidate Next.js cache so the live site updates immediately in real-time
     try {
+      await delCache("admin:blogs:list");
       await delCache("blog:all_posts");
       revalidateTag("blogs");
       revalidatePath("/blog");
