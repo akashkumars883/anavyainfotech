@@ -203,9 +203,11 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
 
-        {/* DNS Prefetch & Preconnect for external asset domains */}
-        <link rel="dns-prefetch" href="https://juvkrpmrmjhhbnhxuwmd.supabase.co" />
-        <link rel="preconnect" href="https://juvkrpmrmjhhbnhxuwmd.supabase.co" crossOrigin="anonymous" />
+        {/* DNS Prefetch & Preconnect for external asset and database domains */}
+        <link rel="dns-prefetch" href="https://anavya-infotech-anavyainfotech.aws-ap-south-1.turso.io" />
+        <link rel="preconnect" href="https://anavya-infotech-anavyainfotech.aws-ap-south-1.turso.io" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://vast-civet-105112.upstash.io" />
+        <link rel="preconnect" href="https://vast-civet-105112.upstash.io" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://challenges.cloudflare.com" />
 
