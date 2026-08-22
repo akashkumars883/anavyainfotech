@@ -307,12 +307,12 @@ export default function AdminAnalyticsPage() {
                   <thead className="bg-stone-50 border-b border-stone-200 text-[10px] uppercase font-bold text-stone-600 tracking-wider">
                     <tr>
                       <th className="py-3 px-4">Time</th>
+                      <th className="py-3 px-4">Location &amp; IP</th>
                       <th className="py-3 px-4">Page Route</th>
                       <th className="py-3 px-4">Clicked Element</th>
                       <th className="py-3 px-4">Tag</th>
                       <th className="py-3 px-4">Position (X, Y)</th>
-                      <th className="py-3 px-4">Visitor IP</th>
-                      <th className="py-3 px-4">Visitor ID</th>
+                      <th className="py-3 px-4">Visitor / Email</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-stone-100">
@@ -320,6 +320,14 @@ export default function AdminAnalyticsPage() {
                       <tr key={evt.id} className="hover:bg-stone-50/80 transition-colors">
                         <td className="py-3 px-4 whitespace-nowrap text-stone-500 font-mono text-[11px]">
                           {evt.created_at ? new Date(evt.created_at).toLocaleTimeString() : "-"}
+                        </td>
+                        <td className="py-3 px-4 whitespace-nowrap font-medium text-stone-900">
+                          <div className="flex flex-col">
+                            <span className="font-bold text-stone-900 text-xs flex items-center gap-1">
+                              📍 {evt.user_location || "India (Web)"}
+                            </span>
+                            <span className="font-mono text-[10px] text-stone-400">{evt.user_ip}</span>
+                          </div>
                         </td>
                         <td className="py-3 px-4 font-mono font-medium text-stone-900 whitespace-nowrap">
                           {evt.page_path}
@@ -335,11 +343,16 @@ export default function AdminAnalyticsPage() {
                         <td className="py-3 px-4 font-mono text-stone-600 whitespace-nowrap">
                           {typeof evt.click_x === "number" ? `${evt.click_x}px, ${evt.click_y}px` : "-"}
                         </td>
-                        <td className="py-3 px-4 font-mono text-stone-600 whitespace-nowrap">
-                          {evt.user_ip}
-                        </td>
-                        <td className="py-3 px-4 font-mono text-stone-400 text-[10px] whitespace-nowrap truncate max-w-[120px]">
-                          {evt.visitor_id}
+                        <td className="py-3 px-4 whitespace-nowrap">
+                          {evt.user_email ? (
+                            <span className="font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded text-[11px]">
+                              ✉️ {evt.user_email}
+                            </span>
+                          ) : (
+                            <span className="font-mono text-stone-400 text-[10px] truncate max-w-[120px] block" title={evt.visitor_id}>
+                              {evt.visitor_id}
+                            </span>
+                          )}
                         </td>
                       </tr>
                     ))}

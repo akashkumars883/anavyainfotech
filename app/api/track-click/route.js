@@ -17,6 +17,7 @@ export async function POST(req) {
 
     const {
       visitor_id,
+      user_email,
       page_path,
       element_tag,
       element_text,
@@ -48,15 +49,28 @@ export async function POST(req) {
       "127.0.0.1";
     const user_agent = req.headers.get("user-agent") || "";
 
+    // 📍 Geo-Location extraction from Vercel / Edge Headers
+    const city = req.headers.get("x-vercel-ip-city");
+    const country = req.headers.get("x-vercel-ip-country");
+    let user_location = "Unknown";
+    if (city && country) {
+      user_location = `${decodeURIComponent(city)}, ${country}`;
+    } else if (country) {
+      user_location = country;
+    } else {
+      user_location = "India (Web)";
+    }
+
     const createdAt = timestamp || new Date().toISOString();
 
     try {
       await tursoClient.execute({
         sql: `INSERT INTO click_events 
-          (visitor_id, page_path, element_tag, element_text, element_id, element_class, data_track, click_x, click_y, screen_width, screen_height, user_ip, user_agent, created_at)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          (visitor_id, user_email, page_path, element_tag, element_text, element_id, element_class, data_track, click_x, click_y, screen_width, screen_height, user_ip, user_agent, user_location, created_at)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         args: [
           visitor_id,
+          user_email || null,
           page_path,
           element_tag || null,
           element_text || null,
@@ -69,6 +83,7 @@ export async function POST(req) {
           typeof screen_height === "number" ? screen_height : null,
           user_ip,
           user_agent,
+          user_location,
           createdAt,
         ],
       });

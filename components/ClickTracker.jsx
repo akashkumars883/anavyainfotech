@@ -15,12 +15,14 @@ export default function ClickTracker() {
 
     // Generate or fetch persistent visitor session ID
     let visitorId = "";
+    let userEmail = "";
     try {
       visitorId = localStorage.getItem("anavya_visitor_id");
       if (!visitorId) {
         visitorId = `v_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
         localStorage.setItem("anavya_visitor_id", visitorId);
       }
+      userEmail = localStorage.getItem("anavya_user_email") || localStorage.getItem("user_email") || "";
     } catch {
       visitorId = `v_temp_${Date.now()}`;
     }
@@ -51,8 +53,16 @@ export default function ClickTracker() {
         elementText = (target.parentElement.innerText || "").trim().slice(0, 100);
       }
 
+      // Refresh email if captured recently in form
+      try {
+        userEmail = localStorage.getItem("anavya_user_email") || localStorage.getItem("user_email") || "";
+      } catch {
+        userEmail = "";
+      }
+
       const payload = {
         visitor_id: visitorId,
+        user_email: userEmail || null,
         page_path: activePath,
         element_tag: target.tagName ? target.tagName.toLowerCase() : "unknown",
         element_text: elementText || null,
