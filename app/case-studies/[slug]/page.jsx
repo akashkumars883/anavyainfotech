@@ -19,13 +19,14 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${project.title} – Case Study`,
+    title: `${project.title} Case Study`,
     description: project.summary,
+    keywords: `${project.category}, ${project.industry}, ${project.tags ? project.tags.join(", ") : ""}`,
     alternates: {
       canonical: `https://www.anavyainfotech.com/case-studies/${project.slug}`,
     },
     openGraph: {
-      title: project.title,
+      title: `${project.title} – Case Study | Anavya Infotech`,
       description: project.summary,
       url: `https://www.anavyainfotech.com/case-studies/${project.slug}`,
       type: "article",

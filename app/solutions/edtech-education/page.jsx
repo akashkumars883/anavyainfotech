@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, BookOpen } from "lucide-react";
 
 export const metadata = {
-  title: "EdTech & Education Platform Development | Anavya Infotech",
+  title: "EdTech & Education Platform Development",
   description: "Custom LMS portals, interactive course delivery systems, student dashboards, and SEO-optimized content marketing frameworks for education technology companies.",
   keywords: "edtech platform development, LMS portal development, online course website, student dashboard portal, education SEO strategy",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/edtech-education",
+  },
+  openGraph: {
+    title: "EdTech & Education Platform Development | Anavya Infotech",
+    description: "Custom LMS portals, interactive course delivery systems, and student dashboards.",
+    url: "https://www.anavyainfotech.com/solutions/edtech-education",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"EdTech & Education Platform Development","description":"Custom LMS portals, interactive course delivery systems, student dashboards, and SEO-optimized content marketing frameworks for education technology companies.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
@@ -46,7 +55,7 @@ export default function SolutionPage() {
       {/* Hero Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Edtech Education", href: "/solutions/edtech-education" }]} />
+          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "EdTech & Education", href: "/solutions/edtech-education" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Solutions Catalog
           </div>

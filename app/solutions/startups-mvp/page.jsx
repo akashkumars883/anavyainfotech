@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, Rocket } from "lucide-react";
 
 export const metadata = {
-  title: "Startup MVP & Product Development | Anavya Infotech",
+  title: "Startup MVP & Product Development",
   description: "Rapid MVP product engineering for early-stage startups — from validated feature scopes and database blueprints to production-ready deployments with investor-grade documentation.",
   keywords: "MVP development startup, rapid product development, startup SaaS web app, Next.js MVP engineer, product launch services",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/startups-mvp",
+  },
+  openGraph: {
+    title: "Startup MVP & Product Development | Anavya Infotech",
+    description: "Rapid MVP product engineering for early-stage startups — from validated feature scopes and database blueprints to production-ready deployments.",
+    url: "https://www.anavyainfotech.com/solutions/startups-mvp",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Startup MVP & Product Development","description":"Rapid MVP product engineering for early-stage startups — from validated feature scopes and database blueprints to production-ready deployments with investor-grade documentation.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
@@ -46,7 +55,7 @@ export default function SolutionPage() {
       {/* Hero Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Startups Mvp", href: "/solutions/startups-mvp" }]} />
+          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Startups & MVP", href: "/solutions/startups-mvp" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Solutions Catalog
           </div>

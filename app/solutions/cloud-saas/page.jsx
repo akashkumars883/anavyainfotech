@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, Cloud } from "lucide-react";
 
 export const metadata = {
-  title: "Cloud SaaS Platform Development | Anavya Infotech",
+  title: "Cloud SaaS Platform Development",
   description: "Full-cycle SaaS product engineering — from multi-tenant database architecture and subscription billing to usage analytics, role-based admin dashboards, and white-labeling systems.",
   keywords: "cloud SaaS development, multi-tenant SaaS platform, subscription billing integration, SaaS MVP engineer, white-label SaaS product development",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/cloud-saas",
+  },
+  openGraph: {
+    title: "Cloud SaaS Platform Development | Anavya Infotech",
+    description: "Full-cycle SaaS product engineering — from multi-tenant database architecture to subscription billing.",
+    url: "https://www.anavyainfotech.com/solutions/cloud-saas",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Cloud SaaS Platform Development","description":"Full-cycle SaaS product engineering — from multi-tenant database architecture and subscription billing to usage analytics, role-based admin dashboards, and white-labeling systems.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
@@ -46,7 +55,7 @@ export default function SolutionPage() {
       {/* Hero Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Cloud Saas", href: "/solutions/cloud-saas" }]} />
+          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Cloud & SaaS", href: "/solutions/cloud-saas" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Solutions Catalog
           </div>

@@ -7,6 +7,7 @@ import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import ClickTracker from "@/components/ClickTracker";
+import OpeningModalForm from "@/components/OpeningModalForm";
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
@@ -24,6 +25,7 @@ export default function LayoutWrapper({ children }) {
       <div className="flex-1 flex flex-col">{children}</div>
       <Footer />
       <CookieConsentBanner />
+      <OpeningModalForm />
     </SmoothScrollProvider>
   );
 }

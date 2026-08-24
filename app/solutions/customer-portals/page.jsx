@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, Users } from "lucide-react";
 
 export const metadata = {
-  title: "Custom Customer Portal Development | Anavya Infotech",
+  title: "Custom Customer Portal Development",
   description: "Secure customer-facing portals with account dashboards, support ticket management, document access, subscription controls, and real-time notification systems.",
   keywords: "customer portal development, client self-service dashboard, custom account portal, branded customer web portal, support ticket system",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/customer-portals",
+  },
+  openGraph: {
+    title: "Custom Customer Portal Development | Anavya Infotech",
+    description: "Secure customer-facing portals with account dashboards and ticket management.",
+    url: "https://www.anavyainfotech.com/solutions/customer-portals",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Custom Customer Portal Development","description":"Secure customer-facing portals with account dashboards, support ticket management, document access, subscription controls, and real-time notification systems.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};

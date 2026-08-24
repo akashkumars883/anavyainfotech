@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, Home } from "lucide-react";
 
 export const metadata = {
-  title: "Real Estate & Property Web Solutions | Anavya Infotech",
+  title: "Real Estate & Property Web Solutions",
   description: "Custom property listing portals, geo-targeted neighborhood landing pages, dynamic MLS/property database integrations, and location SEO campaigns built for real estate agencies.",
   keywords: "real estate web development, property listing portal, MLS database integration, real estate SEO, neighborhood landing pages",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/real-estate",
+  },
+  openGraph: {
+    title: "Real Estate & Property Web Solutions | Anavya Infotech",
+    description: "Custom property listing portals, geo-targeted neighborhood landing pages, and MLS integrations.",
+    url: "https://www.anavyainfotech.com/solutions/real-estate",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Real Estate & Property Web Solutions","description":"Custom property listing portals, geo-targeted neighborhood landing pages, dynamic MLS/property database integrations, and location SEO campaigns built for real estate agencies.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
@@ -46,7 +55,7 @@ export default function SolutionPage() {
       {/* Hero Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Real Estate", href: "/solutions/real-estate" }]} />
+          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Real Estate Tech", href: "/solutions/real-estate" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Solutions Catalog
           </div>

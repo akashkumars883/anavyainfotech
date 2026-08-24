@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, Package } from "lucide-react";
 
 export const metadata = {
-  title: "Custom Inventory Management System Development | Anavya Infotech",
+  title: "Custom Inventory Management System Development",
   description: "Bespoke inventory tracking dashboards, barcode scanning integrations, automated low-stock alert systems, purchase order management modules, and warehouse logistics APIs.",
   keywords: "custom inventory management system, warehouse software development, stock tracking dashboard, barcode scanner integration, purchase order system",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/inventory-systems",
+  },
+  openGraph: {
+    title: "Custom Inventory Management System Development | Anavya Infotech",
+    description: "Bespoke inventory tracking dashboards, barcode scanning integrations, and warehouse logistics APIs.",
+    url: "https://www.anavyainfotech.com/solutions/inventory-systems",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Custom Inventory Management System Development","description":"Bespoke inventory tracking dashboards, barcode scanning integrations, automated low-stock alert systems, purchase order management modules, and warehouse logistics APIs.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};

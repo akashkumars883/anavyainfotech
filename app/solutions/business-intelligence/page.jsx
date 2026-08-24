@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, BarChart2 } from "lucide-react";
 
 export const metadata = {
-  title: "Business Intelligence & Analytics Dashboard Development | Anavya Infotech",
+  title: "Business Intelligence & Analytics Dashboard Development",
   description: "Custom BI dashboards, data pipeline architectures, KPI visualization tools, and automated reporting systems that connect databases, CRMs, and third-party analytics sources.",
   keywords: "business intelligence dashboard development, custom BI tool, KPI dashboard design, data visualization web app, analytics reporting automation",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/business-intelligence",
+  },
+  openGraph: {
+    title: "Business Intelligence & Analytics Dashboard Development | Anavya Infotech",
+    description: "Custom BI dashboards, data pipeline architectures, and KPI visualization tools.",
+    url: "https://www.anavyainfotech.com/solutions/business-intelligence",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Business Intelligence & Analytics Dashboard Development","description":"Custom BI dashboards, data pipeline architectures, KPI visualization tools, and automated reporting systems that connect databases, CRMs, and third-party analytics sources.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};

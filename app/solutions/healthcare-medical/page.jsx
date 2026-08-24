@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, Heart } from "lucide-react";
 
 export const metadata = {
-  title: "Healthcare & Medical Web Solutions | Anavya Infotech",
+  title: "Healthcare & Medical Web Solutions",
   description: "Secure patient portals, appointment booking systems, telehealth integrations, and SEO-optimized medical service landing pages compliant with healthcare data privacy standards.",
   keywords: "healthcare web development, medical website design, HIPAA compliant patient portal, doctor appointment booking system, medical SEO",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/healthcare-medical",
+  },
+  openGraph: {
+    title: "Healthcare & Medical Web Solutions | Anavya Infotech",
+    description: "Secure patient portals, appointment booking systems, and telehealth integrations.",
+    url: "https://www.anavyainfotech.com/solutions/healthcare-medical",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Healthcare & Medical Web Solutions","description":"Secure patient portals, appointment booking systems, telehealth integrations, and SEO-optimized medical service landing pages compliant with healthcare data privacy standards.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
@@ -46,7 +55,7 @@ export default function SolutionPage() {
       {/* Hero Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Healthcare Medical", href: "/solutions/healthcare-medical" }]} />
+          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Healthcare & Medical", href: "/solutions/healthcare-medical" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Solutions Catalog
           </div>

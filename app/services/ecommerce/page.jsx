@@ -65,7 +65,7 @@ export default function EcommerceServicePage() {
 
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Ecommerce", href: "/services/ecommerce" }]} />
+          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "E-Commerce Storefronts", href: "/services/ecommerce" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             <ShoppingCart className="h-3.5 w-3.5 text-blue-700" /> Services / E-Commerce Development
           </div>

@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, TrendingUp } from "lucide-react";
 
 export const metadata = {
-  title: "FinTech & Finance Web Platform Development | Anavya Infotech",
+  title: "FinTech & Finance Web Platform Development",
   description: "Enterprise-grade financial dashboards, secure transaction pipelines, compliant data visualization systems, and SEO authority content strategies for banking and finance brands.",
   keywords: "fintech web development, finance dashboard development, secure banking portal, financial compliance web platform, investment website SEO",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/fintech-finance",
+  },
+  openGraph: {
+    title: "FinTech & Finance Web Platform Development | Anavya Infotech",
+    description: "Enterprise-grade financial dashboards, secure transaction pipelines, and compliant data visualization systems.",
+    url: "https://www.anavyainfotech.com/solutions/fintech-finance",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"FinTech & Finance Web Platform Development","description":"Enterprise-grade financial dashboards, secure transaction pipelines, compliant data visualization systems, and SEO authority content strategies for banking and finance brands.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
@@ -46,7 +55,7 @@ export default function SolutionPage() {
       {/* Hero Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Fintech Finance", href: "/solutions/fintech-finance" }]} />
+          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "FinTech & Finance", href: "/solutions/fintech-finance" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Solutions Catalog
           </div>

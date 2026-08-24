@@ -94,7 +94,7 @@ export default function HireNextJsDevelopersPage() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs
             items={[
-              { label: "Solutions", href: "/solutions/startups-mvp" },
+              { label: "Solutions", href: "/#solutions" },
               { label: "Hire Next.js Developers India", href: "/hire-nextjs-developers-india" },
             ]}
           />

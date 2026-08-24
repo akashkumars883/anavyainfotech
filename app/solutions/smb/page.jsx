@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, Briefcase } from "lucide-react";
 
 export const metadata = {
-  title: "Small & Medium Business Web Solutions | Anavya Infotech",
+  title: "Small & Medium Business Web Solutions",
   description: "Affordable, scalable, and search-optimized digital systems for small and medium businesses — including websites, CRM connections, local SEO, and automated lead capture flows.",
   keywords: "SMB web development, small business website design India, medium business CRM, local business SEO, affordable web solutions",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/smb",
+  },
+  openGraph: {
+    title: "Small & Medium Business Web Solutions | Anavya Infotech",
+    description: "Affordable, scalable, and search-optimized digital systems for small and medium businesses.",
+    url: "https://www.anavyainfotech.com/solutions/smb",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Small & Medium Business Web Solutions","description":"Affordable, scalable, and search-optimized digital systems for small and medium businesses — including websites, CRM connections, local SEO, and automated lead capture flows.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
@@ -46,7 +55,7 @@ export default function SolutionPage() {
       {/* Hero Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Smb", href: "/solutions/smb" }]} />
+          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Small & Medium Business", href: "/solutions/smb" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Solutions Catalog
           </div>

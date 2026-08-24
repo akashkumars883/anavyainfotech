@@ -4,9 +4,18 @@ import Link from "next/link";
 import { Zap, ArrowRight, Building } from "lucide-react";
 
 export const metadata = {
-  title: "Enterprise Software & Web Solutions | Anavya Infotech",
+  title: "Enterprise Software & Web Solutions",
   description: "Large-scale enterprise web platforms, internal workflow management tools, role-based access systems, custom CRM, ERP databases, and multi-tenant SaaS architectures.",
   keywords: "enterprise web application development, large scale SaaS platform, ERP system development, custom enterprise CRM, multi-tenant web architecture",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/solutions/enterprise",
+  },
+  openGraph: {
+    title: "Enterprise Software & Web Solutions | Anavya Infotech",
+    description: "Large-scale enterprise web platforms, internal workflow management tools, and custom CRM systems.",
+    url: "https://www.anavyainfotech.com/solutions/enterprise",
+    type: "website",
+  },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Enterprise Software & Web Solutions","description":"Large-scale enterprise web platforms, internal workflow management tools, role-based access systems, custom CRM, ERP databases, and multi-tenant SaaS architectures.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
@@ -46,7 +55,7 @@ export default function SolutionPage() {
       {/* Hero Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Enterprise", href: "/solutions/enterprise" }]} />
+          <Breadcrumbs items={[{ label: "Solutions", href: "/#solutions" }, { label: "Enterprise Solutions", href: "/solutions/enterprise" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Solutions Catalog
           </div>

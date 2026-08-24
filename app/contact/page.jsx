@@ -28,14 +28,34 @@ const contactSchema = {
   "name": "Contact Anavya Infotech",
   "url": "https://www.anavyainfotech.com/contact",
   "mainEntity": {
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     "name": "Anavya Infotech",
+    "image": "https://www.anavyainfotech.com/og-image.jpg",
+    "logo": "https://www.anavyainfotech.com/logo.png",
     "telephone": "+91-6201231875",
     "email": "info@anavyainfotech.com",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Noida",
+      "addressRegion": "Delhi NCR",
       "addressCountry": "IN",
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.5355,
+      "longitude": 77.3910,
+    },
+    "areaServed": [
+      "Delhi NCR",
+      "Noida",
+      "Gurgaon",
+      "Faridabad",
+      "India",
+      "United States",
+      "United Kingdom",
+      "Worldwide",
+    ],
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -48,7 +68,7 @@ const contactSchema = {
         "telephone": "+91-7508657479",
         "contactType": "technical support",
         "availableLanguage": ["English", "Hindi"],
-      }
+      },
     ],
   },
 };
