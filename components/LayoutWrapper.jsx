@@ -7,7 +7,6 @@ import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import ClickTracker from "@/components/ClickTracker";
-import OpeningModalForm from "@/components/OpeningModalForm";
 import GoogleOneTap from "@/components/GoogleOneTap";
 
 export default function LayoutWrapper({ children }) {
@@ -27,9 +26,9 @@ export default function LayoutWrapper({ children }) {
       <div className="flex-1 flex flex-col">{children}</div>
       <Footer />
       <CookieConsentBanner />
-      <OpeningModalForm />
     </SmoothScrollProvider>
   );
 }
+
 
 
