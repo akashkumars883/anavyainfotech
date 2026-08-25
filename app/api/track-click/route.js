@@ -44,19 +44,33 @@ export async function POST(req) {
     }
 
     const user_ip =
+      req.headers.get("cf-connecting-ip") ||
+      req.headers.get("x-client-ip") ||
+      req.headers.get("x-nf-client-connection-ip") ||
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
       req.headers.get("x-real-ip") ||
       "127.0.0.1";
     const user_agent = req.headers.get("user-agent") || "";
 
-    // 📍 Geo-Location extraction from Vercel / Edge Headers
-    const city = req.headers.get("x-vercel-ip-city");
-    const country = req.headers.get("x-vercel-ip-country");
-    let user_location = "Unknown";
-    if (city && country) {
-      user_location = `${decodeURIComponent(city)}, ${country}`;
-    } else if (country) {
-      user_location = country;
+    // 📍 Multi-Provider Geo-Location extraction (Cloudflare, Netlify, Vercel, AWS)
+    const cfCountry = req.headers.get("cf-ipcountry");
+    const netlifyCountry = req.headers.get("x-country") || req.headers.get("x-nf-country-code");
+    const vercelCountry = req.headers.get("x-vercel-ip-country");
+    const cityHeader = req.headers.get("x-vercel-ip-city") || req.headers.get("x-city") || req.headers.get("x-nf-city");
+
+    let rawCountry = cfCountry || netlifyCountry || vercelCountry;
+    let city = cityHeader ? decodeURIComponent(cityHeader) : "";
+
+    // Filter out edge server data center proxies (e.g. SG data center when request comes from India)
+    if ((!rawCountry || rawCountry === "SG") && cfCountry && cfCountry !== "SG") {
+      rawCountry = cfCountry;
+    }
+
+    let user_location = "India (Web)";
+    if (city && rawCountry) {
+      user_location = `${city}, ${rawCountry}`;
+    } else if (rawCountry) {
+      user_location = rawCountry === "IN" ? "India (Web)" : rawCountry;
     } else {
       user_location = "India (Web)";
     }

@@ -34,7 +34,7 @@ export async function GET() {
           .order("created_at", { ascending: false });
 
         if (data && data.length > 0) {
-          leads = data.map((item) => ({
+          const fetchedSb = data.map((item) => ({
             id: item.id,
             site_id: item.service || item.site_id || "anavyainfotech-com",
             name: item.name || "Website Visitor",
@@ -42,11 +42,43 @@ export async function GET() {
             message: item.message || "",
             created_at: item.created_at,
           }));
+          leads = [...fetchedSb, ...leads];
         }
       }
     } catch (e) {
       console.warn("Supabase GET leads notice:", e.message);
     }
+
+    // Fetch from Turso 'leads' table fallback
+    try {
+      const { tursoClient } = await import("@/lib/turso");
+      const tursoRes = await tursoClient.execute("SELECT * FROM leads ORDER BY created_at DESC LIMIT 50");
+      if (tursoRes.rows && tursoRes.rows.length > 0) {
+        const tursoLeads = tursoRes.rows.map((item) => ({
+          id: item.id,
+          site_id: item.service || "Google / Web Form",
+          name: item.name || "Website Visitor",
+          phone_email: item.email || item.phone_email || "N/A",
+          message: item.message || "",
+          created_at: item.created_at,
+        }));
+        leads = [...leads, ...tursoLeads];
+      }
+    } catch (tursoErr) {
+      console.warn("Turso GET leads notice:", tursoErr.message);
+    }
+
+    // Deduplicate leads by ID or phone_email
+    const seen = new Set();
+    const uniqueLeads = leads.filter((l) => {
+      const key = `${l.name}_${l.phone_email}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+    leads = uniqueLeads;
+
 
     return NextResponse.json({ success: true, count: leads.length, leads }, { headers: CORS_HEADERS });
   } catch (err) {

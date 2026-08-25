@@ -8,6 +8,7 @@ import CookieConsentBanner from "@/components/CookieConsentBanner";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import ClickTracker from "@/components/ClickTracker";
 import OpeningModalForm from "@/components/OpeningModalForm";
+import GoogleOneTap from "@/components/GoogleOneTap";
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
@@ -19,6 +20,7 @@ export default function LayoutWrapper({ children }) {
 
   return (
     <SmoothScrollProvider>
+      <GoogleOneTap />
       <ClickTracker />
       <AnnouncementBanner />
       <Navbar />
@@ -29,4 +31,5 @@ export default function LayoutWrapper({ children }) {
     </SmoothScrollProvider>
   );
 }
+
 
