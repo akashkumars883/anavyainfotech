@@ -134,7 +134,7 @@ SALES REPRESENTATIVE INSTRUCTIONS:
     if (geminiApiKey) {
       try {
         const geminiRes = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiApiKey}`,
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${geminiApiKey.trim()}`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -158,7 +158,7 @@ SALES REPRESENTATIVE INSTRUCTIONS:
               {
                 response: aiMessage,
                 siteUrl: knowledge.siteUrl,
-                provider: "Google Gemini 1.5",
+                provider: "Google Gemini 3.6 Flash",
               },
               { headers: CORS_HEADERS }
             );

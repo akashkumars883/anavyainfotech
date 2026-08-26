@@ -146,6 +146,7 @@ export default function AdminBlogsPage() {
                   <th className="py-3.5 px-6">Image</th>
                   <th className="py-3.5 px-4">Title &amp; Slug</th>
                   <th className="py-3.5 px-4">Category</th>
+                  <th className="py-3.5 px-4">Reads</th>
                   <th className="py-3.5 px-4">Status</th>
                   <th className="py-3.5 px-6 text-right">Actions</th>
                 </tr>
@@ -179,6 +180,11 @@ export default function AdminBlogsPage() {
                       <span className="px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 font-semibold text-[10px]">
                         {blog.category || "Engineering"}
                       </span>
+                    </td>
+
+                    {/* Reads Count */}
+                    <td className="py-4 px-4 font-semibold text-stone-800 text-xs">
+                      {blog.views_count || 0} reads
                     </td>
 
                     {/* Status Toggle Button */}

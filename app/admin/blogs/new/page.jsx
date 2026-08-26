@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Save, Image as ImageIcon, Upload, X, Check, Zap } from "lucide-react";
+import { ArrowLeft, Save, Image as ImageIcon, Upload, X, Check, Zap, Sparkles, Plus, Trash2, HelpCircle } from "lucide-react";
 import RichTextEditor from "@/components/RichTextEditor";
 import { compressImageToWebP, compressHtmlContentImages } from "@/lib/imageOptimizer";
 
@@ -11,6 +11,7 @@ export default function NewBlogPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [compressing, setCompressing] = useState(false);
+  const [generatingFaqs, setGeneratingFaqs] = useState(false);
   const [compressionStats, setCompressionStats] = useState(null);
   const [uploadType, setUploadType] = useState("file"); // "file" or "url"
 
@@ -23,7 +24,65 @@ export default function NewBlogPage() {
     image_url: "",
     content: "",
     is_published: true,
+    faqs: [],
   });
+
+  const handleGenerateFaqs = async () => {
+    if (!formData.title.trim()) {
+      alert("Please enter an Article Title first before generating FAQs.");
+      return;
+    }
+
+    setGeneratingFaqs(true);
+    try {
+      const res = await fetch("/api/admin/generate-faq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: formData.title,
+          content: formData.content,
+          category: formData.category,
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.faqs && Array.isArray(data.faqs)) {
+        setFormData((prev) => ({
+          ...prev,
+          faqs: data.faqs,
+        }));
+      } else {
+        alert(data.error || "Failed to generate FAQs.");
+      }
+    } catch (err) {
+      console.error("Error generating FAQs:", err);
+      alert("An error occurred while generating FAQs.");
+    } finally {
+      setGeneratingFaqs(false);
+    }
+  };
+
+  const handleAddFaqItem = () => {
+    setFormData((prev) => ({
+      ...prev,
+      faqs: [...prev.faqs, { question: "", answer: "" }],
+    }));
+  };
+
+  const handleUpdateFaqItem = (index, field, value) => {
+    setFormData((prev) => {
+      const updated = [...prev.faqs];
+      updated[index] = { ...updated[index], [field]: value };
+      return { ...prev, faqs: updated };
+    });
+  };
+
+  const handleRemoveFaqItem = (index) => {
+    setFormData((prev) => ({
+      ...prev,
+      faqs: prev.faqs.filter((_, i) => i !== index),
+    }));
+  };
 
   const handleTitleChange = (e) => {
     const title = e.target.value;
@@ -353,6 +412,89 @@ export default function NewBlogPage() {
             placeholder="Write your article content here. Use the toolbar buttons above to format H1, H2, H3 headings, bold text, bullet lists, blockquotes..."
             rows={16}
           />
+        </div>
+
+        {/* AI FAQ Generator & Interactive Editor Section */}
+        <div className="space-y-4 w-full bg-stone-50 border border-stone-200 rounded-md p-5 sm:p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-200">
+            <div>
+              <h3 className="text-sm font-bold text-stone-900 flex items-center gap-2">
+                <HelpCircle className="h-4 w-4 text-blue-700" /> Article FAQs (Frequently Asked Questions)
+              </h3>
+              <p className="text-[11px] text-stone-500 font-light">
+                Generated FAQs automatically inject Google FAQPage Schema for search ranking snippets.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                onClick={handleGenerateFaqs}
+                disabled={generatingFaqs}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md text-xs font-bold bg-blue-700 text-white hover:bg-blue-800 disabled:opacity-50 transition-colors cursor-pointer"
+              >
+                <Sparkles className={`h-3.5 w-3.5 ${generatingFaqs ? "animate-spin" : ""}`} />
+                <span>{generatingFaqs ? "Generating..." : "Auto-Generate AI FAQs"}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={handleAddFaqItem}
+                className="inline-flex items-center gap-1 px-3 py-2 rounded-md text-xs font-semibold bg-white border border-stone-200 text-stone-700 hover:bg-stone-100 transition-colors cursor-pointer"
+              >
+                <Plus className="h-3.5 w-3.5 text-stone-600" /> Add Question
+              </button>
+            </div>
+          </div>
+
+          {/* List of FAQ Q&As */}
+          {formData.faqs.length === 0 ? (
+            <div className="text-center py-6 border border-dashed border-stone-200 rounded-md bg-white text-stone-400 text-xs">
+              No FAQs added yet. Click &quot;Auto-Generate AI FAQs&quot; to automatically create 4-5 search-focused questions and answers!
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {formData.faqs.map((faq, idx) => (
+                <div key={idx} className="bg-white border border-stone-200 rounded-md p-4 space-y-3 relative group">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-0.5 rounded">
+                      FAQ #{idx + 1}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveFaqItem(idx)}
+                      className="text-stone-400 hover:text-red-600 transition-colors"
+                      title="Remove Question"
+                    >
+                      <Trash2 className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold text-stone-500 uppercase">Question</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. What is custom software development?"
+                      value={faq.question}
+                      onChange={(e) => handleUpdateFaqItem(idx, "question", e.target.value)}
+                      className="w-full bg-stone-50 border border-stone-200 rounded-md px-3 py-2 text-xs font-semibold text-stone-900 focus:outline-none focus:border-black"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold text-stone-500 uppercase">Answer</label>
+                    <textarea
+                      rows={2}
+                      placeholder="Clear, informative answer..."
+                      value={faq.answer}
+                      onChange={(e) => handleUpdateFaqItem(idx, "answer", e.target.value)}
+                      className="w-full bg-stone-50 border border-stone-200 rounded-md px-3 py-2 text-xs text-stone-800 focus:outline-none focus:border-black resize-none"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Publish Status Toggle & Submit */}

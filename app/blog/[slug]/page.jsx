@@ -1,18 +1,23 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock, Calendar, User, ArrowUpRight, Tag } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, User, ArrowUpRight, Tag, Eye } from "lucide-react";
 import { getBlogPosts, getBlogPostBySlug } from "@/lib/blogData";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SafeImage from "@/components/SafeImage";
+import BlogViewTracker from "@/components/BlogViewTracker";
 
 export const dynamicParams = true;
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-  const posts = await getBlogPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  try {
+    const posts = await getBlogPosts();
+    return (posts || []).slice(0, 5).map((post) => ({
+      slug: post.slug,
+    }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }) {
@@ -143,12 +148,33 @@ export default async function BlogPostPage({ params }) {
     },
   };
 
+  const faqSchema = Array.isArray(post.faqs) && post.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  } : null;
+
   return (
     <main className="min-h-screen bg-white pt-8 md:pt-10 pb-10 text-left selection:bg-blue-600/20 selection:text-blue-950">
+      <BlogViewTracker slug={post.slug} />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <article className="max-w-4xl mx-auto px-6 space-y-6">
         
@@ -196,9 +222,14 @@ export default async function BlogPostPage({ params }) {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-stone-500">
-              <Calendar className="h-3.5 w-3.5 text-stone-400" />
-              <span>Published on {post.date}</span>
+            <div className="flex items-center gap-3 text-xs text-stone-500">
+              <span className="flex items-center gap-1">
+                <Calendar className="h-3.5 w-3.5 text-stone-400" /> Published on {post.date}
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-1 font-medium text-stone-700">
+                <Eye className="h-3.5 w-3.5 text-stone-400" /> {post.views_count || 0} reads
+              </span>
             </div>
           </div>
         </header>
@@ -219,6 +250,28 @@ export default async function BlogPostPage({ params }) {
           className="prose max-w-none text-stone-800 text-base leading-relaxed font-light pt-4"
           dangerouslySetInnerHTML={{ __html: formattedContent }}
         />
+
+        {/* FAQ Accordion Section */}
+        {Array.isArray(post.faqs) && post.faqs.length > 0 && (
+          <section className="pt-8 border-t border-stone-200 space-y-4">
+            <h3 className="text-2xl font-bold text-stone-900 tracking-tight">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-3">
+              {post.faqs.map((faq, index) => (
+                <details key={index} className="group bg-stone-50 border border-stone-200 rounded-md p-4 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                  <summary className="flex items-center justify-between font-bold text-stone-900 text-sm">
+                    <span>{faq.question}</span>
+                    <span className="transition-transform group-open:rotate-180 text-blue-700 font-semibold text-xs">▼</span>
+                  </summary>
+                  <p className="mt-3 text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Footer Share & CTA */}
         <footer className="pt-10 border-t border-stone-200 space-y-10">

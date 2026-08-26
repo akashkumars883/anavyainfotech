@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Search, Tag, ChevronLeft, ChevronRight } from "lucide-react";
-import { STATIC_BLOG_POSTS } from "@/lib/blogData";
+import { ArrowUpRight, Search, Tag, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import SafeImage from "@/components/SafeImage";
 
 const POSTS_PER_PAGE = 6;
 
 export default function BlogFilterClient({ initialPosts }) {
-  const postsList = Array.isArray(initialPosts) && initialPosts.length > 0 ? initialPosts : (STATIC_BLOG_POSTS || []);
+  const postsList = Array.isArray(initialPosts) ? initialPosts : [];
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -100,13 +99,14 @@ export default function BlogFilterClient({ initialPosts }) {
                   />
                 </div>
 
-                {/* Top Header Bar (Category Badge & Direct Arrow Button) */}
+                {/* Top Header Bar (Category Badge & Simple Read Count) */}
                 <div className="relative z-10 p-5 flex items-center justify-between pointer-events-none">
                   <span className="px-2.5 py-1 rounded-md bg-stone-50 border border-stone-200 text-[10px] font-bold text-blue-700 uppercase tracking-wider shadow-2xs">
                     {post.category || "Article"}
                   </span>
-                  <div className="h-9 w-9 rounded-md bg-stone-50 border border-stone-200 flex items-center justify-center text-stone-700 group-hover:bg-blue-700 group-hover:text-white transition-all">
-                    <ArrowUpRight className="h-4 w-4" />
+                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-50/90 border border-stone-200 text-stone-600 text-[11px] font-medium">
+                    <Eye className="h-3 w-3 text-stone-400" />
+                    <span>{post.views_count || 0} reads</span>
                   </div>
                 </div>
 

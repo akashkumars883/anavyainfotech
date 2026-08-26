@@ -14,7 +14,7 @@ export async function GET() {
 
     // Select lightweight list columns (excluding massive content HTML for lightning fast loading)
     const res = await tursoClient.execute(
-      "SELECT id, slug, title, category, author, excerpt, image_url, is_published, created_at, tags FROM blogs ORDER BY created_at DESC"
+      "SELECT id, slug, title, category, author, excerpt, image_url, is_published, created_at, tags, views_count FROM blogs ORDER BY created_at DESC"
     );
 
     const formattedBlogs = (res.rows || []).map((row) => ({
@@ -36,7 +36,7 @@ export async function GET() {
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { title, slug, category, author, excerpt, image_url, content, is_published, tags } = body;
+    const { title, slug, category, author, excerpt, image_url, content, is_published, tags, faqs } = body;
 
     if (!title) {
       return NextResponse.json({ error: "Title is required" }, { status: 400 });
@@ -55,10 +55,11 @@ export async function POST(request) {
     const createdAt = new Date().toISOString();
     const isPublishedVal = is_published !== undefined ? (is_published ? 1 : 0) : 1;
     const tagsJson = JSON.stringify(tags || []);
+    const faqsJson = JSON.stringify(faqs || []);
 
     await tursoClient.execute({
-      sql: `INSERT INTO blogs (id, title, slug, category, author, excerpt, image_url, content, is_published, created_at, tags)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      sql: `INSERT INTO blogs (id, title, slug, category, author, excerpt, image_url, content, is_published, created_at, tags, faqs)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       args: [
         blogId,
         title,
@@ -71,6 +72,7 @@ export async function POST(request) {
         isPublishedVal,
         createdAt,
         tagsJson,
+        faqsJson,
       ],
     });
 
@@ -103,7 +105,7 @@ export async function POST(request) {
 export async function PUT(request) {
   try {
     const body = await request.json();
-    const { id, title, slug, category, author, excerpt, image_url, content, is_published, tags } = body;
+    const { id, title, slug, category, author, excerpt, image_url, content, is_published, tags, faqs } = body;
 
     if (!id) {
       return NextResponse.json({ error: "Blog ID is required" }, { status: 400 });
@@ -127,6 +129,7 @@ export async function PUT(request) {
     } else {
       const statusVal = is_published !== undefined ? (is_published ? 1 : 0) : 1;
       const tagsJson = JSON.stringify(tags || []);
+      const faqsJson = JSON.stringify(faqs || []);
       const blogSlug = slug || title?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
       await tursoClient.execute({
@@ -139,9 +142,10 @@ export async function PUT(request) {
               image_url = COALESCE(?, image_url),
               content = COALESCE(?, content),
               is_published = ?,
-              tags = ?
+              tags = ?,
+              faqs = ?
               WHERE id = ?`,
-        args: [title || null, blogSlug || null, category || null, author || null, excerpt || null, image_url || null, content || null, statusVal, tagsJson, id],
+        args: [title || null, blogSlug || null, category || null, author || null, excerpt || null, image_url || null, content || null, statusVal, tagsJson, faqsJson, id],
       });
     }
 
