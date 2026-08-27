@@ -28,18 +28,41 @@ export async function generateMetadata({ params }) {
     return { title: "Article Not Found – Anavya Infotech" };
   }
 
+  const imageUrl = post.image?.startsWith("http")
+    ? post.image
+    : `https://www.anavyainfotech.com${post.image?.startsWith("/") ? "" : "/"}${post.image || "growth-illustration.jpg"}`;
+
+  const pageUrl = `https://www.anavyainfotech.com/blog/${post.slug}`;
+
   return {
     title: `${post.title} – Anavya Infotech Engineering Blog`,
     description: post.description,
     alternates: {
-      canonical: `https://www.anavyainfotech.com/blog/${post.slug}`,
+      canonical: pageUrl,
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://www.anavyainfotech.com/blog/${post.slug}`,
-      images: [post.image],
+      url: pageUrl,
+      siteName: "Anavya Infotech",
+      locale: "en_US",
       type: "article",
+      publishedTime: post.isoDate || new Date().toISOString(),
+      authors: [post.author?.name || "Anavya Infotech"],
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.imageAlt || post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [imageUrl],
     },
   };
 }
@@ -125,29 +148,44 @@ export default async function BlogPostPage({ params }) {
   const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 2);
   const formattedContent = formatArticleContent(post.content);
 
+  const absoluteImageUrl = post.image?.startsWith("http")
+    ? post.image
+    : `https://www.anavyainfotech.com${post.image?.startsWith("/") ? "" : "/"}${post.image || "growth-illustration.jpg"}`;
+
+  const pageUrl = `https://www.anavyainfotech.com/blog/${post.slug}`;
+  const isoPublishedDate = post.isoDate || new Date().toISOString();
+
+  // 1. Google BlogPosting Schema
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
     "description": post.description,
-    "image": post.image,
-    "datePublished": post.date,
+    "image": [absoluteImageUrl],
+    "datePublished": isoPublishedDate,
+    "dateModified": isoPublishedDate,
     "author": {
       "@type": "Person",
-      "name": post.author.name,
-      "jobTitle": post.author.role,
+      "name": post.author?.name || "Team Anavya Infotech",
+      "jobTitle": post.author?.role || "Software Architect",
+      "url": "https://www.anavyainfotech.com/about",
     },
     "publisher": {
       "@type": "Organization",
       "name": "Anavya Infotech",
       "url": "https://www.anavyainfotech.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.anavyainfotech.com/logo.png",
+      },
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.anavyainfotech.com/blog/${post.slug}`,
+      "@id": pageUrl,
     },
   };
 
+  // 2. Google FAQPage Schema
   const faqSchema = Array.isArray(post.faqs) && post.faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -156,10 +194,36 @@ export default async function BlogPostPage({ params }) {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer,
+        "text": String(faq.answer || "").replace(/<[^>]+>/g, "").trim(),
       },
     })),
   } : null;
+
+  // 3. Google BreadcrumbList Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.anavyainfotech.com",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.anavyainfotech.com/blog",
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": pageUrl,
+      },
+    ],
+  };
 
   return (
     <main className="min-h-screen bg-white pt-8 md:pt-10 pb-10 text-left selection:bg-blue-600/20 selection:text-blue-950">
@@ -168,6 +232,10 @@ export default async function BlogPostPage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {faqSchema && (
         <script
