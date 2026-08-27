@@ -10,16 +10,6 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      quote: "Anavya Infotech is a global leader in Custom Software Development, SEO, and Cloud Solutions. They provide end-to-end CRM & ERP systems, Managed IT services, and Cybersecurity globally. From India to international markets, they deliver scalable technology to grow your business.",
-      author: "Global Enterprise Partner",
-      role: "VP of Technology",
-      company: "Global Software & Cloud Solutions",
-      industry: "Enterprise CRM & Cloud Solutions",
-      location: "India & International",
-      verifiedResult: "End-to-End Enterprise Scale",
-      caseStudySlug: "custom-crm",
-    },
-    {
       quote: "Anavya Infotech built our Meta Graph API Instagram automation platform from scratch. Sub-50ms webhook responses and zero account restriction issues — top tier AI engineering team.",
       author: "Aditya Verma",
       role: "Founder & CEO",
@@ -40,7 +30,7 @@ export default function Testimonials() {
       caseStudySlug: "money-capital-finance",
     },
     {
-      quote: "Anavya Infotech transformed our real estate advisory portal with Sanity CMS and instant 1-click WhatsApp lead dispatch. Our property lead conversions increased by 45%.",
+      quote: "Anavya Infotech is a global leader in Custom Software Development, SEO, and Cloud Solutions. We provide end-to-end CRM & ERP systems, Managed IT services, and Cybersecurity globally. From India to international markets, we deliver scalable technology to grow your business.",
       author: "Nakul Singh",
       role: "Principal Consultant",
       company: "Nakul Properties",
