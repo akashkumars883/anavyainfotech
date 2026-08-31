@@ -62,7 +62,7 @@ const serviceSchemas = createServiceSchema({
 
 export default function AppDevelopmentServicePage() {
   return (
-    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
+    <main className="min-h-screen bg-white text-left">
       {/* Search Engine Schema Graph */}
       <script
         type="application/ld+json"

@@ -51,7 +51,7 @@ const CASE_STUDY_FAQS = [
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
       {/* Hero Section */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">

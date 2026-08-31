@@ -66,7 +66,7 @@ export default function ContactForm() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-100 text-[11px] font-semibold uppercase tracking-wider text-stone-600">
               Let's Partner
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
               Ready to build <br />
               <span className="text-blue-700">something exceptional?</span>
             </h2>

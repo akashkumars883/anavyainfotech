@@ -96,7 +96,7 @@ const serviceSchemas = createServiceSchema({
 
 export default function DevelopmentCategoryPage() {
   return (
-    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
+    <main className="min-h-screen bg-white text-left">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -110,7 +110,7 @@ export default function DevelopmentCategoryPage() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-700 shadow-xs">
               <Code2 className="h-3.5 w-3.5 text-blue-700" /> Development Hub
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
               Custom Software &amp; <br />
               <span className="text-blue-700">App Development Services</span>
             </h1>

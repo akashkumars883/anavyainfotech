@@ -65,7 +65,7 @@ export default function StandaloneWidgetBuilderPage() {
   }, [result]);
 
   return (
-    <main className="min-h-screen bg-stone-50 pt-6 md:pt-8 pb-16 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-stone-50 pb-16 text-left selection:bg-blue-600/20 selection:text-blue-950">
       {/* Header Banner */}
       <section className="py-10 bg-white border-b border-stone-200 px-6">
         <div className="max-w-7xl mx-auto space-y-4">
@@ -75,7 +75,7 @@ export default function StandaloneWidgetBuilderPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-blue-700">
                 <Bot className="h-3.5 w-3.5" /> Anavya AI Widget Engine
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-normal text-stone-900 tracking-tight">
                 Generate 1-Line AI Chatbot for Any Website
               </h1>
             </div>

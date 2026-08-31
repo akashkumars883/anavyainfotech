@@ -1,3 +1,5 @@
+import Gsap3DTiltCard from "./Gsap3DTiltCard";
+
 export default function TechStack() {
   const technologies = [
     {
@@ -201,25 +203,26 @@ export default function TechStack() {
         {/* Dynamic Technologies Icon Grid (Perfect 8x2 grid on desktop) */}
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-5">
           {technologies.map((tech, index) => (
-            <div
-              key={index}
-              className="group bg-white border border-stone-100 rounded-md p-5 hover:border-stone-300 transition-all duration-300 flex flex-col items-center justify-center text-center gap-4 cursor-pointer"
-            >
-              {/* Logo Wrapper */}
-              <div className="h-16 w-16 rounded-md bg-stone-50 border border-stone-100 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
-                {tech.icon}
-              </div>
+            <Gsap3DTiltCard key={index}>
+              <div
+                className="group bg-white border border-stone-100 rounded-md p-5 hover:border-stone-300 transition-all duration-300 flex flex-col items-center justify-center text-center gap-4 cursor-pointer shadow-xs"
+              >
+                {/* Logo Wrapper */}
+                <div className="h-16 w-16 rounded-md bg-stone-50 border border-stone-100 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                  {tech.icon}
+                </div>
 
-              {/* Info Label */}
-              <div className="space-y-0.5 select-none">
-                <div className="text-xs font-bold text-stone-800 group-hover:text-black">
-                  {tech.name}
-                </div>
-                <div className="text-[9px] font-semibold text-stone-400 uppercase tracking-wider">
-                  {tech.category}
+                {/* Info Label */}
+                <div className="space-y-0.5 select-none">
+                  <div className="text-xs font-bold text-stone-800 group-hover:text-black">
+                    {tech.name}
+                  </div>
+                  <div className="text-[9px] font-semibold text-stone-400 uppercase tracking-wider">
+                    {tech.category}
+                  </div>
                 </div>
               </div>
-            </div>
+            </Gsap3DTiltCard>
           ))}
         </div>
       </div>

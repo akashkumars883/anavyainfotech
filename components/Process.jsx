@@ -1,4 +1,37 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default function Process() {
+  const sectionRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (cardsRef.current.length > 0) {
+      gsap.fromTo(
+        cardsRef.current,
+        { opacity: 0, y: 50, scale: 0.96 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+  }, []);
+
   const steps = [
     {
       num: "01",
@@ -23,14 +56,14 @@ export default function Process() {
   ];
 
   return (
-    <section className="py-10 bg-[#09090b] text-white relative z-10">
+    <section ref={sectionRef} className="py-10 bg-[#09090b] text-white relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Block */}
         <div className="max-w-3xl text-left mb-8 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] font-semibold uppercase tracking-wider text-blue-600">
             Our Process
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-white leading-tight">
             How we work: From vision <br />
             <span className="text-zinc-500">to production deployment.</span>
           </h2>
@@ -41,7 +74,8 @@ export default function Process() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="group relative bg-[#121214] border border-white/5 rounded-md p-8 hover:border-white/20 transition-all duration-300 flex flex-col justify-between h-[250px] text-left"
+              ref={(el) => (cardsRef.current[index] = el)}
+              className="group relative bg-[#121214] border border-white/5 rounded-md p-8 hover:border-white/20 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between h-[250px] text-left"
             >
               {/* Number and Hover Indicator */}
               <div className="flex items-center justify-between">

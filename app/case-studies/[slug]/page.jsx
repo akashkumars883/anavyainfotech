@@ -57,13 +57,13 @@ export default async function CaseStudyDetailPage({ params }) {
   };
 
   return (
-    <main className="min-h-screen bg-white pt-8 md:pt-10 pb-20 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white pb-20 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
       />
 
-      <div className="max-w-5xl mx-auto px-6 space-y-12">
+      <div className="max-w-5xl mx-auto px-6 space-y-12 pt-6">
         
         {/* Breadcrumbs */}
         <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: project.title, href: `/case-studies/${project.slug}` }]} />
@@ -87,7 +87,7 @@ export default async function CaseStudyDetailPage({ params }) {
             <span className="text-xs font-semibold text-stone-500">{project.year}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-stone-900 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-normal tracking-tight text-stone-900 leading-tight">
             {project.title}
           </h1>
 

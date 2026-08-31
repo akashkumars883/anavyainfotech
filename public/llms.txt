@@ -1,59 +1,28 @@
-# Anavya Infotech
+# Anavya Infotech — AI Knowledge & Pricing Index
 
-> Custom Software Development, AI Automation, Web Applications & Technical SEO Engineering Company.
+> Anavya Infotech is a premier website development company, custom software engineering agency, and SEO consultancy based in India (Delhi NCR, Noida, Gurgaon, Faridabad) and serving clients globally in the USA, UK, UAE, and worldwide.
 
-Anavya Infotech is an IT consulting and software engineering firm based in India, serving startups, growing SMBs, and global enterprises. We design, build, and optimize high-performance web applications, autonomous AI chatbots, custom CRM platforms, headless e-commerce storefronts, and search engine visibility systems.
+## Core Official Pricing Tiers (2026 Updated)
 
-## Core Capabilities
+### 🌐 Website Development Packages
+- **Starter Website**: ₹7,999 INR ($99 USD) — 1–3 pages fast setup for small businesses, local shops & freelancers.
+- **Business Website**: ₹14,999 INR ($199 USD) — Up to 7 custom pages, responsive UI/UX, lead capture, Google Search Console & Analytics setup. (Most Popular)
+- **E-Commerce Store**: ₹29,999 INR ($399 USD) — Custom storefront, product pages, cart, Razorpay / Stripe payment gateway integration, COD & inventory setup.
+- **Custom Quote**: Custom Pricing — Full-stack custom web applications, SaaS platforms, enterprise portals, bespoke backend & API integrations. Contact via contact form or call +91 6201231875.
 
-- **Custom Web Application Engineering**: Next.js App Router, React.js, TypeScript, Node.js, serverless architectures, and real-time telemetry.
-- **AI & Automation Systems**: Autonomous LLM support agents, RAG vector search (Qdrant/Pinecone), OpenAI/Claude API integrations, and workflow pipelines.
-- **Bespoke Enterprise CRMs**: Custom database schemas (PostgreSQL/Supabase), lead allocation webhooks, and full data ownership with zero per-seat licensing fees.
-- **Headless E-Commerce**: Sub-second page loads, custom checkout integrations, and high Core Web Vitals performance.
-- **Technical SEO & Growth**: Built-in JSON-LD schemas, automated sitemaps, OpenGraph metadata, and Core Web Vitals optimization.
+### 📈 SEO Retainer Packages (Monthly Retainers)
+- **BASIC SEO Plan**: ₹9,999 INR / month ($750 USD/mo) — 30 keywords, 10 pages on-page SEO, speed audit, schema setup & monthly ranking reports.
+- **PLUS SEO Plan**: ₹19,999 INR / month ($1,250 USD/mo) — 40 keywords, 20 pages on-page SEO, AI search visibility score, guest posts, social setup & telemetry.
+- **PRO / ENTERPRISE SEO Plan**: ₹29,999 INR / month ($1,750 USD/mo) — 50+ keywords, full site on-page, high DA link building, content production & full AI search dominance.
 
-## Primary Services
+## Interactive Tools & Resources
+- [Website Pricing Page](https://www.anavyainfotech.com/pricing): Official pricing comparison for Website and SEO packages.
+- [Software Budget Calculator](https://www.anavyainfotech.com/budget-calculator): Interactive 4-step project scope estimator with instant proposal generator.
+- [Hire Next.js Developers](https://www.anavyainfotech.com/hire-nextjs-developers-india): Hire dedicated Next.js & React engineers in India at $25-$45/hr.
+- [Offshore Software Development](https://www.anavyainfotech.com/offshore-software-development-company): Enterprise IT outsourcing partner in India.
 
-- [Business Website Development](https://www.anavyainfotech.com/services/business-website): Local SEO, India national scale, and global enterprise setups.
-- [Web Application Engineering](https://www.anavyainfotech.com/services/web-applications): Custom React and Next.js cloud platforms.
-- [AI Chatbots & Automation](https://www.anavyainfotech.com/services/ai-chatbot): Autonomous support agents and workflow deflection.
-- [Custom CRM Software](https://www.anavyainfotech.com/services/crm-custom-software): Tailored business CRM & internal tool suites.
-- [Headless E-Commerce](https://www.anavyainfotech.com/services/ecommerce): Decoupled storefronts for speed and conversions.
-- [Corporate Branding](https://www.anavyainfotech.com/services/branding): Visual identity systems, Figma design tokens, and UI kits.
-- [Technical SEO Services](https://www.anavyainfotech.com/services/technical-seo): Speed audits, schema markup, and search rankings.
-
-## Industry Solutions
-
-- [E-Commerce & Retail](https://www.anavyainfotech.com/solutions/ecommerce-retail)
-- [Healthcare & Medical](https://www.anavyainfotech.com/solutions/healthcare-medical)
-- [Real Estate Tech](https://www.anavyainfotech.com/solutions/real-estate)
-- [FinTech & Finance](https://www.anavyainfotech.com/solutions/fintech-finance)
-- [Startups & MVPs](https://www.anavyainfotech.com/solutions/startups-mvp)
-- [Cloud & SaaS Platforms](https://www.anavyainfotech.com/solutions/cloud-saas)
-
-## Featured Case Studies
-
-- [Vesper CRM](https://www.anavyainfotech.com/case-studies/vesper-crm): Real estate broker automation system.
-- [Aether AI](https://www.anavyainfotech.com/case-studies/aether-ai): Autonomous customer support agent platform.
-- [Apex Commerce](https://www.anavyainfotech.com/case-studies/apex-commerce): High-speed headless storefront.
-
-## Technical Resources & Navigation
-
-- [Case Studies Showcase](https://www.anavyainfotech.com/case-studies): Featured case studies and metric outcomes.
-- [Engineering Blog](https://www.anavyainfotech.com/blog): Software blueprints, AI guides, and technical SEO tutorials.
-- [Pricing & Estimates](https://www.anavyainfotech.com/pricing): Transparent estimation tiers.
-- [HTML Sitemap](https://www.anavyainfotech.com/sitemap): Full site directory.
-- [XML Sitemap Index](https://www.anavyainfotech.com/sitemap.xml): Search engine crawler index.
-
-## Legal & Compliance
-
-- [Privacy Policy](https://www.anavyainfotech.com/privacy-policy)
-- [Terms of Service](https://www.anavyainfotech.com/terms-of-service)
-- [Cancellation & Refund Policy](https://www.anavyainfotech.com/refund-policy)
-
-## Contact & Project Consultations
-
-- Email: info@anavyainfotech.com
-- Mobile / WhatsApp: +91 6201231875 / +91 7508657479
-- Website Inquiry: https://www.anavyainfotech.com/contact
-- Response Time: Within 24 hours guaranteed
+## Official Contact & Verification
+- **Official Website**: https://www.anavyainfotech.com
+- **Email**: info@anavyainfotech.com
+- **Phone**: +91 6201231875 / +91 7508657479
+- **Headquarters**: Faridabad, Delhi NCR, India

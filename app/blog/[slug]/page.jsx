@@ -226,7 +226,7 @@ export default async function BlogPostPage({ params }) {
   };
 
   return (
-    <main className="min-h-screen bg-white pt-8 md:pt-10 pb-10 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white pb-10 text-left selection:bg-blue-600/20 selection:text-blue-950">
       <BlogViewTracker slug={post.slug} />
 
       <script
@@ -244,7 +244,7 @@ export default async function BlogPostPage({ params }) {
         />
       )}
 
-      <article className="max-w-4xl mx-auto px-6 space-y-6">
+      <article className="max-w-4xl mx-auto px-6 space-y-6 pt-6">
         
         {/* Breadcrumbs */}
         <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />
@@ -270,7 +270,7 @@ export default async function BlogPostPage({ params }) {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
             {post.title}
           </h1>
 

@@ -104,7 +104,7 @@ export default function Services() {
           </div>
           <h2
             id="services-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight"
           >
             Capabilities designed to scale <br />
             <span className="text-blue-700">your business operations.</span>

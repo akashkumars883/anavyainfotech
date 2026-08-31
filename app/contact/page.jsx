@@ -130,7 +130,7 @@ const contactDetails = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left">
+    <main className="min-h-screen bg-white text-left">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}

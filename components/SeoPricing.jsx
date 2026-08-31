@@ -4,15 +4,18 @@ import { useState } from "react";
 import { Check, ArrowRight, Sparkles, ChevronDown, ChevronUp, Bot, Share2, FileBarChart, Zap } from "lucide-react";
 import Link from "next/link";
 
-export default function SeoPricing() {
+export default function SeoPricing({ showHeader = true }) {
   const [expandedPlan, setExpandedPlan] = useState(null);
+  const [currency, setCurrency] = useState("INR");
 
   const seoPlans = [
     {
       id: "basic",
       name: "BASIC",
-      price: 750,
-      originalPrice: 1000,
+      priceINR: 9999,
+      originalPriceINR: 12000,
+      priceUSD: 750,
+      originalPriceUSD: 1000,
       discount: "SAVE 25%",
       desc: "Essential search engine optimization for growing local businesses and new websites.",
       featured: false,
@@ -60,8 +63,10 @@ export default function SeoPricing() {
     {
       id: "plus",
       name: "PLUS",
-      price: 1250,
-      originalPrice: 1500,
+      priceINR: 19999,
+      originalPriceINR: 24000,
+      priceUSD: 1250,
+      originalPriceUSD: 1500,
       discount: "SAVE 17%",
       desc: "Accelerated SEO & AI Search Visibility package built to dominate regional search results.",
       featured: true,
@@ -121,8 +126,10 @@ export default function SeoPricing() {
     {
       id: "pro",
       name: "PRO / ENTERPRISE",
-      price: 1750,
-      originalPrice: 2000,
+      priceINR: 29999,
+      originalPriceINR: 36000,
+      priceUSD: 1750,
+      originalPriceUSD: 2000,
       discount: "SAVE 13%",
       desc: "Maximum organic search dominance with full AI Visibility, high DA links, and content production.",
       featured: false,
@@ -147,19 +154,19 @@ export default function SeoPricing() {
         "Google Webmaster & Analytics Setup",
         "Bing Webmaster Tools Setup",
         "On Site Blog Section Creation",
-        "Onsite Blog Posting & Optimization - 3/mo",
-        "Full Website Content Interlinking & Optimization",
+        "Onsite Blog Posting & Optimization - 4/mo",
+        "Website Content Interlinking & Optimization",
       ],
       offPage: [
-        "Guest Post - 2 (Promotion - 10)",
-        "Article Writing & Posting - 2 (Promotion - 10)",
-        "Blog Writing & Submission - 2 (Promotion - 10)",
-        "Quora Q&A / Reddit Submissions - 5",
-        "Image Submissions - 10, Video Submissions - 8",
-        "Classified Ads - 10",
-        "Social Bookmarking & Sharing - 10",
-        "PPT & PDF Submissions - 10",
-        "Infographics Creation/Month - 10",
+        "Guest Post - 5 (Promotion - 25)",
+        "Article Writing & Posting - 5 (Promotion - 30)",
+        "Blog Writing & Submission - 5 (Promotion - 30)",
+        "Quora Q&A / Reddit Submissions - 12",
+        "Image Submissions - 25, Video Submissions - 15",
+        "Classified Ads - 25",
+        "Social Bookmarking & Sharing - 25",
+        "PPT & PDF Submissions - 25",
+        "Press Release Writing & Distribution - 1",
       ],
       aiSearch: [
         "AI Visibility Score",
@@ -167,16 +174,19 @@ export default function SeoPricing() {
         "AI Competitor Visibility Comparison",
         "AI Share of Voice Tracking",
         "AI Sentiment Analysis",
+        "LLM Knowledge Graph Integration",
       ],
       smo: [
         "Facebook Profile & Fan Page Creation",
-        "Facebook Posting & Sharing - 4/mo",
-        "Instagram Profile Creation & Management",
+        "Facebook Posting & Sharing - 15/mo",
+        "Instagram Profile Creation & Content Posting - 15/mo",
+        "LinkedIn Business Page Setup & Posting",
       ],
       reports: [
         "Monthly Website Analytics Report",
         "Monthly Keywords Ranking Report",
         "Monthly Off Page Submission Report",
+        "Quarterly Executive ROI Briefing",
       ],
     },
   ];
@@ -185,24 +195,55 @@ export default function SeoPricing() {
     <section className="py-12 bg-white border-b border-stone-100 text-left">
       <div className="max-w-7xl mx-auto px-6 space-y-10">
         
-        {/* Section Header */}
-        <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-blue-700">
-            <Sparkles className="h-3.5 w-3.5" /> Organic Search &amp; AI Visibility Pricing
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          {showHeader && (
+            <div className="max-w-3xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-blue-700">
+                <Sparkles className="h-3.5 w-3.5" /> Organic Search &amp; AI Visibility Pricing
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 tracking-tight leading-tight">
+                SEO &amp; Growth Retainer Plans. <br />
+                <span className="text-blue-700">Fixed monthly pricing, zero contracts.</span>
+              </h2>
+              <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
+                Data-backed SEO campaigns featuring On-Page Optimization, High DA Off-Page Link Building, AI Search Engine Visibility, and SMO Activities.
+              </p>
+            </div>
+          )}
+
+          <div className="flex items-center gap-2 bg-stone-100 p-1.5 rounded-md border border-stone-200 self-start md:self-auto shrink-0 shadow-2xs">
+            <span className="text-xs font-bold text-stone-600 px-2">Currency:</span>
+            <button
+              onClick={() => setCurrency("INR")}
+              className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                currency === "INR"
+                  ? "bg-blue-700 text-white shadow-sm"
+                  : "text-stone-700 hover:text-stone-900"
+              }`}
+            >
+              INR (₹)
+            </button>
+            <button
+              onClick={() => setCurrency("USD")}
+              className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                currency === "USD"
+                  ? "bg-blue-700 text-white shadow-sm"
+                  : "text-stone-700 hover:text-stone-900"
+              }`}
+            >
+              USD ($)
+            </button>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 tracking-tight leading-tight">
-            SEO &amp; Growth Retainer Plans. <br />
-            <span className="text-blue-700">Fixed monthly pricing, zero contracts.</span>
-          </h2>
-          <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-            Data-backed SEO campaigns featuring On-Page Optimization, High DA Off-Page Link Building, AI Search Engine Visibility, and SMO Activities.
-          </p>
         </div>
 
-        {/* SEO Pricing Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {seoPlans.map((plan) => {
             const isExpanded = expandedPlan === plan.id;
+            const currentPrice = currency === "INR" ? plan.priceINR : plan.priceUSD;
+            const currentOriginalPrice = currency === "INR" ? plan.originalPriceINR : plan.originalPriceUSD;
+            const symbol = currency === "INR" ? "₹" : "$";
+            const discountPercentage = Math.round(((currentOriginalPrice - currentPrice) / currentOriginalPrice) * 100);
+
             return (
               <div
                 key={plan.id}
@@ -212,7 +253,6 @@ export default function SeoPricing() {
                     : "bg-stone-50/60 border-stone-200 text-stone-900 hover:bg-white hover:border-blue-700/50 hover:shadow-xl"
                 }`}
               >
-                {/* Popular Badge */}
                 {plan.popularTag && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-md bg-blue-700 text-white text-[10px] font-extrabold uppercase tracking-widest shadow-md">
                     {plan.popularTag}
@@ -220,22 +260,21 @@ export default function SeoPricing() {
                 )}
 
                 <div className="space-y-6">
-                  {/* Card Header & Price */}
                   <div className="space-y-4 border-b pb-6 border-stone-200/60 dark:border-zinc-800">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-2xl font-black tracking-tight">{plan.name}</h3>
-                      <span className={`px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${
+                      <h3 className="text-2xl font-semibold tracking-tight">{plan.name}</h3>
+                      <span className={`px-2.5 py-1 rounded-md text-[10px] font-semibold uppercase tracking-wider ${
                         plan.featured ? "bg-blue-700/30 text-blue-400 border border-blue-500/30" : "bg-blue-50 border border-blue-200 text-blue-700"
                       }`}>
-                        {plan.discount}
+                        SAVE {discountPercentage}%
                       </span>
                     </div>
 
                     <div className="space-y-1">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-4xl sm:text-5xl font-black tracking-tight">${plan.price}.00</span>
+                        <span className="text-4xl sm:text-5xl font-semibold tracking-tight">{symbol}{currentPrice.toLocaleString()}</span>
                         <span className={`text-xs line-through ${plan.featured ? "text-zinc-500" : "text-stone-400"}`}>
-                          ${plan.originalPrice}.00
+                          {symbol}{currentOriginalPrice.toLocaleString()}
                         </span>
                         <span className={`text-xs font-semibold ${plan.featured ? "text-zinc-400" : "text-stone-500"}`}>
                           / month

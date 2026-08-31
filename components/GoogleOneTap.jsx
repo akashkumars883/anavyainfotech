@@ -75,13 +75,16 @@ export default function GoogleOneTap() {
           auto_select: false,
           cancel_on_tap_outside: false,
           itp_support: true,
+          use_fedcm_for_prompt: true,
         });
 
         window.google.accounts.id.prompt((notification) => {
           if (notification.isNotDisplayed()) {
-            console.log("[GoogleOneTap] Prompt not displayed reason:", notification.getNotDisplayedReason());
+            console.warn("[GoogleOneTap] Prompt not displayed reason:", notification.getNotDisplayedReason());
           } else if (notification.isSkippedMoment()) {
-            console.log("[GoogleOneTap] Prompt skipped reason:", notification.getSkippedReason());
+            console.warn("[GoogleOneTap] Prompt skipped reason:", notification.getSkippedReason());
+          } else if (notification.isDismissedMoment()) {
+            console.warn("[GoogleOneTap] Prompt dismissed reason:", notification.getDismissedReason());
           }
         });
       }

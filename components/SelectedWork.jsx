@@ -76,7 +76,7 @@ export default function SelectedWork() {
           </div>
           <h2 
             id="portfolio-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight"
           >
             Real products built for real businesses. <br />
             <span className="text-blue-700">High impact &amp; verified performance.</span>
@@ -139,6 +139,17 @@ export default function SelectedWork() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Case Studies Button */}
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/case-studies"
+            className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-stone-900 text-white hover:bg-black text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:scale-105"
+          >
+            <span>View All Case Studies</span>
+            <ArrowUpRight className="h-4 w-4 text-blue-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
         </div>
       </div>
     </section>

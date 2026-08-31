@@ -44,6 +44,7 @@ export default function Footer() {
       { name: "Our Blog", href: "/blog" },
       { name: "Case Studies", href: "/case-studies" },
       { name: "Pricing Plans", href: "/pricing" },
+      { name: "Budget Calculator", href: "/budget-calculator" },
       { name: "Get In Touch", href: "/contact" },
     ],
   };

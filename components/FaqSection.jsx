@@ -44,7 +44,7 @@ export default function FaqSection({
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-semibold uppercase tracking-wider text-stone-600">
             <HelpCircle className="h-3.5 w-3.5 text-blue-700" /> FAQ
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
             {title}
           </h2>
           <p className="text-base sm:text-lg text-stone-600 font-light leading-relaxed">

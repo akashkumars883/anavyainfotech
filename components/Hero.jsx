@@ -1,10 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import gsap from "gsap";
+
+import GsapKineticText from "@/components/GsapKineticText";
+import GsapMagneticButton from "@/components/GsapMagneticButton";
 
 const DotLottieReact = dynamic(
   () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
@@ -20,13 +24,18 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-white flex items-center justify-center px-6 pt-8 pb-12 md:pt-10 md:pb-12 text-left">
-      {/* Soft Pure Ambient Deep Blue Radial Blur Background (NO GRID) */}
+    <section className="relative w-full overflow-hidden bg-white px-6 pt-4 pb-8 md:pt-8 md:pb-16 text-left">
+      {/* Soft Pure Ambient Deep Blue Radial Blur & Floating 3D Geometric Accent Shapes */}
       <div className="absolute inset-0 bg-white pointer-events-none overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-700/10 blur-[150px] rounded-full pointer-events-none animate-pulse-slow" />
+        
+        {/* Floating Ambient Glowing Rings & Glass Geometric Shapes */}
+        <div className="absolute -top-12 -left-12 w-64 h-64 rounded-full border border-blue-600/15 bg-blue-500/5 blur-sm animate-float-slow pointer-events-none" />
+        <div className="absolute top-1/2 -right-16 w-80 h-80 rounded-full border border-blue-700/10 bg-gradient-to-tr from-blue-600/10 to-transparent blur-md animate-float pointer-events-none" />
+        <div className="absolute bottom-10 left-1/3 w-32 h-32 rounded-3xl border border-stone-200/80 bg-white/60 backdrop-blur-xs rotate-45 animate-float-slow pointer-events-none hidden md:block" />
       </div>
 
-      <div className="relative z-10 max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
 
         {/* Left Column: Headline, Subtitle, Badges & CTAs */}
         <div className="lg:col-span-7 space-y-6">
@@ -40,15 +49,9 @@ export default function Hero() {
             <span>Premier Custom Software &amp; AI Agency</span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-stone-900 leading-[1.15]"
-          >
-            Software Development &amp; <br />
-            <span className="text-blue-700">Digital Solutions Company</span>
-          </motion.h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15]">
+            <GsapKineticText text="Software Development & Digital Solutions Company" />
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 25 }}
@@ -64,21 +67,27 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-1"
           >
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-all shadow-md hover:scale-105"
-            >
-              Start a Project
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-md text-xs font-semibold uppercase tracking-wider border border-stone-200 bg-white text-stone-900 hover:bg-stone-50 transition-all hover:scale-105 shadow-sm"
-            >
-              View Work
-            </Link>
+            <GsapMagneticButton>
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-shadow shadow-md cursor-pointer"
+              >
+                Start a Project
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </GsapMagneticButton>
+
+            <GsapMagneticButton>
+              <Link
+                href="/case-studies"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md text-xs font-semibold uppercase tracking-wider border border-stone-300 bg-stone-50 text-stone-900 hover:bg-stone-900 hover:text-white hover:border-stone-900 transition-all duration-300 shadow-xs"
+              >
+                <span>Explore Projects</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </GsapMagneticButton>
           </motion.div>
 
           {/* Trust Badges */}
@@ -86,7 +95,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap items-center gap-6 pt-4 text-xs font-medium text-stone-500 border-t border-stone-100"
+            className="flex flex-wrap items-center gap-6 pt-3 text-xs font-medium text-stone-500 border-t border-stone-100"
           >
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-blue-700" /> 100% Code Ownership
@@ -100,18 +109,18 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Column: Floating Lottie Animation Showcase */}
+        {/* Right Column: Balanced Desktop & Mobile Lottie Showcase */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="lg:col-span-5 relative animate-float"
+          className="lg:col-span-5 relative"
         >
-          <div className="relative w-full h-[380px] sm:h-[460px] p-4 sm:p-6 flex items-center justify-center overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center">
+          <div className="relative w-full h-[240px] sm:h-[320px] md:h-[400px] lg:h-[450px] p-0 flex items-center justify-center overflow-hidden">
+            <div className="w-full h-full flex items-center justify-center scale-100 transition-transform duration-300">
               {showLottie ? (
                 <DotLottieReact
-                  src="https://lottie.host/2d4d4b91-732d-4e9a-9c8e-4f9aee2707ab/dfLNNvenUq.lottie"
+                  src="/analytics-character.lottie"
                   loop
                   autoplay
                 />

@@ -1,6 +1,5 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
-import SeoPricing from "@/components/SeoPricing";
 import Link from "next/link";
 import { Zap, ArrowRight, LineChart, ShieldCheck, Globe, CheckCircle2 } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
@@ -57,7 +56,7 @@ const serviceSchemas = createServiceSchema({
 
 export default function SeoServicePage() {
   return (
-    <main className="min-h-screen bg-white pt-6 md:pt-8 text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -166,10 +165,7 @@ export default function SeoServicePage() {
         </div>
       </section>
 
-      
-      {/* SEO Retainer Pricing Plans */}
-      <SeoPricing />
-      
+
       {/* FAQ Section */}
       <FaqSection
         title="SEO Services & Reseller FAQs"

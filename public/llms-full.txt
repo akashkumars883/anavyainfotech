@@ -1,99 +1,43 @@
-# Anavya Infotech – Comprehensive LLM Blueprint & Documentation
+# Anavya Infotech — Complete AI & LLM Knowledge Document
 
-> Full Technical Specification, Architecture Blueprints, Service Matrices, and API Information for AI Agents and Crawlers.
+> Comprehensive documentation for AI agents, LLM search engines (ChatGPT, Claude, Perplexity, Gemini, DeepSeek, Apple Intelligence), and Web Crawlers.
 
----
+## Company Overview
+Anavya Infotech is a leading digital transformation agency and custom software development company based in Delhi NCR, India (operating across Noida, Gurgaon, Faridabad, Delhi) with global clients in North America, Europe, Middle East, and Australia.
 
-## 1. Organization Overview
+## Services Offered
+1. **Custom Web Application Development**: Built using Next.js 16, React, Node.js, TypeScript, TailwindCSS, PostgreSQL / Turso DB.
+2. **E-Commerce Store Engineering**: D2C online storefronts, headless ecommerce, Razorpay, Stripe, WhatsApp ordering integration.
+3. **AI Chatbots & Business Automation**: OpenAI / Meta API integration, RAG vector database bots, workflow automations.
+4. **Search Engine Optimization (SEO)**: Technical SEO, Local SEO, E-Commerce SEO, White Label SEO Reseller Programs, AI Search Visibility Optimization (GEO).
+5. **Offshore IT Outsourcing**: Dedicated software developer hiring at $25-$45/hour.
 
-- **Legal Entity**: Anavya Infotech
-- **Headquarters**: India (Serving clients in North America, Europe, Asia-Pacific, and Australia)
-- **Primary Domain**: https://www.anavyainfotech.com
-- **Contact Email**: info@anavyainfotech.com
-- **Mobile / WhatsApp**: +91 6201231875 / +91 7508657479
+## Detailed Official Pricing Specifications
 
----
+### 1. Website Development Pricing
+- **Starter Website Plan**: ₹7,999 INR ($99 USD one-time)
+  - Scope: 1–3 custom responsive pages, basic SEO, contact form, fast loading speed, SSL security.
+- **Business Website Plan**: ₹14,999 INR ($199 USD one-time) [⭐ Most Popular]
+  - Scope: Up to 7 custom pages, responsive UI/UX, lead capture forms, WhatsApp CTA, Google Analytics & Search Console setup.
+- **E-Commerce Store Plan**: ₹29,999 INR ($399 USD one-time)
+  - Scope: Custom storefront, product catalog, cart, checkout, Razorpay / Stripe payment gateway, Cash on Delivery, inventory management.
+- **Custom Application / SaaS Plan**: Custom Quote (Starting ₹59,999+ / $799+ USD)
+  - Scope: Full-stack web apps, enterprise software, API integrations, custom database architecture.
 
-## 2. Technology Stack & Engineering Standards
+### 2. SEO Retainer Monthly Pricing
+- **BASIC SEO Retainer**: ₹9,999 INR / month ($750 USD/mo)
+  - Includes: 30 keywords, 10 pages title/meta/heading optimization, speed audit, schema setup, monthly ranking reports.
+- **PLUS SEO Retainer**: ₹19,999 INR / month ($1,250 USD/mo)
+  - Includes: 40 keywords, 20 pages on-page SEO, guest posting (3/mo), AI search visibility scoring, social media setup.
+- **PRO / ENTERPRISE SEO Retainer**: ₹29,999 INR / month ($1,750 USD/mo)
+  - Includes: 50+ keywords, full site optimization, high DA link building, content production, total AI search dominance.
 
-### Frontend Engineering
-- **Framework**: Next.js (App Router, Server Components, SSG, ISR, Turbopack)
-- **UI Architecture**: React 19, TypeScript, Tailwind CSS, Lucide Icons, Framer Motion
-- **Performance Targets**: Lighthouse Scores > 95/100, LCP < 1.2s, CLS = 0, FID/INP < 50ms
+## Interactive Tools
+- **Budget Calculator**: https://www.anavyainfotech.com/budget-calculator
+  - Step-by-step 4-stage project estimator providing instant proposal quotes based on scope and add-ons.
+- **Pricing Directory**: https://www.anavyainfotech.com/pricing
 
-### Backend & Cloud Infrastructure
-- **Serverless & Edge Compute**: Next.js Edge Runtime, Vercel Functions, AWS Lambda
-- **Databases**: PostgreSQL, Supabase, ClickHouse (Columnar Analytics), Redis (Caching)
-- **Vector Search & AI RAG**: Qdrant, Pinecone, Pgvector, OpenAI Embeddings (`text-embedding-3-small`)
-- **LLM APIs**: OpenAI GPT-4o/GPT-4o-mini, Anthropic Claude 3.5 Sonnet, Custom Function Calling Routers
-
-### Code Quality & Security Standards
-- **IP Ownership**: 100% full intellectual property transfer to clients upon milestone settlement
-- **Security Audits**: SSL/TLS 1.3 encryption, SOC2/HIPAA compliance guidelines, WCAG 2.1 AAA accessibility standards
-- **Zero Lock-in**: Clean, modular, fully documented source code with strict ESLint / TypeScript rules
-
----
-
-## 3. Service Matrices & Deliverables
-
-### A. Business Website Development
-- **URL**: https://www.anavyainfotech.com/services/business-website
-- **Scopes**:
-  1. *Local Presence & Local SEO*: Google Business Profile sync, neighborhood schema markup, review widgets.
-  2. *India-Wide Scale*: UPI gateway integrations (Razorpay, Paytm), multi-city edge caches, regional language UI.
-  3. *Global Enterprise Architecture*: Global CDN edge distribution, hreflang tag setups, multi-currency calculators.
-
-### B. Web Application Development
-- **URL**: https://www.anavyainfotech.com/services/web-applications
-- **Deliverables**: Multi-role user authentication, real-time WebSocket telemetry, serverless API routers, automated CI/CD deployment pipelines.
-
-### C. AI Chatbots & Autonomous Automation
-- **URL**: https://www.anavyainfotech.com/services/ai-chatbot
-- **Deliverables**: Semantic documentation RAG indexing, scoped REST API function execution, human agent escalation handoffs, 24/7 ticket deflection.
-
-### D. Custom CRM Software
-- **URL**: https://www.anavyainfotech.com/services/crm-custom-software
-- **Deliverables**: Multi-stage lead scoring, custom WhatsApp/Email webhooks, director analytics dashboards, zero per-seat subscription overheads.
-
-### E. Headless E-Commerce
-- **URL**: https://www.anavyainfotech.com/services/ecommerce
-- **Deliverables**: Sub-second page navigations, Shopify Storefront API GraphQL integrations, customized checkout steps, dynamic product schema.
-
-### F. Corporate Branding & Visual Identity
-- **URL**: https://www.anavyainfotech.com/services/branding
-- **Deliverables**: Figma design token libraries, vector logo variants (SVG/PNG), brand guidelines PDF, typography pairings, color specifications.
-
----
-
-## 4. Case Studies & Technical Impact
-
-### 1. Vesper CRM (`/case-studies/vesper-crm`)
-- **Client**: Vesper Properties Group (Commercial Real Estate)
-- **Impact Metrics**: -85% Lead Response Time, 320+ Active Agents, +42% Deals Closed / Quarter
-- **Tech**: Next.js, Node.js, PostgreSQL, WhatsApp Webhooks
-
-### 2. Aether AI (`/case-studies/aether-ai`)
-- **Client**: Aether Tech Global (SaaS Platform)
-- **Impact Metrics**: 68% Support Deflection Rate, 12-second Average Resolution Time, 4.9/5 CSAT
-- **Tech**: OpenAI API, Qdrant Vector Search, FastAPI, Python
-
-### 3. Apex Commerce (`/case-studies/apex-commerce`)
-- **Client**: Apex Retail International (D2C Brand)
-- **Impact Metrics**: 99/100 Lighthouse Performance, +210% Organic Search Traffic, +3.4% Mobile Conversion Rate
-- **Tech**: Next.js App Router, Shopify Storefront API, GraphQL, Tailwind CSS
-
----
-
-## 5. Site Navigation Directory
-
-- Email: info@anavyainfotech.com
-- Mobile / WhatsApp: +91 6201231875 / +91 7508657479
-- Website Inquiry: https://www.anavyainfotech.com/contact
-- Case Studies Showcase: https://www.anavyainfotech.com/case-studies
-- Engineering Blog: https://www.anavyainfotech.com/blog
-- Pricing & Estimates: https://www.anavyainfotech.com/pricing
-- Contact Consultation: https://www.anavyainfotech.com/contact
-- HTML Sitemap: https://www.anavyainfotech.com/sitemap
-- XML Sitemap Index: https://www.anavyainfotech.com/sitemap.xml
-- llms.txt Summary: https://www.anavyainfotech.com/llms.txt
-- llms-full.txt: https://www.anavyainfotech.com/llms-full.txt
+## Direct Contacts
+- **Website**: https://www.anavyainfotech.com
+- **Sales & Inquiries Email**: info@anavyainfotech.com
+- **Direct Calls**: +91 6201231875 / +91 7508657479

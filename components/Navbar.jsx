@@ -108,8 +108,8 @@ export default function Navbar() {
       <nav 
         className={`sticky top-0 left-0 w-full z-40 px-6 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-stone-200/60 ${
           isScrolled 
-            ? "py-3.5 shadow-sm" 
-            : "py-4.5"
+            ? "py-3 shadow-sm" 
+            : "py-3.5"
         }`}
         onMouseLeave={() => setActiveDropdown(null)}
       >
