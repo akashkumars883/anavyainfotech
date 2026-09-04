@@ -125,12 +125,47 @@ export default function PricingPage() {
             Transparent Pricing
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Predictable pricing for <br />
-            <span className="text-blue-700">high-impact digital engineering.</span>
+            Pricing Built Around Your Project — Not a Generic Package.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Choose a fixed-price package or request a custom milestone-based quote tailored to your exact software and search growth requirements.
+            Every business is different, so we don't force you into a one-size-fits-all tier. Tell us what you're building, and you'll get a clear, itemized quote — no hidden fees, no surprise "final invoice" padding.
           </p>
+          <div className="flex flex-wrap items-center gap-4 pt-2">
+            <Link
+              href="/budget-calculator"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+            >
+              Use Our Budget Calculator <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider border border-stone-300 bg-white text-stone-900 hover:bg-stone-900 hover:text-white transition-all shadow-xs"
+            >
+              Get a Custom Quote <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Our Pricing Is Different */}
+      <section className="py-10 bg-white border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">
+            Why Our Pricing Is Different
+          </h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              "100% code ownership — no rented software, no vendor lock-in.",
+              "Zero seat fees — you're not charged per team member for tools we use internally.",
+              "Enterprise SLA guarantee — clear delivery commitments, in writing.",
+              "Transparent scopes agreed before development starts — not renegotiated mid-project.",
+            ].map((item, i) => (
+              <li key={i} className="flex items-center gap-3 p-4 bg-stone-50 border border-stone-100 rounded-md text-xs sm:text-sm text-stone-800 font-medium">
+                <span className="h-2 w-2 rounded-full bg-blue-700 shrink-0" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

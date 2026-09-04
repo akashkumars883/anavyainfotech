@@ -111,12 +111,19 @@ export default function DevelopmentCategoryPage() {
               <Code2 className="h-3.5 w-3.5 text-blue-700" /> Development Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
-              Custom Software &amp; <br />
-              <span className="text-blue-700">App Development Services</span>
+              Websites and Web Apps Built to Convert — Not Just to Exist.
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              We design and code scalable web applications, mobile apps, business websites, landing pages, and e-commerce platforms engineered for speed, conversion, and global scale.
+              Most business websites are digital brochures nobody reads. We build ones people actually use: fast, structured for search, and designed around a single goal — turning visitors into customers.
             </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Start a Project <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
           <div className="lg:col-span-5 flex items-center justify-center p-4">
             <SafeImage
@@ -133,14 +140,11 @@ export default function DevelopmentCategoryPage() {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
             <div className="text-xs font-bold text-blue-700 uppercase tracking-widest">
-              Core Offerings
+              What We Build
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Development Capabilities &amp; Services
+              Every Kind of Web Presence, One Engineering Standard.
             </h2>
-            <p className="text-sm text-stone-600 font-light">
-              Explore our specialized software engineering offerings built for modern businesses.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -200,6 +204,26 @@ export default function DevelopmentCategoryPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Why It Matters Section */}
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+            Slow Websites Lose Customers. We Fix That at the Foundation.
+          </h2>
+          <p className="text-sm md:text-base text-stone-600 font-light max-w-3xl leading-relaxed">
+            Google penalizes slow sites. Visitors abandon them within seconds. Every site we build is engineered on modern, lightweight frameworks — with performance and Core Web Vitals treated as launch requirements, not afterthoughts. You also keep 100% code ownership, so your website is an asset you control, not a rented one.
+          </p>
+          <div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-black text-white hover:bg-stone-800 transition-colors shadow-sm"
+            >
+              Get a Free Quote <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

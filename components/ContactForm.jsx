@@ -67,9 +67,12 @@ export default function ContactForm() {
               Let's Partner
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
-              Ready to build <br />
-              <span className="text-blue-700">something exceptional?</span>
+              Have a Project in Mind? <br />
+              <span className="text-blue-700">Let's Build It Right the First Time.</span>
             </h2>
+            <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
+              Whether it's a website that finally converts, an AI tool that saves your team hours a week, or an SEO strategy that gets you found — tell us what you're building. You'll hear back from a senior engineer, not a salesperson.
+            </p>
           </div>
 
           {/* Right Column: Compact White/stone Form Card */}

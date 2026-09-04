@@ -30,30 +30,22 @@ export const metadata = {
 
 const AI_CHATBOT_FAQS = [
   {
-    "question": "What LLMs and models do you use for AI chatbot development?",
-    "answer": "We integrate OpenAI GPT-4o, Claude 3.5 Sonnet, Llama 3, and Groq models depending on your latency, accuracy, and budget needs."
+    "question": "Will the chatbot sound robotic or generic?",
+    "answer": "No — we train it on your business's actual tone, products, and FAQs rather than deploying a generic script."
   },
   {
-    "question": "Can the AI chatbot connect to our custom database and CRM?",
-    "answer": "Yes! We build secure REST/GraphQL API connectors and RAG vector databases so your chatbot queries internal inventory, customer records, and ticket history."
+    "question": "Can it work on WhatsApp, not just my website?",
+    "answer": "Yes, we build for WhatsApp Business API, website widgets, and Instagram DM/comment automation depending on where your customers actually are."
   },
   {
-    "question": "How does the AI chatbot handle complex customer escalations?",
-    "answer": "When an inquiry requires human intervention, the chatbot seamlessly routes the conversation context to a live support representative or creates a ticket."
-  },
-  {
-    "question": "Is customer data kept private and compliant?",
-    "answer": "Absolutely. We enforce strict data privacy guardrails, zero data retention agreements with model providers, and enterprise encryption."
-  },
-  {
-    "question": "How long does it take to deploy a custom AI chatbot?",
-    "answer": "Simple support bots can be deployed within 1 to 2 weeks, while multi-channel RAG-enabled agents take 3 to 4 weeks."
+    "question": "What happens when the bot can't answer a question?",
+    "answer": "It hands off to a human team member (or captures contact details for follow-up) rather than guessing."
   }
 ];
 
 const serviceSchemas = createServiceSchema({
-  name: "Custom AI Chatbots & LLM Integrations",
-  description: "Building intelligent client-facing chat modules and support agents powered by secure OpenAI / Anthropic models, customized semantic database storage, and corporate RAG search pipelines.",
+  name: "AI Chatbot Development for Business | WhatsApp & Website Bots",
+  description: "Custom AI chatbots for websites, WhatsApp & Instagram — automate support, capture leads & qualify customers 24/7. Built by Anavya Infotech, India & USA.",
   slug: "ai-chatbot",
   serviceType: "Artificial Intelligence Development",
   faqs: AI_CHATBOT_FAQS,
@@ -74,31 +66,30 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "AI Chatbot", href: "/services/ai-chatbot" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            Services Catalog
+            Services / AI Chatbot
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Custom AI Chatbots & <br />
-            <span className="text-blue-700">LLM Integrations</span>
+            AI Chatbots That Capture Leads and Answer Customers 24/7
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Deploy secure corporate AI assistants within your workflow.
+            A visitor who leaves your site because no one answered their question at 11 PM is a lead you paid for and lost. Anavya Infotech builds custom AI chatbots — for your website, WhatsApp, or Instagram DMs — that answer real customer questions, qualify leads, and hand off to your team only when it actually matters.
           </p>
         </div>
       </section>
 
       {/* Detailed Description Grid */}
-      <section className="py-10 bg-white border-b border-stone-100 px-6">
+      <section className="py-12 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Block */}
           <div className="lg:col-span-6 space-y-6">
             <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              High-performance implementation blueprints.
+              Why It Matters
             </h2>
             <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              Building intelligent client-facing chat modules and support agents powered by secure OpenAI / Anthropic models, customized semantic database storage, and corporate RAG search pipelines.
+              Most customers now expect an instant response, and most businesses can&apos;t staff support around the clock. A well-built AI chatbot fills that gap — not by replacing your team, but by handling the repetitive 80% of questions so your team focuses on the 20% that actually need a human.
             </p>
             <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Our engineering systems verify page structures, data payloads, and query latency markers continuously. We align each workflow component with target speed and search metrics to drive measurable ROI.
+              We built Automixa AI, a production Instagram automation platform processing real-time comment and DM automation over the official Meta Graph API — so our chatbot engineering isn&apos;t theoretical; it&apos;s running live for thousands of active creators and brands today.
             </p>
           </div>
 
@@ -109,38 +100,75 @@ export default function ServicePage() {
                 <Cpu className="h-6 w-6 text-blue-700" />
               </div>
               <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                What We Deliver
+                What&apos;s Included
               </div>
             </div>
 
             <ul className="space-y-4" aria-label="Key deliverables">
-              
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Retrieval-Augmented Generation (RAG) vector pipelines</span>
+                <span>Custom AI chatbot trained on your business&apos;s actual products, FAQs, and pricing</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Instant client ticket deflection workflows</span>
+                <span>Website, WhatsApp Business API, and Instagram DM/comment automation</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Direct API integrations to complete account actions</span>
+                <span>Lead qualification logic (capture name, need, budget before human handoff)</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Corporate security data compliance protocols</span>
+                <span>CRM integration so captured leads flow straight into your sales pipeline</span>
+              </li>
+              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
+                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
+                <span>Human handoff for complex queries — the bot doesn&apos;t try to fake everything</span>
+              </li>
+              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
+                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
+                <span>Analytics dashboard: conversations, conversion rate, common questions</span>
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      
+      {/* Process Section */}
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
+            Our Process
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 01</span>
+              <h3 className="text-base font-medium text-stone-900">Map & Criteria</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Map your common customer questions and sales qualification criteria.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 02</span>
+              <h3 className="text-base font-medium text-stone-900">Build & Train</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Build and train the chatbot on your business&apos;s real content.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 03</span>
+              <h3 className="text-base font-medium text-stone-900">Integrate</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Integrate with website/WhatsApp/Instagram and your CRM.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 04</span>
+              <h3 className="text-base font-medium text-stone-900">Launch & Refine</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Launch, monitor conversations, and refine responses continuously.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <FaqSection
-        title="AI Chatbot Development FAQs"
-        subtitle="Common questions about custom AI chatbot integration and LLM workflows."
+        title="AI Chatbot FAQs"
+        subtitle="Frequently asked questions about custom AI Chatbot development."
         faqs={AI_CHATBOT_FAQS}
       />
 
@@ -151,17 +179,17 @@ export default function ServicePage() {
             <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-md blur-3xl pointer-events-none" />
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to deploy your customized system?
+                Build Your AI Chatbot
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Connect with our team to discuss project architectures, API specifications, and database configurations.
+                Connect with Anavya Infotech to build intelligent automation for your sales and customer support.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Consult an Engineer
+              Build Your AI Chatbot →
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -170,6 +198,3 @@ export default function ServicePage() {
     </main>
   );
 }
-
-
-

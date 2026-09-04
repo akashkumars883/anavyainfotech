@@ -60,28 +60,28 @@ const serviceSchemas = createServiceSchema({
 const subServices = [
   {
     title: "Brand Identity",
-    description: "Strategic market positioning, core narrative architecture, and value proposition blueprints.",
+    description: "A cohesive visual language across every customer touchpoint — not just a logo file.",
     href: "/services/branding",
     icon: Compass,
     features: ["Brand Voice & Narrative", "Market Gap Analysis", "Audience Personas", "Strategic Taglines"]
   },
   {
     title: "Logo Design",
-    description: "Iconic vector logo mark design, typography hierarchies, and curated color palettes.",
+    description: "Distinct, memorable marks designed to work at any size, on any surface.",
     href: "/services/branding",
     icon: Palette,
     features: ["Vector Logo Marks (SVG/AI)", "HSL Color Specifications", "WebFont Licensing Guides", "Dark & Light Mode Variants"]
   },
   {
     title: "Corporate Guidelines",
-    description: "Comprehensive brand book manuals detailing asset usage rules, spacing grid specs, and stationery templates.",
+    description: "A documented brand system your whole team can execute consistently, without guessing.",
     href: "/services/branding",
     icon: ShieldCheck,
     features: ["Brand Manual PDF", "Social Media Asset Kits", "Email & Document Templates", "Stationery Print Layouts"]
   },
   {
     title: "Visual Strategy",
-    description: "Standardized Figma design systems, accessible color specifications, and product UI kit component libraries.",
+    description: "Design decisions grounded in how your audience actually perceives your category — not just what looks nice.",
     href: "/services/branding",
     icon: Layers,
     features: ["Figma Component Kits", "WCAG 2.1 Color Specs", "Micro-interaction Tokens", "Responsive Breakpoints"]
@@ -105,12 +105,19 @@ export default function CorporateBrandingPage() {
               <Palette className="h-3.5 w-3.5 text-blue-700" /> Branding Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
-              Corporate Branding &amp; <br />
-              <span className="text-blue-700">Visual Identity Design</span>
+              A Logo Isn't a Brand. We Build the Whole System.
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Craft a commanding corporate presence. We design high-impact visual identities, brand strategy blueprints, digital UI systems, and design guidelines that position your business for market leadership.
+              Your website, your pitch deck, and your business card should all look like they belong to the same company. We design the full visual identity — so credibility isn't something you have to explain, it's something people see immediately.
             </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Start Your Brand <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
           <div className="lg:col-span-5 flex items-center justify-center p-4">
             <SafeImage
@@ -127,14 +134,11 @@ export default function CorporateBrandingPage() {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
             <div className="text-xs font-bold text-blue-700 uppercase tracking-widest">
-              Core Offerings
+              What We Build
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Branding &amp; Visual Identity Capabilities
+              Identity Systems Built to Scale With You
             </h2>
-            <p className="text-sm text-stone-600 font-light">
-              Build an unforgettable brand identity across print, web, and product touchpoints.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

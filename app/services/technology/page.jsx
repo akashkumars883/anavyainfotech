@@ -102,15 +102,22 @@ export default function TechnologyCategoryPage() {
           <div className="lg:col-span-7 space-y-6">
             <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Technology", href: "/services/technology" }]} />
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-700 shadow-xs">
-              <Cpu className="h-3.5 w-3.5 text-blue-700" /> Technology Hub
+              <Cpu className="h-3.5 w-3.5 text-blue-700" /> Technology &amp; AI Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
-              AI, Automation &amp; <br />
-              <span className="text-blue-700">Enterprise Technology Services</span>
+              AI That Actually Runs Your Business — Not a Demo That Sits on a Shelf.
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              We engineer custom AI chatbot integrations, automated workflow engines, bespoke CRM software, and high-speed API connections to automate your business operations.
+              We build AI systems that plug directly into how your business operates: chatbots that qualify leads at 2 a.m., CRMs shaped around your actual sales process, and integrations that quietly delete hours of manual work from your week.
             </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Talk to an Engineer <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
           <div className="lg:col-span-5 flex items-center justify-center p-4">
             <SafeImage
@@ -127,14 +134,11 @@ export default function TechnologyCategoryPage() {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
             <div className="text-xs font-bold text-blue-700 uppercase tracking-widest">
-              Core Offerings
+              What We Build
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Technology &amp; AI Capabilities
+              Automation That Pays for Itself
             </h2>
-            <p className="text-sm text-stone-600 font-light">
-              Automate tasks, scale customer support, and organize business data with custom technology solutions.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -194,6 +198,29 @@ export default function TechnologyCategoryPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Proof Section */}
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+            Proof
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+            This Isn't Theoretical. We've Shipped It.
+          </h2>
+          <p className="text-sm md:text-base text-stone-600 font-light max-w-3xl leading-relaxed">
+            Automixa AI, our Meta Graph API automation platform, processes real-time DM and comment automation for thousands of active creators with zero account restriction issues — the kind of production reliability that separates a real AI system from a chatbot demo.
+          </p>
+          <div>
+            <Link
+              href="/case-studies/automixa-ai"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-black text-white hover:bg-stone-800 transition-colors shadow-sm"
+            >
+              See the Automixa AI Case Study <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

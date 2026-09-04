@@ -112,12 +112,19 @@ export default function GrowthCategoryPage() {
               <TrendingUp className="h-3.5 w-3.5 text-blue-700" /> Growth &amp; SEO Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
-              Digital Growth, SEO &amp; <br />
-              <span className="text-blue-700">Search Marketing Services</span>
+              Ranking on Page One Isn't Luck. It's a System — And We Run It.
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Accelerate your market visibility with data-driven SEO audits, local Google Maps optimization, technical speed tuning, and high-intent content strategies.
+              Most SEO "strategies" are guesswork dressed up in a monthly report. Ours start with a technical audit that finds exactly what's blocking your rankings, then fixes it — systematically, and with numbers to prove it worked.
             </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Get a Free SEO Audit <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
           <div className="lg:col-span-5 flex items-center justify-center p-4">
             <SafeImage
@@ -134,14 +141,11 @@ export default function GrowthCategoryPage() {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
             <div className="text-xs font-bold text-blue-700 uppercase tracking-widest">
-              Core Offerings
+              What We Do
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Growth &amp; Search Capabilities
+              Full-Spectrum SEO, Not Just Keywords
             </h2>
-            <p className="text-sm text-stone-600 font-light">
-              Dominate organic search rankings and turn search traffic into loyal paying customers.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -201,6 +205,29 @@ export default function GrowthCategoryPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* For Agencies Section */}
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+            For Agencies
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+            Running an Agency? Resell Our SEO Under Your Brand.
+          </h2>
+          <p className="text-sm md:text-base text-stone-600 font-light max-w-3xl leading-relaxed">
+            Our white-label SEO reseller program lets digital agencies offer enterprise-grade technical audits, link authority building, and full SEO fulfillment under their own name — scale your client roster without scaling your headcount.
+          </p>
+          <div>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-black text-white hover:bg-stone-800 transition-colors shadow-sm"
+            >
+              Learn About White-Label SEO <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

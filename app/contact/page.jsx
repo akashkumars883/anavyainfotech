@@ -144,11 +144,10 @@ export default function ContactPage() {
             Contact Us
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Let's build something <br />
-            <span className="text-blue-700">exceptional together.</span>
+            Let's Build Something Exceptional — Starting With a Conversation.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Tell us about your project and we'll send a detailed proposal within 24 hours. No commitment required.
+            Tell us about your project. You'll hear back from someone who can actually scope and build it — not a call-center script.
           </p>
         </div>
       </section>

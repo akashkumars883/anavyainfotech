@@ -1,31 +1,35 @@
 import { NextResponse } from "next/server";
 import { saveSiteKnowledge } from "@/lib/aiVectorStore";
+import * as cheerio from "cheerio";
 
 export const dynamic = "force-dynamic";
 
-// Helper to sanitize & extract text from HTML content
-function parseHtmlContent(html, baseUrl) {
-  // Remove script, style, svg, and iframe tags
-  const cleanHtml = html
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
-    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, "")
-    .replace(/<svg\b[^<]*(?:(?!<\/svg>)<[^<]*)*<\/svg>/gi, "")
-    .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, "");
+// Helper to sanitize & extract rich text using Cheerio
+function parseHtmlWithCheerio(html, baseUrl) {
+  const $ = cheerio.load(html);
 
-  // Extract Title
-  const titleMatch = cleanHtml.match(/<title[^>]*>(.*?)<\/title>/i);
-  const title = titleMatch ? titleMatch[1].trim() : baseUrl;
+  // Remove noise elements
+  $("script, style, svg, iframe, noscript, nav, footer, form").remove();
 
-  // Extract Body Text
-  const text = cleanHtml
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  // Extract Page Title
+  const title = $("title").text().trim() || $("h1").first().text().trim() || baseUrl;
+
+  // Extract Key Headings & Paragraphs cleanly
+  const contentBlocks = [];
+  
+  $("h1, h2, h3, h4, p, li").each((_, el) => {
+    const text = $(el).text().replace(/\s+/g, " ").trim();
+    if (text.length > 15) {
+      contentBlocks.push(text);
+    }
+  });
+
+  const fullText = contentBlocks.join("\n");
 
   return {
     url: baseUrl,
     title,
-    text: text.slice(0, 5000), // Limit per page text length
+    text: fullText.slice(0, 8000), // Rich 8000 chars context window per page
   };
 }
 
@@ -69,20 +73,19 @@ export async function POST(req) {
     }
 
     const html = await response.text();
-    const homepageData = parseHtmlContent(html, siteUrl);
+    const homepageData = parseHtmlWithCheerio(html, siteUrl);
     const pages = [homepageData];
 
-    // 2. Discover Sub-pages (e.g., /contact, /pricing, /about, /services)
+    // 2. Discover Sub-pages with Cheerio (e.g., /contact, /pricing, /about, /services)
     try {
+      const $ = cheerio.load(html);
       const parsedBase = new URL(siteUrl);
-      const linkRegex = /href=["']([^"']+)["']/gi;
       const discoveredUrls = new Set();
-      let match;
 
-      while ((match = linkRegex.exec(html)) !== null) {
-        const href = match[1];
+      $("a[href]").each((_, el) => {
+        const href = $(el).attr("href");
         if (!href || href.startsWith("#") || href.startsWith("javascript:") || href.startsWith("mailto:") || href.startsWith("tel:")) {
-          continue;
+          return;
         }
 
         try {
@@ -96,10 +99,10 @@ export async function POST(req) {
             discoveredUrls.add(resolvedUrl.href);
           }
         } catch {}
-      }
+      });
 
-      // Crawl top 5 discovered sub-pages in parallel
-      const subPageUrls = Array.from(discoveredUrls).slice(0, 5);
+      // Crawl up to 25 discovered sub-pages concurrently (Deep Website Knowledge Scrape)
+      const subPageUrls = Array.from(discoveredUrls).slice(0, 25);
       const subPagePromises = subPageUrls.map(async (url) => {
         try {
           const subRes = await fetch(url, {
@@ -108,7 +111,7 @@ export async function POST(req) {
           });
           if (subRes.ok) {
             const subHtml = await subRes.text();
-            return parseHtmlContent(subHtml, url);
+            return parseHtmlWithCheerio(subHtml, url);
           }
         } catch {
           return null;
@@ -147,3 +150,4 @@ export async function POST(req) {
     );
   }
 }
+

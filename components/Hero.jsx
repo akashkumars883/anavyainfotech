@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Sparkles, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import gsap from "gsap";
 
 import GsapKineticText from "@/components/GsapKineticText";
 import GsapMagneticButton from "@/components/GsapMagneticButton";
@@ -90,21 +89,21 @@ export default function Hero() {
             </GsapMagneticButton>
           </motion.div>
 
-          {/* Trust Badges */}
+          {/* Clean Static Trust Badges */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap items-center gap-6 pt-3 text-xs font-medium text-stone-500 border-t border-stone-100"
+            className="pt-4 border-t border-stone-100 flex flex-wrap items-center gap-3 text-xs font-medium text-stone-600"
           >
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-blue-700" /> 100% Code Ownership
+            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
+              <CheckCircle2 className="h-3.5 w-3.5 text-blue-700" /> 100+ Projects Delivered
             </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-blue-700" /> Zero Seat Fees
+            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
+              <CheckCircle2 className="h-3.5 w-3.5 text-blue-700" /> 50+ Global Clients
             </span>
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="h-4 w-4 text-blue-700" /> Enterprise SLA Guarantee
+            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
+              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Enterprise SLA &amp; 100% Code Ownership
             </span>
           </motion.div>
         </div>
@@ -135,3 +134,4 @@ export default function Hero() {
     </section>
   );
 }
+

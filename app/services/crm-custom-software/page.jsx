@@ -28,35 +28,24 @@ export const metadata = {
   },
 };
 
-
-
 const CRM_CUSTOM_SOFTWARE_FAQS = [
   {
-    "question": "Why build a custom CRM instead of paying for Salesforce or HubSpot?",
-    "answer": "Custom CRMs eliminate per-seat monthly subscription taxes, adapt 100% to your unique operational SOPs, and give you complete data sovereignty."
+    "question": "Is a custom CRM more expensive than something like a standard SaaS CRM?",
+    "answer": "Upfront cost is typically higher, but there's no recurring per-seat licensing — for growing teams, custom software often becomes cheaper over 2–3 years while fitting your process exactly."
   },
   {
-    "question": "Can a custom CRM scale to hundreds of team members?",
-    "answer": "Yes, we build custom CRMs using PostgreSQL and Next.js, allowing your company to scale to unlimited users with zero extra licensing cost."
+    "question": "Can you migrate our data from our current CRM/spreadsheets?",
+    "answer": "Yes, data migration is part of our standard CRM build process."
   },
   {
-    "question": "Can you migrate existing client data from Excel or another CRM?",
-    "answer": "Yes! We handle full data ETL extraction, cleansing, mapping, and seamless import from spreadsheets or legacy CRMs."
-  },
-  {
-    "question": "How long does it take to develop a custom CRM system?",
-    "answer": "MVP custom CRMs take 4 to 6 weeks, while enterprise multi-module platforms take 8 to 12 weeks."
-  },
-  {
-    "question": "What security measures protect our customer CRM data?",
-    "answer": "We enforce role-based access control (RBAC), row-level security, SSL/TLS encryption, and automated database backups."
+    "question": "Do you build CRMs for specific industries like real estate or finance?",
+    "answer": "Yes — we've built custom CRM/portal systems for real estate (Nakul Properties) and fintech (Money Capital Finance); see Case Studies."
   }
 ];
 
-
 const serviceSchemas = createServiceSchema({
-  name: "Custom CRM & Custom Enterprise Software",
-  description: "Replacing restrictive off-the-shelf SaaS with custom dashboards, secure internal CRM systems, customer panels, and database storage modules without monthly licenses.",
+  name: "Custom CRM & Software Development Company",
+  description: "Custom CRM software built around your actual sales process — not generic templates. CRM & business software development for India & USA companies.",
   slug: "crm-custom-software",
   faqs: CRM_CUSTOM_SOFTWARE_FAQS,
 });
@@ -75,31 +64,27 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "CRM & Custom Software", href: "/services/crm-custom-software" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            Services Catalog
+            Services / Custom CRM Software
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Custom CRM & Custom <br />
-            <span className="text-blue-700">Enterprise Software</span>
+            Custom CRM Software Built Around How You Actually Sell
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Bespoke internal systems designed for your business model.
+            Off-the-shelf CRMs force your sales process to fit their template. Anavya Infotech builds custom CRM and business software designed around your actual pipeline, your team&apos;s workflow, and the specific data you need to track — with none of the bloated features you&apos;ll never use.
           </p>
         </div>
       </section>
 
       {/* Detailed Description Grid */}
-      <section className="py-10 bg-white border-b border-stone-100 px-6">
+      <section className="py-12 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Block */}
           <div className="lg:col-span-6 space-y-6">
             <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              High-performance implementation blueprints.
+              Why Custom Beats Off-the-Shelf
             </h2>
             <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              Replacing restrictive off-the-shelf SaaS with custom dashboards, secure internal CRM systems, customer panels, and database storage modules without monthly licenses.
-            </p>
-            <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Our engineering systems verify page structures, data payloads, and query latency markers continuously. We align each workflow component with target speed and search metrics to drive measurable ROI.
+              Generic CRMs like standard SaaS tools charge per seat and force workarounds for anything outside their template — which is why so many sales teams end up maintaining a CRM and a separate spreadsheet anyway. A custom CRM is built once around your real process, so your team actually uses it instead of working around it.
             </p>
           </div>
 
@@ -110,38 +95,75 @@ export default function ServicePage() {
                 <Code className="h-6 w-6 text-blue-700" />
               </div>
               <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                What We Deliver
+                What&apos;s Included
               </div>
             </div>
 
             <ul className="space-y-4" aria-label="Key deliverables">
-              
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Tailored database schemas matching your workflows</span>
+                <span>Custom sales pipeline and lead management built to your process</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Unlimited custom roles and admin portals</span>
+                <span>Role-based dashboards for sales, support, and management</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Zero monthly licensing fees or seat limitations</span>
+                <span>Automated lead assignment, follow-up reminders, and status tracking</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Complete code ownership & data privacy control</span>
+                <span>Integration with WhatsApp, email, and your existing marketing tools</span>
+              </li>
+              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
+                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
+                <span>Custom reporting and analytics specific to your KPIs</span>
+              </li>
+              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
+                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
+                <span>Full data ownership — no per-seat licensing, no vendor lock-in</span>
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      
+      {/* Process Section */}
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
+            Our Process
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 01</span>
+              <h3 className="text-base font-medium text-stone-900">Map Process</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Map your current sales/operations process end-to-end.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 02</span>
+              <h3 className="text-base font-medium text-stone-900">Schema & Design</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Design the CRM schema, dashboards, and workflow logic.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 03</span>
+              <h3 className="text-base font-medium text-stone-900">Build & Integrate</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Build, integrate with existing tools, and test with your team.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 04</span>
+              <h3 className="text-base font-medium text-stone-900">Launch & Train</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Launch, train your team, and iterate based on real usage.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <FaqSection
-        title="Custom CRM & Software FAQs"
-        subtitle="Questions about custom CRM development vs off-the-shelf SaaS."
+        title="Custom CRM FAQs"
+        subtitle="Frequently asked questions about Custom CRM software."
         faqs={CRM_CUSTOM_SOFTWARE_FAQS}
       />
 
@@ -152,17 +174,17 @@ export default function ServicePage() {
             <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-md blur-3xl pointer-events-none" />
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to deploy your customized system?
+                Build Your Custom CRM
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Connect with our team to discuss project architectures, API specifications, and database configurations.
+                Empower your sales and operations team with a CRM built specifically for your business.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Consult an Engineer
+              Build Your Custom CRM →
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -171,6 +193,3 @@ export default function ServicePage() {
     </main>
   );
 }
-
-
-

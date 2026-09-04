@@ -30,30 +30,22 @@ export const metadata = {
 
 const API_INTEGRATION_FAQS = [
   {
-    "question": "What API architectures do you specialize in?",
-    "answer": "We specialize in RESTful APIs, GraphQL endpoints, Webhooks, gRPC microservices, and serverless middleware integrations."
+    "question": "Can you integrate with tools you haven't used before?",
+    "answer": "Yes — most modern platforms expose a documented API; if it has one, we can typically integrate with it."
   },
   {
-    "question": "Can you connect legacy software to modern cloud web applications?",
-    "answer": "Yes, we build custom bridge APIs and middleware layers that allow legacy ERP or database systems to sync securely with modern web apps."
+    "question": "What if an API integration breaks after a third-party platform updates?",
+    "answer": "We build with error handling and monitoring in mind, and offer maintenance retainers to handle updates from third-party platform changes."
   },
   {
-    "question": "How do you handle API rate limiting and high-volume traffic?",
-    "answer": "We implement redis caching, message queues (RabbitMQ/Kafka), and automated retry logic to handle rate limits smoothly without service disruption."
-  },
-  {
-    "question": "How is API authentication and security managed?",
-    "answer": "We enforce OAuth 2.0, JWT tokens, API keys, SSL encryption, and IP whitelist policies to secure all data transmissions."
-  },
-  {
-    "question": "Do you provide documentation and post-integration support?",
-    "answer": "Yes, we provide OpenAPI (Swagger) documentation, Postman collections, and ongoing API monitoring and support."
+    "question": "Do you build integrations for messaging platforms like WhatsApp and Instagram?",
+    "answer": "Yes — this is core to our AI/automation work; see AI Chatbots and Business Automation."
   }
 ];
 
 const serviceSchemas = createServiceSchema({
-  name: "Custom API Development & Integration",
-  description: "Designing REST and GraphQL interfaces to securely synchronize databases, third-party applications, payment gateways, and custom script endpoints.",
+  name: "API Integration Services | Connect Your Business Tools",
+  description: "API integration services connecting your CRM, payment gateways, messaging & third-party platforms into one workflow. Anavya Infotech, India & USA.",
   slug: "api-integration",
   serviceType: "API Development & System Integration",
   faqs: API_INTEGRATION_FAQS,
@@ -74,31 +66,27 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "API Integration", href: "/services/api-integration" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            Services Catalog
+            Services / API Integration
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Custom API Development <br />
-            <span className="text-blue-700">& Integration</span>
+            API Integration to Connect Every Tool Your Business Runs On
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Connect databases, SaaS, and software components securely.
+            When your CRM, payment gateway, WhatsApp, and website don&apos;t talk to each other, someone on your team is manually bridging the gap — copying data, re-entering leads, checking three dashboards for one answer. Anavya Infotech builds API integrations that connect your existing tools into a single, reliable workflow.
           </p>
         </div>
       </section>
 
       {/* Detailed Description Grid */}
-      <section className="py-10 bg-white border-b border-stone-100 px-6">
+      <section className="py-12 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Block */}
           <div className="lg:col-span-6 space-y-6">
             <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              High-performance implementation blueprints.
+              Why It Matters
             </h2>
             <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              Designing REST and GraphQL interfaces to securely synchronize databases, third-party applications, payment gateways, and custom script endpoints.
-            </p>
-            <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Our engineering systems verify page structures, data payloads, and query latency markers continuously. We align each workflow component with target speed and search metrics to drive measurable ROI.
+              Disconnected tools create data lag and human error — a payment that doesn&apos;t sync to your CRM, a lead that sits in a form inbox nobody checks. We&apos;ve built production-grade API integrations processing real-time webhooks at scale (Automixa AI&apos;s Meta Graph API integration handles sub-50ms webhook responses for 10,000+ active users), so we bring that same reliability standard to every integration we build.
             </p>
           </div>
 
@@ -109,38 +97,75 @@ export default function ServicePage() {
                 <Terminal className="h-6 w-6 text-blue-700" />
               </div>
               <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                What We Deliver
+                What&apos;s Included
               </div>
             </div>
 
             <ul className="space-y-4" aria-label="Key deliverables">
-              
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Secure OAuth & token-based data connections</span>
+                <span>Payment gateway integration (Razorpay, Stripe, PayU, and others)</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>High-throughput data transformation pipelines</span>
+                <span>CRM and marketing tool integrations (data sync, lead routing)</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Custom GraphQL schema configurations</span>
+                <span>WhatsApp Business API and messaging platform integrations</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Rate-limiting and request logging protection</span>
+                <span>Meta Graph API integrations (as built for Automixa AI&apos;s Instagram automation)</span>
+              </li>
+              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
+                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
+                <span>Custom API development for internal or partner-facing systems</span>
+              </li>
+              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
+                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
+                <span>Webhook setup for real-time data sync between platforms</span>
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      
+      {/* Process Section */}
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
+            Our Process
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 01</span>
+              <h3 className="text-base font-medium text-stone-900">Map Data</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Map the tools and data that need to connect.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 02</span>
+              <h3 className="text-base font-medium text-stone-900">Architecture</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Design the integration architecture and data flow.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 03</span>
+              <h3 className="text-base font-medium text-stone-900">Build & Test</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Build, test with real data, and handle edge cases/error handling.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 04</span>
+              <h3 className="text-base font-medium text-stone-900">Deploy & Document</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Deploy, monitor, and document for your team.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <FaqSection
-        title="API Integration Services FAQs"
-        subtitle="Frequently asked questions about REST, GraphQL, and microservice connectors."
+        title="API Integration FAQs"
+        subtitle="Frequently asked questions about API Integrations."
         faqs={API_INTEGRATION_FAQS}
       />
 
@@ -151,17 +176,17 @@ export default function ServicePage() {
             <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-md blur-3xl pointer-events-none" />
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to deploy your customized system?
+                Discuss Your Integration Needs
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Connect with our team to discuss project architectures, API specifications, and database configurations.
+                Connect your business tools into a seamless automated workflow with Anavya Infotech.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Consult an Engineer
+              Discuss Your Integration Needs →
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -170,6 +195,3 @@ export default function ServicePage() {
     </main>
   );
 }
-
-
-

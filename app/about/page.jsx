@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Users, Star, Globe, Clock, ShieldCheck, Cpu, Code2, Zap, Rocket, CheckCircle2 } from "lucide-react";
 import FaqSection from "@/components/FaqSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import GsapCounter from "@/components/GsapCounter";
 
 export const metadata = {
   title: "About Anavya Infotech – Custom Software Development Company India",
@@ -73,39 +74,39 @@ const ABOUT_FAQS = [
 ];
 
 const stats = [
-  { value: "100+", label: "Projects Delivered", icon: <Star className="h-5 w-5 text-blue-700" /> },
-  { value: "50+", label: "Global Clients", icon: <Globe className="h-5 w-5 text-blue-700" /> },
-  { value: "5+", label: "Years Experience", icon: <Clock className="h-5 w-5 text-blue-700" /> },
-  { value: "15+", label: "Senior Engineers", icon: <Users className="h-5 w-5 text-blue-700" /> },
+  { value: <GsapCounter end={100} suffix="+" />, label: "Projects Delivered", icon: <Star className="h-5 w-5 text-blue-700" /> },
+  { value: <GsapCounter end={50} suffix="+" />, label: "Global Clients", icon: <Globe className="h-5 w-5 text-blue-700" /> },
+  { value: <GsapCounter end={5} suffix="+" />, label: "Years Experience", icon: <Clock className="h-5 w-5 text-blue-700" /> },
+  { value: <GsapCounter end={15} suffix="+" />, label: "Senior Engineers", icon: <Users className="h-5 w-5 text-blue-700" /> },
 ];
 
 const coreValues = [
   {
     icon: <Code2 className="h-6 w-6 text-blue-700" />,
     title: "Clean Code & Quality",
-    description: "We craft maintainable, modular, and extensively documented code solutions tailored to long-term enterprise growth.",
+    description: "Maintainable, modular, thoroughly documented code built for years of growth, not just the demo.",
   },
   {
     icon: <ShieldCheck className="h-6 w-6 text-blue-700" />,
     title: "Full Code Ownership",
-    description: "You retain 100% intellectual property rights, source code repository access, and deployment ownership upon project completion.",
+    description: "You keep 100% of the IP, repository access, and deployment rights. It's your product, permanently.",
   },
   {
     icon: <Cpu className="h-6 w-6 text-blue-700" />,
     title: "Modern Tech Stack",
-    description: "Leveraging cutting-edge technologies like Next.js, React, Node.js, Python, AI APIs, and cloud-native serverless infrastructure.",
+    description: "Next.js, React, Node.js, TypeScript, Python, AI APIs, and cloud-native infrastructure — tools built for scale.",
   },
   {
     icon: <Zap className="h-6 w-6 text-blue-700" />,
     title: "Performance & SEO First",
-    description: "Engineered from day one for sub-second page load times, strict Core Web Vitals compliance, and top search engine rankings.",
+    description: "Sub-second load times and strict Core Web Vitals compliance, engineered in from the first commit.",
   },
 ];
 
 const technologies = [
   "Next.js", "React.js", "Node.js", "TypeScript", "Python", 
   "Tailwind CSS", "PostgreSQL", "MongoDB", "Redis", "Docker",
-  "AWS Cloud", "OpenAI / Claude API", "GraphQL", "REST APIs"
+  "AWS Cloud", "OpenAI/Claude API", "GraphQL", "REST APIs"
 ];
 
 export default function AboutPage() {
@@ -124,11 +125,10 @@ export default function AboutPage() {
             About Anavya Infotech
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Engineering digital solutions <br />
-            <span className="text-blue-700">that scale, perform, and lead.</span>
+            Engineering Digital Solutions That Scale, Perform, and Lead.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Anavya Infotech is a custom software development and digital growth agency helping businesses in India and globally build high-performance web platforms, AI tools, and scalable marketing systems.
+            Anavya Infotech is a custom software development and digital growth agency helping businesses in India and globally build high-performance web platforms, AI tools, and marketing systems that hold up under real-world traffic — not just demo-day traffic.
           </p>
         </div>
       </section>
@@ -150,21 +150,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision Section */}
+      {/* Mission & Vision / Our Why Section */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 text-xs font-bold text-blue-700 uppercase tracking-wider">
-              Our Vision & Mission
+              Our Why
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
-              Democratizing enterprise-grade software development.
+              Enterprise-Grade Engineering, Without the Enterprise Overhead.
             </h2>
             <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-              We believe every ambitious business deserves bespoke software architecture, smooth automated pipelines, and fast digital platforms — without the complexity and astronomical overhead of legacy agency models.
+              Every ambitious business deserves bespoke software architecture, automated workflows, and a fast, findable website — without the bloated retainers and layers of account managers that traditional agencies charge for.
             </p>
             <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-              From our development hub in India, our senior engineers collaborate closely with clients across North America, Europe, Asia, and Australia to deliver full-cycle software engineering — from strategy and UI/UX design to cloud deployment and search engine domination.
+              From our development hub in Delhi NCR, our senior engineers work directly with clients across North America, Europe, Asia, and Australia — covering the full build, from strategy and UI/UX design through cloud deployment and search visibility.
             </p>
           </div>
 
@@ -172,19 +172,19 @@ export default function AboutPage() {
           <div className="p-8 rounded-md bg-white border border-stone-100 space-y-6 shadow-sm">
             <h3 className="text-xl font-bold text-stone-900 flex items-center gap-2">
               <Rocket className="h-5 w-5 text-blue-700" />
-              Why Businesses Choose Us
+              What You Get When You Work With Us
             </h3>
             <ul className="space-y-4">
               {[
-                "100% Transparent communication and agile sprints.",
-                "Direct line of access to senior technical architects.",
-                "Zero bloated dependencies — high performance code guarantee.",
-                "Built-in SEO structure, schema markup & Core Web Vitals optimization.",
-                "Comprehensive post-launch technical support & maintenance.",
-              ].map((point, i) => (
+                { title: "Full transparency.", desc: "Agile sprints and direct visibility into progress — no black-box status updates." },
+                { title: "Direct access to senior architects.", desc: "You talk to the people building your product, not a project manager relaying messages." },
+                { title: "Zero bloat.", desc: "Clean, high-performance code with no unnecessary dependencies dragging down your load times." },
+                { title: "SEO built in, not bolted on.", desc: "Schema markup, Core Web Vitals compliance, and search-ready structure from day one." },
+                { title: "We don't disappear after launch.", desc: "Ongoing technical support and maintenance, because software isn't \"done\" — it's maintained." },
+              ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                   <CheckCircle2 className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
-                  <span>{point}</span>
+                  <span><strong>{item.title}</strong> {item.desc}</span>
                 </li>
               ))}
             </ul>
@@ -197,11 +197,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="space-y-4 max-w-2xl">
             <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-              Our Core Principles
+              The Standards We Build To
             </h2>
-            <p className="text-sm text-stone-600 font-light">
-              The foundational values that guide how we build products and manage client relationships.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -1,70 +1,70 @@
-import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
-import { Zap, ArrowRight, Layout } from "lucide-react";
+import { ArrowRight, CheckCircle2, Layout } from "lucide-react";
+import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "High-Converting Landing Page Design & CRO Engineering",
+  title: "High-Converting Landing Page Design & Development | Anavya Infotech",
   description:
-    "Boost paid campaign ROI with ultra-fast Next.js landing pages built for max conversion rates, dynamic lead capture, and A/B test optimization by Anavya Infotech.",
-  keywords: [
-    "landing page design services",
-    "high converting landing pages",
-    "Next.js landing page development",
-    "CRO landing page agency",
-    "lead generation landing page",
-    "PPC landing page design",
-  ],
+    "Conversion-focused landing pages for ad campaigns, product launches & lead generation. Fast-loading, A/B testable, built for India & USA marketing teams.",
+  keywords:
+    "landing page design services, high converting landing pages, Next.js landing page development, CRO landing page agency, lead generation landing page, PPC landing page design",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/landing-pages",
   },
   openGraph: {
-    title: "High-Converting Landing Page Design & CRO Engineering",
+    title: "High-Converting Landing Page Design & Development | Anavya Infotech",
     description:
-      "Boost paid campaign ROI with ultra-fast Next.js landing pages built for max conversion rates, dynamic lead capture, and A/B test optimization by Anavya Infotech.",
+      "Conversion-focused landing pages for ad campaigns, product launches & lead generation. Fast-loading, A/B testable, built for India & USA marketing teams.",
     url: "https://www.anavyainfotech.com/services/landing-pages",
     type: "website",
   },
 };
 
-
-
 const LANDING_PAGES_FAQS = [
   {
-    "question": "What makes a landing page high-converting?",
-    "answer": "High conversion stems from sub-second load speeds, clear hero headlines, strong social proof, compelling CTAs, and frictionless lead forms."
+    question: "Can you write the copy too, or do I need to provide it?",
+    answer: "We can handle copywriting, or work from your brief — whichever gets you a stronger converting page faster."
   },
   {
-    "question": "Do you design landing pages for Google Ads and Meta Ads campaigns?",
-    "answer": "Yes! We build ad-aligned landing pages engineered to maximize Google Quality Score and lower your cost-per-lead (CPL)."
+    question: "Do you set up conversion tracking for Google/Meta Ads?",
+    answer: "Yes, GA4, Meta Pixel, and Google Ads conversion tracking are included as standard."
   },
   {
-    "question": "Can you integrate the landing page form directly into our CRM?",
-    "answer": "Yes, leads auto-sync in real time into your CRM, email autoresponder, or WhatsApp notifications."
-  },
-  {
-    "question": "How quickly can a custom landing page be delivered?",
-    "answer": "High-converting landing pages are delivered within 3 to 7 business days."
-  },
-  {
-    "question": "Do you perform A/B testing on landing page variants?",
-    "answer": "Yes, we implement A/B split testing for headlines, CTAs, and layout variations to optimize conversion performance."
+    question: "How fast can a landing page be delivered?",
+    answer: "Typically 5–10 business days depending on design complexity and content readiness."
   }
 ];
 
-
 const serviceSchemas = createServiceSchema({
-  name: "High-Converting Landing Page Design",
-  description: "Conversion-rate optimized single-page web structures featuring instantaneous Core Web Vitals loading metrics, semantic text layout hierarchies, and direct CTA actions.",
+  name: "High-Converting Landing Page Design & Development",
+  description: "Conversion-focused landing pages for ad campaigns, product launches & lead generation. Fast-loading, A/B testable, built for India & USA marketing teams.",
   slug: "landing-pages",
+  serviceType: "Landing Page Development",
   faqs: LANDING_PAGES_FAQS,
+  breadcrumbLabel: "Landing Pages",
 });
 
 export default function ServicePage() {
+  const inclusions = [
+    "Conversion-focused copywriting and layout structure (above-the-fold offer clarity)",
+    "Mobile-first design — most ad traffic in India comes from mobile",
+    "Fast load times to protect your Google/Meta ad Quality Score",
+    "Lead capture forms, WhatsApp CTAs, or e-commerce checkout integration",
+    "A/B testing setup for headline, CTA, and layout variants",
+    "Analytics and conversion tracking (GA4, Meta Pixel, Google Ads conversion tags)",
+  ];
+
+  const processSteps = [
+    { num: "01", title: "Discover", desc: "Understand your offer, audience, and traffic source." },
+    { num: "02", title: "Architecture", desc: "Wireframe and copy structured around one conversion goal." },
+    { num: "03", title: "Build & Sync", desc: "Build, integrate tracking, and connect to your CRM/WhatsApp/email." },
+    { num: "04", title: "Launch & Iterate", desc: "Launch and support A/B test iterations." },
+  ];
+
   return (
-    <main className="min-h-screen bg-white text-left">
-      {/* Search Engine Schema */}
+    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -75,73 +75,76 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Landing Pages", href: "/services/landing-pages" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            Services Catalog
+            <Layout className="h-3.5 w-3.5 text-blue-700" /> Landing Page Development
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            High-Converting Landing <br />
-            <span className="text-blue-700">Page Design</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
+            Landing Pages Built to Convert Clicks Into Leads
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Turn advertising clicks into loyal corporate clients.
+          <p className="text-base sm:text-lg text-stone-600 font-light max-w-4xl leading-relaxed">
+            A landing page has one job: convert. Anavya Infotech designs and builds high-converting landing pages for paid ad campaigns, product launches, and lead-generation funnels — pages engineered around a single clear action, loaded in under two seconds, and structured to match exactly what your ad promised.
+          </p>
+          <div className="pt-2">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+            >
+              Get a Landing Page Quote → <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included */}
+      <section className="py-12 bg-white border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+            What's Included
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {inclusions.map((item, index) => (
+              <div key={index} className="p-4 rounded-md bg-stone-50 border border-stone-100 flex items-start gap-3 text-xs sm:text-sm text-stone-800 font-medium">
+                <CheckCircle2 className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why It Matters */}
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+            Why It Matters for Your Ad Spend
+          </h2>
+          <p className="text-sm md:text-base text-stone-600 font-light max-w-4xl leading-relaxed">
+            A slow or unfocused landing page silently burns ad budget — every second of load time and every distracting nav link reduces your conversion rate. We build landing pages stripped down to what drives action, so the traffic you're already paying for actually converts.
           </p>
         </div>
       </section>
 
-      {/* Detailed Description Grid */}
-      <section className="py-10 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Block */}
-          <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              High-performance implementation blueprints.
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              Conversion-rate optimized single-page web structures featuring instantaneous Core Web Vitals loading metrics, semantic text layout hierarchies, and direct CTA actions.
-            </p>
-            <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Our engineering systems verify page structures, data payloads, and query latency markers continuously. We align each workflow component with target speed and search metrics to drive measurable ROI.
-            </p>
-          </div>
-
-          {/* Right Block: Benefits Checklist Card */}
-          <div className="lg:col-span-6 bg-stone-50 border border-stone-100 rounded-md p-8 space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="h-10 w-10 rounded-md bg-white border border-stone-100 flex items-center justify-center">
-                <Layout className="h-6 w-6 text-blue-700" />
+      {/* Process Section */}
+      <section className="py-12 bg-white border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+            Our Process
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {processSteps.map((step, idx) => (
+              <div key={idx} className="p-6 bg-stone-50 border border-stone-100 rounded-md space-y-3">
+                <div className="text-2xl font-bold text-blue-700">{step.num}</div>
+                <h3 className="text-lg font-semibold text-stone-900">{step.title}</h3>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">{step.desc}</p>
               </div>
-              <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                What We Deliver
-              </div>
-            </div>
-
-            <ul className="space-y-4" aria-label="Key deliverables">
-              
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Instant LCP load speeds under 1.2 seconds</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Integrated A/B test telemetry frameworks</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Sleek form setups with CRM integrations</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Pixel-perfect styling using Tailwind CSS</span>
-              </li>
-            </ul>
+            ))}
           </div>
         </div>
       </section>
 
-      
       {/* FAQ Section */}
       <FaqSection
-        title="Landing Page Development FAQs"
-        subtitle="Questions about high-converting PPC and lead generation landing pages."
+        title="Frequently Asked Questions"
+        subtitle="Common questions about high-converting landing page development."
         faqs={LANDING_PAGES_FAQS}
       />
 
@@ -149,21 +152,19 @@ export default function ServicePage() {
       <section className="py-10 bg-stone-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-md blur-3xl pointer-events-none" />
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to deploy your customized system?
+                Ready to maximize your ad campaign ROI?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Connect with our team to discuss project architectures, API specifications, and database configurations.
+                Let's design a high-converting landing page tailored to your target audience.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Consult an Engineer
-              <ArrowRight className="h-4 w-4" />
+              Get a Landing Page Quote →
             </Link>
           </div>
         </div>
@@ -171,6 +172,3 @@ export default function ServicePage() {
     </main>
   );
 }
-
-
-

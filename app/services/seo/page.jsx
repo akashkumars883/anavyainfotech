@@ -1,22 +1,22 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
-import { Zap, ArrowRight, LineChart, ShieldCheck, Globe, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Globe } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Best SEO Company in India | SEO Agency & White Label SEO Reseller Services",
+  title: "SEO Company in India | Search Engine Optimization Services | Anavya Infotech",
   description:
-    "Anavya Infotech is the best SEO company in India and leading SEO agency in Delhi NCR & Noida. We offer result-oriented SEO services in India, local SEO, and white label SEO reseller programs.",
+    "Data-driven SEO services for businesses in Delhi NCR, Faridabad, Noida & the USA. Technical, on-page & content SEO to rank higher and grow organic traffic.",
   keywords:
-    "SEO company, SEO agency, SEO company in India, SEO agency in India, best SEO company in India, SEO services, SEO services in India, SEO company in Delhi NCR, SEO agency in Noida, SEO reseller services, SEO reseller company, SEO reseller program, SEO reseller services in India, white label SEO services, white label SEO company",
+    "SEO company India, search engine optimization services, SEO agency Delhi NCR Faridabad Noida, technical SEO agency, organic traffic growth",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/seo",
   },
   openGraph: {
-    title: "Best SEO Company in India | SEO Agency & White Label SEO Reseller Services",
+    title: "SEO Company in India | Search Engine Optimization Services | Anavya Infotech",
     description:
-      "Premier SEO agency in India & Delhi NCR providing SEO services, link authority building, e-commerce SEO, and white label SEO reseller programs.",
+      "Data-driven SEO services for businesses in Delhi NCR, Faridabad, Noida & the USA. Technical, on-page & content SEO to rank higher and grow organic traffic.",
     url: "https://www.anavyainfotech.com/services/seo",
     type: "website",
   },
@@ -24,37 +24,49 @@ export const metadata = {
 
 const SEO_FAQS = [
   {
-    "question": "Why is Anavya Infotech considered a top SEO company in India?",
-    "answer": "We combine technical search audits, data-driven keyword mapping, link authority building, and transparent monthly ROI reporting."
+    question: "How long does SEO take to show results?",
+    answer: "Typically 3–6 months for meaningful ranking movement, depending on competition and your site's current technical health — we'll give you a realistic timeline after the audit."
   },
   {
-    "question": "How does your White Label SEO reseller program work for agencies?",
-    "answer": "Agencies resell our SEO packages under their brand. We execute audits, link building, and content while delivering 100% unbranded white-label reports."
+    question: "Do you guarantee #1 rankings?",
+    answer: "No credible SEO agency can guarantee a specific rank — Google's algorithm isn't controlled by any vendor. We focus on and report against traffic and conversion growth instead."
   },
   {
-    "question": "What is the difference between On-Page, Off-Page, and Technical SEO?",
-    "answer": "On-Page optimizes content and keywords; Technical SEO fixes site speed, crawling, and schema; Off-Page builds high-authority external backlinks."
+    question: "Is SEO better than paid ads for my business?",
+    answer: "They serve different purposes — SEO compounds over time and lowers cost-per-lead long-term, while ads deliver immediate traffic. Most businesses benefit from both."
   },
   {
-    "question": "Do you use safe White-Hat SEO techniques?",
-    "answer": "Yes, 100% White-Hat practices adhering strictly to Google Webmaster Guidelines to ensure long-term rank stability."
-  },
-  {
-    "question": "What reporting do clients and reseller agencies receive?",
-    "answer": "You receive detailed monthly reports tracking organic keyword positions, search impression growth, backlink acquisition, and traffic analytics."
+    question: "Do you offer specialized SEO for e-commerce or local businesses?",
+    answer: "Yes — see E-Commerce SEO, Local SEO, and Technical SEO."
   }
 ];
 
 const serviceSchemas = createServiceSchema({
-  name: "Search Engine Optimization & White Label SEO Reseller Services",
-  description: "Anavya Infotech is a top-rated SEO company in India offering enterprise SEO services, local SEO, white label SEO reseller programs, and technical search auditing.",
+  name: "Search Engine Optimization Services",
+  description: "Data-driven SEO services for businesses in Delhi NCR, Faridabad, Noida & the USA. Technical, on-page & content SEO to rank higher and grow organic traffic.",
   slug: "seo",
-  serviceType: "Search Engine Optimization & Growth Services",
+  serviceType: "SEO Services",
   faqs: SEO_FAQS,
   breadcrumbLabel: "SEO",
 });
 
 export default function SeoServicePage() {
+  const inclusions = [
+    "Full technical SEO audit (crawlability, indexing, Core Web Vitals, structured data)",
+    "Keyword research mapped to actual buyer intent, not just search volume",
+    "On-page optimization: title tags, meta descriptions, internal linking, content gaps",
+    "Content strategy and SEO-optimized blog/content production",
+    "Local SEO (Google Business Profile, citations) where relevant",
+    "Monthly reporting on rankings, traffic, and conversions — not vanity metrics",
+  ];
+
+  const processSteps = [
+    { num: "01", title: "Audit", desc: "Technical + competitive SEO audit." },
+    { num: "02", title: "Strategy", desc: "Keyword and content gap strategy." },
+    { num: "03", title: "Execution", desc: "On-page fixes and content production." },
+    { num: "04", title: "Growth", desc: "Ongoing optimization, link building, and monthly reporting." },
+  ];
+
   return (
     <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script
@@ -67,131 +79,96 @@ export default function SeoServicePage() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "SEO", href: "/services/seo" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <Globe className="h-3.5 w-3.5 text-blue-700" /> Services / Search Engine Optimization
+            <Globe className="h-3.5 w-3.5 text-blue-700" /> Search Engine Optimization
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Best SEO Company in India & <br />
-            <span className="text-blue-700">White Label SEO Reseller Agency</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
+            SEO Services That Grow Organic Traffic, Not Just Rankings
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Anavya Infotech is a premier <strong>SEO agency in India</strong>, <strong>Delhi NCR</strong>, and <strong>Noida</strong>. We deliver high-ROI <strong>SEO services in India</strong> and flexible <strong>white label SEO reseller programs</strong> for agencies worldwide.
+          <p className="text-base sm:text-lg text-stone-600 font-light max-w-4xl leading-relaxed">
+            Ranking for a vanity keyword means nothing if it doesn't bring customers. Anavya Infotech runs SEO campaigns built around a simple standard: organic traffic that converts. Our SEO services cover technical audits, on-page optimization, content strategy, and authority building for businesses across India, Delhi NCR, and the USA.
           </p>
-        </div>
-      </section>
-
-      {/* Detailed Description Grid */}
-      <section className="py-10 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Block */}
-          <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              Rank #1 on Google with the best SEO agency in India.
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              As a leading <strong>SEO company in India</strong>, we combine data-driven search keyword intent mapping, technical site architecture audits, competitor gap analyses, and high-authority link acquisition to secure top organic positions for high-value business terms.
-            </p>
-            <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Whether you are looking for an <strong>SEO company in Delhi NCR</strong>, an <strong>SEO agency in Noida</strong>, or an enterprise partner to scale your national search authority, our engineering approach delivers sustainable revenue growth.
-            </p>
-          </div>
-
-          {/* Right Block: Deliverables */}
-          <div className="lg:col-span-6 bg-stone-50 border border-stone-100 rounded-md p-8 space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="h-10 w-10 rounded-md bg-white border border-stone-100 flex items-center justify-center">
-                <LineChart className="h-6 w-6 text-blue-700" />
-              </div>
-              <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                Full-Service SEO Deliverables
-              </div>
-            </div>
-
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Commercial & Intent Keyword Opportunity Mapping</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>On-Page Technical SEO & Schema Markup Audits</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Competitor Backlink Audits & Authority Link Acquisition</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Transparent Monthly Keyword Ranking & Traffic Reports</span>
-              </li>
-            </ul>
+          <div className="pt-2">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+            >
+              Get a Free SEO Audit → <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* SEO Reseller & White Label Section */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="max-w-3xl space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-              White Label SEO Reseller Services for Agencies
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              Scale your agency fulfillment without hiring in-house teams. Our <strong>white label SEO services</strong> and <strong>SEO reseller program in India</strong> enable digital agencies in the US, UK, and India to deliver world-class client results under their own brand.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "White Label SEO Company",
-                desc: "100% unbranded client reports, audit deliverables, and keyword dashboards branded with your agency logo.",
-              },
-              {
-                title: "SEO Reseller Program",
-                desc: "Flexible wholesale pricing models allowing high margins for digital marketing agencies, web design firms, and freelancers.",
-              },
-              {
-                title: "Dedicated Account Managers",
-                desc: "Direct access to senior SEO strategists in India for technical audit consultations and campaign strategy.",
-              },
-            ].map((reseller, i) => (
-              <div key={i} className="p-8 rounded-md bg-white border border-stone-200 space-y-4">
-                <ShieldCheck className="h-8 w-8 text-blue-700" />
-                <h3 className="text-lg font-bold text-stone-900">{reseller.title}</h3>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">{reseller.desc}</p>
+      {/* What's Included */}
+      <section className="py-12 bg-white border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+            What's Included
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {inclusions.map((item, index) => (
+              <div key={index} className="p-4 rounded-md bg-stone-50 border border-stone-100 flex items-start gap-3 text-xs sm:text-sm text-stone-800 font-medium">
+                <CheckCircle2 className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
+                <span>{item}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Why Businesses Choose Us */}
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+            Why Businesses Choose Us Over Freelancers or Generic Agencies
+          </h2>
+          <p className="text-sm md:text-base text-stone-600 font-light max-w-4xl leading-relaxed">
+            Most "SEO packages" sold in India are backlink-spam templates recycled across every client. We treat SEO as engineering: every recommendation is backed by a technical audit of your actual site, and every content piece is mapped to a keyword with real commercial intent. We also run <Link href="/blog/white-label-seo-reseller-program-agency-scaling-guide" className="text-blue-700 underline">White Label SEO Reseller programs</Link> for agencies that want to resell SEO without building an in-house team.
+          </p>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-12 bg-white border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+            Our Process
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {processSteps.map((step, idx) => (
+              <div key={idx} className="p-6 bg-stone-50 border border-stone-100 rounded-md space-y-3">
+                <div className="text-2xl font-bold text-blue-700">{step.num}</div>
+                <h3 className="text-lg font-semibold text-stone-900">{step.title}</h3>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <FaqSection
-        title="SEO Services & Reseller FAQs"
-        subtitle="Questions about ranking #1 on Google and White Label SEO programs."
+        title="Frequently Asked Questions"
+        subtitle="Common questions about search engine optimization."
         faqs={SEO_FAQS}
       />
 
       {/* Contact Trigger Block */}
-      <section className="py-10 bg-white px-6">
+      <section className="py-10 bg-stone-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-md blur-3xl pointer-events-none" />
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to dominate search rankings?
+                Ready to double your organic search traffic?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Get a free SEO audit from the <strong>best SEO company in India</strong>. Explore our direct client SEO plans or <strong>white label SEO reseller services</strong> today.
+                Get a free technical SEO audit and custom ranking strategy for your platform.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Get Free SEO Audit
-              <ArrowRight className="h-4 w-4" />
+              Get a Free SEO Audit →
             </Link>
           </div>
         </div>

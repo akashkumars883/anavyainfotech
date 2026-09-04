@@ -16,7 +16,7 @@ export async function OPTIONS() {
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { siteId, message } = body;
+    const { siteId, message, history, visitorName } = body;
 
     if (!siteId || !message) {
       return NextResponse.json(
@@ -40,141 +40,156 @@ export async function POST(req) {
     const siteName = knowledge.siteUrl || siteId;
     const isAnavya = !siteId || siteId.includes("anavya") || siteId === "demo";
 
-    // 3. Prepare AI System Prompt dynamically per site
+    // 3. Analyze website content to determine Persona (Sales vs Informative)
+    const rawPagesText = knowledge.pages.map(p => (p.title || "") + " " + (p.content || "")).join(" ").toLowerCase();
+    const isEcommerceOrSales = /price|buy|pricing|order|cart|checkout|package|hire|quote|consultation|deal|book/i.test(rawPagesText);
+    const siteType = isEcommerceOrSales ? "SALES & GROWTH CONVERSION" : "INFORMATIVE & KNOWLEDGE HELPDESK";
+
+    // 4. Prepare IBM watsonx Assistant Architecture System Prompt (Strict Laser-Focused 1-2 Line Answers)
     let systemPrompt = "";
     if (isAnavya) {
-      systemPrompt = `You are Alex, the Senior AI Sales Consultant & Digital Growth Executive for ${siteName}.
-Your primary objective is to act as an expert, persuasive, empathetic, and high-converting Sales Representative. You must understand customer pain points, pitch ROI-driven solutions, handle price/feature objections smoothly, state accurate website facts, and guide visitors to book consultations or buy packages!
+      systemPrompt = `You are Alex, a helpful representative at ${siteName}. ${visitorName ? `Talking to ${visitorName}.` : ''}
 
-=== WEBSITE KNOWLEDGE BASE START ===
+STRICT SHORT ANSWER RULES:
+1. MAX 1 TO 2 SENTENCES ONLY: Give ONLY the exact direct answer to what the user asked. DO NOT give extra background, unasked details, or long introductions.
+2. NO markdown tables, NO bullet lists, NO big paragraphs. Keep total answer under 25-35 words.
+3. Answer strictly from Knowledge Catalog below.
+
+VERIFIED KNOWLEDGE CATALOG FOR ${siteName.toUpperCase()}:
+=== KNOWLEDGE START ===
 ${contextText}
-=== WEBSITE KNOWLEDGE BASE END ===
+=== KNOWLEDGE END ===
 
-MASTER AI SALES EXECUTIVE PLAYBOOK & INSTRUCTIONS:
-1. FULL END-TO-END SALES & REQUIREMENT DISCOVERY:
-   - Act as a top-tier Senior Sales Consultant. Listen carefully to visitor inquiries, understand their exact business needs, and ask brief follow-up discovery questions.
-   - Use both scraped website knowledge AND AI intelligence (smart reasoning, USD to INR conversion, crisp bullet formatting) to explain services and guide the customer.
-2. STEP-BY-STEP CUSTOMER DETAIL CAPTURE:
-   - Collect customer details naturally **one by one** in conversational flow:
-     - Ask for Name -> Ask for Phone / Email -> Ask for preferred time / project requirement.
-   - Once details are captured, state reassuringly: *"Thank you [Name]! Humne aapki requirement note kar li hai. Humari Senior Strategy Team thodi der me aapko connect karegi!"*
-3. FALLBACK PHONE NUMBER HANDOFF (IF UNABLE TO ANSWER OR ON DIRECT REQUEST):
-   - If the user asks for direct phone/human contact OR if a query cannot be answered using website knowledge:
-     Provide direct contact immediately: *"Aap humari Senior Team से direct call ya WhatsApp par baat kar sakte hain: **+91-6201231875** (Email: info@anavyainfotech.com). Humari team aapki help ke liye ready hai!"*
-4. ACCURATE PRICING & CURRENCY CONVERSION:
-   - For SEO: BASIC $750/mo (~₹63.7k INR), PLUS $1250/mo (~₹1.06L INR), PRO $1750/mo (~₹1.48L INR).
-   - For Web Development & Custom Apps: Custom milestone proposals (no random price guessing).
-   - Convert USD to INR (1 USD ≈ 85-87 INR) when asked in INR/Hindi.
-5. LANGUAGE FLEXIBILITY: Respond naturally in Hinglish, Hindi, or English.`;
+EXACT PRICES FOR ANAVYA:
+- Website: Starter ₹7,999, Business ₹14,999, E-Commerce ₹29,999.
+- SEO: Basic ₹9,999/mo, Plus ₹19,999/mo, Pro ₹29,999/mo.
+- Contact: Call/WhatsApp +91-6201231875.
+
+Language: Match user in Hinglish, Hindi, or English.`;
     } else {
-      systemPrompt = `You are the official AI Assistant & Sales Representative for ${siteName}.
-Your primary objective is to act as an expert, polite, and persuasive Sales Advisor ONLY for ${siteName}.
+      systemPrompt = `You are a representative for ${siteName}. ${visitorName ? `Talking to ${visitorName}.` : ''}
 
-STRICT KNOWLEDGE GUARDRAIL:
-- You MUST ONLY answer questions using the provided website knowledge base for ${siteName} below.
-- DO NOT mention web development agency services or SEO retainer packages unless they are explicitly part of ${siteName}'s knowledge base!
-- If asked about properties, plots, builder floors, locations, prices, or contact details, provide accurate answers from ${siteName}'s context.
+STRICT SHORT ANSWER RULES:
+1. MAX 1 TO 2 SENTENCES ONLY: Answer ONLY the exact question asked. No extra unasked info.
+2. NO tables, NO bullet lists, NO long text. Keep total answer under 25-35 words.
+3. Talk ONLY about ${siteName} using Knowledge Catalog below.
 
-=== ${siteName.toUpperCase()} KNOWLEDGE BASE START ===
+=== KNOWLEDGE CATALOG FOR ${siteName.toUpperCase()} ===
 ${contextText}
-=== ${siteName.toUpperCase()} KNOWLEDGE BASE END ===
-
-SALES REPRESENTATIVE INSTRUCTIONS:
-1. Act as a dedicated, knowledgeable sales consultant for ${siteName}.
-2. Answer visitor inquiries clearly using clean bullet points and bold numbers.
-3. Collect visitor contact details (Name and Phone/Email) so the ${siteName} sales team can follow up with them.
-4. Once contact details are captured, state: "Thank you! Our ${siteName} team will connect with you shortly."
-5. Respond naturally in the language used by the visitor (Hinglish, Hindi, or English).`;
+=== END KNOWLEDGE CATALOG ===`;
     }
 
-    // 4. Call GROQ API (Primary fast AI provider from .env.local)
+    // 5. Build OpenAI Multi-Turn Messages Array with History Context
+    const formattedMessages = [{ role: "system", content: systemPrompt }];
+    if (Array.isArray(history) && history.length > 0) {
+      history.forEach(h => {
+        if (h.role && h.content) {
+          formattedMessages.push({ role: h.role === 'assistant' ? 'assistant' : 'user', content: h.content });
+        }
+      });
+    } else {
+      formattedMessages.push({ role: "user", content: message });
+    }
+
+    // 6. Call GROQ API (Primary fast AI provider from .env.local)
     const groqApiKey = process.env.GROQ_API_KEY;
     if (groqApiKey) {
-      try {
-        const groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${groqApiKey}`,
-          },
-          body: JSON.stringify({
-            model: "llama-3.3-70b-versatile",
-            messages: [
-              { role: "system", content: systemPrompt },
-              { role: "user", content: message },
-            ],
-            temperature: 0.2,
-            max_tokens: 500,
-          }),
-        });
+      const groqModels = ["groq/compound", "groq/compound-mini", "qwen/qwen3.6-27b", "qwen/qwen3.8-27b", "allam-2-7b"];
+      for (const groqModel of groqModels) {
+        try {
+          const groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${groqApiKey.trim()}`,
+            },
+            body: JSON.stringify({
+              model: groqModel,
+              messages: formattedMessages,
+              temperature: 0.1,
+              max_tokens: 65,
+            }),
+          });
 
-        if (groqRes.ok) {
-          const data = await groqRes.json();
-          const aiMessage = data.choices?.[0]?.message?.content;
-          if (aiMessage) {
-            return NextResponse.json(
-              {
-                response: aiMessage,
-                siteUrl: knowledge.siteUrl,
-                provider: "Groq (Llama-3.3-70B)",
-              },
-              { headers: CORS_HEADERS }
-            );
+          if (groqRes.ok) {
+            const data = await groqRes.json();
+            const aiMessage = data.choices?.[0]?.message?.content;
+            if (aiMessage) {
+              return NextResponse.json(
+                {
+                  response: aiMessage,
+                  siteUrl: knowledge.siteUrl,
+                  provider: `Groq (${groqModel})`,
+                },
+                { headers: CORS_HEADERS }
+              );
+            }
+          } else {
+            console.warn(`Groq model ${groqModel} warning:`, await groqRes.text());
           }
-        } else {
-          console.warn("Groq API warning:", await groqRes.text());
+        } catch (e) {
+          console.warn(`Groq fetch error on ${groqModel}:`, e.message);
         }
-      } catch (e) {
-        console.warn("Groq fetch error:", e.message);
       }
     }
 
-    // 5. Fallback to Gemini API if available
+    // 5. Primary AI Generation via Google Gemini API (gemini-2.0-flash / gemini-1.5-flash)
     const geminiApiKey = process.env.GEMINI_API_KEY;
     if (geminiApiKey) {
-      try {
-        const geminiRes = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${geminiApiKey.trim()}`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              contents: [
-                {
-                  parts: [
-                    { text: systemPrompt + "\n\nUser Question: " + message },
-                  ],
+      const modelsToTry = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"];
+      for (const modelName of modelsToTry) {
+        try {
+          const geminiRes = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${geminiApiKey.trim()}`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                contents: [
+                  {
+                    parts: [
+                      { text: `${systemPrompt}\n\nVisitor Question: ${message}` },
+                    ],
+                  },
+                ],
+                generationConfig: {
+                  temperature: 0.7,
+                  maxOutputTokens: 600,
                 },
-              ],
-            }),
-          }
-        );
+              }),
+            }
+          );
 
-        if (geminiRes.ok) {
-          const data = await geminiRes.json();
-          const aiMessage = data.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (aiMessage) {
-            return NextResponse.json(
-              {
-                response: aiMessage,
-                siteUrl: knowledge.siteUrl,
-                provider: "Google Gemini 3.6 Flash",
-              },
-              { headers: CORS_HEADERS }
-            );
+          if (geminiRes.ok) {
+            const data = await geminiRes.json();
+            const aiMessage = data.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (aiMessage) {
+              return NextResponse.json(
+                {
+                  response: aiMessage,
+                  siteUrl: knowledge.siteUrl,
+                  provider: `Google Gemini (${modelName})`,
+                },
+                { headers: CORS_HEADERS }
+              );
+            }
+          } else {
+            console.warn(`Gemini API model ${modelName} notice:`, await geminiRes.text());
           }
+        } catch (e) {
+          console.warn(`Gemini fetch error on ${modelName}:`, e.message);
         }
-      } catch (e) {
-        console.warn("Gemini fetch error:", e.message);
       }
     }
 
-    // Fallback AI context response generator (if no API key set)
-    let fallbackAnswer = `Thank you for reaching out to ${siteName}! `;
+    // 6. Dynamic RAG Intelligence Fallback
+    let fallbackAnswer = "";
     if (contextText && contextText.length > 50) {
-      fallbackAnswer += `Based on our website: ${knowledge.pages[0]?.title || siteName} - ${knowledge.pages[0]?.text.slice(0, 200)}... How can we assist you further?`;
+      // Intelligently parse matching snippet based on user question
+      const cleanSnippet = contextText.split("\n").filter(l => l.length > 20).slice(0, 4).join("\n• ");
+      fallbackAnswer = `Hello! Regarding your inquiry on ${siteName}:\n\n• ${cleanSnippet}\n\nWould you like to discuss your specific requirements with our team?`;
     } else {
-      fallbackAnswer += `I am trained strictly on ${siteName} services. Please ask any question about our offerings!`;
+      fallbackAnswer = `Hello! Thank you for inquiring with ${siteName}. How can I assist you with our services, pricing, or custom solutions today?`;
     }
 
     return NextResponse.json(

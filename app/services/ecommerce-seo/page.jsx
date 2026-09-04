@@ -25,31 +25,23 @@ export const metadata = {
 
 const ECOMMERCE_SEO_FAQS = [
   {
-    "question": "How is E-Commerce SEO different from standard website SEO?",
-    "answer": "E-Commerce SEO focuses on optimizing thousands of SKU product pages, category facets, Product schema markup, internal linking, and transactional keywords."
+    "question": "Does this work with Shopify or only custom stores?",
+    "answer": "Both — we optimize Shopify, headless, and custom-built e-commerce platforms."
   },
   {
-    "question": "How do you handle duplicate content on dynamic product filters?",
-    "answer": "We implement strict canonical tagging, canonical parameter handling, clean URL rewrites, and robots directive rules to prevent duplicate indexing."
+    "question": "Can SEO really move the needle for e-commerce revenue?",
+    "answer": "Yes — organic search is typically one of the highest-converting, lowest-cost-per-acquisition channels for e-commerce once technical and content foundations are fixed."
   },
   {
-    "question": "How soon can an online store expect organic sales growth?",
-    "answer": "Measurable category keyword ranking gains and organic revenue improvements typically begin within 60 to 90 days."
-  },
-  {
-    "question": "Do you optimize Product schema markup for Google Shopping?",
-    "answer": "Yes, we implement structured Product, Offer, AggregateRating, and InStock JSON-LD schemas so products display rich price/review badges in search results."
-  },
-  {
-    "question": "Can you optimize Shopify or WooCommerce stores for SEO?",
-    "answer": "Yes! We work with Shopify, WooCommerce, Magento, and custom headless Next.js e-commerce architectures."
+    "question": "Do you handle marketplace SEO (Amazon/Flipkart) too?",
+    "answer": "Our core focus is your own store's organic Google SEO; ask us if you also need marketplace listing optimization support."
   }
 ];
 
 
 const serviceSchemas = createServiceSchema({
-  name: "E-Commerce SEO Services & Category Optimization",
-  description: "Premier ecommerce SEO agency in India providing product schema markup, facet navigation SEO, technical crawl optimization, and organic sales scaling.",
+  name: "E-Commerce SEO Services | Product & Category Page SEO",
+  description: "SEO for online stores — product page optimization, category structure & technical SEO to grow organic sales for e-commerce brands in India & the USA.",
   slug: "ecommerce-seo",
   faqs: ECOMMERCE_SEO_FAQS,
 });
@@ -68,30 +60,26 @@ export default function EcommerceSeoPage() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "E-Commerce SEO", href: "/services/ecommerce-seo" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <ShoppingBag className="h-3.5 w-3.5 text-blue-700" /> Services / E-Commerce SEO Agency
+            <ShoppingBag className="h-3.5 w-3.5 text-blue-700" /> Services / E-Commerce SEO
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Best E-Commerce SEO Agency in India & <br />
-            <span className="text-blue-700">Online Store Growth Services</span>
+            E-Commerce SEO to Turn Organic Search Into Sales
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Turn search intent into high-margin online sales. We are a specialized <strong>ecommerce SEO company in India</strong> delivering high-converting <strong>ecommerce SEO services</strong> for Shopify, Custom Next.js, and WooCommerce brands.
+            Most e-commerce SEO advice stops at &quot;add keywords to product titles.&quot; Anavya Infotech runs full e-commerce SEO programs — technical crawl optimization, category architecture, product page templates, and content — built specifically for online stores where every ranking improvement should translate directly into revenue.
           </p>
         </div>
       </section>
 
       {/* Description Grid */}
-      <section className="py-10 bg-white border-b border-stone-100 px-6">
+      <section className="py-12 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-6 space-y-6">
             <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              Rank high-intent product & category pages #1.
+              Why E-Commerce SEO Is Different
             </h2>
             <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              As the <strong>best ecommerce SEO agency</strong>, we engineer product schema markup, optimize faceted navigation filters to avoid duplicate content penalties, and build category authority that drives recurring organic purchase traffic.
-            </p>
-            <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Whether you are an established D2C brand or scaling an international store, our <strong>ecommerce SEO agency in India</strong> ensures sub-second page performance combined with top search visibility.
+              Large product catalogs create SEO problems standard SEO services don&apos;t handle well — duplicate content from filters, thin product descriptions, and crawl budget waste on out-of-stock pages. We fix these at the architecture level so your catalog scales without cannibalizing its own rankings.
             </p>
           </div>
 
@@ -101,37 +89,75 @@ export default function EcommerceSeoPage() {
                 <TrendingUp className="h-6 w-6 text-blue-700" />
               </div>
               <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                E-Commerce SEO Capabilities
+                What&apos;s Included in E-Commerce SEO
               </div>
             </div>
 
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Product & Category Keyword Ranking Architecture</span>
+                <span>Site architecture and category/collection structure audit</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Product Structured JSON-LD & Rich Snippets Setup</span>
+                <span>Product page SEO templates (titles, descriptions, schema/rich snippets)</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Faceted Navigation & Canonical URL Audit</span>
+                <span>Faceted navigation and duplicate content cleanup (a major e-commerce SEO issue)</span>
               </li>
               <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                 <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Page Speed & Mobile Core Web Vitals Optimization</span>
+                <span>Technical SEO: crawl budget, indexing, Core Web Vitals for large catalogs</span>
+              </li>
+              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
+                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
+                <span>Content strategy for category pages, buying guides, and comparison content</span>
+              </li>
+              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
+                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
+                <span>Conversion-focused optimization tied to organic revenue, not just traffic</span>
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      
+      {/* Process Section */}
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
+            Our E-Commerce SEO Process
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 01</span>
+              <h3 className="text-base font-medium text-stone-900">Audit</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Technical + catalog architecture audit.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 02</span>
+              <h3 className="text-base font-medium text-stone-900">Templates</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Product & category page SEO templates optimization.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 03</span>
+              <h3 className="text-base font-medium text-stone-900">Content</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Content production for category and buying-guide pages.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 04</span>
+              <h3 className="text-base font-medium text-stone-900">Revenue Optimization</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Ongoing optimization tied directly to organic revenue tracking.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <FaqSection
-        title="E-Commerce SEO Services FAQs"
-        subtitle="Questions about ranking product catalogs, category pages, and driving sales."
+        title="E-Commerce SEO FAQs"
+        subtitle="Frequently asked questions about E-Commerce SEO services."
         faqs={ECOMMERCE_SEO_FAQS}
       />
 
@@ -141,17 +167,17 @@ export default function EcommerceSeoPage() {
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to grow your e-commerce organic sales?
+                Grow Your Store&apos;s Organic Sales
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Connect with the premier <strong>ecommerce SEO agency in India</strong>. Get a technical store SEO strategy today.
+                Connect with Anavya Infotech today and transform your product catalog into a high-converting organic sales channel.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Get Store SEO Strategy
+              Grow Your Store&apos;s Organic Sales →
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -160,3 +186,4 @@ export default function EcommerceSeoPage() {
     </main>
   );
 }
+

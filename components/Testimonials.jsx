@@ -10,7 +10,7 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      quote: "Anavya Infotech built our Meta Graph API Instagram automation platform from scratch. Sub-50ms webhook responses and zero account restriction issues — top tier AI engineering team.",
+      quote: "Sub-50ms webhook responses and zero account restriction issues — top-tier AI engineering team.",
       author: "Aditya Verma",
       role: "Founder & CEO",
       company: "Automixa Inc.",
@@ -20,7 +20,7 @@ export default function Testimonials() {
       caseStudySlug: "automixa-ai",
     },
     {
-      quote: "Their team engineered a sub-second loan eligibility portal with interactive EMI calculators. Inquiry conversions jumped 38% and loan processing speed dropped under 24 hours.",
+      quote: "Inquiry conversions jumped 38% and loan processing speed dropped under 24 hours.",
       author: "Rajesh Sharma",
       role: "Managing Director",
       company: "Money Capital Finance",
@@ -30,7 +30,7 @@ export default function Testimonials() {
       caseStudySlug: "money-capital-finance",
     },
     {
-      quote: "Anavya Infotech is a global leader in Custom Software Development, SEO, and Cloud Solutions. We provide end-to-end CRM & ERP systems, Managed IT services, and Cybersecurity globally. From India to international markets, we deliver scalable technology to grow your business.",
+      quote: "A global leader in custom software development, SEO, and cloud solutions — delivering scalable technology from India to international markets.",
       author: "Nakul Singh",
       role: "Principal Consultant",
       company: "Nakul Properties",
@@ -78,8 +78,7 @@ export default function Testimonials() {
             <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Verified Case Studies &amp; Reviews
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
-            Verified client success stories that <br />
-            <span className="text-blue-700">validate our dedication.</span>
+            Don't Just Take Our Word for It.
           </h2>
         </div>
 
