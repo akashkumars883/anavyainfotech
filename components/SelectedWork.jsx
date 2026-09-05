@@ -9,6 +9,7 @@ export default function SelectedWork() {
     {
       title: "Automixa AI",
       category: "AI & Automation",
+      roiBadge: "⚡ 99.9% Meta Uptime | 10k+ Creators",
       description: "An AI-powered Meta API automation platform helping Instagram creators auto-reply to DMs and comments in real time, now serving 10,000+ active creators.",
       image: "/automixa-preview.png",
       imageAlt: "Automixa AI Instagram DM and comment automation platform built by Anavya Infotech",
@@ -19,6 +20,7 @@ export default function SelectedWork() {
     {
       title: "Money Capital Finance",
       category: "Fintech & Web Applications",
+      roiBadge: "📈 +38% Inquiry Conversion | <24h Processing",
       description: "A fintech customer portal with live EMI calculators and bank integrations that lifted inquiry conversions by 38% and cut loan processing time to under 24 hours.",
       image: "/money-capital-preview.png",
       imageAlt: "Money Capital Finance portal built by Anavya Infotech",
@@ -29,6 +31,7 @@ export default function SelectedWork() {
     {
       title: "Nakul Properties",
       category: "Real Estate & Custom Software",
+      roiBadge: "🎯 +45% Qualified Lead Conversion",
       description: "A real estate directory for Faridabad's luxury and HUDA sector market, driving a 45% increase in qualified lead conversions.",
       image: "/nakul-properties-preview.png",
       imageAlt: "Nakul Properties real estate portal built by Anavya Infotech",
@@ -111,11 +114,18 @@ export default function SelectedWork() {
                 </div>
 
                 {/* Top Header Bar (Category Badge & Direct Arrow Button) */}
-                <div className="relative z-10 p-5 flex items-center justify-between pointer-events-none">
-                  <span className="px-2.5 py-1 rounded-md bg-stone-50 border border-stone-200 text-[10px] font-semibold text-blue-700 uppercase tracking-wider shadow-2xs">
-                    {project.category}
-                  </span>
-                  <div className="h-9 w-9 rounded-md bg-stone-50 border border-stone-200 flex items-center justify-center text-stone-700 group-hover:bg-blue-700 group-hover:text-white transition-all">
+                <div className="relative z-10 p-5 flex items-center justify-between pointer-events-none gap-2">
+                  <div className="flex flex-col gap-1 items-start">
+                    <span className="px-2.5 py-1 rounded-md bg-stone-50 border border-stone-200 text-[10px] font-semibold text-blue-700 uppercase tracking-wider shadow-2xs">
+                      {project.category}
+                    </span>
+                    {project.roiBadge && (
+                      <span className="px-2 py-0.5 rounded text-[9.5px] font-bold bg-blue-700 text-white shadow-2xs mt-1">
+                        {project.roiBadge}
+                      </span>
+                    )}
+                  </div>
+                  <div className="h-9 w-9 rounded-md bg-stone-50 border border-stone-200 flex items-center justify-center text-stone-700 group-hover:bg-blue-700 group-hover:text-white transition-all shrink-0">
                     <ArrowUpRight className="h-4 w-4" />
                   </div>
                 </div>

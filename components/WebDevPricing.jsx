@@ -11,8 +11,8 @@ export default function WebDevPricing() {
     {
       id: "starter",
       name: "STARTER WEB & LANDING PAGE",
-      usdPrice: 499,
-      inrPrice: "35,000",
+      usdPrice: 1499,
+      inrPrice: "7,999",
       desc: "High-performance Next.js landing pages & business websites engineered for max conversion and sub-second load speeds.",
       featured: false,
       deliverables: [
@@ -28,8 +28,8 @@ export default function WebDevPricing() {
     {
       id: "business-app",
       name: "CUSTOM BUSINESS WEB APP",
-      usdPrice: 1299,
-      inrPrice: "95,000",
+      usdPrice: 2999,
+      inrPrice: "14,999",
       desc: "Comprehensive web applications, headless e-commerce storefronts, and customer portals built on modern cloud backends.",
       featured: true,
       popularTag: "MOST POPULAR FOR GROWTH",
@@ -46,8 +46,8 @@ export default function WebDevPricing() {
     {
       id: "enterprise-ai",
       name: "ENTERPRISE SAAS, APP & AI",
-      usdPrice: 2999,
-      inrPrice: "2,25,000",
+      usdPrice: 7999,
+      inrPrice: "29,999",
       desc: "Full-scale custom SaaS systems, cross-platform iOS & Android mobile apps, custom CRMs, or autonomous AI chatbot pipelines.",
       featured: false,
       deliverables: [

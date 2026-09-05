@@ -188,9 +188,9 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden md:inline-flex px-6 py-3 rounded-md text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-zinc-800 transition-all shadow-sm hover:scale-[1.02]"
+              className="hidden md:inline-flex px-6 py-3 rounded-md text-xs font-bold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-all shadow-sm hover:scale-[1.02]"
             >
-              Start a Project
+              Book Strategy Call
             </Link>
 
             {/* Hamburger Icon */}
@@ -400,9 +400,9 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setIsMobileOpen(false)}
-              className="w-full text-center py-3.5 rounded-md bg-black text-white font-bold text-sm hover:bg-zinc-800 mt-2 shadow-md transition-colors"
+              className="w-full text-center py-3.5 rounded-md bg-blue-700 text-white font-bold text-sm hover:bg-blue-800 mt-2 shadow-md transition-colors"
             >
-              Start a Project
+              Book Strategy Call
             </Link>
           </div>
         </div>

@@ -49,7 +49,7 @@ export default function Hero() {
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15]">
-            <GsapKineticText text="Software Development & Digital Solutions Company" />
+            <GsapKineticText text="We Engineer Enterprise Software, Custom Apps & AI Solutions" />
           </h1>
 
           <motion.p
@@ -58,7 +58,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed max-w-2xl"
           >
-            Anavya Infotech is a premier digital marketing agency and website development company in India &amp; USA. We build custom web applications, AI chatbots, CRM systems, SEO services, local SEO, and performance marketing solutions designed to scale your business globally.
+            Anavya Infotech is a premier software engineering company. We engineer custom web applications, mobile apps, enterprise AI chatbots, CRM software, and performance systems designed to scale businesses globally.
           </motion.p>
 
           {/* Action CTAs */}
@@ -96,11 +96,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="pt-4 border-t border-stone-100 flex flex-wrap items-center gap-3 text-xs font-medium text-stone-600"
           >
-            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
-              <CheckCircle2 className="h-3.5 w-3.5 text-blue-700" /> 100+ Projects Delivered
+            <span className="flex items-center gap-2 px-3.5 py-1.5 bg-blue-50/80 border border-blue-200 rounded-md font-bold text-blue-950 shadow-2xs">
+              <img src="/meta-logo.svg" alt="Meta Logo" className="h-4 w-4 object-contain shrink-0" />
+              <span>Meta Business Partner</span>
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
-              <CheckCircle2 className="h-3.5 w-3.5 text-blue-700" /> 50+ Global Clients
+              <CheckCircle2 className="h-3.5 w-3.5 text-blue-700" /> 100+ Projects Delivered
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
               <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Enterprise SLA &amp; 100% Code Ownership

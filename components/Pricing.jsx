@@ -5,34 +5,40 @@ export default function Pricing() {
   const plans = [
     {
       name: "LAUNCH",
-      desc: "For new brands that need a sharp, fast website.",
+      startingINR: "₹7,999",
+      startingUSD: "$1,499",
+      desc: "For new brands that need a sharp, high-converting website.",
       features: [
-        "Up to 6 pages",
-        "Responsive build",
-        "Basic SEO setup",
-        "1 month support",
+        "Up to 6 custom pages",
+        "Sub-second Next.js build",
+        "Basic technical SEO setup",
+        "1 month post-launch support",
       ],
       featured: false,
     },
     {
       name: "GROWTH",
-      desc: "For teams scaling traffic, content and conversions.",
+      startingINR: "₹14,999",
+      startingUSD: "$2,999",
+      desc: "For scaling teams targeting traffic, content, and leads.",
       features: [
         "Custom design system",
-        "CMS integration",
-        "SEO & analytics",
-        "3 months support",
+        "Headless CMS integration",
+        "Full SEO & Analytics telemetry",
+        "3 months dedicated support",
       ],
       featured: true,
     },
     {
       name: "PARTNER",
-      desc: "Ongoing design, development and marketing retainer.",
+      startingINR: "₹29,999/mo",
+      startingUSD: "$5,999/mo",
+      desc: "Ongoing design, engineering, AI & organic growth retainer.",
       features: [
-        "Dedicated team",
-        "Monthly roadmap",
-        "Performance tuning",
-        "Priority support",
+        "Dedicated senior dev squad",
+        "Sprint roadmap & iterations",
+        "Speed & uptime performance tuning",
+        "24/7 Priority SLA support",
       ],
       featured: false,
     },
@@ -65,9 +71,16 @@ export default function Pricing() {
               <div className="space-y-6">
                 {/* Title & Description */}
                 <div className="space-y-2 text-left">
-                  <h3 className="text-lg font-semibold tracking-wider uppercase font-sans">
-                    {plan.name}
-                  </h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold tracking-wider uppercase font-sans">
+                      {plan.name}
+                    </h3>
+                    <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded border ${
+                      plan.featured ? "bg-blue-600/20 text-blue-400 border-blue-500/30" : "bg-stone-100 text-stone-700 border-stone-200"
+                    }`}>
+                      {plan.startingUSD} ({plan.startingINR})
+                    </span>
+                  </div>
                   <p
                     className={`text-xs font-light leading-relaxed ${plan.featured ? "text-zinc-400" : "text-stone-600"
                       }`}
