@@ -561,7 +561,41 @@
     var storedColor = localStorage.getItem('__watsonx_bot_color_' + siteId);
     if (storedName) customBotName = storedName;
     if (storedWelcome) customWelcomeMsg = storedWelcome;
-    if (storedColor) customPrimaryColor = storedColor;
+    
+    if (storedColor) {
+      customPrimaryColor = storedColor;
+    } else {
+      // Auto-detect theme color from host website
+      var detectWebsiteThemeColor = function() {
+        try {
+          // 1. Meta Theme Color
+          var metaTheme = document.querySelector('meta[name="theme-color"]');
+          if (metaTheme && metaTheme.content) return metaTheme.content;
+          
+          // 2. CSS Variables
+          var rootStyles = getComputedStyle(document.documentElement);
+          var cssVar = rootStyles.getPropertyValue('--primary') || rootStyles.getPropertyValue('--primary-color') || rootStyles.getPropertyValue('--color-primary');
+          if (cssVar && cssVar.trim()) return cssVar.trim();
+
+          // 3. First Button Background
+          var firstBtn = document.querySelector('button, .btn, .button, a[class*="btn"], a[class*="bg-"]');
+          if (firstBtn) {
+            var btnBg = getComputedStyle(firstBtn).backgroundColor;
+            if (btnBg && btnBg !== 'rgba(0, 0, 0, 0)' && btnBg !== 'transparent' && btnBg !== 'rgb(255, 255, 255)') {
+              return btnBg;
+            }
+          }
+        } catch(e) {}
+        return null;
+      };
+      
+      var detectedColor = detectWebsiteThemeColor();
+      if (detectedColor) {
+        customPrimaryColor = detectedColor;
+        // Don't save to localStorage immediately to allow dynamic changes per page,
+        // unless you want it strictly cached.
+      }
+    }
   } catch (e) {}
 
   // Apply custom branding color dynamically to bubble, send button, header avatar & badge
