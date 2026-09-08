@@ -5,6 +5,11 @@
   // Extract siteId from script tag
   var scriptTag = document.currentScript || (function() {
     var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      if (scripts[i].src && scripts[i].src.indexOf('widget.js') !== -1) {
+        return scripts[i];
+      }
+    }
     return scripts[scripts.length - 1];
   })();
   var siteId = scriptTag ? (scriptTag.getAttribute('data-site-id') || 'demo') : 'demo';
