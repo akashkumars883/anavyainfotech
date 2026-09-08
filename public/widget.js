@@ -550,10 +550,14 @@
     return false;
   }
 
+  var isAnavya = !siteId || siteId.includes('anavya') || siteId === 'demo';
+
   // Dynamic custom styling per tenant siteId
-  var customBotName = "Anaya AI Assistant";
+  var customBotName = isAnavya ? "Anaya AI Assistant" : "AI Assistant";
   var customPrimaryColor = "#1d4ed8";
-  var customWelcomeMsg = "Hello! I am Anaya, your AI assistant from Anavya Infotech. How can I help you today?";
+  var customWelcomeMsg = isAnavya 
+    ? "Hello! I am Anaya, your AI assistant from Anavya Infotech. How can I help you today?"
+    : "Hello! I am the AI support assistant for this website. How can I help you today?";
 
   try {
     var storedName = localStorage.getItem('__watsonx_bot_name_' + siteId);
@@ -592,8 +596,6 @@
       var detectedColor = detectWebsiteThemeColor();
       if (detectedColor) {
         customPrimaryColor = detectedColor;
-        // Don't save to localStorage immediately to allow dynamic changes per page,
-        // unless you want it strictly cached.
       }
     }
   } catch (e) {}
@@ -623,19 +625,26 @@
     var avatarEl = shadow.querySelector('.widget-avatar');
     if (avatarEl && customBotName) {
       var initials = customBotName.split(' ').map(function(n) { return n[0]; }).join('').substring(0, 2).toUpperCase();
-      avatarEl.childNodes[0].nodeValue = initials || 'AN';
+      avatarEl.childNodes[0].nodeValue = initials || (isAnavya ? 'AN' : 'AI');
     }
 
-    var cleanWelcome = customWelcomeMsg || "Hello! I am Anaya, your AI assistant from Anavya Infotech. How can I assist you with our web development, SEO, or custom software solutions today?";
-    appendMessage(cleanWelcome, 'bot');
+    appendMessage(customWelcomeMsg, 'bot');
 
-    // Default Quick Reply Action Chips
-    renderQuickChips([
+    var isAnavya = !siteId || siteId.includes('anavya') || siteId === 'demo';
+
+    var chips = isAnavya ? [
       { label: "💰 Pricing & Packages", prompt: "What are your pricing packages?" },
       { label: "🚀 Custom Project Quote", prompt: "I need a custom website quote." },
       { label: "📈 SEO Services", prompt: "Tell me about your SEO plans." },
       { label: "📞 Book Free Call", prompt: "I want to schedule a consultation call." }
-    ]);
+    ] : [
+      { label: "👋 How can you help?", prompt: "What services do you offer?" },
+      { label: "💰 Pricing Details", prompt: "Can you tell me about your pricing?" },
+      { label: "📞 Contact Support", prompt: "How can I get in touch with your team?" }
+    ];
+
+    // Default Quick Reply Action Chips
+    renderQuickChips(chips);
   }
   initGreeting();
 
