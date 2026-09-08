@@ -8,9 +8,9 @@
     return scripts[scripts.length - 1];
   })();
   var siteId = scriptTag ? (scriptTag.getAttribute('data-site-id') || 'demo') : 'demo';
-  var apiBase = scriptTag ? (scriptTag.src ? new URL(scriptTag.src).origin : '') : '';
-  if (!apiBase || apiBase.includes('file://') || (window.location.hostname === 'localhost' && apiBase.includes('anavyainfotech.com'))) {
-    apiBase = window.location.origin;
+  var apiBase = scriptTag && scriptTag.src ? new URL(scriptTag.src).origin : 'https://www.anavyainfotech.com';
+  if (apiBase.includes('file://') || apiBase === 'null') {
+    apiBase = 'https://www.anavyainfotech.com';
   }
 
   function initWidget() {
