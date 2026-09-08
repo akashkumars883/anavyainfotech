@@ -86,9 +86,11 @@ export default function BlogFilterClient({ initialPosts }) {
                 {/* Full Card Link: Tapping anywhere on mobile or desktop opens the article */}
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="absolute inset-0 z-30"
+                  className="absolute inset-0 z-30 flex items-end p-5 text-transparent text-[0px]"
                   aria-label={`Read article: ${post.title}`}
-                />
+                >
+                  <span>Read article: {post.title}</span>
+                </Link>
 
                 {/* Full Card Image Container */}
                 <div className="absolute inset-0 w-full h-full bg-white flex items-center justify-center overflow-hidden p-4 pb-20">

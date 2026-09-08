@@ -98,9 +98,11 @@ export default function SelectedWork() {
                 {/* Full Card Link: Tapping anywhere on mobile or desktop opens the case study */}
                 <Link
                   href={project.href}
-                  className="absolute inset-0 z-30"
+                  className="absolute inset-0 z-30 flex items-end p-5 text-transparent text-[0px]"
                   aria-label={`View ${project.title} case study`}
-                />
+                >
+                  <span>View {project.title} case study</span>
+                </Link>
 
                 {/* Full Card Image Container (Preserving original project images) */}
                 <div className="absolute inset-0 w-full h-full bg-white flex items-center justify-center overflow-hidden p-4 pb-20">

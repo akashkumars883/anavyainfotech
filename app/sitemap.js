@@ -7,7 +7,7 @@ export default async function sitemap() {
 
   // Static core pages
   const staticPages = [
-    { url: BASE_URL, lastModified: currentDate, priority: 1.0, changeFrequency: "daily" },
+    { url: "https://www.anavyainfotech.com", lastModified: currentDate, priority: 1.0, changeFrequency: "daily" },
     { url: `${BASE_URL}/about`, lastModified: currentDate, priority: 0.8, changeFrequency: "weekly" },
     { url: `${BASE_URL}/case-studies`, lastModified: currentDate, priority: 0.85, changeFrequency: "weekly" },
     { url: `${BASE_URL}/pricing`, lastModified: currentDate, priority: 0.9, changeFrequency: "weekly" },
@@ -15,6 +15,8 @@ export default async function sitemap() {
     { url: `${BASE_URL}/hire-nextjs-developers-india`, lastModified: currentDate, priority: 0.9, changeFrequency: "daily" },
     { url: `${BASE_URL}/offshore-software-development-company`, lastModified: currentDate, priority: 0.9, changeFrequency: "daily" },
     { url: `${BASE_URL}/contact`, lastModified: currentDate, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/careers`, lastModified: currentDate, priority: 0.85, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/careers/openings`, lastModified: currentDate, priority: 0.85, changeFrequency: "weekly" },
     { url: `${BASE_URL}/blog`, lastModified: currentDate, priority: 0.9, changeFrequency: "daily" },
     { url: `${BASE_URL}/privacy-policy`, lastModified: currentDate, priority: 0.5, changeFrequency: "yearly" },
     { url: `${BASE_URL}/terms-of-service`, lastModified: currentDate, priority: 0.5, changeFrequency: "yearly" },

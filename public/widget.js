@@ -24,7 +24,7 @@
 
   var shadow = container.attachShadow({ mode: 'open' });
 
-  // Styles inside Shadow DOM (Modern Enterprise Glassmorphic Blue & White UI)
+  // Styles inside Shadow DOM (Anavya Infotech Crisp Blue & White UI)
   var style = document.createElement('style');
   style.textContent = `
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
@@ -37,19 +37,19 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 12px 28px -6px rgba(29, 78, 216, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+      box-shadow: 0 12px 28px -6px rgba(37, 99, 235, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
       cursor: pointer;
       z-index: 999999;
       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .widget-bubble:hover {
       transform: scale(1.08) rotate(4deg);
-      box-shadow: 0 16px 32px -4px rgba(29, 78, 216, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.3) inset;
+      box-shadow: 0 16px 32px -4px rgba(37, 99, 235, 0.65), 0 0 0 2px rgba(255, 255, 255, 0.3) inset;
     }
     .widget-bubble svg { width: 28px; height: 28px; fill: currentColor; }
 
@@ -84,7 +84,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(9, 9, 11, 0.35);
+      background: rgba(15, 23, 42, 0.35);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       z-index: 999998;
@@ -97,7 +97,7 @@
       pointer-events: all;
     }
 
-    /* Main Chat Window Container - Bespoke Floating Enterprise Window */
+    /* Main Chat Window Container - Clean White & Blue Enterprise Window */
     .widget-window {
       position: fixed;
       bottom: 24px;
@@ -107,8 +107,8 @@
       height: 560px;
       max-height: calc(100vh - 48px);
       background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(29, 78, 216, 0.08);
+      border-radius: 8px;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(37, 99, 235, 0.12);
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -131,21 +131,21 @@
         width: calc(100vw - 24px);
         height: calc(100vh - 24px);
         max-height: 560px;
-        border-radius: 14px;
+        border-radius: 8px;
       }
     }
 
-    /* Premium Bespoke Corporate Header Bar */
+    /* Premium Blue & White Corporate Header Bar */
     .widget-header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1d4ed8 100%);
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
       color: #ffffff;
       padding: 14px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       position: relative;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+      box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
     }
     .widget-header-left {
       display: flex;
@@ -163,7 +163,7 @@
       color: #1d4ed8;
       font-weight: 800;
       font-size: 13.5px;
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);
       position: relative;
     }
     .widget-avatar-status {
@@ -179,7 +179,7 @@
     .widget-header-info { display: flex; flex-direction: column; gap: 1px; }
     .widget-header-title { font-size: 14.5px; font-weight: 700; color: #ffffff; letter-spacing: -0.01em; }
     .widget-header-subtitle { font-size: 11px; color: #dbeafe; display: flex; align-items: center; gap: 5px; font-weight: 500; }
-    .widget-pulse-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; display: inline-block; animate: pulse 2s infinite; }
+    .widget-pulse-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
 
     .widget-header-actions {
       display: flex;
@@ -187,7 +187,7 @@
       gap: 6px;
     }
     .widget-header-btn {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(4px);
       border: none;
       color: #ffffff;
@@ -202,13 +202,13 @@
       text-decoration: none;
       transition: all 0.2s ease;
     }
-    .widget-header-btn:hover { background: rgba(255, 255, 255, 0.28); transform: scale(1.08); }
+    .widget-header-btn:hover { background: rgba(255, 255, 255, 0.3); transform: scale(1.08); }
     .widget-close {
       font-size: 18px;
     }
     .widget-close:hover { transform: rotate(90deg); }
 
-    /* Messages Area (Clean Slate Tone) */
+    /* Messages Area (Pure White) */
     .widget-messages {
       flex: 1;
       padding: 18px 16px;
@@ -219,14 +219,14 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      background: #f8fafc;
+      background: #ffffff;
       scroll-behavior: smooth;
     }
     .widget-messages::-webkit-scrollbar { width: 4px; }
     .widget-messages::-webkit-scrollbar-track { background: transparent; }
     .widget-messages::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
 
-    /* Message Bubbles - Custom Bespoke Radius */
+    /* Message Bubbles - Clean White & Blue Radius */
     .message {
       max-width: 86%;
       padding: 11px 15px;
@@ -244,14 +244,14 @@
       background: #ffffff;
       color: #0f172a;
       border: 1px solid #e2e8f0;
-      border-radius: 16px 16px 16px 4px;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      border-radius: 12px 12px 12px 4px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
     }
     .message.user {
       align-self: flex-end;
       background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
       color: #ffffff;
-      border-radius: 16px 16px 4px 16px;
+      border-radius: 12px 12px 4px 12px;
       box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
     }
     .message strong { font-weight: 700; color: inherit; }
@@ -267,25 +267,25 @@
     }
     .widget-chip {
       background: #ffffff;
-      color: #1d4ed8;
-      border: 1px solid #bfdbfe;
-      padding: 7px 12px;
-      border-radius: 20px;
+      color: #2563eb;
+      border: 1px solid #2563eb;
+      padding: 7px 14px;
+      border-radius: 9999px;
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
-      box-shadow: 0 2px 6px rgba(29, 78, 216, 0.08);
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.08);
       display: inline-flex;
       align-items: center;
       gap: 5px;
     }
     .widget-chip:hover {
-      background: #1d4ed8;
+      background: #2563eb;
       color: #ffffff;
-      border-color: #1d4ed8;
+      border-color: #2563eb;
       transform: translateY(-1.5px);
-      box-shadow: 0 4px 10px rgba(29, 78, 216, 0.25);
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
     }
 
     /* Animated 3-Dot Typing Indicator */
@@ -293,11 +293,11 @@
       display: none;
       align-self: flex-start;
       background: #ffffff;
-      border: 1px solid #dbeafe;
+      border: 1px solid #e2e8f0;
       border-top-left-radius: 4px;
       padding: 10px 14px;
       border-radius: 14px;
-      box-shadow: 0 3px 10px rgba(29, 78, 216, 0.05);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
       align-items: center;
       gap: 5px;
     }
@@ -330,20 +330,21 @@
     .widget-input {
       flex: 1;
       border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      padding: 11px 16px;
+      border-radius: 9999px;
+      padding: 11px 18px;
       font-size: 13.5px;
       outline: none;
-      background: #f8fafc;
+      background: #ffffff;
       color: #0f172a;
       transition: all 0.2s ease;
     }
+    .widget-input::placeholder { color: #94a3b8; }
     .widget-input:focus { border-color: #2563eb; background: #ffffff; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
     .widget-send {
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: #ffffff;
       border: none;
-      border-radius: 10px;
+      border-radius: 50%;
       width: 42px;
       height: 42px;
       display: flex;
@@ -352,7 +353,7 @@
       cursor: pointer;
       flex-shrink: 0;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     }
     .widget-send:hover { transform: scale(1.05); background: linear-gradient(135deg, #1d4ed8, #1e40af); }
     .widget-send svg { width: 18px; height: 18px; fill: currentColor; }
@@ -363,11 +364,11 @@
       font-size: 11px;
       color: #64748b;
       padding: 8px;
-      background: #f0f9ff;
-      border-top: 1px solid #e0f2fe;
+      background: #ffffff;
+      border-top: 1px solid #f1f5f9;
       letter-spacing: 0.02em;
     }
-    .widget-branding a { color: #1d4ed8; text-decoration: none; font-weight: 700; }
+    .widget-branding a { color: #2563eb; text-decoration: none; font-weight: 700; }
   `;
   shadow.appendChild(style);
 
@@ -387,11 +388,11 @@
     <div class="widget-header">
       <div class="widget-header-left">
         <div class="widget-avatar">
-          AI
+          AN
           <span class="widget-avatar-status"></span>
         </div>
         <div class="widget-header-info">
-          <div class="widget-header-title">Anavya AI Assistant</div>
+          <div class="widget-header-title">Anaya AI Assistant</div>
           <div class="widget-header-subtitle"><span class="widget-pulse-dot"></span> Online</div>
         </div>
       </div>
@@ -413,15 +414,15 @@
       <span class="typing-dot"></span>
       <span class="typing-dot"></span>
       <span class="typing-dot"></span>
-      <span style="font-size: 11.5px; color: #64748b; margin-left: 4px; font-weight: 500;">Alex is typing...</span>
+      <span style="font-size: 11.5px; color: #64748b; margin-left: 4px; font-weight: 500;">Anaya is typing...</span>
     </div>
     <div class="widget-footer">
-      <input type="text" class="widget-input" id="widget-input-field" placeholder="Ask a question..." />
+      <input type="text" class="widget-input" id="widget-input-field" placeholder="Ask Anaya a question..." />
       <button class="widget-send" id="widget-send-btn">
         <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
       </button>
     </div>
-    <div class="widget-branding">Powered by <a href="https://www.anavyainfotech.com" target="_blank">Anavya Infotech</a></div>
+    <div class="widget-branding">Powered by <a href="https://www.anavyainfotech.com" target="_blank">Anaya AI Engine — Anavya Infotech</a></div>
   `;
 
   // Prevent smooth scroll (Lenis) collision when scrolling inside chatbot
@@ -550,9 +551,9 @@
   }
 
   // Dynamic custom styling per tenant siteId
-  var customBotName = "Alex AI Assistant";
+  var customBotName = "Anaya AI Assistant";
   var customPrimaryColor = "#1d4ed8";
-  var customWelcomeMsg = "Hello! How can I assist you with our services today?";
+  var customWelcomeMsg = "Hello! I am Anaya, your AI assistant from Anavya Infotech. How can I help you today?";
 
   try {
     var storedName = localStorage.getItem('__watsonx_bot_name_' + siteId);
@@ -588,10 +589,10 @@
     var avatarEl = shadow.querySelector('.widget-avatar');
     if (avatarEl && customBotName) {
       var initials = customBotName.split(' ').map(function(n) { return n[0]; }).join('').substring(0, 2).toUpperCase();
-      avatarEl.childNodes[0].nodeValue = initials || 'AI';
+      avatarEl.childNodes[0].nodeValue = initials || 'AN';
     }
 
-    var cleanWelcome = customWelcomeMsg || "Hello! How can I assist you with our web development, SEO, or AI automation solutions today?";
+    var cleanWelcome = customWelcomeMsg || "Hello! I am Anaya, your AI assistant from Anavya Infotech. How can I assist you with our web development, SEO, or custom software solutions today?";
     appendMessage(cleanWelcome, 'bot');
 
     // Default Quick Reply Action Chips

@@ -60,12 +60,18 @@ html.lenis, html.lenis body {
   overflow: hidden;
 }
 
+/* Force disable box shadows globally across the entire website */
+*, ::before, ::after {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
 /* Glassmorphism for light monochrome theme */
 .glass-panel {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(9, 9, 11, 0.05);
+  border: 1px solid rgba(9, 9, 11, 0.08);
 }
 
 .glass-card {
@@ -77,14 +83,13 @@ html.lenis, html.lenis body {
 }
 
 .glass-card:hover {
-  border-color: rgba(9, 9, 11, 0.2);
-  box-shadow: 0 10px 30px rgba(9, 9, 11, 0.05);
+  border-color: rgba(37, 99, 235, 0.4);
   transform: translateY(-4px);
 }
 
 /* Glowing/Shadow styles for monochrome theme */
 .glow-monochrome {
-  box-shadow: 0 0 40px rgba(9, 9, 11, 0.03);
+  border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 /* Smooth Floating Animation */

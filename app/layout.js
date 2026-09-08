@@ -44,9 +44,9 @@ export const metadata = {
   creator: "Anavya Infotech",
   publisher: "Anavya Infotech",
 
-  // Canonical URL (Relative to metadataBase so every subpage gets its exact canonical URL)
+  // Canonical URL
   alternates: {
-    canonical: "./",
+    canonical: "https://www.anavyainfotech.com",
   },
 
   // Open Graph (Facebook, LinkedIn, WhatsApp previews)

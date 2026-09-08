@@ -127,9 +127,11 @@ export default function Services() {
                   {/* Full Card Link: Tapping anywhere on mobile or desktop opens the service page */}
                   <Link
                     href={category.href}
-                    className="absolute inset-0 z-30"
+                    className="absolute inset-0 z-30 flex items-end p-5 text-transparent text-[0px]"
                     aria-label={`View ${category.title} services`}
-                  />
+                  >
+                    <span>View {category.title} services</span>
+                  </Link>
 
                   {/* Full Card Image Container (No dark overlay!) */}
                   <div className="absolute inset-0 w-full h-full bg-white flex items-center justify-center overflow-hidden p-6 pb-20">

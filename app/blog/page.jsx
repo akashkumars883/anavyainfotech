@@ -85,9 +85,11 @@ export default async function BlogListingPage() {
               {/* Full Card Link */}
               <Link
                 href={`/blog/${featuredPost.slug}`}
-                className="absolute inset-0 z-30"
+                className="absolute inset-0 z-30 flex items-end p-5 text-transparent text-[0px]"
                 aria-label={`Read featured article: ${featuredPost.title}`}
-              />
+              >
+                <span>Read featured article: {featuredPost.title}</span>
+              </Link>
 
               <div className="lg:col-span-7 space-y-4 text-left pointer-events-none">
                 <div className="flex flex-wrap items-center gap-3">

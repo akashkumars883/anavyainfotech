@@ -109,7 +109,7 @@ export default function ContactForm() {
                       placeholder="e.g. John Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-black transition-colors"
+                      className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-blue-600 transition-colors"
                     />
                   </div>
 
@@ -125,7 +125,7 @@ export default function ContactForm() {
                       placeholder="e.g. john@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-black transition-colors"
+                      className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-blue-600 transition-colors"
                     />
                   </div>
                 </div>
@@ -139,7 +139,7 @@ export default function ContactForm() {
                     id="form-service"
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 focus:outline-none focus:border-black transition-colors cursor-pointer"
+                    className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 focus:outline-none focus:border-blue-600 transition-colors cursor-pointer"
                   >
                     <option value="Web Apps & Development">Web Apps &amp; Development</option>
                     <option value="AI Integrations & Automation">AI Integrations &amp; Automation</option>
@@ -160,7 +160,7 @@ export default function ContactForm() {
                     placeholder="Brief description of your requirements..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-black transition-colors resize-none"
+                    className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-blue-600 transition-colors resize-none"
                   />
                 </div>
 

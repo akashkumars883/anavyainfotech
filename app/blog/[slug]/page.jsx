@@ -110,11 +110,11 @@ function formatArticleContent(content = "") {
   formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline font-semibold hover:text-blue-900">$1</a>');
 
   // 9. Bullet lists (- item or * item)
-  formatted = formatted.replace(/^\s*[\-\*]\s+(.*$)/gm, '<li class="ml-4 list-disc">$1</li>');
-  formatted = formatted.replace(/^\s*\d+\.\s+(.*$)/gm, '<li class="ml-4 list-decimal">$1</li>');
-  formatted = formatted.replace(/(<li.*?<\/li>\s*)+/gs, (match) => `<ul class="my-4 space-y-1.5">${match}</ul>`);
+  formatted = formatted.replace(/^\s*[\-\*]\s+(.*$)/gm, '<li class="ml-6 list-disc text-stone-800 my-1 font-normal">$1</li>');
+  formatted = formatted.replace(/^\s*\d+\.\s+(.*$)/gm, '<li class="ml-6 list-decimal text-stone-800 my-1 font-normal">$1</li>');
+  formatted = formatted.replace(/(<li.*?<\/li>\s*)+/gs, (match) => `<ul class="my-6 space-y-2 bg-stone-50/80 border border-stone-200/80 p-5 rounded-md">${match}</ul>`);
 
-  // 10. Paragraph wrapping for orphan text lines
+  // 10. Paragraph wrapping for orphan text lines with optimum line height & readable font sizing
   const blocks = formatted.split(/\n\n+/);
   return blocks
     .map((block) => {
@@ -131,7 +131,7 @@ function formatArticleContent(content = "") {
       ) {
         return trimmed;
       }
-      return `<p class="my-4 text-stone-700 font-normal leading-relaxed">${trimmed}</p>`;
+      return `<p class="my-5 text-stone-800 text-base sm:text-lg font-normal leading-relaxed tracking-normal">${trimmed}</p>`;
     })
     .join("\n");
 }

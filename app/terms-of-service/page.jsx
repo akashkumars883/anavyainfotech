@@ -61,203 +61,134 @@ export default function TermsOfServicePage() {
 
       {/* Content Body */}
       <section className="py-10 bg-white px-6">
-        <div className="max-w-4xl mx-auto space-y-10 text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+        <div className="max-w-4xl mx-auto space-y-10 text-stone-700 text-base sm:text-lg leading-relaxed font-normal">
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
               1. Introduction
             </h2>
             <p>
-              Welcome to <a href="https://www.anavyainfotech.com" className="text-blue-700 hover:underline">https://www.anavyainfotech.com</a> (the &quot;Website&quot;), owned and operated by Anavya Infotech (&quot;Anavya Infotech&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). These Terms and Conditions (&quot;Terms&quot;) govern your access to and use of the Website and any services described on it, including custom software development, website development, web applications, AI chatbot and automation solutions, CRM and API integration services, SEO and digital marketing services, and brand identity and design services (collectively, the &quot;Services&quot;).
+              Welcome to <a href="https://www.anavyainfotech.com" className="text-blue-700 font-semibold hover:underline">Anavya Infotech</a> (&quot;Website&quot;). These Terms and Conditions (&quot;Terms&quot;) govern your access to our website and digital services.
             </p>
             <p>
-              By accessing or using the Website, submitting a project inquiry, or engaging us for any Service, you agree to be bound by these Terms. If you do not agree with any part of these Terms, please do not use the Website or our Services.
+              Our services include custom software development, web applications, AI automation, CRM integration, SEO, and corporate branding. By using our website or submitting a inquiry, you agree to these Terms.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
               2. Eligibility
             </h2>
             <p>
-              By using this Website or engaging our Services, you represent that you are at least 18 years of age and have the legal capacity to enter into a binding agreement, or that you are accessing the Website on behalf of a business entity with the authority to bind that entity to these Terms.
+              You must be at least 18 years of age to use this Website or engage our Services. If you are entering into these terms on behalf of a business, you confirm you have legal authority to bind that entity.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
               3. Services Overview
             </h2>
-            <p>Anavya Infotech provides a range of digital services, including but not limited to:</p>
-            <ul className="list-disc list-inside space-y-1 text-stone-600 pl-2">
-              <li>Business website design and development</li>
-              <li>Web and mobile application development</li>
-              <li>E-commerce and landing page development</li>
-              <li>AI chatbots, business automation, and API integrations</li>
-              <li>Custom CRM and software development</li>
-              <li>Search engine optimization (SEO), local SEO, e-commerce SEO, and technical SEO</li>
-              <li>White label SEO reseller programs</li>
-              <li>Brand identity, logo design, and corporate visual strategy</li>
-            </ul>
+            <p>Anavya Infotech delivers full-spectrum technology solutions, including:</p>
+            <div className="bg-stone-50 border border-stone-200 p-6 rounded-md my-4">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-stone-800 text-sm font-medium">
+                <li className="flex items-center gap-2">✔ Business &amp; Web Applications</li>
+                <li className="flex items-center gap-2">✔ Custom Software &amp; CRM Systems</li>
+                <li className="flex items-center gap-2">✔ AI Chatbots &amp; Workflow Automation</li>
+                <li className="flex items-center gap-2">✔ Technical &amp; E-Commerce SEO</li>
+                <li className="flex items-center gap-2">✔ White-Label SEO Reseller Programs</li>
+                <li className="flex items-center gap-2">✔ Brand Identity &amp; Graphic Design</li>
+              </ul>
+            </div>
             <p>
-              The specific scope, deliverables, timeline, and fees for any engagement will be set out in a separate proposal, quotation, statement of work, or service agreement (&apos;Project Agreement&apos;) agreed upon between the client and us. In the event of a conflict between these Terms and a Project Agreement, the Project Agreement will govern with respect to that specific engagement.
+              Specific project timelines, deliverables, and fees are defined in a separate signed Project Agreement or statement of work.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              4. Project Engagement and Onboarding
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
+              4. Project Engagement &amp; Onboarding
             </h2>
             <p>
-              Project requests submitted through the Website&apos;s contact or inquiry forms do not constitute a binding agreement. A Service engagement is formed only when both parties agree in writing to a proposal, quotation, or Project Agreement, which may require an initial deposit or advance payment before work begins.
-            </p>
-            <p>
-              We reserve the right to decline any project inquiry at our sole discretion.
+              Submitting an inquiry through our contact form does not create a binding contract. A binding engagement starts only when both parties sign a Project Agreement and initial deposit payment is settled.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
               5. Fees, Payment, and Refunds
             </h2>
             <p>
-              Fees for Services will be set out in the applicable Project Agreement or invoice. Unless otherwise agreed in writing, payments are due according to the schedule specified at the time of engagement. Late payments may result in suspension of work or Services until outstanding amounts are settled.
+              All service fees and payment schedules are specified in your Project Agreement or invoice. Payments must be completed on time to avoid project suspension.
             </p>
             <p>
-              Refunds, if any, are governed by our separate Refund Policy, available on the Website, which forms part of these Terms by reference. Where a Project Agreement specifies different refund terms, those terms will apply to that engagement.
+              Refunds are governed by our official <Link href="/refund-policy" className="text-blue-700 font-semibold hover:underline">Refund Policy</Link>. Project-specific terms override general policies where explicitly stated.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              6. Intellectual Property
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
+              6. Intellectual Property &amp; Code Ownership
             </h2>
             <p>
-              Unless otherwise agreed in writing (for example, under a &apos;100% code ownership&apos; arrangement specified in a Project Agreement), all designs, code, content, and materials created by us during the course of a project remain our intellectual property until full payment has been received, at which point ownership rights transfer to the client as specified in the applicable agreement.
-            </p>
-            <p>
-              All content on the Website itself, including text, graphics, logos, and the Anavya Infotech brand, is the property of Anavya Infotech or its licensors and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from this content without our prior written consent.
+              All code, design assets, and materials remain our property until full payment is completed. Once paid in full, source code ownership transfers 100% to the client as defined in the agreement.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
               7. Client Responsibilities
             </h2>
             <p>
-              Clients engaging our Services agree to provide timely feedback, accurate information, and any necessary access, content, or materials required for us to perform the Services. Delays caused by a client&apos;s failure to provide required inputs may affect project timelines and are not our responsibility.
+              Clients agree to provide timely feedback, content, and system access. Delays in receiving client inputs may extend project delivery timelines.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              8. Third-Party Services and Integrations
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
+              8. Third-Party Services
             </h2>
             <p>
-              Our Services may involve integration with third-party platforms, APIs, hosting providers, payment gateways, or AI service providers. We are not responsible for the availability, performance, security, or policies of any third-party services, and your use of such services may be subject to their own separate terms and conditions.
+              Integrations with third-party hosting, payment gateways, or AI APIs are subject to third-party availability and terms.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
               9. Confidentiality
             </h2>
             <p>
-              Each party agrees to keep confidential any proprietary or sensitive information disclosed by the other party in connection with a project, and to use such information solely for the purpose of the engagement, except where disclosure is required by law.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              10. Limitation of Liability
-            </h2>
-            <p>
-              To the maximum extent permitted by law, Anavya Infotech shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenue, data, or business opportunities arising out of or related to your use of the Website or our Services. Our total liability arising from any Service engagement shall not exceed the total fees paid by the client for the specific Service giving rise to the claim.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              11. Disclaimer of Warranties
-            </h2>
-            <p>
-              The Website and its content are provided on an &quot;as is&quot; and &quot;as available&quot; basis, without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. While we strive for accuracy, we do not guarantee that the Website will be uninterrupted, error-free, or completely secure.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              12. Service Level and Guarantees
-            </h2>
-            <p>
-              Any service level agreements, guarantees, or performance commitments referenced on the Website (such as enterprise SLA guarantees) apply only to the extent expressly set out in a signed Project Agreement and are not automatically extended to general Website visitors or inquiries.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              13. Termination
-            </h2>
-            <p>
-              We reserve the right to suspend or terminate access to the Website, or to decline or discontinue a Service engagement, in cases of breach of these Terms, non-payment, or conduct that we reasonably determine to be harmful to our business, other clients, or the integrity of our Services. Termination of an active project will be handled in accordance with the terms of the relevant Project Agreement.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              14. Privacy
-            </h2>
-            <p>
-              Your use of the Website is also governed by our Privacy Policy, which explains how we collect, use, and protect your personal information. By using the Website, you consent to the practices described in our Privacy Policy.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              15. Links to Other Websites
-            </h2>
-            <p>
-              The Website may contain links to third-party websites or resources. We are not responsible for the content, accuracy, or practices of any linked third-party sites, and inclusion of a link does not imply endorsement.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              16. Changes to These Terms
-            </h2>
-            <p>
-              We may update these Terms from time to time to reflect changes in our Services, legal requirements, or business practices. Updated Terms will be posted on this page with a revised effective date. Continued use of the Website or our Services after such changes constitutes your acceptance of the revised Terms.
+              Both parties agree to protect all confidential proprietary information shared during project execution.
             </p>
           </section>
 
           <section className="space-y-4 border-t border-stone-100 pt-8">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              17. Governing Law and Jurisdiction
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
+              10. Governing Law and Jurisdiction
             </h2>
             <p>
-              These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions. Any disputes arising out of or relating to these Terms or our Services shall be subject to the exclusive jurisdiction of the courts located in Faridabad, Haryana, India, unless otherwise agreed in a specific Project Agreement.
+              These Terms are governed by the laws of India. Any disputes are subject to exclusive jurisdiction in the courts located in Faridabad, Haryana, India.
             </p>
           </section>
 
           <section className="space-y-4 border-t border-stone-100 pt-8">
-            <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              18. Contact Us
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 border-b border-stone-100 pb-2">
+              11. Contact Us
             </h2>
             <p>
-              If you have any questions about these Terms and Conditions, please contact us:
+              For questions regarding these Terms and Conditions, please reach out to us:
             </p>
-            <div className="p-6 rounded-md bg-stone-50 border border-stone-100 space-y-3 text-stone-700 text-sm">
+            <div className="p-6 rounded-md bg-stone-50 border border-stone-200 space-y-3 text-stone-800 text-sm">
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-blue-700" />
-                <span>Email: <a href="mailto:info@anavyainfotech.com" className="font-medium text-stone-900 hover:underline">info@anavyainfotech.com</a></span>
+                <Mail className="h-4 w-4 text-blue-700 shrink-0" />
+                <span>Email: <a href="mailto:info@anavyainfotech.com" className="font-semibold text-stone-900 hover:underline">info@anavyainfotech.com</a></span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-blue-700" />
-                <span>Phone: <a href="tel:+916201231875" className="font-medium text-stone-900 hover:underline">+91 6201231875</a> | <a href="tel:+917508657479" className="font-medium text-stone-900 hover:underline">+91 7508657479</a></span>
+                <Phone className="h-4 w-4 text-blue-700 shrink-0" />
+                <span>Phone: <a href="tel:+916201231875" className="font-semibold text-stone-900 hover:underline">+91 6201231875</a> | <a href="tel:+917508657479" className="font-semibold text-stone-900 hover:underline">+91 7508657479</a></span>
               </div>
               <div className="flex items-center gap-2">
-                <Globe className="h-4 w-4 text-blue-700" />
-                <span>Website: <a href="https://www.anavyainfotech.com" target="_blank" rel="noopener noreferrer" className="font-medium text-stone-900 hover:underline">https://www.anavyainfotech.com</a></span>
+                <Globe className="h-4 w-4 text-blue-700 shrink-0" />
+                <span>Website: <a href="https://www.anavyainfotech.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-stone-900 hover:underline">https://www.anavyainfotech.com</a></span>
               </div>
             </div>
           </section>

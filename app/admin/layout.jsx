@@ -9,7 +9,8 @@ import {
   Inbox, 
   Globe, 
   LogOut, 
-  ShieldCheck 
+  ShieldCheck,
+  Briefcase
 } from "lucide-react";
 import AdminGuard from "@/components/AdminGuard";
 
@@ -20,6 +21,7 @@ export default function AdminLayout({ children }) {
     { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
     { name: "Live Click Tracking", href: "/admin/analytics", icon: Globe },
     { name: "Leads & Pipeline", href: "/admin/leads", icon: Inbox },
+    { name: "Careers & Applications", href: "/admin/careers", icon: Briefcase },
     { name: "All Blogs", href: "/admin/blogs", icon: FileText },
     { name: "Create New Blog", href: "/admin/blogs/new", icon: PlusCircle },
     { name: "Chatbot & Site Config", href: "/admin/settings", icon: ShieldCheck },

@@ -31,6 +31,8 @@ export default async function HtmlSitemapPage() {
     { title: "Budget Calculator", href: "/budget-calculator", desc: "Interactive step-by-step cost estimator for custom websites and software." },
     { title: "Hire Next.js Developers India", href: "/hire-nextjs-developers-india", desc: "Hire dedicated senior Next.js & React engineers in India at $25-$45/hr." },
     { title: "Offshore Software Development", href: "/offshore-software-development-company", desc: "Enterprise offshore IT outsourcing & custom AI software development partner in India." },
+    { title: "Careers & Culture", href: "/careers", desc: "Join our software engineering team, workplace values & perks." },
+    { title: "Open Job Roles", href: "/careers/openings", desc: "Explore active job openings, detailed JDs, and submit candidate applications." },
     { title: "Contact Us", href: "/contact", desc: "Get a technical consultation and instant project estimate." },
   ];
 
