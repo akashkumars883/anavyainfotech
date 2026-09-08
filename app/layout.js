@@ -44,10 +44,8 @@ export const metadata = {
   creator: "Anavya Infotech",
   publisher: "Anavya Infotech",
 
-  // Canonical URL
-  alternates: {
-    canonical: "https://www.anavyainfotech.com",
-  },
+  // Canonical URL is removed from root layout to prevent duplicate indexing issues across all pages.
+  // Each page can define its own canonical URL if needed.
 
   // Open Graph (Facebook, LinkedIn, WhatsApp previews)
   openGraph: {
