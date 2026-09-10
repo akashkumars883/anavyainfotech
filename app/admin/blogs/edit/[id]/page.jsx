@@ -94,9 +94,10 @@ export default function EditBlogPage({ params }) {
   useEffect(() => {
     async function loadBlog() {
       try {
-        const res = await fetch("/api/admin/blogs");
+        const res = await fetch(`/api/admin/blogs/${id}`);
         const data = await res.json();
-        const existing = (data.blogs || []).find((b) => String(b.id) === String(id));
+        const existing = data.blog;
+        
         if (existing) {
           let loadedFaqs = [];
           if (existing.faqs) {
