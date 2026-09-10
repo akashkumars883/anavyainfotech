@@ -99,12 +99,22 @@ export default async function sitemap() {
     changeFrequency: "weekly",
   }));
 
+  // Location pages
+  const { LOCATIONS_DATA } = require("@/lib/locationsData");
+  const locationPages = LOCATIONS_DATA.map((loc) => ({
+    url: `${BASE_URL}/locations/${loc.slug}`,
+    lastModified: currentDate,
+    priority: 0.8,
+    changeFrequency: "weekly",
+  }));
+
   return [
     ...staticPages,
     ...caseStudyPages,
     ...blogPages,
     ...servicePages,
     ...solutionPages,
+    ...locationPages,
   ];
 }
 

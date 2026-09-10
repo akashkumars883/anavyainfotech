@@ -25,6 +25,9 @@ export default function NewBlogPage() {
     content: "",
     is_published: true,
     faqs: [],
+    tags: "",
+    meta_keywords: "",
+    meta_description: "",
   });
 
   const handleGenerateFaqs = async () => {
@@ -145,6 +148,52 @@ export default function NewBlogPage() {
     }
   };
 
+  const handleBannerUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.size > 15 * 1024 * 1024) {
+      alert("Banner image size should be less than 15MB.");
+      return;
+    }
+
+    setCompressing(true);
+    try {
+      const result = await compressImageToWebP(file, { maxWidth: 1200, quality: 0.8 });
+      const blobRes = await fetch(result.dataUrl);
+      const blob = await blobRes.blob();
+      const compressedFile = new File([blob], file.name.replace(/\.[^/.]+$/, "") + "-banner.webp", { type: "image/webp" });
+
+      const uploadFormData = new FormData();
+      uploadFormData.append("file", compressedFile);
+
+      const uploadRes = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: uploadFormData,
+      });
+
+      const uploadJson = await uploadRes.json();
+      const finalUrl = uploadRes.ok && uploadJson.url ? uploadJson.url : result.dataUrl;
+
+      // Ask for optional link
+      const link = window.prompt("Enter destination URL for this banner (or leave blank for no link):", "https://www.anavyainfotech.com/contact");
+      const bannerMarkdown = link 
+        ? `\n\n[![Banner](${finalUrl})](${link})\n\n` 
+        : `\n\n![Banner](${finalUrl})\n\n`;
+
+      setFormData((prev) => ({
+        ...prev,
+        content: prev.content + bannerMarkdown,
+      }));
+      alert("Banner inserted at the bottom of the article! You can cut and paste the markdown code wherever you want in the editor.");
+
+    } catch (err) {
+      console.error("Error uploading banner:", err);
+      alert("Failed to upload banner.");
+    } finally {
+      setCompressing(false);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.title.trim()) {
@@ -160,8 +209,12 @@ export default function NewBlogPage() {
         sanitizedContent = await compressHtmlContentImages(sanitizedContent);
       }
 
+      // Convert comma-separated tags to arrays
+      const tagsArray = formData.tags ? formData.tags.split(",").map(t => t.trim()).filter(Boolean) : [];
+
       const payload = {
         ...formData,
+        tags: tagsArray,
         content: sanitizedContent,
       };
 
@@ -399,11 +452,31 @@ export default function NewBlogPage() {
 
         {/* Full Article Content Editor with Toolbar */}
         <div className="space-y-2 w-full">
-          <div className="flex items-center justify-between w-full">
-            <label className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
-              Full Article Body (Rich Text Toolbar Enabled)
-            </label>
-            <span className="text-[10px] text-stone-400">Click toolbar buttons to insert H1, H2, H3, Bold, Lists, Links, Quotes</span>
+          <div className="flex items-center justify-between w-full pb-2">
+            <div>
+              <label className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+                Full Article Body (Rich Text Toolbar Enabled)
+              </label>
+              <p className="text-[10px] text-stone-400">Click toolbar buttons to insert H1, H2, H3, Bold, Lists, Links, Quotes</p>
+            </div>
+            
+            <div className="relative">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleBannerUpload}
+                disabled={compressing}
+                id="banner-upload"
+                className="hidden"
+              />
+              <label 
+                htmlFor="banner-upload"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold bg-stone-100 border border-stone-200 text-stone-700 hover:bg-stone-200 cursor-pointer transition-colors"
+              >
+                <ImageIcon className="h-3.5 w-3.5" />
+                {compressing ? "Uploading..." : "Insert Image Banner"}
+              </label>
+            </div>
           </div>
 
           <RichTextEditor
@@ -412,6 +485,59 @@ export default function NewBlogPage() {
             placeholder="Write your article content here. Use the toolbar buttons above to format H1, H2, H3 headings, bold text, bullet lists, blockquotes..."
             rows={16}
           />
+        </div>
+
+        {/* SEO Metadata Section */}
+        <div className="space-y-4 w-full bg-stone-50 border border-stone-200 rounded-md p-5 sm:p-6">
+          <div className="pb-3 border-b border-stone-200">
+            <h3 className="text-sm font-bold text-stone-900 flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-blue-700" /> Search Engine Optimization (SEO)
+            </h3>
+            <p className="text-[11px] text-stone-500 font-light">
+              Add meta tags to rank higher on Google and AI search engines.
+            </p>
+          </div>
+
+          <div className="space-y-1.5">
+            <label className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+              Meta Description (Optimal length: 150-160 characters)
+            </label>
+            <textarea
+              rows={2}
+              placeholder="Detailed meta description for search results..."
+              value={formData.meta_description}
+              onChange={(e) => setFormData({ ...formData, meta_description: e.target.value })}
+              className="w-full bg-white border border-stone-200 rounded-md px-3 py-2.5 text-xs text-stone-900 focus:outline-none focus:border-black resize-none"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+                Meta Keywords (Comma separated)
+              </label>
+              <input
+                type="text"
+                placeholder="e.g. software development, IT agency, React"
+                value={formData.meta_keywords}
+                onChange={(e) => setFormData({ ...formData, meta_keywords: e.target.value })}
+                className="w-full bg-white border border-stone-200 rounded-md px-3 py-2.5 text-xs text-stone-900 focus:outline-none focus:border-black"
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+                Article Tags (Visible to users, comma separated)
+              </label>
+              <input
+                type="text"
+                placeholder="e.g. Tech, News, Development"
+                value={formData.tags}
+                onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
+                className="w-full bg-white border border-stone-200 rounded-md px-3 py-2.5 text-xs text-stone-900 focus:outline-none focus:border-black"
+              />
+            </div>
+          </div>
         </div>
 
         {/* AI FAQ Generator & Interactive Editor Section */}

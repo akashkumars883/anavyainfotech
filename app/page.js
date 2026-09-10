@@ -8,6 +8,12 @@ import FaqSection from "@/components/FaqSection";
 import ContactForm from "@/components/ContactForm";
 import { FadeIn } from "@/components/FadeIn";
 
+export const metadata = {
+  alternates: {
+    canonical: "https://www.anavyainfotech.com",
+  },
+};
+
 export const revalidate = 60;
 
 const HOMEPAGE_FAQS = [

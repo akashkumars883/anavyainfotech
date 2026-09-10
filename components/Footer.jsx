@@ -67,14 +67,15 @@ export default function Footer() {
       { name: "Get In Touch", href: "/contact" },
     ],
     locations: [
-      "Delhi NCR",
-      "Faridabad",
-      "Noida",
-      "Gurgaon",
-      "United States (USA)",
-      "United Kingdom (UK)",
-      "UAE & Middle East",
-      "Australia & Canada",
+      { name: "Delhi NCR", href: "/locations/delhi-ncr" },
+      { name: "Faridabad", href: "/locations/faridabad" },
+      { name: "Noida", href: "/locations/noida" },
+      { name: "Gurgaon", href: "/locations/gurgaon" },
+      { name: "United States (USA)", href: "/locations/usa" },
+      { name: "United Kingdom (UK)", href: "/locations/uk" },
+      { name: "UAE & Middle East", href: "/locations/uae" },
+      { name: "Australia", href: "/locations/australia" },
+      { name: "Canada", href: "/locations/canada" },
     ],
   };
 
@@ -300,7 +301,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-300 font-normal">
             {links.locations.map((loc, i) => (
               <span key={i} className="flex items-center gap-4">
-                <span className="hover:text-white transition-colors cursor-default">{loc}</span>
+                <Link href={loc.href} className="hover:text-white transition-colors">{loc.name}</Link>
                 {i < links.locations.length - 1 && <span className="text-zinc-600">•</span>}
               </span>
             ))}

@@ -56,10 +56,12 @@ export async function POST(request) {
     const isPublishedVal = is_published !== undefined ? (is_published ? 1 : 0) : 1;
     const tagsJson = JSON.stringify(tags || []);
     const faqsJson = JSON.stringify(faqs || []);
+    const metaKeywords = body.meta_keywords || null;
+    const metaDescription = body.meta_description || null;
 
     await tursoClient.execute({
-      sql: `INSERT INTO blogs (id, title, slug, category, author, excerpt, image_url, content, is_published, created_at, tags, faqs)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      sql: `INSERT INTO blogs (id, title, slug, category, author, excerpt, image_url, content, is_published, created_at, tags, faqs, meta_keywords, meta_description)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       args: [
         blogId,
         title,
@@ -73,6 +75,8 @@ export async function POST(request) {
         createdAt,
         tagsJson,
         faqsJson,
+        metaKeywords,
+        metaDescription,
       ],
     });
 
@@ -131,6 +135,8 @@ export async function PUT(request) {
       const tagsJson = JSON.stringify(tags || []);
       const faqsJson = JSON.stringify(faqs || []);
       const blogSlug = slug || title?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      const metaKeywords = body.meta_keywords || null;
+      const metaDescription = body.meta_description || null;
 
       await tursoClient.execute({
         sql: `UPDATE blogs SET 
@@ -143,9 +149,11 @@ export async function PUT(request) {
               content = COALESCE(?, content),
               is_published = ?,
               tags = ?,
-              faqs = ?
+              faqs = ?,
+              meta_keywords = ?,
+              meta_description = ?
               WHERE id = ?`,
-        args: [title || null, blogSlug || null, category || null, author || null, excerpt || null, image_url || null, content || null, statusVal, tagsJson, faqsJson, id],
+        args: [title || null, blogSlug || null, category || null, author || null, excerpt || null, image_url || null, content || null, statusVal, tagsJson, faqsJson, metaKeywords, metaDescription, id],
       });
     }
 
