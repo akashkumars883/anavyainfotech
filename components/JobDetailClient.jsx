@@ -5,6 +5,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import {
   ArrowLeft,
+  ArrowRight,
   MapPin,
   Clock,
   CheckCircle2,
