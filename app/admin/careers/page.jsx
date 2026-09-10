@@ -31,6 +31,7 @@ export default function AdminCareersDashboardPage() {
 
   // New Opening Form Modal State
   const [isOpeningModalOpen, setIsOpeningModalOpen] = useState(false);
+  const [editingOpeningId, setEditingOpeningId] = useState(null);
   const [newOpening, setNewOpening] = useState({
     title: "",
     department: "Sales & Growth",
@@ -91,21 +92,31 @@ export default function AdminCareersDashboardPage() {
     link.click();
   };
 
-  const handleCreateOpening = async (e) => {
+  const handleCreateOrUpdateOpening = async (e) => {
     e.preventDefault();
     if (!newOpening.title.trim() || !newOpening.description.trim()) return;
 
     setIsSavingOpening(true);
     try {
+      const isEditing = !!editingOpeningId;
+      const method = isEditing ? "PUT" : "POST";
+      const payload = isEditing ? { ...newOpening, id: editingOpeningId } : newOpening;
+
       const res = await fetch("/api/careers/openings", {
-        method: "POST",
+        method,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newOpening),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
+      
       if (res.ok && data.success) {
-        setOpenings([data.opening, ...openings]);
+        if (isEditing) {
+          setOpenings(openings.map(o => o.id === editingOpeningId ? { ...o, ...payload } : o));
+        } else {
+          setOpenings([data.opening, ...openings]);
+        }
         setIsOpeningModalOpen(false);
+        setEditingOpeningId(null);
         setNewOpening({
           title: "",
           department: "Sales & Growth",
@@ -117,10 +128,24 @@ export default function AdminCareersDashboardPage() {
         });
       }
     } catch (err) {
-      console.error("Failed to create opening:", err);
+      console.error("Failed to save opening:", err);
     } finally {
       setIsSavingOpening(false);
     }
+  };
+
+  const handleEditOpeningClick = (op) => {
+    setEditingOpeningId(op.id);
+    setNewOpening({
+      title: op.title || "",
+      department: op.department || "",
+      location: op.location || "",
+      type: op.type || "",
+      experience: op.experience || "",
+      description: op.description || "",
+      tags: Array.isArray(op.tags) ? op.tags.join(", ") : op.tags || "",
+    });
+    setIsOpeningModalOpen(true);
   };
 
   const handleDeleteOpening = async (id) => {
@@ -177,7 +202,19 @@ export default function AdminCareersDashboardPage() {
             </button>
           ) : (
             <button
-              onClick={() => setIsOpeningModalOpen(true)}
+              onClick={() => {
+                setEditingOpeningId(null);
+                setNewOpening({
+                  title: "",
+                  department: "Sales & Growth",
+                  location: "Delhi NCR / Remote / Hybrid",
+                  type: "Full-Time",
+                  experience: "0-1 Years",
+                  description: "",
+                  tags: "",
+                });
+                setIsOpeningModalOpen(true);
+              }}
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-blue-700 text-white hover:bg-blue-800 text-xs font-bold transition-all cursor-pointer"
             >
               <Plus className="h-4 w-4" />
@@ -332,6 +369,13 @@ export default function AdminCareersDashboardPage() {
 
                 <div className="flex items-center gap-3">
                   <button
+                    onClick={() => handleEditOpeningClick(op)}
+                    className="p-2 text-stone-400 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors cursor-pointer"
+                    title="Edit Opening"
+                  >
+                    <FileText className="h-4.5 w-4.5" />
+                  </button>
+                  <button
                     onClick={() => handleDeleteOpening(op.id)}
                     className="p-2 text-stone-400 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors cursor-pointer"
                     title="Delete Opening"
@@ -471,21 +515,21 @@ export default function AdminCareersDashboardPage() {
         </div>
       )}
 
-      {/* New Job Opening Posting Modal */}
+      {/* New/Edit Job Opening Posting Modal */}
       {isOpeningModalOpen && (
         <div className="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white border border-stone-200 rounded-lg max-w-lg w-full shadow-2xl overflow-hidden">
-            <div className="bg-stone-900 text-white p-5 flex items-center justify-between">
-              <h3 className="font-bold text-base text-white">Post New Job Opening</h3>
+          <div className="bg-white border border-stone-200 rounded-lg max-w-2xl w-full shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+            <div className="bg-stone-900 text-white p-5 flex items-center justify-between shrink-0">
+              <h3 className="font-bold text-base text-white">{editingOpeningId ? "Edit Job Opening" : "Post New Job Opening"}</h3>
               <button
                 onClick={() => setIsOpeningModalOpen(false)}
-                className="p-1 rounded-full hover:bg-stone-800 text-stone-400 hover:text-white"
+                className="p-1 rounded-full hover:bg-stone-800 text-stone-400 hover:text-white cursor-pointer"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
-            <form onSubmit={handleCreateOpening} className="p-6 space-y-3.5 text-xs text-left">
+            <form onSubmit={handleCreateOrUpdateOpening} className="p-6 space-y-4 text-xs text-left overflow-y-auto">
               <div>
                 <label className="block font-bold text-stone-700 mb-1">Job Title *</label>
                 <input
@@ -517,17 +561,27 @@ export default function AdminCareersDashboardPage() {
                     className="w-full p-2.5 border border-stone-200 rounded bg-stone-50 focus:bg-white"
                   />
                 </div>
+                <div>
+                  <label className="block font-bold text-stone-700 mb-1">Tags (Comma Separated)</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. React, Next.js, Marketing"
+                    value={newOpening.tags}
+                    onChange={(e) => setNewOpening({ ...newOpening, tags: e.target.value })}
+                    className="w-full p-2.5 border border-stone-200 rounded bg-stone-50 focus:bg-white"
+                  />
+                </div>
               </div>
 
               <div>
-                <label className="block font-bold text-stone-700 mb-1">Job Description *</label>
+                <label className="block font-bold text-stone-700 mb-1">Full Job Description (JD) *</label>
                 <textarea
                   required
-                  rows={3}
+                  rows={8}
                   placeholder="Enter full job description, responsibilities, and requirements..."
                   value={newOpening.description}
                   onChange={(e) => setNewOpening({ ...newOpening, description: e.target.value })}
-                  className="w-full p-2.5 border border-stone-200 rounded bg-stone-50 focus:bg-white resize-none"
+                  className="w-full p-2.5 border border-stone-200 rounded bg-stone-50 focus:bg-white resize-y"
                 />
               </div>
 
@@ -544,7 +598,7 @@ export default function AdminCareersDashboardPage() {
                   disabled={isSavingOpening}
                   className="px-6 py-2 bg-blue-700 text-white rounded font-bold cursor-pointer hover:bg-blue-800"
                 >
-                  {isSavingOpening ? "Posting..." : "Post Opening"}
+                  {isSavingOpening ? "Saving..." : editingOpeningId ? "Update Opening" : "Post Opening"}
                 </button>
               </div>
             </form>

@@ -194,3 +194,59 @@ export async function DELETE(request) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
+
+export async function PUT(request) {
+  try {
+    const body = await request.json();
+    const { id, title, department, location, type, experience, description, tags, status } = body;
+
+    if (!id || !title || !description) {
+      return NextResponse.json({ error: "ID, title, and description are required" }, { status: 400 });
+    }
+
+    const updatedTags = Array.isArray(tags) ? tags.join(", ") : tags || "";
+
+    // Update in-memory fallback
+    const index = globalOpeningsStore.findIndex((o) => o.id === id);
+    if (index !== -1) {
+      globalOpeningsStore[index] = {
+        ...globalOpeningsStore[index],
+        title: title.trim(),
+        department: department?.trim(),
+        location: location?.trim(),
+        type: type?.trim(),
+        experience: experience?.trim(),
+        description: description.trim(),
+        tags: updatedTags,
+        status: status || "active",
+      };
+    }
+
+    // Update Turso
+    try {
+      await tursoClient.execute({
+        sql: `UPDATE career_openings SET 
+              title = ?, department = ?, location = ?, type = ?, experience = ?, description = ?, tags = ?, status = ?
+              WHERE id = ?`,
+        args: [
+          title.trim(),
+          department?.trim(),
+          location?.trim(),
+          type?.trim(),
+          experience?.trim(),
+          description.trim(),
+          updatedTags,
+          status || "active",
+          id,
+        ],
+      });
+    } catch (e) {
+      console.warn("Turso update opening error:", e.message);
+    }
+
+    return NextResponse.json({ success: true, message: "Opening updated" });
+  } catch (err) {
+    console.error("PUT career opening error:", err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}

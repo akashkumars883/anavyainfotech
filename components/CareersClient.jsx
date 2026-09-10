@@ -72,7 +72,7 @@ export default function CareersClient() {
       {/* Hero Header Area */}
       <section className="py-12 bg-stone-50 border-b border-stone-200 px-6">
         <div className="max-w-7xl mx-auto space-y-8">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Careers", href: "/careers" }]} />
+          <Breadcrumbs items={[{ label: "Careers", href: "/careers" }]} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-6">

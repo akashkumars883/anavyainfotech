@@ -39,7 +39,6 @@ export default function JobOpeningsClient() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs
             items={[
-              { label: "Home", href: "/" },
               { label: "Careers", href: "/careers" },
               { label: "Open Roles", href: "/careers/openings" },
             ]}
