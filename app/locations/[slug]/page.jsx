@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 
 // Dynamically generate SEO metadata for each location
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const location = LOCATIONS_DATA.find((loc) => loc.slug === slug);
 
   if (!location) {
@@ -40,8 +40,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function LocationPage({ params }) {
-  const { slug } = params;
+export default async function LocationPage({ params }) {
+  const { slug } = await params;
   const location = LOCATIONS_DATA.find((loc) => loc.slug === slug);
 
   if (!location) {
