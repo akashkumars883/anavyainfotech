@@ -250,26 +250,10 @@ export default async function BlogPostPage({ params }) {
         {/* Breadcrumbs */}
         <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />
 
-        {/* Back Link */}
-        <div>
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-xs font-bold text-stone-600 hover:text-black transition-colors bg-stone-100 px-4 py-2 rounded-md"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" /> Back to All Articles
-          </Link>
-        </div>
+
 
         {/* Article Header */}
         <header className="space-y-6 border-b border-stone-200 pb-6">
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-blue-700/10 border border-blue-700/20 text-xs font-bold uppercase tracking-wider text-blue-700">
-              <Tag className="h-3 w-3" /> {post.category || "Engineering"}
-            </span>
-            <span className="text-xs text-stone-500 flex items-center gap-1">
-              <Clock className="h-3.5 w-3.5" /> {post.readTime}
-            </span>
-          </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
             {post.title}
@@ -279,25 +263,35 @@ export default async function BlogPostPage({ params }) {
             {post.description}
           </p>
 
-          {/* Author & Date Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-stone-100">
+          {/* Author, Date, & Metadata Bar */}
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-4 border-t border-stone-100">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-md bg-stone-100 border border-stone-200 flex items-center justify-center text-stone-700 font-bold text-xs uppercase">
                 <User className="h-5 w-5 text-blue-700" />
               </div>
               <div>
                 <div className="text-sm font-bold text-stone-900">{post.author.name}</div>
-                <div className="text-xs text-stone-500 font-light">{post.author.role}</div>
+                <div className="flex items-center gap-2 text-xs text-stone-500 font-light mt-0.5">
+                  <span>{post.author.role}</span>
+                  <span>•</span>
+                  <span className="flex items-center gap-1 font-medium text-stone-700">
+                    <Clock className="h-3 w-3 text-stone-400" /> {post.readTime}
+                  </span>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 text-xs text-stone-500">
+            <div className="flex flex-wrap items-center gap-3 text-xs text-stone-500">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-blue-700/5 border border-blue-700/10 text-[10px] font-bold uppercase tracking-wider text-blue-700">
+                <Tag className="h-3 w-3" /> {post.category || "Engineering"}
+              </span>
+              <span>•</span>
               <span className="flex items-center gap-1">
-                <Calendar className="h-3.5 w-3.5 text-stone-400" /> Published on {post.date}
+                <Calendar className="h-3.5 w-3.5 text-stone-400" /> {post.date}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1 font-medium text-stone-700">
-                <Eye className="h-3.5 w-3.5 text-stone-400" /> {post.views_count || 0} reads
+                <Eye className="h-3.5 w-3.5 text-stone-400" /> {post.views_count || 0}
               </span>
             </div>
           </div>
