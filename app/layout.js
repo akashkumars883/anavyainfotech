@@ -23,7 +23,6 @@ export const metadata = {
 
   title: {
     default: "IT Solutions, AI & Digital Marketing Company in India | Anavya Infotech",
-    template: "%s | Anavya Infotech",
   },
 
   description:

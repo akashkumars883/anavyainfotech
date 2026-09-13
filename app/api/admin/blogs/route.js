@@ -58,10 +58,11 @@ export async function POST(request) {
     const faqsJson = JSON.stringify(faqs || []);
     const metaKeywords = body.meta_keywords || null;
     const metaDescription = body.meta_description || null;
+    const metaTitle = body.meta_title || null;
 
     await tursoClient.execute({
-      sql: `INSERT INTO blogs (id, title, slug, category, author, excerpt, image_url, content, is_published, created_at, tags, faqs, meta_keywords, meta_description)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      sql: `INSERT INTO blogs (id, title, slug, category, author, excerpt, image_url, content, is_published, created_at, tags, faqs, meta_keywords, meta_description, meta_title)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       args: [
         blogId,
         title,
@@ -77,6 +78,7 @@ export async function POST(request) {
         faqsJson,
         metaKeywords,
         metaDescription,
+        metaTitle,
       ],
     });
 
@@ -137,6 +139,7 @@ export async function PUT(request) {
       const blogSlug = slug || title?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
       const metaKeywords = body.meta_keywords || null;
       const metaDescription = body.meta_description || null;
+      const metaTitle = body.meta_title || null;
 
       await tursoClient.execute({
         sql: `UPDATE blogs SET 
@@ -151,9 +154,10 @@ export async function PUT(request) {
               tags = ?,
               faqs = ?,
               meta_keywords = ?,
-              meta_description = ?
+              meta_description = ?,
+              meta_title = ?
               WHERE id = ?`,
-        args: [title || null, blogSlug || null, category || null, author || null, excerpt || null, image_url || null, content || null, statusVal, tagsJson, faqsJson, metaKeywords, metaDescription, id],
+        args: [title || null, blogSlug || null, category || null, author || null, excerpt || null, image_url || null, content || null, statusVal, tagsJson, faqsJson, metaKeywords, metaDescription, metaTitle, id],
       });
     }
 

@@ -35,7 +35,7 @@ export async function generateMetadata({ params }) {
   const pageUrl = `https://www.anavyainfotech.com/blog/${post.slug}`;
 
   return {
-    title: `${post.title} – Anavya Infotech Engineering Blog`,
+    title: post.meta_title || `${post.title} – Anavya Infotech Blog`,
     description: post.meta_description || post.description,
     keywords: post.meta_keywords || post.tags?.join(", ") || "",
     alternates: {

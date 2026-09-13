@@ -9,7 +9,7 @@ import SafeImage from "@/components/SafeImage";
 export const revalidate = 60;
 
 export const metadata = {
-  title: "Engineering Blog & Digital Growth Insights",
+  title: "Our Blog & Digital Growth Insights",
   description:
     "Read in-depth software engineering blueprints, AI automation guides, custom CRM architecture strategies, and technical SEO insights from Anavya Infotech.",
   keywords:
@@ -18,7 +18,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/blog",
   },
   openGraph: {
-    title: "Engineering Blog & Digital Growth Insights | Anavya Infotech",
+    title: "Our Blog & Digital Growth Insights | Anavya Infotech",
     description:
       "Technical software architecture guides, AI integration patterns, and SEO strategies for modern businesses.",
     url: "https://www.anavyainfotech.com/blog",
@@ -65,7 +65,7 @@ export default async function BlogListingPage() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs items={[{ label: "Blog", href: "/blog" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <BookOpen className="h-3.5 w-3.5 text-blue-700" /> Engineering Blog & Insights
+            <BookOpen className="h-3.5 w-3.5 text-blue-700" /> Our Blog & Insights
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
             Software engineering blueprints <br />

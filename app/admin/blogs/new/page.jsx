@@ -27,6 +27,7 @@ export default function NewBlogPage() {
     faqs: [],
     tags: "",
     meta_keywords: "",
+    meta_title: "",
     meta_description: "",
   });
 
@@ -496,6 +497,19 @@ export default function NewBlogPage() {
             <p className="text-[11px] text-stone-500 font-light">
               Add meta tags to rank higher on Google and AI search engines.
             </p>
+          </div>
+
+          <div className="space-y-1.5 mb-4">
+            <label className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+              Meta Title (Optional, overrides default title)
+            </label>
+            <input
+              type="text"
+              placeholder="Custom SEO Meta Title..."
+              value={formData.meta_title}
+              onChange={(e) => setFormData({ ...formData, meta_title: e.target.value })}
+              className="w-full bg-white border border-stone-200 rounded-md px-3 py-2.5 text-xs text-stone-900 focus:outline-none focus:border-black"
+            />
           </div>
 
           <div className="space-y-1.5">
