@@ -146,7 +146,23 @@ export default async function BlogPostPage({ params }) {
   }
 
   const allPosts = await getBlogPosts();
-  const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 2);
+  
+  const currentTags = Array.isArray(post.tags) 
+    ? post.tags.map(t => typeof t === 'string' ? t.toLowerCase().trim() : '')
+    : [];
+
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== slug)
+    .map((p) => {
+      let matchCount = 0;
+      if (Array.isArray(p.tags) && currentTags.length > 0) {
+        const pTags = p.tags.map(t => typeof t === 'string' ? t.toLowerCase().trim() : '');
+        matchCount = pTags.filter(t => currentTags.includes(t)).length;
+      }
+      return { ...p, _matchCount: matchCount };
+    })
+    .sort((a, b) => b._matchCount - a._matchCount)
+    .slice(0, 2);
   const formattedContent = formatArticleContent(post.content);
 
   const absoluteImageUrl = post.image?.startsWith("http")
