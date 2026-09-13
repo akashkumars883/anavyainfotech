@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Layout, Server, ShieldCheck, Briefcase, Globe, BookOpen } from "lucide-react";
 import { getBlogPosts } from "@/lib/blogData";
+import { LOCATIONS_DATA } from "@/lib/locationsData";
 
 export const metadata = {
   title: "HTML Sitemap – Anavya Infotech Navigation Directory",
@@ -200,6 +201,26 @@ export default async function HtmlSitemapPage() {
                     className="p-2 text-xs font-medium text-stone-700 hover:text-blue-700 transition-all flex items-center justify-between group hover:translate-x-1"
                   >
                     <span>• {item.title}</span>
+                    <ArrowRight className="h-3 w-3 text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Locations We Serve Section */}
+            <div className="space-y-6 md:col-span-2">
+              <div className="flex items-center gap-3 text-stone-900 font-bold text-xl pb-2">
+                <Globe className="h-5 w-5 text-blue-700" />
+                <h2>Locations We Serve ({LOCATIONS_DATA.length})</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {LOCATIONS_DATA.map((item, i) => (
+                  <Link
+                    key={i}
+                    href={`/locations/${item.slug}`}
+                    className="p-2 text-xs font-medium text-stone-700 hover:text-blue-700 transition-all flex items-center justify-between group hover:translate-x-1"
+                  >
+                    <span>• {item.name}</span>
                     <ArrowRight className="h-3 w-3 text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 ))}
