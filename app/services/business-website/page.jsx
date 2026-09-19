@@ -1,6 +1,7 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
+import SafeImage from "@/components/SafeImage";
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Code } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
@@ -8,8 +9,7 @@ export const metadata = {
   title: "Business Website Development Company in India & USA | Anavya Infotech",
   description:
     "Custom business website design & development for companies in Delhi NCR, Faridabad, Noida & USA. Fast, SEO-ready, mobile-first sites built on modern stacks. Get a free quote.",
-  keywords:
-    "business website development company, custom website design India, web development agency Faridabad Noida, SEO business website, Next.js web development",
+  keywords: "business website development company, custom website design India, web development agency Faridabad Noida",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/business-website",
   },
@@ -63,10 +63,10 @@ export default function BusinessWebsitePage() {
   ];
 
   const processSteps = [
-    { num: "01", title: "Discover & Plan", desc: "We study your business, competitors, and target customer before writing a single line of code." },
-    { num: "02", title: "Architecture & Design", desc: "Sitemap, wireframes, and high-fidelity UI mockups for your approval." },
-    { num: "03", title: "Agile Development", desc: "Weekly builds you can review, not a black box for 6 weeks." },
-    { num: "04", title: "Optimize & Launch", desc: "Speed audit, security check, local SEO setup, and go-live." },
+    { num: "01", title: "Discovery & UX Strategy", desc: "We study your business, competitors, and target customer before writing a single line of code." },
+    { num: "02", title: "Website Architecture & UI Design", desc: "Sitemap, wireframes, and high-fidelity UI mockups for your approval." },
+    { num: "03", title: "Agile Web Development", desc: "Weekly frontend and backend builds you can review, not a black box for 6 weeks." },
+    { num: "04", title: "SEO Optimization & Launch", desc: "Speed audit, security check, local SEO setup, and final go-live." },
   ];
 
   return (
@@ -77,28 +77,34 @@ export default function BusinessWebsitePage() {
       />
 
       {/* Hero Header Section */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Business Website", href: "/services/business-website" }]} />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <Code className="h-3.5 w-3.5 text-blue-700" /> Business Website Development
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Business Website", href: "/services/business-website" }]} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600 shadow-xs">
+              <Code className="h-3.5 w-3.5 text-blue-700" /> Business Website Development
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
+              Custom Business Website Development Company
+            </h1>
+            <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
+              Your website is usually the first interaction a prospective customer has with your business. At Anavya Infotech, we design and build business websites for companies across India, Delhi NCR, and the USA that load fast, rank on Google, and are built to convert visitors into leads and paying customers, not just look good.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Start Your Website Project → <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Business Website Development That Turns Visitors Into Customers
-          </h1>
-          <p className="text-base sm:text-lg text-stone-600 font-light max-w-4xl leading-relaxed">
-            Your website is usually the first interaction a prospective customer has with your business — and in most cases, it decides whether they call you or scroll to your competitor. At Anavya Infotech, we design and build business websites for companies across India, Delhi NCR, Faridabad, Noida, Gurgaon, and the USA that load fast, rank on Google, and are built to convert visitors into leads and paying customers, not just look good.
-          </p>
-          <p className="text-sm sm:text-base text-stone-600 font-light max-w-4xl leading-relaxed">
-            We don't hand you a templated theme with your logo pasted on top. Every business website we build is custom-coded on modern frameworks (Next.js/React), hand-optimized for Core Web Vitals, and structured from day one around your actual sales goals — whether that's phone calls, form fills, WhatsApp enquiries, or online bookings.
-          </p>
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
-            >
-              Start Your Website Project → <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
+            <SafeImage
+              src="/development-illustration.jpg"
+              alt="Business Website Development Company"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply rounded-md shadow-sm border border-stone-200"
+            />
           </div>
         </div>
       </section>

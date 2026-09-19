@@ -1,6 +1,7 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
+import SafeImage from "@/components/SafeImage";
 import { ArrowRight, CheckCircle2, Globe } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
@@ -8,8 +9,7 @@ export const metadata = {
   title: "SEO Company in India | Search Engine Optimization Services | Anavya Infotech",
   description:
     "Data-driven SEO services for businesses in Delhi NCR, Faridabad, Noida & the USA. Technical, on-page & content SEO to rank higher and grow organic traffic.",
-  keywords:
-    "SEO company India, search engine optimization services, SEO agency Delhi NCR Faridabad Noida, technical SEO agency, organic traffic growth",
+  keywords: "SEO company India, search engine optimization services, SEO agency Delhi NCR Faridabad Noida",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/seo",
   },
@@ -61,10 +61,10 @@ export default function SeoServicePage() {
   ];
 
   const processSteps = [
-    { num: "01", title: "Audit", desc: "Technical + competitive SEO audit." },
-    { num: "02", title: "Strategy", desc: "Keyword and content gap strategy." },
-    { num: "03", title: "Execution", desc: "On-page fixes and content production." },
-    { num: "04", title: "Growth", desc: "Ongoing optimization, link building, and monthly reporting." },
+    { num: "01", title: "Comprehensive SEO Audit", desc: "Technical + competitive SEO audit and Core Web Vitals check." },
+    { num: "02", title: "Keyword & Content Strategy", desc: "Commercial keyword research and content gap strategy mapping." },
+    { num: "03", title: "On-Page SEO Execution", desc: "Title tag optimization, schema markup, and content production." },
+    { num: "04", title: "Link Building & SEO Growth", desc: "Ongoing optimization, authority link building, and ROI reporting." },
   ];
 
   return (
@@ -75,25 +75,34 @@ export default function SeoServicePage() {
       />
 
       {/* Header Area */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "SEO", href: "/services/seo" }]} />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <Globe className="h-3.5 w-3.5 text-blue-700" /> Search Engine Optimization
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "SEO", href: "/services/seo" }]} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600 shadow-xs">
+              <Globe className="h-3.5 w-3.5 text-blue-700" /> Search Engine Optimization
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
+              Top SEO Services Company in India
+            </h1>
+            <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
+              Ranking for a vanity keyword means nothing if it doesn't bring customers. Anavya Infotech runs SEO campaigns built around a simple standard: organic traffic that converts. Our SEO services cover technical audits, on-page optimization, content strategy, and authority building for businesses across India, Delhi NCR, and the USA.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Get a Free SEO Audit → <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            SEO Services That Grow Organic Traffic, Not Just Rankings
-          </h1>
-          <p className="text-base sm:text-lg text-stone-600 font-light max-w-4xl leading-relaxed">
-            Ranking for a vanity keyword means nothing if it doesn't bring customers. Anavya Infotech runs SEO campaigns built around a simple standard: organic traffic that converts. Our SEO services cover technical audits, on-page optimization, content strategy, and authority building for businesses across India, Delhi NCR, and the USA.
-          </p>
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
-            >
-              Get a Free SEO Audit → <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
+            <SafeImage
+              src="/growth-illustration.jpg"
+              alt="SEO Services Company India"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply rounded-md shadow-sm border border-stone-200"
+            />
           </div>
         </div>
       </section>

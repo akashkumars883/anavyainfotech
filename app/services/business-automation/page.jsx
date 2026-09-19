@@ -8,14 +8,7 @@ export const metadata = {
   title: "Enterprise Business Process Automation & Workflow Engineering",
   description:
     "Eliminate manual operational bottlenecks with custom workflow automation, RPA pipelines, CRM integrations, and data sync from Anavya Infotech.",
-  keywords: [
-    "business process automation",
-    "workflow automation services",
-    "enterprise RPA development",
-    "workflow optimization",
-    "automated data sync",
-    "custom integration scripts",
-  ],
+  keywords: ["business process automation", "workflow automation services", "enterprise RPA development"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/business-automation",
   },

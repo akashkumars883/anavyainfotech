@@ -1,6 +1,7 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
+import SafeImage from "@/components/SafeImage";
 import { ArrowRight, CheckCircle2, ShoppingCart } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
@@ -8,8 +9,7 @@ export const metadata = {
   title: "Headless E-Commerce Development Company | India & USA | Anavya Infotech",
   description:
     "Custom headless e-commerce stores built for speed, SEO & scale. Shopify/custom storefronts for D2C brands in India, Delhi NCR & the USA.",
-  keywords:
-    "headless e-commerce development company, custom Shopify storefront Next.js, D2C e-commerce agency India USA, fast e-commerce store development",
+  keywords: "headless e-commerce development company, custom Shopify storefront Next.js, D2C e-commerce agency India USA",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/ecommerce",
   },
@@ -57,10 +57,10 @@ export default function EcommerceServicePage() {
   ];
 
   const processSteps = [
-    { num: "01", title: "Assessment", desc: "Catalog & platform assessment (Shopify, custom, or hybrid)." },
-    { num: "02", title: "UX Planning", desc: "Storefront design and UX planning." },
-    { num: "03", title: "Development", desc: "Development, payment/inventory integration." },
-    { num: "04", title: "Launch", desc: "SEO setup, testing, and launch." },
+    { num: "01", title: "Catalog & Platform Assessment", desc: "Detailed catalog, API, and platform architecture assessment." },
+    { num: "02", title: "Storefront UX & Conversion Planning", desc: "Headless UI/UX design wireframing focused on high conversion rates." },
+    { num: "03", title: "Headless Development & API Sync", desc: "Frontend development and secure payment/inventory backend integration." },
+    { num: "04", title: "SEO Optimization & Launch", desc: "E-commerce SEO structure setup, rigorous load testing, and production launch." },
   ];
 
   return (
@@ -71,25 +71,34 @@ export default function EcommerceServicePage() {
       />
 
       {/* Header Area */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "E-Commerce Storefronts", href: "/services/ecommerce" }]} />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <ShoppingCart className="h-3.5 w-3.5 text-blue-700" /> Headless E-Commerce Development
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "E-Commerce Storefronts", href: "/services/ecommerce" }]} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600 shadow-xs">
+              <ShoppingCart className="h-3.5 w-3.5 text-blue-700" /> Headless E-Commerce Development
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
+              Headless E-Commerce Development Services
+            </h1>
+            <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
+              Standard e-commerce themes slow down as your catalog and traffic grow. Anavya Infotech builds headless e-commerce storefronts — decoupled frontend and backend architecture — so your store stays fast, SEO-friendly, and flexible even as you scale SKUs, traffic, and marketing campaigns.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Get an E-Commerce Quote → <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Headless E-Commerce Development for Fast, Scalable Online Stores
-          </h1>
-          <p className="text-base sm:text-lg text-stone-600 font-light max-w-4xl leading-relaxed">
-            Standard e-commerce themes slow down as your catalog and traffic grow. Anavya Infotech builds headless e-commerce storefronts — decoupled frontend and backend architecture — so your store stays fast, SEO-friendly, and flexible even as you scale SKUs, traffic, and marketing campaigns.
-          </p>
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
-            >
-              Get an E-Commerce Store Quote → <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
+            <SafeImage
+              src="/development-illustration.jpg"
+              alt="Headless Ecommerce Development Company"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply rounded-md shadow-sm border border-stone-200"
+            />
           </div>
         </div>
       </section>

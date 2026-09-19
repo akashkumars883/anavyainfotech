@@ -2,19 +2,19 @@ import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
+import SafeImage from "@/components/SafeImage";
 import { Zap, ArrowRight, MapPin, Building, Star, Compass } from "lucide-react";
 
 export const metadata = {
-  title: "Local SEO Agency in India | Best Local SEO Services & Company in Delhi NCR",
+  title: "Local SEO Services in Delhi NCR | Top Agency in Noida & Gurgaon",
   description:
-    "Anavya Infotech is the best local SEO agency in India and top local SEO company in Delhi NCR & Noida. Dominate Google Maps 3-Pack and neighborhood search results with our local SEO services.",
-  keywords:
-    "local SEO agency, local SEO company, local SEO services, local SEO agency in India, best local SEO agency in India, SEO agency in Noida, SEO company in Delhi NCR, digital marketing agency in Noida",
+    "Dominate Google Maps 3-Pack and neighborhood search results with our specialized local SEO services for businesses in Delhi NCR, Noida, Faridabad, and Gurgaon.",
+  keywords: "local SEO services Delhi NCR, local SEO agency Noida, Google Maps SEO Gurgaon",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/local-seo",
   },
   openGraph: {
-    title: "Local SEO Agency in India | Best Local SEO Services & Company",
+    title: "Local SEO Services in Delhi NCR | Anavya Infotech",
     description:
       "Dominate Google Maps local pack and high-intent regional searches with local SEO services from Anavya Infotech.",
     url: "https://www.anavyainfotech.com/services/local-seo",
@@ -40,7 +40,7 @@ const LOCAL_SEO_FAQS = [
 
 
 const serviceSchemas = createServiceSchema({
-  name: "Local SEO Company for Faridabad, Noida, Gurgaon & Delhi NCR",
+  name: "Local SEO Services in Delhi NCR, Noida, Gurgaon & Faridabad",
   description: "Rank higher in local Google search & Maps for your Delhi NCR business. Google Business Profile optimization, citations & local content by Anavya Infotech.",
   slug: "local-seo",
   faqs: LOCAL_SEO_FAQS,
@@ -56,18 +56,35 @@ export default function LocalSeoServicePage() {
       />
 
       {/* Header Area */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Local SEO", href: "/services/local-seo" }]} />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <MapPin className="h-3.5 w-3.5 text-blue-700" /> Services / Local SEO
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Local SEO", href: "/services/local-seo" }]} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600 shadow-xs">
+              <MapPin className="h-3.5 w-3.5 text-blue-700" /> Services / Local SEO
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
+              Best Local SEO Services in Delhi NCR
+            </h1>
+            <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
+              When someone searches &quot;services in Sector 62 Noida&quot; or &quot;best stores near me,&quot; Google shows a local pack of 3 businesses. Our local SEO service is engineered to dominate that local pack across Faridabad, Noida, Gurgaon, and Delhi NCR. Stop losing customers to competitors who simply have a better map presence.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Boost Local Rankings <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Local SEO to Get Found by Customers Searching Near You
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            When someone searches &quot;website development in Sector 62 Noida&quot; or &quot;best clothing store near me,&quot; Google shows a local pack of 3 businesses — and most searchers never scroll past it. Anavya Infotech&apos;s local SEO service is built to get your business into that local pack for Faridabad, Noida, Gurgaon, and the wider Delhi NCR region.
-          </p>
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
+            <SafeImage
+              src="/growth-illustration.jpg"
+              alt="Local SEO Services Delhi NCR"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply rounded-md shadow-sm border border-stone-200"
+            />
+          </div>
         </div>
       </section>
 
@@ -127,28 +144,28 @@ export default function LocalSeoServicePage() {
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
-            Our Local SEO Process
+            Our High-Impact Local SEO Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
               <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 01</span>
-              <h3 className="text-base font-medium text-stone-900">Audit</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Google Business Profile and local presence audit.</p>
+              <h3 className="text-base font-medium text-stone-900">Comprehensive Local Audit</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">In-depth Google Business Profile and local competitor presence analysis.</p>
             </div>
-            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
               <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 02</span>
-              <h3 className="text-base font-medium text-stone-900">Citations & NAP</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Citation building and NAP consistency cleanup across Indian platforms.</p>
+              <h3 className="text-base font-medium text-stone-900">Local Citations & NAP</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Building high-authority local citations and ensuring NAP consistency across Indian directories.</p>
             </div>
-            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
               <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 03</span>
-              <h3 className="text-base font-medium text-stone-900">Localized On-Page</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Localized content and on-page optimization for target regions.</p>
+              <h3 className="text-base font-medium text-stone-900">Hyper-Local On-Page SEO</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Creating location-specific service pages optimized for exact neighborhood search intent.</p>
             </div>
-            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
+            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
               <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 04</span>
-              <h3 className="text-base font-medium text-stone-900">Reviews & Growth</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Review generation and ongoing local rank tracking.</p>
+              <h3 className="text-base font-medium text-stone-900">Reviews & Map Rankings</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Active review generation strategies and ongoing Google Maps rank tracking.</p>
             </div>
           </div>
         </div>

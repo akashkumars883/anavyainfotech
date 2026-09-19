@@ -8,15 +8,7 @@ export const metadata = {
   title: "Website AI Chatbot Development & Auto-Crawl AI Widget Services | Anavya Infotech",
   description:
     "Turn website visitors into leads 24/7 with Anaya AI Assistant. Instant website auto-crawling, RAG vector knowledge store, 1-line script embed & real-time lead capture for your website.",
-  keywords: [
-    "website AI chatbot development",
-    "AI chatbot widget for websites",
-    "Anaya AI Assistant",
-    "website lead generation chatbot",
-    "auto crawl AI chatbot",
-    "RAG website chatbot",
-    "custom AI customer support bot",
-  ],
+  keywords: ["website AI chatbot development", "AI chatbot widget for websites", "Anaya AI Assistant"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/ai-chatbot",
   },

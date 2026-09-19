@@ -9,14 +9,7 @@ export const metadata = {
   title: "Growth Marketing & Conversion Rate Optimization (CRO) Agency",
   description:
     "Accelerate customer acquisition with full-funnel CRO, performance marketing telemetry, A/B testing, and paid growth strategies from Anavya Infotech.",
-  keywords: [
-    "growth marketing agency",
-    "conversion rate optimization",
-    "CRO services",
-    "performance growth agency",
-    "sales funnel optimization",
-    "A/B testing services",
-  ],
+  keywords: ["growth marketing agency", "conversion rate optimization", "CRO services"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/growth",
   },

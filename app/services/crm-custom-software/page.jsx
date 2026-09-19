@@ -8,14 +8,7 @@ export const metadata = {
   title: "Custom CRM Development & Enterprise ERP Software Engineering",
   description:
     "Build custom CRM software, internal ERP portals, and tailored enterprise software systems engineered for security and scale by Anavya Infotech.",
-  keywords: [
-    "custom CRM development",
-    "enterprise ERP software",
-    "custom business software",
-    "internal tools development",
-    "CRM software development company",
-    "tailored enterprise dashboards",
-  ],
+  keywords: ["custom CRM development", "enterprise ERP software", "custom business software"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/crm-custom-software",
   },

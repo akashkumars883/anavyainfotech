@@ -9,14 +9,7 @@ export const metadata = {
   title: "Corporate Branding Services & Digital Brand Identity Agency",
   description:
     "Elevate your corporate presence with bespoke digital branding services, visual design systems, logo assets, and UI/UX guidelines from Anavya Infotech.",
-  keywords: [
-    "branding agency",
-    "corporate branding services",
-    "digital brand identity",
-    "logo design services",
-    "UI UX design agency",
-    "brand strategy company",
-  ],
+  keywords: ["branding agency", "corporate branding services", "digital brand identity"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/branding",
   },

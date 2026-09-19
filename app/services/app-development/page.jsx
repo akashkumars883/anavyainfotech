@@ -8,14 +8,7 @@ export const metadata = {
   title: "Mobile App Development Services | iOS, Android & Cross-Platform Agency",
   description:
     "Custom iOS, Android, and cross-platform React Native/Flutter mobile app development services in India & USA from Anavya Infotech.",
-  keywords: [
-    "mobile app development company",
-    "iOS app development",
-    "Android app development",
-    "React Native development",
-    "Flutter app development",
-    "mobile app development in India",
-  ],
+  keywords: ["mobile app development company", "iOS app development", "Android app development"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/app-development",
   },

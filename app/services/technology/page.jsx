@@ -9,14 +9,7 @@ export const metadata = {
   title: "Cloud Architecture, DevOps & Technology Consulting Services",
   description:
     "Modernize enterprise infrastructure with cloud architecture consulting, Serverless microservices, CI/CD automation, and tech stack audits from Anavya Infotech.",
-  keywords: [
-    "technology consulting services",
-    "cloud architecture consulting",
-    "DevOps automation company",
-    "serverless architecture",
-    "modern tech stack consulting",
-    "enterprise software architecture",
-  ],
+  keywords: ["technology consulting services", "cloud architecture consulting", "DevOps automation company"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/technology",
   },

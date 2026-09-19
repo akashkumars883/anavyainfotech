@@ -9,13 +9,7 @@ export const metadata = {
   title: "Full-Stack Web & Custom Software Development Company",
   description:
     "Full-stack custom web software engineering, modern JS frameworks, cloud microservices backends, and robust API development from Anavya Infotech.",
-  keywords: [
-    "full stack development company",
-    "custom software development",
-    "web application engineering",
-    "scalable cloud backend development",
-    "software engineering services",
-  ],
+  keywords: ["full stack development company", "custom software development", "web application engineering"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/development",
   },

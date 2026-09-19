@@ -1,6 +1,7 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
+import SafeImage from "@/components/SafeImage";
 import { ArrowRight, CheckCircle2, Layout } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
@@ -8,8 +9,7 @@ export const metadata = {
   title: "High-Converting Landing Page Design & Development | Anavya Infotech",
   description:
     "Conversion-focused landing pages for ad campaigns, product launches & lead generation. Fast-loading, A/B testable, built for India & USA marketing teams.",
-  keywords:
-    "landing page design services, high converting landing pages, Next.js landing page development, CRO landing page agency, lead generation landing page, PPC landing page design",
+  keywords: "landing page design services, high converting landing pages, Next.js landing page development",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/landing-pages",
   },
@@ -57,10 +57,10 @@ export default function ServicePage() {
   ];
 
   const processSteps = [
-    { num: "01", title: "Discover", desc: "Understand your offer, audience, and traffic source." },
-    { num: "02", title: "Architecture", desc: "Wireframe and copy structured around one conversion goal." },
-    { num: "03", title: "Build & Sync", desc: "Build, integrate tracking, and connect to your CRM/WhatsApp/email." },
-    { num: "04", title: "Launch & Iterate", desc: "Launch and support A/B test iterations." },
+    { num: "01", title: "Offer & Audience Discovery", desc: "Understand your offer, audience, and traffic source to align messaging." },
+    { num: "02", title: "Conversion Architecture Wireframing", desc: "Wireframe and copy structured tightly around one primary conversion goal." },
+    { num: "03", title: "High-Speed Development & Tracking", desc: "Build, integrate CRM/tracking, and optimize for sub-2-second load times." },
+    { num: "04", title: "A/B Testing & Iteration", desc: "Launch and support continuous A/B testing for higher conversion rates." },
   ];
 
   return (
@@ -71,25 +71,34 @@ export default function ServicePage() {
       />
 
       {/* Header Area */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Landing Pages", href: "/services/landing-pages" }]} />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <Layout className="h-3.5 w-3.5 text-blue-700" /> Landing Page Development
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Landing Pages", href: "/services/landing-pages" }]} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600 shadow-xs">
+              <Layout className="h-3.5 w-3.5 text-blue-700" /> Landing Page Development
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
+              High-Converting Landing Page Design Services
+            </h1>
+            <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
+              A landing page has one job: convert. Anavya Infotech designs and builds high-converting landing pages for paid ad campaigns, product launches, and lead-generation funnels — pages engineered around a single clear action, loaded in under two seconds, and structured to match exactly what your ad promised.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Get a Landing Page Quote → <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Landing Pages Built to Convert Clicks Into Leads
-          </h1>
-          <p className="text-base sm:text-lg text-stone-600 font-light max-w-4xl leading-relaxed">
-            A landing page has one job: convert. Anavya Infotech designs and builds high-converting landing pages for paid ad campaigns, product launches, and lead-generation funnels — pages engineered around a single clear action, loaded in under two seconds, and structured to match exactly what your ad promised.
-          </p>
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
-            >
-              Get a Landing Page Quote → <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
+            <SafeImage
+              src="/growth-illustration.jpg"
+              alt="High Converting Landing Page Design"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply rounded-md shadow-sm border border-stone-200"
+            />
           </div>
         </div>
       </section>

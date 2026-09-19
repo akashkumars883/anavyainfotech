@@ -1,6 +1,7 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
+import SafeImage from "@/components/SafeImage";
 import { ArrowRight, CheckCircle2, Code } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
@@ -8,8 +9,7 @@ export const metadata = {
   title: "Custom Web Application Development Company | India & USA | Anavya Infotech",
   description:
     "We build scalable custom web applications — SaaS platforms, portals, dashboards & internal tools — for businesses in India, Delhi NCR & the USA. React/Next.js engineering.",
-  keywords:
-    "custom web application development, SaaS platform development India, custom portal development, React Next.js web application company, internal operations software",
+  keywords: "custom web application development, SaaS platform development India, custom portal development",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/web-applications",
   },
@@ -62,10 +62,10 @@ export default function ServicePage() {
   ];
 
   const processSteps = [
-    { num: "01", title: "Discover & Plan", desc: "Technical scoping, database schema, and architecture blueprint." },
-    { num: "02", title: "Architecture & Design", desc: "UI mockups and system diagrams." },
-    { num: "03", title: "Agile Development", desc: "Sprint-based builds with regular demos." },
-    { num: "04", title: "Optimize & Launch", desc: "Load testing, security validation, and deployment." },
+    { num: "01", title: "Discovery & Architecture Planning", desc: "Technical scoping, database schema, and architecture blueprint." },
+    { num: "02", title: "UI/UX Design & Prototyping", desc: "UI mockups and system diagrams tailored for application workflows." },
+    { num: "03", title: "Agile Web App Development", desc: "Sprint-based React/Next.js and Node.js builds with regular demos." },
+    { num: "04", title: "QA Testing & Cloud Deployment", desc: "Load testing, security validation, and scalable AWS/Vercel deployment." },
   ];
 
   return (
@@ -76,28 +76,34 @@ export default function ServicePage() {
       />
 
       {/* Hero Header Area */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Web Applications", href: "/services/web-applications" }]} />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <Code className="h-3.5 w-3.5 text-blue-700" /> Web Application Development
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "Web Applications", href: "/services/web-applications" }]} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600 shadow-xs">
+              <Code className="h-3.5 w-3.5 text-blue-700" /> Web Application Development
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
+              Custom Web Application Development Company
+            </h1>
+            <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
+              When off-the-shelf software can't keep up with how your business actually operates, a custom web application closes the gap. Anavya Infotech designs and engineers web applications — customer portals, SaaS products, internal operations tools, booking systems, and data dashboards — built on modern, scalable architecture and owned entirely by you.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Discuss Your Web Application → <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Custom Web Application Development for Growing Businesses
-          </h1>
-          <p className="text-base sm:text-lg text-stone-600 font-light max-w-4xl leading-relaxed">
-            When off-the-shelf software can't keep up with how your business actually operates, a custom web application closes the gap. Anavya Infotech designs and engineers web applications — customer portals, SaaS products, internal operations tools, booking systems, and data dashboards — built on modern, scalable architecture and owned entirely by you.
-          </p>
-          <p className="text-sm sm:text-base text-stone-600 font-light max-w-4xl leading-relaxed">
-            We've shipped production web applications like <Link href="/case-studies/automixa-ai" className="text-blue-700 underline">Automixa AI</Link> (an Instagram automation platform processing real-time Meta Graph API webhooks) and <Link href="/case-studies/money-capital-finance" className="text-blue-700 underline">Money Capital Finance's</Link> loan-eligibility portal with live EMI calculators — so we understand what it takes to build software real users depend on daily, not just a demo.
-          </p>
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
-            >
-              Discuss Your Web Application → <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
+            <SafeImage
+              src="/development-illustration.jpg"
+              alt="Custom Web Application Development"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply rounded-md shadow-sm border border-stone-200"
+            />
           </div>
         </div>
       </section>

@@ -8,14 +8,7 @@ export const metadata = {
   title: "Custom API Integration & Microservices Engineering Services",
   description:
     "Connect legacy software, SaaS APIs, payment portals, and microservices with secure REST and GraphQL API integration services from Anavya Infotech.",
-  keywords: [
-    "API integration services",
-    "custom REST API development",
-    "GraphQL API development",
-    "microservices architecture",
-    "API middleware integration",
-    "payment gateway integration",
-  ],
+  keywords: ["API integration services", "custom REST API development", "GraphQL API development"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/api-integration",
   },

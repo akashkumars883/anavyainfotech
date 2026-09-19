@@ -8,8 +8,7 @@ export const metadata = {
   title: "E-Commerce SEO Agency in India | Best E-Commerce SEO Services & Company",
   description:
     "Anavya Infotech is the best ecommerce SEO agency in India. We offer specialized ecommerce SEO services, product page optimization, category rank growth, and schema markup for Shopify, Next.js, and WooCommerce storefronts.",
-  keywords:
-    "ecommerce SEO agency, ecommerce SEO services, ecommerce SEO company, ecommerce SEO agency in India, best ecommerce SEO agency, ecommerce development company in India",
+  keywords: "ecommerce SEO agency, ecommerce SEO services, ecommerce SEO company",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/ecommerce-seo",
   },
