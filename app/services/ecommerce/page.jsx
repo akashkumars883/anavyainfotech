@@ -120,15 +120,20 @@ export default function EcommerceServicePage() {
         </div>
       </section>
 
-      {/* Why Headless Over a Standard Theme */}
-      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            Why Headless Over a Standard Theme
+      {/* EEAT Content Section */}
+      <section className="py-12 md:py-16 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-4xl mx-auto space-y-8 text-left">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
+            Authoritative Headless E-Commerce Development
           </h2>
-          <p className="text-sm md:text-base text-stone-600 font-light max-w-4xl leading-relaxed">
-            A headless build separates your storefront (what customers see) from your commerce backend, which means near-instant page loads, full design freedom, and no compromise between marketing pages and product pages — a major SEO and conversion advantage for D2C and growing e-commerce brands.
-          </p>
+          <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
+            <p>
+              In an era where page speed directly dictates revenue, relying on heavy, monolithic templates is no longer viable. As a leading <strong>headless e-commerce development company</strong>, Anavya Infotech engineers decoupling solutions that separate your customer-facing frontend from the backend database. Whether you need a <strong>custom Shopify storefront Next.js</strong> architecture or a bespoke commerce engine, our decoupled builds provide near-instant page loads, total design freedom, and a massive conversion advantage.
+            </p>
+            <p>
+              We are recognized as a trusted <strong>D2C e-commerce agency in India and the USA</strong> because our technical executions directly increase bottom-line sales. Our engineering teams rigorously apply EEAT standards to ensure your storefront is not only visually stunning but technically flawless. By prioritizing Core Web Vitals, semantic schema structures, and secure payment integrations, we deliver e-commerce solutions that scale seamlessly during high-traffic sales events and dominate search engine results.
+            </p>
+          </div>
         </div>
       </section>
 

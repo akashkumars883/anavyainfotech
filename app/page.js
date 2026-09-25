@@ -20,27 +20,27 @@ const HOMEPAGE_FAQS = [
   {
     question: "What core services does Anavya Infotech specialize in?",
     answer:
-      "Anavya Infotech specializes in high-converting custom website development, enterprise web applications, SEO services (Local SEO, E-Commerce SEO, Technical SEO), White Label SEO Reseller programs, AI chatbot integration, and custom CRM software development for businesses across India, Delhi NCR, Noida, USA, and global markets.",
+      "We specialize in custom website development, enterprise web applications, SEO (Local, E-Commerce, and Technical SEO), white-label SEO reseller programs for agencies, AI chatbot integration, and custom CRM software — serving clients across India, Delhi NCR, Noida, Gurgaon, and the USA.",
   },
   {
-    question: "How long does a typical web development or digital marketing campaign take?",
+    question: "How long does a typical web development or SEO campaign take?",
     answer:
-      "Custom business website development typically takes 2 to 4 weeks depending on feature complexity. Comprehensive SEO and digital marketing campaigns begin delivering measurable organic growth, keyword rankings, and lead traffic within 30 to 90 days.",
+      "A standard business website typically takes 3–5 weeks from kickoff to launch. SEO campaigns are ongoing — most clients start seeing measurable ranking movement within 60–90 days, with compounding results after 6 months.",
   },
   {
     question: "Do you offer white-label SEO reseller programs for agencies?",
     answer:
-      "Yes, we provide confidential White Label SEO and SEO Reseller services for digital agencies worldwide. We handle technical audits, link building, content creation, and monthly reporting under your brand agency umbrella.",
+      "Yes. We run fully white-labeled technical and local SEO fulfillment for marketing agencies who want to offer SEO to their clients without building an in-house team.",
   },
   {
     question: "How do you guarantee fast website load speeds and Core Web Vitals?",
     answer:
-      "We build applications using Next.js App Router, serverless architecture, optimized image pipelines, and clean CSS styling to ensure sub-second page rendering and perfect Lighthouse Core Web Vitals scores.",
+      "We build on performance-first frameworks (Next.js/React), optimize image delivery, minimize third-party scripts, and run Core Web Vitals audits before every launch — not after.",
   },
   {
-    question: "What is the onboarding process to start a project with Anavya Infotech?",
+    question: "What is the onboarding process to start a project?",
     answer:
-      "Simply reach out through our contact form or consultation link. We schedule a discovery call, analyze your technical requirements, provide a transparent fixed-price proposal, and assign a dedicated project manager to execute your roadmap.",
+      "It starts with a strategy call to understand your business goals, followed by a technical blueprint and proposal within 48 hours. Once approved, you're assigned a dedicated project lead — not a rotating support ticket.",
   },
 ];
 

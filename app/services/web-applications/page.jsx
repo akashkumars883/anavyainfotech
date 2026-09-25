@@ -125,15 +125,20 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Why It Matters */}
-      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            Why It Matters
+      {/* EEAT Content Section */}
+      <section className="py-12 md:py-16 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-4xl mx-auto space-y-8 text-left">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
+            Authoritative Custom Web Application Development
           </h2>
-          <p className="text-sm md:text-base text-stone-600 font-light max-w-4xl leading-relaxed">
-            Generic tools force your team to adapt to the software. A custom web application is built around how your business actually works — which means fewer manual workarounds, fewer spreadsheets, and fewer errors. For fast-growing companies in Delhi NCR and the USA, that difference compounds fast: less time spent on operations, more time spent on customers.
-          </p>
+          <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
+            <p>
+              In today's highly competitive digital landscape, relying on generic, off-the-shelf software often forces your team to adapt to rigid workflows. Partnering with a specialized <strong>custom web application development company</strong> allows you to build software around how your business actually operates. At Anavya Infotech, we bring years of demonstrated technical expertise to engineer scalable solutions. Whether you require robust <strong>SaaS platform development in India</strong> or complex <strong>custom portal development</strong> for your enterprise, our agile methodology ensures measurable business outcomes and operational efficiency.
+            </p>
+            <p>
+              Our authority in the field is built on a foundation of technical excellence and rigorous security standards. We specialize in React, Next.js, and Node.js architectures, ensuring your application is not only lightning-fast but also highly secure against modern threats. By adhering to strict data privacy compliance and utilizing modern cloud infrastructures like AWS, we deliver enterprise-grade tools that are resilient and future-proof. We don't just write code; we provide strategic technology consulting built on trust and proven results.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
+import Blog from "@/components/Blog";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
 import { LOCATIONS_DATA } from "@/lib/locationsData";
@@ -130,12 +131,31 @@ export default async function LocationPage({ params }) {
         </div>
       </section>
 
+      {/* EEAT Content Section */}
+      {location.eeatContent && (
+        <section className="py-12 md:py-16 bg-white border-b border-stone-100 px-6">
+          <div className="max-w-4xl mx-auto space-y-8 text-left">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
+              {location.eeatContent.heading}
+            </h2>
+            <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
+              {location.eeatContent.paragraphs.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ Section */}
       <FaqSection
         title={`Questions about working with us in ${location.name}`}
         subtitle="We ensure transparent communication and scalable solutions for all our regional and international clients."
         faqs={location.faqs}
       />
+
+      {/* Related Blog Posts */}
+      <Blog />
 
       {/* Contact Trigger Block */}
       <section className="py-10 bg-stone-50 px-6">

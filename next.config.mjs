@@ -77,6 +77,19 @@ const nextConfig = {
         destination: "/terms-of-service",
         permanent: true,
       },
+      // 301 Redirects for Old Location URLs to New SEO URLs
+      { source: "/locations/delhi-ncr", destination: "/locations/digital-marketing-agency-delhi-ncr", permanent: true },
+      { source: "/locations/noida", destination: "/locations/web-development-company-in-noida", permanent: true },
+      { source: "/locations/gurgaon", destination: "/locations/seo-agency-in-gurgaon", permanent: true },
+      { source: "/locations/faridabad", destination: "/locations/custom-software-development-faridabad", permanent: true },
+      { source: "/locations/mumbai", destination: "/locations/it-solutions-company-in-mumbai", permanent: true },
+      { source: "/locations/bangalore", destination: "/locations/custom-software-and-ai-in-bangalore", permanent: true },
+      { source: "/locations/usa", destination: "/locations/offshore-software-development-usa", permanent: true },
+      { source: "/locations/uk", destination: "/locations/web-development-outsourcing-uk", permanent: true },
+      { source: "/locations/uae", destination: "/locations/e-commerce-development-in-uae", permanent: true },
+      { source: "/locations/australia", destination: "/locations/hire-dedicated-developers-australia", permanent: true },
+      { source: "/locations/canada", destination: "/locations/seo-and-tech-partner-canada", permanent: true },
+      { source: "/locations/singapore", destination: "/locations/offshore-web-development-singapore", permanent: true },
     ];
   },
   async headers() {

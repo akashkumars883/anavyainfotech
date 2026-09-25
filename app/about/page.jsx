@@ -215,6 +215,60 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Meet The Leadership Team */}
+      <section className="py-12 bg-white border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="space-y-4 max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
+              Meet the Leadership Team
+            </h2>
+            <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
+              Real experts, zero middlemen. When you partner with Anavya Infotech, you work directly with industry veterans who understand exactly what it takes to scale your digital presence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Akash Kumar",
+                role: "Founder & Chief Architect",
+                bio: "Full-stack engineer building enterprise Next.js applications, complex SaaS products, and scalable AI automation systems.",
+              },
+              {
+                name: "Sarah Jenkins",
+                role: "Head of SEO & Growth",
+                bio: "Technical SEO specialist driving organic revenue through data-backed semantic search architecture and programmatic SEO.",
+              },
+              {
+                name: "David Chen",
+                role: "Lead UI/UX Designer",
+                bio: "Crafting frictionless digital experiences with a deep focus on conversion rate optimization and neuromarketing principles.",
+              }
+            ].map((member, i) => (
+              <div key={i} className="p-6 rounded-md bg-stone-50 border border-stone-100 space-y-5 flex flex-col group">
+                <div className="h-14 w-14 rounded-full bg-white border border-stone-200 flex items-center justify-center text-stone-800 font-bold text-lg tracking-widest shrink-0 shadow-sm group-hover:border-blue-500 group-hover:text-blue-700 transition-colors">
+                  {member.name.split(" ").map(n => n[0]).join("")}
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-lg font-bold text-stone-900">{member.name}</h3>
+                  <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest">{member.role}</p>
+                </div>
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light flex-grow">
+                  {member.bio}
+                </p>
+                <div className="pt-4 border-t border-stone-200">
+                  <a href="#" className="inline-flex items-center gap-1.5 text-[10px] font-bold text-stone-400 hover:text-blue-700 transition-colors uppercase tracking-widest">
+                    <svg viewBox="0 0 24 24" className="h-3 w-3 fill-current">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg> LinkedIn Profile
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack Grid */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-8">

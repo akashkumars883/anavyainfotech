@@ -22,11 +22,11 @@ export const metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "IT Solutions, AI & Digital Marketing Company in India | Anavya Infotech",
+    default: "Custom Software & AI Development Company in Delhi NCR | Anavya Infotech",
   },
 
   description:
-    "Anavya Infotech is a full-spectrum technology and growth partner in India, Delhi NCR & USA — website development, SEO, AI automation, data analytics, and cloud solutions under one roof.",
+    "Anavya Infotech builds custom software, AI automation, and SEO-driven growth systems for businesses across Delhi NCR, Noida, Gurgaon & the USA. 100+ projects delivered.",
 
   keywords: [
     "digital marketing agency in India",
@@ -52,9 +52,9 @@ export const metadata = {
     locale: "en_IN",
     url: BASE_URL,
     siteName: "Anavya Infotech",
-    title: "IT Solutions, AI & Digital Marketing Company in India | Anavya Infotech",
+    title: "Custom Software & AI Development Company in Delhi NCR | Anavya Infotech",
     description:
-      "Anavya Infotech is a full-spectrum technology and growth partner in India, Delhi NCR & USA — website development, SEO, AI automation, data analytics, and cloud solutions under one roof.",
+      "Anavya Infotech builds custom software, AI automation, and SEO-driven growth systems for businesses across Delhi NCR, Noida, Gurgaon & the USA. 100+ projects delivered.",
     images: [
       {
         url: `${BASE_URL}/og-image.jpg`,
@@ -70,9 +70,9 @@ export const metadata = {
     card: "summary_large_image",
     site: "@anavyainfotech",
     creator: "@anavyainfotech",
-    title: "IT Solutions, AI & Digital Marketing Company in India | Anavya Infotech",
+    title: "Custom Software & AI Development Company in Delhi NCR | Anavya Infotech",
     description:
-      "Anavya Infotech is a full-spectrum technology and growth partner in India, Delhi NCR & USA — website development, SEO, AI automation, data analytics, and cloud solutions under one roof.",
+      "Anavya Infotech builds custom software, AI automation, and SEO-driven growth systems for businesses across Delhi NCR, Noida, Gurgaon & the USA. 100+ projects delivered.",
     images: [`${BASE_URL}/og-image.jpg`],
   },
 

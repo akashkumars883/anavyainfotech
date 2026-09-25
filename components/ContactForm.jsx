@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Script from "next/script";
 import { Send, ArrowRight, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ export default function ContactForm() {
     email: "",
     service: "development",
     message: "",
+    consent: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -39,7 +41,7 @@ export default function ContactForm() {
 
       if (res.ok && data.success) {
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", service: "development", message: "" });
+        setFormData({ name: "", email: "", service: "development", message: "", consent: false });
       } else {
         alert(data.error || "Failed to submit request. Please try again.");
       }
@@ -162,6 +164,21 @@ export default function ContactForm() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-blue-600 transition-colors resize-none"
                   />
+                </div>
+
+                {/* DPDP Consent Checkbox */}
+                <div className="flex items-start gap-2 pt-2">
+                  <input
+                    type="checkbox"
+                    id="form-consent"
+                    required
+                    checked={formData.consent}
+                    onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                    className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded border-stone-300 text-blue-600 focus:ring-blue-600 cursor-pointer"
+                  />
+                  <label htmlFor="form-consent" className="text-[10px] sm:text-xs text-stone-500 font-light leading-snug cursor-pointer">
+                    I agree to the <Link href="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</Link> and consent to my data being processed securely according to the DPDP Act. <span className="text-red-500">*</span>
+                  </label>
                 </div>
 
                 {/* Cloudflare Turnstile Widget Container */}

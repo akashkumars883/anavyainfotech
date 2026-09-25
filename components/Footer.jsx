@@ -67,15 +67,18 @@ export default function Footer() {
       { name: "Get In Touch", href: "/contact" },
     ],
     locations: [
-      { name: "Delhi NCR", href: "/locations/delhi-ncr" },
-      { name: "Faridabad", href: "/locations/faridabad" },
-      { name: "Noida", href: "/locations/noida" },
-      { name: "Gurgaon", href: "/locations/gurgaon" },
-      { name: "United States (USA)", href: "/locations/usa" },
-      { name: "United Kingdom (UK)", href: "/locations/uk" },
-      { name: "UAE & Middle East", href: "/locations/uae" },
-      { name: "Australia", href: "/locations/australia" },
-      { name: "Canada", href: "/locations/canada" },
+      { name: "Digital Marketing Agency Delhi NCR", href: "/locations/digital-marketing-agency-delhi-ncr" },
+      { name: "Web Development Company in Noida", href: "/locations/web-development-company-in-noida" },
+      { name: "SEO Agency in Gurgaon", href: "/locations/seo-agency-in-gurgaon" },
+      { name: "Custom Software Development Faridabad", href: "/locations/custom-software-development-faridabad" },
+      { name: "IT Solutions Company in Mumbai", href: "/locations/it-solutions-company-in-mumbai" },
+      { name: "Custom Software & AI in Bangalore", href: "/locations/custom-software-and-ai-in-bangalore" },
+      { name: "Offshore Software Development USA", href: "/locations/offshore-software-development-usa" },
+      { name: "Web Development Outsourcing UK", href: "/locations/web-development-outsourcing-uk" },
+      { name: "E-Commerce Development in UAE", href: "/locations/e-commerce-development-in-uae" },
+      { name: "Hire Dedicated Developers Australia", href: "/locations/hire-dedicated-developers-australia" },
+      { name: "SEO & Tech Partner Canada", href: "/locations/seo-and-tech-partner-canada" },
+      { name: "Offshore Web Development Singapore", href: "/locations/offshore-web-development-singapore" },
     ],
   };
 
@@ -84,10 +87,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
 
         {/* Top Section: Brand + Navigation Links */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-10 sm:gap-8">
 
           {/* Brand Info Column */}
-          <div className="col-span-2 space-y-5 text-left">
+          <div className="col-span-2 md:col-span-4 lg:col-span-2 space-y-5 text-left">
             <Link href="/" className="inline-flex items-center gap-3 group">
               <Image
                 src="/logo.png"
@@ -298,11 +301,11 @@ export default function Footer() {
           <h4 className="text-xs font-bold text-white uppercase tracking-widest">
             Locations We Serve
           </h4>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-300 font-normal">
+          <div className="flex flex-wrap gap-y-2 gap-x-1 text-xs text-zinc-300 font-normal leading-relaxed">
             {links.locations.map((loc, i) => (
-              <span key={i} className="flex items-center gap-4">
+              <span key={i} className="inline-block">
                 <Link href={loc.href} className="hover:text-white transition-colors">{loc.name}</Link>
-                {i < links.locations.length - 1 && <span className="text-zinc-600">•</span>}
+                {i < links.locations.length - 1 && <span className="text-zinc-600 mx-2 sm:mx-3">•</span>}
               </span>
             ))}
           </div>

@@ -184,6 +184,23 @@ export default function ServicePage() {
         </div>
       </section>
 
+      {/* EEAT Content Section */}
+      <section className="py-12 md:py-16 bg-white border-b border-stone-100 px-6">
+        <div className="max-w-4xl mx-auto space-y-8 text-left">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
+            Authoritative Website AI Chatbot Development
+          </h2>
+          <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
+            <p>
+              In the modern digital economy, a website that only operates during business hours is actively losing revenue. As a specialized <strong>website AI chatbot development</strong> company, Anavya Infotech engineers intelligent, autonomous agents that act as your 24/7 digital sales team. We don't just provide a generic chat widget; we deploy an advanced <strong>AI chatbot widget for websites</strong> built on sophisticated RAG (Retrieval-Augmented Generation) technology that understands the nuanced context of your specific business offerings.
+            </p>
+            <p>
+              Our authority in AI integration ensures that your <strong>Anaya AI Assistant</strong> operates with extreme precision and security. By strictly adhering to data privacy protocols, we guarantee that visitor interactions are secure and lead capture is compliant with global standards. Businesses trust us to bridge the gap between AI innovation and practical lead generation, transforming passive traffic into qualified, actionable sales opportunities without requiring any coding expertise from your end.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* How Our Website AI Chatbot Works - Exact 4-Step Process */}
       <section className="py-14 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-10">

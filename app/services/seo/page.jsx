@@ -124,15 +124,20 @@ export default function SeoServicePage() {
         </div>
       </section>
 
-      {/* Why Businesses Choose Us */}
-      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            Why Businesses Choose Us Over Freelancers or Generic Agencies
+      {/* EEAT Content Section */}
+      <section className="py-12 md:py-16 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-4xl mx-auto space-y-8 text-left">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
+            Authoritative Search Engine Optimization Services
           </h2>
-          <p className="text-sm md:text-base text-stone-600 font-light max-w-4xl leading-relaxed">
-            Most "SEO packages" sold in India are backlink-spam templates recycled across every client. We treat SEO as engineering: every recommendation is backed by a technical audit of your actual site, and every content piece is mapped to a keyword with real commercial intent. We also run <Link href="/blog/white-label-seo-reseller-program-agency-scaling-guide" className="text-blue-700 underline">White Label SEO Reseller programs</Link> for agencies that want to resell SEO without building an in-house team.
-          </p>
+          <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
+            <p>
+              In a digital landscape flooded with generic marketing tactics, true visibility requires technical mastery. As a premier <strong>SEO company in India</strong>, Anavya Infotech goes beyond outdated backlink spam. We treat SEO as a structural engineering problem. Whether you need a comprehensive technical SEO audit to fix underlying crawl issues or are looking for the <strong>best SEO agency in Delhi NCR</strong> to drive localized B2B leads, our data-backed methodologies ensure sustainable, compounding organic growth.
+            </p>
+            <p>
+              Our authority stems from our transparent, ROI-focused approach. We do not guarantee arbitrary rankings; we guarantee measurable traffic and conversions. By leveraging deep expertise in Next.js/React technical optimization and Semantic Web principles, we execute <strong>search engine optimization services</strong> that align perfectly with Google's EEAT guidelines. Additionally, we are a trusted partner for global marketers, running highly successful <Link href="/blog/white-label-seo-reseller-program-agency-scaling-guide" className="text-blue-700 underline font-medium">White Label SEO Reseller programs</Link> for agencies that demand elite fulfillment.
+            </p>
+          </div>
         </div>
       </section>
 

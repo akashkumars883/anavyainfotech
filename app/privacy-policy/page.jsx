@@ -65,13 +65,13 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">
-              1. Introduction
+              1. Introduction & Compliance
             </h2>
             <p>
               Anavya Infotech (&quot;Anavya Infotech,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is a digital marketing agency and website development company based in India, serving clients across India, Delhi NCR, Noida, the USA, and globally. We are committed to protecting the privacy of visitors to our website, <a href="https://www.anavyainfotech.com" className="text-blue-700 hover:underline">www.anavyainfotech.com</a> (the &quot;Website&quot;), and of our clients and prospective clients.
             </p>
             <p>
-              This Privacy Policy explains what information we collect, how we use and protect it, and what choices you have regarding your information. By using our Website or submitting information to us, you agree to the practices described in this Privacy Policy.
+              This Privacy Policy explains what information we collect, how we use and protect it, and what choices you have regarding your information. We operate in compliance with the Digital Personal Data Protection Act, 2023 (DPDP Act) of India, and other relevant global data protection frameworks. By using our Website or submitting information to us, you agree to the practices described in this Privacy Policy.
             </p>
           </section>
 
