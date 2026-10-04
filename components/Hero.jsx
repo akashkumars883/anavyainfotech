@@ -27,7 +27,7 @@ export default function Hero() {
       {/* Soft Pure Ambient Deep Blue Radial Blur & Floating 3D Geometric Accent Shapes */}
       <div className="absolute inset-0 bg-white pointer-events-none overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-700/10 blur-[150px] rounded-full pointer-events-none animate-pulse-slow" />
-        
+
         {/* Floating Ambient Glowing Rings & Glass Geometric Shapes */}
         <div className="absolute -top-12 -left-12 w-64 h-64 rounded-full border border-blue-600/15 bg-blue-500/5 blur-sm animate-float-slow pointer-events-none" />
         <div className="absolute top-1/2 -right-16 w-80 h-80 rounded-full border border-blue-700/10 bg-gradient-to-tr from-blue-600/10 to-transparent blur-md animate-float pointer-events-none" />
@@ -97,14 +97,13 @@ export default function Hero() {
             className="pt-4 border-t border-stone-100 flex flex-wrap items-center gap-3 text-xs font-medium text-stone-600"
           >
             <span className="flex items-center gap-2 px-3.5 py-1.5 bg-blue-50/80 border border-blue-200 rounded-md font-bold text-blue-950 shadow-2xs">
-              <img src="/meta-logo.svg" alt="Meta Logo" className="h-4 w-4 object-contain shrink-0" />
-              <span>Meta Business Partner</span>
+              <span>Enterprise SLA</span>
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
-              <CheckCircle2 className="h-3.5 w-3.5 text-blue-700" /> 100+ Projects Delivered
+              <CheckCircle2 className="h-3.5 w-3.5 text-blue-700" /> SOC2/GDPR Compliant
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
-              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Enterprise SLA &amp; 100% Code Ownership
+              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> 100% Code Ownership
             </span>
           </motion.div>
         </div>

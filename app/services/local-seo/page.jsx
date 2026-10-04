@@ -47,7 +47,7 @@ const serviceSchemas = createServiceSchema({
 });
 
 export default function LocalSeoServicePage() {
-  
+
   return (
     <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
       <script

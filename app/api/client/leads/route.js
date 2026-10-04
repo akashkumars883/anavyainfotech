@@ -64,17 +64,17 @@ export async function GET(req) {
       console.warn("Turso client leads notice:", tErr.message);
     }
 
-    // Filter leads to strictly return Chatbot Widget captured leads
+    // Strict Tenant Isolation: Filter leads to strictly return ONLY the client's own leads
     const chatbotOnlyLeads = siteLeads.filter((l) => {
       const s = (l.site_id || "").toLowerCase();
-      const m = (l.message || "").toLowerCase();
-      const p = (l.phone_email || "").toLowerCase();
 
-      // Check if lead was captured via chatbot widget
-      const isChatbotSource = s.includes("anavya") || s.includes("chatbot") || s.includes("widget") || m.includes("chatbot") || m.includes("contact:");
-      const matchesTenant = cleanSiteId === "anavya-infotech" || s.includes(cleanSiteId) || cleanSiteId.includes(s) || cleanSiteId === "demo";
-
-      return isChatbotSource || matchesTenant;
+      // If it's the main Anavya admin/demo account, show all leads for analytics
+      if (cleanSiteId === "anavya-infotech" || cleanSiteId === "demo" || cleanSiteId === "admin") {
+         return true;
+      }
+      
+      // Strict matching: Only show leads that were captured for this specific client's siteId!
+      return s === cleanSiteId;
     });
 
     // Deduplicate leads

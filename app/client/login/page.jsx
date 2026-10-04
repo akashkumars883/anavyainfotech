@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Bot, Mail, Lock, User, Globe, ArrowRight } from "lucide-react";
+import { Bot, Mail, Lock, User, Globe, ArrowRight, Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function ClientLoginPage() {
@@ -9,6 +9,7 @@ export default function ClientLoginPage() {
   const [isRegister, setIsRegister] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
   const [siteUrl, setSiteUrl] = useState("");
   const [loading, setLoading] = useState(false);
@@ -80,24 +81,30 @@ export default function ClientLoginPage() {
         {/* Form Container - Flat Clean White Card, Border Only, NO Shadow */}
         <div className="bg-white border border-stone-200 rounded-md p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
-            {isRegister && (
-              <div className="space-y-1">
-                <label className="text-xs font-medium text-stone-700">
-                  Full Name / Company
-                </label>
-                <div className="relative">
-                  <User className="h-4 w-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                  <input
-                    type="text"
-                    required
-                    placeholder="John Doe"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full pl-9 pr-3 py-2.5 rounded-md bg-stone-50 border border-stone-200 text-xs text-stone-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                  />
+            <div
+              className={`grid transition-all duration-300 ease-in-out ${
+                isRegister ? "grid-rows-[1fr] opacity-100 mb-4" : "grid-rows-[0fr] opacity-0 mb-0"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <div className="space-y-1">
+                  <label className="text-xs font-medium text-stone-700">
+                    Full Name / Company
+                  </label>
+                  <div className="relative">
+                    <User className="h-4 w-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      required={isRegister}
+                      placeholder="John Doe"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full pl-9 pr-3 py-2.5 rounded-md bg-stone-50 border border-stone-200 text-xs text-stone-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
+                    />
+                  </div>
                 </div>
               </div>
-            )}
+            </div>
 
             <div className="space-y-1">
               <label className="text-xs font-medium text-stone-700">
@@ -123,33 +130,46 @@ export default function ClientLoginPage() {
               <div className="relative">
                 <Lock className="h-4 w-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   required
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2.5 rounded-md bg-stone-50 border border-stone-200 text-xs text-stone-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
+                  className="w-full pl-9 pr-10 py-2.5 rounded-md bg-stone-50 border border-stone-200 text-xs text-stone-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 focus:outline-none cursor-pointer"
+                >
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
               </div>
             </div>
 
-            {isRegister && (
-              <div className="space-y-1">
-                <label className="text-xs font-medium text-stone-700">
-                  Website URL (Optional)
-                </label>
-                <div className="relative">
-                  <Globe className="h-4 w-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                  <input
-                    type="text"
-                    placeholder="https://yourwebsite.com"
-                    value={siteUrl}
-                    onChange={(e) => setSiteUrl(e.target.value)}
-                    className="w-full pl-9 pr-3 py-2.5 rounded-md bg-stone-50 border border-stone-200 text-xs text-stone-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                  />
+            <div
+              className={`grid transition-all duration-300 ease-in-out ${
+                isRegister ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0 mt-0"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <div className="space-y-1">
+                  <label className="text-xs font-medium text-stone-700">
+                    Website URL (Optional)
+                  </label>
+                  <div className="relative">
+                    <Globe className="h-4 w-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      placeholder="https://yourwebsite.com"
+                      value={siteUrl}
+                      onChange={(e) => setSiteUrl(e.target.value)}
+                      className="w-full pl-9 pr-3 py-2.5 rounded-md bg-stone-50 border border-stone-200 text-xs text-stone-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
+                    />
+                  </div>
                 </div>
               </div>
-            )}
+            </div>
 
             {error && (
               <div className="p-2.5 rounded-md bg-red-50 border border-red-200 text-red-600 text-xs">

@@ -29,14 +29,17 @@ export async function POST(req) {
     const knowledge = await getSiteKnowledge(siteId);
 
     if (!knowledge || !knowledge.pages || knowledge.pages.length === 0) {
-      return NextResponse.json({
-        response: `Hello! I am the AI assistant for ${siteId}. How can I help you regarding our services today?`,
-        siteUrl: siteId,
-      });
+      return NextResponse.json(
+        {
+          response: `Hello! I am the AI assistant for ${siteId}. How can I help you regarding our services today?`,
+          siteUrl: siteId,
+        },
+        { headers: CORS_HEADERS }
+      );
     }
 
-    // 2. Extract matching context
-    const contextText = extractRelevantContext(knowledge, message);
+    // 2. Extract matching context using Semantic Vector Search
+    const contextText = await extractRelevantContext(knowledge, message);
     const siteName = knowledge.siteUrl || siteId;
     const isAnavya = !siteId || siteId.includes("anavya") || siteId === "demo";
 
@@ -47,31 +50,8 @@ export async function POST(req) {
 
     // 4. Prepare System Prompt (Advanced Prompt Engineering)
     const currentDate = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", dateStyle: "full", timeStyle: "short" });
-    let systemPrompt = "";
-
-    if (isAnavya) {
-      systemPrompt = `You are Alex, an elite AI Growth Strategist at ${siteName}. ${visitorName ? `You are currently speaking with ${visitorName}.` : ''}
-Current Date & Time: ${currentDate}
-
-🔥 CORE BEHAVIOR RULES:
-1. BE CONCISE & HUMAN: Write 1 to 2 short sentences max. Talk like a confident, friendly human expert. NO robotic "As an AI..." phrases.
-2. FORMATTING: Use **bold** for key metrics, prices, or important terms. You may use 1 relevant emoji per response. NO long lists or tables.
-3. ANTI-HALLUCINATION: You MUST base your answers strictly on the "KNOWLEDGE CATALOG" below. If a user asks something completely unrelated to Anavya Infotech (e.g., cooking, politics, random trivia), politely decline: "I specialize only in software engineering and digital growth at Anavya Infotech. How can I help you with your digital presence?"
-4. LEAD CONVERSION: If the user asks about pricing, custom apps, hiring, or seems interested in starting a project, give a direct answer and politely invite them to connect: "Would you like our experts to call you? Please share your phone number or email!"
-
-VERIFIED KNOWLEDGE CATALOG FOR ${siteName.toUpperCase()}:
-=== KNOWLEDGE START ===
-${contextText}
-=== KNOWLEDGE END ===
-
-EXACT PRICES FOR ANAVYA:
-- Website: Starter ₹7,999, Business ₹14,999, E-Commerce ₹29,999.
-- SEO: Basic ₹9,999/mo, Plus ₹19,999/mo, Pro ₹29,999/mo.
-- Contact: Call/WhatsApp +91-6201231875.
-
-Language: Seamlessly match the user's language (English, Hinglish, or Hindi).`;
-    } else {
-      systemPrompt = `You are the official AI Support & Sales Assistant for ${siteName}. ${visitorName ? `You are currently speaking with ${visitorName}.` : ''}
+    
+    const systemPrompt = `You are the official AI Support & Sales Assistant for ${siteName}. ${visitorName ? `You are currently speaking with ${visitorName}.` : ''}
 Current Date & Time: ${currentDate}
 Website Focus: ${siteType}
 
@@ -87,7 +67,6 @@ ${contextText}
 === KNOWLEDGE END ===
 
 Language: Seamlessly match the user's language (English, Hinglish, or Hindi).`;
-    }
 
     // 5. Build OpenAI Multi-Turn Messages Array with History Context
     const formattedMessages = [{ role: "system", content: systemPrompt }];

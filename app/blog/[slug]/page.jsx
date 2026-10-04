@@ -326,7 +326,7 @@ export default async function BlogPostPage({ params }) {
 
         {/* Article Body HTML Render with Typography (.prose) */}
         <section 
-          className="prose max-w-none text-stone-800 text-base leading-relaxed font-light pt-4"
+          className="prose max-w-none text-stone-800 text-base leading-relaxed font-normal pt-4"
           dangerouslySetInnerHTML={{ __html: formattedContent }}
         />
 

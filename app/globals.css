@@ -180,7 +180,7 @@ html.lenis, html.lenis body {
 
 /* Rich Text Blog Content Typography (.prose) */
 .prose {
-  color: #374151;
+  color: inherit;
   font-size: 1.0625rem;
   line-height: 1.8;
 }
@@ -227,8 +227,8 @@ html.lenis, html.lenis body {
 .prose p {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  color: #4b5563;
-  font-weight: 350;
+  color: inherit;
+  font-weight: 400;
   line-height: 1.8;
 }
 
