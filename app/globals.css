@@ -236,6 +236,10 @@ html.lenis, html.lenis body {
   line-height: 1.8;
 }
 
+.prose p, .prose span, .prose li {
+  font-size: 1.125rem !important;
+}
+
 .prose strong, .prose b {
   font-weight: 700 !important;
   color: #09090b !important;
