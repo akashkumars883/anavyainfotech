@@ -185,6 +185,10 @@ html.lenis, html.lenis body {
   line-height: 1.8;
 }
 
+.prose, .prose * {
+  font-family: var(--font-poppins), var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif !important;
+}
+
 .prose h1 {
   font-size: 2.25rem;
   font-weight: 700;
