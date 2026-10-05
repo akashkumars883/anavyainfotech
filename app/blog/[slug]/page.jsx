@@ -75,47 +75,57 @@ function formatArticleContent(content = "") {
   // 1. Normalize line endings (\r\n -> \n)
   let formatted = String(content).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 
-  // 2. Strip any accidental <p> or <div> tags wrapping markdown syntax like <p>### Heading</p>
+  // 2. Strip inline styles added by WYSIWYG editors to force website formatting
+  formatted = formatted.replace(/ style="[^"]*"/gi, "");
+  formatted = formatted.replace(/ style='[^']*'/gi, "");
+  // Strip inline fonts
+  formatted = formatted.replace(/ face="[^"]*"/gi, "");
+  formatted = formatted.replace(/ face='[^']*'/gi, "");
+
+  // 3. Strip any accidental <p> or <div> tags wrapping markdown syntax like <p>### Heading</p>
   formatted = formatted
     .replace(/<p>\s*(####?\s+.*?)\s*<\/p>/gi, "$1")
     .replace(/<p>\s*(###?\s+.*?)\s*<\/p>/gi, "$1")
     .replace(/<p>\s*(##?\s+.*?)\s*<\/p>/gi, "$1")
     .replace(/<p>\s*(#?\s+.*?)\s*<\/p>/gi, "$1");
 
-  // 3. Code blocks ```
+  // 4. Code blocks ```
   formatted = formatted.replace(/```([a-z]*)\n([\s\S]*?)```/gi, (match, lang, code) => {
     return `<pre><code class="language-${lang || 'text'}">${code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
   });
 
-  // 4. Headings (# H1, ## H2, ### H3, #### H4) with explicit heading classes
+  // 5. Headings (# H1, ## H2, ### H3, #### H4) with explicit heading classes
   formatted = formatted
     .replace(/^\s*####\s+(.*$)/gm, '<h4 class="text-lg font-bold text-stone-900 mt-6 mb-2">$1</h4>')
     .replace(/^\s*###\s+(.*$)/gm, '<h3 class="text-xl font-bold text-stone-900 mt-6 mb-2">$1</h3>')
     .replace(/^\s*##\s+(.*$)/gm, '<h2 class="text-2xl font-bold text-stone-900 mt-8 mb-3 pb-2 border-b border-stone-200">$1</h2>')
     .replace(/^\s*#\s+(.*$)/gm, '<h1 class="text-3xl font-bold text-stone-900 mt-8 mb-4">$1</h1>');
 
-  // 5. Bold & Italic (using explicit font-bold styling)
+  // 6. Bold & Italic (using explicit font-bold styling)
   formatted = formatted
     .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-stone-900">$1</strong>')
     .replace(/__(.*?)__/g, '<strong class="font-bold text-stone-900">$1</strong>')
     .replace(/\*([^\*]+)\*/g, '<em class="italic">$1</em>')
     .replace(/_([^_]+)_/g, '<em class="italic">$1</em>');
 
-  // 6. Blockquotes (> text)
+  // 7. Blockquotes (> text)
   formatted = formatted.replace(/^\s*>\s*(.*$)/gm, '<blockquote class="border-l-4 border-blue-700 pl-4 py-2 my-4 italic bg-blue-50/50 rounded-r-md text-stone-700">$1</blockquote>');
 
-  // 7. Images ![alt](url)
+  // 8. Images ![alt](url)
   formatted = formatted.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-md my-6 max-w-full h-auto shadow-md border border-stone-200" />');
 
-  // 8. Links [text](url)
-  formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline font-semibold hover:text-blue-900">$1</a>');
+  // 9. Links [text](url)
+  formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-semibold hover:text-blue-900">$1</a>');
 
-  // 9. Bullet lists (- item or * item)
+  // 10. Bullet lists (- item or * item)
   formatted = formatted.replace(/^\s*[\-\*]\s+(.*$)/gm, '<li class="ml-6 list-disc text-stone-800 my-1 font-normal">$1</li>');
   formatted = formatted.replace(/^\s*\d+\.\s+(.*$)/gm, '<li class="ml-6 list-decimal text-stone-800 my-1 font-normal">$1</li>');
   formatted = formatted.replace(/(<li.*?<\/li>\s*)+/gs, (match) => `<ul class="my-6 space-y-2">${match}</ul>`);
 
-  // 10. Paragraph wrapping for orphan text lines with optimum line height & readable font sizing
+  // 11. Replace bare <p> tags and <p class="..."> from editors with our standard styling
+  formatted = formatted.replace(/<p[^>]*>/gi, '<p class="my-5 text-stone-800 text-base sm:text-lg font-normal leading-relaxed tracking-normal">');
+
+  // 12. Paragraph wrapping for orphan text lines
   const blocks = formatted.split(/\n\n+/);
   return blocks
     .map((block) => {
@@ -128,7 +138,8 @@ function formatArticleContent(content = "") {
         trimmed.startsWith("<blockquote") ||
         trimmed.startsWith("<pre") ||
         trimmed.startsWith("<img") ||
-        trimmed.startsWith("<p>")
+        trimmed.startsWith("<p") ||
+        trimmed.startsWith("<div")
       ) {
         return trimmed;
       }

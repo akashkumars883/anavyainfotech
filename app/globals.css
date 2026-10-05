@@ -248,13 +248,14 @@ html.lenis, html.lenis body {
 .prose a {
   color: #1d4ed8;
   font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: color 0.2s;
+  text-decoration: none;
+  transition: color 0.2s, text-decoration 0.2s;
 }
 
 .prose a:hover {
   color: #1e40af;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .prose ul {
