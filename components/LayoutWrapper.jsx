@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
-import AnnouncementBanner from "@/components/AnnouncementBanner";
 import GoogleOneTap from "@/components/GoogleOneTap";
 
 export default function LayoutWrapper({ children }) {
@@ -20,7 +19,6 @@ export default function LayoutWrapper({ children }) {
   return (
     <SmoothScrollProvider>
       <GoogleOneTap />
-      <AnnouncementBanner />
       <Navbar />
       <div className="flex-1 flex flex-col">{children}</div>
       <Footer />
