@@ -16,7 +16,7 @@ export default function NotFound() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="relative"
         >
-          <h1 className="text-8xl sm:text-9xl md:text-[150px] font-black text-stone-100 tracking-tighter select-none leading-none">
+          <h1 className="text-6xl sm:text-8xl md:text-[150px] font-black text-stone-100 tracking-tighter select-none leading-none">
             404
           </h1>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -36,10 +36,10 @@ export default function NotFound() {
           className="space-y-4"
         >
           <h2 className="text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
-            Looks like you're lost in space.
+            Looks like you&apos;re lost in space.
           </h2>
           <p className="text-stone-500 font-light max-w-lg mx-auto text-sm sm:text-base">
-            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track.
+            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let&apos;s get you back on track.
           </p>
         </motion.div>
 

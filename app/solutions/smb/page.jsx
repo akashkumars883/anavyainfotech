@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/smb",
   },
   openGraph: {
-    title: "Small & Medium Business Web Solutions | Anavya Infotech",
+    title: "Small & Medium Business Web Solutions - Anavya Infotech",
     description: "Affordable, scalable, and search-optimized digital systems for small and medium businesses.",
     url: "https://www.anavyainfotech.com/solutions/smb",
     type: "website",

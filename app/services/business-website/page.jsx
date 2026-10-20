@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Code } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Business Website Development Company in India & USA | Anavya Infotech",
+  title: "Business Website Development Company in India & USA - Anavya Infotech",
   description:
     "Custom business website design & development for companies in Delhi NCR, Faridabad, Noida & USA. Fast, SEO-ready, mobile-first sites built on modern stacks. Get a free quote.",
   keywords: "business website development company, custom website design India, web development agency Faridabad Noida",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/services/business-website",
   },
   openGraph: {
-    title: "Business Website Development Company in India & USA | Anavya Infotech",
+    title: "Business Website Development Company in India & USA - Anavya Infotech",
     description:
       "Custom business website design & development for companies in Delhi NCR, Faridabad, Noida & USA. Fast, SEO-ready, mobile-first sites built on modern stacks.",
     url: "https://www.anavyainfotech.com/services/business-website",
@@ -113,7 +113,7 @@ export default function BusinessWebsitePage() {
       <section className="py-12 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            What's Included in Our Business Website Development
+            What&apos;s Included in Our Business Website Development
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {inclusions.map((item, index) => (
@@ -133,7 +133,7 @@ export default function BusinessWebsitePage() {
             Why Businesses in Faridabad &amp; Delhi NCR Choose Anavya Infotech
           </h2>
           <p className="text-sm md:text-base text-stone-600 font-light max-w-4xl leading-relaxed">
-            Local businesses often lose customers to competitors simply because their website is slow, outdated, or invisible on Google. We fix all three: our sites are engineered for speed and Core Web Vitals, built with on-page SEO from the first line of code, and designed to make it easy for a customer scrolling on their phone to call or message you in one tap. We've delivered business websites for real estate firms (<Link href="/case-studies/nakul-properties" className="text-blue-700 underline">Nakul Properties</Link>), fintech platforms, and local service businesses — each launched with a documented SEO and speed audit before go-live.
+            Local businesses often lose customers to competitors simply because their website is slow, outdated, or invisible on Google. We fix all three: our sites are engineered for speed and Core Web Vitals, built with on-page SEO from the first line of code, and designed to make it easy for a customer scrolling on their phone to call or message you in one tap. We&apos;ve delivered business websites for real estate firms (<Link href="/case-studies/nakul-properties" className="text-blue-700 underline">Nakul Properties</Link>), fintech platforms, and local service businesses — each launched with a documented SEO and speed audit before go-live.
           </p>
         </div>
       </section>

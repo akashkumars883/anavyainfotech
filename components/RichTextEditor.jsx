@@ -98,6 +98,11 @@ export default function RichTextEditor({ value, onChange, placeholder = "Start w
     }
   };
 
+  const openImagePicker = () => {
+    saveSelection();
+    fileInputRef.current?.click();
+  };
+
   // Restore cursor selection range
   const restoreSelection = () => {
     if (!savedRangeRef.current || typeof window === "undefined") return;
@@ -258,34 +263,52 @@ export default function RichTextEditor({ value, onChange, placeholder = "Start w
     }
   };
 
+  const runToolbarAction = (action) => {
+    const formattingActions = {
+      h1: () => formatBlock("h1"),
+      h2: () => formatBlock("h2"),
+      h3: () => formatBlock("h3"),
+      paragraph: () => formatBlock("p"),
+      bold: () => execCmd("bold"),
+      italic: () => execCmd("italic"),
+      underline: () => execCmd("underline"),
+      bullets: () => execCmd("insertUnorderedList"),
+      numbers: () => execCmd("insertOrderedList"),
+      quote: () => formatBlock("blockquote"),
+      clear: () => execCmd("removeFormat"),
+      code: insertCodeBlock,
+      link: insertLink,
+      upload: openImagePicker,
+      imageUrl: insertImageUrl,
+    };
+    formattingActions[action]?.();
+  };
+
   const toolbarButtons = [
-    { label: "H1", icon: Heading1, action: () => formatBlock("h1"), title: "Heading 1 (Main Title)" },
-    { label: "H2", icon: Heading2, action: () => formatBlock("h2"), title: "Heading 2 (Section Title)" },
-    { label: "H3", icon: Heading3, action: () => formatBlock("h3"), title: "Heading 3 (Subheading)" },
-    { label: "Paragraph", action: () => formatBlock("p"), title: "Normal Paragraph Text", isText: true },
+    { label: "H1", icon: Heading1, action: "h1", title: "Heading 1 (Main Title)" },
+    { label: "H2", icon: Heading2, action: "h2", title: "Heading 2 (Section Title)" },
+    { label: "H3", icon: Heading3, action: "h3", title: "Heading 3 (Subheading)" },
+    { label: "Paragraph", action: "paragraph", title: "Normal Paragraph Text", isText: true },
     { type: "divider" },
-    { label: "B", icon: Bold, action: () => execCmd("bold"), title: "Bold (Ctrl+B)", style: "font-bold" },
-    { label: "I", icon: Italic, action: () => execCmd("italic"), title: "Italic (Ctrl+I)", style: "italic" },
-    { label: "U", icon: Underline, action: () => execCmd("underline"), title: "Underline (Ctrl+U)", style: "underline" },
+    { label: "B", icon: Bold, action: "bold", title: "Bold (Ctrl+B)", style: "font-bold" },
+    { label: "I", icon: Italic, action: "italic", title: "Italic (Ctrl+I)", style: "italic" },
+    { label: "U", icon: Underline, action: "underline", title: "Underline (Ctrl+U)", style: "underline" },
     { type: "divider" },
-    { label: "Bullets", icon: List, action: () => execCmd("insertUnorderedList"), title: "Bullet List" },
-    { label: "Numbers", icon: ListOrdered, action: () => execCmd("insertOrderedList"), title: "Numbered List" },
-    { label: "Quote", icon: Quote, action: () => formatBlock("blockquote"), title: "Blockquote" },
-    { label: "Code", icon: Code, action: insertCodeBlock, title: "Code Block" },
-    { label: "Link", icon: LinkIcon, action: insertLink, title: "Insert Clickable Link" },
-    { label: "Clear", icon: RemoveFormatting, action: () => execCmd("removeFormat"), title: "Clear Formatting" },
+    { label: "Bullets", icon: List, action: "bullets", title: "Bullet List" },
+    { label: "Numbers", icon: ListOrdered, action: "numbers", title: "Numbered List" },
+    { label: "Quote", icon: Quote, action: "quote", title: "Blockquote" },
+    { label: "Code", icon: Code, action: "code", title: "Code Block" },
+    { label: "Link", icon: LinkIcon, action: "link", title: "Insert Clickable Link" },
+    { label: "Clear", icon: RemoveFormatting, action: "clear", title: "Clear Formatting" },
     { type: "divider" },
     { 
       label: "Upload Image", 
       icon: Upload, 
-      action: () => {
-        saveSelection();
-        fileInputRef.current?.click();
-      }, 
+      action: "upload",
       title: "Upload & Compress Image from Computer",
       highlight: true
     },
-    { label: "Image URL", icon: ImageIcon, action: insertImageUrl, title: "Insert Image from URL" },
+    { label: "Image URL", icon: ImageIcon, action: "imageUrl", title: "Insert Image from URL" },
   ];
 
   return (
@@ -312,7 +335,7 @@ export default function RichTextEditor({ value, onChange, placeholder = "Start w
               <button
                 key={btn.label + index}
                 type="button"
-                onClick={btn.action}
+                onClick={() => runToolbarAction(btn.action)}
                 disabled={uploading || viewMode === "source"}
                 title={btn.title}
                 className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded text-xs font-semibold transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 ${

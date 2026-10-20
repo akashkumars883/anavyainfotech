@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/customer-portals",
   },
   openGraph: {
-    title: "Custom Customer Portal Development | Anavya Infotech",
+    title: "Custom Customer Portal Development - Anavya Infotech",
     description: "Secure customer-facing portals with account dashboards and ticket management.",
     url: "https://www.anavyainfotech.com/solutions/customer-portals",
     type: "website",

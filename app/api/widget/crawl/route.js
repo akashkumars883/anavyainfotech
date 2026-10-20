@@ -1,8 +1,36 @@
 import { NextResponse } from "next/server";
+import { lookup } from "node:dns/promises";
 import { saveSiteKnowledge } from "@/lib/aiVectorStore";
 import * as cheerio from "cheerio";
+import { readClientSession } from "@/lib/clientAuth";
+import { checkRateLimit } from "@/lib/redis";
+import { isIP } from "node:net";
 
 export const dynamic = "force-dynamic";
+
+function isPublicAddress(address) {
+  const ipVersion = isIP(address);
+  if (ipVersion === 4) {
+    const octets = address.split(".").map(Number);
+    const [a, b] = octets;
+    return !(a === 0 || a === 10 || a === 127 || a >= 224 ||
+      (a === 100 && b >= 64 && b <= 127) ||
+      (a === 169 && b === 254) ||
+      (a === 172 && b >= 16 && b <= 31) ||
+      (a === 192 && (b === 0 || b === 168)) ||
+      (a === 198 && (b === 18 || b === 19 || b === 51)) ||
+      (a === 203 && b === 0));
+  }
+  if (ipVersion === 6) {
+    const normalized = address.toLowerCase();
+    if (normalized.startsWith("::ffff:")) {
+      return isPublicAddress(normalized.slice(7));
+    }
+    return !(normalized === "::" || normalized === "::1" ||
+      /^(fc|fd|fe[89ab]|ff)/.test(normalized));
+  }
+  return false;
+}
 
 // Helper to sanitize & extract rich text using Cheerio
 function parseHtmlWithCheerio(html, baseUrl) {
@@ -35,8 +63,17 @@ function parseHtmlWithCheerio(html, baseUrl) {
 
 export async function POST(req) {
   try {
+    const client = readClientSession(req);
+    if (!client) return NextResponse.json({ error: "Sign in to crawl your website." }, { status: 401 });
+    const rate = await checkRateLimit(client.email, "client_crawl", 3, 60);
+    if (!rate.allowed) return NextResponse.json({ error: "Crawl limit reached. Please try again in one minute." }, { status: 429 });
+
     const body = await req.json();
     let { siteUrl, siteId } = body;
+
+    if (siteId !== client.siteId) {
+      return NextResponse.json({ error: "You can only crawl the website assigned to your account." }, { status: 403 });
+    }
 
     if (!siteUrl) {
       return NextResponse.json({ error: "siteUrl is required" }, { status: 400 });
@@ -45,6 +82,26 @@ export async function POST(req) {
     // Format Site URL
     if (!siteUrl.startsWith("http://") && !siteUrl.startsWith("https://")) {
       siteUrl = "https://" + siteUrl;
+    }
+
+    let target;
+    try {
+      target = new URL(siteUrl);
+    } catch {
+      return NextResponse.json({ error: "Enter a valid website URL." }, { status: 400 });
+    }
+    if (target.protocol !== "https:" || target.username || target.password ||
+        target.hostname === "localhost" || target.hostname.endsWith(".local") ||
+        target.hostname.endsWith(".internal") || /^\d{1,3}(\.\d{1,3}){3}$/.test(target.hostname) || target.hostname.startsWith("[")) {
+      return NextResponse.json({ error: "Use a public HTTPS website URL." }, { status: 400 });
+    }
+    try {
+      const addresses = await lookup(target.hostname, { all: true, verbatim: true });
+      if (!addresses.length || addresses.some(({ address }) => !isPublicAddress(address))) {
+        return NextResponse.json({ error: "Use a public HTTPS website URL." }, { status: 400 });
+      }
+    } catch {
+      return NextResponse.json({ error: "The website hostname could not be resolved." }, { status: 400 });
     }
 
     // Format Site ID
@@ -59,6 +116,8 @@ export async function POST(req) {
 
     // 1. Crawl Target Homepage
     const response = await fetch(siteUrl, {
+      redirect: "error",
+      signal: AbortSignal.timeout(10000),
       headers: {
         "User-Agent": "AnavyaAiBot/1.0 (+https://www.anavyainfotech.com)",
       },
@@ -70,6 +129,9 @@ export async function POST(req) {
         { error: `Unable to fetch target website (HTTP ${response.status})` },
         { status: 400 }
       );
+    }
+    if (response.headers.get("content-type") && !response.headers.get("content-type").includes("text/html")) {
+      return NextResponse.json({ error: "The URL did not return an HTML page." }, { status: 400 });
     }
 
     const html = await response.text();

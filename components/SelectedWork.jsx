@@ -86,8 +86,8 @@ export default function SelectedWork() {
             <span className="text-blue-700">Verified Results.</span>
           </h2>
           <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-            We don't talk in vague case studies. Here's what we've shipped, live, with the outcomes to back it up:
-          </p>
+            We don&apos;t talk in vague case studies. Here&apos;s what we&apos;ve shipped, live, with the outcomes to back it up:
+                         </p>
         </div>
 
         {/* 3 Equal Cards Row Grid Layout matching Services card style */}

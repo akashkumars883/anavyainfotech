@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { tursoClient } from "@/lib/turso";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export const dynamic = "force-dynamic";
 
@@ -101,6 +102,11 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const activeOnly = searchParams.get("active") === "true";
 
+    if (!activeOnly) {
+      const unauthorized = requireAdmin(request);
+      if (unauthorized) return unauthorized;
+    }
+
     if (activeOnly) {
       openings = openings.filter((o) => o.status === "active");
     }
@@ -113,6 +119,8 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const body = await request.json();
     const { title, department, location, type, experience, description, tags, status } = body;
@@ -166,6 +174,8 @@ export async function POST(request) {
 }
 
 export async function DELETE(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const { searchParams } = new URL(request.url);
     const id = searchParams.get("id");
@@ -196,6 +206,8 @@ export async function DELETE(request) {
 }
 
 export async function PUT(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const body = await request.json();
     const { id, title, department, location, type, experience, description, tags, status } = body;

@@ -2,10 +2,11 @@ import { NextResponse } from "next/server";
 import { tursoClient } from "@/lib/turso";
 import { checkRateLimit } from "@/lib/redis";
 import { sendLeadNotificationEmails } from "@/lib/email";
+import { requireAdmin } from "@/lib/adminAuth";
 
 async function verifyTurnstileToken(token) {
-  const secretKey = process.env.TURNSTILE_SECRET_KEY || "0x4AAAAAAERZCchNh4IS0w8cg2mP-59i9_I";
-  if (!secretKey || !token) return true;
+  const secretKey = process.env.TURNSTILE_SECRET_KEY;
+  if (!secretKey || !token) return process.env.NODE_ENV !== "production";
 
   try {
     const formData = new URLSearchParams();
@@ -21,7 +22,7 @@ async function verifyTurnstileToken(token) {
     return outcome.success === true;
   } catch (err) {
     console.error("Turnstile verification error:", err);
-    return true;
+    return false;
   }
 }
 
@@ -54,7 +55,7 @@ export async function POST(request) {
 
     const { name, email, service, budget, message, turnstileToken } = body;
 
-    if (turnstileToken) {
+    if (process.env.NODE_ENV === "production" || turnstileToken) {
       const isValidHuman = await verifyTurnstileToken(turnstileToken);
       if (!isValidHuman) {
         return NextResponse.json(
@@ -88,8 +89,8 @@ export async function POST(request) {
 
     // Automatically Forward & Capture Lead into Anavya CRM
     try {
-      const crmUrl = process.env.CRM_WEBHOOK_URL || "http://localhost:3000/api/v1/leads";
-      await fetch(crmUrl, {
+      const crmUrl = process.env.CRM_WEBHOOK_URL;
+      if (crmUrl) await fetch(crmUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -133,7 +134,9 @@ export async function POST(request) {
   }
 }
 
-export async function GET() {
+export async function GET(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const res = await tursoClient.execute("SELECT * FROM leads ORDER BY created_at DESC");
     return NextResponse.json({ inquiries: res.rows || [] });

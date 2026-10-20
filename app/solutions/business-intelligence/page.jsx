@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/business-intelligence",
   },
   openGraph: {
-    title: "Business Intelligence & Analytics Dashboard Development | Anavya Infotech",
+    title: "Business Intelligence & Analytics Dashboard Development - Anavya Infotech",
     description: "Custom BI dashboards, data pipeline architectures, and KPI visualization tools.",
     url: "https://www.anavyainfotech.com/solutions/business-intelligence",
     type: "website",

@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/ecommerce-retail",
   },
   openGraph: {
-    title: "E-Commerce & Retail Technology Solutions | Anavya Infotech",
+    title: "E-Commerce & Retail Technology Solutions - Anavya Infotech",
     description: "End-to-end e-commerce architectures for retail brands — from headless storefronts to inventory sync.",
     url: "https://www.anavyainfotech.com/solutions/ecommerce-retail",
     type: "website",

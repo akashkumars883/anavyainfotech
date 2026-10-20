@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { tursoClient } from "@/lib/turso";
+import { isAdminRequest, requireAdmin } from "@/lib/adminAuth";
 
 const DEFAULT_SETTINGS = {
   announcementBanner: {
@@ -19,7 +20,8 @@ const DEFAULT_SETTINGS = {
   },
 };
 
-export async function GET() {
+export async function GET(request) {
+  const isAdmin = isAdminRequest(request);
   try {
     const res = await tursoClient.execute({
       sql: "SELECT data FROM site_settings WHERE id = 'main' LIMIT 1",
@@ -27,9 +29,10 @@ export async function GET() {
 
     if (res.rows && res.rows.length > 0 && res.rows[0].data) {
       const dbSettings = JSON.parse(res.rows[0].data);
+      const settings = { ...DEFAULT_SETTINGS, ...dbSettings };
       return NextResponse.json({
         success: true,
-        settings: { ...DEFAULT_SETTINGS, ...dbSettings },
+        settings: isAdmin ? settings : { announcementBanner: settings.announcementBanner },
       });
     }
   } catch (err) {
@@ -38,11 +41,13 @@ export async function GET() {
 
   return NextResponse.json({
     success: true,
-    settings: DEFAULT_SETTINGS,
+    settings: isAdmin ? DEFAULT_SETTINGS : { announcementBanner: DEFAULT_SETTINGS.announcementBanner },
   });
 }
 
 export async function POST(req) {
+  const unauthorized = requireAdmin(req);
+  if (unauthorized) return unauthorized;
   try {
     const body = await req.json();
     const updatedSettings = {

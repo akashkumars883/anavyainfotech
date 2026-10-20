@@ -144,7 +144,7 @@ export default function ProjectEstimator() {
               <p className="text-xs text-stone-400 font-light">Tailored for {currentStage.name}</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-md bg-white/5 border border-white/10 space-y-1">
                 <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400 flex items-center gap-1">
                   <Clock className="h-3.5 w-3.5 text-blue-400" /> Est. Delivery

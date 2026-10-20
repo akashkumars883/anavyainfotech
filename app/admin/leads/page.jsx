@@ -241,7 +241,7 @@ export default function AdminLeadsDashboardPage() {
               </div>
 
               {/* Source & Date Card */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="bg-stone-50 border border-stone-200 rounded-md p-3.5 space-y-1">
                   <span className="text-stone-400 block text-[10px] uppercase font-bold flex items-center gap-1">
                     <Globe className="h-3 w-3 text-stone-500" /> Source / Site ID

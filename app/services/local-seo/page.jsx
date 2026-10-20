@@ -6,7 +6,7 @@ import SafeImage from "@/components/SafeImage";
 import { Zap, ArrowRight, MapPin, Building, Star, Compass } from "lucide-react";
 
 export const metadata = {
-  title: "Local SEO Services in Delhi NCR | Top Agency in Noida & Gurgaon",
+  title: "Local SEO Services in Delhi NCR - Top Agency in Noida & Gurgaon",
   description:
     "Dominate Google Maps 3-Pack and neighborhood search results with our specialized local SEO services for businesses in Delhi NCR, Noida, Faridabad, and Gurgaon.",
   keywords: "local SEO services Delhi NCR, local SEO agency Noida, Google Maps SEO Gurgaon",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/services/local-seo",
   },
   openGraph: {
-    title: "Local SEO Services in Delhi NCR | Anavya Infotech",
+    title: "Local SEO Services in Delhi NCR - Anavya Infotech",
     description:
       "Dominate Google Maps local pack and high-intent regional searches with local SEO services from Anavya Infotech.",
     url: "https://www.anavyainfotech.com/services/local-seo",

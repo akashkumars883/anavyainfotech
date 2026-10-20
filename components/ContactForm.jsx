@@ -66,15 +66,15 @@ export default function ContactForm() {
           {/* Left Column: Simple Header */}
           <div className="lg:col-span-5 text-left space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-100 text-[11px] font-semibold uppercase tracking-wider text-stone-600">
-              Let's Partner
+              Let&apos;s Partner
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
               Have a Project in Mind? <br />
-              <span className="text-blue-700">Let's Build It Right the First Time.</span>
+              <span className="text-blue-700">Let&apos;s Build It Right the First Time.</span>
             </h2>
             <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-              Whether it's a website that finally converts, an AI tool that saves your team hours a week, or an SEO strategy that gets you found — tell us what you're building. You'll hear back from a senior engineer, not a salesperson.
-            </p>
+              Whether it&apos;s a website that finally converts, an AI tool that saves your team hours a week, or an SEO strategy that gets you found — tell us what you&apos;re building. You&apos;ll hear back from a senior engineer, not a salesperson.
+                           </p>
           </div>
 
           {/* Right Column: Compact White/stone Form Card */}

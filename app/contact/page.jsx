@@ -30,7 +30,7 @@ const contactSchema = {
   "mainEntity": {
     "@type": "ProfessionalService",
     "name": "Anavya Infotech",
-    "image": "https://www.anavyainfotech.com/og-image.jpg",
+    "image": "https://www.anavyainfotech.com/og-image.png",
     "logo": "https://www.anavyainfotech.com/logo.png",
     "telephone": "+91-6201231875",
     "email": "info@anavyainfotech.com",
@@ -144,10 +144,10 @@ export default function ContactPage() {
             Contact Us
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Let's Build Something Exceptional — Starting With a Conversation.
+            Let&apos;s Build Something Exceptional — Starting With a Conversation.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Tell us about your project. You'll hear back from someone who can actually scope and build it — not a call-center script.
+            Tell us about your project. You&apos;ll hear back from someone who can actually scope and build it — not a call-center script.
           </p>
         </div>
       </section>

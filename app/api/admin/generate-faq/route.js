@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { requireAdmin } from "@/lib/adminAuth";
 
 function extractFaqsFromContent(title = "", content = "", category = "") {
   const faqs = [];
@@ -62,6 +63,8 @@ function extractFaqsFromContent(title = "", content = "", category = "") {
 }
 
 export async function POST(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const { title, content, category } = await request.json();
 

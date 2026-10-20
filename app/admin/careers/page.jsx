@@ -26,6 +26,7 @@ export default function AdminCareersDashboardPage() {
   const [applications, setApplications] = useState([]);
   const [openings, setOpenings] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
   const [search, setSearch] = useState("");
   const [selectedApp, setSelectedApp] = useState(null);
 
@@ -44,7 +45,6 @@ export default function AdminCareersDashboardPage() {
   const [isSavingOpening, setIsSavingOpening] = useState(false);
 
   const fetchData = useCallback(async () => {
-    setLoading(true);
     try {
       const [appRes, opRes] = await Promise.all([
         fetch("/api/careers/applications"),
@@ -52,19 +52,25 @@ export default function AdminCareersDashboardPage() {
       ]);
 
       const appData = await appRes.json();
-      const opData = await opRes.json();
 
-      if (appData.applications) setApplications(appData.applications);
-      if (opData.openings) setOpenings(opData.openings);
+      if (!appRes.ok) throw new Error(appData.error || "Could not load candidate applications.");
+      setApplications(appData.applications || []);
+      setLoadError("");
+      if (opRes.ok) {
+        const opData = await opRes.json();
+        if (opData.openings) setOpenings(opData.openings);
+      }
     } catch (err) {
       console.error("Failed to fetch careers admin data:", err);
+      setLoadError(err.message || "Could not load careers data. Please refresh and try again.");
     } finally {
       setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    fetchData();
+    const timeoutId = window.setTimeout(() => { void fetchData(); }, 0);
+    return () => window.clearTimeout(timeoutId);
   }, [fetchData]);
 
   const filteredApps = applications.filter(
@@ -254,6 +260,11 @@ export default function AdminCareersDashboardPage() {
       {/* TAB 1: APPLICATIONS INBOX */}
       {activeTab === "applications" && (
         <div className="space-y-4">
+          {loadError && (
+            <div role="alert" className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+              {loadError} Use the refresh button to try again.
+            </div>
+          )}
           {/* Search Bar */}
           <div className="bg-white border border-stone-200 rounded-md p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="relative w-full sm:w-80">
@@ -278,6 +289,10 @@ export default function AdminCareersDashboardPage() {
               <div className="p-12 text-center text-xs text-stone-500 flex items-center justify-center gap-2">
                 <RefreshCw className="h-4 w-4 animate-spin text-blue-700" />
                 <span>Loading applicant entries...</span>
+              </div>
+            ) : loadError ? (
+              <div className="p-12 text-center text-sm text-red-700">
+                Applications could not be loaded, so the list may be incomplete.
               </div>
             ) : filteredApps.length === 0 ? (
               <div className="p-12 text-center space-y-3">
@@ -542,7 +557,7 @@ export default function AdminCareersDashboardPage() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block font-bold text-stone-700 mb-1">Department</label>
                   <input

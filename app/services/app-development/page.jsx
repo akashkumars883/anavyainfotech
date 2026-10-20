@@ -5,7 +5,7 @@ import { Zap, ArrowRight, Smartphone } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Mobile App Development Services | iOS, Android & Cross-Platform Agency",
+  title: "Mobile App Development Services - iOS, Android & Cross-Platform Agency",
   description:
     "Custom iOS, Android, and cross-platform React Native/Flutter mobile app development services in India & USA from Anavya Infotech.",
   keywords: ["mobile app development company", "iOS app development", "Android app development"],
@@ -13,7 +13,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/services/app-development",
   },
   openGraph: {
-    title: "Mobile App Development Services | iOS, Android & Cross-Platform Agency",
+    title: "Mobile App Development Services - iOS, Android & Cross-Platform Agency",
     description:
       "Custom iOS, Android, and cross-platform React Native/Flutter mobile app development services in India & USA from Anavya Infotech.",
     url: "https://www.anavyainfotech.com/services/app-development",

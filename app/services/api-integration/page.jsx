@@ -37,7 +37,7 @@ const API_INTEGRATION_FAQS = [
 ];
 
 const serviceSchemas = createServiceSchema({
-  name: "API Integration Services | Connect Your Business Tools",
+  name: "API Integration Services - Connect Your Business Tools",
   description: "API integration services connecting your CRM, payment gateways, messaging & third-party platforms into one workflow. Anavya Infotech, India & USA.",
   slug: "api-integration",
   serviceType: "API Development & System Integration",

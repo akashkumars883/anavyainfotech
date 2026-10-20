@@ -7,29 +7,38 @@ import { FileText, Inbox, PlusCircle, ArrowUpRight, Sparkles, CheckCircle2, Cloc
 export default function AdminDashboardPage() {
   const [blogs, setBlogs] = useState([]);
   const [inquiries, setInquiries] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [blogsLoading, setBlogsLoading] = useState(true);
+  const [inquiriesLoading, setInquiriesLoading] = useState(true);
 
   useEffect(() => {
-    async function loadAdminData() {
+    async function loadBlogs() {
       try {
-        const [blogsRes, inquiriesRes] = await Promise.all([
-          fetch("/api/admin/blogs"),
-          fetch("/api/contact"),
-        ]);
-
+        const blogsRes = await fetch("/api/admin/blogs", { cache: "no-store" });
+        if (!blogsRes.ok) throw new Error("Failed to load blogs");
         const blogsData = await blogsRes.json();
-        const inquiriesData = await inquiriesRes.json();
-
         setBlogs(blogsData.blogs || []);
-        setInquiries(inquiriesData.inquiries || []);
       } catch (err) {
-        console.error("Error loading admin dashboard stats:", err);
+        console.error("Error loading admin dashboard blogs:", err);
       } finally {
-        setLoading(false);
+        setBlogsLoading(false);
       }
     }
 
-    loadAdminData();
+    async function loadInquiries() {
+      try {
+        const inquiriesRes = await fetch("/api/contact", { cache: "no-store" });
+        if (!inquiriesRes.ok) throw new Error("Failed to load inquiries");
+        const inquiriesData = await inquiriesRes.json();
+        setInquiries(inquiriesData.inquiries || []);
+      } catch (err) {
+        console.error("Error loading admin dashboard inquiries:", err);
+      } finally {
+        setInquiriesLoading(false);
+      }
+    }
+
+    loadBlogs();
+    loadInquiries();
   }, []);
 
   const publishedCount = blogs.filter((b) => b.is_published !== false).length;
@@ -69,7 +78,7 @@ export default function AdminDashboardPage() {
             </div>
           </div>
           <div className="text-3xl font-bold text-stone-900 tracking-tight">
-            {loading ? "..." : blogs.length}
+            {blogsLoading ? "..." : blogs.length}
           </div>
           <p className="text-xs text-stone-500 font-light">Total articles in database</p>
         </div>
@@ -82,7 +91,7 @@ export default function AdminDashboardPage() {
             </div>
           </div>
           <div className="text-3xl font-bold text-stone-900 tracking-tight">
-            {loading ? "..." : publishedCount}
+            {blogsLoading ? "..." : publishedCount}
           </div>
           <p className="text-xs text-stone-500 font-light">Live on website sitemap &amp; blog page</p>
         </div>
@@ -95,7 +104,7 @@ export default function AdminDashboardPage() {
             </div>
           </div>
           <div className="text-3xl font-bold text-stone-900 tracking-tight">
-            {loading ? "..." : draftCount}
+            {blogsLoading ? "..." : draftCount}
           </div>
           <p className="text-xs text-stone-500 font-light">Unpublished drafts</p>
         </div>
@@ -108,7 +117,7 @@ export default function AdminDashboardPage() {
             </div>
           </div>
           <div className="text-3xl font-bold text-stone-900 tracking-tight">
-            {loading ? "..." : inquiries.length}
+            {inquiriesLoading ? "..." : inquiries.length}
           </div>
           <p className="text-xs text-stone-500 font-light">Submitted client inquiries</p>
         </div>
@@ -129,7 +138,7 @@ export default function AdminDashboardPage() {
           </Link>
         </div>
 
-        {loading ? (
+        {blogsLoading ? (
           <div className="text-center py-10 text-xs text-stone-500">Loading blog entries...</div>
         ) : blogs.length === 0 ? (
           <div className="text-center py-10 space-y-3">

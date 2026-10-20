@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Zap, ArrowRight, Share2, Megaphone, Target, BarChart2 } from "lucide-react";
 
 export const metadata = {
-  title: "Digital Marketing Agency in India & Delhi NCR | Performance & Social Media Marketing",
+  title: "Digital Marketing Agency in India & Delhi NCR - Performance & Social Media Marketing",
   description:
     "Anavya Infotech is a top digital marketing agency in India, Delhi NCR & Noida. We provide performance marketing company services, social media marketing services, content strategy, and paid acquisition management.",
   keywords: "digital marketing agency, digital marketing company, digital marketing agency in India",
@@ -13,7 +13,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/services/content-strategist",
   },
   openGraph: {
-    title: "Digital Marketing Agency in India & Delhi NCR | Performance Marketing Services",
+    title: "Digital Marketing Agency in India & Delhi NCR - Performance Marketing Services",
     description:
       "Full-funnel performance marketing company, social media marketing agency, and digital marketing services in India & Delhi NCR.",
     url: "https://www.anavyainfotech.com/services/content-strategist",

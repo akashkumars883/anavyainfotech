@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c1424"/>
+      <stop offset="1" stop-color="#123b72"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1060" cy="82" r="260" fill="#2563eb" opacity=".12"/>
+  <circle cx="1030" cy="595" r="300" fill="#38bdf8" opacity=".08"/>
+  <rect x="88" y="82" width="72" height="72" rx="18" fill="url(#accent)"/>
+  <path d="M108 132V103h8l18 18v-18h8v29h-8l-18-18v18z" fill="#fff"/>
+  <text x="180" y="132" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700">Anavya Infotech</text>
+  <text x="88" y="290" fill="#bfdbfe" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" letter-spacing="4">SOFTWARE • AI • DIGITAL GROWTH</text>
+  <text x="88" y="376" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="700">Build smarter.</text>
+  <text x="88" y="447" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="700">Grow faster.</text>
+  <text x="90" y="515" fill="#dbeafe" font-family="Arial,Helvetica,sans-serif" font-size="25">Custom software, AI automation and SEO-led growth</text>
+  <rect x="88" y="562" width="74" height="6" rx="3" fill="#60a5fa"/>
+  <text x="180" y="572" fill="#bfdbfe" font-family="Arial,Helvetica,sans-serif" font-size="18">anavyainfotech.com</text>
+</svg>

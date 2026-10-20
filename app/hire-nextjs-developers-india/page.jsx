@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import FaqSection from "@/components/FaqSection";
 
 export const metadata = {
-  title: "Hire Next.js Developers in India | Dedicated React Engineers ($25/hr)",
+  title: "Hire Next.js Developers in India - Dedicated React Engineers ($25/hr)",
   description:
     "Hire top 1% dedicated Next.js developers in India. Scale your SaaS or web app with senior full-stack React engineers at $25 - $45/hr. 100% NDA & US/UK time zone overlap.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/hire-nextjs-developers-india",
   },
   openGraph: {
-    title: "Hire Dedicated Next.js Developers in India ($25/hr) | Anavya Infotech",
+    title: "Hire Dedicated Next.js Developers in India ($25/hr) - Anavya Infotech",
     description:
       "Scale your engineering team with pre-vetted senior Next.js & React full-stack developers in India. Zero recruitment fees & 48-hour onboarding.",
     url: "https://www.anavyainfotech.com/hire-nextjs-developers-india",

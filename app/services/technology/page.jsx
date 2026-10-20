@@ -202,8 +202,8 @@ export default function TechnologyCategoryPage() {
             Proof
           </div>
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            This Isn't Theoretical. We've Shipped It.
-          </h2>
+            This Isn&apos;t Theoretical. We&apos;ve Shipped It.
+               </h2>
           <p className="text-sm md:text-base text-stone-600 font-light max-w-3xl leading-relaxed">
             Automixa AI, our Meta Graph API automation platform, processes real-time DM and comment automation for thousands of active creators with zero account restriction issues — the kind of production reliability that separates a real AI system from a chatbot demo.
           </p>

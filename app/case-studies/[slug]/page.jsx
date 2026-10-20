@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
       canonical: `https://www.anavyainfotech.com/case-studies/${project.slug}`,
     },
     openGraph: {
-      title: `${project.title} – Case Study | Anavya Infotech`,
+      title: `${project.title} – Case Study - Anavya Infotech`,
       description: project.summary,
       url: `https://www.anavyainfotech.com/case-studies/${project.slug}`,
       type: "article",
@@ -226,7 +226,7 @@ export default async function CaseStudyDetailPage({ params }) {
             <div className="space-y-2 max-w-lg text-left">
               <h3 className="text-xl font-bold text-white">Want similar results for your business?</h3>
               <p className="text-xs text-zinc-400 font-light">
-                Tell us about your technical goals and we'll craft a custom engineering proposal.
+                Tell us about your technical goals and we&apos;ll craft a custom engineering proposal.
               </p>
             </div>
             <Link

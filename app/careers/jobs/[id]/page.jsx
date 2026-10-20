@@ -19,11 +19,11 @@ export async function generateMetadata({ params }) {
   }
 
   if (!job) {
-    return { title: "Job Not Found | Anavya Infotech Careers" };
+    return { title: "Job Not Found - Anavya Infotech Careers" };
   }
 
   return {
-    title: `${job.title} - ${job.location} | Anavya Infotech Careers`,
+    title: `${job.title} - ${job.location} - Anavya Infotech Careers`,
     description: job.description,
     alternates: {
       canonical: `https://www.anavyainfotech.com/careers/jobs/${id}`,

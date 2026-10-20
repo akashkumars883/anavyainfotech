@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, Layout } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "High-Converting Landing Page Design & Development | Anavya Infotech",
+  title: "High-Converting Landing Page Design & Development - Anavya Infotech",
   description:
     "Conversion-focused landing pages for ad campaigns, product launches & lead generation. Fast-loading, A/B testable, built for India & USA marketing teams.",
   keywords: "landing page design services, high converting landing pages, Next.js landing page development",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/services/landing-pages",
   },
   openGraph: {
-    title: "High-Converting Landing Page Design & Development | Anavya Infotech",
+    title: "High-Converting Landing Page Design & Development - Anavya Infotech",
     description:
       "Conversion-focused landing pages for ad campaigns, product launches & lead generation. Fast-loading, A/B testable, built for India & USA marketing teams.",
     url: "https://www.anavyainfotech.com/services/landing-pages",
@@ -107,7 +107,7 @@ export default function ServicePage() {
       <section className="py-12 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            What's Included
+            What&apos;s Included
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {inclusions.map((item, index) => (
@@ -127,7 +127,7 @@ export default function ServicePage() {
             Why It Matters for Your Ad Spend
           </h2>
           <p className="text-sm md:text-base text-stone-600 font-light max-w-4xl leading-relaxed">
-            A slow or unfocused landing page silently burns ad budget — every second of load time and every distracting nav link reduces your conversion rate. We build landing pages stripped down to what drives action, so the traffic you're already paying for actually converts.
+            A slow or unfocused landing page silently burns ad budget — every second of load time and every distracting nav link reduces your conversion rate. We build landing pages stripped down to what drives action, so the traffic you&apos;re already paying for actually converts.
           </p>
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function ServicePage() {
                 Ready to maximize your ad campaign ROI?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Let's design a high-converting landing page tailored to your target audience.
+                Let&apos;s design a high-converting landing page tailored to your target audience.
               </p>
             </div>
             <Link

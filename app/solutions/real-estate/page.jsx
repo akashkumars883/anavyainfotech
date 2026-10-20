@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/real-estate",
   },
   openGraph: {
-    title: "Real Estate & Property Web Solutions | Anavya Infotech",
+    title: "Real Estate & Property Web Solutions - Anavya Infotech",
     description: "Custom property listing portals, geo-targeted neighborhood landing pages, and MLS integrations.",
     url: "https://www.anavyainfotech.com/solutions/real-estate",
     type: "website",

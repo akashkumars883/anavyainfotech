@@ -1,7 +1,8 @@
+require("@next/env").loadEnvConfig(process.cwd());
 const { createClient } = require("@supabase/supabase-js");
 
-const url = "https://juvkrpmrmjhhbnhxuwmd.supabase.co";
-const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp1dmtycG1ybWpoaGJuaHh1d21kIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTE1Mjg5NSwiZXhwIjoyMDkwNzI4ODk1fQ.THCIZkcz6-AUng9b7rJ7kMjkBy_GL4ct88o0Ildis7o";
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 const supabase = createClient(url, key);
 
@@ -19,7 +20,6 @@ async function checkTables() {
     "users",
     "analytics",
     "events",
-    "click_events"
   ];
 
   console.log("Checking all potential table names in old Supabase DB...\n");

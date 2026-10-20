@@ -22,8 +22,11 @@ const OFFER_FAQS = [
 ];
 
 export const metadata = {
-  title: "E-Commerce Website Development Offer | Anavya Infotech",
+  title: "E-Commerce Website Development Offer - Anavya Infotech",
   description: "Get a fully custom-coded E-Commerce website for just ₹19,999. Special Launch & Grow bundles available.",
+  alternates: {
+    canonical: "https://www.anavyainfotech.com/ecommerce-offer",
+  },
 };
 
 export default function EcommerceOfferPage() {
@@ -193,8 +196,8 @@ export default function EcommerceOfferPage() {
                 <Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" />
               </div>
               <p className="text-stone-600 font-light text-sm italic mb-6 leading-relaxed">
-                "I was paying almost ₹4,500 every month just for Shopify and some basic apps. Switching to Anavya's custom store saved me over ₹50,000 this year, and my site loads twice as fast now."
-              </p>
+                &quot;I was paying almost ₹4,500 every month just for Shopify and some basic apps. Switching to Anavya&apos;s custom store saved me over ₹50,000 this year, and my site loads twice as fast now.&quot;
+                             </p>
               <div>
                 <p className="font-semibold text-stone-900 text-sm">Rahul S.</p>
                 <p className="text-xs text-stone-500">Founder, Ethnic Wear Brand</p>
@@ -206,8 +209,8 @@ export default function EcommerceOfferPage() {
                 <Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" />
               </div>
               <p className="text-stone-600 font-light text-sm italic mb-6 leading-relaxed">
-                "We opted for the Launch & Grow bundle. Initially, it took a few weeks to see SEO changes, but by month 3, we started getting 5-7 organic orders daily. The investment paid for itself very quickly."
-              </p>
+                &quot;We opted for the Launch & Grow bundle. Initially, it took a few weeks to see SEO changes, but by month 3, we started getting 5-7 organic orders daily. The investment paid for itself very quickly.&quot;
+                   </p>
               <div>
                 <p className="font-semibold text-stone-900 text-sm">Priya M.</p>
                 <p className="text-xs text-stone-500">Owner, Organic Skincare</p>
@@ -219,8 +222,8 @@ export default function EcommerceOfferPage() {
                 <Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" />
               </div>
               <p className="text-stone-600 font-light text-sm italic mb-6 leading-relaxed">
-                "I have zero coding knowledge. Anavya's team handled everything from Razorpay integration to the server setup. The admin panel they provided is honestly easier to use than my Facebook account."
-              </p>
+                &quot;I have zero coding knowledge. Anavya&apos;s team handled everything from Razorpay integration to the server setup. The admin panel they provided is honestly easier to use than my Facebook account.&quot;
+                             </p>
               <div>
                 <p className="font-semibold text-stone-900 text-sm">Amit V.</p>
                 <p className="text-xs text-stone-500">Electronics Retailer</p>
@@ -241,7 +244,7 @@ export default function EcommerceOfferPage() {
       <section className="py-16 bg-stone-50 px-6 border-t border-stone-200">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
-            Still have questions? Let's discuss your project.
+            Still have questions? Let&apos;s discuss your project.
           </h2>
           <p className="text-stone-600 font-light">Our experts are available to guide you on which bundle suits your business best.</p>
           <div className="pt-4 flex justify-center gap-4">

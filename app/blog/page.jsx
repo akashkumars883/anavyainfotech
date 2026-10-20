@@ -18,7 +18,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/blog",
   },
   openGraph: {
-    title: "Our Blog & Digital Growth Insights | Anavya Infotech",
+    title: "Our Blog & Digital Growth Insights - Anavya Infotech",
     description:
       "Technical software architecture guides, AI integration patterns, and SEO strategies for modern businesses.",
     url: "https://www.anavyainfotech.com/blog",

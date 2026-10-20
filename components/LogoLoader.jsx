@@ -1,13 +1,44 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function LogoLoader({ fullScreen = false }) {
-  // If fullScreen is true, it covers the whole screen
-  const containerClass = fullScreen 
-    ? "fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm"
-    : "flex items-center justify-center p-4";
+  const [count, setCount] = useState(1);
+
+  useEffect(() => {
+    if (!fullScreen) return;
+
+    let frameId;
+    let startedAt;
+    const duration = 2000;
+    const updateCount = (timestamp) => {
+      if (startedAt === undefined) startedAt = timestamp;
+      const progress = Math.min((timestamp - startedAt) / duration, 1);
+      setCount(Math.max(1, Math.ceil(progress * 100)));
+      if (progress < 1) frameId = window.requestAnimationFrame(updateCount);
+    };
+
+    frameId = window.requestAnimationFrame(updateCount);
+    return () => window.cancelAnimationFrame(frameId);
+  }, [fullScreen]);
+
+  if (fullScreen) {
+    return (
+      <div
+        className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
+        role="status"
+      >
+        <span className="sr-only">Loading</span>
+        <span aria-hidden="true" className="font-mono text-5xl sm:text-6xl font-light tabular-nums tracking-tight text-stone-900">
+          {count}
+        </span>
+      </div>
+    );
+  }
+
+  const containerClass = "flex items-center justify-center p-4";
 
   return (
     <div className={containerClass}>
@@ -32,16 +63,6 @@ export default function LogoLoader({ fullScreen = false }) {
           className="object-contain drop-shadow-lg"
         />
       </motion.div>
-      {fullScreen && (
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-6 text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-blue-700"
-        >
-          Loading...
-        </motion.p>
-      )}
     </div>
   );
 }

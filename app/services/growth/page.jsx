@@ -105,11 +105,11 @@ export default function GrowthCategoryPage() {
               <TrendingUp className="h-3.5 w-3.5 text-blue-700" /> Growth &amp; SEO Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
-              Ranking on Page One Isn't Luck. It's a System — And We Run It.
-            </h1>
+              Ranking on Page One Isn&apos;t Luck. It&apos;s a System — And We Run It.
+                 </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Most SEO "strategies" are guesswork dressed up in a monthly report. Ours start with a technical audit that finds exactly what's blocking your rankings, then fixes it — systematically, and with numbers to prove it worked.
-            </p>
+              Most SEO &quot;strategies&quot; are guesswork dressed up in a monthly report. Ours start with a technical audit that finds exactly what&apos;s blocking your rankings, then fixes it — systematically, and with numbers to prove it worked.
+                           </p>
             <div className="pt-2">
               <Link
                 href="/contact"

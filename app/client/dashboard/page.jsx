@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useState, useEffect, useCallback, Suspense } from "react";
+import { useRouter } from "next/navigation";
 import { 
   Users, Phone, Mail, Search, RefreshCw, Calendar, Globe, Download, X, 
   MessageSquare, Bot, Code2, Copy, Check, LogOut, Sparkles, Sliders, 
@@ -10,10 +10,10 @@ import {
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 function ClientDashboardContent() {
-  const searchParams = useSearchParams();
   const router = useRouter();
-  const [siteId, setSiteId] = useState(searchParams.get("siteId") || "demo");
+  const [siteId, setSiteId] = useState("");
   const [user, setUser] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [leads, setLeads] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -30,25 +30,33 @@ function ClientDashboardContent() {
   const [crawlStatus, setCrawlStatus] = useState(null);
 
   useEffect(() => {
-    const sessionRaw = localStorage.getItem("anavya_client_session");
-    if (sessionRaw) {
-      try {
-        const parsed = JSON.parse(sessionRaw);
-        setUser(parsed);
-        if (!searchParams.get("siteId") && parsed.siteId) {
-          setSiteId(parsed.siteId);
+    let active = true;
+    fetch("/api/client/auth", { cache: "no-store" })
+      .then((response) => response.json())
+      .then((data) => {
+        if (!active) return;
+        if (!data.authenticated || !data.user) {
+          setAuthLoading(false);
+          router.replace("/client/login");
+          return;
         }
-      } catch (e) {
-        console.warn("Session parse error:", e);
-      }
-    }
-  }, [searchParams]);
+        setUser(data.user);
+        setSiteId(data.user.siteId);
+        setAuthLoading(false);
+      })
+      .catch(() => {
+        if (active) {
+          setAuthLoading(false);
+          router.replace("/client/login");
+        }
+      });
+    return () => { active = false; };
+  }, [router]);
 
-  const fetchClientLeads = async () => {
-    if (!siteId) return;
-    setLoading(true);
+  const fetchClientLeads = useCallback(async () => {
+    if (!user || !siteId) return;
     try {
-      const res = await fetch(`/api/client/leads?siteId=${encodeURIComponent(siteId)}`);
+      const res = await fetch("/api/client/leads", { cache: "no-store" });
       const data = await res.json();
       if (data.leads) {
         setLeads(data.leads);
@@ -58,28 +66,32 @@ function ClientDashboardContent() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [siteId, user]);
 
   useEffect(() => {
-    fetchClientLeads();
+    const initialFetch = window.setTimeout(() => { void fetchClientLeads(); }, 0);
     // 5-Second Real-Time Auto Polling for Live Chatbot Leads
-    const interval = setInterval(() => {
-      fetchClientLeads();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [siteId]);
+    const interval = setInterval(fetchClientLeads, 5000);
+    return () => {
+      window.clearTimeout(initialFetch);
+      clearInterval(interval);
+    };
+  }, [fetchClientLeads]);
 
   // Load custom bot settings from localStorage if available
   useEffect(() => {
     if (!siteId) return;
-    try {
-      const savedBotName = localStorage.getItem(`__watsonx_bot_name_${siteId}`);
-      const savedWelcome = localStorage.getItem(`__watsonx_bot_welcome_${siteId}`);
-      const savedColor = localStorage.getItem(`__watsonx_bot_color_${siteId}`);
-      if (savedBotName) setBotName(savedBotName);
-      if (savedWelcome) setWelcomeMessage(savedWelcome);
-      if (savedColor) setPrimaryColor(savedColor);
-    } catch (e) {}
+    const timeoutId = window.setTimeout(() => {
+      try {
+        const savedBotName = localStorage.getItem(`__watsonx_bot_name_${siteId}`);
+        const savedWelcome = localStorage.getItem(`__watsonx_bot_welcome_${siteId}`);
+        const savedColor = localStorage.getItem(`__watsonx_bot_color_${siteId}`);
+        if (savedBotName) setBotName(savedBotName);
+        if (savedWelcome) setWelcomeMessage(savedWelcome);
+        if (savedColor) setPrimaryColor(savedColor);
+      } catch {}
+    }, 0);
+    return () => window.clearTimeout(timeoutId);
   }, [siteId]);
 
   const handleSaveBotSettings = (e) => {
@@ -93,13 +105,14 @@ function ClientDashboardContent() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("anavya_client_session");
-    router.push("/client/login");
+    fetch("/api/client/auth", { method: "DELETE" }).finally(() => {
+      router.replace("/client/login");
+    });
   };
 
   const handleCrawlWebsite = async (e) => {
     e.preventDefault();
-    if (!crawlUrl) return;
+    if (!crawlUrl || !siteId) return;
     setCrawling(true);
     setCrawlStatus(null);
     try {
@@ -123,6 +136,10 @@ function ClientDashboardContent() {
   };
 
   const scriptTag = `<script src="https://www.anavyainfotech.com/widget.js" data-site-id="${siteId}" async></script>`;
+
+  if (authLoading) {
+    return <main className="min-h-screen flex items-center justify-center bg-stone-50 text-sm text-stone-600">Checking your session…</main>;
+  }
 
   const copyScript = () => {
     navigator.clipboard.writeText(scriptTag);
@@ -219,10 +236,10 @@ function ClientDashboardContent() {
       {/* Main Content Viewport */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top Navbar */}
-        <header className="h-16 bg-white border-b border-stone-200 px-6 flex items-center justify-between shrink-0">
-          <div className="flex items-center gap-3">
+        <header className="min-h-16 bg-white border-b border-stone-200 px-3 sm:px-6 py-2 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 shrink-0">
+          <div className="flex flex-1 min-w-0 items-center gap-3">
             {/* Mobile Tab Navigation */}
-            <div className="md:hidden flex items-center gap-2 overflow-x-auto py-1">
+            <div className="md:hidden flex flex-1 min-w-0 items-center gap-2 overflow-x-auto py-1">
               {[
                 { id: "overview", label: "Overview", icon: Activity },
                 { id: "knowledge", label: "Knowledge", icon: Layers },
@@ -249,7 +266,7 @@ function ClientDashboardContent() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <button
               onClick={fetchClientLeads}
               disabled={loading}
@@ -263,11 +280,20 @@ function ClientDashboardContent() {
             <div className="text-xs font-semibold text-stone-700 hidden sm:block">
               {user?.name || siteId}
             </div>
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="md:hidden inline-flex items-center justify-center rounded-md border border-stone-200 bg-white p-2 text-stone-600 hover:bg-stone-100"
+              aria-label="Sign out"
+              title="Sign out"
+            >
+              <LogOut className="h-4 w-4" />
+            </button>
           </div>
         </header>
 
         {/* Content Body */}
-        <main className="flex-1 p-6 md:p-8 overflow-y-auto space-y-6">
+        <main className="flex-1 p-4 sm:p-6 md:p-8 overflow-y-auto space-y-6">
           {/* TAB 1: OVERVIEW & TELEMETRY */}
           {activeTab === "overview" && (
             <div className="space-y-6 animate-in fade-in duration-200">

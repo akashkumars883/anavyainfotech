@@ -98,11 +98,11 @@ export default function CorporateBrandingPage() {
               <Palette className="h-3.5 w-3.5 text-blue-700" /> Branding Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
-              A Logo Isn't a Brand. We Build the Whole System.
+              A Logo Isn&apos;t a Brand. We Build the Whole System.
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Your website, your pitch deck, and your business card should all look like they belong to the same company. We design the full visual identity — so credibility isn't something you have to explain, it's something people see immediately.
-            </p>
+              Your website, your pitch deck, and your business card should all look like they belong to the same company. We design the full visual identity — so credibility isn&apos;t something you have to explain, it&apos;s something people see immediately.
+                 </p>
             <div className="pt-2">
               <Link
                 href="/contact"

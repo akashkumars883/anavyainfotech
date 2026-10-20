@@ -63,7 +63,7 @@ export default function GsapHorizontalScroll({ projects = [] }) {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="w-[320px] sm:w-[450px] lg:w-[540px] shrink-0 bg-stone-950 border border-stone-800 rounded-lg p-6 sm:p-8 space-y-6 shadow-2xl text-left group hover:border-blue-500/50 transition-colors"
+              className="w-[calc(100vw-3rem)] sm:w-[450px] lg:w-[540px] shrink-0 bg-stone-950 border border-stone-800 rounded-lg p-6 sm:p-8 space-y-6 shadow-2xl text-left group hover:border-blue-500/50 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="px-3 py-1 rounded text-[10px] font-semibold bg-blue-900/40 text-blue-300 border border-blue-800/40 uppercase tracking-wider">

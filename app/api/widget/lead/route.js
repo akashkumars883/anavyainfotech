@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 import { sendLeadNotificationEmails } from "@/lib/email";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +22,9 @@ export async function OPTIONS() {
 }
 
 // GET API to fetch all chatbot leads from Supabase 'leads' table
-export async function GET() {
+export async function GET(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     let leads = [...globalLeadsStore];
 

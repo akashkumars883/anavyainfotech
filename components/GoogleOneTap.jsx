@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function GoogleOneTap() {
   const pathname = usePathname();
-  const [signedInUser, setSignedInUser] = useState(null);
-
   useEffect(() => {
     // 1. Skip on admin panel routes
     if (pathname && pathname.startsWith("/admin")) {
@@ -22,9 +20,7 @@ export default function GoogleOneTap() {
     // 2. Check if user is already signed in
     try {
       const existingEmail = localStorage.getItem("anavya_user_email");
-      const existingName = localStorage.getItem("anavya_user_name");
       if (existingEmail) {
-        setSignedInUser({ email: existingEmail, name: existingName || "" });
         return; // Already captured email, no need to prompt again
       }
     } catch {
@@ -56,7 +52,6 @@ export default function GoogleOneTap() {
             console.warn("[GoogleOneTap] LocalStorage save error:", e);
           }
 
-          setSignedInUser({ email: userEmail, name: userName });
         }
       } catch (err) {
         console.error("[GoogleOneTap] Handle credential error:", err);
@@ -102,8 +97,6 @@ export default function GoogleOneTap() {
       initOneTap();
     }
   }, [pathname]);
-
-  if (!signedInUser) return null;
 
   return null;
 }

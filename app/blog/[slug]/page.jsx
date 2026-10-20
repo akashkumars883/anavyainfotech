@@ -48,7 +48,7 @@ export async function generateMetadata({ params }) {
       siteName: "Anavya Infotech",
       locale: "en_US",
       type: "article",
-      publishedTime: post.isoDate || new Date().toISOString(),
+      ...(post.isoDate ? { publishedTime: post.isoDate } : {}),
       authors: [post.author?.name || "Anavya Infotech"],
       images: [
         {
@@ -181,7 +181,7 @@ export default async function BlogPostPage({ params }) {
     : `https://www.anavyainfotech.com${post.image?.startsWith("/") ? "" : "/"}${post.image || "growth-illustration.jpg"}`;
 
   const pageUrl = `https://www.anavyainfotech.com/blog/${post.slug}`;
-  const isoPublishedDate = post.isoDate || new Date().toISOString();
+  const isoPublishedDate = post.isoDate;
 
   // 1. Google BlogPosting Schema
   const blogPostingSchema = {
@@ -190,8 +190,9 @@ export default async function BlogPostPage({ params }) {
     "headline": post.title,
     "description": post.description,
     "image": [absoluteImageUrl],
-    "datePublished": isoPublishedDate,
-    "dateModified": isoPublishedDate,
+    ...(isoPublishedDate
+      ? { "datePublished": isoPublishedDate, "dateModified": isoPublishedDate }
+      : {}),
     "author": {
       "@type": "Person",
       "name": post.author?.name || "Team Anavya Infotech",

@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/edtech-education",
   },
   openGraph: {
-    title: "EdTech & Education Platform Development | Anavya Infotech",
+    title: "EdTech & Education Platform Development - Anavya Infotech",
     description: "Custom LMS portals, interactive course delivery systems, and student dashboards.",
     url: "https://www.anavyainfotech.com/solutions/edtech-education",
     type: "website",

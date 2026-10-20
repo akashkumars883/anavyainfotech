@@ -1,0 +1,23 @@
+# Turso credentials are required for DB-backed admin accounts and sessions.
+# Rotate the token that was previously hardcoded in lib/turso.js before deployment.
+TURSO_DATABASE_URL=
+TURSO_AUTH_TOKEN=
+
+# Optional: needed by Supabase-backed features and the related maintenance scripts.
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+
+# Use a separate random secret (at least 32 characters) for client portal sessions.
+CLIENT_SESSION_SECRET=
+
+# Required in production for contact form submissions protected by Turnstile.
+TURNSTILE_SECRET_KEY=
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=
+
+# Optional integrations
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=
+SMTP_PASS=
+CRM_WEBHOOK_URL=

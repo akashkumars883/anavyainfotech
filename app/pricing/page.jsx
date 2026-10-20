@@ -21,7 +21,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/pricing",
   },
   openGraph: {
-    title: "Transparent Pricing & Investment Packages | Anavya Infotech",
+    title: "Transparent Pricing & Investment Packages - Anavya Infotech",
     description: "Transparent fixed-price SEO growth and retainer packages.",
     url: "https://www.anavyainfotech.com/pricing",
     type: "website",
@@ -128,8 +128,8 @@ export default function PricingPage() {
             Pricing Built Around Your Project — Not a Generic Package.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Every business is different, so we don't force you into a one-size-fits-all tier. Tell us what you're building, and you'll get a clear, itemized quote — no hidden fees, no surprise "final invoice" padding.
-          </p>
+            Every business is different, so we don&apos;t force you into a one-size-fits-all tier. Tell us what you&apos;re building, and you&apos;ll get a clear, itemized quote — no hidden fees, no surprise &quot;final invoice&quot; padding.
+                                             </p>
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
               href="/budget-calculator"

@@ -1,18 +1,19 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
+import { readClientSession } from "@/lib/clientAuth";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req) {
+  const client = readClientSession(req);
+  if (!client) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   try {
     const { searchParams } = new URL(req.url);
-    const siteId = searchParams.get("siteId");
-
-    if (!siteId) {
-      return NextResponse.json({ error: "siteId query param is required" }, { status: 400 });
+    const requestedSiteId = searchParams.get("siteId");
+    const cleanSiteId = client.siteId.toLowerCase();
+    if (requestedSiteId && requestedSiteId.toLowerCase().trim() !== cleanSiteId) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
-
-    const cleanSiteId = siteId.toLowerCase().trim();
     let siteLeads = [];
 
     // 1. Fetch from global in-memory chatbot leads store
@@ -68,11 +69,6 @@ export async function GET(req) {
     const chatbotOnlyLeads = siteLeads.filter((l) => {
       const s = (l.site_id || "").toLowerCase();
 
-      // If it's the main Anavya admin/demo account, show all leads for analytics
-      if (cleanSiteId === "anavya-infotech" || cleanSiteId === "demo" || cleanSiteId === "admin") {
-         return true;
-      }
-      
       // Strict matching: Only show leads that were captured for this specific client's siteId!
       return s === cleanSiteId;
     });

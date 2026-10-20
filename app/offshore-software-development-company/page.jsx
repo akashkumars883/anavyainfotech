@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import FaqSection from "@/components/FaqSection";
 
 export const metadata = {
-  title: "Offshore Software Development Company India | Outsourcing Partner",
+  title: "Offshore Software Development Company India - Outsourcing Partner",
   description:
     "Anavya Infotech is a premier offshore software development company in India. We engineer custom SaaS, AI chatbots, mobile apps, and CRMs for US, UK & global companies.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/offshore-software-development-company",
   },
   openGraph: {
-    title: "Offshore Software Development Company in India | Anavya Infotech",
+    title: "Offshore Software Development Company in India - Anavya Infotech",
     description:
       "Full-spectrum offshore tech partner delivering enterprise SaaS, AI automation, and web applications for global startups and enterprises.",
     url: "https://www.anavyainfotech.com/offshore-software-development-company",

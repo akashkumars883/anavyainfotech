@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/startups-mvp",
   },
   openGraph: {
-    title: "Startup MVP & Product Development | Anavya Infotech",
+    title: "Startup MVP & Product Development - Anavya Infotech",
     description: "Rapid MVP product engineering for early-stage startups — from validated feature scopes and database blueprints to production-ready deployments.",
     url: "https://www.anavyainfotech.com/solutions/startups-mvp",
     type: "website",

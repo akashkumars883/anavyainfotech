@@ -130,7 +130,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Menu Items */}
-            <div className="hidden md:flex items-center gap-6.5">
+            <div className="hidden lg:flex items-center gap-6.5">
               <Link
                 href="/"
                 className="text-sm font-semibold text-stone-700 hover:text-blue-700 transition-colors"
@@ -188,7 +188,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden md:inline-flex px-6 py-3 rounded-md text-xs font-bold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-all shadow-sm hover:scale-[1.02]"
+              className="hidden lg:inline-flex px-6 py-3 rounded-md text-xs font-bold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-all shadow-sm hover:scale-[1.02]"
             >
               Book Strategy Call
             </Link>
@@ -197,7 +197,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsMobileOpen(true)}
-              className="md:hidden p-2 text-stone-800 hover:text-black transition-colors focus:outline-none cursor-pointer"
+              className="lg:hidden p-2 text-stone-800 hover:text-black transition-colors focus:outline-none cursor-pointer"
             >
               <Menu className="h-6 w-6" />
             </button>
@@ -273,14 +273,14 @@ export default function Navbar() {
       {/* Blurred screen backdrop behind the open mobile menu */}
       {isMobileOpen && (
         <div 
-          className="fixed inset-0 bg-stone-900/60 backdrop-blur-md z-50 md:hidden animate-fade-in"
+          className="fixed inset-0 bg-stone-900/60 backdrop-blur-md z-50 lg:hidden animate-fade-in"
           onClick={() => setIsMobileOpen(false)}
         />
       )}
 
       {/* Slide-down Mobile Menu from the top */}
       {isMobileOpen && (
-        <div className="fixed top-0 left-0 w-full bg-white z-50 md:hidden shadow-2xl border-b border-stone-100 animate-slide-down max-h-[90vh] overflow-y-auto">
+        <div className="fixed top-0 left-0 w-full bg-white z-50 lg:hidden shadow-2xl border-b border-stone-100 animate-slide-down max-h-[90vh] overflow-y-auto">
           {/* Header inside open menu (with logo and close button) */}
           <div className="flex items-center justify-between py-5 px-6 border-b border-stone-100">
             {/* Logo */}

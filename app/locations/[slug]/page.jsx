@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
 
   if (!location) {
     return {
-      title: "Location Not Found | Anavya Infotech",
+      title: "Location Not Found - Anavya Infotech",
     };
   }
 
@@ -55,7 +55,7 @@ export default async function LocationPage({ params }) {
     "@type": "ProfessionalService",
     "name": `Anavya Infotech - ${location.name}`,
     "url": `https://www.anavyainfotech.com/locations/${location.slug}`,
-    "image": "https://www.anavyainfotech.com/og-image.jpg",
+    "image": "https://www.anavyainfotech.com/og-image.png",
     "description": location.metaDescription,
     "telephone": "+91-6201231875",
     "areaServed": location.name,

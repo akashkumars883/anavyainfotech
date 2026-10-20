@@ -40,7 +40,7 @@ const TECHNICAL_SEO_FAQS = [
 
 
 const serviceSchemas = createServiceSchema({
-  name: "Technical SEO Audit & Services | Core Web Vitals Experts",
+  name: "Technical SEO Audit & Services - Core Web Vitals Experts",
   description: "Technical SEO audits & fixes — crawlability, indexing, Core Web Vitals & site speed — for businesses in India & the USA. Fix what's blocking your rankings.",
   slug: "technical-seo",
   faqs: TECHNICAL_SEO_FAQS,

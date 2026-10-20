@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/healthcare-medical",
   },
   openGraph: {
-    title: "Healthcare & Medical Web Solutions | Anavya Infotech",
+    title: "Healthcare & Medical Web Solutions - Anavya Infotech",
     description: "Secure patient portals, appointment booking systems, and telehealth integrations.",
     url: "https://www.anavyainfotech.com/solutions/healthcare-medical",
     type: "website",

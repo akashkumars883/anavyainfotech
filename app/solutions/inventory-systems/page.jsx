@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/inventory-systems",
   },
   openGraph: {
-    title: "Custom Inventory Management System Development | Anavya Infotech",
+    title: "Custom Inventory Management System Development - Anavya Infotech",
     description: "Bespoke inventory tracking dashboards, barcode scanning integrations, and warehouse logistics APIs.",
     url: "https://www.anavyainfotech.com/solutions/inventory-systems",
     type: "website",

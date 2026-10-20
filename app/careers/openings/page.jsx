@@ -1,7 +1,7 @@
 import JobOpeningsClient from "@/components/JobOpeningsClient";
 
 export const metadata = {
-  title: "Business Development Intern Opening | Anavya Infotech Careers",
+  title: "Business Development Intern Opening - Anavya Infotech Careers",
   description:
     "Apply for Business Development Intern role at Anavya Infotech. Learn about key responsibilities, requirements, stipend, PPO opportunities, and submit your application online.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/careers/openings",
   },
   openGraph: {
-    title: "Business Development Intern Opening | Anavya Infotech Careers",
+    title: "Business Development Intern Opening - Anavya Infotech Careers",
     description:
       "Apply for Business Development Intern role at Anavya Infotech. Paid internship with PPO opportunities. Apply online now.",
     url: "https://www.anavyainfotech.com/careers/openings",

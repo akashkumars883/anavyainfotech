@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { tursoClient } from "@/lib/turso";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export async function GET(request, { params }) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const { id } = await params;
 

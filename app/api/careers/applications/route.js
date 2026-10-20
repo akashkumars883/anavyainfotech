@@ -1,79 +1,55 @@
 import { NextResponse } from "next/server";
 import { tursoClient } from "@/lib/turso";
 import { sendLeadNotificationEmails } from "@/lib/email";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export const dynamic = "force-dynamic";
 
-const globalApplicationsStore = globalThis._careerApplicationsStore || [];
-if (!globalThis._careerApplicationsStore) {
-  globalThis._careerApplicationsStore = globalApplicationsStore;
-}
-
 // Ensure table exists in Turso DB with full fields
 async function initTursoApplicationsTable() {
-  try {
-    await tursoClient.execute(`
-      CREATE TABLE IF NOT EXISTS career_applications (
-        id TEXT PRIMARY KEY,
-        name TEXT NOT NULL,
-        email TEXT NOT NULL,
-        phone TEXT,
-        location TEXT,
-        education TEXT,
-        graduation_year TEXT,
-        linkedin_url TEXT,
-        resume_url TEXT,
-        opening_title TEXT,
-        skills TEXT,
-        message TEXT,
-        created_at TEXT
-      )
-    `);
-  } catch (e) {
-    console.warn("Turso career_applications init notice:", e.message);
-  }
+  await tursoClient.execute(`
+    CREATE TABLE IF NOT EXISTS career_applications (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL,
+      phone TEXT,
+      location TEXT,
+      education TEXT,
+      graduation_year TEXT,
+      linkedin_url TEXT,
+      resume_url TEXT,
+      opening_title TEXT,
+      skills TEXT,
+      message TEXT,
+      created_at TEXT
+    )
+  `);
 }
 
-export async function GET() {
+export async function GET(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     await initTursoApplicationsTable();
 
-    let applications = [...globalApplicationsStore];
+    const dbRes = await tursoClient.execute("SELECT * FROM career_applications ORDER BY created_at DESC");
+    const applications = (dbRes.rows || []).map((row) => ({
+      id: row.id,
+      name: row.name,
+      email: row.email,
+      phone: row.phone,
+      location: row.location || "N/A",
+      education: row.education || "N/A",
+      graduation_year: row.graduation_year || "N/A",
+      linkedin_url: row.linkedin_url || "",
+      resume_url: row.resume_url || "",
+      opening_title: row.opening_title || "Business Development Intern",
+      skills: row.skills || "",
+      message: row.message || "",
+      created_at: row.created_at,
+    }));
 
-    try {
-      const dbRes = await tursoClient.execute("SELECT * FROM career_applications ORDER BY created_at DESC");
-      if (dbRes.rows && dbRes.rows.length > 0) {
-        const dbApps = dbRes.rows.map((row) => ({
-          id: row.id,
-          name: row.name,
-          email: row.email,
-          phone: row.phone,
-          location: row.location || "N/A",
-          education: row.education || "N/A",
-          graduation_year: row.graduation_year || "N/A",
-          linkedin_url: row.linkedin_url || "",
-          resume_url: row.resume_url || "",
-          opening_title: row.opening_title || "Business Development Intern",
-          skills: row.skills || "",
-          message: row.message || "",
-          created_at: row.created_at,
-        }));
-        applications = [...dbApps, ...applications];
-      }
-    } catch (dbErr) {
-      console.warn("Turso fetch applications fallback:", dbErr.message);
-    }
-
-    // Deduplicate applications
-    const seen = new Set();
-    const uniqueApps = applications.filter((app) => {
-      const key = `${app.name}_${app.email}_${app.phone}`;
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-
-    return NextResponse.json({ success: true, count: uniqueApps.length, applications: uniqueApps });
+    return NextResponse.json({ success: true, count: applications.length, applications });
   } catch (err) {
     console.error("GET career applications error:", err);
     return NextResponse.json({ error: err.message }, { status: 500 });
@@ -117,8 +93,6 @@ export async function POST(request) {
       created_at: new Date().toISOString(),
     };
 
-    globalApplicationsStore.unshift(appRecord);
-
     try {
       await initTursoApplicationsTable();
       await tursoClient.execute({
@@ -142,7 +116,11 @@ export async function POST(request) {
         ],
       });
     } catch (e) {
-      console.warn("Turso insert career application error:", e.message);
+      console.error("Turso insert career application error:", e.message);
+      return NextResponse.json(
+        { error: "Application could not be saved. Please try again in a few minutes." },
+        { status: 503 }
+      );
     }
 
     // Email alert to admin

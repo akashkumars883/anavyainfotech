@@ -218,7 +218,7 @@ export default function JobDetailClient({ initialJob, jobId }) {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-stone-400 shrink-0" />
-                    <span>Stay updated on industry trends and actively contribute to the company's growth strategies.</span>
+                    <span>Stay updated on industry trends and actively contribute to the company&apos;s growth strategies.</span>
                   </li>
                 </ul>
               </div>
@@ -393,7 +393,7 @@ export default function JobDetailClient({ initialJob, jobId }) {
                       <div className="space-y-5 animate-in slide-in-from-right-4 duration-300">
                         <div className="p-5 rounded-md bg-stone-50 border border-stone-200 space-y-4">
                           <h3 className="font-bold text-stone-900 border-b border-stone-200 pb-2">Profile Summary</h3>
-                          <div className="grid grid-cols-2 gap-4 text-sm font-light text-stone-700">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-light text-stone-700">
                             <div><strong>Name:</strong> {formData.name}</div>
                             <div><strong>Email:</strong> {formData.email}</div>
                             <div><strong>Phone:</strong> {formData.phone}</div>

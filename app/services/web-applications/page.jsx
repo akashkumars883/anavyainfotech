@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, Code } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Custom Web Application Development Company | India & USA | Anavya Infotech",
+  title: "Custom Web Application Development Company - India & USA - Anavya Infotech",
   description:
     "We build scalable custom web applications — SaaS platforms, portals, dashboards & internal tools — for businesses in India, Delhi NCR & the USA. React/Next.js engineering.",
   keywords: "custom web application development, SaaS platform development India, custom portal development",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/services/web-applications",
   },
   openGraph: {
-    title: "Custom Web Application Development Company | India & USA | Anavya Infotech",
+    title: "Custom Web Application Development Company - India & USA - Anavya Infotech",
     description:
       "We build scalable custom web applications — SaaS platforms, portals, dashboards & internal tools — for businesses in India, Delhi NCR & the USA. React/Next.js engineering.",
     url: "https://www.anavyainfotech.com/services/web-applications",
@@ -87,7 +87,7 @@ export default function ServicePage() {
               Custom Web Application Development Company
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              When off-the-shelf software can't keep up with how your business actually operates, a custom web application closes the gap. Anavya Infotech designs and engineers web applications — customer portals, SaaS products, internal operations tools, booking systems, and data dashboards — built on modern, scalable architecture and owned entirely by you.
+              When off-the-shelf software can&apos;t keep up with how your business actually operates, a custom web application closes the gap. Anavya Infotech designs and engineers web applications — customer portals, SaaS products, internal operations tools, booking systems, and data dashboards — built on modern, scalable architecture and owned entirely by you.
             </p>
             <div className="pt-2">
               <Link
@@ -112,7 +112,7 @@ export default function ServicePage() {
       <section className="py-12 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            What's Included
+            What&apos;s Included
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {inclusions.map((item, index) => (
@@ -133,10 +133,10 @@ export default function ServicePage() {
           </h2>
           <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
             <p>
-              In today's highly competitive digital landscape, relying on generic, off-the-shelf software often forces your team to adapt to rigid workflows. Partnering with a specialized <strong>custom web application development company</strong> allows you to build software around how your business actually operates. At Anavya Infotech, we bring years of demonstrated technical expertise to engineer scalable solutions. Whether you require robust <strong>SaaS platform development in India</strong> or complex <strong>custom portal development</strong> for your enterprise, our agile methodology ensures measurable business outcomes and operational efficiency.
+              In today&apos;s highly competitive digital landscape, relying on generic, off-the-shelf software often forces your team to adapt to rigid workflows. Partnering with a specialized <strong>custom web application development company</strong> allows you to build software around how your business actually operates. At Anavya Infotech, we bring years of demonstrated technical expertise to engineer scalable solutions. Whether you require robust <strong>SaaS platform development in India</strong> or complex <strong>custom portal development</strong> for your enterprise, our agile methodology ensures measurable business outcomes and operational efficiency.
             </p>
             <p>
-              Our authority in the field is built on a foundation of technical excellence and rigorous security standards. We specialize in React, Next.js, and Node.js architectures, ensuring your application is not only lightning-fast but also highly secure against modern threats. By adhering to strict data privacy compliance and utilizing modern cloud infrastructures like AWS, we deliver enterprise-grade tools that are resilient and future-proof. We don't just write code; we provide strategic technology consulting built on trust and proven results.
+              Our authority in the field is built on a foundation of technical excellence and rigorous security standards. We specialize in React, Next.js, and Node.js architectures, ensuring your application is not only lightning-fast but also highly secure against modern threats. By adhering to strict data privacy compliance and utilizing modern cloud infrastructures like AWS, we deliver enterprise-grade tools that are resilient and future-proof. We don&apos;t just write code; we provide strategic technology consulting built on trust and proven results.
             </p>
           </div>
         </div>

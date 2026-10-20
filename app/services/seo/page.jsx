@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, Globe } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "SEO Company in India | Search Engine Optimization Services | Anavya Infotech",
+  title: "SEO Company in India - Search Engine Optimization Services - Anavya Infotech",
   description:
     "Data-driven SEO services for businesses in Delhi NCR, Faridabad, Noida & the USA. Technical, on-page & content SEO to rank higher and grow organic traffic.",
   keywords: "SEO company India, search engine optimization services, SEO agency Delhi NCR Faridabad Noida",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/services/seo",
   },
   openGraph: {
-    title: "SEO Company in India | Search Engine Optimization Services | Anavya Infotech",
+    title: "SEO Company in India - Search Engine Optimization Services - Anavya Infotech",
     description:
       "Data-driven SEO services for businesses in Delhi NCR, Faridabad, Noida & the USA. Technical, on-page & content SEO to rank higher and grow organic traffic.",
     url: "https://www.anavyainfotech.com/services/seo",
@@ -86,7 +86,7 @@ export default function SeoServicePage() {
               Top SEO Services Company in India
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Ranking for a vanity keyword means nothing if it doesn't bring customers. Anavya Infotech runs SEO campaigns built around a simple standard: organic traffic that converts. Our SEO services cover technical audits, on-page optimization, content strategy, and authority building for businesses across India, Delhi NCR, and the USA.
+              Ranking for a vanity keyword means nothing if it doesn&apos;t bring customers. Anavya Infotech runs SEO campaigns built around a simple standard: organic traffic that converts. Our SEO services cover technical audits, on-page optimization, content strategy, and authority building for businesses across India, Delhi NCR, and the USA.
             </p>
             <div className="pt-2">
               <Link
@@ -111,7 +111,7 @@ export default function SeoServicePage() {
       <section className="py-12 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            What's Included
+            What&apos;s Included
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {inclusions.map((item, index) => (
@@ -135,7 +135,7 @@ export default function SeoServicePage() {
               In a digital landscape flooded with generic marketing tactics, true visibility requires technical mastery. As a premier <strong>SEO company in India</strong>, Anavya Infotech goes beyond outdated backlink spam. We treat SEO as a structural engineering problem. Whether you need a comprehensive technical SEO audit to fix underlying crawl issues or are looking for the <strong>best SEO agency in Delhi NCR</strong> to drive localized B2B leads, our data-backed methodologies ensure sustainable, compounding organic growth.
             </p>
             <p>
-              Our authority stems from our transparent, ROI-focused approach. We do not guarantee arbitrary rankings; we guarantee measurable traffic and conversions. By leveraging deep expertise in Next.js/React technical optimization and Semantic Web principles, we execute <strong>search engine optimization services</strong> that align perfectly with Google's EEAT guidelines. Additionally, we are a trusted partner for global marketers, running highly successful <Link href="/blog/white-label-seo-reseller-program-agency-scaling-guide" className="text-blue-700 underline font-medium">White Label SEO Reseller programs</Link> for agencies that demand elite fulfillment.
+              Our authority stems from our transparent, ROI-focused approach. We do not guarantee arbitrary rankings; we guarantee measurable traffic and conversions. By leveraging deep expertise in Next.js/React technical optimization and Semantic Web principles, we execute <strong>search engine optimization services</strong> that align perfectly with Google&apos;s EEAT guidelines. Additionally, we are a trusted partner for global marketers, running highly successful <Link href="/blog/white-label-seo-reseller-program-agency-scaling-guide" className="text-blue-700 underline font-medium">White Label SEO Reseller programs</Link> for agencies that demand elite fulfillment.
             </p>
           </div>
         </div>

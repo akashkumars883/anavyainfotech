@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/cloud-saas",
   },
   openGraph: {
-    title: "Cloud SaaS Platform Development | Anavya Infotech",
+    title: "Cloud SaaS Platform Development - Anavya Infotech",
     description: "Full-cycle SaaS product engineering — from multi-tenant database architecture to subscription billing.",
     url: "https://www.anavyainfotech.com/solutions/cloud-saas",
     type: "website",

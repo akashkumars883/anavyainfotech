@@ -3,31 +3,30 @@ import { PORTFOLIO_PROJECTS } from "@/lib/portfolioData";
 
 export default async function sitemap() {
   const BASE_URL = "https://www.anavyainfotech.com";
-  const currentDate = new Date();
 
   // Static core pages
   const staticPages = [
-    { url: "https://www.anavyainfotech.com", lastModified: currentDate, priority: 1.0, changeFrequency: "daily" },
-    { url: `${BASE_URL}/about`, lastModified: currentDate, priority: 0.8, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/case-studies`, lastModified: currentDate, priority: 0.85, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/pricing`, lastModified: currentDate, priority: 0.9, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/budget-calculator`, lastModified: currentDate, priority: 0.95, changeFrequency: "daily" },
-    { url: `${BASE_URL}/hire-nextjs-developers-india`, lastModified: currentDate, priority: 0.9, changeFrequency: "daily" },
-    { url: `${BASE_URL}/offshore-software-development-company`, lastModified: currentDate, priority: 0.9, changeFrequency: "daily" },
-    { url: `${BASE_URL}/contact`, lastModified: currentDate, priority: 0.9, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/careers`, lastModified: currentDate, priority: 0.85, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/careers/openings`, lastModified: currentDate, priority: 0.85, changeFrequency: "weekly" },
-    { url: `${BASE_URL}/blog`, lastModified: currentDate, priority: 0.9, changeFrequency: "daily" },
-    { url: `${BASE_URL}/privacy-policy`, lastModified: currentDate, priority: 0.5, changeFrequency: "yearly" },
-    { url: `${BASE_URL}/terms-of-service`, lastModified: currentDate, priority: 0.5, changeFrequency: "yearly" },
-    { url: `${BASE_URL}/refund-policy`, lastModified: currentDate, priority: 0.5, changeFrequency: "yearly" },
-    { url: `${BASE_URL}/sitemap`, lastModified: currentDate, priority: 0.6, changeFrequency: "weekly" },
+    { url: BASE_URL, priority: 1.0, changeFrequency: "daily" },
+    { url: `${BASE_URL}/about`, priority: 0.8, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/case-studies`, priority: 0.85, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/pricing`, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/budget-calculator`, priority: 0.95, changeFrequency: "daily" },
+    { url: `${BASE_URL}/hire-nextjs-developers-india`, priority: 0.9, changeFrequency: "daily" },
+    { url: `${BASE_URL}/offshore-software-development-company`, priority: 0.9, changeFrequency: "daily" },
+    { url: `${BASE_URL}/ecommerce-offer`, priority: 0.85, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/contact`, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/careers`, priority: 0.85, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/careers/openings`, priority: 0.85, changeFrequency: "weekly" },
+    { url: `${BASE_URL}/blog`, priority: 0.9, changeFrequency: "daily" },
+    { url: `${BASE_URL}/privacy-policy`, priority: 0.5, changeFrequency: "yearly" },
+    { url: `${BASE_URL}/terms-of-service`, priority: 0.5, changeFrequency: "yearly" },
+    { url: `${BASE_URL}/refund-policy`, priority: 0.5, changeFrequency: "yearly" },
+    { url: `${BASE_URL}/sitemap`, priority: 0.6, changeFrequency: "weekly" },
   ];
 
   // Case Study pages
   const caseStudyPages = PORTFOLIO_PROJECTS.map((project) => ({
     url: `${BASE_URL}/case-studies/${project.slug}`,
-    lastModified: currentDate,
     priority: 0.8,
     changeFrequency: "weekly",
   }));
@@ -42,7 +41,7 @@ export default async function sitemap() {
 
   const blogPages = blogPosts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: post.date ? new Date(post.date) : currentDate,
+    ...(post.isoDate ? { lastModified: new Date(post.isoDate) } : {}),
     priority: 0.85,
     changeFrequency: "daily",
   }));
@@ -71,7 +70,6 @@ export default async function sitemap() {
 
   const servicePages = servicesSlugs.map((slug) => ({
     url: `${BASE_URL}/services/${slug}`,
-    lastModified: currentDate,
     priority: 0.9,
     changeFrequency: "weekly",
   }));
@@ -94,7 +92,6 @@ export default async function sitemap() {
 
   const solutionPages = solutionsSlugs.map((slug) => ({
     url: `${BASE_URL}/solutions/${slug}`,
-    lastModified: currentDate,
     priority: 0.85,
     changeFrequency: "weekly",
   }));
@@ -103,7 +100,6 @@ export default async function sitemap() {
   const { LOCATIONS_DATA } = require("@/lib/locationsData");
   const locationPages = LOCATIONS_DATA.map((loc) => ({
     url: `${BASE_URL}/locations/${loc.slug}`,
-    lastModified: currentDate,
     priority: 0.8,
     changeFrequency: "weekly",
   }));

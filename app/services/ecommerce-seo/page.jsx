@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Zap, ArrowRight, ShoppingBag, TrendingUp, Tag, ShieldCheck } from "lucide-react";
 
 export const metadata = {
-  title: "E-Commerce SEO Agency in India | Best E-Commerce SEO Services & Company",
+  title: "E-Commerce SEO Agency in India - Best E-Commerce SEO Services & Company",
   description:
     "Anavya Infotech is the best ecommerce SEO agency in India. We offer specialized ecommerce SEO services, product page optimization, category rank growth, and schema markup for Shopify, Next.js, and WooCommerce storefronts.",
   keywords: "ecommerce SEO agency, ecommerce SEO services, ecommerce SEO company",
@@ -13,7 +13,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/services/ecommerce-seo",
   },
   openGraph: {
-    title: "E-Commerce SEO Agency in India | Best E-Commerce SEO Services",
+    title: "E-Commerce SEO Agency in India - Best E-Commerce SEO Services",
     description:
       "Drive organic sales, rank product category pages, and scale organic revenue with ecommerce SEO services from Anavya Infotech.",
     url: "https://www.anavyainfotech.com/services/ecommerce-seo",
@@ -39,7 +39,7 @@ const ECOMMERCE_SEO_FAQS = [
 
 
 const serviceSchemas = createServiceSchema({
-  name: "E-Commerce SEO Services | Product & Category Page SEO",
+  name: "E-Commerce SEO Services - Product & Category Page SEO",
   description: "SEO for online stores — product page optimization, category structure & technical SEO to grow organic sales for e-commerce brands in India & the USA.",
   slug: "ecommerce-seo",
   faqs: ECOMMERCE_SEO_FAQS,

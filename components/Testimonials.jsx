@@ -6,7 +6,7 @@ import { Quote, CheckCircle2, ArrowUpRight, ShieldCheck } from "lucide-react";
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const timerRef = useRef(null);
+  const isPausedRef = useRef(false);
 
   const testimonials = [
     {
@@ -43,33 +43,22 @@ export default function Testimonials() {
 
   // Auto slide effect
   useEffect(() => {
-    startAutoSlide();
-    return () => stopAutoSlide();
-  }, [activeIndex]);
-
-  const startAutoSlide = () => {
-    stopAutoSlide();
-    timerRef.current = setInterval(() => {
+    const timer = setInterval(() => {
+      if (isPausedRef.current) return;
       setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     }, 6000); // Transitions slide every 6 seconds
-  };
-
-  const stopAutoSlide = () => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-    }
-  };
+    return () => clearInterval(timer);
+  }, [testimonials.length]);
 
   const handleDotClick = (index) => {
     setActiveIndex(index);
-    startAutoSlide();
   };
 
   return (
     <section 
       className="py-12 bg-white border-b border-stone-100 relative z-10"
-      onMouseEnter={stopAutoSlide}
-      onMouseLeave={startAutoSlide}
+      onMouseEnter={() => { isPausedRef.current = true; }}
+      onMouseLeave={() => { isPausedRef.current = false; }}
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Block */}
@@ -78,7 +67,7 @@ export default function Testimonials() {
             <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Verified Case Studies &amp; Reviews
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
-            Don't Just Take Our Word for It.
+            Don&apos;t Just Take Our Word for It.
           </h2>
         </div>
 
@@ -113,7 +102,7 @@ export default function Testimonials() {
 
                     {/* Quote Text */}
                     <blockquote className="text-lg sm:text-xl md:text-2xl font-light text-stone-800 leading-relaxed font-sans max-w-4xl">
-                      "{item.quote}"
+                      &ldquo;{item.quote}&rdquo;
                     </blockquote>
 
                     {/* Author metadata & Case Study Link */}

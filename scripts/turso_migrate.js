@@ -1,10 +1,10 @@
+require("@next/env").loadEnvConfig(process.cwd());
 const { createClient } = require("@libsql/client");
 const fs = require("fs");
 const path = require("path");
 
-const url = "libsql://anavya-infotech-anavyainfotech.aws-ap-south-1.turso.io";
-const authToken =
-  "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3ODc0MjU2MjMsImlkIjoiMDFhMDJhZGMtZjAwMS03NThiLTg0NDAtNjZhNTFlODk3NjNkIiwia2lkIjoiNGtyc01Yc1B6NU9pcGZzUG5ZQkMwcHBtT04yQVl0bFl4c3VGc0dZc3Z5WSIsInJpZCI6IjBhYjUwNGQxLWZlNzUtNDcyMS05YTJmLTEyYjY4OGJkOGU4OCJ9.xKBRx3M85b-WXqwFRw9tSoAxlm2HSYcewNsCLtz0DnO56VZg43nUaLteik88J4HD5oxnM0aN2RrcE5y7e4mKBA";
+const url = process.env.TURSO_DATABASE_URL || "";
+const authToken = process.env.TURSO_AUTH_TOKEN || "";
 
 const turso = createClient({ url, authToken });
 
@@ -41,27 +41,6 @@ async function migrate() {
     );
   `);
   console.log("✓ 'leads' table created/verified.");
-
-  await turso.execute(`
-    CREATE TABLE IF NOT EXISTS click_events (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      visitor_id TEXT NOT NULL,
-      page_path TEXT NOT NULL,
-      element_tag TEXT,
-      element_text TEXT,
-      element_id TEXT,
-      element_class TEXT,
-      data_track TEXT,
-      click_x INTEGER,
-      click_y INTEGER,
-      screen_width INTEGER,
-      screen_height INTEGER,
-      user_ip TEXT,
-      user_agent TEXT,
-      created_at TEXT
-    );
-  `);
-  console.log("✓ 'click_events' table created/verified.");
 
   // 2. Import Blogs
   const blogsPath = path.join(__dirname, "../db_backup/blogs.json");

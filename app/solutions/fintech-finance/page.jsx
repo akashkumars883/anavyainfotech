@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/fintech-finance",
   },
   openGraph: {
-    title: "FinTech & Finance Web Platform Development | Anavya Infotech",
+    title: "FinTech & Finance Web Platform Development - Anavya Infotech",
     description: "Enterprise-grade financial dashboards, secure transaction pipelines, and compliant data visualization systems.",
     url: "https://www.anavyainfotech.com/solutions/fintech-finance",
     type: "website",

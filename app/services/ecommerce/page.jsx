@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, ShoppingCart } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Headless E-Commerce Development Company | India & USA | Anavya Infotech",
+  title: "Headless E-Commerce Development Company - India & USA - Anavya Infotech",
   description:
     "Custom headless e-commerce stores built for speed, SEO & scale. Shopify/custom storefronts for D2C brands in India, Delhi NCR & the USA.",
   keywords: "headless e-commerce development company, custom Shopify storefront Next.js, D2C e-commerce agency India USA",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/services/ecommerce",
   },
   openGraph: {
-    title: "Headless E-Commerce Development Company | India & USA | Anavya Infotech",
+    title: "Headless E-Commerce Development Company - India & USA - Anavya Infotech",
     description:
       "Custom headless e-commerce stores built for speed, SEO & scale. Shopify/custom storefronts for D2C brands in India, Delhi NCR & the USA.",
     url: "https://www.anavyainfotech.com/services/ecommerce",
@@ -107,7 +107,7 @@ export default function EcommerceServicePage() {
       <section className="py-12 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            What's Included
+            What&apos;s Included
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {inclusions.map((item, index) => (

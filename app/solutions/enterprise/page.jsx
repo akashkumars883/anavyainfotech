@@ -11,7 +11,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/solutions/enterprise",
   },
   openGraph: {
-    title: "Enterprise Software & Web Solutions | Anavya Infotech",
+    title: "Enterprise Software & Web Solutions - Anavya Infotech",
     description: "Large-scale enterprise web platforms, internal workflow management tools, and custom CRM systems.",
     url: "https://www.anavyainfotech.com/solutions/enterprise",
     type: "website",

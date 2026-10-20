@@ -13,7 +13,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/case-studies",
   },
   openGraph: {
-    title: "Featured Software Engineering Case Studies | Anavya Infotech",
+    title: "Featured Software Engineering Case Studies - Anavya Infotech",
     description:
       "Featured case studies detailing challenges, engineering architectures, and ROI metrics for custom software projects.",
     url: "https://www.anavyainfotech.com/case-studies",

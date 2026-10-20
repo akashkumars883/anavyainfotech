@@ -5,7 +5,7 @@ import { Zap, ArrowRight, Cpu, Bot, Code, Database, Bell, CheckCircle2, Sparkles
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Website AI Chatbot Development & Auto-Crawl AI Widget Services | Anavya Infotech",
+  title: "Website AI Chatbot Development & Auto-Crawl AI Widget Services - Anavya Infotech",
   description:
     "Turn website visitors into leads 24/7 with Anaya AI Assistant. Instant website auto-crawling, RAG vector knowledge store, 1-line script embed & real-time lead capture for your website.",
   keywords: ["website AI chatbot development", "AI chatbot widget for websites", "Anaya AI Assistant"],
@@ -192,7 +192,7 @@ export default function ServicePage() {
           </h2>
           <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
             <p>
-              In the modern digital economy, a website that only operates during business hours is actively losing revenue. As a specialized <strong>website AI chatbot development</strong> company, Anavya Infotech engineers intelligent, autonomous agents that act as your 24/7 digital sales team. We don't just provide a generic chat widget; we deploy an advanced <strong>AI chatbot widget for websites</strong> built on sophisticated RAG (Retrieval-Augmented Generation) technology that understands the nuanced context of your specific business offerings.
+              In the modern digital economy, a website that only operates during business hours is actively losing revenue. As a specialized <strong>website AI chatbot development</strong> company, Anavya Infotech engineers intelligent, autonomous agents that act as your 24/7 digital sales team. We don&apos;t just provide a generic chat widget; we deploy an advanced <strong>AI chatbot widget for websites</strong> built on sophisticated RAG (Retrieval-Augmented Generation) technology that understands the nuanced context of your specific business offerings.
             </p>
             <p>
               Our authority in AI integration ensures that your <strong>Anaya AI Assistant</strong> operates with extreme precision and security. By strictly adhering to data privacy protocols, we guarantee that visitor interactions are secure and lead capture is compliant with global standards. Businesses trust us to bridge the gap between AI innovation and practical lead generation, transforming passive traffic into qualified, actionable sales opportunities without requiring any coding expertise from your end.

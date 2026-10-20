@@ -1,31 +1,27 @@
 import { NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { tursoClient } from "@/lib/turso";
-import { getCache, setCache, delCache } from "@/lib/redis";
+import { delCache } from "@/lib/redis";
+import { requireAdmin } from "@/lib/adminAuth";
 
-// GET all blogs (Summary listing for Admin Blog Dashboard with Redis caching)
-export async function GET() {
+// GET the lightweight fields used by the admin blog list.
+export async function GET(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
-    const cacheKey = "admin:blogs:list";
-    const cached = await getCache(cacheKey);
-    if (cached && Array.isArray(cached)) {
-      return NextResponse.json({ blogs: cached });
-    }
-
-    // Select lightweight list columns (excluding massive content HTML for lightning fast loading)
+    // Avoid Redis round trips here: the admin needs fresh data and Turso is the source of truth.
     const res = await tursoClient.execute(
-      "SELECT id, slug, title, category, author, excerpt, image_url, is_published, created_at, tags, views_count FROM blogs ORDER BY created_at DESC"
+      "SELECT id, slug, title, category, image_url, is_published, created_at, views_count FROM blogs ORDER BY created_at DESC"
     );
 
     const formattedBlogs = (res.rows || []).map((row) => ({
       ...row,
       is_published: row.is_published === 1 || row.is_published === true,
-      tags: typeof row.tags === "string" ? JSON.parse(row.tags || "[]") : row.tags || [],
     }));
-
-    await setCache(cacheKey, formattedBlogs, 300); // 5 minutes TTL
-
-    return NextResponse.json({ blogs: formattedBlogs });
+    return NextResponse.json(
+      { blogs: formattedBlogs },
+      { headers: { "Cache-Control": "private, no-store, max-age=0" } }
+    );
   } catch (err) {
     console.error("API admin blogs GET error:", err);
     return NextResponse.json({ error: "Failed to fetch blogs" }, { status: 500 });
@@ -34,6 +30,8 @@ export async function GET() {
 
 // POST create a new blog
 export async function POST(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const body = await request.json();
     const { title, slug, category, author, excerpt, image_url, content, is_published, tags, faqs } = body;
@@ -109,6 +107,8 @@ export async function POST(request) {
 
 // PUT update an existing blog
 export async function PUT(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const body = await request.json();
     const { id, title, slug, category, author, excerpt, image_url, content, is_published, tags, faqs } = body;
@@ -185,6 +185,8 @@ export async function PUT(request) {
 
 // DELETE delete a blog
 export async function DELETE(request) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const { searchParams } = new URL(request.url);
     const id = searchParams.get("id");

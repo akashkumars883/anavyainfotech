@@ -22,7 +22,7 @@ export const metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Custom Software & AI Development Company in Delhi NCR | Anavya Infotech",
+    default: "Custom Software & AI Development Company in Delhi NCR - Anavya Infotech",
   },
 
   description:
@@ -52,12 +52,12 @@ export const metadata = {
     locale: "en_IN",
     url: BASE_URL,
     siteName: "Anavya Infotech",
-    title: "Custom Software & AI Development Company in Delhi NCR | Anavya Infotech",
+    title: "Custom Software & AI Development Company in Delhi NCR - Anavya Infotech",
     description:
       "Anavya Infotech builds custom software, AI automation, and SEO-driven growth systems for businesses across Delhi NCR, Noida, Gurgaon & the USA. 100+ projects delivered.",
     images: [
       {
-        url: `${BASE_URL}/og-image.jpg`,
+        url: `${BASE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Anavya Infotech – IT Solutions, AI & Digital Marketing Company in India",
@@ -70,10 +70,10 @@ export const metadata = {
     card: "summary_large_image",
     site: "@anavyainfotech",
     creator: "@anavyainfotech",
-    title: "Custom Software & AI Development Company in Delhi NCR | Anavya Infotech",
+    title: "Custom Software & AI Development Company in Delhi NCR - Anavya Infotech",
     description:
       "Anavya Infotech builds custom software, AI automation, and SEO-driven growth systems for businesses across Delhi NCR, Noida, Gurgaon & the USA. 100+ projects delivered.",
-    images: [`${BASE_URL}/og-image.jpg`],
+    images: [`${BASE_URL}/og-image.png`],
   },
 
   // Robots directive
@@ -121,7 +121,7 @@ const orgSchema = {
   "name": "Anavya Infotech",
   "url": BASE_URL,
   "logo": `${BASE_URL}/logo.png`,
-  "image": `${BASE_URL}/og-image.jpg`,
+  "image": `${BASE_URL}/og-image.png`,
   "description":
     "Anavya Infotech is a full-spectrum technology and growth partner in India, Delhi NCR, USA, UK & Worldwide — website development, SEO, AI automation, data analytics, and cloud solutions under one roof.",
   "telephone": "+91-6201231875",
@@ -141,12 +141,6 @@ const orgSchema = {
     "India",
     "Worldwide"
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "128",
-    "bestRating": "5"
-  },
   "priceRange": "$$",
   "openingHours": "Mo-Fr 09:00-18:00",
   "sameAs": [
@@ -178,14 +172,6 @@ const websiteSchema = {
   "@type": "WebSite",
   "name": "Anavya Infotech",
   "url": BASE_URL,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": `${BASE_URL}/search?q={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
-  },
 };
 
 export default function RootLayout({ children }) {
