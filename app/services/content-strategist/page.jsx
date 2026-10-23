@@ -1,14 +1,14 @@
 import { createServiceSchema } from "@/lib/serviceSchema";
+import ServiceFeatureIcon from "@/components/ServiceFeatureIcon";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import { Zap, ArrowRight, Share2, Megaphone, Target, BarChart2 } from "lucide-react";
 
 export const metadata = {
-  title: "Digital Marketing Agency in India & Delhi NCR - Performance & Social Media Marketing",
-  description:
-    "Anavya Infotech is a top digital marketing agency in India, Delhi NCR & Noida. We provide performance marketing company services, social media marketing services, content strategy, and paid acquisition management.",
-  keywords: "digital marketing agency, digital marketing company, digital marketing agency in India",
+  title: "SEO Content Strategy & Topical Authority Consulting | Anavya Infotech",
+  description: "Outrank competitors by building unassailable topical authority. Data-driven content clusters, semantic entity mapping & search intent optimization for B2B brands.",
+  keywords: ["seo content strategy services","topical authority consulting","semantic seo agency","content cluster strategy","b2b seo content marketing","answer engine optimization consulting"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/content-strategist",
   },
@@ -24,30 +24,30 @@ export const metadata = {
 
 const CONTENT_STRATEGIST_FAQS = [
   {
-    "question": "Do you write the content, or just provide a strategy?",
-    "answer": "Both are available — full-service content production, or strategy and briefs if you have an in-house writer."
+    "question": "What is topical authority in modern SEO?",
+    "answer": "Topical authority is a measure of how comprehensively a site covers a given subject. Search engines evaluate the breadth, depth, and semantic structure of your content clusters to determine domain expertise."
   },
   {
-    "question": "How do you decide what to write about?",
-    "answer": "Based on keyword research tied to real search volume and intent, competitor content gaps, and questions your sales/support team hears most often."
+    "question": "How do topic clusters differ from traditional blogging?",
+    "answer": "Traditional blogging creates independent, chronological posts. Topic clusters connect a core pillar page to detailed sub-topic articles via intentional internal links, creating clear contextual relationships for search crawlers."
   },
   {
-    "question": "Can this work alongside our existing blog?",
-    "answer": "Yes — we typically start with an audit of existing content to identify what to keep, update, or replace."
+    "question": "How long does it take to build topical authority in competitive industries?",
+    "answer": "Noticeable organic gains typically occur within 60 to 120 days after deploying structured content clusters and completing entity optimization audits."
   }
 ];
 
 
 const serviceSchemas = createServiceSchema({
   name: "Content Strategy & SEO Content Services",
-  description: "SEO content strategy, blog production & content planning for businesses in India & the USA. Content built around real search intent and buyer journeys.",
+  description: "Outrank competitors by building unassailable topical authority. Data-driven content clusters, semantic entity mapping & search intent optimization for B2B brands.",
   slug: "content-strategist",
   faqs: CONTENT_STRATEGIST_FAQS,
 });
 
 export default function ContentStrategyPage() {
   return (
-    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950 service-page" data-service="content-strategist">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -62,93 +62,53 @@ export default function ContentStrategyPage() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
             Content Strategy Built Around Search Intent, Not Guesswork
           </h1>
+          <Link href="/contact" className="service-hero-cta">Discuss your project <span aria-hidden="true">→</span></Link>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
             Publishing blog posts without a strategy rarely moves rankings or revenue. Anavya Infotech builds content strategies mapped to actual search intent and buyer journey stages — so every article, guide, or landing page you publish has a specific keyword, audience, and business goal behind it.
           </p>
         </div>
       </section>
-
-      <section className="py-12 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              Why Strategy Beats Volume
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              Ten well-targeted, well-structured articles typically outperform fifty generic ones. We prioritize content that closes a specific gap — a keyword your competitors rank for and you don&apos;t, or a question your sales team answers on every call that should live on your site instead.
-            </p>
-          </div>
-
-          <div className="lg:col-span-6 bg-stone-50 border border-stone-100 rounded-md p-8 space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="h-10 w-10 rounded-md bg-white border border-stone-100 flex items-center justify-center">
-                <BarChart2 className="h-6 w-6 text-blue-700" />
-              </div>
-              <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                What&apos;s Included in Content Strategy
-              </div>
-            </div>
-
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Content audit and gap analysis against competitors</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Keyword-to-content mapping across the buyer journey (awareness → decision)</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Editorial calendar and content briefs (structure, target keyword, intent)</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>SEO-optimized content production (in-house writing or brief-only, your choice)</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Content performance tracking tied to rankings and conversions</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>On-page optimization of existing underperforming content</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+<section className="py-12 bg-white border-b border-stone-100 px-6">
+        
       </section>
 
-      {/* Process Section */}
-      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Stop Publishing Random Blog Posts: Architect Unassailable Topical Authority</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Modern search engine algorithms prioritize comprehensive domain expertise over isolated keyword targeting. Publishing disconnected articles without structured topical relationships yields diminishing organic visibility in competitive B2B verticals.</p><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Anavya Infotech provides data-driven SEO content strategy services and topical authority consulting. We design semantic content hubs, map entity relationships, and optimize content for modern search and AI engine retrieval (LLM indexing).</p></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">The Content Grind Trap: Why Publishing 50 Thin Articles a Month Fails</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">High-volume, unstrategized content creation hurts site performance under modern Search Quality Rater guidelines:</p><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Keyword Cannibalization" /><span><strong className="text-stone-900">Keyword Cannibalization:</strong> Unstructured articles compete against each other for identical keywords, confusing search crawlers and splitting authority.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Lack of Depth &amp; Entity Coverage" /><span><strong className="text-stone-900">Lack of Depth &amp; Entity Coverage:</strong> Surface-level content fails to address underlying semantic entities, missing primary rankings for high-intent search terms.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Unindexed Waste Content" /><span><strong className="text-stone-900">Unindexed Waste Content:</strong> Low-value pages burn through crawl budgets and risk overall domain suppression during search updates.</span></div></div></div></div></section>
+<section className="py-12 bg-stone-50 border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
             Our Content Strategy Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 01</span>
+              <span className="service-process-number">01</span>
               <h3 className="text-base font-medium text-stone-900">Audit</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Content and competitor gap audit.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 02</span>
+              <span className="service-process-number">02</span>
               <h3 className="text-base font-medium text-stone-900">Calendar</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Keyword-mapped editorial calendar.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 03</span>
+              <span className="service-process-number">03</span>
               <h3 className="text-base font-medium text-stone-900">Production</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Content briefs and production.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 04</span>
+              <span className="service-process-number">04</span>
               <h3 className="text-base font-medium text-stone-900">Performance</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Performance tracking and iteration.</p>
             </div>
           </div>
         </div>
       </section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Our Semantic Content Architecture Framework</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">We build organized content systems designed to demonstrate clear topical dominance:</p><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Pillar &amp; Cluster Mapping" /><span><strong className="text-stone-900">Pillar &amp; Cluster Mapping:</strong> Structuring core pillar pages connected to supporting sub-topic articles via exact semantic internal linking.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Entity Extraction &amp; NLP Optimization" /><span><strong className="text-stone-900">Entity Extraction &amp; NLP Optimization:</strong> Integrating industry terms, natural language processing (NLP) entities, and structured data formats expected by search algorithms.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Search Intent &amp; Journey Alignment" /><span><strong className="text-stone-900">Search Intent &amp; Journey Alignment:</strong> Matching copy structure directly to informational, commercial, or transactional user needs.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Content Decay &amp; Pruning Audits" /><span><strong className="text-stone-900">Content Decay &amp; Pruning Audits:</strong> Updating decaying pages and consolidating overlapping URLs to preserve overall topical health.</span></div></div></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Strategy Comparison: Content Mill vs. Semantic Entity Architecture</h2></div><div className="space-y-4"><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Strategic Focus" /><span>Strategic Focus</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Keyword-Stuffed Content Mill" /><span>Keyword-Stuffed Content Mill</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Semantic Entity Authority Architecture" /><span>Semantic Entity Authority Architecture</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Planning Metric" /><span>Planning Metric</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Individual keyword density" /><span>Individual keyword density</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Topical coverage &amp; NLP entity mapping" /><span>Topical coverage &amp; NLP entity mapping</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Site Architecture" /><span>Site Architecture</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Flat, unlinked blog feed" /><span>Flat, unlinked blog feed</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Structured Pillar-Cluster hub networks" /><span>Structured Pillar-Cluster hub networks</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Search Relevance" /><span>Search Relevance</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Short-term keyword rankings" /><span>Short-term keyword rankings</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Sustainable search &amp; AI answer engine authority" /><span>Sustainable search &amp; AI answer engine authority</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Content Longevity" /><span>Content Longevity</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Decays rapidly post-launch" /><span>Decays rapidly post-launch</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Grows traffic compoundingly over time" /><span>Grows traffic compoundingly over time</span></div></div></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Organic Growth Proof: Agency Scaling Guide Success</h2></div><div className="space-y-4"><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Challenge" /><span><strong className="text-stone-900">Challenge:</strong> A B2B service firm experienced flat search impressions despite maintaining a weekly publishing routine.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Execution" /><span><strong className="text-stone-900">Execution:</strong> We restructured 30 articles into 3 focused topic clusters, consolidated overlapping content, and optimized entity relationships for target search intent.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Result" /><span><strong className="text-stone-900">Result:</strong> Organic search click-through rates (CTR) jumped by +9.5%, while primary page keyword rankings reached the top 3 within 90 days.</span></div></div></div></div></section>
+
+      {/* Process Section */}
+      
 
       {/* FAQ Section */}
       <FaqSection
@@ -181,4 +141,5 @@ export default function ContentStrategyPage() {
     </main>
   );
 }
+
 

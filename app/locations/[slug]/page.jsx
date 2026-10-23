@@ -25,17 +25,20 @@ export async function generateMetadata({ params }) {
   }
 
   const url = `https://www.anavyainfotech.com/locations/${slug}`;
+  const canonicalUrl = location.canonicalTo
+    ? `https://www.anavyainfotech.com${location.canonicalTo}`
+    : url;
 
   return {
     title: location.title,
     description: location.metaDescription,
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
     },
     openGraph: {
       title: location.title,
       description: location.metaDescription,
-      url: url,
+      url: canonicalUrl,
       type: "website",
     },
   };
@@ -53,15 +56,19 @@ export default async function LocationPage({ params }) {
   const locationSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": `Anavya Infotech - ${location.name}`,
-    "url": `https://www.anavyainfotech.com/locations/${location.slug}`,
+    "name": "Anavya Infotech",
+    "url": location.canonicalTo
+      ? `https://www.anavyainfotech.com${location.canonicalTo}`
+      : `https://www.anavyainfotech.com/locations/${location.slug}`,
     "image": "https://www.anavyainfotech.com/og-image.png",
     "description": location.metaDescription,
     "telephone": "+91-6201231875",
     "areaServed": location.name,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.anavyainfotech.com/locations/${location.slug}`
+      "@id": location.canonicalTo
+        ? `https://www.anavyainfotech.com${location.canonicalTo}`
+        : `https://www.anavyainfotech.com/locations/${location.slug}`
     }
   };
 
@@ -134,7 +141,7 @@ export default async function LocationPage({ params }) {
       {/* EEAT Content Section */}
       {location.eeatContent && (
         <section className="py-12 md:py-16 bg-white border-b border-stone-100 px-6">
-          <div className="max-w-4xl mx-auto space-y-8 text-left">
+          <div className="max-w-7xl mx-auto space-y-8 text-left">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
               {location.eeatContent.heading}
             </h2>

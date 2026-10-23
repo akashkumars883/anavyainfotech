@@ -1,6 +1,7 @@
 import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
+import ServiceProcess from "@/components/ServiceProcess";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Cpu, Bot, Workflow, Database, Network, CheckCircle2 } from "lucide-react";
@@ -83,7 +84,7 @@ const serviceSchemas = createServiceSchema({
 
 export default function TechnologyCategoryPage() {
   return (
-    <main className="min-h-screen bg-white text-left">
+    <main className="min-h-screen bg-white text-left service-page" data-service="technology">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -121,8 +122,7 @@ export default function TechnologyCategoryPage() {
           </div>
         </div>
       </section>
-
-      {/* Sub-Services Listing Grid */}
+{/* Sub-Services Listing Grid */}
       <section className="py-16 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
@@ -196,6 +196,7 @@ export default function TechnologyCategoryPage() {
       </section>
 
       {/* Proof Section */}
+      <ServiceProcess service="technology" />
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
@@ -219,6 +220,8 @@ export default function TechnologyCategoryPage() {
       </section>
 
       {/* FAQ Section */}
+      
+
       <FaqSection
         title="Technology & AI Integration FAQs"
         subtitle="Common questions about AI chatbots, business automation, custom CRMs, and APIs."

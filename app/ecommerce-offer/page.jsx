@@ -34,11 +34,11 @@ export default function EcommerceOfferPage() {
     <main className="min-h-screen bg-stone-50 text-left selection:bg-blue-600/20 selection:text-blue-950 pb-20">
       {/* Hero Section */}
       <section className="py-20 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
+        <div className="max-w-7xl mx-auto text-center space-y-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
             Launch Your Dream E-Commerce Business for Just <span className="font-semibold text-blue-700">₹19,999</span>
           </h1>
-          <p className="text-lg sm:text-xl text-stone-600 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-stone-600 font-light max-w-7xl mx-auto leading-relaxed">
             Stop paying monthly rent to platforms like Shopify. Own your fully custom-coded e-commerce store with zero hidden fees. From a secure payment gateway to a powerful admin panel, everything is ready.
           </p>
           <div className="pt-6">
@@ -55,7 +55,7 @@ export default function EcommerceOfferPage() {
       {/* SEO Benefits Section */}
       <section className="py-20 px-6 bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <div className="text-center space-y-4 max-w-7xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
               Why Pair Your Store With SEO?
             </h2>
@@ -95,7 +95,7 @@ export default function EcommerceOfferPage() {
       {/* Pricing Section */}
       <section id="pricing" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <div className="text-center space-y-4 max-w-7xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
               Choose Your Growth Plan
             </h2>
@@ -181,7 +181,7 @@ export default function EcommerceOfferPage() {
       {/* Testimonials Section */}
       <section className="py-20 px-6 bg-stone-50 border-t border-stone-200">
         <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <div className="text-center space-y-4 max-w-7xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
               Trusted by Indian Brand Owners
             </h2>
@@ -242,7 +242,7 @@ export default function EcommerceOfferPage() {
 
       {/* Final CTA Section */}
       <section className="py-16 bg-stone-50 px-6 border-t border-stone-200">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
+        <div className="max-w-7xl mx-auto text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
             Still have questions? Let&apos;s discuss your project.
           </h2>

@@ -29,6 +29,7 @@ export default function Navbar() {
       title: "Development",
       href: "/services/development",
       items: [
+        { name: "Offshore Software Development", href: "/offshore-software-development-company" },
         { name: "Business Website", href: "/services/business-website" },
         { name: "App Development", href: "/services/app-development" },
         { name: "Web Applications", href: "/services/web-applications" },

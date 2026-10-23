@@ -1,14 +1,14 @@
 import { createServiceSchema } from "@/lib/serviceSchema";
+import ServiceFeatureIcon from "@/components/ServiceFeatureIcon";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import { Zap, ArrowRight, Terminal } from "lucide-react";
 
 export const metadata = {
-  title: "Technical SEO & Core Web Vitals Speed Optimization Services",
-  description:
-    "Resolve search console indexing errors, crawl budget bottlenecks, Core Web Vitals, dynamic JSON-LD schemas, and server response times with technical SEO services from Anavya Infotech.",
-  keywords: ["technical SEO services", "Core Web Vitals optimization", "site speed optimization"],
+  title: "Technical SEO Services & Core Web Vitals Optimization | Anavya Infotech",
+  description: "Eliminate crawl errors, optimize Core Web Vitals, and dominate search with expert technical SEO. Specialized in Next.js/React SSR, indexation audits & schema architecture.",
+  keywords: ["technical seo services","core web vitals optimization company","website speed optimization","crawl budget optimization","javascript seo nextjs","technical seo agency india"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/technical-seo",
   },
@@ -25,30 +25,30 @@ export const metadata = {
 
 const TECHNICAL_SEO_FAQS = [
   {
-    "question": "How is technical SEO different from regular SEO?",
-    "answer": "Technical SEO fixes the site's underlying structure and performance so Google can properly crawl, index, and rank it — it's the foundation that on-page and content SEO build on top of."
+    "question": "What are Core Web Vitals and why do they impact rankings?",
+    "answer": "Core Web Vitals are Google's standardized metrics for measuring real-world user experience: Largest Contentful Paint (LCP for load speed), Interaction to Next Paint (INP for responsiveness), and Cumulative Layout Shift (CLS for visual stability). Passing these metrics directly influences organic search rankings and conversion rates."
   },
   {
-    "question": "Can you fix Core Web Vitals issues, or just report them?",
-    "answer": "We implement the fixes ourselves (code-level optimization), not just hand you a report."
+    "question": "How do you optimize JavaScript framework websites (Next.js/React) for SEO?",
+    "answer": "We configure Server-Side Rendering (SSR) or Incremental Static Regeneration (ISR) to serve pre-rendered HTML to search crawlers. Additionally, we optimize bundle sizes, defer non-critical JavaScript, and eliminate client-side hydration errors."
   },
   {
-    "question": "Do you provide the audit as a standalone service?",
-    "answer": "Yes — we offer standalone technical SEO audits as well as ongoing technical SEO retainers."
+    "question": "How long does it take to see organic results after a technical SEO audit?",
+    "answer": "Initial indexing and Core Web Vitals improvements are typically recognized by search crawlers within 2 to 4 weeks. Full organic traffic gains from resolved technical debt usually materialize within 60 to 90 days as search engines recrawl and reindex updated pages."
   }
 ];
 
 
 const serviceSchemas = createServiceSchema({
   name: "Technical SEO Audit & Services - Core Web Vitals Experts",
-  description: "Technical SEO audits & fixes — crawlability, indexing, Core Web Vitals & site speed — for businesses in India & the USA. Fix what's blocking your rankings.",
+  description: "Eliminate crawl errors, optimize Core Web Vitals, and dominate search with expert technical SEO. Specialized in Next.js/React SSR, indexation audits & schema architecture.",
   slug: "technical-seo",
   faqs: TECHNICAL_SEO_FAQS,
 });
 
 export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-white text-left">
+    <main className="min-h-screen bg-white text-left service-page" data-service="technical-seo">
       {/* Search Engine Schema */}
       <script
         type="application/ld+json"
@@ -65,96 +65,54 @@ export default function ServicePage() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
             Technical SEO — Fix What&apos;s Silently Blocking Your Rankings
           </h1>
+          <Link href="/contact" className="service-hero-cta">Discuss your project <span aria-hidden="true">→</span></Link>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
             Great content can&apos;t rank if Google can&apos;t crawl, index, or load your site fast enough to care. Anavya Infotech&apos;s technical SEO service finds and fixes the structural issues — broken crawl paths, slow Core Web Vitals, indexing errors, duplicate content — that quietly cap your rankings no matter how much content you publish.
           </p>
         </div>
       </section>
-
-      {/* Detailed Description Grid */}
+{/* Detailed Description Grid */}
       <section className="py-12 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Block */}
-          <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              Why Technical SEO Is the Foundation
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              You can publish the best content in your industry, but if your site has redirect chains, missing schema, or a 6-second load time, Google will rank a competitor&apos;s mediocre content over your excellent content simply because their site performs better technically. We start every SEO engagement with this layer because it&apos;s the multiplier on everything else.
-            </p>
-          </div>
-
-          {/* Right Block: Benefits Checklist Card */}
-          <div className="lg:col-span-6 bg-stone-50 border border-stone-100 rounded-md p-8 space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="h-10 w-10 rounded-md bg-white border border-stone-100 flex items-center justify-center">
-                <Terminal className="h-6 w-6 text-blue-700" />
-              </div>
-              <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                What&apos;s Included in Technical SEO
-              </div>
-            </div>
-
-            <ul className="space-y-4" aria-label="Key deliverables">
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Full crawl audit (Screaming Frog-level analysis of every URL)</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Core Web Vitals optimization (LCP, CLS, INP) for real Google ranking impact</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Indexing and crawl budget audit (orphan pages, redirect chains, robots.txt issues)</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Structured data / schema markup implementation</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Site architecture and internal linking optimization</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>HTTPS, mobile usability, and canonicalization fixes</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        
       </section>
 
-      {/* Process Section */}
-      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Search Engine Rankings Are Engineered, Not Guessed: Enterprise Technical SEO</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Modern search engine algorithms demand more than keyword placement and backlinks. High-performing websites require resilient technical foundations that facilitate instant crawling, efficient indexing, and sub-second page performance across all user devices.</p><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">At Anavya Infotech, our technical SEO services and Core Web Vitals optimization eliminate structural bottlenecks, optimize server rendering pipelines, and ensure search engines fully understand and index your website's primary content hubs.</p></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">The Invisible Roadblocks: How JavaScript Hydration, Render-Blocking Assets &amp; Crawl Debt Kill Rankings</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Modern web applications built on React, Next.js, and Vue offer unmatched user experience, but often introduce severe search indexation issues if improperly configured:</p><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Client-Side Rendering (CSR) Delays" /><span><strong className="text-stone-900">Client-Side Rendering (CSR) Delays:</strong> Search crawlers defer rendering JavaScript-heavy pages, delaying content indexation and leading to missed ranking opportunities.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Hydration Mismatches &amp; Layout Shifts" /><span><strong className="text-stone-900">Hydration Mismatches &amp; Layout Shifts:</strong> Unoptimized component hydration causes unstable Cumulative Layout Shift (CLS) scores, failing Google's Core Web Vitals assessment.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Crawl Budget Depletion" /><span><strong className="text-stone-900">Crawl Budget Depletion:</strong> Large-scale websites waste crawl capacity on duplicate URLs, session parameters, and unindexed filter states instead of core target pages.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Render-Blocking Resources" /><span><strong className="text-stone-900">Render-Blocking Resources:</strong> Unminified CSS scripts and excessive third-party analytics delay Interaction to Next Paint (INP) and Largest Contentful Paint (LCP) times.</span></div></div></div></div></section>
+<section className="py-12 bg-stone-50 border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
             Our Technical SEO Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 01</span>
+              <span className="service-process-number">01</span>
               <h3 className="text-base font-medium text-stone-900">Audit</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Full technical crawl and Core Web Vitals audit.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 02</span>
+              <span className="service-process-number">02</span>
               <h3 className="text-base font-medium text-stone-900">Prioritize</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Prioritized fix list (highest-impact issues first).</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 03</span>
+              <span className="service-process-number">03</span>
               <h3 className="text-base font-medium text-stone-900">Implementation</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Code-level fixes and server optimizations, not just reports.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 04</span>
+              <span className="service-process-number">04</span>
               <h3 className="text-base font-medium text-stone-900">Monitoring</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Re-audit and ongoing technical monitoring.</p>
             </div>
           </div>
         </div>
       </section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Our 5-Pillar Technical Audit Framework</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">We apply deep engineering diagnostics to identify and resolve performance and indexation issues across your digital ecosystem:</p><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Architecture &amp; Indexation Audit" /><span><strong className="text-stone-900">Architecture &amp; Indexation Audit:</strong> Comprehensive mapping of canonical tags, robots.txt files, XML sitemaps, redirect chains, and URL structures to maximize indexing speed.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Core Web Vitals Optimization (LCP, INP, CLS)" /><span><strong className="text-stone-900">Core Web Vitals Optimization (LCP, INP, CLS):</strong> Edge caching, image compression pipelines, code splitting, and critical path CSS optimization for guaranteed sub-second rendering.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="JavaScript SEO &amp; SSR Configuration" /><span><strong className="text-stone-900">JavaScript SEO &amp; SSR Configuration:</strong> Implementing Server-Side Rendering (SSR), Incremental Static Regeneration (ISR), or Dynamic Rendering for Next.js and React applications.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Schema &amp; Semantic Entity Graph Architecture" /><span><strong className="text-stone-900">Schema &amp; Semantic Entity Graph Architecture:</strong> Deploying nested JSON-LD structured data to establish entity authority and unlock rich search result features.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Server Log File &amp; Crawl Analysis" /><span><strong className="text-stone-900">Server Log File &amp; Crawl Analysis:</strong> Analyzing web server log files to evaluate Googlebot behavior, frequency, and budget distribution across core site sections.</span></div></div></div></div></section>
+
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Case Evidence: Technical Debt Removal Drives Organic Visibility</h2></div><div className="space-y-4"><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Client Profile" /><span><strong className="text-stone-900">Client Profile:</strong> Enterprise SaaS platform experiencing stagnant organic growth despite active content production.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Technical Challenge" /><span><strong className="text-stone-900">Technical Challenge:</strong> Client-side rendered React frontend delayed Googlebot indexation by up to 3 weeks per new page release. Mobile LCP averaged 4.6 seconds.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Engineering Execution" /><span><strong className="text-stone-900">Engineering Execution:</strong> Migrated core marketing pages to Next.js App Router with Server-Side Rendering (SSR), configured edge caching on Cloudflare, and implemented a custom Schema Entity graph.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Measured Outcome" /><span><strong className="text-stone-900">Measured Outcome:</strong> Mobile LCP improved to 0.9 seconds (Pass score). Organic search impressions grew by 145% in 90 days, and page indexation delay dropped from 21 days to under 6 hours.</span></div></div></div></div></section>
+
+      {/* Process Section */}
+      
 
       {/* FAQ Section */}
       <FaqSection
@@ -189,3 +147,4 @@ export default function ServicePage() {
     </main>
   );
 }
+

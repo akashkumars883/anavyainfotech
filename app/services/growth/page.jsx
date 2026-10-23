@@ -1,6 +1,7 @@
 import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
+import ServiceProcess from "@/components/ServiceProcess";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, TrendingUp, Search, MapPin, ShoppingCart, Code, FileText, CheckCircle2 } from "lucide-react";
@@ -90,7 +91,7 @@ const serviceSchemas = createServiceSchema({
 
 export default function GrowthCategoryPage() {
   return (
-    <main className="min-h-screen bg-white text-left">
+    <main className="min-h-screen bg-white text-left service-page" data-service="growth">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -128,8 +129,7 @@ export default function GrowthCategoryPage() {
           </div>
         </div>
       </section>
-
-      {/* Sub-Services Listing Grid */}
+{/* Sub-Services Listing Grid */}
       <section className="py-16 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
@@ -203,6 +203,7 @@ export default function GrowthCategoryPage() {
       </section>
 
       {/* For Agencies Section */}
+      <ServiceProcess service="growth" />
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
@@ -226,6 +227,8 @@ export default function GrowthCategoryPage() {
       </section>
 
       {/* FAQ Section */}
+      
+
       <FaqSection
         title="SEO & Search Growth FAQs"
         subtitle="Common questions about search rankings, local SEO, technical audits, and content strategy."

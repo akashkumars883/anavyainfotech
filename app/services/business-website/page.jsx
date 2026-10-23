@@ -1,4 +1,5 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ServiceFeatureIcon from "@/components/ServiceFeatureIcon";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import SafeImage from "@/components/SafeImage";
@@ -6,10 +7,9 @@ import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Code } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Business Website Development Company in India & USA - Anavya Infotech",
-  description:
-    "Custom business website design & development for companies in Delhi NCR, Faridabad, Noida & USA. Fast, SEO-ready, mobile-first sites built on modern stacks. Get a free quote.",
-  keywords: "business website development company, custom website design India, web development agency Faridabad Noida",
+  title: "Business Website Development Company | High-Converting Custom Sites",
+  description: "Transform your corporate digital presence with custom business websites engineered for speed, search rankings, and lead generation. Sub-second load times on Next.js.",
+  keywords: ["business website development company","custom business website design","corporate website design agency","responsive business web development","conversion focused website design","Next.js corporate site"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/business-website",
   },
@@ -24,26 +24,22 @@ export const metadata = {
 
 const BUSINESS_WEBSITE_FAQS = [
   {
-    question: "How much does a business website cost in India?",
-    answer: "Pricing depends on the number of pages, custom features, and design complexity. See our Pricing & Plans or use our Budget Calculator for an instant estimate."
+    "question": "Why choose Next.js for a business website instead of WordPress?",
+    "answer": "Next.js offers superior page rendering speed, tighter security, and cleaner code structures. It eliminates plugin reliance and delivers sub-second page performance that directly improves SEO rankings and user conversions."
   },
   {
-    question: "How long does it take to build a business website?",
-    answer: "Most business websites are delivered in 2–4 weeks, depending on scope and how quickly content/approvals come back to us."
+    "question": "Can our marketing team update site content without developer assistance?",
+    "answer": "Yes. We integrate headless CMS platforms like Sanity or Strapi, enabling non-technical team members to create pages, publish blog posts, and update copy effortlessly."
   },
   {
-    question: "Will my website be mobile-friendly and fast on Google PageSpeed?",
-    answer: "Yes — every site we ship is tested against Google's Core Web Vitals before launch, since page speed directly affects both rankings and conversion rates."
-  },
-  {
-    question: "Do I own my website's code and content?",
-    answer: "Yes, 100%. Unlike many agencies, we don't lock you into proprietary platforms or ongoing licensing fees."
+    "question": "How long does a custom corporate website project take?",
+    "answer": "A custom corporate website development project typically takes 4 to 8 weeks from discovery to final deployment, depending on page volume and custom integration needs."
   }
 ];
 
 const serviceSchemas = createServiceSchema({
   name: "Business Website Development Services",
-  description: "Custom business website design & development for companies in Delhi NCR, Faridabad, Noida & USA. Fast, SEO-ready, mobile-first sites built on modern stacks.",
+  description: "Transform your corporate digital presence with custom business websites engineered for speed, search rankings, and lead generation. Sub-second load times on Next.js.",
   slug: "business-website",
   serviceType: "Business Website Development",
   faqs: BUSINESS_WEBSITE_FAQS,
@@ -70,7 +66,7 @@ export default function BusinessWebsitePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950 service-page" data-service="business-website">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -108,25 +104,7 @@ export default function BusinessWebsitePage() {
           </div>
         </div>
       </section>
-
-      {/* Inclusions Section */}
-      <section className="py-12 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            What&apos;s Included in Our Business Website Development
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {inclusions.map((item, index) => (
-              <div key={index} className="p-4 rounded-md bg-stone-50 border border-stone-100 flex items-start gap-3 text-xs sm:text-sm text-stone-800 font-medium">
-                <CheckCircle2 className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Local Advantage Section */}
+{/* Local Advantage Section */}
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
@@ -138,8 +116,9 @@ export default function BusinessWebsitePage() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-12 bg-white border-b border-stone-100 px-6">
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Websites That Close Deals: Custom Corporate Web Engineering for Growth-Driven Businesses</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">A corporate website serves as the primary digital anchor for high-intent business buyers, partners, and enterprise clients. Outdated platforms with slow performance, bloated codebases, and passive messaging fail to convert incoming traffic into pipeline opportunities.</p><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Anavya Infotech operates as a specialized business website development company. We engineer sub-second, custom-designed corporate websites powered by Next.js and headless CMS architectures to maximize organic search visibility and convert decision-makers into sales inquiries.</p></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">The Broke Template Syndrome: Why $500 WordPress Templates Repel High-Value B2B Buyers</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Relying on generic pre-built WordPress themes introduces hidden technical liabilities that limit commercial growth:</p><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Excessive Code Bloat" /><span><strong className="text-stone-900">Excessive Code Bloat:</strong> Pre-built page builders execute massive unused CSS and JavaScript packages, degrading mobile Core Web Vitals performance.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Generic Visual Layouts" /><span><strong className="text-stone-900">Generic Visual Layouts:</strong> Standard template structures fail to communicate distinct value propositions, making your business indistinguishable from competitors.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Security Vulnerabilities" /><span><strong className="text-stone-900">Security Vulnerabilities:</strong> Reliance on multiple third-party plugins increases attack surfaces and exposes sites to malicious exploits and downtime.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Poor Conversion Architecture" /><span><strong className="text-stone-900">Poor Conversion Architecture:</strong> Rigid template blocks lack optimized call-to-action (CTA) paths, leading to high drop-off rates on core decision-making pages.</span></div></div></div></div></section>
+<section className="py-12 bg-white border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
             Our Process
@@ -147,7 +126,7 @@ export default function BusinessWebsitePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, idx) => (
               <div key={idx} className="p-6 bg-stone-50 border border-stone-100 rounded-md space-y-3">
-                <div className="text-2xl font-bold text-blue-700">{step.num}</div>
+                <div className="service-process-number">{step.num}</div>
                 <h3 className="text-lg font-semibold text-stone-900">{step.title}</h3>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">{step.desc}</p>
               </div>
@@ -155,6 +134,12 @@ export default function BusinessWebsitePage() {
           </div>
         </div>
       </section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">The Anavya 4-Stage Web Engineering Methodology</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Our structured development lifecycle balances strategic positioning with clean code implementation:</p><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Discovery &amp; Wireframing" /><span><strong className="text-stone-900">Discovery &amp; Wireframing:</strong> Complete analysis of user journeys, target buyer personas, competitive gaps, and conversion funnels.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Bespoke Figma UI/UX Design" /><span><strong className="text-stone-900">Bespoke Figma UI/UX Design:</strong> Crafting custom design systems, responsive page layouts, and interactive prototypes tailored to your brand identity.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Next.js &amp; Headless Development" /><span><strong className="text-stone-900">Next.js &amp; Headless Development:</strong> Building server-side rendered (SSR) web pages paired with manageable headless content backends (Sanity, Strapi, or Contentful).</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Conversion Rate Optimization (CRO) Integration" /><span><strong className="text-stone-900">Conversion Rate Optimization (CRO) Integration:</strong> Deploying high-converting web forms, tracking infrastructure, fast page speed delivery, and accessibility compliance (WCAG).</span></div></div></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Engineering Comparison: Generic Template vs. Anavya Custom Corporate Site</h2></div><div className="space-y-4"><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Performance Metric" /><span>Performance Metric</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Generic Agency WordPress Site" /><span>Generic Agency WordPress Site</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Anavya Engineered Next.js Corporate Site" /><span>Anavya Engineered Next.js Corporate Site</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Mobile Page Load Speed" /><span>Mobile Page Load Speed</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="5s – 6.0s (Fails Core Web Vitals)" /><span>5s – 6.0s (Fails Core Web Vitals)</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="&lt; 0.8s (Passes All Core Web Vitals)" /><span>&lt; 0.8s (Passes All Core Web Vitals)</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Security &amp; Maintenance" /><span>Security &amp; Maintenance</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="High plugin dependency &amp; patch risk" /><span>High plugin dependency &amp; patch risk</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Static edge generation; immune to plugin exploits" /><span>Static edge generation; immune to plugin exploits</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Customization Freedom" /><span>Customization Freedom</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Restricted by builder blocks" /><span>Restricted by builder blocks</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="100% full-stack bespoke React design" /><span>100% full-stack bespoke React design</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Search Engine Indexing" /><span>Search Engine Indexing</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Heavy, unoptimized client DOM" /><span>Heavy, unoptimized client DOM</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Instant SSR HTML pre-rendering" /><span>Instant SSR HTML pre-rendering</span></div></div></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Performance &amp; Conversion Metrics: Nakul Properties Case Study</h2></div><div className="space-y-4"><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Client Challenge" /><span><strong className="text-stone-900">Client Challenge:</strong> Nakul Properties struggled with low online lead volume and high bounce rates on an outdated corporate site.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Engineering Solution" /><span><strong className="text-stone-900">Engineering Solution:</strong> Anavya Infotech redesigned the digital experience using a custom Next.js frontend with dynamic project filtering and fast inquiry forms.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Measured Results" /><span><strong className="text-stone-900">Measured Results:</strong> Achieved a +45% increase in qualified inbound leads within 60 days, while mobile load speeds improved by 78%.</span></div></div></div></div></section>
+
+      {/* Process Section */}
+      
 
       {/* FAQ Section */}
       <FaqSection
@@ -187,3 +172,4 @@ export default function BusinessWebsitePage() {
     </main>
   );
 }
+

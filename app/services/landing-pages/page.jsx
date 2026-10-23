@@ -1,4 +1,5 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ServiceFeatureIcon from "@/components/ServiceFeatureIcon";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 import SafeImage from "@/components/SafeImage";
@@ -6,10 +7,9 @@ import { ArrowRight, CheckCircle2, Layout } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "High-Converting Landing Page Design & Development - Anavya Infotech",
-  description:
-    "Conversion-focused landing pages for ad campaigns, product launches & lead generation. Fast-loading, A/B testable, built for India & USA marketing teams.",
-  keywords: "landing page design services, high converting landing pages, Next.js landing page development",
+  title: "High-Converting Landing Page Design & Development | Anavya Infotech",
+  description: "Double your Google Ads & Meta Ads ROAS with high-speed, conversion-engineered landing pages. Sub-second load times, dynamic form funnels & A/B testing infrastructure.",
+  keywords: ["landing page development services","high converting landing page agency","PPC landing page design","Next.js landing pages","conversion rate optimization landing page","ad campaign landing page agency"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/landing-pages",
   },
@@ -24,22 +24,22 @@ export const metadata = {
 
 const LANDING_PAGES_FAQS = [
   {
-    question: "Can you write the copy too, or do I need to provide it?",
-    answer: "We can handle copywriting, or work from your brief — whichever gets you a stronger converting page faster."
+    "question": "Why do custom Next.js landing pages perform better than unbounce or WordPress?",
+    "answer": "Custom Next.js landing pages achieve faster load speeds, eliminate third-party platform limitations, and allow full-stack integration with custom CRMs and server-side tracking APIs."
   },
   {
-    question: "Do you set up conversion tracking for Google/Meta Ads?",
-    answer: "Yes, GA4, Meta Pixel, and Google Ads conversion tracking are included as standard."
+    "question": "How quickly can a custom landing page be built for an active ad campaign?",
+    "answer": "Our team can design, build, and deploy a high-converting campaign landing page within 5 to 10 business days."
   },
   {
-    question: "How fast can a landing page be delivered?",
-    answer: "Typically 5–10 business days depending on design complexity and content readiness."
+    "question": "How do high-speed landing pages lower cost-per-click (CPC) in Google Ads?",
+    "answer": "Google Ads evaluates landing page user experience and speed when assigning Quality Scores. Fast, highly relevant landing pages achieve higher Quality Scores, reducing the bids required to win top ad positions."
   }
 ];
 
 const serviceSchemas = createServiceSchema({
   name: "High-Converting Landing Page Design & Development",
-  description: "Conversion-focused landing pages for ad campaigns, product launches & lead generation. Fast-loading, A/B testable, built for India & USA marketing teams.",
+  description: "Double your Google Ads & Meta Ads ROAS with high-speed, conversion-engineered landing pages. Sub-second load times, dynamic form funnels & A/B testing infrastructure.",
   slug: "landing-pages",
   serviceType: "Landing Page Development",
   faqs: LANDING_PAGES_FAQS,
@@ -64,7 +64,7 @@ export default function ServicePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950 service-page" data-service="landing-pages">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -102,25 +102,7 @@ export default function ServicePage() {
           </div>
         </div>
       </section>
-
-      {/* What's Included */}
-      <section className="py-12 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            What&apos;s Included
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {inclusions.map((item, index) => (
-              <div key={index} className="p-4 rounded-md bg-stone-50 border border-stone-100 flex items-start gap-3 text-xs sm:text-sm text-stone-800 font-medium">
-                <CheckCircle2 className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why It Matters */}
+{/* Why It Matters */}
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
@@ -132,8 +114,9 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-12 bg-white border-b border-stone-100 px-6">
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Stop Burning Ad Spend: High-Speed Landing Pages Engineered to Convert Paid Traffic</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Driving paid ad traffic to generic homepages or slow, bloated landing pages wastes marketing budgets. Every hundred-millisecond delay in page load time reduces visitor retention and increases customer acquisition costs across Google, Meta, and LinkedIn ad campaigns.</p><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Anavya Infotech operates as a high-converting landing page agency. We build standalone, sub-second landing pages engineered specifically to maximize return on ad spend (ROAS) using Next.js performance builds, focused value propositions, and low-friction lead capture funnels.</p></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">The Leaky Funnel: Why Generic Homepages Waste 60% of Your Ad Budget</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Sending paid clicks to standard corporate pages creates operational conversion leaks:</p><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Competing Navigation Distractions" /><span><strong className="text-stone-900">Competing Navigation Distractions:</strong> Standard header menus provide multiple escape routes, drawing prospects away from primary lead forms.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Slow Rendering Speeds" /><span><strong className="text-stone-900">Slow Rendering Speeds:</strong> Heavy third-party tracking scripts and unoptimized images cause bounce rates to spike on mobile devices.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Mismatched Message Intent" /><span><strong className="text-stone-900">Mismatched Message Intent:</strong> Generic landing page copy fails to align with specific ad keywords, resulting in lower Google Ads Quality Scores and higher cost-per-click (CPC) rates.</span></div></div></div></div></section>
+<section className="py-12 bg-white border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
             Our Process
@@ -141,7 +124,7 @@ export default function ServicePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, idx) => (
               <div key={idx} className="p-6 bg-stone-50 border border-stone-100 rounded-md space-y-3">
-                <div className="text-2xl font-bold text-blue-700">{step.num}</div>
+                <div className="service-process-number">{step.num}</div>
                 <h3 className="text-lg font-semibold text-stone-900">{step.title}</h3>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">{step.desc}</p>
               </div>
@@ -149,6 +132,12 @@ export default function ServicePage() {
           </div>
         </div>
       </section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">6 Core Elements of Our Conversion-Engineered Landing Pages</h2></div><div className="space-y-4"><p className="max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">Our campaign landing pages integrate proven technical and psychological performance drivers:</p><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Sub-Second Core Web Vitals" /><span><strong className="text-stone-900">Sub-Second Core Web Vitals:</strong> Lightweight, statically generated Next.js code ensuring instant page displays across mobile networks.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Direct Above-the-Fold Value Positioning" /><span><strong className="text-stone-900">Direct Above-the-Fold Value Positioning:</strong> Clear headlines, explicit offer details, and visible primary calls-to-action (CTAs).</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Direct Booking &amp; Chat Routing" /><span><strong className="text-stone-900">Direct Booking &amp; Chat Routing:</strong> Native integrations with WhatsApp, Calendly, and CRM lead engines for instant user routing.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Low-Friction Form Triage" /><span><strong className="text-stone-900">Low-Friction Form Triage:</strong> Multi-step input forms designed to collect qualifying lead information without overwhelming user input.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Interactive Micro-Interactions" /><span><strong className="text-stone-900">Interactive Micro-Interactions:</strong> Engaging UI elements that guide users smoothly toward conversion touchpoints.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Advanced Pixel &amp; Event Tracking" /><span><strong className="text-stone-900">Advanced Pixel &amp; Event Tracking:</strong> Server-side tracking via Google Tag Manager and conversion APIs (CAPI) for precise ad campaign attribution.</span></div></div></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Conversion Rate Benchmarks: Industry Average vs. Anavya High-Performance Build</h2></div><div className="overflow-x-auto rounded-md border border-stone-200"><table aria-label="Conversion rate and performance comparison" className="w-full min-w-[680px] border-collapse text-left text-sm"><thead className="bg-stone-50 text-stone-900"><tr><th scope="col" className="px-5 py-4 font-semibold">Conversion Factor</th><th scope="col" className="px-5 py-4 font-semibold">Industry Average Paid Ad Page</th><th scope="col" className="px-5 py-4 font-semibold">Anavya High-Performance Build</th></tr></thead><tbody className="divide-y divide-stone-200 text-stone-700"><tr><th scope="row" className="px-5 py-4 font-medium text-stone-900">Average Conversion Rate</th><td className="px-5 py-4">2.3% – 3.8%</td><td className="px-5 py-4 font-medium text-blue-800">8.5% – 14.2% (Targeted Traffic)</td></tr><tr><th scope="row" className="px-5 py-4 font-medium text-stone-900">Mobile Load Time</th><td className="px-5 py-4">3.2 seconds</td><td className="px-5 py-4 font-medium text-blue-800">&lt; 0.6 seconds</td></tr><tr><th scope="row" className="px-5 py-4 font-medium text-stone-900">Tracking Reliability</th><td className="px-5 py-4">Client-side script block losses</td><td className="px-5 py-4 font-medium text-blue-800">Server-side Conversion API (CAPI) parity</td></tr><tr><th scope="row" className="px-5 py-4 font-medium text-stone-900">Ad Quality Score Impact</th><td className="px-5 py-4">Average (Higher CPCs)</td><td className="px-5 py-4 font-medium text-blue-800">High (Lowers overall CPC rates)</td></tr></tbody></table></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">Live Campaign Results: Paid Search Acquisition Boost</h2></div><div className="space-y-4"><div className="grid gap-3 sm:grid-cols-2 "><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Execution" /><span><strong className="text-stone-900">Execution:</strong> We replaced a client's standard WordPress landing page with a fast Next.js campaign build integrated with server-side lead validation and direct booking options.</span></div><div className="group flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm leading-relaxed text-stone-700 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 service-feature-card"><ServiceFeatureIcon label="Outcome" /><span><strong className="text-stone-900">Outcome:</strong> Cost per acquisition (CPA) fell by 38%, while total monthly inbound inquiries grew by 112% on identical ad spend budgets.</span></div></div></div></div></section>
+
+      {/* Process Section */}
+      
 
       {/* FAQ Section */}
       <FaqSection
@@ -181,3 +170,4 @@ export default function ServicePage() {
     </main>
   );
 }
+

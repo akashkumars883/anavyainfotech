@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Sparkles, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
@@ -97,13 +97,13 @@ export default function Hero() {
             className="pt-4 border-t border-stone-100 flex flex-wrap items-center gap-3 text-xs font-medium text-stone-600"
           >
             <span className="flex items-center gap-2 px-3.5 py-1.5 bg-blue-50/80 border border-blue-200 rounded-md font-bold text-blue-950 shadow-2xs">
-              <span>Enterprise SLA</span>
+              <span>Clear project scope</span>
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
-              <CheckCircle2 className="h-3.5 w-3.5 text-blue-700" /> SOC2/GDPR Compliant
+              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Security planned for each project
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
-              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> 100% Code Ownership
+              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Contract-defined IP terms
             </span>
           </motion.div>
         </div>

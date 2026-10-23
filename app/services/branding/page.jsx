@@ -1,22 +1,24 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
+import ServiceProcess from "@/components/ServiceProcess";
+import RelatedCoreServices from "@/components/RelatedCoreServices";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Palette, Compass, Layers, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Palette, Compass, Layers, ShieldCheck, CheckCircle2, ChartNoAxesCombined } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Corporate Branding Services & Digital Brand Identity Agency",
+  title: "Corporate Branding & Visual Identity Design | Anavya Infotech",
   description:
-    "Elevate your corporate presence with bespoke digital branding services, visual design systems, logo assets, and UI/UX guidelines from Anavya Infotech.",
-  keywords: ["branding agency", "corporate branding services", "digital brand identity"],
+    "Build a cohesive, authoritative brand identity that commands premium market pricing. Logo design, corporate style guidelines, Figma design systems & digital assets.",
+  keywords: ["corporate branding agency","visual identity design services","b2b brand identity","logo design and brand guidelines","ui ux design systems figma","enterprise branding services"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/branding",
   },
   openGraph: {
-    title: "Corporate Branding Services & Digital Brand Identity Agency",
+    title: "Corporate Branding & Visual Identity Design | Anavya Infotech",
     description:
-      "Elevate your corporate presence with bespoke digital branding services, visual design systems, logo assets, and UI/UX guidelines from Anavya Infotech.",
+      "Build a cohesive, authoritative brand identity that commands premium market pricing. Logo design, corporate style guidelines, Figma design systems & digital assets.",
     url: "https://www.anavyainfotech.com/services/branding",
     type: "website",
   },
@@ -24,20 +26,16 @@ export const metadata = {
 
 const BRANDING_FAQS = [
   {
-    question: "What is included in your corporate branding packages?",
-    answer: "Our packages include logo design, brand positioning guidelines, typography systems, color palettes, social media kits, and UI design tokens."
+    question: "What is included in a corporate visual identity package?",
+    answer: "Our packages include brand strategy positioning, primary and secondary logo suites, color palette tokens, typography rules, Figma UI component libraries, corporate collateral templates, and brand style manuals."
   },
   {
-    question: "How long does a complete brand identity redesign take?",
-    answer: "Corporate branding projects typically take 2 to 4 weeks from discovery moodboards to final asset handoff."
+    question: "How does a Figma design system accelerate software engineering?",
+    answer: "A tokenized Figma design system matches frontend code variables directly, eliminating design handoff confusion and ensuring consistent UI components across web and mobile platforms."
   },
   {
-    question: "Do you deliver vector source files and brand guidelines books?",
-    answer: "Yes, you receive all original vector source files (SVG, EPS, AI), high-res PNGs, and a comprehensive PDF brand guideline manual."
-  },
-  {
-    question: "Can you align our brand identity with our website UI/UX?",
-    answer: "Yes! We specialize in cohesive digital brand systems that translate seamlessly into modern, responsive web application interfaces."
+    question: "How long does a full corporate branding engagement take?",
+    answer: "A complete corporate branding and visual system engagement typically takes 3 to 6 weeks from initial research to final asset delivery."
   }
 ];
 
@@ -83,7 +81,7 @@ const subServices = [
 
 export default function CorporateBrandingPage() {
   return (
-    <main className="min-h-screen bg-white text-left">
+    <main className="min-h-screen bg-white text-left service-page" data-service="branding">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -121,8 +119,7 @@ export default function CorporateBrandingPage() {
           </div>
         </div>
       </section>
-
-      {/* Sub-Services Listing Grid */}
+{/* Sub-Services Listing Grid */}
       <section className="py-16 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
@@ -196,6 +193,7 @@ export default function CorporateBrandingPage() {
       </section>
 
       {/* Deliverable Kit Showcase */}
+      <ServiceProcess service="branding" />
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="space-y-2">
@@ -222,9 +220,105 @@ export default function CorporateBrandingPage() {
         </div>
       </section>
 
+      {/* Service copy sections */}
+            <section className="px-6 py-14 bg-white border-y border-stone-100">
+        <div className="max-w-7xl mx-auto ">
+<article className="min-w-0 space-y-10">
+      <section className="grid gap-6 md:grid-cols-2 md:items-center">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 md:col-span-2">A Logo Is Not a Brand: We Engineer Authoritative Visual Identity Systems</h2>
+        <p className="text-stone-700 leading-relaxed md:col-span-2">A disconnected visual identity creates immediate doubt during high-stakes sales conversations. Modern B2B buyers form impressions within seconds based on design quality, consistency, and professional positioning across digital touchpoints.</p>
+      </section>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 md:col-span-2">
+            <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">+40%</p><p className="mt-1 text-sm text-stone-600">Frontend delivery speed</p></div>
+            <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">One system</p><p className="mt-1 text-sm text-stone-600">Shared design tokens</p></div>
+            <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Enterprise</p><p className="mt-1 text-sm text-stone-600">Sales-ready identity</p></div>
+          </div>
+      <section className="space-y-4">
+        <p className="text-stone-700 leading-relaxed">Anavya Infotech provides comprehensive visual identity design services. We build complete, tokenized design systems, corporate identity guidelines, and digital brand assets that establish immediate authority and support premium pricing power.</p>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">The Credibility Gap: How Inconsistent Design Subconsciously Erodes Enterprise Trust</h2>
+        <p className="text-stone-700 leading-relaxed">Inconsistent visual assets weaken commercial potential across the sales funnel:</p>
+      </section>
+      <section className="space-y-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Fragmented Brand Impressions:</strong> Discrepancies between pitch decks, websites, and sales collateral project a lack of operational polish.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Inability to Command Premium Fees:</strong> Generic visual presentation signals low differentiation, inviting price resistance from potential clients.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Development Inefficiencies:</strong> Building digital products without a centralized design system leads to repeated UI redos and slower feature releases.</li>
+        </ul>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Comprehensive Brand Deliverables We Build</h2>
+        <p className="text-stone-700 leading-relaxed">We deliver scalable brand architecture engineered for enterprise application:</p>
+      </section>
+      <section className="space-y-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Brand Strategy &amp; Positioning:</strong> Defining market differentiation, tone of voice, messaging hierarchy, and competitive positioning.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Logo Suite &amp; Typography System:</strong> Vector logo variations (primary, stacked, monochrome) paired with web-optimized typography standards.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Tokenized Figma UI/UX Design Systems:</strong> Reusable component libraries, color variables, spacing rules, and interactive UI patterns for engineering handoff.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Corporate Collateral &amp; Sales Assets:</strong> Executive presentation decks, digital whitepapers, business cards, social media kits, and brand documentation.</li>
+        </ul>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Brand Deliverables Comparison: Freelance Logo vs. Enterprise Brand System</h2>
+
+        <div className="overflow-x-auto rounded-md border border-stone-200">
+          <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+            <tbody>
+              <tr className={"bg-stone-100 font-semibold text-stone-900"}>
+                <th className="px-4 py-3 align-top">Scope Component</th>
+                <th className="px-4 py-3 align-top">Freelance Logo Graphic</th>
+                <th className="px-4 py-3 align-top">Anavya Enterprise Brand System</th>
+              </tr>
+              <tr className={"border-t border-stone-200"}>
+                <td className="px-4 py-3 align-top">Deliverable Focus</td>
+                <td className="px-4 py-3 align-top">Standalone image file</td>
+                <td className="px-4 py-3 align-top">Complete visual strategy &amp; UI token system</td>
+              </tr>
+              <tr className={"border-t border-stone-200"}>
+                <td className="px-4 py-3 align-top">UI/UX Integration</td>
+                <td className="px-4 py-3 align-top">None; requires separate design work</td>
+                <td className="px-4 py-3 align-top">Tokenized Figma components ready for code</td>
+              </tr>
+              <tr className={"border-t border-stone-200"}>
+                <td className="px-4 py-3 align-top">Brand Governance</td>
+                <td className="px-4 py-3 align-top">No guidelines supplied</td>
+                <td className="px-4 py-3 align-top">Comprehensive Brand Style Manual</td>
+              </tr>
+              <tr className={"border-t border-stone-200"}>
+                <td className="px-4 py-3 align-top">Market Positioning</td>
+                <td className="px-4 py-3 align-top">Decorative design</td>
+                <td className="px-4 py-3 align-top">Positioned for enterprise authority</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Case Evidence: Elevating Perceived Value in B2B Tech</h2>
+        <ul className="grid gap-3 sm:grid-cols-2">
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Strategic Shift:</strong> We repositioned a growing fintech startup by replacing fragmented graphics with an enterprise-grade Figma design system and unified brand strategy.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><ChartNoAxesCombined className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Impact Delivered:</strong> The updated identity increased client win rates in enterprise sales cycles and accelerated frontend development speed by 40% using tokenized UI components.</li>
+        </ul>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Transform Your Brand Authority</h2>
+        <p className="text-stone-700 leading-relaxed">Establish a memorable visual identity engineered to build market trust and support enterprise growth.</p>
+      </section>
+      <section className="space-y-4">
+        <div className="flex flex-wrap gap-3 pt-2"><Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-blue-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-md">Book Brand Identity Consultation<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link><Link href="/case-studies" className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition-all hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-800">View Design Systems<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link></div>
+      </section>
+        </article>
+        </div>
+      </section>
+            
+
+      <RelatedCoreServices page="branding" />
+
       {/* FAQ Section */}
-      <FaqSection
-        title="Corporate Branding Services FAQs"
+
+
+      <FaqSection title="Corporate Branding Services FAQs"
         subtitle="Questions about brand strategy, visual identities, and UI design kits."
         faqs={BRANDING_FAQS}
       />

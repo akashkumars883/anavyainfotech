@@ -5,9 +5,9 @@ import ContactForm from "@/components/ContactForm";
 import FaqSection from "@/components/FaqSection";
 
 export const metadata = {
-  title: "Offshore Software Development Company India - Outsourcing Partner",
+  title: "Offshore Software Development Company in India | Anavya",
   description:
-    "Anavya Infotech is a premier offshore software development company in India. We engineer custom SaaS, AI chatbots, mobile apps, and CRMs for US, UK & global companies.",
+    "Build and extend your product with an India-based software engineering partner. Explore web, mobile, AI, and dedicated team services from Anavya Infotech.",
   keywords: [
     "offshore software development company India",
     "outsource software development to India",
@@ -20,7 +20,7 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/offshore-software-development-company",
   },
   openGraph: {
-    title: "Offshore Software Development Company in India - Anavya Infotech",
+    title: "Offshore Software Development Company in India | Anavya",
     description:
       "Full-spectrum offshore tech partner delivering enterprise SaaS, AI automation, and web applications for global startups and enterprises.",
     url: "https://www.anavyainfotech.com/offshore-software-development-company",
@@ -32,12 +32,12 @@ const OFFSHORE_FAQS = [
   {
     question: "Why choose India as your offshore software development destination?",
     answer:
-      "India boasts the world's largest pool of English-speaking software engineers, cutting-edge AI expertise, and cost-effective development structures that reduce tech overheads by 60% to 70%.",
+      "India offers a broad engineering talent pool and experience across modern product technologies. The right delivery model depends on your roles, product needs, and the amount of collaboration your team requires.",
   },
   {
     question: "How do you ensure data security, privacy, and IP protection?",
     answer:
-      "We operate under strict US and European data protection standards (GDPR & SOC-2 compliance). We sign legally binding Non-Disclosure Agreements (NDAs) and transfer 100% source code ownership upon milestone completion.",
+      "Security requirements and data handling responsibilities should be agreed before work begins. Project contracts can define confidentiality, repository access, environment controls, and intellectual property ownership. Discuss any required certifications or regulatory obligations during discovery.",
   },
   {
     question: "What agile methodologies do your offshore development teams follow?",
@@ -98,7 +98,7 @@ export default function OffshoreSoftwareDevelopmentPage() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Accelerate product roadmaps and reduce engineering costs by up to 70%. We deliver custom SaaS platforms, autonomous AI chatbots, mobile applications, and enterprise CRMs for global tech companies.
+            Add engineering capacity for custom web applications, AI integrations, mobile products, and business software with an India-based team and a delivery model scoped to your project.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -112,7 +112,7 @@ export default function OffshoreSoftwareDevelopmentPage() {
 
             <div className="inline-flex items-center gap-2 px-4 py-3 rounded-md bg-white border border-stone-200 text-xs font-semibold text-stone-700">
               <ShieldCheck className="h-4 w-4 text-blue-700" />
-              <span>SOC-2 &amp; GDPR Compliant Workflows</span>
+              <span>Security requirements agreed per project</span>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function OffshoreSoftwareDevelopmentPage() {
             {[
               {
                 title: "Custom SaaS & Web Application Development",
-                desc: "High-performance web apps built on Next.js 15, React, Node.js, and PostgreSQL with sub-second response times.",
+                desc: "Web apps built with technologies such as Next.js, React, Node.js, and PostgreSQL, selected to fit the product requirements.",
                 icon: Server,
               },
               {
@@ -191,16 +191,16 @@ export default function OffshoreSoftwareDevelopmentPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "70% Cost Optimization",
-                desc: "Enterprise engineering talent at a fraction of US/UK payroll costs, freeing budget for growth marketing.",
+                title: "Flexible delivery models",
+                desc: "Choose a dedicated team, defined project scope, or specialist augmentation based on your roadmap.",
               },
               {
-                title: "4+ Hrs Time Zone Overlap",
-                desc: "Direct daily communication overlap with EST, PST, GMT, and AEST business hours.",
+                title: "Planned collaboration hours",
+                desc: "Agree on communication windows and meeting cadence during project planning to support distributed teams.",
               },
               {
-                title: "100% Code Ownership",
-                desc: "Complete IP protection, strict NDAs, and full access to private GitHub repositories.",
+                title: "Clear ownership terms",
+                desc: "Define intellectual property, repository access, and handover responsibilities in the project agreement.",
               },
               {
                 title: "Agile & Transparent",
@@ -214,6 +214,39 @@ export default function OffshoreSoftwareDevelopmentPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8 text-stone-600 leading-relaxed">
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold text-stone-900">How an offshore engineering partnership works</h2>
+            <p>Offshore development works best when the external team joins a clear product process. Before work begins, we align on the business goal, users, existing systems, delivery constraints, and how success will be reviewed. The resulting scope identifies the first deliverable, open questions, dependencies, and the people responsible for decisions.</p>
+            <p>During delivery, work is broken into reviewable tasks. Teams can use the client’s existing issue tracker and code repository, agree on a meeting cadence, and share progress through written updates and demonstrations. This keeps product decisions visible across time zones and gives your internal team a clear view of work in progress.</p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold text-stone-900">Choose a delivery model that fits the work</h2>
+            <div className="overflow-x-auto"><table className="w-full border-collapse text-left text-sm"><thead><tr className="bg-stone-50 text-stone-900"><th className="p-3 border">Model</th><th className="p-3 border">Best suited to</th><th className="p-3 border">Planning focus</th></tr></thead><tbody><tr><td className="p-3 border font-semibold">Dedicated team</td><td className="p-3 border">Ongoing product development</td><td className="p-3 border">Roles, backlog, collaboration cadence</td></tr><tr><td className="p-3 border font-semibold">Fixed scope</td><td className="p-3 border">A well-defined feature or MVP</td><td className="p-3 border">Acceptance criteria, assumptions, milestones</td></tr><tr><td className="p-3 border font-semibold">Team augmentation</td><td className="p-3 border">Adding a specialist to an existing team</td><td className="p-3 border">Required skills, onboarding, ownership boundaries</td></tr></tbody></table></div>
+            <p>Pricing depends on roles, duration, scope, and operating model. We discuss these inputs during discovery and provide a proposal for review before work starts.</p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold text-stone-900">Technology, security, and handover</h2>
+            <p>Our listed capabilities include Next.js and React applications, Node.js and Python services, relational and document databases, AI integrations, mobile applications, and e-commerce systems. Project architecture should follow your product constraints, security requirements, and team expertise rather than a fixed stack chosen for marketing copy.</p>
+            <p>At kickoff, agree repository access, code review expectations, environment ownership, secrets handling, documentation, and intellectual property terms in the project agreement. At handover, the team can review delivered code, deployment processes, operational notes, and remaining work with your maintainers.</p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold text-stone-900">Explore delivered project examples</h2>
+            <p>Review the published <Link href="/case-studies" className="text-blue-700 underline">case studies</Link> for project context, capabilities, and outcomes. Each engagement is different; discuss comparable requirements with us before using any result as a forecast for your project.</p>
+            <div className="flex flex-wrap gap-4"><Link href="/case-studies/automixa-ai" className="text-blue-700 underline">Automixa AI</Link><Link href="/case-studies/money-capital-finance" className="text-blue-700 underline">Money Capital Finance</Link><Link href="/case-studies/nakul-properties" className="text-blue-700 underline">Nakul Properties</Link></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8 text-stone-600 leading-relaxed">
+          <div className="space-y-3"><h2 className="text-3xl font-bold text-stone-900">What to evaluate before choosing an offshore partner</h2><p>Compare prospective partners on delivery practices and fit, not just hourly rates. Ask who will work on the project, how technical decisions are reviewed, how changes to scope are handled, and what documentation and handover are included. Confirm the communication cadence, working-hour expectations, escalation contact, and the client-side decisions needed to keep delivery moving.</p></div>
+          <div className="overflow-x-auto"><table className="w-full border-collapse text-left text-sm"><thead><tr className="bg-white text-stone-900"><th className="p-3 border">Area</th><th className="p-3 border">Questions to settle</th></tr></thead><tbody><tr><td className="p-3 border font-semibold">People and ownership</td><td className="p-3 border">Who is assigned, who reviews the work, and who owns product decisions?</td></tr><tr><td className="p-3 border font-semibold">Delivery</td><td className="p-3 border">What is in the first milestone, how are changes approved, and how is progress demonstrated?</td></tr><tr><td className="p-3 border font-semibold">Security</td><td className="p-3 border">Which systems can the team access, how are credentials managed, and what obligations apply to your data?</td></tr><tr><td className="p-3 border font-semibold">Commercial terms</td><td className="p-3 border">How are fees, taxes, payment timing, termination, and intellectual property described in the agreement?</td></tr></tbody></table></div>
+          <div className="space-y-3"><h2 className="text-3xl font-bold text-stone-900">Build for the existing product, not a generic stack</h2><p>A typical web project may include a frontend, API layer, data store, integrations, deployment pipeline, and monitoring. We start by understanding what already exists: repository conventions, hosting, authentication, data sensitivity, expected traffic, and the people who will maintain the result. New services and AI components should have clear boundaries, useful failure behavior, and a way to monitor cost and quality.</p><p>For an AI feature, discovery should identify its data sources, access controls, expected answers, fallback behavior, evaluation method, and human review needs. For e-commerce, it should account for catalog management, payments, order operations, analytics, and the commerce platform already in use. This helps scope decisions around actual business requirements.</p></div>
         </div>
       </section>
 

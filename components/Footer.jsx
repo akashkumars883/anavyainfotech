@@ -34,6 +34,7 @@ export default function Footer() {
 
   const links = {
     services: [
+      { name: "Offshore Software Development", href: "/offshore-software-development-company" },
       { name: "Web Applications", href: "/services/web-applications" },
       { name: "AI & Automation", href: "/services/business-automation" },
       { name: "Technical SEO", href: "/services/technical-seo" },

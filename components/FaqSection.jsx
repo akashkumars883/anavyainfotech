@@ -9,14 +9,15 @@ export default function FaqSection({
   faqs = [],
 }) {
   const [openIndex, setOpenIndex] = useState(0); // First item open by default
+  const displayedFaqs = faqs;
 
-  if (!faqs || faqs.length === 0) return null;
+  if (!displayedFaqs || displayedFaqs.length === 0) return null;
 
   // Generate FAQPage JSON-LD Schema for Google Rich Search Results
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map((faq) => ({
+    "mainEntity": displayedFaqs.map((faq) => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -38,7 +39,7 @@ export default function FaqSection({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="max-w-5xl mx-auto space-y-8">
+      <div className="max-w-7xl mx-auto space-y-8">
         {/* Header Block */}
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-semibold uppercase tracking-wider text-stone-600">
@@ -54,7 +55,7 @@ export default function FaqSection({
 
         {/* Accordion List */}
         <div className="space-y-4">
-          {faqs.map((faq, index) => {
+          {displayedFaqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div

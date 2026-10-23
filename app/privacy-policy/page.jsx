@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
     <main className="min-h-screen bg-white text-left">
       {/* Header */}
       <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-7xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             <Shield className="h-3.5 w-3.5 text-blue-700" /> Legal & Transparency
           </div>
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Content Body */}
       <section className="py-10 bg-white px-6">
-        <div className="max-w-4xl mx-auto space-y-10 text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+        <div className="max-w-7xl mx-auto space-y-10 text-stone-600 text-sm sm:text-base leading-relaxed font-light">
 
           <section className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-normal tracking-tight text-stone-900">

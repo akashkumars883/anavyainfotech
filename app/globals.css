@@ -348,3 +348,422 @@ html.lenis, html.lenis body {
   font-weight: 700;
   color: #111827;
 }
+
+/* Shared service page layout: clearer section rhythm and consistent cards. */
+.service-page > section {
+  scroll-margin-top: 5.5rem;
+}
+
+.service-page section h2 {
+  max-width: 54rem;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.service-page h1,
+.service-page h2,
+.service-page h3,
+.service-page h4,
+.service-page p,
+.service-page li,
+.service-page blockquote {
+  text-align: left !important;
+}
+
+.service-page section [class*="grid"] > .group,
+.service-page section [class*="grid"] > li {
+  min-height: 100%;
+  border-radius: 1.125rem;
+  box-shadow: 0 2px 8px rgb(28 25 23 / 4%);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.service-page section [class*="grid"] > .group:hover,
+.service-page section [class*="grid"] > li:hover {
+  border-color: rgb(29 78 216 / 28%);
+  box-shadow: 0 12px 28px rgb(28 25 23 / 9%);
+  transform: translateY(-3px);
+}
+
+.service-page section .space-y-4 > p {
+  max-width: 54rem;
+}
+
+.service-page section .space-y-4 > p + [class*="grid"] {
+  margin-top: 1.5rem;
+}
+
+.service-page section [class*="grid"] > .group strong,
+.service-page section [class*="grid"] > li strong {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.service-page > section:not(:first-of-type) {
+  padding-block: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.service-page > section:not(:first-of-type):nth-of-type(even) {
+  background-color: #fafaf9;
+}
+
+.service-page .rounded-2xl,
+.service-page .rounded-xl,
+.service-page .rounded-3xl {
+  border-radius: var(--radius-md);
+}
+
+.service-page section [class*="grid"]:has(> .service-feature-card),
+.service-page section [class*="grid"]:has(> .group.rounded-xl),
+.service-page section [class*="grid"]:has(> .group.rounded-2xl) {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+}
+
+.service-feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-height: 100%;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(145deg, #fff 0%, #fafaf9 100%);
+  box-shadow: 0 2px 8px rgb(28 25 23 / 4%);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.service-feature-card:hover {
+  border-color: rgb(29 78 216 / 30%);
+  box-shadow: 0 12px 28px rgb(28 25 23 / 9%);
+  transform: translateY(-3px);
+}
+
+.service-feature-icon {
+  flex: 0 0 auto;
+}
+
+.service-page .space-y-6 > :not(:last-child) {
+  margin-block-end: 1rem;
+}
+
+.service-page .space-y-7 > :not(:last-child),
+.service-page .space-y-8 > :not(:last-child) {
+  margin-block-end: 1.25rem;
+}
+
+.service-page .space-y-10 > :not(:last-child) {
+  margin-block-end: 1.5rem;
+}
+
+.service-page .gap-8 {
+  gap: 1.5rem;
+}
+
+.service-page .gap-6 {
+  gap: 1rem;
+}
+
+.service-page section [class*="grid"]:has(> .group.min-h-24.items-center) {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 185px), 1fr));
+}
+
+.service-page section [class*="grid"] > .group.flex.items-start.rounded-xl,
+.service-page section [class*="grid"] > .group.flex.items-start.rounded-2xl {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-page section [class*="grid"] > .group.flex.items-start.rounded-xl > span:first-child:has(svg),
+.service-page section [class*="grid"] > .group.flex.items-start.rounded-2xl > span:first-child:has(svg) {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 0 0.25rem;
+  border-radius: var(--radius-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-page section [class*="grid"] > .group,
+  .service-page section [class*="grid"] > li {
+    transition: none;
+  }
+}
+
+/* Service page hero image headers */
+.service-page[data-service] > section:first-of-type {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 25rem;
+  align-items: center;
+  padding: clamp(3.5rem, 7vw, 5.5rem) 1.5rem;
+  overflow: hidden;
+  border: 0;
+  color: #fff;
+  background-color: #101827;
+  background-image:
+    linear-gradient(90deg, rgb(8 15 29 / 88%) 0%, rgb(8 15 29 / 74%) 54%, rgb(8 15 29 / 42%) 100%),
+    var(--service-hero-image);
+  background-position: center;
+  background-size: cover;
+}
+
+.service-page[data-service] > section:first-of-type > div {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 80rem);
+  margin-inline: auto;
+  display: block;
+}
+
+.service-page[data-service] > section:first-of-type > div > div:has(img),
+.service-page[data-service] > section:first-of-type p,
+.service-page[data-service] > section:first-of-type [class*="text-[11px]"] {
+  display: none;
+}
+
+.service-page[data-service] > section:first-of-type nav {
+  margin-bottom: 1.5rem;
+  color: rgb(255 255 255 / 72%);
+}
+
+.service-page[data-service] > section:first-of-type nav a,
+.service-page[data-service] > section:first-of-type nav span,
+.service-page[data-service] > section:first-of-type nav svg {
+  color: inherit;
+}
+
+.service-page[data-service] > section:first-of-type h1 {
+  max-width: 58rem;
+  margin-block: 0 1.75rem;
+  color: #fff;
+  font-size: clamp(2.5rem, 5.4vw, 4.5rem);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.service-page[data-service] > section:first-of-type h1 span {
+  color: inherit;
+}
+
+.service-page[data-service] > section:first-of-type a:not(nav a) {
+  border-color: #fff;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #123b88;
+}
+
+.service-page[data-service] > section:first-of-type a.service-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.service-page[data-service] > section:first-of-type a:not(nav a):hover {
+  background: #eff6ff;
+  color: #123b88;
+}
+
+.service-page[data-service] > section:first-of-type a[class*="border"]:not(nav a) {
+  display: none;
+}
+
+.service-page[data-service="ai-chatbot"] { --service-hero-image: url("/service-hero-ai-chatbot.jpg"); }
+.service-page[data-service="api-integration"] { --service-hero-image: url("/service-hero-api-integration.jpg"); }
+.service-page[data-service="app-development"] { --service-hero-image: url("/service-hero-app-development.jpg"); }
+.service-page[data-service="branding"] { --service-hero-image: url("/service-hero-branding.jpg"); }
+.service-page[data-service="business-automation"] { --service-hero-image: url("/service-hero-business-automation.jpg"); }
+.service-page[data-service="business-website"] { --service-hero-image: url("/service-hero-business-website.jpg"); }
+.service-page[data-service="content-strategist"] { --service-hero-image: url("/service-hero-content-strategist.jpg"); }
+.service-page[data-service="crm-custom-software"] { --service-hero-image: url("/service-hero-crm-custom-software.jpg"); }
+.service-page[data-service="development"] { --service-hero-image: url("/service-hero-development.jpg"); }
+.service-page[data-service="ecommerce"] { --service-hero-image: url("/service-hero-ecommerce.jpg"); }
+.service-page[data-service="ecommerce-seo"] { --service-hero-image: url("/service-hero-ecommerce-seo.jpg"); }
+.service-page[data-service="growth"] { --service-hero-image: url("/service-hero-growth.jpg"); }
+.service-page[data-service="landing-pages"] { --service-hero-image: url("/service-hero-landing-pages.jpg"); }
+.service-page[data-service="local-seo"] { --service-hero-image: url("/service-hero-local-seo.jpg"); }
+.service-page[data-service="seo"] { --service-hero-image: url("/service-hero-seo.jpg"); }
+.service-page[data-service="technical-seo"] { --service-hero-image: url("/service-hero-technical-seo.jpg"); }
+.service-page[data-service="technology"] { --service-hero-image: url("/service-hero-technology.jpg"); }
+.service-page[data-service="web-applications"] { --service-hero-image: url("/service-hero-web-applications.jpg"); }
+
+@media (max-width: 640px) {
+  .service-page[data-service] > section:first-of-type {
+    min-height: 22rem;
+    padding-inline: 1.25rem;
+    background-position: 58% center;
+  }
+}
+
+/* Four-step process timeline shared across service pages */
+.service-process-section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  background: #fafaf9;
+}
+
+.service-process-section > div > [class*="grid"],
+.service-process-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-process-section > div > [class*="grid"]::before,
+.service-process-grid::before {
+  position: absolute;
+  z-index: 0;
+  top: 4rem;
+  right: 12.5%;
+  left: 12.5%;
+  height: 2px;
+  background: linear-gradient(90deg, #bfdbfe, #2563eb 50%, #bfdbfe);
+  content: "";
+}
+
+.service-process-section > div > [class*="grid"] > div,
+.service-process-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.75rem 0.5rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+
+.service-process-number {
+  position: relative;
+  display: grid;
+  width: 8rem;
+  height: 8rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0.6rem solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(#fafaf9, #fafaf9) padding-box,
+    linear-gradient(135deg, #dbeafe 0%, #2563eb 100%) border-box;
+  color: #172554;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.service-process-number::before,
+.service-process-number::after {
+  position: absolute;
+  top: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  transform: translateY(-50%);
+  border: 2px solid #fafaf9;
+  border-radius: 50%;
+  background: #2563eb;
+  content: "";
+}
+
+.service-process-number::before { left: -0.95rem; }
+.service-process-number::after { right: -0.95rem; }
+
+.service-process-section .service-process-number + svg {
+  display: none;
+}
+
+.service-process-section h3 {
+  margin: 0.4rem 0 0;
+  color: #1e3a8a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.service-process-section [class*="grid"] p,
+.service-process-step p {
+  max-width: 19rem;
+  margin: 0;
+  color: #57534e;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .service-process-section > div > [class*="grid"],
+  .service-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2rem;
+  }
+
+  .service-process-section > div > [class*="grid"]::before,
+  .service-process-grid::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-process-section > div > [class*="grid"],
+  .service-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Keep service typography and card corners consistent with the FAQ section. */
+.service-page :is(h1, h2, h3, h4, h5, h6) {
+  font-weight: 400 !important;
+}
+
+.service-page [class*="rounded-"] {
+  border-radius: 0.375rem !important;
+}
+
+/* Shared section rhythm and card layout across all service pages. */
+.service-page > section {
+  padding-block: clamp(2.25rem, 4vw, 3rem);
+}
+
+.service-page > section > div {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.service-page section [class*="grid"] > .service-feature-card,
+.service-page section [class*="grid"] > .group:has(> strong),
+.service-page section [class*="grid"]:not(.mobile-solutions-grid) > li.group {
+  min-width: 0;
+  border: 1px solid #e7e5e4;
+  border-radius: 0.375rem;
+  background: #fff;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgb(28 25 23 / 4%);
+}
+
+.service-page section .mobile-solutions-grid > li,
+.service-page section .mobile-solutions-grid > li:hover {
+  min-height: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+}
+
+@media (min-width: 1100px) {
+  .service-page section [class*="grid"]:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .service-page section [class*="grid"]:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

@@ -9,8 +9,18 @@ import ContactForm from "@/components/ContactForm";
 import { FadeIn } from "@/components/FadeIn";
 
 export const metadata = {
+  title: "Custom Software, AI & Digital Growth | Anavya Infotech",
+  description:
+    "Anavya Infotech builds custom web applications, AI integrations, business software, and technical SEO systems for growing businesses in India and worldwide.",
   alternates: {
     canonical: "https://www.anavyainfotech.com",
+  },
+  openGraph: {
+    title: "Custom Software, AI & Digital Growth | Anavya Infotech",
+    description:
+      "Custom web applications, AI integrations, business software, and technical SEO systems for growing businesses.",
+    url: "https://www.anavyainfotech.com",
+    type: "website",
   },
 };
 

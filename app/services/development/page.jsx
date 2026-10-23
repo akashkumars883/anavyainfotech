@@ -1,6 +1,7 @@
 import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
+import ServiceProcess from "@/components/ServiceProcess";
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Code2, Globe, Smartphone, Layout, ShoppingCart, CheckCircle2 } from "lucide-react";
@@ -90,7 +91,7 @@ const serviceSchemas = createServiceSchema({
 
 export default function DevelopmentCategoryPage() {
   return (
-    <main className="min-h-screen bg-white text-left">
+    <main className="min-h-screen bg-white text-left service-page" data-service="development">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -128,8 +129,7 @@ export default function DevelopmentCategoryPage() {
           </div>
         </div>
       </section>
-
-      {/* Sub-Services Listing Grid */}
+{/* Sub-Services Listing Grid */}
       <section className="py-16 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
@@ -203,6 +203,7 @@ export default function DevelopmentCategoryPage() {
       </section>
 
       {/* Why It Matters Section */}
+      <ServiceProcess service="development" />
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
@@ -223,6 +224,8 @@ export default function DevelopmentCategoryPage() {
       </section>
 
       {/* FAQ Section */}
+      
+
       <FaqSection
         title="Development Engineering FAQs"
         subtitle="Common questions about custom web app development, mobile apps, and business websites."

@@ -48,7 +48,7 @@ const serviceSchemas = createServiceSchema({
 export default function EcommerceSeoPage() {
   
   return (
-    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950 service-page" data-service="ecommerce-seo">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -64,95 +64,49 @@ export default function EcommerceSeoPage() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
             E-Commerce SEO to Turn Organic Search Into Sales
           </h1>
+          <Link href="/contact" className="service-hero-cta">Discuss your project <span aria-hidden="true">→</span></Link>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
             Most e-commerce SEO advice stops at &quot;add keywords to product titles.&quot; Anavya Infotech runs full e-commerce SEO programs — technical crawl optimization, category architecture, product page templates, and content — built specifically for online stores where every ranking improvement should translate directly into revenue.
           </p>
         </div>
       </section>
-
-      {/* Description Grid */}
+{/* Description Grid */}
       <section className="py-12 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              Why E-Commerce SEO Is Different
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              Large product catalogs create SEO problems standard SEO services don&apos;t handle well — duplicate content from filters, thin product descriptions, and crawl budget waste on out-of-stock pages. We fix these at the architecture level so your catalog scales without cannibalizing its own rankings.
-            </p>
-          </div>
-
-          <div className="lg:col-span-6 bg-stone-50 border border-stone-100 rounded-md p-8 space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="h-10 w-10 rounded-md bg-white border border-stone-100 flex items-center justify-center">
-                <TrendingUp className="h-6 w-6 text-blue-700" />
-              </div>
-              <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                What&apos;s Included in E-Commerce SEO
-              </div>
-            </div>
-
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Site architecture and category/collection structure audit</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Product page SEO templates (titles, descriptions, schema/rich snippets)</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Faceted navigation and duplicate content cleanup (a major e-commerce SEO issue)</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Technical SEO: crawl budget, indexing, Core Web Vitals for large catalogs</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Content strategy for category pages, buying guides, and comparison content</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Conversion-focused optimization tied to organic revenue, not just traffic</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        
       </section>
 
-      {/* Process Section */}
-      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+      
+      
+
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
             Our E-Commerce SEO Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 01</span>
+              <span className="service-process-number">01</span>
               <h3 className="text-base font-medium text-stone-900">Audit</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Technical + catalog architecture audit.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 02</span>
+              <span className="service-process-number">02</span>
               <h3 className="text-base font-medium text-stone-900">Templates</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Product & category page SEO templates optimization.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 03</span>
+              <span className="service-process-number">03</span>
               <h3 className="text-base font-medium text-stone-900">Content</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Content production for category and buying-guide pages.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 04</span>
+              <span className="service-process-number">04</span>
               <h3 className="text-base font-medium text-stone-900">Revenue Optimization</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Ongoing optimization tied directly to organic revenue tracking.</p>
             </div>
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <FaqSection
         title="E-Commerce SEO FAQs"
@@ -161,6 +115,7 @@ export default function EcommerceSeoPage() {
       />
 
       {/* CTA */}
+      
       <section className="py-10 bg-stone-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">

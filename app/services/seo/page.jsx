@@ -68,7 +68,7 @@ export default function SeoServicePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950 service-page" data-service="seo">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -106,27 +106,9 @@ export default function SeoServicePage() {
           </div>
         </div>
       </section>
-
-      {/* What's Included */}
-      <section className="py-12 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            What&apos;s Included
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {inclusions.map((item, index) => (
-              <div key={index} className="p-4 rounded-md bg-stone-50 border border-stone-100 flex items-start gap-3 text-xs sm:text-sm text-stone-800 font-medium">
-                <CheckCircle2 className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EEAT Content Section */}
+{/* EEAT Content Section */}
       <section className="py-12 md:py-16 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-4xl mx-auto space-y-8 text-left">
+        <div className="max-w-7xl mx-auto space-y-8 text-left">
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
             Authoritative Search Engine Optimization Services
           </h2>
@@ -141,8 +123,10 @@ export default function SeoServicePage() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-12 bg-white border-b border-stone-100 px-6">
+      
+      
+
+      <section className="py-12 bg-white border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
             Our Process
@@ -150,7 +134,7 @@ export default function SeoServicePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, idx) => (
               <div key={idx} className="p-6 bg-stone-50 border border-stone-100 rounded-md space-y-3">
-                <div className="text-2xl font-bold text-blue-700">{step.num}</div>
+                <div className="service-process-number">{step.num}</div>
                 <h3 className="text-lg font-semibold text-stone-900">{step.title}</h3>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">{step.desc}</p>
               </div>
@@ -158,7 +142,6 @@ export default function SeoServicePage() {
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <FaqSection
         title="Frequently Asked Questions"
@@ -167,6 +150,7 @@ export default function SeoServicePage() {
       />
 
       {/* Contact Trigger Block */}
+      
       <section className="py-10 bg-stone-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">

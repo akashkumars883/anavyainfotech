@@ -49,7 +49,7 @@ const serviceSchemas = createServiceSchema({
 export default function LocalSeoServicePage() {
 
   return (
-    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950">
+    <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950 service-page" data-service="local-seo">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
@@ -87,90 +87,42 @@ export default function LocalSeoServicePage() {
           </div>
         </div>
       </section>
-
-      {/* What's Included */}
-      <section className="py-12 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900 leading-tight">
-              Why Local SEO Matters in Delhi NCR
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              Delhi NCR businesses compete in a dense, hyper-local market — a customer in Sector 15 Faridabad rarely cares about a business across the city. Local SEO ensures your business shows up specifically for searches happening near you, which typically converts far higher than generic organic traffic. Read our full guide: <Link href="/blog/local-seo-for-delhi-ncr-businesses-a-complete-guide-for-noida-gurgaon-faridabad-2026" className="text-blue-700 font-medium underline">Local SEO for Delhi NCR Businesses (2026)</Link>.
-            </p>
-          </div>
-
-          <div className="lg:col-span-6 bg-stone-50 border border-stone-100 rounded-md p-8 space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="h-10 w-10 rounded-md bg-white border border-stone-100 flex items-center justify-center">
-                <Compass className="h-6 w-6 text-blue-700" />
-              </div>
-              <div className="text-sm font-bold text-stone-800 uppercase tracking-wider">
-                What&apos;s Included in Our Local SEO
-              </div>
-            </div>
-
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Google Business Profile setup and full optimization</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Local citation building across relevant Indian directories</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Localized on-page SEO (city/area-specific landing pages where relevant)</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Review generation strategy and reputation management</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>NAP (Name, Address, Phone) consistency audit across the web</span>
-              </li>
-              <li className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                <Zap className="h-4 w-4 text-blue-700 shrink-0 mt-0.5" />
-                <span>Local keyword tracking and monthly reporting</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+<section className="py-12 bg-white border-b border-stone-100 px-6">
+        
       </section>
 
-      {/* Process Section */}
-      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+      
+      
+
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
             Our High-Impact Local SEO Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 01</span>
+              <span className="service-process-number">01</span>
               <h3 className="text-base font-medium text-stone-900">Comprehensive Local Audit</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">In-depth Google Business Profile and local competitor presence analysis.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 02</span>
+              <span className="service-process-number">02</span>
               <h3 className="text-base font-medium text-stone-900">Local Citations & NAP</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Building high-authority local citations and ensuring NAP consistency across Indian directories.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 03</span>
+              <span className="service-process-number">03</span>
               <h3 className="text-base font-medium text-stone-900">Hyper-Local On-Page SEO</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Creating location-specific service pages optimized for exact neighborhood search intent.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
-              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Step 04</span>
+              <span className="service-process-number">04</span>
               <h3 className="text-base font-medium text-stone-900">Reviews & Map Rankings</h3>
               <p className="text-xs text-stone-600 font-light leading-relaxed">Active review generation strategies and ongoing Google Maps rank tracking.</p>
             </div>
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <FaqSection
         title="Local SEO FAQs"
@@ -179,6 +131,7 @@ export default function LocalSeoServicePage() {
       />
 
       {/* CTA */}
+      
       <section className="py-10 bg-stone-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">

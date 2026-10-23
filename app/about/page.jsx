@@ -3,6 +3,7 @@ import { ArrowRight, Users, Star, Globe, Clock, ShieldCheck, Cpu, Code2, Zap, Ro
 import FaqSection from "@/components/FaqSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GsapCounter from "@/components/GsapCounter";
+import TechBrandIcon from "@/components/TechBrandIcon";
 
 export const metadata = {
   title: "About Anavya Infotech – Custom Software Development Company India",
@@ -104,9 +105,21 @@ const coreValues = [
 ];
 
 const technologies = [
-  "Next.js", "React.js", "Node.js", "TypeScript", "Python", 
-  "Tailwind CSS", "PostgreSQL", "MongoDB", "Redis", "Docker",
-  "AWS Cloud", "OpenAI/Claude API", "GraphQL", "REST APIs"
+  { name: "Next.js", slug: "nextdotjs" },
+  { name: "React.js", slug: "react" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Python", slug: "python" },
+  { name: "Tailwind CSS", slug: "tailwindcss" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Redis", slug: "redis" },
+  { name: "Docker", slug: "docker" },
+  { name: "AWS Cloud", slug: "amazonaws" },
+  { name: "OpenAI", slug: "openai" },
+  { name: "Claude", slug: "anthropic" },
+  { name: "GraphQL", slug: "graphql" },
+  { name: "REST APIs" },
 ];
 
 export default function AboutPage() {
@@ -276,13 +289,14 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">Technologies We Master</h2>
             <p className="text-xs sm:text-sm text-stone-600 font-light">Battle-tested tools and frameworks we use to build robust software.</p>
           </div>
-          <div className="flex flex-wrap gap-3">
-            {technologies.map((tech, i) => (
-              <span 
-                key={i} 
-                className="px-4 py-2 rounded-md text-xs font-semibold bg-white border border-stone-200 text-stone-700 shadow-sm"
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+            {technologies.map(({ name, slug }) => (
+              <span
+                key={name}
+                className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-stone-200 bg-white p-4 text-center text-sm font-semibold text-stone-800 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg"
               >
-                {tech}
+                {slug && <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-stone-100 bg-stone-50"><TechBrandIcon slug={slug} size={28} /></span>}
+                {name}
               </span>
             ))}
           </div>

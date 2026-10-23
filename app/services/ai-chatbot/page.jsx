@@ -1,21 +1,22 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
+import RelatedCoreServices from "@/components/RelatedCoreServices";
 import Link from "next/link";
-import { Zap, ArrowRight, Cpu, Bot, Code, Database, Bell, CheckCircle2, Sparkles, Globe, ShieldCheck } from "lucide-react";
+import { Zap, ArrowRight, Cpu, Bot, Code, Database, Bell, CheckCircle2, Sparkles, Globe, Workflow, Search, UsersRound, ChartNoAxesCombined, Wrench, Layers } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Website AI Chatbot Development & Auto-Crawl AI Widget Services - Anavya Infotech",
+  title: "Custom AI Chatbot & RAG Pipeline Development | Anavya Infotech",
   description:
-    "Turn website visitors into leads 24/7 with Anaya AI Assistant. Instant website auto-crawling, RAG vector knowledge store, 1-line script embed & real-time lead capture for your website.",
-  keywords: ["website AI chatbot development", "AI chatbot widget for websites", "Anaya AI Assistant"],
+    "Deploy autonomous enterprise AI chatbots with custom RAG architecture. Automate 24/7 customer support, lead qualification & data triage with sub-50ms API responses.",
+  keywords: ["custom ai chatbot development","enterprise rag pipeline development","ai automation agency","LLM integration services","LangChain developers","vector database implementation"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/ai-chatbot",
   },
   openGraph: {
-    title: "Website AI Chatbot Development & Auto-Crawl AI Widget Services",
+    title: "Custom AI Chatbot & RAG Pipeline Development | Anavya Infotech",
     description:
-      "Turn website visitors into leads 24/7 with Anaya AI Assistant. Instant website auto-crawling, RAG vector knowledge store, 1-line script embed & real-time lead capture.",
+      "Deploy autonomous enterprise AI chatbots with custom RAG architecture. Automate 24/7 customer support, lead qualification & data triage with sub-50ms API responses.",
     url: "https://www.anavyainfotech.com/services/ai-chatbot",
     type: "website",
   },
@@ -23,24 +24,16 @@ export const metadata = {
 
 const AI_CHATBOT_FAQS = [
   {
-    question: "How does the chatbot learn about my website content?",
-    answer: "Our automated AI crawler inputs your website URL, scrapes all key pages (services, pricing, about, FAQs, contact), cleans the HTML, and indexes the content into a dedicated vector knowledge base. No manual data entry or coding is required from your end."
+    question: "Is our proprietary enterprise data protected from AI model training?",
+    answer: "Yes. We deploy private API endpoints and self-hosted vector database instances guaranteed under enterprise non-disclosure agreements. Your corporate data, user logs, and knowledge documents are never used to train public foundational AI models."
   },
   {
-    question: "How do I add the AI chatbot to my website?",
-    answer: "You simply paste a single lightweight, asynchronous script tag (`<script src='.../widget.js' data-site-id='your-site'></script>`) into your website header or footer. It works seamlessly on Next.js, WordPress, Shopify, React, HTML, and all Web platforms."
+    question: "How does the system handle query requests outside the knowledge base?",
+    answer: "When a query falls outside the vector context boundaries, the agent executes a structured fallback rule. It can politely decline to answer, prompt the user for clarification, or hand off the conversation to a human support representative without hallucinating facts."
   },
   {
-    question: "How does the chatbot capture lead contact information?",
-    answer: "Whenever a website visitor asks about pricing, packages, custom quotes, or shows intent to buy, Anaya AI Assistant provides a concise direct answer and politely invites the visitor to share their Name, Phone Number, and Email for a personal consultation."
-  },
-  {
-    question: "Can the chatbot answer in Hinglish or regional languages?",
-    answer: "Yes! Powered by ultra-fast Groq LLM inference and Google Gemini AI engines, Anaya AI Assistant fluidly understands and responds in English, Hinglish, and Hindi based on how your website visitor writes."
-  },
-  {
-    question: "Where do the captured website leads go?",
-    answer: "Captured visitor leads are stored immediately in your custom admin dashboard, and real-time instant notifications (Email/WhatsApp API) are triggered directly to your sales team so you can follow up within minutes."
+    question: "How long does an enterprise AI chatbot deployment take?",
+    answer: "A basic RAG agent deployment takes roughly 2 to 4 weeks. Fully customized solutions featuring deep system integrations, custom API function calling, and automated database sync routines typically launch in 6 to 8 weeks."
   }
 ];
 
@@ -55,7 +48,7 @@ const serviceSchemas = createServiceSchema({
 
 export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-white text-left">
+    <main className="min-h-screen bg-white text-left service-page" data-service="ai-chatbot">
       {/* Search Engine Schema Graph */}
       <script
         type="application/ld+json"
@@ -73,13 +66,13 @@ export default function ServicePage() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
             Convert Website Visitors into Qualified Leads 24/7 with <span className="font-semibold text-blue-600">Anaya AI Assistant</span>
           </h1>
+          <Link href="/contact" className="service-hero-cta">Discuss your project <span aria-hidden="true">→</span></Link>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
             Over 95% of website visitors bounce without leaving contact details because no one was online to answer their questions. Anavya Infotech builds lightweight, intelligent AI chatbot widgets designed specifically for your website — auto-crawling your pages, answering customer questions in sub-seconds, and capturing verified leads round-the-clock.
           </p>
         </div>
       </section>
-
-      {/* Overview & Key Capabilities */}
+{/* Overview & Key Capabilities */}
       <section className="py-14 bg-white border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
@@ -185,24 +178,7 @@ export default function ServicePage() {
       </section>
 
       {/* EEAT Content Section */}
-      <section className="py-12 md:py-16 bg-white border-b border-stone-100 px-6">
-        <div className="max-w-4xl mx-auto space-y-8 text-left">
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
-            Authoritative Website AI Chatbot Development
-          </h2>
-          <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
-            <p>
-              In the modern digital economy, a website that only operates during business hours is actively losing revenue. As a specialized <strong>website AI chatbot development</strong> company, Anavya Infotech engineers intelligent, autonomous agents that act as your 24/7 digital sales team. We don&apos;t just provide a generic chat widget; we deploy an advanced <strong>AI chatbot widget for websites</strong> built on sophisticated RAG (Retrieval-Augmented Generation) technology that understands the nuanced context of your specific business offerings.
-            </p>
-            <p>
-              Our authority in AI integration ensures that your <strong>Anaya AI Assistant</strong> operates with extreme precision and security. By strictly adhering to data privacy protocols, we guarantee that visitor interactions are secure and lead capture is compliant with global standards. Businesses trust us to bridge the gap between AI innovation and practical lead generation, transforming passive traffic into qualified, actionable sales opportunities without requiring any coding expertise from your end.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* How Our Website AI Chatbot Works - Exact 4-Step Process */}
-      <section className="py-14 bg-stone-50 border-b border-stone-100 px-6">
+      <section className="py-14 bg-stone-50 border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="space-y-3 max-w-3xl">
             <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">
@@ -222,9 +198,7 @@ export default function ServicePage() {
             <div className="bg-white border border-stone-200 p-6 rounded-lg space-y-3 relative flex flex-col justify-between shadow-sm">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded uppercase tracking-wider">
-                    Step 01
-                  </span>
+                  <span className="service-process-number">01</span>
                   <Globe className="h-5 w-5 text-stone-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-stone-900">
@@ -240,9 +214,7 @@ export default function ServicePage() {
             <div className="bg-white border border-stone-200 p-6 rounded-lg space-y-3 relative flex flex-col justify-between shadow-sm">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded uppercase tracking-wider">
-                    Step 02
-                  </span>
+                  <span className="service-process-number">02</span>
                   <Database className="h-5 w-5 text-stone-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-stone-900">
@@ -258,9 +230,7 @@ export default function ServicePage() {
             <div className="bg-white border border-stone-200 p-6 rounded-lg space-y-3 relative flex flex-col justify-between shadow-sm">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded uppercase tracking-wider">
-                    Step 03
-                  </span>
+                  <span className="service-process-number">03</span>
                   <Code className="h-5 w-5 text-stone-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-stone-900">
@@ -276,9 +246,7 @@ export default function ServicePage() {
             <div className="bg-white border border-stone-200 p-6 rounded-lg space-y-3 relative flex flex-col justify-between shadow-sm">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded uppercase tracking-wider">
-                    Step 04
-                  </span>
+                  <span className="service-process-number">04</span>
                   <Bell className="h-5 w-5 text-stone-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-stone-900">
@@ -293,10 +261,140 @@ export default function ServicePage() {
           </div>
         </div>
       </section>
+      <section className="py-12 md:py-16 bg-white border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto space-y-8 text-left">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
+            Authoritative Website AI Chatbot Development
+          </h2>
+          <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
+            <p>
+              In the modern digital economy, a website that only operates during business hours is actively losing revenue. As a specialized <strong>website AI chatbot development</strong> company, Anavya Infotech engineers intelligent, autonomous agents that act as your 24/7 digital sales team. We don&apos;t just provide a generic chat widget; we deploy an advanced <strong>AI chatbot widget for websites</strong> built on sophisticated RAG (Retrieval-Augmented Generation) technology that understands the nuanced context of your specific business offerings.
+            </p>
+            <p>
+              Our authority in AI integration ensures that your <strong>Anaya AI Assistant</strong> operates with extreme precision and security. By strictly adhering to data privacy protocols, we guarantee that visitor interactions are secure and lead capture is compliant with global standards. Businesses trust us to bridge the gap between AI innovation and practical lead generation, transforming passive traffic into qualified, actionable sales opportunities without requiring any coding expertise from your end.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How Our Website AI Chatbot Works - Exact 4-Step Process */}
+      
+
+      {/* Service copy sections */}
+            <section className="px-6 py-14 bg-white border-y border-stone-100">
+        <div className="max-w-7xl mx-auto ">
+<article className="min-w-0 space-y-10">
+      <section className="grid gap-6 md:grid-cols-2 md:items-center">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 md:col-span-2">Autonomous Enterprise AI Agents &amp; RAG Pipelines That Eliminate Overhead</h2>
+        <p className="text-stone-700 leading-relaxed md:col-span-2">Off-the-shelf AI wrappers and basic chat plugins often lack business context, generate incorrect responses, and create security risks with proprietary company data. Enterprise workflows require accurate, deterministic AI interactions backed by verifiable document sources and real-time execution capabilities.</p>
+      </section>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 md:col-span-2">
+            <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">&lt; 50 ms</p><p className="mt-1 text-sm text-stone-600">Webhook response</p></div>
+            <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">?68%</p><p className="mt-1 text-sm text-stone-600">Support tickets</p></div>
+            <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">99.9%</p><p className="mt-1 text-sm text-stone-600">Uptime</p></div>
+          </div>
+      <section className="space-y-4">
+        <p className="text-stone-700 leading-relaxed">Anavya Infotech engineers custom AI chatbots and Retrieval-Augmented Generation (RAG) pipelines. We connect secure Large Language Models (LLMs) to your enterprise data stores, automating customer support, internal data retrieval, and complex business workflows with low latency and precise output guardrails.</p>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Beyond Generic AI Wrappers: Engineering Accurate Enterprise AI</h2>
+        <p className="text-stone-700 leading-relaxed">Generic conversational tools struggle with enterprise data tasks because they lack access to real-time internal databases. Our custom-engineered RAG architectures fix these limitations:</p>
+      </section>
+      <section className="space-y-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Zap className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Zero Hallucination Tolerance:</strong> System prompts limit model outputs strictly to source text pulled from verified company documents.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Database className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Vectorized Data Processing:</strong> Private enterprise knowledge bases are converted into dynamic vector embeddings for high-accuracy semantic retrieval.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Zap className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Deterministic Guardrails:</strong> Content filtering layers prevent off-topic conversations, data leaks, and unauthorized user actions.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Layers className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Function Calling Systems:</strong> AI agents execute real-world platform tasks—such as updating CRM records, issuing refund requests, or booking appointments—via secure API webhooks.</li>
+        </ul>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Deep-Dive Technical Architecture Breakdown</h2>
+        <p className="text-stone-700 leading-relaxed">Our enterprise AI systems combine modern vector indexing with automated workflow handling:</p>
+      </section>
+      <section className="space-y-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Zap className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Vector Embeddings &amp; Storage Pipelines:</strong> Converts raw unstructured files (PDFs, Notion bases, SQL databases) into multi-dimensional embeddings stored in High-Performance Vector Databases (Pinecone, Qdrant, PGVector).</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Search className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Hybrid Semantic &amp; Keyword Search:</strong> Combines dense vector retrieval with sparse keyword searches (BM25) to pinpoint relevant information across multi-page enterprise documents.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Search className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Context Compression &amp; Dynamic Reranking:</strong> Filters and ranks context excerpts using Cohere Rerank before sending queries to the LLM, keeping latency under 50ms and cutting API token overhead.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Workflow className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Autonomous Function Calling APIs:</strong> Integrates AI platforms directly with platforms like Hubspot, Salesforce, Zendesk, and Stripe for real-time background task processing.</li>
+        </ul>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Business Use Cases Engineered for Immediate ROI</h2>
+      </section>
+      <section className="space-y-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Wrench className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">24/7 Automated Support Resolution:</strong> Manages repetitive client help queries, product questions, and technical troubleshooting without human agent intervention.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Zap className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Automated Lead Qualification:</strong> Evaluates inbound prospect inquiries in real time, collects project parameters, and books qualified meetings directly to sales calendars.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Search className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Internal Enterprise Knowledge Search:</strong> Gives operational teams instant access to employee handbooks, engineering docs, and compliance policies via plain-text queries.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Workflow className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Automated Workflow Routing:</strong> Converts unstructured customer requests into structured data payloads and forwards them to internal ERP or ticketing systems automatically.</li>
+        </ul>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">AI Architecture Comparison: Generic Prompting vs. Custom RAG Pipeline</h2>
+
+        <div className="overflow-x-auto rounded-md border border-stone-200">
+          <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+            <tbody>
+              <tr className={"bg-stone-100 font-semibold text-stone-900"}>
+                <th className="px-4 py-3 align-top">Technical Metric</th>
+                <th className="px-4 py-3 align-top">Generic AI System (ChatGPT / Wrappers)</th>
+                <th className="px-4 py-3 align-top">Anavya Enterprise RAG Pipeline</th>
+              </tr>
+              <tr className={"border-t border-stone-200"}>
+                <td className="px-4 py-3 align-top">Response Accuracy</td>
+                <td className="px-4 py-3 align-top">Variable; susceptible to hallucinations</td>
+                <td className="px-4 py-3 align-top">Verified; restricted to retrieved enterprise context</td>
+              </tr>
+              <tr className={"border-t border-stone-200"}>
+                <td className="px-4 py-3 align-top">Data Privacy</td>
+                <td className="px-4 py-3 align-top">Public cloud model retraining risk</td>
+                <td className="px-4 py-3 align-top">Private cloud hosted; zero training on user input</td>
+              </tr>
+              <tr className={"border-t border-stone-200"}>
+                <td className="px-4 py-3 align-top">System Action Execution</td>
+                <td className="px-4 py-3 align-top">Read-only text chat responses</td>
+                <td className="px-4 py-3 align-top">Read &amp; Write via API calls and webhooks</td>
+              </tr>
+              <tr className={"border-t border-stone-200"}>
+                <td className="px-4 py-3 align-top">Knowledge Updates</td>
+                <td className="px-4 py-3 align-top">Requires model retraining</td>
+                <td className="px-4 py-3 align-top">Instant update upon new vector document ingestion</td>
+              </tr>
+              <tr className={"border-t border-stone-200"}>
+                <td className="px-4 py-3 align-top">Response Time</td>
+                <td className="px-4 py-3 align-top">2.5s – 5.0s latency</td>
+                <td className="px-4 py-3 align-top">Sub-50ms API response rates</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Production Impact Case Proof: Automixa AI Platform</h2>
+      </section>
+      <section className="space-y-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><UsersRound className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Client Need:</strong> Automixa AI required an enterprise-grade AI automation engine capable of routing complex multi-file data workflows for over 10,000 global creators simultaneously.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Wrench className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Engineering Solution:</strong> Anavya Infotech designed a multi-model RAG architecture using LangChain, FastHTML/Python endpoints, Qdrant vector storage, and Redis queue management.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><ChartNoAxesCombined className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Operational Results:</strong> Delivered stable sub-50ms webhook response rates, cut ticket queues by 68%, and maintained 99.9% operational uptime under high concurrent query volumes.</li>
+        </ul>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Deploy Custom AI Infrastructure Today</h2>
+        <p className="text-stone-700 leading-relaxed">Transform your internal operations and user experiences with production-ready AI agents tailored to your business needs.</p>
+      </section>
+      <section className="space-y-4">
+        <div className="flex flex-wrap gap-3 pt-2"><Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-blue-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-md">Book AI Technical Consultation<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link><Link href="/case-studies" className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition-all hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-800">Explore RAG Case Studies<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link></div>
+      </section>
+        </article>
+        </div>
+      </section>
+      <RelatedCoreServices page="ai" />
 
       {/* FAQ Section */}
-      <FaqSection
-        title="Website AI Chatbot FAQs"
+      <FaqSection title="Website AI Chatbot FAQs"
         subtitle="Common questions about deploying Anaya AI Assistant on your website."
         faqs={AI_CHATBOT_FAQS}
       />

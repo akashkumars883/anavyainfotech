@@ -63,7 +63,7 @@ export default async function CaseStudyDetailPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
       />
 
-      <div className="max-w-5xl mx-auto px-6 space-y-12 pt-6">
+      <div className="max-w-7xl mx-auto px-6 space-y-12 pt-6">
         
         {/* Breadcrumbs */}
         <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: project.title, href: `/case-studies/${project.slug}` }]} />

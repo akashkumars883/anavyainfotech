@@ -273,7 +273,7 @@ export default async function BlogPostPage({ params }) {
         />
       )}
 
-      <article className="max-w-4xl mx-auto px-6 space-y-6 pt-6">
+      <article className="max-w-7xl mx-auto px-6 space-y-6 pt-6">
         
         {/* Breadcrumbs */}
         <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />

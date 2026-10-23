@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function NotFound() {
   return (
     <main className="min-h-[80vh] flex items-center justify-center bg-white px-6 py-24 selection:bg-blue-600/20 selection:text-blue-950">
-      <div className="max-w-2xl mx-auto text-center space-y-8">
+      <div className="max-w-7xl mx-auto text-center space-y-8">
         
         {/* Animated 404 Graphic */}
         <motion.div 

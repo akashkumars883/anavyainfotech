@@ -146,7 +146,7 @@ export default function JobDetailClient({ initialJob, jobId }) {
     <main className="min-h-screen bg-stone-50 text-left selection:bg-blue-600/20 selection:text-blue-950 pb-20">
       {/* Header Banner */}
       <section className="pt-8 pb-12 bg-white border-b border-stone-200 px-6">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs
             items={[
               { label: "Careers", href: "/careers" },
@@ -184,7 +184,7 @@ export default function JobDetailClient({ initialJob, jobId }) {
 
       {/* Main Content Area */}
       <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           
           {!isApplying ? (
             <div className="space-y-10 bg-white p-6 sm:p-10 rounded-lg border border-stone-200 shadow-sm">
