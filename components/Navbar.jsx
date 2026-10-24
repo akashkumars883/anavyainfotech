@@ -116,22 +116,20 @@ export default function Navbar() {
       >
         {/* Navbar Container */}
         <div className="max-w-7xl mx-auto flex items-center justify-between relative">
-          {/* Left Brand Logo & Menu Items */}
-          <div className="flex items-center gap-10">
-            {/* Logo */}
-            <Link href="/" className="flex items-center group" aria-label="Anavya Infotech Home">
-              <Image
-                src="/logo.png"
-                alt="Anavya Infotech Logo"
-                width={54}
-                height={54}
-                className="h-11 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                priority
-              />
-            </Link>
+          {/* Logo */}
+          <Link href="/" className="flex items-center group" aria-label="Anavya Infotech Home">
+            <Image
+              src="/logo.png"
+              alt="Anavya Infotech Logo"
+              width={54}
+              height={54}
+              className="h-11 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              priority
+            />
+          </Link>
 
-            {/* Desktop Menu Items */}
-            <div className="hidden lg:flex items-center gap-6.5">
+          {/* Desktop Menu Items */}
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-6.5">
               <Link
                 href="/"
                 className="text-sm font-semibold text-stone-700 hover:text-blue-700 transition-colors"
@@ -171,6 +169,7 @@ export default function Navbar() {
 
               {[
                 { name: "Case Studies", href: "/case-studies" },
+                { name: "Blog", href: "/blog" },
                 { name: "Pricing", href: "/pricing" },
                 { name: "About", href: "/about" },
               ].map((link) => (
@@ -182,7 +181,6 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-            </div>
           </div>
 
           {/* Right Action Button (Desktop) & Hamburger (Mobile) */}
@@ -191,7 +189,7 @@ export default function Navbar() {
               href="/contact"
               className="hidden lg:inline-flex px-6 py-3 rounded-md text-xs font-bold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-all shadow-sm hover:scale-[1.02]"
             >
-              Book Strategy Call
+              Book a Call
             </Link>
 
             {/* Hamburger Icon */}
@@ -385,6 +383,7 @@ export default function Navbar() {
 
             {[
               { name: "Case Studies", href: "/case-studies" },
+              { name: "Blog", href: "/blog" },
               { name: "Pricing", href: "/pricing" },
               { name: "About", href: "/about" },
             ].map((link) => (
@@ -403,7 +402,7 @@ export default function Navbar() {
               onClick={() => setIsMobileOpen(false)}
               className="w-full text-center py-3.5 rounded-md bg-blue-700 text-white font-bold text-sm hover:bg-blue-800 mt-2 shadow-md transition-colors"
             >
-              Book Strategy Call
+              Book a Call
             </Link>
           </div>
         </div>
