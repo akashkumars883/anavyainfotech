@@ -7,17 +7,17 @@ import Image from "next/image";
 import RelatedCoreServices from "@/components/RelatedCoreServices";
 
 export const metadata = {
-  title: "Hire Next.js Developers in India | Pre-Vetted Senior Engineers",
+  title: "Hire Next.js Developers in India | Experienced Engineers",
   description:
-    "Hire pre-vetted senior Next.js 15 developers in India. 4+ hrs US/UK overlap, sub-second performance builds, 14-day risk-free trial & 65% payroll savings.",
+    "Hire experienced Next.js 15 developers in India. Get 4+ hours of US/UK work-hour overlap, fast websites, a 14-day trial, and save up to 65% on payroll.",
   keywords: ["hire nextjs developers in india","hire dedicated next.js developer","Next.js engineering team","offshore React developers","senior full stack Nextjs engineer","staff augmentation India"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/hire-nextjs-developers-india",
   },
   openGraph: {
-    title: "Hire Next.js Developers in India | Pre-Vetted Senior Engineers",
+    title: "Hire Next.js Developers in India | Experienced Engineers",
     description:
-      "Hire pre-vetted senior Next.js 15 developers in India. 4+ hrs US/UK overlap, sub-second performance builds, 14-day risk-free trial & 65% payroll savings.",
+      "Hire experienced Next.js 15 developers in India. Get 4+ hours of US/UK work-hour overlap, fast websites, a 14-day trial, and save up to 65% on payroll.",
     url: "https://www.anavyainfotech.com/hire-nextjs-developers-india",
     type: "website",
   },
@@ -25,16 +25,16 @@ export const metadata = {
 
 const HIRE_FAQS = [
   {
-    question: "How quickly can a Next.js engineer onboard with our technical team?",
-    answer: "We match you with qualified, pre-vetted developer profiles within 48 hours. Once selected, your developer can complete onboarding and begin committing code within 3 to 5 business days."
+    question: "How soon can a Next.js developer join our team?",
+    answer: "We share qualified developer profiles within 48 hours. After you choose a developer, they can get set up and start work within 3 to 5 business days."
   },
   {
     question: "How do we communicate and manage daily developer output?",
-    answer: "Your assigned developer integrates directly into your team's current workspace. They participate in daily standups via Zoom or Teams, track tasks in Jira or Linear, and log real-time progress on Slack."
+    answer: "Your developer joins your team's workspace, takes part in daily Zoom or Teams meetings, tracks tasks in Jira or Linear, and shares updates on Slack."
   },
   {
-    question: "What happens if an assigned engineer doesn't fit our team dynamic?",
-    answer: "We provide a 14-day risk-free trial. If an engineer isn't a good fit for your workflow, our team will source a replacement developer or end the contract immediately without charging service fees.n"
+    question: "What if the developer is not a good fit for my team?",
+    answer: "We offer a 14-day trial. If the developer is not right for your team, we can find a replacement or end the contract without a service fee."
   }
 ];
 
@@ -49,7 +49,7 @@ const serviceSchema = {
   },
   "serviceType": "Software Engineering Staff Augmentation",
   "areaServed": ["United States", "United Kingdom", "United Arab Emirates", "Australia", "Canada", "Global"],
-  "description": "Pre-vetted senior Next.js & React full-stack developers in India for US, UK, and global tech teams.",
+  "description": "Experienced Next.js and React developers in India for teams in the US, UK, and around the world.",
   "offers": {
     "@type": "Offer",
     "price": "25.00",
@@ -87,11 +87,11 @@ export default function HireNextJsDevelopersPage() {
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
             Hire dedicated Next.js developers in India. <br />
-            <span className="text-blue-700">Top 1% React talent at $25 – $45/hr.</span>
+            <span className="text-blue-700">Experienced React developers at $25 – $45/hr.</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Add Next.js engineering capacity to your SaaS, web application, or e-commerce team. Discuss candidate experience, working-hour overlap, onboarding, and intellectual property terms before an engagement begins.
+            Add Next.js developers to your SaaS, web app, or e-commerce team. Before work starts, discuss their experience, shared work hours, setup, and code ownership.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -99,13 +99,13 @@ export default function HireNextJsDevelopersPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 py-4 px-8 rounded-md bg-stone-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-black transition-all shadow-md"
             >
-              <span>Hire Next.js Engineer Now</span>
+              <span>Hire a Next.js Developer</span>
               <ArrowRight className="h-4 w-4 text-blue-400" />
             </Link>
 
             <div className="inline-flex items-center gap-2 px-4 py-3 rounded-md bg-white border border-stone-200 text-xs font-semibold text-stone-700">
               <ShieldCheck className="h-4 w-4 text-blue-700" />
-              <span>Strict NDA &amp; 100% IP Protection</span>
+              <span>NDA &amp; Full Code Ownership</span>
             </div>
           </div>
         </div>
@@ -222,10 +222,10 @@ export default function HireNextJsDevelopersPage() {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-              Engagement Models
+              Hiring Options
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Flexible Hiring Structures.
+              Flexible Ways to Work Together.
             </h2>
           </div>
 
@@ -234,19 +234,19 @@ export default function HireNextJsDevelopersPage() {
               {
                 title: "Dedicated Full-Time Engineer",
                 price: "$3,200 / month",
-                desc: "160 hours/month of exclusive focus on your product pipeline. Integrates into your Slack & Jira.",
+                desc: "160 hours a month focused on your product. The developer joins your Slack and Jira.",
                 features: ["4-5 Hrs Daily US/UK Overlap", "Direct Slack & GitHub Access", "Zero Recruitment Fees"],
               },
               {
                 title: "Milestone / Project-Based",
                 price: "Custom Fixed Quote",
-                desc: "Milestones, scope assumptions, pricing, and delivery expectations documented in the project proposal.",
+                desc: "The proposal lists the work, assumptions, price, and delivery plan.",
                 features: ["100% Scope Guarantee", "Milestone Billing Schedule", "Post-Launch SLA Maintenance"],
               },
               {
                 title: "Hourly Staff Augmentation",
                 price: "$35 / hour",
-                desc: "On-demand senior Next.js expertise to sprint through backlog tasks, security audits, or performance polish.",
+                desc: "Hire an experienced Next.js developer by the hour for planned tasks, security reviews, or speed improvements.",
                 features: ["No Long-Term Contracts", "Weekly Time Sheet Reports", "Flexible Capacity Scale"],
               },
             ].map((model, idx) => (
@@ -267,7 +267,7 @@ export default function HireNextJsDevelopersPage() {
                   href="/contact"
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-md bg-stone-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-black transition-all"
                 >
-                  <span>Select Model</span>
+                  <span>Choose This Option</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -288,8 +288,8 @@ export default function HireNextJsDevelopersPage() {
         </aside>
         <article className="min-w-0 space-y-10">
       <section className="grid gap-6 md:grid-cols-2 md:items-center">
-        <h2 id="detail-overview" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 md:col-span-2 scroll-mt-32">Scale Your Engineering Team with Senior Next.js 15 Architects</h2>
-        <p className="text-stone-700 leading-relaxed">Hiring senior web engineering talent locally is increasingly competitive and expensive. Long recruitment cycles and high overhead costs can slow your software delivery timelines and delay critical product launches.</p>
+        <h2 id="detail-overview" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 md:col-span-2 scroll-mt-32">Grow Your Team with Experienced Next.js 15 Developers</h2>
+        <p className="text-stone-700 leading-relaxed">Hiring experienced web developers locally can take time and cost more. Long hiring processes can slow down your project and delay its launch.</p>
         <figure className="overflow-hidden rounded-md border border-stone-200 bg-stone-50">
           <Image src="https://images.unsplash.com/photo-1633113088983-12fb3b2fe0ac?auto=format&fit=crop&w=1600&q=85" alt="Two colleagues collaborating on a laptop in an office" width={1600} height={1200} sizes="(max-width: 768px) 100vw, 50vw" className="aspect-[4/3] w-full object-cover" />
           <figcaption className="px-4 py-3 text-xs text-stone-500"><a href="https://unsplash.com/photos/two-people-sitting-across-from-each-other-in-an-office-working-on-a-surface-laptop-4QKqDeAZf-c" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-stone-900">Photo by Microsoft Edge | Unsplash</a></figcaption>
@@ -301,41 +301,41 @@ export default function HireNextJsDevelopersPage() {
             <div className="rounded-md border border-stone-200 bg-stone-50 px-5 py-4"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">14 days</p><p className="mt-1 text-sm text-stone-600">Risk-free trial</p></div>
           </div>
       <section className="space-y-4">
-        <p className="text-stone-700 leading-relaxed">Anavya Infotech connects global enterprises, tech startups, and digital agencies with pre-vetted senior Next.js developers in India. Gain direct access to full-stack engineers who integrate into your workflow, align with your team's time zone, and deliver modern JavaScript web architectures at up to 65% lower cost.</p>
+        <p className="text-stone-700 leading-relaxed">Anavya Infotech connects businesses, startups, and agencies with experienced Next.js developers in India. Our full-stack developers join your workflow, share your team&apos;s work hours, and build modern JavaScript websites at up to 65% lower cost.</p>
       </section>
       <section className="space-y-4">
-        <h2 id="detail-section-2" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">Why Next.js 15 is the Standard for Modern Web Engineering</h2>
-        <p className="text-stone-700 leading-relaxed">Our developers build applications on Next.js 15, bringing modern architecture standards to every engineering engagement:</p>
+        <h2 id="detail-section-2" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">Why We Use Next.js 15</h2>
+        <p className="text-stone-700 leading-relaxed">Our developers use Next.js 15 to build modern web apps:</p>
       </section>
       <section className="space-y-4">
         <ul className="grid gap-3 sm:grid-cols-2">
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">React Server Components (RSC):</strong> Renders complex component logic on the server, significantly cutting JavaScript bundle sizes delivered to client browsers.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Incremental Static Regeneration (ISR):</strong> Updates static content pages in the background without requiring full static platform rebuilds.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Server Actions &amp; API Routes:</strong> Simplifies backend data mutation flows and reduces the need for external server boilerplate code.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Core Web Vitals Optimization:</strong> Built-in font, script, and image optimization tools deliver top-tier performance scores by default.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">React Server Components (RSC):</strong> Runs some work on the server, so less JavaScript needs to load in a visitor&apos;s browser.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Incremental Static Regeneration (ISR):</strong> Updates website pages in the background without rebuilding the whole site.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Server Actions &amp; API Routes:</strong> Handles data changes without needing extra server code.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Core Web Vitals:</strong> Built-in tools help improve fonts, scripts, and images for faster loading.</li>
         </ul>
       </section>
       <section className="space-y-4">
-        <h2 id="detail-section-3" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">Our 5-Stage Developer Vetting Standard</h2>
-        <p className="text-stone-700 leading-relaxed">We screen hundreds of candidate applications to ensure only high-performing engineers join your development pipeline:</p>
+        <h2 id="detail-section-3" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">How We Review Developers</h2>
+        <p className="text-stone-700 leading-relaxed">We review each developer&apos;s skills and work before sharing their profile with you:</p>
       </section>
       <section className="space-y-4">
         <ul className="grid gap-3 sm:grid-cols-2">
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Portfolio &amp; Code Repository Screening:</strong> In-depth review of public GitHub contributions, production application structures, and clean coding practices.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Live Algorithmic &amp; Coding Tests:</strong> Hands-on assessment evaluating real-time problem-solving skills, state management, and refactoring performance.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Architecture &amp; Framework Evaluation:</strong> Advanced testing on Next.js 15 App Router patterns, Server Actions, edge deployment, and database setup.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Communication &amp; Agile Workflow Assessment:</strong> Evaluation of spoken and written English proficiency, operational transparency, and experience with Agile tools (Jira, Slack, Git).</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Reference Verification &amp; Background Checks:</strong> Background validation confirming professional track records and past enterprise contributions.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Portfolio &amp; GitHub Review:</strong> We review public GitHub work, completed apps, and code quality.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Coding Tests:</strong> Developers solve practical problems and show how they manage and improve code.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Next.js Skills:</strong> We test Next.js 15 App Router patterns, Server Actions, edge deployment, and database setup.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Communication &amp; Teamwork:</strong> We review spoken and written English and experience with tools like Jira, Slack, and Git.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">References &amp; Background Checks:</strong> We check work history and past business projects.</li>
         </ul>
       </section>
       <section className="space-y-4">
-        <h2 id="detail-section-4" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">Flexible Technical Team Engagement Models</h2>
+        <h2 id="detail-section-4" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">Ways to Work With Our Developers</h2>
       </section>
       <section className="space-y-4">
         <ul className="grid gap-3 sm:grid-cols-2">
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Dedicated Full-Time Engineers:</strong> A full-time Next.js engineer who works exclusively as an extension of your internal team (160 hours/month).</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Staff Augmentation:</strong> Scale your existing engineering team dynamically during rush build cycles to fill technical skill gaps instantly.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Managed Project Delivery Squads:</strong> Complete software teams—including Tech Leads, Next.js Engineers, QA Testers, and Scrum Masters—delivering defined product roadmaps.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Full-Time Developer:</strong> A Next.js developer works with your team for 160 hours each month.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Add a Developer to Your Team:</strong> Bring in a developer during busy periods or to add skills your team needs.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Project Team:</strong> A full team—including tech leads, Next.js developers, testers, and Scrum Masters—works on your project plan.</li>
         </ul>
       </section>
       <section className="space-y-4">
@@ -389,24 +389,24 @@ export default function HireNextJsDevelopersPage() {
         </div>
       </section>
       <section className="space-y-4">
-        <h2 id="detail-section-6" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">IP Protection, Security Standards &amp; Trial Guarantee</h2>
+        <h2 id="detail-section-6" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">Code Ownership, Security &amp; Trial</h2>
         <ul className="grid gap-3 sm:grid-cols-2">
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">100% Intellectual Property Assignment:</strong> All code written by our engineers belongs entirely to your business from day one, backed by strict legal non-disclosure agreements.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">4+ Hours Daily Time Zone Overlap:</strong> Working hours are scheduled to provide direct overlapping availability for teams across North America, Europe, and Asia-Pacific.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">14-Day Risk-Free Trial Period:</strong> Test your assigned Next.js developer on actual team tasks for 14 days. If performance falls short of your expectations, you can request a replacement or cancel without obligation.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">You Own the Code:</strong> Your business owns all code our engineers write, as set out in the agreement and NDA.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">4+ Shared Work Hours:</strong> Work hours overlap with teams in North America, Europe, and Asia-Pacific.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white"><Code2 className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">14-Day Trial:</strong> Try your Next.js developer on real tasks for 14 days. If they are not a good fit, you can ask for a replacement or cancel without obligation.</li>
         </ul>
       </section>
       <section className="space-y-4">
-        <h2 id="detail-section-7" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">---</h2>
+        <h2 id="detail-section-7" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">Talk With Our Team</h2>
       </section>
       <section className="space-y-4">
-        <h2 id="detail-section-8" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">## Request Pre-Vetted Developer Profiles</h2>
+        <h2 id="detail-section-8" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">Request Developer Profiles</h2>
       </section>
       <section className="space-y-4">
-        <p className="text-stone-700 leading-relaxed">Expand your team's engineering throughput with senior Next.js developers ready to execute your technical roadmap.</p>
+        <p className="text-stone-700 leading-relaxed">Add experienced Next.js developers to your team to help deliver your project plan.</p>
       </section>
       <section className="space-y-4">
-        <h2 id="detail-next-steps" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">**[Request Developer Profiles]** &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; **[Schedule Technical Interview]**</h2>
+        <h2 id="detail-next-steps" className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 scroll-mt-32">Request Developer Profiles or Schedule an Interview</h2>
       </section>
         </article>
         </div>
@@ -415,7 +415,7 @@ export default function HireNextJsDevelopersPage() {
 
       {/* FAQ Section */}
       <FaqSection title="Frequently Asked Hiring Questions"
-        subtitle="Clear answers regarding hiring dedicated Next.js developers in India."
+        subtitle="Answers to common questions about hiring Next.js developers in India."
         faqs={HIRE_FAQS}
       />
 

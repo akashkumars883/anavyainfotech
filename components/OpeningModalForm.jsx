@@ -95,10 +95,10 @@ export default function OpeningModalForm() {
           </div>
 
           <h3 className="text-base font-bold text-white tracking-tight leading-snug">
-            Get a Fast Technical Quote
+                Get a Quick Project Quote
           </h3>
           <p className="text-[11px] text-stone-300 font-light leading-tight">
-            Share your goal &amp; our engineer will contact you in 2 hrs.
+            Tell us what you need, and an engineer will contact you within 2 hours.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export default function OpeningModalForm() {
               <div className="space-y-0.5">
                 <h4 className="text-sm font-bold text-stone-900">Request Sent!</h4>
                 <p className="text-[11px] text-stone-600 font-light max-w-xs mx-auto">
-                  Thank you, <strong className="font-semibold text-stone-800">{formData.name}</strong>. We will reach out shortly.
+                  Thank you, <strong className="font-semibold text-stone-800">{formData.name}</strong>. We will contact you soon.
                 </p>
               </div>
               <button
@@ -177,7 +177,7 @@ export default function OpeningModalForm() {
               {/* Service */}
               <div className="space-y-0.5">
                 <label className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
-                  Select Service
+                  Choose a Service
                 </label>
                 <select
                   value={formData.service}
@@ -202,7 +202,7 @@ export default function OpeningModalForm() {
                   <span>Submitting...</span>
                 ) : (
                   <>
-                    <span>Submit &amp; Get Quote</span>
+                    <span>Send Request &amp; Get a Quote</span>
                     <Send className="h-3 w-3" />
                   </>
                 )}

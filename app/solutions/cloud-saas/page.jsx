@@ -4,11 +4,11 @@ import Link from "next/link";
 import { Zap, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "SaaS Application Development Company | Multi-Tenant Cloud Platforms",
-  description: "Engineer secure, auto-scaling multi-tenant SaaS platforms. Sub-second performance, Stripe billing integration, tenant database isolation and SOC-2 compliance.",
+  title: "SaaS Development | Secure Cloud Platforms",
+  description: "Build secure SaaS platforms where many customer accounts share cloud services but keep their data separate. Add fast performance, Stripe billing, and controls for SOC 2 compliance.",
   keywords: ["SaaS application development company","cloud SaaS engineering services"],
   alternates: { canonical: "https://www.anavyainfotech.com/solutions/cloud-saas" },
-  openGraph: { title: "SaaS Application Development Company | Multi-Tenant Cloud Platforms | Anavya Infotech", description: "Engineer secure, auto-scaling multi-tenant SaaS platforms. Sub-second performance, Stripe billing integration, tenant database isolation and SOC-2 compliance.", url: "https://www.anavyainfotech.com/solutions/cloud-saas", type: "website" },
+  openGraph: { title: "SaaS Development | Secure Cloud Platforms | Anavya Infotech", description: "Build secure SaaS platforms where many customer accounts share cloud services but keep their data separate. Add fast performance, Stripe billing, and controls for SOC 2 compliance.", url: "https://www.anavyainfotech.com/solutions/cloud-saas", type: "website" },
 };
 
 const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Multi-Tenant Cloud & SaaS Platform Engineering","description":"Engineer secure, auto-scaling multi-tenant SaaS platforms. Sub-second performance, Stripe billing integration, tenant database isolation and SOC-2 compliance.","provider":{"@type":"ProfessionalService","name":"Anavya Infotech","url":"https://www.anavyainfotech.com"}};
@@ -16,24 +16,24 @@ const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":
 
 const CLOUD_SAAS_FAQS = [
   {
-    "question": "What is multi-tenant SaaS architecture?",
-    "answer": "Multi-tenant architecture allows thousands of customer accounts (tenants) to run on a shared cloud database while maintaining complete data isolation."
+    "question": "What does multi-tenant SaaS architecture mean?",
+    "answer": "Multi-tenant architecture lets many customer accounts (tenants) use the same cloud database while keeping each account?s data separate."
   },
   {
-    "question": "How do you handle subscription billing for SaaS products?",
-    "answer": "We integrate Stripe Billing or Razorpay Subscriptions supporting monthly/annual plans, free trials, tiered usage pricing, and automated invoices."
+    "question": "How do you manage SaaS subscription payments?",
+    "answer": "We connect Stripe Billing or Razorpay Subscriptions for monthly or yearly plans, free trials, pricing by usage, and automatic invoices."
   },
   {
-    "question": "Can you help us build an MVP SaaS product quickly?",
-    "answer": "Yes, we specialize in launching production-ready SaaS MVPs in 6 to 8 weeks using Next.js and Supabase."
+    "question": "Can you build a first version of our SaaS product quickly?",
+    "answer": "Yes. We build launch-ready SaaS MVPs in 6 to 8 weeks using Next.js and Supabase."
   },
   {
-    "question": "How is user authentication and tenant security managed?",
-    "answer": "We implement OAuth, Magic Links, MFA, and database Row Level Security (RLS) to ensure zero data leakage between tenants."
+    "question": "How do you manage sign-in and keep customer data safe?",
+    "answer": "We use OAuth, Magic Links, MFA, and database Row Level Security (RLS) to keep one customer?s data from being seen by another."
   },
   {
-    "question": "What cloud providers do you deploy SaaS applications on?",
-    "answer": "We deploy on Vercel Edge, AWS (Lambda, ECS, RDS), Cloudflare, and DigitalOcean."
+    "question": "Which cloud services can you use to host SaaS apps?",
+    "answer": "We host apps on Vercel Edge, AWS (Lambda, ECS, RDS), Cloudflare, and DigitalOcean."
   }
 ];
 
@@ -52,18 +52,18 @@ export default function SolutionPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
             Solutions Catalog
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">Multi-Tenant Cloud & SaaS Platform Engineering</h1>
-          <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">A scalable SaaS product needs robust tenant isolation, zero-downtime deployments, and subscription billing. We engineer multi-tenant platforms with Next.js, Node.js, and PostgreSQL using row-level security and tenant data isolation.</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">Cloud Platforms for SaaS Products</h1>
+          <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">A SaaS product needs to keep customer data separate, stay online during updates, and handle subscriptions. We build platforms with Next.js, Node.js, and PostgreSQL, using security rules to separate each customer?s data.</p>
         </div>
       </section>
 
-<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-8"><div className="grid gap-8 lg:grid-cols-12 lg:items-start"><div className="space-y-5 lg:col-span-7"><h2 className="text-2xl font-normal leading-tight tracking-tight text-stone-900 sm:text-3xl">Engineered for Exponential Scale: Enterprise Multi-Tenant SaaS Development</h2></div><div className="rounded-md border border-stone-200 bg-stone-50 p-6 lg:col-span-5"><h3 className="mb-4 text-lg font-normal text-stone-900">Core Capabilities</h3><ul className="space-y-3"><li className="flex items-start gap-3 text-sm text-stone-700"><Zap className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" aria-hidden="true"/><span>Multi-Tenant Architecture</span></li><li className="flex items-start gap-3 text-sm text-stone-700"><Zap className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" aria-hidden="true"/><span>Automated Subscription Billing</span></li><li className="flex items-start gap-3 text-sm text-stone-700"><Zap className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" aria-hidden="true"/><span>Role-Based Access Control</span></li><li className="flex items-start gap-3 text-sm text-stone-700"><Zap className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" aria-hidden="true"/><span>Auto-Scaling Cloud Infrastructure</span></li></ul></div></div></div></section>
+<section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-8"><div className="grid gap-8 lg:grid-cols-12 lg:items-start"><div className="space-y-5 lg:col-span-7"><h2 className="text-2xl font-normal leading-tight tracking-tight text-stone-900 sm:text-3xl">SaaS Platforms Built to Grow</h2></div><div className="rounded-md border border-stone-200 bg-stone-50 p-6 lg:col-span-5"><h3 className="mb-4 text-lg font-normal text-stone-900">Core Capabilities</h3><ul className="space-y-3"><li className="flex items-start gap-3 text-sm text-stone-700"><Zap className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" aria-hidden="true"/><span>Shared Platform, Separate Customer Data</span></li><li className="flex items-start gap-3 text-sm text-stone-700"><Zap className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" aria-hidden="true"/><span>Automatic Subscription Billing</span></li><li className="flex items-start gap-3 text-sm text-stone-700"><Zap className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" aria-hidden="true"/><span>Access Based on User Roles</span></li><li className="flex items-start gap-3 text-sm text-stone-700"><Zap className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" aria-hidden="true"/><span>Cloud Systems That Grow with Demand</span></li></ul></div></div></div></section>
 
-      <section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-normal tracking-tight text-stone-900 sm:text-3xl">Core Capabilities</h2></div><div className="grid gap-4 md:grid-cols-2"><article className="rounded-md border border-stone-200 bg-white p-5 shadow-sm"><Zap className="mb-3 h-8 w-8 text-blue-700" aria-hidden="true"/><h3 className="text-lg font-normal text-stone-900">Multi-Tenant Architecture</h3><p className="mt-2 text-sm leading-6 text-stone-600">Row-level security and schema-per-tenant isolation.</p></article><article className="rounded-md border border-stone-200 bg-white p-5 shadow-sm"><Zap className="mb-3 h-8 w-8 text-blue-700" aria-hidden="true"/><h3 className="text-lg font-normal text-stone-900">Automated Subscription Billing</h3><p className="mt-2 text-sm leading-6 text-stone-600">Stripe Billing, usage metering, and multi-currency invoicing.</p></article><article className="rounded-md border border-stone-200 bg-white p-5 shadow-sm"><Zap className="mb-3 h-8 w-8 text-blue-700" aria-hidden="true"/><h3 className="text-lg font-normal text-stone-900">Role-Based Access Control</h3><p className="mt-2 text-sm leading-6 text-stone-600">Granular permissions, SSO with SAML/Okta, and audit logging.</p></article><article className="rounded-md border border-stone-200 bg-white p-5 shadow-sm"><Zap className="mb-3 h-8 w-8 text-blue-700" aria-hidden="true"/><h3 className="text-lg font-normal text-stone-900">Auto-Scaling Cloud Infrastructure</h3><p className="mt-2 text-sm leading-6 text-stone-600">Docker containerization with AWS Fargate orchestration.</p></article></div></div></section>
+      <section className="border-b border-stone-100 bg-white px-6 py-12"><div className="mx-auto max-w-7xl space-y-6"><div className="max-w-4xl"><h2 className="text-2xl font-normal tracking-tight text-stone-900 sm:text-3xl">Core Capabilities</h2></div><div className="grid gap-4 md:grid-cols-2"><article className="rounded-md border border-stone-200 bg-white p-5 shadow-sm"><Zap className="mb-3 h-8 w-8 text-blue-700" aria-hidden="true"/><h3 className="text-lg font-normal text-stone-900">Shared Platform, Separate Customer Data</h3><p className="mt-2 text-sm leading-6 text-stone-600">Database rules and separate data structures keep each customer?s information private.</p></article><article className="rounded-md border border-stone-200 bg-white p-5 shadow-sm"><Zap className="mb-3 h-8 w-8 text-blue-700" aria-hidden="true"/><h3 className="text-lg font-normal text-stone-900">Automatic Subscription Billing</h3><p className="mt-2 text-sm leading-6 text-stone-600">Stripe Billing, usage tracking, and invoices in different currencies.</p></article><article className="rounded-md border border-stone-200 bg-white p-5 shadow-sm"><Zap className="mb-3 h-8 w-8 text-blue-700" aria-hidden="true"/><h3 className="text-lg font-normal text-stone-900">Access Based on User Roles</h3><p className="mt-2 text-sm leading-6 text-stone-600">Detailed permissions, single sign-on (SSO) with SAML/Okta, and activity records.</p></article><article className="rounded-md border border-stone-200 bg-white p-5 shadow-sm"><Zap className="mb-3 h-8 w-8 text-blue-700" aria-hidden="true"/><h3 className="text-lg font-normal text-stone-900">Cloud Systems That Grow with Demand</h3><p className="mt-2 text-sm leading-6 text-stone-600">Docker containers managed with AWS Fargate.</p></article></div></div></section>
 
       {/* FAQ Section */}
       <FaqSection title="Cloud & SaaS FAQs"
-        subtitle="Common questions about cloud & saas technology and project delivery."
+        subtitle="Answers to common questions about cloud and SaaS tools and our projects."
         faqs={CLOUD_SAAS_FAQS}
       />
 
@@ -74,17 +74,17 @@ export default function SolutionPage() {
             <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-md blur-3xl pointer-events-none" />
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Build a solution designed for your business.
+                Let?s build the right solution for your business.
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Talk with our team about a platform tailored to your workflows and growth plans.
+                Tell our team how you work and where you want to grow. We?ll help plan a platform that fits.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Discuss Your Project
+              Talk About Your Project
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

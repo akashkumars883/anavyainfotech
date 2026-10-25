@@ -7,17 +7,17 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Code2, Globe, Smartphone, Layout, ShoppingCart, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
-  title: "Full-Stack Web & Custom Software Development Company",
+  title: "Web & Custom Software Development",
   description:
-    "Full-stack custom web software engineering, modern JS frameworks, cloud microservices backends, and robust API development from Anavya Infotech.",
+    "Custom web software, modern JavaScript frameworks, cloud services, and API development from Anavya Infotech.",
   keywords: ["full stack development company", "custom software development", "web application engineering"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/development",
   },
   openGraph: {
-    title: "Full-Stack Web & Custom Software Development Company",
+    title: "Web & Custom Software Development",
     description:
-      "Full-stack custom web software engineering, modern JS frameworks, cloud microservices backends, and robust API development from Anavya Infotech.",
+      "Custom web software, modern JavaScript frameworks, cloud services, and API development from Anavya Infotech.",
     url: "https://www.anavyainfotech.com/services/development",
     type: "website",
   },
@@ -31,50 +31,50 @@ const DEVELOPMENT_FAQS = [
   },
   {
     question: "How long does a typical software development project take?",
-    answer: "Landing pages take 1-2 weeks, business websites take 2-4 weeks, mobile apps take 4-8 weeks, and enterprise web applications take 6-12 weeks depending on features."
+    answer: "Landing pages usually take 1–2 weeks, business websites 2–4 weeks, mobile apps 4–8 weeks, and large web applications 6–12 weeks. The timing depends on the features."
   },
   {
     question: "Do you offer full code ownership and documentation?",
-    answer: "Yes, 100% code ownership with zero recurring seat fees, clean developer documentation, and zero-downtime production deployment pipelines."
+    answer: "Yes. You own all the code, with no recurring per-user fees. We provide clear developer documentation and plan launches to avoid downtime."
   },
   {
     question: "How do you ensure application performance and SEO?",
-    answer: "We build with Next.js App Router, serverless edge compute layers, optimized image pipelines, and clean CSS styling to guarantee sub-second load times and perfect Core Web Vitals scores."
+    answer: "We use tools such as Next.js App Router, serverless services, optimized images, and clean CSS to make apps load quickly and improve Core Web Vitals. Results depend on the project."
   }
 ];
 
 const subServices = [
   {
     title: "Business Website",
-    description: "High-converting corporate websites tailored to represent your brand and generate qualified inbound leads.",
+    description: "Business websites that represent your brand and help bring in potential customers.",
     href: "/services/business-website",
     icon: Globe,
     features: ["Custom Next.js & React", "SEO & Speed Optimized", "Responsive Mobile Layouts", "Lead Generation Forms"]
   },
   {
     title: "App Development",
-    description: "High-performance iOS, Android, and cross-platform mobile apps engineered for speed, engagement, and scale.",
+    description: "Fast iOS, Android, and cross-platform apps built for a smooth experience and future growth.",
     href: "/services/app-development",
     icon: Smartphone,
     features: ["React Native & Flutter", "Real-time Push Notifications", "App Store & Play Store Publishing", "Secure Cloud Backends"]
   },
   {
     title: "Web Applications",
-    description: "Scalable, secure cloud software, client portals, and multi-role web apps built on modern JavaScript frameworks.",
+    description: "Secure cloud software, client portals, and web apps with access for different user roles.",
     href: "/services/web-applications",
     icon: Code2,
     features: ["PostgreSQL & Supabase DB", "Role-based Authentication", "Third-party API Integration", "Real-time Telemetry"]
   },
   {
     title: "Landing Pages",
-    description: "Laser-focused, high-converting landing pages engineered to boost ad campaign ROI and capture leads.",
+    description: "Focused landing pages designed to support ad campaigns and collect leads.",
     href: "/services/landing-pages",
     icon: Layout,
     features: ["Sub-second Page Speeds", "A/B Testing Frameworks", "CRM & Analytics Sync", "Ultra Crisp UX Design"]
   },
   {
     title: "E-Commerce",
-    description: "Bespoke digital storefronts, custom checkout flows, inventory sync, and secure payment gateway integrations.",
+    description: "Custom online stores with checkout, inventory updates, and secure payment connections.",
     href: "/services/ecommerce",
     icon: ShoppingCart,
     features: ["Stripe & Razorpay Integration", "Real-time Inventory Sync", "Headless Commerce Architecture", "Conversion Optimized"]
@@ -137,7 +137,7 @@ export default function DevelopmentCategoryPage() {
               What We Build
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Every Kind of Web Presence, One Engineering Standard.
+              Websites and Apps Built to a Consistent Standard
             </h2>
           </div>
 
@@ -210,7 +210,7 @@ export default function DevelopmentCategoryPage() {
             Slow Websites Lose Customers. We Fix That at the Foundation.
           </h2>
           <p className="text-sm md:text-base text-stone-600 font-light max-w-3xl leading-relaxed">
-            Google penalizes slow sites. Visitors abandon them within seconds. Every site we build is engineered on modern, lightweight frameworks — with performance and Core Web Vitals treated as launch requirements, not afterthoughts. You also keep 100% code ownership, so your website is an asset you control, not a rented one.
+            Slow websites can lose visitors, and speed can affect search rankings. We build with modern, lightweight frameworks and check performance and Core Web Vitals before launch. You also own all of the code, so you control your website.
           </p>
           <div>
             <Link
@@ -242,7 +242,7 @@ export default function DevelopmentCategoryPage() {
                 Ready to build your next custom software system?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Connect with our lead architects to discuss tech stacks, database schemas, and fixed-price timelines.
+                Talk with our technical team about your software, data, and project timeline.
               </p>
             </div>
             <Link

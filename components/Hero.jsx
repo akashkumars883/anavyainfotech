@@ -45,11 +45,11 @@ export default function Hero() {
             className="inline-flex items-center gap-2 text-xs font-semibold text-stone-700 uppercase tracking-wider"
           >
             <Sparkles className="h-3.5 w-3.5 text-blue-700 animate-pulse" />
-            <span>Premier Custom Software &amp; AI Agency</span>
+            <span>Custom Software &amp; AI Team</span>
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15]">
-            <GsapKineticText text="We Engineer Enterprise Software, Custom Apps & AI Solutions" />
+            <GsapKineticText text="We Build Business Software, Custom Apps & AI Tools" />
           </h1>
 
           <motion.p
@@ -58,7 +58,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed max-w-2xl"
           >
-            Anavya Infotech is a premier software engineering company. We engineer custom web applications, mobile apps, enterprise AI chatbots, CRM software, and performance systems designed to scale businesses globally.
+            Anavya Infotech builds custom web and mobile apps, AI chatbots, CRM software, and systems that help businesses grow.
           </motion.p>
 
           {/* Action CTAs */}
@@ -100,10 +100,10 @@ export default function Hero() {
               <span>Clear project scope</span>
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
-              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Security planned for each project
+              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Security built into each project
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-50 border border-stone-200/80 rounded-md">
-              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Contract-defined IP terms
+              <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Clear ownership terms in your contract
             </span>
           </motion.div>
         </div>
@@ -134,4 +134,3 @@ export default function Hero() {
     </section>
   );
 }
-

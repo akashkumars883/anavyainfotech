@@ -6,18 +6,18 @@ import GsapCounter from "@/components/GsapCounter";
 import TechBrandIcon from "@/components/TechBrandIcon";
 
 export const metadata = {
-  title: "About Anavya Infotech – Custom Software Development Company India",
+  title: "About Anavya Infotech – Software Company in India",
   description:
-    "Learn about Anavya Infotech – a premier custom software engineering & digital transformation agency in India specializing in full-stack web apps, AI automation, CRM systems, headless e-commerce, and technical SEO for global enterprises and startups.",
+    "Learn about Anavya Infotech, a software and digital services company in India. We build web apps, AI tools, CRM systems, e-commerce sites, and provide technical SEO for businesses around the world.",
   keywords:
     "about Anavya Infotech, custom software company India, web development agency, AI development company, SEO agency India, software engineering team",
   alternates: {
     canonical: "https://www.anavyainfotech.com/about",
   },
   openGraph: {
-    title: "About Anavya Infotech – Custom Software Development Company India",
+    title: "About Anavya Infotech – Software Company in India",
     description:
-      "We build scalable web apps, AI tools, custom CRM systems, and high-performance SEO strategies for businesses across India and globally.",
+      "We build web apps, AI tools, and custom CRM systems, and help businesses in India and around the world improve their SEO.",
     url: "https://www.anavyainfotech.com/about",
     type: "website",
   },
@@ -29,7 +29,7 @@ const aboutSchema = {
   "name": "About Anavya Infotech",
   "url": "https://www.anavyainfotech.com/about",
   "description":
-    "Anavya Infotech is a custom software development and digital technology agency based in India, serving businesses globally with next-generation web apps, AI automation, and technical SEO.",
+    "Anavya Infotech is a software company in India. We work with businesses around the world on web apps, AI tools, and technical SEO.",
   "mainEntity": {
     "@type": "Organization",
     "name": "Anavya Infotech",
@@ -55,12 +55,12 @@ const ABOUT_FAQS = [
   {
     question: "What makes Anavya Infotech different from traditional web agencies?",
     answer:
-      "Unlike traditional agencies that rely on slow, heavy frameworks and bloated overhead, we focus on performance-first engineering (Next.js, Node.js, AI APIs), zero unnecessary seat fees, built-in technical SEO, and complete code ownership.",
+      "We build fast software with tools like Next.js, Node.js, and AI APIs. Our work includes technical SEO, no extra seat fees, and full code ownership.",
   },
   {
     question: "What size of companies do you typically collaborate with?",
     answer:
-      "We partner with high-growth startups building MVPs, medium-sized enterprises scaling their online sales pipelines, and established corporations needing custom CRM or internal tool modernization.",
+      "We work with startups building MVPs, growing businesses that want more online sales, and large companies that need custom CRM or updated internal tools.",
   },
   {
     question: "Who owns the intellectual property and code upon project completion?",
@@ -70,7 +70,7 @@ const ABOUT_FAQS = [
   {
     question: "How do you handle communication and milestone tracking during development?",
     answer:
-      "We provide weekly sprint updates, transparent progress dashboards, dedicated Slack/WhatsApp channels, and direct communication with senior lead engineers throughout your build cycle.",
+      "We share weekly progress updates, clear project dashboards, Slack or WhatsApp channels, and direct access to senior engineers while we build your product.",
   },
 ];
 
@@ -85,12 +85,12 @@ const coreValues = [
   {
     icon: <Code2 className="h-6 w-6 text-blue-700" />,
     title: "Clean Code & Quality",
-    description: "Maintainable, modular, thoroughly documented code built for years of growth, not just the demo.",
+    description: "Well-organized, documented code that is easy to maintain and built to support future growth.",
   },
   {
     icon: <ShieldCheck className="h-6 w-6 text-blue-700" />,
     title: "Full Code Ownership",
-    description: "You keep 100% of the IP, repository access, and deployment rights. It's your product, permanently.",
+    description: "You own the code, repositories, and deployment rights. It stays your product.",
   },
   {
     icon: <Cpu className="h-6 w-6 text-blue-700" />,
@@ -100,7 +100,7 @@ const coreValues = [
   {
     icon: <Zap className="h-6 w-6 text-blue-700" />,
     title: "Performance & SEO First",
-    description: "Sub-second load times and strict Core Web Vitals compliance, engineered in from the first commit.",
+    description: "Fast load times and strong Core Web Vitals, planned from the start.",
   },
 ];
 
@@ -138,10 +138,10 @@ export default function AboutPage() {
             About Anavya Infotech
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Engineering Digital Solutions That Scale, Perform, and Lead.
+            Building Digital Products That Grow With Your Business.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Anavya Infotech is a custom software development and digital growth agency helping businesses in India and globally build high-performance web platforms, AI tools, and marketing systems that hold up under real-world traffic — not just demo-day traffic.
+            Anavya Infotech builds websites, AI tools, and marketing systems for businesses in India and around the world. We make products designed to work well for real customers.
           </p>
         </div>
       </section>
@@ -171,13 +171,13 @@ export default function AboutPage() {
               Our Why
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
-              Enterprise-Grade Engineering, Without the Enterprise Overhead.
+              Enterprise-Ready Software, Without the Extra Costs.
             </h2>
             <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-              Every ambitious business deserves bespoke software architecture, automated workflows, and a fast, findable website — without the bloated retainers and layers of account managers that traditional agencies charge for.
+              Every growing business deserves custom software, automated tasks, and a fast website that people can find, without high monthly fees or layers of account managers.
             </p>
             <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-              From our development hub in Delhi NCR, our senior engineers work directly with clients across North America, Europe, Asia, and Australia — covering the full build, from strategy and UI/UX design through cloud deployment and search visibility.
+              From Delhi NCR, our senior engineers work directly with clients across North America, Europe, Asia, and Australia. We support the full project, from planning and UI/UX design to cloud launch and search visibility.
             </p>
           </div>
 
@@ -189,11 +189,11 @@ export default function AboutPage() {
             </h3>
             <ul className="space-y-4">
               {[
-                { title: "Full transparency.", desc: "Agile sprints and direct visibility into progress — no black-box status updates." },
-                { title: "Direct access to senior architects.", desc: "You talk to the people building your product, not a project manager relaying messages." },
-                { title: "Zero bloat.", desc: "Clean, high-performance code with no unnecessary dependencies dragging down your load times." },
-                { title: "SEO built in, not bolted on.", desc: "Schema markup, Core Web Vitals compliance, and search-ready structure from day one." },
-                { title: "We don't disappear after launch.", desc: "Ongoing technical support and maintenance, because software isn't \"done\" — it's maintained." },
+                { title: "Clear updates.", desc: "See our progress throughout the project, with no unclear status reports." },
+                { title: "Talk directly to senior engineers.", desc: "You can speak with the people building your product." },
+                { title: "No unnecessary extras.", desc: "Fast, clean code without tools your product does not need." },
+                { title: "SEO from the start.", desc: "Schema markup, Core Web Vitals, and a site built to work well in search." },
+                { title: "Support after launch.", desc: "We can keep your software working well with ongoing support and maintenance." },
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
                   <CheckCircle2 className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
@@ -210,7 +210,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="space-y-4 max-w-2xl">
             <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-              The Standards We Build To
+              How We Work
             </h2>
           </div>
 
@@ -236,7 +236,7 @@ export default function AboutPage() {
               Meet the Leadership Team
             </h2>
             <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-              Real experts, zero middlemen. When you partner with Anavya Infotech, you work directly with industry veterans who understand exactly what it takes to scale your digital presence.
+              Work directly with experienced people who know how to help your business grow online.
             </p>
           </div>
 
@@ -245,17 +245,17 @@ export default function AboutPage() {
               {
                 name: "Akash Kumar",
                 role: "Founder & Chief Architect",
-                bio: "Full-stack engineer building enterprise Next.js applications, complex SaaS products, and scalable AI automation systems.",
+                bio: "Software engineer who builds Next.js apps, SaaS products, and AI tools for businesses.",
               },
               {
                 name: "Sarah Jenkins",
                 role: "Head of SEO & Growth",
-                bio: "Technical SEO specialist driving organic revenue through data-backed semantic search architecture and programmatic SEO.",
+                bio: "SEO specialist who helps businesses grow search traffic through data and programmatic SEO.",
               },
               {
                 name: "David Chen",
                 role: "Lead UI/UX Designer",
-                bio: "Crafting frictionless digital experiences with a deep focus on conversion rate optimization and neuromarketing principles.",
+                bio: "Designer who makes websites easier to use and helps more visitors become customers.",
               }
             ].map((member, i) => (
               <div key={i} className="p-6 rounded-md bg-stone-50 border border-stone-100 space-y-5 flex flex-col group">
@@ -287,7 +287,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="space-y-2">
             <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">Technologies We Master</h2>
-            <p className="text-xs sm:text-sm text-stone-600 font-light">Battle-tested tools and frameworks we use to build robust software.</p>
+            <p className="text-xs sm:text-sm text-stone-600 font-light">Tools and frameworks we use to build reliable software.</p>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
             {technologies.map(({ name, slug }) => (
@@ -318,7 +318,7 @@ export default function AboutPage() {
             <div className="space-y-3 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Have a project in mind?</h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Whether you need a custom web platform, AI tool, or enterprise automation, our engineers are ready to build it.
+                Whether you need a custom web platform, AI tool, or business automation, our engineers are ready to help.
               </p>
             </div>
             <Link

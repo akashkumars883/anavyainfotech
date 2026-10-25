@@ -206,19 +206,19 @@ export default function JobDetailClient({ initialJob, jobId }) {
                 <ul className="space-y-3 text-sm text-stone-700 font-light">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-stone-400 shrink-0" />
-                    <span>Take ownership of your role and drive high-impact outcomes for the team and our clients.</span>
+                    <span>Take responsibility for your work and help the team and our clients get good results.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-stone-400 shrink-0" />
-                    <span>Collaborate with cross-functional teams including engineering, design, and product management.</span>
+                    <span>Work with people in engineering, design, and product management.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-stone-400 shrink-0" />
-                    <span>Leverage modern tools and workflows to maintain high standards of quality and efficiency.</span>
+                    <span>Use modern tools and ways of working to do quality work efficiently.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-stone-400 shrink-0" />
-                    <span>Stay updated on industry trends and actively contribute to the company&apos;s growth strategies.</span>
+                    <span>Keep up with changes in your field and help the company grow.</span>
                   </li>
                 </ul>
               </div>

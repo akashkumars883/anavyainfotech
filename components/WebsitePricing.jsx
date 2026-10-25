@@ -16,7 +16,7 @@ export default function WebsitePricing({ showHeader = true }) {
       originalPriceINR: 10000,
       priceUSD: 1499,
       originalPriceUSD: 1999,
-      desc: "Ideal for small businesses, freelancers & local shops needing a fast online presence.",
+      desc: "For small businesses, freelancers, and local shops that need a website.",
       badge: "Essential",
       badgeColor: "bg-blue-50 text-blue-700 border-blue-200",
       featured: false,
@@ -29,7 +29,7 @@ export default function WebsitePricing({ showHeader = true }) {
       originalPriceINR: 20000,
       priceUSD: 2999,
       originalPriceUSD: 3999,
-      desc: "Best for startups, SMEs & service companies wanting lead capture & Google setup.",
+      desc: "For startups, small and medium businesses, and service companies that want to get leads and appear on Google.",
       badge: "Most Popular",
       popularTag: "MOST POPULAR",
       badgeColor: "bg-blue-700 text-white border-blue-600",
@@ -43,7 +43,7 @@ export default function WebsitePricing({ showHeader = true }) {
       originalPriceINR: 40000,
       priceUSD: 5999,
       originalPriceUSD: 7999,
-      desc: "Complete D2C online store with cart, payment gateway, inventory & WhatsApp orders.",
+      desc: "A direct-to-customer online store with a shopping cart, payment options, stock tracking, and WhatsApp orders.",
       badge: "Storefront",
       badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
       featured: false,
@@ -52,7 +52,7 @@ export default function WebsitePricing({ showHeader = true }) {
       id: "custom",
       name: "Custom",
       icon: Code2,
-      desc: "Tailored full-stack application or enterprise platform built to your exact requirements.",
+      desc: "A custom web app or business platform built to fit your needs.",
       badge: "Bespoke",
       badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
       featured: false,
@@ -69,10 +69,10 @@ export default function WebsitePricing({ showHeader = true }) {
           {showHeader && (
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-blue-700">
-                <Laptop className="h-3.5 w-3.5" /> Website Engineering Packages
+                <Laptop className="h-3.5 w-3.5" /> Website Packages
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-stone-900 tracking-tight">
-                Web Development Plans. <span className="text-blue-700">Transparent Pricing.</span>
+                Website Plans. <span className="text-blue-700">Clear Prices.</span>
               </h2>
             </div>
           )}
@@ -168,7 +168,7 @@ export default function WebsitePricing({ showHeader = true }) {
                           Custom Quote
                         </span>
                         <p className={`text-[11px] font-medium ${plan.featured ? "text-zinc-400" : "text-stone-500"}`}>
-                          Based on requirement
+                          Based on your project
                         </p>
                       </div>
                     ) : (

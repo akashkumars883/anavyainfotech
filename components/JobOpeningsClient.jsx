@@ -50,11 +50,11 @@ export default function JobOpeningsClient() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15] max-w-4xl">
-            Explore Active Positions <span className="font-semibold text-blue-600">&amp; Opportunities</span>
+            Explore <span className="font-semibold text-blue-600">Open Roles</span>
           </h1>
 
           <p className="text-base sm:text-lg text-stone-600 font-light max-w-3xl leading-relaxed">
-            Discover roles in Engineering, Design, Sales, and Marketing. Join us to build scalable enterprise solutions and AI-driven applications.
+            Explore roles in Engineering, Design, Sales, and Marketing. Join us to build business software and AI tools.
           </p>
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function JobOpeningsClient() {
           {loading ? (
             <div className="text-center py-20 text-stone-500">Loading open positions...</div>
           ) : openings.length === 0 ? (
-            <div className="text-center py-20 text-stone-500">No active job openings at the moment. Please check back later.</div>
+            <div className="text-center py-20 text-stone-500">There are no open roles right now. Please check back later.</div>
           ) : (
             <div className="grid grid-cols-1 gap-6">
               {openings.map((job) => {
@@ -131,7 +131,7 @@ export default function JobOpeningsClient() {
                         href={`/careers/jobs/${job.id}`}
                         className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold uppercase tracking-wider bg-stone-900 text-white hover:bg-blue-600 transition-colors w-full md:w-auto"
                       >
-                        View Details & Apply
+                        View Role &amp; Apply
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                     </div>

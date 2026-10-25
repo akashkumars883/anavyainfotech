@@ -7,17 +7,17 @@ import { Zap, ArrowRight, Smartphone, Boxes, CreditCard, BellRing, ShieldCheck, 
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Mobile Application Development Company | iOS & Android Apps",
+  title: "iOS & Android App Development",
   description:
-    "Engineer high-performance, native-grade iOS and Android mobile apps using React Native and Flutter. Offline sync, biometric security & enterprise API integration.",
+    "Build fast iOS and Android apps with React Native and Flutter. Add offline access, secure sign-in, and connections to your business APIs.",
   keywords: ["cross platform mobile app development","mobile application development company","React Native app development","Flutter mobile app development","enterprise mobile apps","iOS Android development services"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/app-development",
   },
   openGraph: {
-    title: "Mobile Application Development Company | iOS & Android Apps",
+    title: "iOS & Android App Development",
     description:
-      "Engineer high-performance, native-grade iOS and Android mobile apps using React Native and Flutter. Offline sync, biometric security & enterprise API integration.",
+      "Build fast iOS and Android apps with React Native and Flutter. Add offline access, secure sign-in, and connections to your business APIs.",
     url: "https://www.anavyainfotech.com/services/app-development",
     type: "website",
   },
@@ -26,21 +26,21 @@ export const metadata = {
 const APP_DEVELOPMENT_FAQS = [
   {
     question: "Can cross-platform mobile apps match the performance of native apps?",
-    answer: "Yes. React Native compiles directly to native OS UI components, while Flutter renders graphics using its dedicated C++ Skia engine. Both frameworks consistently achieve fluid 60 FPS performance, making differences imperceptible for enterprise applications."
+    answer: "Yes. React Native uses the phone's built-in interface tools, while Flutter draws its own interface. Both can run smoothly at 60 frames per second, which is fast enough for most business apps."
   },
   {
     question: "How do you manage App Store and Google Play deployments?",
-    answer: "We manage the full deployment process, including app listing configuration, provisioning profiles, privacy compliance declarations, and responding to store review feedback to ensure successful launch."
+    answer: "We handle app listings, signing profiles, privacy forms, and responses to store review feedback to prepare your app for launch."
   },
   {
     question: "Can an existing web application be converted into a React Native mobile app?",
-    answer: "Yes. If your web application is built on React or Next.js, our team can reuse business logic, state management stores, and API layer code, accelerating mobile app development timelines significantly."
+    answer: "Yes. If your web app uses React or Next.js, we may be able to reuse its business rules, data handling, and API code to build the mobile app faster."
   }
 ];
 
 const serviceSchemas = createServiceSchema({
   name: "Mobile & Cross-Platform App Development Services",
-  description: "Custom iOS, Android, and cross-platform mobile application development company in India & USA delivering native performance, real-time sync, and scalable cloud APIs.",
+  description: "Custom iOS, Android, and cross-platform app development in India and the USA, with fast performance, live data updates, and cloud APIs.",
   slug: "app-development",
   serviceType: "Mobile Application Development",
   faqs: APP_DEVELOPMENT_FAQS,
@@ -87,13 +87,13 @@ export default function AppDevelopmentServicePage() {
         <div className="mx-auto max-w-7xl space-y-8">
           <div className="max-w-3xl space-y-4">
             <h2 className="text-2xl font-normal leading-tight tracking-tight text-stone-900 sm:text-3xl">
-              Native performance with modern cross-platform efficiency.
+              Smooth Apps for iOS and Android
             </h2>
             <p className="text-sm leading-relaxed text-stone-600 sm:text-base">
               We design and code intuitive, fast, and secure mobile applications for startups, SMBs, and enterprise brands across India &amp; global markets.
             </p>
             <p className="text-sm leading-relaxed text-stone-500">
-              From slick UI UX design to cloud microservice integration, push notifications, in-app purchases, and store deployment—our mobile app engineering team builds apps your users love.
+              From user-friendly design and cloud service connections to push notifications, in-app purchases, and app store launch, our team builds mobile apps people can use with ease.
             </p>
           </div>
 
@@ -129,8 +129,8 @@ export default function AppDevelopmentServicePage() {
         <div className="max-w-7xl mx-auto ">
 <article className="min-w-0 space-y-10">
       <section className="grid gap-6 md:grid-cols-2 md:items-center">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 md:col-span-2">Native-Grade Cross-Platform Mobile Apps Engineered for Engagement and Scale</h2>
-        <p className="text-stone-700 leading-relaxed md:col-span-2">Enterprise mobile applications must deliver fluid 60 FPS animations, immediate touch responsiveness, offline operational resilience, and robust biometric data security. Managing separate native codebases for iOS and Android inflates costs and doubles maintenance overhead.</p>
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 md:col-span-2">Cross-Platform Apps Built for a Smooth Experience and Growth</h2>
+        <p className="text-stone-700 leading-relaxed md:col-span-2">Business apps should respond quickly, work smoothly, and protect users&apos; data. They can also save information for offline use and support secure sign-in. Maintaining separate iOS and Android codebases can increase development and support costs.</p>
       </section>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 md:col-span-2">
             <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">50%</p><p className="mt-1 text-sm text-stone-600">Faster time to market</p></div>
@@ -138,33 +138,33 @@ export default function AppDevelopmentServicePage() {
             <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">iOS + Android</p><p className="mt-1 text-sm text-stone-600">One delivery team</p></div>
           </div>
       <section className="space-y-4">
-        <p className="text-stone-700 leading-relaxed">At Anavya Infotech, we build cross-platform mobile applications using React Native and Flutter. We combine single-codebase efficiency with native device integrations, launching production-ready iOS and Android apps in half the development timeline.</p>
+        <p className="text-stone-700 leading-relaxed">Anavya Infotech builds cross-platform mobile apps with React Native and Flutter. One codebase can support both iOS and Android, which can help reduce development time. We also connect the apps to phone features.</p>
       </section>
       <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">The Dilemma: Native vs. Cross-Platform</h2>
-        <p className="text-stone-700 leading-relaxed">Building independent native applications in Swift (iOS) and Kotlin (Android) requires duplicated engineering teams, separate QA cycles, and asynchronous feature rollouts. Modern cross-platform frameworks resolve these challenges without sacrificing performance:</p>
-      </section>
-      <section className="space-y-4">
-        <ul className="grid gap-3 sm:grid-cols-2">
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Target className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">50% Faster Time to Market:</strong> A shared codebase allows concurrent iOS and Android deployments, shortening sprint schedules and feature releases.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Unified UX &amp; Design Consistency:</strong> Standardized component libraries maintain brand consistency while adhering to platform-specific design guidelines.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><CreditCard className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Lower Total Cost of Ownership (TCO):</strong> Single-codebase maintenance reduces long-term bug remediation and SDK upgrade costs.</li>
-        </ul>
-      </section>
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Core Mobile Capabilities We Engineer</h2>
-        <p className="text-stone-700 leading-relaxed">Our mobile solutions incorporate hardware-level capabilities and enterprise data integrations:</p>
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Native or Cross-Platform Apps</h2>
+        <p className="text-stone-700 leading-relaxed">Building separate apps in Swift for iOS and Kotlin for Android requires separate development teams and testing. Cross-platform tools let teams share more code between the two apps and can still provide good performance:</p>
       </section>
       <section className="space-y-4">
         <ul className="grid gap-3 sm:grid-cols-2">
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><ChartNoAxesCombined className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Biometric Authentication &amp; Security:</strong> Secure login via Face ID, Touch ID, and Android Biometric Prompt backed by hardware-level keychains.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><BellRing className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Real-Time WebSockets &amp; Push Notifications:</strong> Low-latency messaging, activity tracking, and targeted push notifications via Firebase Cloud Messaging (FCM) and APNs.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Zap className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Offline First Engine (SQLite / WatermelonDB):</strong> Background local data persistence with automatic cloud server sync upon connection restoration.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><CreditCard className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Custom Mobile Payment Integrations:</strong> Frictionless checkout via Apple Pay, Google Pay, Stripe SDK, and regional payment gateway adapters.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Target className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Faster Development:</strong> A shared codebase lets teams work on iOS and Android apps together, helping them deliver features sooner.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Consistent Design:</strong> Shared screen components keep your brand consistent while following each platform&apos;s design guidelines.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><CreditCard className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Lower Maintenance Costs:</strong> Maintaining one shared codebase can reduce the time and cost of fixing issues and updating tools.</li>
         </ul>
       </section>
       <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Mobile Framework Architecture Comparison</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Features We Can Add to Your App</h2>
+        <p className="text-stone-700 leading-relaxed">Our mobile apps can use phone features and connect with your business systems:</p>
+      </section>
+      <section className="space-y-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><ChartNoAxesCombined className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Secure Sign-In with Face ID or Touch ID:</strong> Let users sign in with the fingerprint or face features built into their phones.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><BellRing className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Live Updates and Notifications:</strong> Send messages and useful alerts through Firebase Cloud Messaging (FCM) and APNs.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Zap className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Offline Access:</strong> Save data on the phone and sync it with the cloud when the internet connection returns.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><CreditCard className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Mobile Payments:</strong> Add payment options such as Apple Pay, Google Pay, Stripe, and local payment services.</li>
+        </ul>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Compare Mobile App Frameworks</h2>
 
         <div className="overflow-x-auto rounded-md border border-stone-200">
           <table className="w-full min-w-[640px] border-collapse text-left text-sm">

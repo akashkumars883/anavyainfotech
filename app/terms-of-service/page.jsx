@@ -5,7 +5,7 @@ import FaqSection from "@/components/FaqSection";
 export const metadata = {
   title: "Terms and Conditions – Anavya Infotech",
   description:
-    "Terms and Conditions governing access to and use of Anavya Infotech website and custom software, web development, AI, CRM, SEO, and design services.",
+    "Read the terms for using the Anavya Infotech website and hiring us for software, web development, AI, CRM, SEO, and design services.",
   alternates: {
     canonical: "https://www.anavyainfotech.com/terms-of-service",
   },
@@ -220,4 +220,3 @@ export default function TermsOfServicePage() {
     </main>
   );
 }
-

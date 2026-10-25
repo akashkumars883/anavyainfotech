@@ -63,7 +63,7 @@ export default function CookieConsentBanner() {
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2.5 flex-wrap">
                   <h3 className="text-base sm:text-lg font-semibold text-white tracking-tight">
-                    We Value Your Privacy
+                    Your Privacy Matters
                   </h3>
                   <span className="inline-flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider bg-stone-800/90 border border-stone-700/80 px-2.5 py-0.5 rounded-full text-emerald-400">
                     <ShieldCheck className="h-3 w-3" /> Cookie Preferences
@@ -71,7 +71,7 @@ export default function CookieConsentBanner() {
                 </div>
 
                 <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-light max-w-4xl">
-                  We use cookies and similar technologies to enhance browsing experience, analyze site traffic, and personalize content. By clicking &quot;Accept All&quot;, you consent to our use of cookies. Read our{" "}
+                  We use cookies and similar tools to improve your experience, understand how people use our site, and personalize content. By clicking &quot;Accept All&quot;, you consent (agree) to our use of cookies. Read our{" "}
                   <Link
                     href="/privacy-policy"
                     className="text-blue-400 hover:text-blue-300 underline font-medium transition-colors"
@@ -123,5 +123,3 @@ export default function CookieConsentBanner() {
     </div>
   );
 }
-
-

@@ -17,7 +17,7 @@ export default function SeoPricing({ showHeader = true }) {
       priceUSD: 750,
       originalPriceUSD: 1000,
       discount: "SAVE 25%",
-      desc: "Essential search engine optimization for growing local businesses and new websites.",
+      desc: "SEO basics for local businesses and new websites.",
       featured: false,
       scopeOfWork: [
         "Initial Website Audit & SEO Checklist Check - 1",
@@ -68,7 +68,7 @@ export default function SeoPricing({ showHeader = true }) {
       priceUSD: 1499,
       originalPriceUSD: 2000,
       discount: "SAVE 25%",
-      desc: "Accelerated SEO & AI Search Visibility package built to dominate regional search results.",
+      desc: "SEO and AI search improvements to help businesses show up in more local search results.",
       featured: true,
       popularTag: "MOST POPULAR",
       scopeOfWork: [
@@ -131,7 +131,7 @@ export default function SeoPricing({ showHeader = true }) {
       priceUSD: 2999,
       originalPriceUSD: 4000,
       discount: "SAVE 25%",
-      desc: "Maximum organic search dominance with full AI Visibility, high DA links, and content production.",
+      desc: "Full SEO and AI search support, with trusted links and content to help more people find your website.",
       featured: false,
       scopeOfWork: [
         "Initial Website Audit & SEO Checklist Check - 1",

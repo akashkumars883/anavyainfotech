@@ -10,7 +10,7 @@ export default function SelectedWork() {
       title: "Automixa AI",
       category: "AI & Automation",
       roiBadge: "⚡ 99.9% Meta Uptime | 10k+ Creators",
-      description: "An AI-powered Meta API automation platform helping Instagram creators auto-reply to DMs and comments in real time, now serving 10,000+ active creators.",
+      description: "An AI-powered Meta API tool that helps Instagram creators reply to DMs and comments in real time. It now serves 10,000+ active creators.",
       image: "/automixa-preview.png",
       imageAlt: "Automixa AI Instagram DM and comment automation platform built by Anavya Infotech",
       href: "/case-studies/automixa-ai",
@@ -21,7 +21,7 @@ export default function SelectedWork() {
       title: "Money Capital Finance",
       category: "Fintech & Web Applications",
       roiBadge: "📈 +38% Inquiry Conversion | <24h Processing",
-      description: "A fintech customer portal with live EMI calculators and bank integrations that lifted inquiry conversions by 38% and cut loan processing time to under 24 hours.",
+      description: "A fintech portal with EMI calculators and bank connections. It increased inquiry conversions by 38% and reduced loan processing time to under 24 hours.",
       image: "/money-capital-preview.png",
       imageAlt: "Money Capital Finance portal built by Anavya Infotech",
       href: "/case-studies/money-capital-finance",
@@ -32,7 +32,7 @@ export default function SelectedWork() {
       title: "Nakul Properties",
       category: "Real Estate & Custom Software",
       roiBadge: "🎯 +45% Qualified Lead Conversion",
-      description: "A real estate directory for Faridabad's luxury and HUDA sector market, driving a 45% increase in qualified lead conversions.",
+      description: "A real estate directory for luxury properties and HUDA sectors in Faridabad. It increased qualified leads by 45%.",
       image: "/nakul-properties-preview.png",
       imageAlt: "Nakul Properties real estate portal built by Anavya Infotech",
       href: "/case-studies/nakul-properties",
@@ -82,11 +82,11 @@ export default function SelectedWork() {
             id="portfolio-heading"
             className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight"
           >
-            Real Products, Built for Real Businesses — <br />
-            <span className="text-blue-700">Verified Results.</span>
+            Real Products for Real Businesses — <br />
+            <span className="text-blue-700">With Measured Results.</span>
           </h2>
           <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-            We don&apos;t talk in vague case studies. Here&apos;s what we&apos;ve shipped, live, with the outcomes to back it up:
+            See products we have launched and the results they achieved:
                          </p>
         </div>
 

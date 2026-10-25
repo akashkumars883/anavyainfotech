@@ -5,7 +5,7 @@ import FaqSection from "@/components/FaqSection";
 export const metadata = {
   title: "Cancellation & Refund Policy – Anavya Infotech",
   description:
-    "Cancellation and Refund Policy for software development projects, monthly digital service retainers, and consulting engagements with Anavya Infotech.",
+    "Read how cancellations and refunds work for Anavya Infotech software projects, monthly services, and consulting.",
   alternates: {
     canonical: "https://www.anavyainfotech.com/refund-policy",
   },

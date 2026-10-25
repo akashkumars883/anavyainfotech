@@ -7,17 +7,17 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Cpu, Bot, Workflow, Database, Network, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
-  title: "Cloud Architecture, DevOps & Technology Consulting Services",
+  title: "Cloud, DevOps & Technology Consulting",
   description:
-    "Modernize enterprise infrastructure with cloud architecture consulting, Serverless microservices, CI/CD automation, and tech stack audits from Anavya Infotech.",
+    "Improve your business systems with cloud planning, serverless services, CI/CD automation, and technology reviews from Anavya Infotech.",
   keywords: ["technology consulting services", "cloud architecture consulting", "DevOps automation company"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/technology",
   },
   openGraph: {
-    title: "Cloud Architecture, DevOps & Technology Consulting Services",
+    title: "Cloud, DevOps & Technology Consulting",
     description:
-      "Modernize enterprise infrastructure with cloud architecture consulting, Serverless microservices, CI/CD automation, and tech stack audits from Anavya Infotech.",
+      "Improve your business systems with cloud planning, serverless services, CI/CD automation, and technology reviews from Anavya Infotech.",
     url: "https://www.anavyainfotech.com/services/technology",
     type: "website",
   },
@@ -27,50 +27,50 @@ export const metadata = {
 const TECHNOLOGY_FAQS = [
   {
     question: "What technology & AI services does Anavya Infotech provide?",
-    answer: "We deploy custom AI chatbots (LLM & OpenAI API integrations), business process automation workflows, bespoke CRM & ERP software, and high-speed REST/GraphQL API integrations."
+    answer: "We build AI chatbots using LLMs and OpenAI APIs, automate business tasks, create custom CRM and ERP software, and connect systems with REST and GraphQL APIs."
   },
   {
     question: "Can AI chatbots integrate directly into our CRM and messaging channels?",
-    answer: "Yes, our AI chatbots integrate seamlessly into WhatsApp Business, Meta Instagram/Facebook APIs, custom web portals, and CRM backends."
+    answer: "Yes. Our AI chatbots can connect with WhatsApp Business, Instagram and Facebook through Meta APIs, websites, and CRM systems."
   },
   {
     question: "How does custom business automation help cut operational costs?",
-    answer: "By automating manual data entry, lead assignment, invoicing, and cross-platform sync, businesses eliminate human error and save hundreds of employee hours each month."
+    answer: "Automation can handle data entry, assign leads, prepare invoices, and share information between tools. This reduces mistakes and saves your team time."
   },
   {
     question: "Do you build custom CRMs tailored to our specific business workflow?",
-    answer: "Yes, we engineer 100% custom CRM and software management portals with custom pipeline stages, automated reminders, role permissions, and executive analytics dashboards."
+    answer: "Yes. We build custom CRM and business software with sales stages, automatic reminders, user permissions, and reporting dashboards."
   }
 ];
 
 const subServices = [
   {
     title: "AI Chatbot",
-    description: "Smart Conversational AI, Meta API automation, and custom LLM chatbots trained on your business data to capture leads 24/7.",
+    description: "AI chatbots that use your business information, connect to Meta APIs, and collect leads at any time.",
     href: "/services/ai-chatbot",
     icon: Bot,
-    features: ["OpenAI & LLM Fine-Tuning", "WhatsApp & Meta API Sync", "Automated Lead Capture", "Multi-Language Support"]
+    features: ["OpenAI & LLM Setup", "WhatsApp & Meta API Connections", "Automatic Lead Capture", "Multiple Languages"]
   },
   {
     title: "Business Automation",
-    description: "End-to-end workflow automation engines, Zapier/Make custom webhooks, and process automation to scale operations effortlessly.",
+    description: "Automate business tasks and connect your tools using workflows, Zapier, Make, and webhooks.",
     href: "/services/business-automation",
     icon: Workflow,
-    features: ["Custom Webhook Pipelines", "Automated Invoicing & Sync", "Lead Nurturing Sequences", "Zero Human Error"]
+    features: ["Custom Webhook Workflows", "Automatic Invoicing & Data Sharing", "Lead Follow-Up Messages", "Fewer Manual Errors"]
   },
   {
     title: "CRM / Custom Software",
-    description: "Bespoke CRM portals, ERP management software, and custom internal tools engineered for your exact business requirements.",
+    description: "Custom CRM, ERP, and internal tools designed to fit the way your business works.",
     href: "/services/crm-custom-software",
     icon: Database,
-    features: ["Pipeline Management", "Role-Based Access Control", "Automated Reminders", "Executive BI Dashboards"]
+    features: ["Sales Pipeline Management", "Access Based on User Roles", "Automatic Reminders", "Business Reporting Dashboards"]
   },
   {
     title: "API Integration",
-    description: "Robust REST & GraphQL API integrations, payment gateway connections, and microservice middleware layers.",
+    description: "Connect your tools with REST and GraphQL APIs, payment services, and supporting software.",
     href: "/services/api-integration",
     icon: Network,
-    features: ["High-speed API Endpoints", "Stripe, Razorpay, Bank APIs", "Real-time Telemetry & Logs", "Enterprise SLA Security"]
+    features: ["Fast API Connections", "Stripe, Razorpay & Bank APIs", "Live System Logs", "Enterprise Security"]
   }
 ];
 
@@ -99,10 +99,10 @@ export default function TechnologyCategoryPage() {
               <Cpu className="h-3.5 w-3.5 text-blue-700" /> Technology &amp; AI Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
-              AI That Actually Runs Your Business — Not a Demo That Sits on a Shelf.
+              AI Tools That Work With Your Business
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              We build AI systems that plug directly into how your business operates: chatbots that qualify leads at 2 a.m., CRMs shaped around your actual sales process, and integrations that quietly delete hours of manual work from your week.
+              We build AI tools that fit your business. Our chatbots can sort leads at any time, custom CRMs can match your sales process, and system connections can reduce hours of manual work.
             </p>
             <div className="pt-2">
               <Link
@@ -203,10 +203,10 @@ export default function TechnologyCategoryPage() {
             Proof
           </div>
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            This Isn&apos;t Theoretical. We&apos;ve Shipped It.
+            Our Systems Are Already in Use
                </h2>
           <p className="text-sm md:text-base text-stone-600 font-light max-w-3xl leading-relaxed">
-            Automixa AI, our Meta Graph API automation platform, processes real-time DM and comment automation for thousands of active creators with zero account restriction issues — the kind of production reliability that separates a real AI system from a chatbot demo.
+            Automixa AI, our Meta Graph API automation platform, handles messages and comments for thousands of active creators in real time. It has done so without account restrictions, showing how our systems work in real business settings.
           </p>
           <div>
             <Link
@@ -238,7 +238,7 @@ export default function TechnologyCategoryPage() {
                 Want to integrate AI or automate your workflows?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Talk to our AI &amp; systems engineers to audit your process and deploy custom automated solutions.
+                Talk to our AI and systems team. We can review your process and build solutions to automate your work.
               </p>
             </div>
             <Link

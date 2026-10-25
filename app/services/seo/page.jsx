@@ -6,17 +6,17 @@ import { ArrowRight, CheckCircle2, Globe } from "lucide-react";
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "SEO Company in India - Search Engine Optimization Services - Anavya Infotech",
+  title: "SEO Services in India - Anavya Infotech",
   description:
-    "Data-driven SEO services for businesses in Delhi NCR, Faridabad, Noida & the USA. Technical, on-page & content SEO to rank higher and grow organic traffic.",
+    "SEO services for businesses in Delhi NCR, Faridabad, Noida, and the USA. We improve technical SEO, page content, and search rankings to grow website traffic.",
   keywords: "SEO company India, search engine optimization services, SEO agency Delhi NCR Faridabad Noida",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/seo",
   },
   openGraph: {
-    title: "SEO Company in India - Search Engine Optimization Services - Anavya Infotech",
+    title: "SEO Services in India - Anavya Infotech",
     description:
-      "Data-driven SEO services for businesses in Delhi NCR, Faridabad, Noida & the USA. Technical, on-page & content SEO to rank higher and grow organic traffic.",
+      "SEO services for businesses in Delhi NCR, Faridabad, Noida, and the USA. We improve technical SEO, page content, and search rankings to grow website traffic.",
     url: "https://www.anavyainfotech.com/services/seo",
     type: "website",
   },
@@ -25,15 +25,15 @@ export const metadata = {
 const SEO_FAQS = [
   {
     question: "How long does SEO take to show results?",
-    answer: "Typically 3–6 months for meaningful ranking movement, depending on competition and your site's current technical health — we'll give you a realistic timeline after the audit."
+    answer: "SEO usually takes 3–6 months to improve rankings. The timeline depends on your competition and your site's current condition. We will give you an estimate after the audit."
   },
   {
     question: "Do you guarantee #1 rankings?",
-    answer: "No credible SEO agency can guarantee a specific rank — Google's algorithm isn't controlled by any vendor. We focus on and report against traffic and conversion growth instead."
+    answer: "No reliable SEO agency can promise a specific ranking because no one controls Google's algorithm. We focus on and report changes in traffic and conversions instead."
   },
   {
     question: "Is SEO better than paid ads for my business?",
-    answer: "They serve different purposes — SEO compounds over time and lowers cost-per-lead long-term, while ads deliver immediate traffic. Most businesses benefit from both."
+    answer: "They serve different purposes. SEO can bring more traffic over time and lower the cost of getting leads. Ads bring traffic right away. Many businesses benefit from using both."
   },
   {
     question: "Do you offer specialized SEO for e-commerce or local businesses?",
@@ -61,10 +61,10 @@ export default function SeoServicePage() {
   ];
 
   const processSteps = [
-    { num: "01", title: "Comprehensive SEO Audit", desc: "Technical + competitive SEO audit and Core Web Vitals check." },
-    { num: "02", title: "Keyword & Content Strategy", desc: "Commercial keyword research and content gap strategy mapping." },
-    { num: "03", title: "On-Page SEO Execution", desc: "Title tag optimization, schema markup, and content production." },
-    { num: "04", title: "Link Building & SEO Growth", desc: "Ongoing optimization, authority link building, and ROI reporting." },
+    { num: "01", title: "SEO Review", desc: "Check your site's technical setup, competitors, and Core Web Vitals." },
+    { num: "02", title: "Keywords & Content Plan", desc: "Find useful business keywords and identify content your site needs." },
+    { num: "03", title: "Improve Website Pages", desc: "Update page titles, structured data, and content." },
+    { num: "04", title: "Build Links & Track Results", desc: "Improve your site over time, build links, and report on business results." },
   ];
 
   return (
@@ -86,7 +86,7 @@ export default function SeoServicePage() {
               Top SEO Services Company in India
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Ranking for a vanity keyword means nothing if it doesn&apos;t bring customers. Anavya Infotech runs SEO campaigns built around a simple standard: organic traffic that converts. Our SEO services cover technical audits, on-page optimization, content strategy, and authority building for businesses across India, Delhi NCR, and the USA.
+              Ranking for a keyword only matters if it brings customers. Anavya Infotech plans SEO campaigns to attract visitors who are likely to take action. Our services include technical checks, page improvements, content planning, and link building for businesses across India, Delhi NCR, and the USA.
             </p>
             <div className="pt-2">
               <Link
@@ -110,14 +110,14 @@ export default function SeoServicePage() {
       <section className="py-12 md:py-16 bg-stone-50 border-b border-stone-100 px-6">
         <div className="max-w-7xl mx-auto space-y-8 text-left">
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
-            Authoritative Search Engine Optimization Services
+            Trusted Search Engine Optimization Services
           </h2>
           <div className="space-y-6 text-stone-600 font-light leading-relaxed text-sm sm:text-base">
             <p>
-              In a digital landscape flooded with generic marketing tactics, true visibility requires technical mastery. As a premier <strong>SEO company in India</strong>, Anavya Infotech goes beyond outdated backlink spam. We treat SEO as a structural engineering problem. Whether you need a comprehensive technical SEO audit to fix underlying crawl issues or are looking for the <strong>best SEO agency in Delhi NCR</strong> to drive localized B2B leads, our data-backed methodologies ensure sustainable, compounding organic growth.
+              Strong search visibility takes more than basic marketing. As an <strong>SEO company in India</strong>, Anavya Infotech fixes technical problems instead of using spammy links. We can audit your site to find issues that stop search engines from reading it, or help your business reach local B2B customers in Delhi NCR. Our plans use data to support steady growth in unpaid search traffic.
             </p>
             <p>
-              Our authority stems from our transparent, ROI-focused approach. We do not guarantee arbitrary rankings; we guarantee measurable traffic and conversions. By leveraging deep expertise in Next.js/React technical optimization and Semantic Web principles, we execute <strong>search engine optimization services</strong> that align perfectly with Google&apos;s EEAT guidelines. Additionally, we are a trusted partner for global marketers, running highly successful <Link href="/blog/white-label-seo-reseller-program-agency-scaling-guide" className="text-blue-700 underline font-medium">White Label SEO Reseller programs</Link> for agencies that demand elite fulfillment.
+              We share clear reports focused on business results. We do not promise specific rankings; we track changes in traffic and conversions. Our team also improves Next.js and React websites for search and follows Google&apos;s EEAT guidelines. We run <Link href="/blog/white-label-seo-reseller-program-agency-scaling-guide" className="text-blue-700 underline font-medium">White Label SEO Reseller programs</Link> for agencies that need SEO work delivered under their own brand.
             </p>
           </div>
         </div>

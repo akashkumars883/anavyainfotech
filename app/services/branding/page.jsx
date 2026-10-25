@@ -8,17 +8,17 @@ import { ArrowRight, ArrowUpRight, Palette, Compass, Layers, ShieldCheck, CheckC
 import { createServiceSchema } from "@/lib/serviceSchema";
 
 export const metadata = {
-  title: "Corporate Branding & Visual Identity Design | Anavya Infotech",
+  title: "Brand Identity & Logo Design Services | Anavya Infotech",
   description:
-    "Build a cohesive, authoritative brand identity that commands premium market pricing. Logo design, corporate style guidelines, Figma design systems & digital assets.",
+    "Create a clear, consistent brand identity with logo design, brand guidelines, Figma design systems, and digital assets.",
   keywords: ["corporate branding agency","visual identity design services","b2b brand identity","logo design and brand guidelines","ui ux design systems figma","enterprise branding services"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/branding",
   },
   openGraph: {
-    title: "Corporate Branding & Visual Identity Design | Anavya Infotech",
+    title: "Brand Identity & Logo Design Services | Anavya Infotech",
     description:
-      "Build a cohesive, authoritative brand identity that commands premium market pricing. Logo design, corporate style guidelines, Figma design systems & digital assets.",
+      "Create a clear, consistent brand identity with logo design, brand guidelines, Figma design systems, and digital assets.",
     url: "https://www.anavyainfotech.com/services/branding",
     type: "website",
   },
@@ -27,11 +27,11 @@ export const metadata = {
 const BRANDING_FAQS = [
   {
     question: "What is included in a corporate visual identity package?",
-    answer: "Our packages include brand strategy positioning, primary and secondary logo suites, color palette tokens, typography rules, Figma UI component libraries, corporate collateral templates, and brand style manuals."
+    answer: "Our packages include brand positioning, primary and secondary logos, colors, typography, Figma UI components, business templates, and brand guidelines."
   },
   {
     question: "How does a Figma design system accelerate software engineering?",
-    answer: "A tokenized Figma design system matches frontend code variables directly, eliminating design handoff confusion and ensuring consistent UI components across web and mobile platforms."
+    answer: "A Figma design system uses shared styles and components that match the frontend code. This makes it easier for designers and developers to work together and keep web and mobile screens consistent."
   },
   {
     question: "How long does a full corporate branding engagement take?",
@@ -51,28 +51,28 @@ const serviceSchemas = createServiceSchema({
 const subServices = [
   {
     title: "Brand Identity",
-    description: "A cohesive visual language across every customer touchpoint — not just a logo file.",
+    description: "A consistent look and feel across every place customers see your brand—not just a logo.",
     href: "/services/branding",
     icon: Compass,
     features: ["Brand Voice & Narrative", "Market Gap Analysis", "Audience Personas", "Strategic Taglines"]
   },
   {
     title: "Logo Design",
-    description: "Distinct, memorable marks designed to work at any size, on any surface.",
+    description: "Memorable logos that stay clear at any size and on different materials.",
     href: "/services/branding",
     icon: Palette,
     features: ["Vector Logo Marks (SVG/AI)", "HSL Color Specifications", "WebFont Licensing Guides", "Dark & Light Mode Variants"]
   },
   {
     title: "Corporate Guidelines",
-    description: "A documented brand system your whole team can execute consistently, without guessing.",
+    description: "Clear brand rules that help your whole team create consistent materials.",
     href: "/services/branding",
     icon: ShieldCheck,
     features: ["Brand Manual PDF", "Social Media Asset Kits", "Email & Document Templates", "Stationery Print Layouts"]
   },
   {
     title: "Visual Strategy",
-    description: "Design decisions grounded in how your audience actually perceives your category — not just what looks nice.",
+    description: "Design choices based on how your audience sees your industry, not only on what looks good.",
     href: "/services/branding",
     icon: Layers,
     features: ["Figma Component Kits", "WCAG 2.1 Color Specs", "Micro-interaction Tokens", "Responsive Breakpoints"]
@@ -127,7 +127,7 @@ export default function CorporateBrandingPage() {
               What We Build
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Identity Systems Built to Scale With You
+              Brand Systems That Grow With Your Business
             </h2>
           </div>
 
@@ -198,7 +198,7 @@ export default function CorporateBrandingPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="space-y-2">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">What You Receive</h2>
-            <p className="text-xs sm:text-sm text-stone-600 font-light">Complete brand ownership documentation and production-ready design asset kits.</p>
+            <p className="text-xs sm:text-sm text-stone-600 font-light">Brand guidelines and ready-to-use design files that you own.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -225,8 +225,8 @@ export default function CorporateBrandingPage() {
         <div className="max-w-7xl mx-auto ">
 <article className="min-w-0 space-y-10">
       <section className="grid gap-6 md:grid-cols-2 md:items-center">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 md:col-span-2">A Logo Is Not a Brand: We Engineer Authoritative Visual Identity Systems</h2>
-        <p className="text-stone-700 leading-relaxed md:col-span-2">A disconnected visual identity creates immediate doubt during high-stakes sales conversations. Modern B2B buyers form impressions within seconds based on design quality, consistency, and professional positioning across digital touchpoints.</p>
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 md:col-span-2">A Logo Is Only One Part of Your Brand</h2>
+        <p className="text-stone-700 leading-relaxed md:col-span-2">A brand that looks different in each place can make customers unsure about your business. B2B buyers quickly form opinions based on the quality and consistency of your website, sales materials, and other digital content.</p>
       </section>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 md:col-span-2">
             <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">+40%</p><p className="mt-1 text-sm text-stone-600">Frontend delivery speed</p></div>
@@ -234,68 +234,68 @@ export default function CorporateBrandingPage() {
             <div className="group rounded-2xl border border-stone-200 bg-gradient-to-br from-white to-stone-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><p className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Enterprise</p><p className="mt-1 text-sm text-stone-600">Sales-ready identity</p></div>
           </div>
       <section className="space-y-4">
-        <p className="text-stone-700 leading-relaxed">Anavya Infotech provides comprehensive visual identity design services. We build complete, tokenized design systems, corporate identity guidelines, and digital brand assets that establish immediate authority and support premium pricing power.</p>
+        <p className="text-stone-700 leading-relaxed">Anavya Infotech designs complete visual identities, including brand guidelines, shared design systems, and digital assets. These help your business look professional and consistent across every channel.</p>
       </section>
       <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">The Credibility Gap: How Inconsistent Design Subconsciously Erodes Enterprise Trust</h2>
-        <p className="text-stone-700 leading-relaxed">Inconsistent visual assets weaken commercial potential across the sales funnel:</p>
-      </section>
-      <section className="space-y-4">
-        <ul className="grid gap-3 sm:grid-cols-2">
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Fragmented Brand Impressions:</strong> Discrepancies between pitch decks, websites, and sales collateral project a lack of operational polish.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Inability to Command Premium Fees:</strong> Generic visual presentation signals low differentiation, inviting price resistance from potential clients.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Development Inefficiencies:</strong> Building digital products without a centralized design system leads to repeated UI redos and slower feature releases.</li>
-        </ul>
-      </section>
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Comprehensive Brand Deliverables We Build</h2>
-        <p className="text-stone-700 leading-relaxed">We deliver scalable brand architecture engineered for enterprise application:</p>
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">How Inconsistent Design Can Weaken Trust</h2>
+        <p className="text-stone-700 leading-relaxed">Inconsistent design can make it harder to earn customers&apos; trust and win business:</p>
       </section>
       <section className="space-y-4">
         <ul className="grid gap-3 sm:grid-cols-2">
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Brand Strategy &amp; Positioning:</strong> Defining market differentiation, tone of voice, messaging hierarchy, and competitive positioning.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Logo Suite &amp; Typography System:</strong> Vector logo variations (primary, stacked, monochrome) paired with web-optimized typography standards.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Tokenized Figma UI/UX Design Systems:</strong> Reusable component libraries, color variables, spacing rules, and interactive UI patterns for engineering handoff.</li>
-          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Corporate Collateral &amp; Sales Assets:</strong> Executive presentation decks, digital whitepapers, business cards, social media kits, and brand documentation.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Different Looks Across Materials:</strong> When your website, sales slides, and other materials look different, your business may seem less professional.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Harder to Charge More:</strong> A common-looking brand may not show what makes your business different, which can make it harder to charge higher prices.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Slower Product Design:</strong> Without a shared design system, teams may redo the same screens and release features more slowly.</li>
         </ul>
       </section>
       <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Brand Deliverables Comparison: Freelance Logo vs. Enterprise Brand System</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Brand Materials We Create</h2>
+        <p className="text-stone-700 leading-relaxed">We create a clear brand system that can grow with your business:</p>
+      </section>
+      <section className="space-y-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Brand Plan:</strong> Explain what makes your business different, how it should sound, and how to describe it to customers.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Logo and Font Set:</strong> Get logo versions for different layouts and colors, plus fonts that work well online.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Figma Design System:</strong> Reusable screen elements, colors, spacing, and interactive designs for your development team.</li>
+          <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Business and Sales Materials:</strong> Get presentation slides, digital guides, business cards, social media kits, and brand documents.</li>
+        </ul>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">A Logo Compared With a Complete Brand System</h2>
 
         <div className="overflow-x-auto rounded-md border border-stone-200">
           <table className="w-full min-w-[640px] border-collapse text-left text-sm">
             <tbody>
               <tr className={"bg-stone-100 font-semibold text-stone-900"}>
-                <th className="px-4 py-3 align-top">Scope Component</th>
-                <th className="px-4 py-3 align-top">Freelance Logo Graphic</th>
-                <th className="px-4 py-3 align-top">Anavya Enterprise Brand System</th>
+                <th className="px-4 py-3 align-top">What You Get</th>
+                <th className="px-4 py-3 align-top">Logo Only</th>
+                <th className="px-4 py-3 align-top">Anavya Brand System</th>
               </tr>
               <tr className={"border-t border-stone-200"}>
                 <td className="px-4 py-3 align-top">Deliverable Focus</td>
                 <td className="px-4 py-3 align-top">Standalone image file</td>
-                <td className="px-4 py-3 align-top">Complete visual strategy &amp; UI token system</td>
+                <td className="px-4 py-3 align-top">Brand plan, design rules, and reusable screen elements</td>
               </tr>
               <tr className={"border-t border-stone-200"}>
                 <td className="px-4 py-3 align-top">UI/UX Integration</td>
                 <td className="px-4 py-3 align-top">None; requires separate design work</td>
-                <td className="px-4 py-3 align-top">Tokenized Figma components ready for code</td>
+                <td className="px-4 py-3 align-top">Figma components ready for the development team</td>
               </tr>
               <tr className={"border-t border-stone-200"}>
                 <td className="px-4 py-3 align-top">Brand Governance</td>
                 <td className="px-4 py-3 align-top">No guidelines supplied</td>
-                <td className="px-4 py-3 align-top">Comprehensive Brand Style Manual</td>
+                <td className="px-4 py-3 align-top">Complete brand guide</td>
               </tr>
               <tr className={"border-t border-stone-200"}>
                 <td className="px-4 py-3 align-top">Market Positioning</td>
                 <td className="px-4 py-3 align-top">Decorative design</td>
-                <td className="px-4 py-3 align-top">Positioned for enterprise authority</td>
+                <td className="px-4 py-3 align-top">Designed to support a professional business image</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
       <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Case Evidence: Elevating Perceived Value in B2B Tech</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">Example: Updating a B2B Technology Brand</h2>
         <ul className="grid gap-3 sm:grid-cols-2">
           <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><Palette className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Strategic Shift:</strong> We repositioned a growing fintech startup by replacing fragmented graphics with an enterprise-grade Figma design system and unified brand strategy.</li>
           <li className="group rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-all duration-300 group-hover:rotate-3 group-hover:bg-blue-700 group-hover:text-white"><ChartNoAxesCombined className="h-5 w-5" aria-hidden="true" /></span><strong className="text-stone-900">Impact Delivered:</strong> The updated identity increased client win rates in enterprise sales cycles and accelerated frontend development speed by 40% using tokenized UI components.</li>

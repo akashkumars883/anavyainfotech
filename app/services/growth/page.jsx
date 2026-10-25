@@ -7,17 +7,17 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, TrendingUp, Search, MapPin, ShoppingCart, Code, FileText, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
-  title: "Growth Marketing & Conversion Rate Optimization (CRO) Agency",
+  title: "Growth Marketing & Conversion Rate Optimization",
   description:
-    "Accelerate customer acquisition with full-funnel CRO, performance marketing telemetry, A/B testing, and paid growth strategies from Anavya Infotech.",
+    "Reach more customers with conversion testing, performance tracking, and paid growth plans from Anavya Infotech.",
   keywords: ["growth marketing agency", "conversion rate optimization", "CRO services"],
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/growth",
   },
   openGraph: {
-    title: "Growth Marketing & Conversion Rate Optimization (CRO) Agency",
+    title: "Growth Marketing & Conversion Rate Optimization",
     description:
-      "Accelerate customer acquisition with full-funnel CRO, performance marketing telemetry, A/B testing, and paid growth strategies from Anavya Infotech.",
+      "Reach more customers with conversion testing, performance tracking, and paid growth plans from Anavya Infotech.",
     url: "https://www.anavyainfotech.com/services/growth",
     type: "website",
   },
@@ -26,55 +26,55 @@ export const metadata = {
 
 const GROWTH_FAQS = [
   {
-    question: "What search growth & SEO services do you offer?",
-    answer: "We offer comprehensive Organic SEO, Local SEO for Google Business Profile rankings, E-Commerce SEO for online stores, Technical SEO code audits, and Content Marketing Strategy."
+    question: "What SEO services do you offer?",
+    answer: "We offer SEO for general searches, local businesses, online stores, and website technology. We also plan SEO content."
   },
   {
     question: "How long does it take to see top keyword rankings and organic traffic growth?",
-    answer: "Initial technical fixes and indexation improvements happen within 14-30 days. Measurable keyword rank increases and inbound lead growth occur within 30 to 90 days."
+    answer: "Technical fixes and indexing improvements can happen within 14–30 days. Ranking and lead improvements often take 30 to 90 days."
   },
   {
     question: "Do you offer White Label SEO Reseller programs for digital agencies?",
-    answer: "Yes, we provide confidential White Label SEO reseller solutions with white-label monthly rank tracking, link audits, and content creation under your agency brand."
+    answer: "Yes. We provide private SEO services under your agency's brand, including monthly ranking reports, link reviews, and content creation."
   },
   {
-    question: "What is Technical SEO and why is it essential for Next.js and custom websites?",
-    answer: "Technical SEO optimizes page speed, schema markups, canonical tags, sitemaps, rendering pipelines, and Core Web Vitals to guarantee search engines index every page seamlessly."
+    question: "What is Technical SEO, and why does it matter for Next.js and custom websites?",
+    answer: "Technical SEO improves site speed, structured data, canonical tags, sitemaps, and Core Web Vitals. These changes help search engines find and index your pages."
   }
 ];
 
 const subServices = [
   {
     title: "SEO Services",
-    description: "Data-driven organic search engine optimization to rank for competitive commercial keywords and drive qualified organic leads.",
+    description: "Use data to improve your search rankings and bring potential customers to your site.",
     href: "/services/seo",
     icon: Search,
-    features: ["Keyword Research & Audits", "On-Page SEO Optimization", "High Domain Link Building", "Monthly Ranking Reports"]
+    features: ["Keyword Research & Site Reviews", "Page SEO Improvements", "Link Building", "Monthly Ranking Reports"]
   },
   {
     title: "Local SEO",
-    description: "Geo-targeted search optimization to dominate local Google Maps pack rankings in your city or region.",
+    description: "Help nearby customers find your business on Google Maps and local search results.",
     href: "/services/local-seo",
     icon: MapPin,
     features: ["Google Business Profile Optimization", "Local Citation Building", "Geo-targeted Keyword Pages", "Review & Trust Growth"]
   },
   {
     title: "Ecommerce SEO",
-    description: "Specialized product catalog SEO for Shopify, WooCommerce, and custom Next.js storefronts.",
+    description: "Improve product and category pages on Shopify, WooCommerce, and custom Next.js stores.",
     href: "/services/ecommerce-seo",
     icon: ShoppingCart,
     features: ["Product Schema Markup", "Faceted Navigation SEO", "Category Page Ranking", "Conversion Rate Optimization"]
   },
   {
     title: "Technical SEO",
-    description: "Deep code-level audits, Lighthouse Core Web Vitals tuning, canonical fixes, and indexation optimization.",
+    description: "Review your website code, improve Core Web Vitals, and fix indexing and canonical tag issues.",
     href: "/services/technical-seo",
     icon: Code,
     features: ["Core Web Vitals Tuning", "Structured JSON-LD Schema", "Crawl Budget Optimization", "Serverless Speed Fixes"]
   },
   {
     title: "Content Strategy",
-    description: "High-intent content blueprints, editorial calendars, and SEO-optimized engineering articles that convert readers.",
+    description: "Plan useful articles and SEO content around what readers search for and need.",
     href: "/services/content-strategist",
     icon: FileText,
     features: ["Topic Cluster Blueprints", "SEO Copywriting", "Keyword Intent Mapping", "Lead Magnet Content"]
@@ -106,10 +106,10 @@ export default function GrowthCategoryPage() {
               <TrendingUp className="h-3.5 w-3.5 text-blue-700" /> Growth &amp; SEO Hub
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
-              Ranking on Page One Isn&apos;t Luck. It&apos;s a System — And We Run It.
+              Better Search Rankings Start With a Clear Plan
                  </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              Most SEO &quot;strategies&quot; are guesswork dressed up in a monthly report. Ours start with a technical audit that finds exactly what&apos;s blocking your rankings, then fixes it — systematically, and with numbers to prove it worked.
+              SEO should be based on more than guesses and monthly reports. We review your website to find what may be holding back your rankings, then make improvements and track the results.
                            </p>
             <div className="pt-2">
               <Link
@@ -210,10 +210,10 @@ export default function GrowthCategoryPage() {
             For Agencies
           </div>
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-            Running an Agency? Resell Our SEO Under Your Brand.
+            Run an Agency? Offer SEO Under Your Own Brand.
           </h2>
           <p className="text-sm md:text-base text-stone-600 font-light max-w-3xl leading-relaxed">
-            Our white-label SEO reseller program lets digital agencies offer enterprise-grade technical audits, link authority building, and full SEO fulfillment under their own name — scale your client roster without scaling your headcount.
+            Our white-label SEO program lets digital agencies offer technical reviews, link building, and other SEO services under their own name. You can serve more clients without hiring a larger team.
           </p>
           <div>
             <Link
@@ -245,7 +245,7 @@ export default function GrowthCategoryPage() {
                 Want to double your organic search traffic?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Get a free technical SEO audit and custom ranking strategy for your platform.
+                Get a free technical SEO review and a plan to improve your search rankings.
               </p>
             </div>
             <Link

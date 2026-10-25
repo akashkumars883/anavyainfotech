@@ -6,7 +6,7 @@ export default function Services() {
   const categories = [
     {
       title: "Development",
-      description: "Scalable web apps, mobile experiences, and lightning-fast e-commerce storefronts — engineered on modern frameworks like Next.js and React so every page loads in under a second and every click converts.",
+      description: "Web apps, mobile apps, and fast online stores built with tools like Next.js and React. We focus on quick page loads and helping visitors take action.",
       icon: Code2,
       image: "/development-illustration.jpg",
       items: [
@@ -20,7 +20,7 @@ export default function Services() {
     },
     {
       title: "Technology & AI",
-      description: "We don't bolt AI onto your business — we embed it. Smart chatbots that qualify leads while you sleep, CRM systems built around how your team actually works, and API integrations that eliminate manual busywork.",
+      description: "We add AI where it can help, build CRM systems for your team, and connect APIs to reduce repetitive work.",
       icon: Cpu,
       image: "/technology-illustration.jpg",
       items: [
@@ -33,7 +33,7 @@ export default function Services() {
     },
     {
       title: "Growth & SEO",
-      description: "Rankings are earned, not guessed at. Our technical and local SEO audits uncover exactly what's holding your site back from page one — then we fix it, systematically, and prove it with data.",
+      description: "We review your technical and local SEO, find what is keeping your site from ranking higher, and work through fixes while tracking the results.",
       icon: TrendingUp,
       image: "/growth-illustration.jpg",
       items: [
@@ -47,7 +47,7 @@ export default function Services() {
     },
     {
       title: "Branding",
-      description: "A logo isn't a brand. We build the full visual system — identity, guidelines, and design assets — so your business looks as credible as the work you actually do.",
+      description: "We create your full visual identity, including a logo, guidelines, and design files, so your business looks clear and consistent.",
       icon: Palette,
       image: "/branding-illustration.jpg",
       items: [
@@ -107,11 +107,11 @@ export default function Services() {
             id="services-heading"
             className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight"
           >
-            One Team. Four Capabilities. <br />
-            <span className="text-blue-700">Zero Guesswork.</span>
+            One Team. Four Services. <br />
+            <span className="text-blue-700">One Clear Plan.</span>
           </h2>
           <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-            Most agencies hand you off to a freelancer for design, a different vendor for development, and a third party for marketing — and your project falls apart in the gaps. Anavya Infotech eliminates the handoff. Our in-house engineers, designers, and growth strategists work from a single technical blueprint, so your website, your automation, and your search rankings all move in the same direction.
+            Some agencies use different people for design, development, and marketing. We keep the work together. Our engineers, designers, and marketing team follow one plan, so your website, automation, and search work support each other.
           </p>
         </div>
 
@@ -196,4 +196,3 @@ export default function Services() {
     </section>
   );
 }
-

@@ -346,7 +346,7 @@ export default async function BlogPostPage({ params }) {
         {Array.isArray(post.faqs) && post.faqs.length > 0 && (
           <section className="pt-8 border-t border-stone-200 space-y-4">
             <h3 className="text-2xl font-bold text-stone-900 tracking-tight">
-              Frequently Asked Questions
+                Common Questions
             </h3>
             <div className="space-y-3">
               {post.faqs.map((faq, index) => (
@@ -368,16 +368,16 @@ export default async function BlogPostPage({ params }) {
         <footer className="pt-10 border-t border-stone-200 space-y-10">
           <div className="p-8 rounded-md bg-black text-white flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2 max-w-lg text-left">
-              <h3 className="text-xl font-bold text-white">Need a custom software engineering solution?</h3>
+              <h3 className="text-xl font-bold text-white">Need software made for your business?</h3>
               <p className="text-xs text-zinc-400 font-light">
-                Our architects can help you build scalable web apps, AI tools, or custom CRM systems.
+                Our team can help you build web apps, AI tools, or a CRM system for your needs.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0"
             >
-              Get Technical Consultation
+              Talk to Our Team
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
@@ -385,7 +385,7 @@ export default async function BlogPostPage({ params }) {
           {/* Related Articles */}
           {relatedPosts.length > 0 && (
             <div className="space-y-6 text-left">
-              <h3 className="text-xl font-bold text-stone-900">Related Articles</h3>
+              <h3 className="text-xl font-bold text-stone-900">More Articles</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {relatedPosts.map((related, i) => (
                   <Link

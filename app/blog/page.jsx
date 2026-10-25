@@ -9,18 +9,18 @@ import SafeImage from "@/components/SafeImage";
 export const revalidate = 60;
 
 export const metadata = {
-  title: "Our Blog & Digital Growth Insights",
+  title: "Our Blog & Business Growth Tips",
   description:
-    "Read in-depth software engineering blueprints, AI automation guides, custom CRM architecture strategies, and technical SEO insights from Anavya Infotech.",
+    "Read easy-to-follow guides about software, AI tools, CRM systems, and SEO from Anavya Infotech.",
   keywords:
     "software engineering blog, AI chatbot development guide, Next.js performance tutorial, technical SEO blueprints, custom CRM development",
   alternates: {
     canonical: "https://www.anavyainfotech.com/blog",
   },
   openGraph: {
-    title: "Our Blog & Digital Growth Insights - Anavya Infotech",
+    title: "Our Blog & Business Growth Tips - Anavya Infotech",
     description:
-      "Technical software architecture guides, AI integration patterns, and SEO strategies for modern businesses.",
+      "Simple guides about software, AI tools, and SEO for growing businesses.",
     url: "https://www.anavyainfotech.com/blog",
     type: "website",
   },
@@ -28,29 +28,29 @@ export const metadata = {
 
 const BLOG_FAQS = [
   {
-    question: "How frequently do you publish new technical guides and industry insights?",
+    question: "How often do you publish new guides and articles?",
     answer:
-      "We publish weekly in-depth software engineering blueprints, AI integration tutorials, Core Web Vitals optimization guides, and search marketing strategies.",
+      "We share new guides each week about building software, using AI tools, improving website speed, and helping people find your business online.",
   },
   {
-    question: "Who writes the articles on the Anavya Infotech engineering blog?",
+    question: "Who writes the articles on the Anavya Infotech blog?",
     answer:
-      "Our articles are authored directly by lead software architects, AI engineers, and technical SEO specialists who build production systems every day.",
+      "Our team members write the articles. They build software, AI tools, and websites and help businesses improve their search results.",
   },
   {
-    question: "Can I request a technical tutorial or topic for your engineering team to cover?",
+    question: "Can I ask your team to write about a topic?",
     answer:
-      "Yes! We love answering client questions. Send us your technical query via our contact page and our lead engineers will consider drafting a dedicated blueprint.",
+      "Yes. Send us your question on our contact page, and our team may write a guide about it.",
   },
   {
-    question: "Are these guides suitable for non-technical business owners and founders?",
+    question: "Are these guides for people who do not work in tech?",
     answer:
-      "We write for both technical founders and business decision-makers — explaining complex software architectures with clear practical ROI takeaways.",
+      "Yes. We write for business owners as well as people who work in tech, and explain hard topics in clear language.",
   },
   {
-    question: "How can I apply these technical strategies directly to my business?",
+    question: "How can these guides help my business?",
     answer:
-      "You can follow our step-by-step code examples or schedule a free technical consultation with our lead architects to implement these blueprints for your platform.",
+      "Follow the steps in our guides, or book a free call with our team to talk about your website or software.",
   },
 ];
 
@@ -65,14 +65,14 @@ export default async function BlogListingPage() {
         <div className="max-w-7xl mx-auto space-y-6">
           <Breadcrumbs items={[{ label: "Blog", href: "/blog" }]} />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <BookOpen className="h-3.5 w-3.5 text-blue-700" /> Our Blog & Insights
+            <BookOpen className="h-3.5 w-3.5 text-blue-700" /> Our Blog & Tips
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Software engineering blueprints <br />
-            <span className="text-blue-700">& digital growth strategies.</span>
+            Simple software guides <br />
+            <span className="text-blue-700">& business growth tips.</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            In-depth technical guides, AI integration patterns, custom CRM architectures, and search engine optimization strategies straight from our development team.
+            Easy-to-follow guides about software, AI tools, CRM systems, and ways to help people find your business online.
           </p>
         </div>
       </section>
@@ -121,7 +121,7 @@ export default async function BlogListingPage() {
                   <div
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-bold uppercase tracking-wider bg-black text-white group-hover:bg-blue-700 transition-all shrink-0"
                   >
-                    Read Full Article
+                    Read the Article
                     <ArrowUpRight className="h-4 w-4" />
                   </div>
                 </div>
@@ -149,8 +149,8 @@ export default async function BlogListingPage() {
 
       {/* FAQ Section */}
       <FaqSection
-        title="Frequently Asked Questions About Our Blog"
-        subtitle="Insights regarding technical content publishing, code examples, and topics."
+        title="Questions About Our Blog"
+        subtitle="Find out more about our articles, guides, and topics."
         faqs={BLOG_FAQS}
       />
     </main>

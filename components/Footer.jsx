@@ -105,7 +105,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs text-zinc-300 font-normal leading-relaxed max-w-sm">
-              Premier digital marketing agency &amp; website development company in India, Delhi NCR, Noida &amp; USA. Custom software, SEO services, local SEO, ecommerce SEO, performance marketing, and white label SEO reseller programs.
+              We build websites and custom software, and help businesses grow with SEO, digital marketing, and white-label services across India and worldwide.
             </p>
 
             {/* Social Icons Connect (Facebook, Instagram, Pinterest, LinkedIn, Twitter X, Email) */}

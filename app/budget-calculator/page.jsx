@@ -33,8 +33,8 @@ export const PRICING_CONFIG = {
     {
       id: "starter-website",
       title: "Starter Website",
-      tagline: "1–3 Pages Fast Setup",
-      desc: "Best for small businesses, freelancers & local shops needing a fast online presence.",
+      tagline: "1–3 Pages, Quick Setup",
+      desc: "For small businesses, freelancers, and local shops that need a website.",
       icon: Globe,
       basePriceINR: 7999,
       basePriceUSD: 1499,
@@ -45,7 +45,7 @@ export const PRICING_CONFIG = {
       id: "business-website",
       title: "Business Website",
       tagline: "Up to 7 Custom Pages",
-      desc: "Best for startups, SMEs & service companies wanting lead capture & Google setup.",
+      desc: "For startups, small and medium businesses, and service companies that want to get leads and appear on Google.",
       icon: Globe,
       basePriceINR: 14999,
       basePriceUSD: 2999,
@@ -57,8 +57,8 @@ export const PRICING_CONFIG = {
     {
       id: "ecommerce",
       title: "E-Commerce Store",
-      tagline: "Full D2C Online Storefront",
-      desc: "Complete D2C online store with cart, payment gateway, inventory & WhatsApp orders.",
+      tagline: "Direct-to-Customer Online Store",
+      desc: "An online store that sells directly to customers, with a cart, payment options, stock tracking, and WhatsApp orders.",
       icon: ShoppingCart,
       basePriceINR: 29999,
       basePriceUSD: 5999,
@@ -68,8 +68,8 @@ export const PRICING_CONFIG = {
     {
       id: "seo-growth",
       title: "SEO & Growth Campaign",
-      tagline: "Monthly Ranking & Retainer",
-      desc: "Technical SEO audit, local SEO, keyword ranking & AI search visibility (BASIC Plan).",
+      tagline: "Monthly SEO Plan",
+      desc: "Technical and local SEO, keyword tracking, and AI search visibility (BASIC Plan).",
       icon: TrendingUp,
       basePriceINR: 9999,
       basePriceUSD: 750,
@@ -79,8 +79,8 @@ export const PRICING_CONFIG = {
     {
       id: "ai-bot",
       title: "AI Chatbot & Automation",
-      tagline: "Smart OpenAI / Meta Bot",
-      desc: "Automated support bot, RAG vector database & custom workflow integration.",
+      tagline: "OpenAI / Meta Chatbot",
+      desc: "A support chatbot with RAG, a searchable information database, and custom workflows.",
       icon: Cpu,
       basePriceINR: 20000,
       basePriceUSD: 1499,
@@ -90,8 +90,8 @@ export const PRICING_CONFIG = {
     {
       id: "custom-website",
       title: "Custom SaaS / App",
-      tagline: "Bespoke Enterprise Software",
-      desc: "Tailored full-stack application or SaaS platform built to exact specifications.",
+      tagline: "Custom Business Software",
+      desc: "A custom web app or SaaS platform built to fit your needs.",
       icon: Code2,
       basePriceINR: 59999,
       basePriceUSD: 4999,
@@ -106,35 +106,35 @@ export const PRICING_CONFIG = {
     {
       id: "ui-ux-design",
       title: "Custom Figma UI/UX Design",
-      desc: "Bespoke high-fidelity UI design prototypes & micro-interactions.",
+      desc: "Custom UI/UX designs and working screen previews made in Figma.",
       priceINR: 8000,
       priceUSD: 299,
     },
     {
       id: "admin-dashboard",
       title: "Custom Admin Panel",
-      desc: "Full backend control panel for analytics, leads, & content edits.",
+      desc: "A control panel to manage reports, leads, and website content.",
       priceINR: 10000,
       priceUSD: 499,
     },
     {
       id: "payment-gateway",
       title: "Payment Gateway & Invoicing",
-      desc: "Razorpay / Stripe / PayPal integration with automated receipts.",
+      desc: "Connect Razorpay, Stripe, or PayPal and send receipts automatically.",
       priceINR: 5000,
       priceUSD: 199,
     },
     {
       id: "whatsapp-crm",
       title: "WhatsApp & CRM Integration",
-      desc: "Instant lead alert to WhatsApp & CRM sync upon contact form submit.",
+      desc: "Send lead alerts to WhatsApp and sync them with your CRM when someone submits a form.",
       priceINR: 6000,
       priceUSD: 249,
     },
     {
       id: "speed-optimization",
       title: "100/100 Speed & Security Audit",
-      desc: "Guaranteed sub-second loading score on Google PageSpeed Insights.",
+      desc: "We guarantee page loads in under a second, measured with Google PageSpeed Insights.",
       priceINR: 4000,
       priceUSD: 199,
     },
@@ -145,19 +145,19 @@ export const PRICING_CONFIG = {
     {
       id: "standard",
       title: "Standard Velocity (2-3 Weeks)",
-      desc: "Normal structured engineering timeline.",
+      desc: "Our regular project timeline.",
       multiplier: 1.0,
     },
     {
       id: "express",
       title: "Express Velocity (7-10 Days)",
-      desc: "Priority dedicated developer allocation.",
+      desc: "A developer is assigned to your project first.",
       multiplier: 1.0,
     },
     {
       id: "rush",
       title: "Rush Deployment (3-5 Days)",
-      desc: "Fastest emergency squad deployment.",
+      desc: "Our fastest delivery option.",
       multiplier: 1.0,
     },
   ],
@@ -298,7 +298,7 @@ Notes: ${formData.notes || "None"}`,
           </div>
 
           <p className="text-sm sm:text-base text-stone-600 font-light max-w-3xl leading-relaxed">
-            Answer a few quick questions about your project scope. Your estimated total investment will be calculated and revealed at the end.
+            Answer a few quick questions about your project. We&apos;ll show your estimated total cost at the end.
           </p>
         </div>
       </section>
@@ -342,7 +342,7 @@ Notes: ${formData.notes || "None"}`,
               <div className="space-y-1">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-700">Step 1 of 4</span>
                 <h2 className="text-xl font-semibold text-stone-900">Choose Primary Solution Category</h2>
-                <p className="text-xs text-stone-500 font-light">Select the main project scope for your business.</p>
+                <p className="text-xs text-stone-500 font-light">Choose the main type of work you need.</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -392,8 +392,8 @@ Notes: ${formData.notes || "None"}`,
             <div className="bg-white border border-stone-200 rounded-md p-6 sm:p-8 space-y-6 shadow-2xs">
               <div className="space-y-1">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-700">Step 2 of 4</span>
-                <h2 className="text-xl font-semibold text-stone-900">Select Technical Add-on Modules</h2>
-                <p className="text-xs text-stone-500 font-light">Customize your build with optional specialized integrations.</p>
+                <h2 className="text-xl font-semibold text-stone-900">Choose Optional Features</h2>
+                <p className="text-xs text-stone-500 font-light">Add optional features and connections to your project.</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -459,7 +459,7 @@ Notes: ${formData.notes || "None"}`,
                       </div>
 
                       <span className="text-xs font-semibold text-stone-700">
-                        {spd.multiplier === 1.0 ? "Standard Speed" : "Priority Velocity"}
+                          {spd.multiplier === 1.0 ? "Standard Speed" : "Priority Delivery"}
                       </span>
                     </div>
                   );
@@ -476,7 +476,7 @@ Notes: ${formData.notes || "None"}`,
               <div className="p-6 sm:p-8 rounded-md bg-stone-900 text-white space-y-4 shadow-xl border border-stone-800">
                 <div className="flex items-center justify-between border-b border-stone-800 pb-3">
                   <span className="px-3 py-1 rounded text-[10px] font-semibold bg-blue-700 text-white uppercase tracking-wider">
-                    Calculated Proposal Quote
+                  Estimated Project Cost
                   </span>
                   <span className="text-xs text-stone-400 font-medium">Verified Estimate</span>
                 </div>
@@ -499,16 +499,16 @@ Notes: ${formData.notes || "None"}`,
               </div>
 
               <div className="space-y-1 pt-2">
-                <h2 className="text-xl font-semibold text-stone-900">Request Official Proposal &amp; Lock Estimate</h2>
-                <p className="text-xs text-stone-500 font-light">Enter your details to receive an official formal technical proposal document.</p>
+                <h2 className="text-xl font-semibold text-stone-900">Request a Project Proposal</h2>
+                <p className="text-xs text-stone-500 font-light">Share your details to receive a written project proposal.</p>
               </div>
 
               {submitted ? (
                 <div className="p-8 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-3 text-center">
                   <CheckCircle2 className="h-10 w-10 text-emerald-600 mx-auto" />
-                  <h3 className="text-xl font-semibold">Budget Proposal Request Submitted!</h3>
+                  <h3 className="text-xl font-semibold">Your Request Has Been Sent!</h3>
                   <p className="text-xs text-emerald-700 font-light leading-relaxed max-w-md mx-auto">
-                    Thank you! Our senior software architects are reviewing your estimated configuration of <strong>{PRICING_CONFIG.currencies[currency].symbol}{estimatedPrice.toLocaleString()}</strong>. We will contact you within 2 hours.
+                    Thank you! Our software team is reviewing your project estimate of <strong>{PRICING_CONFIG.currencies[currency].symbol}{estimatedPrice.toLocaleString()}</strong>. We will contact you within 2 hours.
                   </p>
                 </div>
               ) : (
@@ -566,7 +566,7 @@ Notes: ${formData.notes || "None"}`,
                     <label className="text-xs font-semibold text-stone-700 uppercase tracking-wider">Additional Requirements (Optional)</label>
                     <textarea
                       rows={3}
-                      placeholder="Tell us any specific features or goals..."
+                      placeholder="Tell us about any features or goals..."
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       className="w-full px-4 py-3 rounded-md bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-blue-700 focus:bg-white"

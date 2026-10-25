@@ -181,7 +181,7 @@ export default function BlogFilterClient({ initialPosts }) {
       ) : (
         <div className="text-center py-10 space-y-3 bg-stone-50 rounded-md border border-stone-200">
           <p className="text-base font-semibold text-stone-800">No articles found matching &quot;{searchQuery}&quot;</p>
-          <p className="text-xs text-stone-500">Try searching for different keywords or select another category filter.</p>
+          <p className="text-xs text-stone-500">Try another search or choose a different category.</p>
         </div>
       )}
     </div>

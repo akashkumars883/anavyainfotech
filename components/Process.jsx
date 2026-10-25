@@ -36,22 +36,22 @@ export default function Process() {
     {
       num: "01",
       title: "Discover & Plan",
-      description: "We dig into how your business actually operates, then map requirements into a clear technical blueprint before a single line of code is written.",
+      description: "We learn how your business works and make a clear project plan before we start coding.",
     },
     {
       num: "02",
-      title: "Architecture & Design",
-      description: "Database schemas, high-fidelity UI mockups, and interaction design — so what you approve is what you get.",
+      title: "Plan & Design",
+      description: "We plan the database, design the screens, and show you how the product will work before we build it.",
     },
     {
       num: "03",
-      title: "Agile Development",
-      description: "Continuous builds, visible progress, and a team that treats your deadlines like our own.",
+      title: "Build in Steps",
+      description: "We build in short stages, share our progress, and work to meet your deadlines.",
     },
     {
       num: "04",
       title: "Optimize & Launch",
-      description: "Speed audits, security testing, SEO optimization, and a clean go-live — because launch day should be the easy part.",
+      description: "We check speed, security, and SEO, then launch your product and help you get started.",
     },
   ];
 
@@ -64,8 +64,8 @@ export default function Process() {
             Our Process
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-white leading-tight">
-            From First Call to Live Launch — <br />
-            <span className="text-zinc-500">No Black Boxes.</span>
+            From Our First Call to Launch — <br />
+            <span className="text-zinc-500">Clear at Every Step.</span>
           </h2>
         </div>
 

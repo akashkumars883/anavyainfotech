@@ -6,16 +6,16 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
 
-  title: "Contact Us – Get a Free Software Development Consultation",
+  title: "Contact Us – Get a Free Software Consultation",
   description:
-    "Contact Anavya Infotech for custom web development, AI chatbot, SEO, or business automation projects. Get a free consultation within 24 hours. Serving clients in India and globally.",
+    "Contact Anavya Infotech about web development, AI chatbots, SEO, or business automation. Get a free consultation within 24 hours. We work with clients in India and around the world.",
   keywords:
     "contact software development company, hire web developer India, get SEO quote India, custom software consultation, project inquiry Anavya Infotech",
   alternates: {
     canonical: "https://www.anavyainfotech.com/contact",
   },
   openGraph: {
-    title: "Contact Anavya Infotech – Free Project Consultation",
+    title: "Contact Anavya Infotech – Free Project Call",
     description: "Get a free consultation for your web app, AI, or SEO project. We respond within 24 hours.",
     url: "https://www.anavyainfotech.com/contact",
     type: "website",
@@ -75,29 +75,29 @@ const contactSchema = {
 
 const CONTACT_FAQS = [
   {
-    question: "How quickly can I expect a response after submitting an inquiry?",
+    question: "How soon will you reply to my message?",
     answer:
-      "Our technical team guarantees a reply within 24 hours (usually within 2-4 hours during business hours). We will review your project details and send a preliminary assessment.",
+      "Our technical team will reply within 24 hours, usually within 2–4 business hours. We will review your project details and share an initial assessment.",
   },
   {
-    question: "Is the initial project discovery consultation free?",
+    question: "Is the first project call free?",
     answer:
-      "Yes, 100% free! We provide a complimentary technical consultation call to understand your requirements, evaluate scope feasibility, and provide a fixed transparent quote.",
+      "Yes. We offer a free call to learn what you need, discuss the project, and give you a clear fixed-price quote.",
   },
   {
-    question: "What information should I prepare before our initial call?",
+    question: "What should I share before our first call?",
     answer:
-      "It helps to share a high-level summary of your business goals, target audience, any reference websites you like, key feature requirements, and your target launch timeline.",
+      "Please share your business goals, who you want to reach, any websites you like, key features you need, and your target launch date.",
   },
   {
-    question: "Do you sign Non-Disclosure Agreements (NDAs) before discussing ideas?",
+    question: "Can we sign a Non-Disclosure Agreement (NDA) before discussing ideas?",
     answer:
-      "Absolutely. We respect your intellectual property and business confidentiality. We are happy to execute a standard mutual NDA prior to reviewing sensitive specifications.",
+      "Yes. We respect your ideas and business privacy, and can sign a mutual NDA before reviewing sensitive details.",
   },
   {
-    question: "How are project payments structured for custom development?",
+    question: "How do payments work for custom development?",
     answer:
-      "We typically structure payments into milestone-based installments: an initial deposit upon contract kickoff, progress milestone deliverables, and final balance upon deployment.",
+      "Payments are usually split into stages: an initial deposit, payments as we complete agreed milestones, and the final payment at launch.",
   },
 ];
 
@@ -144,10 +144,10 @@ export default function ContactPage() {
             Contact Us
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Let&apos;s Build Something Exceptional — Starting With a Conversation.
+            Let&apos;s Build Something Great. Let&apos;s Talk.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Tell us about your project. You&apos;ll hear back from someone who can actually scope and build it — not a call-center script.
+            Tell us about your project. A member of our team will reply and help plan the work.
           </p>
         </div>
       </section>

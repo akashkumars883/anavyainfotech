@@ -6,9 +6,9 @@ import SafeImage from "@/components/SafeImage";
 import { Zap, ArrowRight, MapPin, Building, Star, Compass } from "lucide-react";
 
 export const metadata = {
-  title: "Local SEO Services in Delhi NCR - Top Agency in Noida & Gurgaon",
+  title: "Local SEO Services in Delhi NCR, Noida & Gurgaon",
   description:
-    "Dominate Google Maps 3-Pack and neighborhood search results with our specialized local SEO services for businesses in Delhi NCR, Noida, Faridabad, and Gurgaon.",
+    "Help local customers find your business on Google Maps and in nearby search results. Local SEO services for businesses in Delhi NCR, Noida, Faridabad, and Gurgaon.",
   keywords: "local SEO services Delhi NCR, local SEO agency Noida, Google Maps SEO Gurgaon",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/local-seo",
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: "Local SEO Services in Delhi NCR - Anavya Infotech",
     description:
-      "Dominate Google Maps local pack and high-intent regional searches with local SEO services from Anavya Infotech.",
+      "Help local customers find your business on Google Maps and nearby searches with local SEO services from Anavya Infotech.",
     url: "https://www.anavyainfotech.com/services/local-seo",
     type: "website",
   },
@@ -26,15 +26,15 @@ export const metadata = {
 const LOCAL_SEO_FAQS = [
   {
     "question": "What's the difference between SEO and local SEO?",
-    "answer": "Local SEO specifically targets \"near me\" and location-based searches and Google Maps results, while general SEO targets broader organic search rankings."
+    "answer": "Local SEO helps your business appear in searches tied to a place, such as \"near me,\" and on Google Maps. General SEO targets wider search results."
   },
   {
     "question": "Do I need a Google Business Profile even if I already have a website?",
-    "answer": "Yes — for local businesses, your Google Business Profile often drives more calls and visits than your website's organic ranking alone."
+    "answer": "Yes. For local businesses, a Google Business Profile can bring more calls and visits than website search results alone."
   },
   {
     "question": "How soon can I expect more local calls or visits?",
-    "answer": "Google Business Profile optimizations can show movement within 4–8 weeks; full local pack rankings usually take longer depending on competition."
+    "answer": "Changes to your Google Business Profile may show results within 4–8 weeks. Ranking in the local map results often takes longer, depending on competition."
   }
 ];
 
@@ -67,7 +67,7 @@ export default function LocalSeoServicePage() {
               Best Local SEO Services in Delhi NCR
             </h1>
             <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
-              When someone searches &quot;services in Sector 62 Noida&quot; or &quot;best stores near me,&quot; Google shows a local pack of 3 businesses. Our local SEO service is engineered to dominate that local pack across Faridabad, Noida, Gurgaon, and Delhi NCR. Stop losing customers to competitors who simply have a better map presence.
+              When someone searches for &quot;services in Sector 62 Noida&quot; or &quot;best stores near me,&quot; Google shows three local businesses. Our local SEO service helps your business appear in these results across Faridabad, Noida, Gurgaon, and Delhi NCR. Make it easier for nearby customers to find you.
             </p>
             <div className="pt-2">
               <Link
@@ -97,28 +97,28 @@ export default function LocalSeoServicePage() {
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-8">
           <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
-            Our High-Impact Local SEO Process
+            Our Local SEO Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
               <span className="service-process-number">01</span>
-              <h3 className="text-base font-medium text-stone-900">Comprehensive Local Audit</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">In-depth Google Business Profile and local competitor presence analysis.</p>
+              <h3 className="text-base font-medium text-stone-900">Local SEO Review</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Review your Google Business Profile and compare your local search presence with competitors.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
               <span className="service-process-number">02</span>
-              <h3 className="text-base font-medium text-stone-900">Local Citations & NAP</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Building high-authority local citations and ensuring NAP consistency across Indian directories.</p>
+              <h3 className="text-base font-medium text-stone-900">Business Listings &amp; Details</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Add your business to trusted local directories and keep its name, address, and phone number consistent.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
               <span className="service-process-number">03</span>
-              <h3 className="text-base font-medium text-stone-900">Hyper-Local On-Page SEO</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Creating location-specific service pages optimized for exact neighborhood search intent.</p>
+              <h3 className="text-base font-medium text-stone-900">Local Page Improvements</h3>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Create service pages for the areas you serve, based on what local customers search for.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2 hover:border-blue-300 transition-colors">
               <span className="service-process-number">04</span>
               <h3 className="text-base font-medium text-stone-900">Reviews & Map Rankings</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Active review generation strategies and ongoing Google Maps rank tracking.</p>
+              <p className="text-xs text-stone-600 font-light leading-relaxed">Encourage customer reviews and track your rankings on Google Maps.</p>
             </div>
           </div>
         </div>
@@ -156,4 +156,3 @@ export default function LocalSeoServicePage() {
     </main>
   );
 }
-

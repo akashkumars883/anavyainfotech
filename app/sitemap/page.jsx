@@ -4,17 +4,17 @@ import { getBlogPosts } from "@/lib/blogData";
 import { LOCATIONS_DATA } from "@/lib/locationsData";
 
 export const metadata = {
-  title: "HTML Sitemap – Anavya Infotech Navigation Directory",
+  title: "HTML Sitemap – Anavya Infotech",
   description:
-    "Explore the complete HTML sitemap of Anavya Infotech. Access all custom software development services, industry solutions, portfolio, legal policies, and blog articles.",
+    "Browse the full HTML sitemap for Anavya Infotech, including our services, projects, blog, and policy pages.",
   keywords:
     "Anavya Infotech sitemap, site directory, custom software pages, web development services list, legal policies index, blog articles sitemap",
   alternates: {
     canonical: "https://www.anavyainfotech.com/sitemap",
   },
   openGraph: {
-    title: "HTML Sitemap – Anavya Infotech Navigation Directory",
-    description: "Complete directory of software services, industry solutions, portfolio work, blog articles, and legal pages.",
+    title: "HTML Sitemap – Anavya Infotech",
+    description: "Browse our software services, projects, blog articles, and policy pages.",
     url: "https://www.anavyainfotech.com/sitemap",
     type: "website",
   },
@@ -24,17 +24,17 @@ export default async function HtmlSitemapPage() {
   const blogPosts = await getBlogPosts();
 
   const mainPages = [
-    { title: "Home", href: "/", desc: "Custom software engineering and AI agency home." },
+    { title: "Home", href: "/", desc: "Our custom software and AI services." },
     { title: "About Us", href: "/about", desc: "Our company mission, tech stack, and senior team." },
-    { title: "Our Blog", href: "/blog", desc: "Software engineering blueprints and digital growth guides." },
-    { title: "Case Studies", href: "/case-studies", desc: "Showcase of our featured web apps, AI tools, and enterprise platforms." },
-    { title: "Pricing & Plans", href: "/pricing", desc: "Transparent pricing tiers for website packages and SEO retainers." },
-    { title: "Budget Calculator", href: "/budget-calculator", desc: "Interactive step-by-step cost estimator for custom websites and software." },
+    { title: "Our Blog", href: "/blog", desc: "Articles about software and business growth." },
+    { title: "Case Studies", href: "/case-studies", desc: "Examples of our web apps, AI tools, and business platforms." },
+    { title: "Pricing & Plans", href: "/pricing", desc: "Clear prices for websites and monthly SEO plans." },
+    { title: "Budget Calculator", href: "/budget-calculator", desc: "Estimate the cost of a custom website or software project." },
     { title: "Hire Next.js Developers India", href: "/hire-nextjs-developers-india", desc: "Hire dedicated senior Next.js & React engineers in India at $25-$45/hr." },
-    { title: "Offshore Software Development", href: "/offshore-software-development-company", desc: "Enterprise offshore IT outsourcing & custom AI software development partner in India." },
+    { title: "Offshore Software Development", href: "/offshore-software-development-company", desc: "Software and AI development with a team based in India." },
     { title: "Careers & Culture", href: "/careers", desc: "Join our software engineering team, workplace values & perks." },
-    { title: "Open Job Roles", href: "/careers/openings", desc: "Explore active job openings, detailed JDs, and submit candidate applications." },
-    { title: "Contact Us", href: "/contact", desc: "Get a technical consultation and instant project estimate." },
+    { title: "Open Job Roles", href: "/careers/openings", desc: "See current jobs and apply online." },
+    { title: "Contact Us", href: "/contact", desc: "Talk with us and get a project estimate." },
   ];
 
   const servicePages = [
@@ -72,8 +72,8 @@ export default async function HtmlSitemapPage() {
   const legalPages = [
     { title: "Privacy Policy", href: "/privacy-policy", desc: "Data collection, user privacy rights, and cookies policy." },
     { title: "Terms of Service", href: "/terms-of-service", desc: "Legal service agreements, IP rights, and liability limitations." },
-    { title: "Cancellation & Refund Policy", href: "/refund-policy", desc: "Transparent milestone refund and contract cancellation terms." },
-    { title: "XML Sitemap", href: "/sitemap.xml", desc: "Search engine crawler XML sitemap index." },
+    { title: "Cancellation & Refund Policy", href: "/refund-policy", desc: "Our refund and cancellation terms." },
+    { title: "XML Sitemap", href: "/sitemap.xml", desc: "A list of pages for search engines." },
   ];
 
   return (
@@ -82,13 +82,13 @@ export default async function HtmlSitemapPage() {
       <section className="py-10 bg-white px-6">
         <div className="max-w-7xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-100 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <Globe className="h-3.5 w-3.5 text-blue-700" /> Site Index & Directory
+            <Globe className="h-3.5 w-3.5 text-blue-700" /> Page Directory
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
             HTML Sitemap
           </h1>
           <p className="text-base text-stone-600 font-light max-w-2xl">
-            Quickly navigate across all pages, services, industry solutions, blog articles, and legal documentation on Anavya Infotech.
+            Find our pages, services, projects, blog articles, and policy information.
           </p>
         </div>
       </section>

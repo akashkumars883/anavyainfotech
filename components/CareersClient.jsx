@@ -21,25 +21,25 @@ const SELECTION_PROCESS = [
     step: "01",
     icon: FileCheck,
     title: "Application Review",
-    description: "Submit your resume & portfolio. Our hiring lead reviews your real-world projects and technical stack alignment within 48 hours."
+    description: "Send your resume and portfolio. Our hiring lead will review your projects and skills within 48 hours."
   },
   {
     step: "02",
     icon: Code,
     title: "Technical Assessment",
-    description: "A short, practical code challenge or design review focusing on clean architecture, performance, and problem-solving skills."
+    description: "A short coding task or design review to see how you plan, build, and solve problems."
   },
   {
     step: "03",
     icon: UserCheck,
     title: "Team & Culture Discussion",
-    description: "A 30-minute interactive conversation with team leads to discuss work culture, career growth expectations, and project roles."
+    description: "A 30-minute chat with team leads about how we work, career growth, and the role."
   },
   {
     step: "04",
     icon: Sparkle,
     title: "Formal Offer & Onboarding",
-    description: "Transparent offer discussion followed by smooth digital onboarding, workspace setup, and mentorship pairing."
+    description: "We discuss the offer, then help you get set up and paired with a mentor."
   }
 ];
 
@@ -47,12 +47,12 @@ const PERKS = [
   {
     icon: Rocket,
     title: "Accelerated Career Growth",
-    desc: "Work directly on high-impact enterprise projects, modern AI frameworks, and scale production systems.",
+    desc: "Work on important business projects, modern AI tools, and systems used by real customers.",
   },
   {
     icon: Users,
     title: "Flat & Transparent Culture",
-    desc: "Collaborate in a flat hierarchy where great ideas win over titles, with open channels and constructive feedback.",
+    desc: "Share ideas openly, work closely with the team, and get helpful feedback.",
   },
   {
     icon: Award,
@@ -81,10 +81,10 @@ export default function CareersClient() {
                 Careers at Anavya Infotech
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15]">
-                Build the Future of Digital &amp; AI Solutions <span className="font-semibold text-blue-600">With Us</span>
+                Build Digital Products &amp; AI Tools <span className="font-semibold text-blue-600">With Us</span>
               </h1>
               <p className="text-base sm:text-lg text-stone-600 font-light leading-relaxed">
-                At Anavya Infotech, we engineer custom web applications, AI automation, and high-performance digital marketing campaigns. We value passion, continuous learning, and clean engineering.
+                At Anavya Infotech, we build custom web apps, AI tools, and digital marketing campaigns. We value curiosity, learning, and good engineering.
               </p>
               
               <div className="pt-2 flex flex-wrap items-center gap-4">
@@ -96,7 +96,7 @@ export default function CareersClient() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <span className="text-xs text-stone-500 font-medium">
-                  Active Position Available (Business Development Intern)
+                  Open role: Business Development Intern
                 </span>
               </div>
             </div>
@@ -121,13 +121,13 @@ export default function CareersClient() {
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="max-w-3xl space-y-3">
             <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">
-              Hiring Transparency
+              Our Hiring Process
             </span>
             <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
               Our 4-Step Selection Process
             </h2>
             <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              We respect your time. Our hiring process is streamlined, fast, and transparent so you always know where you stand at every stage.
+              We respect your time. Our hiring process is quick and clear, so you know what to expect at every step.
             </p>
           </div>
 
@@ -175,13 +175,13 @@ export default function CareersClient() {
 
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">
-                Company Culture &amp; Environment
+                Our Culture
               </span>
               <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
-                Freedom to Innovate &amp; Create Real Impact
+                Room to Create and Make a Difference
               </h2>
               <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-                At Anavya Infotech, we build an environment where engineers, designers, and strategists thrive. We focus on modern frameworks, autonomous ownership of tasks, and an empathetic work environment.
+                At Anavya Infotech, engineers, designers, and strategists can do their best work. We use modern tools, give people ownership of their work, and support one another.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -215,7 +215,7 @@ export default function CareersClient() {
                 Ready to Join Our Team?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Check out all active job openings in Engineering, AI, Marketing, Design, and Sales on our dedicated Open Roles page.
+                See current jobs in Engineering, AI, Marketing, Design, and Sales on our Open Roles page.
               </p>
             </div>
             <Link

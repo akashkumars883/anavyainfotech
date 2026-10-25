@@ -190,7 +190,7 @@ function ClientDashboardContent() {
             <div className="px-3 py-2 text-[10px] font-bold text-stone-400 uppercase tracking-wider">Studio Workspace</div>
             {[
               { id: "overview", label: "Overview & Analytics", icon: Activity },
-              { id: "knowledge", label: "Knowledge Catalog (RAG)", icon: Layers },
+              { id: "knowledge", label: "Website Knowledge (RAG)", icon: Layers },
               { id: "customizer", label: "Actions & Styling", icon: Sliders },
               { id: "deployments", label: "Integrations & Embed", icon: Code2 },
               { id: "leads", label: "Captured Leads", icon: Users },
@@ -304,7 +304,7 @@ function ClientDashboardContent() {
                     IBM watsonx AI Core
                   </div>
                   <h2 className="text-xl font-bold">Welcome to {user?.name || siteId} Control Center</h2>
-                  <p className="text-xs text-stone-400">Manage autonomous AI RAG knowledge, custom styling, and captured visitor leads.</p>
+                  <p className="text-xs text-stone-400">Manage the information your AI uses to answer questions, change its style, and review visitor leads.</p>
                 </div>
                 <button
                   onClick={() => setActiveTab("deployments")}
@@ -340,7 +340,7 @@ function ClientDashboardContent() {
                     <span className="text-xs font-medium">Knowledge Store</span>
                     <Layers className="h-4 w-4 text-purple-600" />
                   </div>
-                  <div className="text-base font-bold text-stone-900">Vector TF-IDF RAG</div>
+                  <div className="text-base font-bold text-stone-900">TF-IDF Search (matches questions to website text)</div>
                   <p className="text-[11px] text-blue-600 font-medium">Zero OpenAI API Fee</p>
                 </div>
 
@@ -359,20 +359,20 @@ function ClientDashboardContent() {
               {/* Status Details */}
               <div className="bg-white border border-stone-200 rounded-md p-6 space-y-4">
                 <h3 className="text-sm font-bold text-stone-900 flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 text-blue-600" /> Assistant Architecture &amp; Privacy Safeguards
+                <ShieldCheck className="h-4 w-4 text-blue-600" /> How the Assistant Works &amp; Protects Data
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
                   <div className="p-3 rounded-md bg-stone-50 border border-stone-200 space-y-1">
-                    <div className="font-semibold text-stone-800">1. Web Crawler RAG</div>
-                    <p className="text-stone-500">Scrapes website headings, paragraphs, and list items for instant answers.</p>
+                    <div className="font-semibold text-stone-800">1. Website Content Search</div>
+                    <p className="text-stone-500">Reads website headings, paragraphs, and lists to find answers.</p>
                   </div>
                   <div className="p-3 rounded-md bg-stone-50 border border-stone-200 space-y-1">
-                    <div className="font-semibold text-stone-800">2. Conversational Lead Handoff</div>
+                    <div className="font-semibold text-stone-800">2. Collecting Contact Details</div>
                     <p className="text-stone-500">Asks visitor name and phone/email before answering detailed queries.</p>
                   </div>
                   <div className="p-3 rounded-md bg-stone-50 border border-stone-200 space-y-1">
-                    <div className="font-semibold text-stone-800">3. Shadow DOM Embed</div>
-                    <p className="text-stone-500">Zero CSS collision with host website styles or framework scripts.</p>
+                    <div className="font-semibold text-stone-800">3. Separate Website Styling</div>
+                    <p className="text-stone-500">Keeps the assistant&apos;s styles separate from your website and scripts.</p>
                   </div>
                 </div>
               </div>
@@ -384,9 +384,9 @@ function ClientDashboardContent() {
             <div className="bg-white border border-stone-200 rounded-md p-6 space-y-6 animate-in fade-in duration-200">
               <div className="space-y-1 border-b border-stone-100 pb-4">
                 <h2 className="text-lg font-bold text-stone-900 flex items-center gap-2">
-                  <Layers className="h-5 w-5 text-blue-600" /> Knowledge Catalog &amp; Web Scraper RAG
+                  <Layers className="h-5 w-5 text-blue-600" /> Website Content for Answers
                 </h2>
-                <p className="text-xs text-stone-500">Train your Assistant by indexing website URLs into local TF-IDF vector memory.</p>
+                <p className="text-xs text-stone-500">Add website links so your assistant can find information from those pages.</p>
               </div>
 
               <form onSubmit={handleCrawlWebsite} className="space-y-4 max-w-2xl">
@@ -499,7 +499,7 @@ function ClientDashboardContent() {
               <div className="flex items-center justify-between border-b border-stone-800 pb-4">
                 <div>
                   <h2 className="text-lg font-bold">Deploy Assistant Code</h2>
-                  <p className="text-xs text-stone-400">Copy and paste this script snippet before the closing &lt;/body&gt; tag on your website.</p>
+                  <p className="text-xs text-stone-400">Copy this script and paste it before the closing &lt;/body&gt; tag on your website.</p>
                 </div>
               </div>
 
@@ -552,7 +552,7 @@ function ClientDashboardContent() {
                   </div>
                 ) : filteredLeads.length === 0 ? (
                   <div className="p-8 text-center text-xs text-stone-500">
-                    No captured leads found for site instance: <span className="font-mono text-stone-900 font-bold">{siteId}</span>
+                    No leads found for this site: <span className="font-mono text-stone-900 font-bold">{siteId}</span>
                   </div>
                 ) : (
                   <table className="w-full text-left text-xs">
@@ -608,9 +608,8 @@ function ClientDashboardContent() {
 
 export default function ClientDashboardPage() {
   return (
-    <Suspense fallback={<div className="p-12 text-center text-xs text-stone-500">Loading Enterprise Studio...</div>}>
+    <Suspense fallback={<div className="p-12 text-center text-xs text-stone-500">Loading your client dashboard...</div>}>
       <ClientDashboardContent />
     </Suspense>
   );
 }
-

@@ -52,7 +52,7 @@ export default function GsapHorizontalScroll({ projects = [] }) {
             Featured Engineering Case Studies
           </h2>
           <p className="text-xs text-stone-400 font-light max-w-sm">
-            Scroll down to explore high-impact web apps, AI tools, and enterprise platforms engineered for global clients.
+            Scroll to see web apps, AI tools, and business platforms we built for clients around the world.
           </p>
         </div>
       </div>

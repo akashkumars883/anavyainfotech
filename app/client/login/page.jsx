@@ -70,8 +70,8 @@ export default function ClientLoginPage() {
           </h1>
           <p className="text-xs text-stone-500">
             {isRegister
-              ? "Sign up to deploy your AI Chatbot"
-              : "Sign in to access your AI Chatbot Studio"}
+              ? "Create an account to set up your AI chatbot"
+              : "Sign in to manage your AI chatbot"}
           </p>
         </div>
 

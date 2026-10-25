@@ -360,6 +360,10 @@ html.lenis, html.lenis body {
   text-wrap: balance;
 }
 
+.service-page section h2.max-w-none {
+  max-width: none;
+}
+
 .service-page h1,
 .service-page h2,
 .service-page h3,
@@ -385,7 +389,7 @@ html.lenis, html.lenis body {
   transform: translateY(-3px);
 }
 
-.service-page section .space-y-4 > p {
+.service-page section .space-y-4 > p:not(.max-w-7xl) {
   max-width: 54rem;
 }
 
@@ -548,8 +552,8 @@ html.lenis, html.lenis body {
 .service-page[data-service] > section:first-of-type a:not(nav a) {
   border-color: #fff;
   border-radius: 0.5rem;
-  background: #fff;
-  color: #123b88;
+  background: #1d4ed8;
+  color: #fff;
 }
 
 .service-page[data-service] > section:first-of-type a.service-hero-cta {
@@ -563,8 +567,8 @@ html.lenis, html.lenis body {
 }
 
 .service-page[data-service] > section:first-of-type a:not(nav a):hover {
-  background: #eff6ff;
-  color: #123b88;
+  background: #1e40af;
+  color: #fff;
 }
 
 .service-page[data-service] > section:first-of-type a[class*="border"]:not(nav a) {
@@ -589,6 +593,7 @@ html.lenis, html.lenis body {
 .service-page[data-service="technical-seo"] { --service-hero-image: url("/service-hero-technical-seo.jpg"); }
 .service-page[data-service="technology"] { --service-hero-image: url("/service-hero-technology.jpg"); }
 .service-page[data-service="web-applications"] { --service-hero-image: url("/service-hero-web-applications.jpg"); }
+.service-page[data-service="offshore-software-development"] { --service-hero-image: url("/service-hero-development.jpg"); }
 
 @media (max-width: 640px) {
   .service-page[data-service] > section:first-of-type {
@@ -766,4 +771,36 @@ html.lenis, html.lenis body {
   .service-page section [class*="grid"]:has(> :nth-child(5):last-child) {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
+}
+
+/* Keep service content typography consistent across every service route. */
+.service-page > section:not(:first-of-type) h2 {
+  color: #1c1917;
+  font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+}
+
+.service-page section > div > div.bg-black h2 {
+  color: #fff;
+}
+
+.service-page > section:not(:first-of-type) h3 {
+  color: #1c1917;
+  font-size: 1.125rem;
+}
+
+.service-page section > div > div.bg-black p {
+  color: #d4d4d8;
+}
+
+.service-page > section:not(:first-of-type) h4 {
+  color: #1c1917;
+  font-size: 1rem;
+}
+
+.service-page > section:not(:first-of-type) p,
+.service-page > section:not(:first-of-type) li {
+  color: #57534e;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75;
 }

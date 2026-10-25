@@ -224,16 +224,16 @@ export default async function CaseStudyDetailPage({ params }) {
         <footer className="pt-10 border-t border-stone-200 space-y-12">
           <div className="p-8 rounded-md bg-black text-white flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2 max-w-lg text-left">
-              <h3 className="text-xl font-bold text-white">Want similar results for your business?</h3>
+              <h3 className="text-xl font-bold text-white">Want results like these?</h3>
               <p className="text-xs text-zinc-400 font-light">
-                Tell us about your technical goals and we&apos;ll craft a custom engineering proposal.
+                Tell us what you want to build, and we&apos;ll prepare a project proposal.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Start Project Discussion
+              Talk About Your Project
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

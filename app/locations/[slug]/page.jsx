@@ -157,7 +157,7 @@ export default async function LocationPage({ params }) {
       {/* FAQ Section */}
       <FaqSection
         title={`Questions about working with us in ${location.name}`}
-        subtitle="We ensure transparent communication and scalable solutions for all our regional and international clients."
+        subtitle="We keep communication clear and build solutions that can grow with your business."
         faqs={location.faqs}
       />
 
@@ -170,10 +170,10 @@ export default async function LocationPage({ params }) {
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Ready to elevate your business in {location.name}?
+                Ready to grow your business in {location.name}?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Connect with our expert team for a free technical consultation and customized digital strategy.
+                Talk with our team for a free consultation and a plan for your business.
               </p>
             </div>
             <Link

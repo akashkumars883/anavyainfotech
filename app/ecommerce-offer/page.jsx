@@ -5,7 +5,7 @@ import FaqSection from "@/components/FaqSection";
 const OFFER_FAQS = [
   {
     question: "Are there any hidden charges beyond ₹19,999?",
-    answer: "No hidden development fees. The ₹19,999 is a one-time cost for the fully coded website. You will only need to pay standard yearly renewal charges for your domain name and hosting, which is standard for any website."
+    answer: "There are no hidden development fees. The ₹19,999 is a one-time cost for the website. You will still pay the usual yearly fees for your domain name and hosting."
   },
   {
     question: "Who owns the code after the website is built?",
@@ -13,7 +13,7 @@ const OFFER_FAQS = [
   },
   {
     question: "Do I need technical skills to add products?",
-    answer: "Not at all. We provide a very intuitive, user-friendly admin dashboard. If you can upload a photo on Instagram, you can easily add products, manage inventory, and process orders on your new store."
+    answer: "No. Our admin dashboard is easy to use. If you can upload a photo to Instagram, you can add products, manage stock, and handle orders in your store."
   },
   {
     question: "Which payment gateways do you integrate?",
@@ -23,7 +23,7 @@ const OFFER_FAQS = [
 
 export const metadata = {
   title: "E-Commerce Website Development Offer - Anavya Infotech",
-  description: "Get a fully custom-coded E-Commerce website for just ₹19,999. Special Launch & Grow bundles available.",
+  description: "Get a custom e-commerce website for ₹19,999. Launch & Grow packages are also available.",
   alternates: {
     canonical: "https://www.anavyainfotech.com/ecommerce-offer",
   },
@@ -39,7 +39,7 @@ export default function EcommerceOfferPage() {
             Launch Your Dream E-Commerce Business for Just <span className="font-semibold text-blue-700">₹19,999</span>
           </h1>
           <p className="text-lg sm:text-xl text-stone-600 font-light max-w-7xl mx-auto leading-relaxed">
-            Stop paying monthly rent to platforms like Shopify. Own your fully custom-coded e-commerce store with zero hidden fees. From a secure payment gateway to a powerful admin panel, everything is ready.
+            Stop paying monthly fees to platforms like Shopify. Own your custom e-commerce store with no hidden fees. It comes with a secure payment option and an admin panel.
           </p>
           <div className="pt-6">
             <Link
@@ -60,7 +60,7 @@ export default function EcommerceOfferPage() {
               Why Pair Your Store With SEO?
             </h2>
             <p className="text-stone-600 font-light text-lg">
-              A beautiful website is just a digital storefront. SEO is the engine that brings high-intent buyers inside.
+              A good website is just the start. SEO helps people who are ready to buy find your store.
             </p>
           </div>
 
@@ -69,15 +69,15 @@ export default function EcommerceOfferPage() {
               <Search className="h-8 w-8 text-blue-600 mb-6" />
               <h3 className="text-xl font-semibold text-stone-900 mb-3">High-Intent Buyers</h3>
               <p className="text-sm text-stone-600 font-light leading-relaxed">
-                Social media ads target people who are scrolling. SEO targets people who are actively searching to buy your specific products on Google, leading to significantly higher conversion rates.
+                Social media ads reach people as they browse. SEO helps people find your products when they search on Google, which can lead to more sales.
               </p>
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
               <TrendingUp className="h-8 w-8 text-blue-600 mb-6" />
-              <h3 className="text-xl font-semibold text-stone-900 mb-3">Compound Growth</h3>
+              <h3 className="text-xl font-semibold text-stone-900 mb-3">              Growth Over Time</h3>
               <p className="text-sm text-stone-600 font-light leading-relaxed">
-                When you stop paying for ads, your sales drop to zero instantly. A strong SEO foundation compounds over time, bringing you free, consistent daily orders month after month.
+                Ad sales can stop when you stop paying for ads. SEO can build over time and help bring steady visits and orders.
               </p>
             </div>
 
@@ -85,7 +85,7 @@ export default function EcommerceOfferPage() {
               <ShieldCheck className="h-8 w-8 text-blue-600 mb-6" />
               <h3 className="text-xl font-semibold text-stone-900 mb-3">Brand Trust</h3>
               <p className="text-sm text-stone-600 font-light leading-relaxed">
-                Consumers inherently trust brands that rank on the first page of Google. Securing those top positions establishes your store as an authority, overcoming initial buyer hesitation.
+                People often trust brands they find near the top of Google search results. A strong search ranking can help build trust in your store.
               </p>
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function EcommerceOfferPage() {
               Trusted by Indian Brand Owners
             </h2>
             <p className="text-stone-600 font-light text-lg">
-              Hear from business owners who escaped platform fees and scaled their organic sales with us.
+              Hear from business owners who moved away from platform fees and grew their sales from search.
             </p>
           </div>
 
@@ -246,7 +246,7 @@ export default function EcommerceOfferPage() {
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
             Still have questions? Let&apos;s discuss your project.
           </h2>
-          <p className="text-stone-600 font-light">Our experts are available to guide you on which bundle suits your business best.</p>
+          <p className="text-stone-600 font-light">Our team can help you choose the right package for your business.</p>
           <div className="pt-4 flex justify-center gap-4">
             <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-bold uppercase tracking-wider bg-black text-white hover:bg-zinc-800 transition-colors">
               Contact Us To Discuss

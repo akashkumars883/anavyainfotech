@@ -70,10 +70,10 @@ export default function ContactForm() {
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
               Have a Project in Mind? <br />
-              <span className="text-blue-700">Let&apos;s Build It Right the First Time.</span>
+              <span className="text-blue-700">Let&apos;s Get It Right From the Start.</span>
             </h2>
             <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
-              Whether it&apos;s a website that finally converts, an AI tool that saves your team hours a week, or an SEO strategy that gets you found — tell us what you&apos;re building. You&apos;ll hear back from a senior engineer, not a salesperson.
+              Whether you need a website that brings in more customers, an AI tool that saves your team time, or an SEO plan that helps people find you, tell us what you&apos;re building. A senior engineer will reply, not a salesperson.
                            </p>
           </div>
 
@@ -84,9 +84,9 @@ export default function ContactForm() {
                 <div className="h-12 w-12 rounded-md bg-blue-100 border border-blue-200 flex items-center justify-center text-blue-700">
                   <Send className="h-5 w-5 animate-pulse" />
                 </div>
-                <h3 className="text-lg font-semibold text-stone-900">Request Received &amp; Saved!</h3>
+                <h3 className="text-lg font-semibold text-stone-900">We Received Your Request!</h3>
                 <p className="text-xs text-stone-600 max-w-xs font-light">
-                  Thank you. Your inquiry has been sent to our admin team. A project manager will contact you shortly.
+                  Thank you. We received your message, and a project manager will contact you soon.
                 </p>
                 <button
                   type="button"
@@ -135,7 +135,7 @@ export default function ContactForm() {
                 {/* Service scope selector */}
                 <div className="space-y-1">
                   <label htmlFor="form-service" className="text-[10px] font-semibold uppercase tracking-wider text-stone-500">
-                    Project Service Area
+                    What Do You Need Help With?
                   </label>
                   <select
                     id="form-service"
@@ -159,7 +159,7 @@ export default function ContactForm() {
                     id="form-message"
                     required
                     rows={3}
-                    placeholder="Brief description of your requirements..."
+                    placeholder="Tell us what you need..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-blue-600 transition-colors resize-none"
@@ -217,4 +217,3 @@ export default function ContactForm() {
     </section>
   );
 }
-

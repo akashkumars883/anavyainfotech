@@ -5,7 +5,7 @@ import { ChevronDown, HelpCircle } from "lucide-react";
 
 export default function FaqSection({
   title = "Frequently Asked Questions",
-  subtitle = "Everything you need to know about our services, pricing, and process.",
+  subtitle = "Answers to common questions about our services, prices, and process.",
   faqs = [],
 }) {
   const [openIndex, setOpenIndex] = useState(0); // First item open by default

@@ -5,7 +5,7 @@ import FaqSection from "@/components/FaqSection";
 export const metadata = {
   title: "Privacy Policy – Anavya Infotech",
   description:
-    "Privacy Policy for Anavya Infotech. Learn how we collect, protect, and handle your data when using our website and services.",
+    "Learn what information Anavya Infotech collects, how we use and protect it, and what choices you have when using our website and services.",
   alternates: {
     canonical: "https://www.anavyainfotech.com/privacy-policy",
   },
@@ -257,4 +257,3 @@ export default function PrivacyPolicyPage() {
     </main>
   );
 }
-

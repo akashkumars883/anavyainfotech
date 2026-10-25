@@ -10,7 +10,7 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      quote: "Sub-50ms webhook responses and zero account restriction issues — top-tier AI engineering team.",
+      quote: "Webhooks respond in under 50ms, and we have had no account restrictions. The AI engineering team is excellent.",
       author: "Aditya Verma",
       role: "Founder & CEO",
       company: "Automixa Inc.",
@@ -30,7 +30,7 @@ export default function Testimonials() {
       caseStudySlug: "money-capital-finance",
     },
     {
-      quote: "A global leader in custom software development, SEO, and cloud solutions — delivering scalable technology from India to international markets.",
+      quote: "A trusted team for custom software, SEO, and cloud tools, serving businesses in India and around the world.",
       author: "Nakul Singh",
       role: "Principal Consultant",
       company: "Nakul Properties",
@@ -64,10 +64,10 @@ export default function Testimonials() {
         {/* Header Block */}
         <div className="max-w-3xl text-left mb-8 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-50 border border-stone-200/80 text-[11px] font-bold uppercase tracking-wider text-stone-700">
-            <ShieldCheck className="h-3.5 w-3.5 text-blue-700" /> Verified Case Studies &amp; Reviews
+            <ShieldCheck className="h-3.5 w-3.5 text-blue-700" />             Client Reviews
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
-            Don&apos;t Just Take Our Word for It.
+            Hear From Our Clients.
           </h2>
         </div>
 
@@ -90,7 +90,7 @@ export default function Testimonials() {
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-blue-50 border border-blue-200/80 text-[11px] font-semibold text-blue-800">
                         <CheckCircle2 className="h-3.5 w-3.5 text-blue-700" />
-                        Verified Enterprise Client
+                        Verified Client
                       </span>
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-stone-100 text-[11px] font-medium text-stone-700">
                         {item.industry}
@@ -125,7 +125,7 @@ export default function Testimonials() {
                         href={`/case-studies/${item.caseStudySlug}`}
                         className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-800 hover:text-blue-700 hover:border-blue-300 transition-all self-start sm:self-auto shadow-xs"
                       >
-                        Read Verified Case Study
+                        Read the Case Study
                         <ArrowUpRight className="h-3.5 w-3.5 text-blue-700" />
                       </Link>
                     </div>

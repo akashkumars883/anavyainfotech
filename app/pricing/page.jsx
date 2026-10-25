@@ -7,9 +7,9 @@ import Link from "next/link";
 import { Calculator, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Transparent Pricing & Investment Packages",
+  title: "Clear Pricing & Project Packages",
   description:
-    "Explore transparent fixed pricing packages for SEO services, local SEO, e-commerce, and white label SEO reseller programs.",
+    "See fixed prices for SEO, local SEO, e-commerce, and white-label SEO services.",
   keywords: [
     "SEO package pricing",
     "SEO services pricing India",
@@ -21,8 +21,8 @@ export const metadata = {
     canonical: "https://www.anavyainfotech.com/pricing",
   },
   openGraph: {
-    title: "Transparent Pricing & Investment Packages - Anavya Infotech",
-    description: "Transparent fixed-price SEO growth and retainer packages.",
+    title: "Clear Pricing & Project Packages - Anavya Infotech",
+    description: "Fixed-price SEO and monthly service packages.",
     url: "https://www.anavyainfotech.com/pricing",
     type: "website",
   },
@@ -32,27 +32,27 @@ const PRICING_FAQS = [
   {
     question: "Are your pricing packages fixed or are there hidden monthly charges?",
     answer:
-      "All our packages feature 100% transparent fixed-price quotes. There are no hidden fees or unexpected maintenance charges. What we quote during scope alignment is what you pay.",
+      "Our packages have clear fixed prices. There are no hidden fees or surprise maintenance costs. The price we agree on is the price you pay.",
   },
   {
     question: "Do you offer custom enterprise pricing for complex software projects?",
     answer:
-      "Yes! If your application requires bespoke database architecture, custom AI model integration, or multi-tenant SaaS pipelines, we build tailored proposals with clear milestone pricing.",
+      "Yes. If your app needs a custom database, AI features, or a SaaS setup for multiple customers, we can prepare a plan with clear milestone prices.",
   },
   {
     question: "What is included in your monthly SEO retainer packages?",
     answer:
-      "Our SEO retainers include comprehensive technical audits, keyword research, on-page optimization, content publishing, high-authority link acquisition, GMB local optimization, and monthly ROI performance reporting.",
+      "Our monthly SEO plans can include technical reviews, keyword research, page improvements, content publishing, trusted links, Google Business Profile updates, and monthly results reports.",
   },
   {
     question: "What payment methods and currency options do you accept?",
     answer:
-      "We accept bank wire transfers, UPI, credit/debit cards, and international payment portals (Stripe, Razorpay, Wise, PayPal) supporting INR ($/₹) and USD ($).",
+      "We accept bank transfers, UPI, credit and debit cards, and international payments through Stripe, Razorpay, Wise, and PayPal in INR or USD.",
   },
   {
     question: "What is your refund policy if project requirements change?",
     answer:
-      "We operate a fair, milestone-based policy. If work has not yet commenced on a milestone, unearned retainer funds are refundable per our service agreement policy.",
+      "Refunds follow our milestone policy. If work on a milestone has not started, its unused retainer funds can be refunded under our service agreement.",
   },
 ];
 
@@ -125,10 +125,10 @@ export default function PricingPage() {
             Transparent Pricing
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Pricing Built Around Your Project — Not a Generic Package.
+            Pricing That Fits Your Project.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Every business is different, so we don&apos;t force you into a one-size-fits-all tier. Tell us what you&apos;re building, and you&apos;ll get a clear, itemized quote — no hidden fees, no surprise &quot;final invoice&quot; padding.
+            Every business is different. Tell us what you&apos;re building, and we&apos;ll give you a clear list of costs with no hidden fees or surprise charges.
                                              </p>
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
@@ -155,10 +155,10 @@ export default function PricingPage() {
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              "100% code ownership — no rented software, no vendor lock-in.",
-              "Zero seat fees — you're not charged per team member for tools we use internally.",
-              "Enterprise SLA guarantee — clear delivery commitments, in writing.",
-              "Transparent scopes agreed before development starts — not renegotiated mid-project.",
+              "You own all the code — no rented software or vendor lock-in.",
+              "No per-person fees for the tools we use.",
+              "Clear delivery promises, written in your agreement.",
+              "We agree on the work before development starts.",
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-3 p-4 bg-stone-50 border border-stone-100 rounded-md text-xs sm:text-sm text-stone-800 font-medium">
                 <span className="h-2 w-2 rounded-full bg-blue-700 shrink-0" />
@@ -178,18 +178,18 @@ export default function PricingPage() {
           <div className="p-8 rounded-md bg-stone-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
             <div className="space-y-2 text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider">
-                <Calculator className="h-3.5 w-3.5" /> Interactive Estimator Tool
+                <Calculator className="h-3.5 w-3.5" /> Project Cost Calculator
               </div>
-              <h3 className="text-2xl font-bold text-white">Need a customized scope &amp; price estimate?</h3>
+              <h3 className="text-2xl font-bold text-white">Need a custom project estimate?</h3>
               <p className="text-xs text-stone-400 font-light max-w-xl leading-relaxed">
-                Use our step-by-step interactive Budget Calculator to configure custom add-ons, sprint speed, and get an instant formal quote.
+                Use our Budget Calculator to choose extra features, select a delivery time, and get an instant estimate.
               </p>
             </div>
             <Link
               href="/budget-calculator"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md shrink-0 cursor-pointer"
             >
-              Open Budget Calculator <ArrowRight className="h-4 w-4" />
+              Use the Budget Calculator <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

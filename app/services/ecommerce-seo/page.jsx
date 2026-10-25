@@ -2,41 +2,39 @@ import { createServiceSchema } from "@/lib/serviceSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
-import { Zap, ArrowRight, ShoppingBag, TrendingUp, Tag, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShoppingBag } from "lucide-react";
 
 export const metadata = {
-  title: "E-Commerce SEO Agency in India - Best E-Commerce SEO Services & Company",
+  title: "E-Commerce SEO Services in India",
   description:
-    "Anavya Infotech is the best ecommerce SEO agency in India. We offer specialized ecommerce SEO services, product page optimization, category rank growth, and schema markup for Shopify, Next.js, and WooCommerce storefronts.",
+    "Anavya Infotech improves SEO for online stores, including product and category pages. We work with Shopify, Next.js, and WooCommerce storefronts.",
   keywords: "ecommerce SEO agency, ecommerce SEO services, ecommerce SEO company",
   alternates: {
     canonical: "https://www.anavyainfotech.com/services/ecommerce-seo",
   },
   openGraph: {
-    title: "E-Commerce SEO Agency in India - Best E-Commerce SEO Services",
+    title: "E-Commerce SEO Services in India",
     description:
-      "Drive organic sales, rank product category pages, and scale organic revenue with ecommerce SEO services from Anavya Infotech.",
+      "Improve product and category rankings and grow unpaid sales with e-commerce SEO services from Anavya Infotech.",
     url: "https://www.anavyainfotech.com/services/ecommerce-seo",
     type: "website",
   },
 };
 
-
 const ECOMMERCE_SEO_FAQS = [
   {
     "question": "Does this work with Shopify or only custom stores?",
-    "answer": "Both — we optimize Shopify, headless, and custom-built e-commerce platforms."
+    "answer": "We work with Shopify, headless stores, and custom-built e-commerce platforms."
   },
   {
     "question": "Can SEO really move the needle for e-commerce revenue?",
-    "answer": "Yes — organic search is typically one of the highest-converting, lowest-cost-per-acquisition channels for e-commerce once technical and content foundations are fixed."
+    "answer": "Yes. Once technical and content issues are fixed, search can bring customers at a lower cost and lead to more sales."
   },
   {
     "question": "Do you handle marketplace SEO (Amazon/Flipkart) too?",
-    "answer": "Our core focus is your own store's organic Google SEO; ask us if you also need marketplace listing optimization support."
+    "answer": "We focus on Google SEO for your own store. Contact us if you also need help improving marketplace listings."
   }
 ];
-
 
 const serviceSchemas = createServiceSchema({
   name: "E-Commerce SEO Services - Product & Category Page SEO",
@@ -46,7 +44,13 @@ const serviceSchemas = createServiceSchema({
 });
 
 export default function EcommerceSeoPage() {
-  
+  const processSteps = [
+    { num: "01", title: "Review", desc: "Review your site's technical setup and product catalog." },
+    { num: "02", title: "Page Templates", desc: "Improve the layouts used for product and category pages." },
+    { num: "03", title: "Content", desc: "Content production for category and buying-guide pages." },
+    { num: "04", title: "Sales Improvement", desc: "Keep improving your site and track sales from unpaid search." },
+  ];
+
   return (
     <main className="min-h-screen bg-white text-left selection:bg-blue-600/20 selection:text-blue-950 service-page" data-service="ecommerce-seo">
       <script
@@ -55,67 +59,64 @@ export default function EcommerceSeoPage() {
       />
 
       {/* Header Area */}
-      <section className="py-10 bg-stone-50 border-b border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "E-Commerce SEO", href: "/services/ecommerce-seo" }]} />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600">
-            <ShoppingBag className="h-3.5 w-3.5 text-blue-700" /> Services / E-Commerce SEO
+      <section className="py-12 bg-stone-50 border-b border-stone-100 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs items={[{ label: "Services", href: "/#services" }, { label: "E-Commerce SEO", href: "/services/ecommerce-seo" }]} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-stone-200 text-[11px] font-bold uppercase tracking-wider text-stone-600 shadow-xs">
+              <ShoppingBag className="h-3.5 w-3.5 text-blue-700" /> E-Commerce SEO Agency
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.1]">
+              E-Commerce SEO That Helps Turn Searches Into Sales
+            </h1>
+            <p className="text-base sm:text-lg text-stone-600 font-light max-w-2xl leading-relaxed">
+              E-commerce SEO involves more than adding keywords to product titles. Anavya Infotech improves your site&apos;s technical setup, category pages, product page layouts, and content. We focus on helping online stores turn stronger search rankings into sales.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-md"
+              >
+                Grow Your Store&apos;s Organic Sales <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            E-Commerce SEO to Turn Organic Search Into Sales
-          </h1>
-          <Link href="/contact" className="service-hero-cta">Discuss your project <span aria-hidden="true">→</span></Link>
-          <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Most e-commerce SEO advice stops at &quot;add keywords to product titles.&quot; Anavya Infotech runs full e-commerce SEO programs — technical crawl optimization, category architecture, product page templates, and content — built specifically for online stores where every ranking improvement should translate directly into revenue.
-          </p>
+          <div className="lg:col-span-5 flex items-center justify-center p-4">
+            <img
+              src="/growth-illustration.jpg"
+              alt="E-Commerce SEO Agency India"
+              className="max-h-[340px] w-auto object-contain mix-blend-multiply rounded-md shadow-sm border border-stone-200"
+            />
+          </div>
         </div>
       </section>
-{/* Description Grid */}
-      <section className="py-12 bg-white border-b border-stone-100 px-6">
-        
-      </section>
 
-      
-      
-
+      {/* Process Section */}
       <section className="py-12 bg-stone-50 border-b border-stone-100 px-6 service-process-section">
         <div className="max-w-7xl mx-auto space-y-8">
-          <h2 className="text-2xl sm:text-3xl font-normal tracking-tight text-stone-900">
+          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900">
             Our E-Commerce SEO Process
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="service-process-number">01</span>
-              <h3 className="text-base font-medium text-stone-900">Audit</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Technical + catalog architecture audit.</p>
-            </div>
-            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="service-process-number">02</span>
-              <h3 className="text-base font-medium text-stone-900">Templates</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Product & category page SEO templates optimization.</p>
-            </div>
-            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="service-process-number">03</span>
-              <h3 className="text-base font-medium text-stone-900">Content</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Content production for category and buying-guide pages.</p>
-            </div>
-            <div className="bg-white border border-stone-200 p-6 rounded-md space-y-2">
-              <span className="service-process-number">04</span>
-              <h3 className="text-base font-medium text-stone-900">Revenue Optimization</h3>
-              <p className="text-xs text-stone-600 font-light leading-relaxed">Ongoing optimization tied directly to organic revenue tracking.</p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {processSteps.map((step, idx) => (
+              <div key={idx} className="p-6 bg-white border border-stone-100 rounded-md space-y-3">
+                <div className="service-process-number">{step.num}</div>
+                <h3 className="text-lg font-semibold text-stone-900">{step.title}</h3>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
       {/* FAQ Section */}
       <FaqSection
         title="E-Commerce SEO FAQs"
-        subtitle="Frequently asked questions about E-Commerce SEO services."
+        subtitle="Answers to common questions about e-commerce SEO."
         faqs={ECOMMERCE_SEO_FAQS}
       />
 
       {/* CTA */}
-      
       <section className="py-10 bg-stone-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
@@ -124,15 +125,14 @@ export default function EcommerceSeoPage() {
                 Grow Your Store&apos;s Organic Sales
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Connect with Anavya Infotech today and transform your product catalog into a high-converting organic sales channel.
+                Connect with Anavya Infotech to help your products reach more customers through unpaid search.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Grow Your Store&apos;s Organic Sales →
-              <ArrowRight className="h-4 w-4" />
+              Grow Your Store&apos;s Organic Sales <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -140,4 +140,3 @@ export default function EcommerceSeoPage() {
     </main>
   );
 }
-

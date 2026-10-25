@@ -4,18 +4,18 @@ import PortfolioFilterClient from "@/components/PortfolioFilterClient";
 import FaqSection from "@/components/FaqSection";
 
 export const metadata = {
-  title: "Featured Software Engineering Case Studies",
+  title: "Featured Software Project Case Studies",
   description:
-    "Explore case studies of custom web applications, real estate CRMs, autonomous AI agents, headless e-commerce, and enterprise analytics platforms built by Anavya Infotech.",
+    "See how Anavya Infotech built web apps, real estate CRMs, AI agents, e-commerce sites, and business analytics tools.",
   keywords:
     "software engineering case studies, custom CRM case study, AI chatbot case study, Next.js e-commerce case study, web application metrics",
   alternates: {
     canonical: "https://www.anavyainfotech.com/case-studies",
   },
   openGraph: {
-    title: "Featured Software Engineering Case Studies - Anavya Infotech",
+    title: "Software Project Case Studies - Anavya Infotech",
     description:
-      "Featured case studies detailing challenges, engineering architectures, and ROI metrics for custom software projects.",
+      "See the challenges, software designs, and results from our custom software projects.",
     url: "https://www.anavyainfotech.com/case-studies",
     type: "website",
   },
@@ -25,27 +25,27 @@ const CASE_STUDY_FAQS = [
   {
     question: "What types of custom software projects are featured in your case studies?",
     answer:
-      "Our case studies highlight real-world client solutions across enterprise CRM software, autonomous AI support agents, headless Next.js e-commerce stores, real estate property portals, and business intelligence dashboards.",
+      "Our case studies show work for businesses, including CRM software, AI support agents, Next.js e-commerce stores, real estate websites, and business analytics dashboards.",
   },
   {
     question: "Are the performance metrics and speed improvements in your case studies verified?",
     answer:
-      "Yes. All lighthouse Core Web Vitals scores, ticket deflection percentages, conversion lift rates, and server response metrics represent empirical benchmarks recorded upon project deployment.",
+      "Yes. The Core Web Vitals scores, support ticket reductions, conversion gains, and server response times were measured when each project launched.",
   },
   {
     question: "Can Anavya Infotech build custom software tailored to my specific niche?",
     answer:
-      "Absolutely. We engineer bespoke schemas, custom API connectors, and tailored UI workflows designed specifically around your operational SOPs and industry compliance requirements.",
+      "Yes. We can build custom data structures, API connections, and screens that fit your team's work and industry rules.",
   },
   {
     question: "How do you measure success and return on investment for your builds?",
     answer:
-      "We track concrete quantitative KPIs — such as Lighthouse page load speed (sub-second target), organic Google search traffic growth, lead conversion rates, and operational time saved through automation.",
+      "We track clear results, such as page load speed, growth in Google search traffic, lead conversion rates, and time saved through automation.",
   },
   {
     question: "What was the typical development timeline for these featured case studies?",
     answer:
-      "Project timelines ranged from 3 to 6 weeks for streamlined web applications and AI agent integrations up to 8 to 12 weeks for complex multi-module enterprise CRM platforms.",
+      "Projects took 3 to 6 weeks for simpler web apps and AI integrations, and 8 to 12 weeks for larger CRM platforms with several parts.",
   },
 ];
 
@@ -59,11 +59,11 @@ export default function CaseStudiesPage() {
             <Briefcase className="h-3.5 w-3.5 text-blue-700" /> Featured Case Studies
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-tight text-stone-900 leading-[1.1] max-w-5xl">
-            Software architectures engineered <br />
-            <span className="text-blue-700">for scale & measurable ROI.</span>
+            Software built <br />
+            <span className="text-blue-700">to grow with your business.</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light max-w-3xl leading-relaxed">
-            Explore our featured case studies — from custom CRM platforms and autonomous AI support agents to headless Next.js storefronts and enterprise analytics engines.
+            Explore our projects, from custom CRM platforms and AI support agents to Next.js online stores and business analytics tools.
           </p>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function CaseStudiesPage() {
       {/* FAQ Section */}
       <FaqSection
         title="Frequently Asked Case Study Questions"
-        subtitle="Common questions about our engineering benchmarks, client delivery, and tech stacks."
+        subtitle="Answers about project results, timelines, and the tools we use."
         faqs={CASE_STUDY_FAQS}
       />
 
@@ -90,14 +90,14 @@ export default function CaseStudiesPage() {
             <div className="space-y-3 max-w-2xl text-left">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Have a custom software project?</h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-                Connect with our senior engineering team for technical architecture design, cost estimates, and sprint planning.
+                Talk with our engineering team about your project plan, costs, and schedule.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors shrink-0 shadow-lg"
             >
-              Request Technical Proposal
+              Get a Project Proposal
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
