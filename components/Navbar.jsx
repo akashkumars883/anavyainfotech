@@ -56,6 +56,7 @@ export default function Navbar() {
         { name: "Ecommerce SEO", href: "/services/ecommerce-seo" },
         { name: "Technical SEO", href: "/services/technical-seo" },
         { name: "Content Strategy", href: "/services/content-strategist" },
+        { name: "White Label SEO Reseller", href: "/services/white-label-seo" },
       ],
     },
     {
@@ -208,6 +209,17 @@ export default function Navbar() {
               className="absolute top-full left-0 w-full bg-white border border-stone-200/80 rounded-md text-stone-800 py-10 px-12 shadow-2xl transition-all duration-350 transform opacity-100 translate-y-3"
               onMouseEnter={() => setActiveDropdown("services")}
             >
+              <div className="flex items-center justify-between pb-4 mb-6 border-b border-stone-100">
+                <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Explore Capabilities</span>
+                <Link
+                  href="/services"
+                  onClick={() => setActiveDropdown(null)}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 hover:text-blue-900 group"
+                >
+                  <span>View All Services Directory</span>
+                  <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+                </Link>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {servicesMenu.map((column, idx) => (
                   <div key={idx} className="flex flex-col gap-4 text-left">

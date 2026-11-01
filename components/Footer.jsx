@@ -54,7 +54,7 @@ export default function Footer() {
     ],
     products: [
       { name: "Automixa AI", href: "https://www.automixa.in/", isExternal: true },
-      { name: "Anaya AI Engine", href: "/services/ai-chatbot", isExternal: false },
+      { name: "Anavya AI Engine", href: "/services/ai-chatbot", isExternal: false },
     ],
     company: [
       { name: "About Us", href: "/about" },

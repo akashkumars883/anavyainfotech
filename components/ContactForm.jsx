@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import Script from "next/script";
-import { Send, ArrowRight, ShieldCheck } from "lucide-react";
+import { Send, ArrowRight, ShieldCheck, AlertCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactForm() {
@@ -15,12 +15,15 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
   const turnstileTokenRef = useRef("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setFormError("");
+
     if (!formData.name.trim() || !formData.email.trim()) {
-      alert("Please fill in your name and email.");
+      setFormError("Please fill in both your name and email.");
       return;
     }
 
@@ -43,11 +46,11 @@ export default function ContactForm() {
         setIsSubmitted(true);
         setFormData({ name: "", email: "", service: "development", message: "", consent: false });
       } else {
-        alert(data.error || "Failed to submit request. Please try again.");
+        setFormError(data.error || "Failed to submit request. Please try again.");
       }
     } catch (err) {
       console.error("Error submitting contact form:", err);
-      alert("Network error submitting request. Please try again.");
+      setFormError("Network error submitting request. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -74,7 +77,7 @@ export default function ContactForm() {
             </h2>
             <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
               Whether you need a website that brings in more customers, an AI tool that saves your team time, or an SEO plan that helps people find you, tell us what you&apos;re building. A senior engineer will reply, not a salesperson.
-                           </p>
+            </p>
           </div>
 
           {/* Right Column: Compact White/stone Form Card */}
@@ -98,6 +101,13 @@ export default function ContactForm() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 text-left">
+                {formError && (
+                  <div className="p-3 rounded-md bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4 shrink-0" />
+                    <span>{formError}</span>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name field */}
                   <div className="space-y-1">
@@ -110,7 +120,10 @@ export default function ContactForm() {
                       required
                       placeholder="e.g. John Doe"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) => {
+                        setFormData({ ...formData, name: e.target.value });
+                        if (formError) setFormError("");
+                      }}
                       className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-blue-600 transition-colors"
                     />
                   </div>
@@ -126,7 +139,10 @@ export default function ContactForm() {
                       required
                       placeholder="e.g. john@company.com"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) => {
+                        setFormData({ ...formData, email: e.target.value });
+                        if (formError) setFormError("");
+                      }}
                       className="w-full bg-white border border-stone-200 rounded-md px-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-blue-600 transition-colors"
                     />
                   </div>
@@ -197,8 +213,6 @@ export default function ContactForm() {
                     <span>Protected by Cloudflare</span>
                   </div>
                 </div>
-
-
 
                 {/* Submit button */}
                 <button

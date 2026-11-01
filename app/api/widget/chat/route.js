@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSiteKnowledge, extractRelevantContext } from "@/lib/aiVectorStore";
+import { crawlAndIndexWebsite } from "@/lib/siteCrawler";
 
 export const dynamic = "force-dynamic";
 
@@ -48,37 +49,41 @@ export async function POST(req) {
     const isEcommerceOrSales = /price|buy|pricing|order|cart|checkout|package|hire|quote|consultation|deal|book/i.test(rawPagesText);
     const siteType = isEcommerceOrSales ? "SALES & GROWTH CONVERSION" : "INFORMATIVE & KNOWLEDGE HELPDESK";
 
-    // 4. Prepare System Prompt (Advanced Prompt Engineering)
+    // 4. Prepare System Prompt (Sales Consultant Persona with Website Knowledge)
     const currentDate = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", dateStyle: "full", timeStyle: "short" });
     
-    const systemPrompt = `You are the official AI Support & Sales Assistant for ${siteName}. ${visitorName ? `You are currently speaking with ${visitorName}.` : ''}
+    const systemPrompt = `You are the official Sales & Growth Consultant for ${siteName}. ${visitorName ? `You are speaking with ${visitorName}.` : ''}
 Current Date & Time: ${currentDate}
-Website Focus: ${siteType}
 
-🔥 CORE BEHAVIOR RULES:
-1. BE CONCISE & HUMAN: Write 1 to 2 short sentences max. Sound like a helpful human employee of ${siteName}. NO robotic "As an AI..." phrases.
-2. FORMATTING: Use **bold** for important terms. Use 1 polite emoji if appropriate. NO tables or huge paragraphs.
-3. ANTI-HALLUCINATION: You MUST base your answers strictly on the "KNOWLEDGE CATALOG" below. If the user asks something completely unrelated to ${siteName}, politely reply: "I can only assist with inquiries related to ${siteName}. How can I help you with our services today?"
-4. LEAD CONVERSION: If the user asks about pricing, packages, or services, give a brief answer and smoothly invite them to connect: "Would you like our team to reach out? Please share your contact number or email."
+🎯 YOUR MISSION & ROLE:
+1. CONSULTATIVE SALES EXPERT: Understand the visitor's intent deeply. Your job is to answer what they ask using verified website information, understand their requirements, and guide them towards booking a consultation or getting a project proposal.
+2. ACCURATE KNOWLEDGE: Answer questions accurately and strictly based on the VERIFIED KNOWLEDGE CATALOG below. If information is not in the catalog, gracefully describe what ${siteName} specializes in (e.g., custom software, AI development, web/mobile apps, SEO).
+3. CONVERSATIONAL CLOSING:
+   - Keep answers clear, direct, and concise (1 to 2 short sentences).
+   - If they show interest or ask about pricing/services/packages, invite them to share their project details or connect directly with our engineering team.
+4. STRICT FORMATTING:
+   - Output 100% clean, normal plain text.
+   - Absolutely NO asterisks, NO **bold** text, NO bullet characters (*), NO markdown tables.
+   - Match the visitor's language smoothly (English, Hindi, or Hinglish).
 
 VERIFIED KNOWLEDGE CATALOG FOR ${siteName.toUpperCase()}:
 === KNOWLEDGE START ===
 ${contextText}
-=== KNOWLEDGE END ===
+=== KNOWLEDGE END ===`;
 
-Language: Seamlessly match the user's language (English, Hinglish, or Hindi).`;
-
-    // 5. Build OpenAI Multi-Turn Messages Array with History Context
+    // 5. Build Multi-Turn History
     const formattedMessages = [{ role: "system", content: systemPrompt }];
+    const historyTextLines = [];
     if (Array.isArray(history) && history.length > 0) {
-      history.forEach(h => {
+      history.slice(-6).forEach(h => {
         if (h.role && h.content) {
           formattedMessages.push({ role: h.role === 'assistant' ? 'assistant' : 'user', content: h.content });
+          historyTextLines.push(`${h.role === 'assistant' ? 'Consultant' : 'Visitor'}: ${h.content}`);
         }
       });
-    } else {
-      formattedMessages.push({ role: "user", content: message });
     }
+    formattedMessages.push({ role: "user", content: message });
+    const geminiInputText = `${systemPrompt}\n\n${historyTextLines.length > 0 ? 'Conversation History:\n' + historyTextLines.join('\n') + '\n\n' : ''}Current Visitor Query: ${message}`;
 
     // 6. Call GROQ API (Primary fast AI provider from .env.local)
     const groqApiKey = process.env.GROQ_API_KEY;
@@ -125,7 +130,7 @@ Language: Seamlessly match the user's language (English, Hinglish, or Hindi).`;
     // 5. Primary AI Generation via Google Gemini API (gemini-2.0-flash / gemini-1.5-flash)
     const geminiApiKey = process.env.GEMINI_API_KEY;
     if (geminiApiKey) {
-      const modelsToTry = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"];
+      const modelsToTry = ["gemini-3.5-flash", "gemini-flash-latest"];
       for (const modelName of modelsToTry) {
         try {
           const geminiRes = await fetch(
@@ -137,13 +142,16 @@ Language: Seamlessly match the user's language (English, Hinglish, or Hindi).`;
                 contents: [
                   {
                     parts: [
-                      { text: `${systemPrompt}\n\nVisitor Question: ${message}` },
+                      { text: geminiInputText },
                     ],
                   },
                 ],
                 generationConfig: {
-                  temperature: 0.7,
-                  maxOutputTokens: 600,
+                  temperature: 0.2,
+                  maxOutputTokens: 250,
+                  thinkingConfig: {
+                    thinkingBudget: 0
+                  }
                 },
               }),
             }

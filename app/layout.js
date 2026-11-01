@@ -23,10 +23,11 @@ export const metadata = {
 
   title: {
     default: "Custom Software & AI Development Company in Delhi NCR - Anavya Infotech",
+    template: "%s | Anavya Infotech",
   },
 
   description:
-    "Anavya Infotech builds custom software, AI automation, and SEO-driven growth systems for businesses across Delhi NCR, Noida, Gurgaon & the USA. 100+ projects delivered.",
+    "Anavya Infotech builds custom web software, AI automation, and technical SEO systems for businesses across Faridabad, Delhi NCR, and international clients.",
 
   keywords: [
     "digital marketing agency in India",
@@ -54,7 +55,7 @@ export const metadata = {
     siteName: "Anavya Infotech",
     title: "Custom Software & AI Development Company in Delhi NCR - Anavya Infotech",
     description:
-      "Anavya Infotech builds custom software, AI automation, and SEO-driven growth systems for businesses across Delhi NCR, Noida, Gurgaon & the USA. 100+ projects delivered.",
+      "Anavya Infotech builds custom web software, AI automation, and technical SEO systems for businesses across Faridabad, Delhi NCR, and international clients.",
     images: [
       {
         url: `${BASE_URL}/og-image.png`,
@@ -72,7 +73,7 @@ export const metadata = {
     creator: "@anavyainfotech",
     title: "Custom Software & AI Development Company in Delhi NCR - Anavya Infotech",
     description:
-      "Anavya Infotech builds custom software, AI automation, and SEO-driven growth systems for businesses across Delhi NCR, Noida, Gurgaon & the USA. 100+ projects delivered.",
+      "Anavya Infotech builds custom web software, AI automation, and technical SEO systems for businesses across Faridabad, Delhi NCR, and international clients.",
     images: [`${BASE_URL}/og-image.png`],
   },
 

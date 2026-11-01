@@ -9,7 +9,7 @@ import ContactForm from "@/components/ContactForm";
 import { FadeIn } from "@/components/FadeIn";
 
 export const metadata = {
-  title: "Custom Software, AI & Digital Growth | Anavya Infotech",
+  title: "Custom Software, AI & Web Development Company in Faridabad, Delhi NCR",
   description:
     "Anavya Infotech builds custom web applications, AI integrations, business software, and technical SEO systems for growing businesses in India and worldwide.",
   alternates: {
