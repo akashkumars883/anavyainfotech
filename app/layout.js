@@ -221,6 +221,7 @@ export default function RootLayout({ children }) {
         {/* Anaya AI Autonomous Sales Widget */}
         <Script
           src="/widget.js"
+          data-api-base="http://localhost:3000"
           data-domain="anavyainfotech.com"
           data-color="#0ca656"
           data-name="Anaya"
