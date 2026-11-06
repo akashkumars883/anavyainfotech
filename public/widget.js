@@ -465,6 +465,13 @@
     messagesList.appendChild(typingRow);
     messagesList.scrollTop = messagesList.scrollHeight;
 
+    // Persistent Session Token for this visitor
+    let visitorSessionId = localStorage.getItem("anaya_visitor_session_id");
+    if (!visitorSessionId) {
+      visitorSessionId = "sess_" + Math.random().toString(36).substring(2, 9) + "_" + Date.now();
+      localStorage.setItem("anaya_visitor_session_id", visitorSessionId);
+    }
+
     try {
       const res = await fetch(`${apiBase}/api/chat`, {
         method: "POST",
@@ -472,8 +479,10 @@
         body: JSON.stringify({
           messages: conversationHistory,
           message: query,
+          session_id: visitorSessionId,
           domain: targetDomain,
-          domain_id: domainId || (agentId.startsWith("agent_") ? null : agentId)
+          domain_id: domainId || (agentId.startsWith("agent_") ? null : agentId),
+          page_visited: window.location.href
         })
       });
       const data = await res.json();
