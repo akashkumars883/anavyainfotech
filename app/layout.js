@@ -218,10 +218,12 @@ export default function RootLayout({ children }) {
           );
         })()}
 
-        {/* Anavya AI Embeddable Chatbot Widget */}
+        {/* Anaya AI Autonomous Sales Widget */}
         <Script
           src="/widget.js"
-          data-site-id="anavya-infotech"
+          data-domain="anavyainfotech.com"
+          data-color="#0ca656"
+          data-name="Anaya"
           strategy="lazyOnload"
         />
         {/* Organization Schema */}
