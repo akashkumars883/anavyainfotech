@@ -34,6 +34,12 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      { source: "/api/chat", destination: "https://anaya-six.vercel.app/api/chat" },
+      { source: "/api/widget-config", destination: "https://anaya-six.vercel.app/api/widget-config" }
+    ];
+  },
   async redirects() {
     return [
       {
