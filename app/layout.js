@@ -220,7 +220,7 @@ export default function RootLayout({ children }) {
 
         {/* Anaya AI Autonomous Sales Widget */}
         <Script
-          src="https://anaya-six.vercel.app/widget.js"
+          src="https://anaya-six.vercel.app/widget.js?v=2.1"
           data-api-base="https://anaya-six.vercel.app"
           data-domain="anavyainfotech.com"
           data-color="#0ca656"
